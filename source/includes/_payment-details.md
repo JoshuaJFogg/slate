@@ -17,8 +17,18 @@ api.kittens.get()
 ```
 
 ```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
+curl --request POST \
+  --url https://uat.mppglobal.com/api/accounts/123456/payment-details/card \
+  --header 'content-type: application/json' \
+  --header 'x-clientpassword: MyP@ssword01' \
+  --header 'x-clientid: 433' \
+  --data '{"cardNumber":"4111111111111111","cardType":"Visa",
+  "expiryDate":"01/19",  "issueCode":null,"securityCode":"123", 
+  "billingHouseName":"Lilac Cottage","billingHouseFlatNumber":"12",
+  "billingStreet":"Windermere Road","billingDistrict":null,
+  "billingTownCity":"Chester","billingCounty":"Cheshire",
+  "billingPostcode":"CH638BF","billingCountry":"United Kingdom",
+  "setDefault":true,"associatedName":"My Visa Card","skipPreAuth":false}'
 ```
 
 ```javascript
