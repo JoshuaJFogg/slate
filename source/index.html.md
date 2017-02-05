@@ -2,10 +2,10 @@
 title: eSuite API Reference
 
 language_tabs:
-  - shell
-  - ruby
-  - python
-  - javascript
+  - shell : cURL
+  - csharp : C#
+  - java : Java
+
 
 toc_footers:
   - <a href='#'>Sign-in for a Developer Key</a>

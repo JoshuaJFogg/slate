@@ -2,20 +2,6 @@
 
 ## Add a Payment Card
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
 ```shell
 curl --request POST \
   --url https://uat.mppglobal.com/api/accounts/123456/payment-details/card \
@@ -31,32 +17,20 @@ curl --request POST \
   "setDefault":true,"associatedName":"My Visa Card","skipPreAuth":false}'
 ```
 
-```javascript
-const kittn = require('kittn');
+```csharp
+insert csharp here
+```
 
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
+```java
+insert java here
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
+{
+  "paymentDetailId": "604DB6C40EAA4C04BC6E65C4E4135069"
+}
 ```
 
 This endpoint retrieves all kittens.
