@@ -1,4 +1,4 @@
-# Kittens
+# Vouchers
 
 ## Get All Kittens
 

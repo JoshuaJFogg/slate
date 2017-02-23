@@ -1,4 +1,4 @@
-# Kittens
+# Workflows
 
 ## Get All Kittens
 

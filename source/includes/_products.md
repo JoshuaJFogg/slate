@@ -1,4 +1,4 @@
-# Kittens
+# Products
 
 ## Get All Kittens
 

@@ -1,4 +1,4 @@
-# Kittens
+# Payments
 
 ## Get All Kittens
 

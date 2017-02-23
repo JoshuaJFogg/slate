@@ -1,4 +1,4 @@
-# Kittens
+# Subscriptions
 
 ## Get All Kittens
 

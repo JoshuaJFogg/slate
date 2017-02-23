@@ -1,4 +1,4 @@
-# Kittens
+# Session Authentication
 
 ## Get All Kittens
 

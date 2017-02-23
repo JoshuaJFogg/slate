@@ -1,4 +1,4 @@
-# Kittens
+# Accounts
 
 ## Get All Kittens
 

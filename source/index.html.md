@@ -14,7 +14,17 @@ toc_footers:
 includes:
   - introduction
   - authentication
+  - workflows
+  - accounts
   - payment-details
+  - access-control
+  - session-authentication
+  - account-groups
+  - orders
+  - subscriptions
+  - products
+  - vouchers
+  - native-billing
   - errors
 
 search: true
