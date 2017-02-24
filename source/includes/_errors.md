@@ -13,4 +13,4 @@ Error Code | Meaning
 406 | Not Acceptable -- You requested a format that isn't json
 412 | Pre-Condition Failed -- The request has failed basic validation
 500 | Internal Server Error -- We had a problem with our server. Try again later.
-503 | Service Unavailable -- We're temporarially offline for maintanance. Please try again later.
+503 | Service Unavailable -- We're temporarily offline for maintenance. Please try again later.
