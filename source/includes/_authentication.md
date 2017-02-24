@@ -1,4 +1,4 @@
-# API Authentication
+# API Authorization
 
 > To authorize, use this code:
 
