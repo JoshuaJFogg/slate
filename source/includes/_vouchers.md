@@ -1,6 +1,6 @@
 # Vouchers
 
-## Get All Kittens
+## Validate a voucher
 
 ```shell
 # With shell, you can just pass the correct header with each request
@@ -23,92 +23,68 @@ curl "api_endpoint_here"
 > The above command returns JSON structured like this:
 
 ```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
+{
+  "purchaseInfo" : {
+    "purchasePrice" : 2.00,
+    "discountPrice" : 1.25,
+    "renewalPrice" : 5.50
   },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
+  "promotionInfo" : {
+    "startDate" : "",
+    "expiryDate" : "",
+    "offerInfo" : {
+      "name" : "",
+      "description" : "",
+      "usageType" : "",
+      "applicationData" : {
+        "name" : "",
+        "message" : "",
+        "message2" : "",
+        "addCredits" : {
+          "amount" : 15.00,
+          "currency" : "GBP",
+          "paymentDetailsRequired" : true
+        },
+        "lowStart" : {
+          "percentage" : 10.00,
+          "numberOfPeriods" : 2,
+          "lockInPeriods" : 0,
+          "closeSubOnExpiry" : true,
+          "serviceIds" : [12354, 48511],
+          "paymentDetailsRequired" : true
+        },
+        "percentageDiscount" : {
+          "percentage" : 10.00,
+          "paymentDetailsRequired" : true
+        },
+        "freePeriod" : {
+          "numberOfPeriods" : 2,
+          "serviceIds" : [12354, 48511],
+          "paymentDetailsRequired" : true
+        },
+        "groupDiscount" : {
+
+        }
+      }
+    }
   }
-]
+}
 ```
 
 This endpoint retrieves all kittens.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`GET https://uat.mppglobal.com/api/voucher/:voucherCode/validate`
 
 ### Query Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+Parameter | Type | Mandatory | Description | 
+--------- | ------- | ------- | ----------- |
+paymentDatesToCalculate | integer | Yes | 
+paymentDatesStartDate | string | Yes | 
+clientUserId | string | Yes | 
 
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+Only one offer type object will be populated depending on the voucher code you have passed.
 </aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
