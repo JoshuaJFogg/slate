@@ -1,6 +1,6 @@
 # Session Authentication
 
-## Get All Kittens
+## Login using email address
 
 ```shell
 # With shell, you can just pass the correct header with each request
@@ -23,92 +23,64 @@ curl "api_endpoint_here"
 > The above command returns JSON structured like this:
 
 ```json
-[
   {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
+    "accountId": 141458,
+    "resourceReference": "OO45FTG67GTF",
+    "sessionToken": "7c7e316ff9c6453fae5da7b7c26c4c77"
   }
-]
 ```
 
-This endpoint retrieves all kittens.
+This endpoint allows customers to authenticate themselves and gain a session for their eSuite account.
 
-### HTTP Request
+### URL End-point
 
-`GET http://example.com/api/kittens`
+`POST https://uat.mppglobal.com/api/accounts/authenticate`
 
-### Query Parameters
+### POST Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+Parameter | Type | Mandatory | Description | 
+--------- | ------- | ------- | ----------- |
+email | string | Yes | The email address associated to the eSuite account.
+password | string | Yes | The password the customer has associated to their account.
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
 
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
+## Login using client-defined identifiers
 
 ```shell
-curl "http://example.com/api/kittens/2"
+# With shell, you can just pass the correct header with each request
+curl "api_endpoint_here"
   -H "Authorization: meowmeowmeow"
 ```
 
-```javascript
-const kittn = require('kittn');
+```csharp
+# With C#, you can just pass the correct header with each request
+curl "api_endpoint_here"
+  -H "Authorization: meowmeowmeow"
+```
 
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
+```java
+# With Java, you can just pass the correct header with each request
+curl "api_endpoint_here"
+  -H "Authorization: meowmeowmeow"
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
+  {
+    "accountId": 141458,
+    "resourceReference": "OO45FTG67GTF",
+    "sessionToken": "7c7e316ff9c6453fae5da7b7c26c4c77"
+  }
 ```
 
-This endpoint retrieves a specific kitten.
+This endpoint allows third-party systems gain a session for an account that isn't mastered in eSuite.
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+### URL End-point
 
-### HTTP Request
+`POST https://uat.mppglobal.com/api/accounts/authenticate/:clientUserId`
 
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
+<aside class="warning">
+Client-defined identifiers (clientUserId) are a single key authentication and as such can only authenticate by a server-side authentication request.
+</aside>
 

@@ -12,20 +12,12 @@ toc_footers:
   - <a href='https://mppglobal.com'>Documentation Powered by eSuite</a>
 
 includes:
-  - introduction
-  - authentication
-  - workflows
-  - accounts
+  - session-authentication 
   - payment-details
-  - access-control
-  - session-authentication
-  - account-groups
-  - orders
-  - subscriptions
-  - products
+  - social
   - vouchers
-  - native-billing
   - errors
+
 
 search: true
 ---
