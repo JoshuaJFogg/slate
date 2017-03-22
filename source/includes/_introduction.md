@@ -1,7 +1,9 @@
 # Introduction
 
-- Standard REST
-- HTTP Verbs
--- HTTP Clients
-- Cross Origin Resource Sharing
-- JSON responses
+The eSuite API is built around the architectural principle of REST (Representational State Transfer). 
+The API allows you to interact with eSuite from both a client-side web application and a traditional server-side application. The API also uses standard HTTP features and can be used via standard HTTP clients in order to perform actions prior to integrating the functionality. All responses are returned in JSON, including error message. 
+
+In order ensure the eSuite REST API is secure, certain features are not available to client-side web applications but the functions that are made availalbe will allow you to build an application to take card payments without having to have it hosted with a third-party or use a hosted white label solution.
+
+The API has also been built using the OpenAPI Specification (formally the Swagger Specification) which will allow you to automatically generate code and test file.
+
