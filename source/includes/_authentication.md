@@ -31,17 +31,25 @@ HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/")
 ```
 
 
-> Make sure to replace `BE52ADA2064C4F9A9D90F28D066D1CEE` with your API key.
+Client-to-server integrations are often the quickest to complete and allow you to get live in a matter of hours. To help aide this, MPP Global has developed the eSuite SDK which is an AngularJS application that contains UI elements covering the standard flows experienced by our exiting clients. If you decide you would prefer to build the eSuite API into your existing technology stack directly, this is certainly possible.
 
-eSuite uses API keys to allow access to the API. You can register a new eSuite API key by logging into eSuite HQ.
+In order to authenticate with the eSuite API, you will be required to pass either two or three pieces of information dependent on the actions you are looking to complete. The values required are:
 
-eSuite expects for the API key to be included in all API requests to the server in a header that looks like the following:
+### x-tokenId
+
+This is your API Key for the eSuite API. 
 
 `x-tokenId: BE52ADA2064C4F9A9D90F28D066D1CEE`
 
-`x-sessionId: BE52ADA2064C4F9A9D90F28D066D1CEE`
+**Origin**
 
 `Origin: https://mywebsite-domain.com`
+
+__x-sessionId__
+
+`x-sessionId: BE52ADA2064C4F9A9D90F28D066D1CEE`
+
+
 
 <aside class="warning">
 You must replace the <code>x-tokenId</code> value with your personal API key.
