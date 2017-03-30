@@ -13,6 +13,7 @@ toc_footers:
 
 includes:
   - introduction
+  - authentication
   - session-authentication 
   - payment-details
   - social
