@@ -68,7 +68,7 @@ html, body {
   width: $nav-width;
   background-color: $nav-bg;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: normal;
 
   // language selector for mobile devices
   .lang-selector {
@@ -178,6 +178,7 @@ html, body {
     color: $nav-active-text;
   }
 
+
   // Subheaders are the submenus that slide open
   // in the table of contents.
   .tocify-subheader {
@@ -188,7 +189,7 @@ html, body {
     .tocify-item>a {
       padding-left: $nav-padding + $nav-indent;
       font-size: 13px;
-      font-weight: 600;
+      font-weight: normal;
     }
 
     // for embossed look:
@@ -341,7 +342,7 @@ html, body {
     padding: 0 $main-padding;
     box-sizing: border-box;
     display: block;
-    font-weight:600;
+    font-weight:normal;
 
     @extend %left-col;
   }
@@ -358,6 +359,7 @@ html, body {
   h1 {
     @extend %header-font;
     font-size: 26px;
+    font-weight:bold;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     border-bottom: 1px solid #ccc;
@@ -376,6 +378,7 @@ html, body {
   h2 {
     @extend %header-font;
     font-size: 20px;
+    font-weight:bold;
     margin-top: 4em;
     margin-bottom: 0;
     border-top: 1px solid #ccc;
@@ -386,12 +389,13 @@ html, body {
 
   h3 {
     @extend %header-font;
-    font-size: 17px;
+    font-size: 16px;
     margin-bottom: 0;
     padding-top: 1.2em;
-    padding-bottom: 1.2em;
+    padding-bottom: 1em;
     font-weight: bolder;
-    text-decoration: underline;
+    font-weight:bold;
+    /*text-decoration: underline;*/
   }
   
   
@@ -466,7 +470,7 @@ html, body {
   }
 
   p, li, dt, dd {
-    line-height: 1.6;
+    line-height: 1.8;
     margin-top: 0;
   }
 
@@ -475,7 +479,7 @@ html, body {
   }
 
   code {
-    background-color: rgba(0,0,0,0.05);
+    background-color: rgba(0,0,0,0.09);
     padding: 3px;
     border-radius: 3px;
     @extend %break-words;
