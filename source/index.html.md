@@ -8,7 +8,6 @@ language_tabs:
 
 
 toc_footers:
-  - <a href='#'>Sign-in for a Developer Key</a>
   - <a href='https://mppglobal.com'>Documentation Powered by eSuite</a>
 
 includes:
