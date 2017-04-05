@@ -1,5 +1,16 @@
 # Errors
 
+> In the event an error occurs, an object will be returned:
+
+```json
+{
+  "result" : {
+      "status" : "FAILED",
+      "reason" : "Example String"
+  }
+}
+```
+
 <aside class="notice">This error section is a summary of the possible error codes you could recieve from the eSuite API. The API will return a specific error message alongside one of these codes to detail the specific error that has occurred.</aside>
 
 

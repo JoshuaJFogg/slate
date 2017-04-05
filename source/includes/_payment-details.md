@@ -6,8 +6,8 @@
 curl --request POST \
   --url https://uat.mppglobal.com/api/accounts/123456/payment-details/card \
   --header 'content-type: application/json' \
-  --header 'x-clientpassword: MyP@ssword01' \
-  --header 'x-clientid: 433' \
+  --header 'x-clientpassword: Str0ngP@ssword' \
+  --header 'x-clientid: 1001' \
   --data '{"cardNumber":"4111111111111111","cardType":"Visa",
   "expiryDate":"01/19",  "issueCode":null,"securityCode":"123", 
   "billingHouseName":"Lilac Cottage","billingHouseFlatNumber":"12",
@@ -21,8 +21,8 @@ curl --request POST \
 var client = new RestClient("https://uat.mppglobal.com/api/accounts/123456/payment-details/card");
 var request = new RestRequest(Method.POST);
 request.AddHeader("content-type", "application/json");
-request.AddHeader("x-clientpassword", "MyP@ssword01");
-request.AddHeader("x-clientid", "433");
+request.AddHeader("x-clientpassword", "Str0ngP@ssword");
+request.AddHeader("x-clientid", "1001");
 request.AddParameter("application/json", "{\"cardNumber\":\"4111111111111111\",\"cardType\":\"Visa\",
   + "\"expiryDate\":\"01/19\",\"issueCode\":null,\"securityCode\":\"123\",
   + "\"billingHouseName\":\"Lilac Cottage\",\"billingHouseFlatNumber\":\"12\",\"billingStreet\":\"Windermere Road\",
@@ -34,8 +34,8 @@ IRestResponse response = client.Execute(request);
 
 ```java
 HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/123456/payment-details/card")
-  .header("x-clientid", "433")
-  .header("x-clientpassword", "MyP@ssword01")
+  .header("x-clientid", "1001")
+  .header("x-clientpassword", "Str0ngP@ssword")
   .header("content-type", "application/json")
   .body("{\"cardNumber\":\"4111111111111111\",\"cardType\":\"Visa\",\"expiryDate\":\"01/19\",\"issueCode\":null,\"securityCode\":\"123\",\"billingHouseName\":\"Lilac Cottage\",\"billingHouseFlatNumber\":\"12\",\"billingStreet\":\"Windermere Road\",\"billingDistrict\":null,\"billingTownCity\":\"Chester\",\"billingCounty\":\"Cheshire\",\"billingPostcode\":\"CH638BF\",\"billingCountry\":\"United Kingdom\",\"setDefault\":true,\"associatedName\":\"My Visa Card\",\"skipPreAuth\":false}").asString();
 ```
@@ -44,7 +44,7 @@ HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/acco
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/%7BaccountId%7D/payment-details/card")
+url = URI("https://uat.mppglobal.com/api/accounts/123456/payment-details/card")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -55,7 +55,7 @@ request["x-tokenid"] = '1001'
 request["x-sessionid"] = 'Str0ngP@ssword'
 request["x-version"] = '9.0.0'
 request["content-type"] = 'application/json'
-request.body = "{\"cardNumber\":\"4111111111111111\",\"cardType\":\"Visa\",\"expiryDate\":\"01/19\",\"issueCode\":null,\"cvv\":\"123\",\"billingHouseName\":\"Lilac House\",\"billingHouseFlatNumber\":\"12\",\"billingStreet\":\"Windermere Road\",\"billingDistrict\":null,\"billingTownCity\":\"Chester\",\"billingCounty\":\"Cheshire\",\"billingPostcode\":\"CH638BF\",\"billingCountry\":\"United Kingdom\",\"setDefault\":true,\"associatedName\":\"My Visa Card\",\"skipPreAuth\":false}"
+request.body = "{\"cardNumber\":\"4111111111111111\",\"cardType\":\"Visa\",\"expiryDate\":\"01/19\",\"issueCode\":null,\"cvv\":\"123\",\"billingHouseName\":\"Lilac House\",\"billingHouseFlatNumber\":\"12\",\"billingStreet\":\"Windermere Road\",\"billingDistrict\":null\"billingTownCity\":\"Chester\",\"billingCounty\":\"Cheshire\",\"billingPostcode\":\"CH638BF\",\"billingCountry\":\"United Kingdom\",\"setDefault\":true,\"associatedName\":\"My Visa Card\",\"skipPreAuth\":false}"
 
 response = http.request(request)
 ```
@@ -65,7 +65,7 @@ import http.client
 
 conn = http.client.HTTPSConnection("uat.mppglobal.com")
 
-payload = "{\"cardNumber\":\"4111111111111111\",\"cardType\":\"Visa\",\"expiryDate\":\"01/19\",\"issueCode\":null,\"cvv\":\"123\",\"billingHouseName\":\"Lilac House\",\"billingHouseFlatNumber\":\"12\",\"billingStreet\":\"Windermere Road\",\"billingDistrict\":null,\"billingTownCity\":\"Chester\",\"billingCounty\":\"Cheshire\",\"billingPostcode\":\"CH638BF\",\"billingCountry\":\"United Kingdom\",\"setDefault\":true,\"associatedName\":\"My Visa Card\",\"skipPreAuth\":false}"
+payload = "{\"cardNumber\":\"4111111111111111\",\"cardType\":\"Visa\",\"expiryDate\":\"01/19\",\"issueCode\":null,\"cvv\":\"123\",\"billingHouseName\":\"Lilac House\",\"billingHouseFlatNumber\":\"12\",\"billingStreet\":\"Windermere Road\",\"billingDistrict\":null,\"billingTownCity\":\"Chester\"\"billingCounty\":\"Cheshire\",\"billingPostcode\":\"CH638BF\",\"billingCountry\":\"United Kingdom\",\"setDefault\":true,\"associatedName\":\"My Visa Card\",\"skipPreAuth\":false}"
 
 headers = {
     'x-tokenid': "1001",
@@ -74,7 +74,7 @@ headers = {
     'content-type': "application/json"
     }
 
-conn.request("POST", "/api/accounts/%7BaccountId%7D/payment-details/card", payload, headers)
+conn.request("POST", "/api/accounts/123456/payment-details/card", payload, headers)
 
 res = conn.getresponse()
 ```
@@ -124,8 +124,8 @@ Remember — you must authorise a card before it can be used
 curl --request POST \
   --url https://uat.mppglobal.com/api/accounts/123456/payment-details/bacs \
   --header 'content-type: application/json' \
-  --header 'x-clientpassword: MyP@ssword01' \
-  --header 'x-clientid: 433' \
+  --header 'x-clientpassword: Str0ngP@ssword' \
+  --header 'x-clientid: 1001' \
   --data '{"accountHolderName":"Steven Smith","accountNumber":"11111111","sortCode":"000000",
   "bacsReference":"AE34567LZ","serviceId":124875}'
 ```
@@ -134,8 +134,8 @@ curl --request POST \
 var client = new RestClient("https://uat.mppglobal.com/api/accounts/123456/payment-details/bacs");
 var request = new RestRequest(Method.POST);
 request.AddHeader("content-type", "application/json");
-request.AddHeader("x-sessionid", "MyP@ssword01");
-request.AddHeader("x-tokenid", "433");
+request.AddHeader("x-sessionid", "Str0ngP@ssword");
+request.AddHeader("x-tokenid", "1001");
 request.AddParameter("application/json", "{\"accountHolderName\":\"Steven Smith\",
   "\"accountNumber\":\"11111111\",\"sortCode\":\"000000\",\"bacsReference\":\"AE34567LZ\",\"serviceId\":124875}", 
   ParameterType.RequestBody);
@@ -144,8 +144,8 @@ IRestResponse response = client.Execute(request);
 
 ```java
 HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/123456/payment-details/bacs")
-  .header("x-tokenid", "433")
-  .header("x-sessionid", "MyP@ssword01")
+  .header("x-tokenid", "1001")
+  .header("x-sessionid", "Str0ngP@ssword")
   .header("content-type", "application/json")
   .body("{\"accountHolderName\":\"Steven Smith\",\"accountNumber\":\"11111111\",\"sortCode\":\"000000\",
     "\"bacsReference\":\"AE34567LZ\",\"serviceId\":124875}")
@@ -153,11 +153,42 @@ HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/acco
 ```
 
 ```ruby
+require 'uri'
+require 'net/http'
 
+url = URI("https://uat.mppglobal.com/api/accounts/123456/payment-details/bacs")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Post.new(url)
+request["x-tokenid"] = 'Str0ngP@ssword'
+request["x-sessionid"] = '1001'
+request["x-version"] = '9.0.0'
+request["content-type"] = 'application/json'
+request.body = "{\"accountHolderName\":\"Steven Smith\",\"accountNumber\":\"11111111\",\"sortCode\":\"000000\",\"bacsReference\":\"AE34567LZ\",\"serviceId\":124875}"
+
+response = http.request(request)
 ```
 
 ```python
+import http.client
 
+conn = http.client.HTTPSConnection("uat.mppglobal.com")
+
+payload = "{\"accountHolderName\":\"Steven Smith\",\"accountNumber\":\"11111111\",\"sortCode\":\"000000\",\"bacsReference\":\"AE34567LZ\",\"serviceId\":124875}"
+
+headers = {
+    'x-clientpassword': "Str0ngP@ssword",
+    'x-clientid': "1001",
+    'x-version': "9.0.0",
+    'content-type': "application/json"
+    }
+
+conn.request("POST", "/api/accounts/123456/payment-details/bacs", payload, headers)
+
+res = conn.getresponse()
 ```
 
 > The above command returns an empty response alongside a HTTP 204
@@ -186,8 +217,8 @@ serviceId | integer | Yes | The eSuite ServiceId that this BACS wallet will be u
 curl --request POST \
   --url https://uat.mppglobal.com/api/accounts/%7BaccountId%7D/payment-details/sepa \
   --header 'content-type: application/json' \
-  --header 'x-clientpassword: MyP@ssword01' \
-  --header 'x-clientid: 433' \
+  --header 'x-clientpassword: Str0ngP@ssword' \
+  --header 'x-clientid: 1001' \
   --data '{"accountHolderName":"Steve Smith","iban":"IE64BOFI90583812345678",
   "bic":"BOFIIE2D","serviceId":148754}'
 ```
@@ -196,17 +227,17 @@ curl --request POST \
 var client = new RestClient("https://uat.mppglobal.com/api/accounts/%7BaccountId%7D/payment-details/sepa");
 var request = new RestRequest(Method.POST);
 request.AddHeader("content-type", "application/json");
-request.AddHeader("x-clientpassword", "MyP@ssword01");
-request.AddHeader("x-clientid", "433");
+request.AddHeader("x-clientpassword", "Str0ngP@ssword");
+request.AddHeader("x-clientid", "1001");
 request.AddParameter("application/json", "{\"accountHolderName\":\"Steve Smith\",
  "\"iban\":\"IE64BOFI90583812345678\",\"bic\":\"BOFIIE2D\",\"serviceId\":148754}", ParameterType.RequestBody);
 IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/%7BaccountId%7D/payment-details/sepa")
-  .header("x-clientid", "433")
-  .header("x-clientpassword", "MyP@ssword01")
+HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/123456/payment-details/sepa")
+  .header("x-clientid", "1001")
+  .header("x-clientpassword", "Str0ngP@ssword")
   .header("content-type", "application/json")
   .body("{\"accountHolderName\":\"Steve Smith\",\"iban\":\"IE64BOFI90583812345678\",\"bic\":\"BOFIIE2D\",
    "\"serviceId\":148754}")
@@ -214,11 +245,42 @@ HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/acco
 ```
 
 ```ruby
+require 'uri'
+require 'net/http'
 
+url = URI("https://uat.mppglobal.com/api/accounts/123456/payment-details/sepa")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Post.new(url)
+request["x-clientid"] = '1001'
+request["x-clientpassword"] = 'Str0ngP@ssword'
+request["x-version"] = '9.0.0'
+request["content-type"] = 'application/json'
+request.body = "{\"accountHolderName\":\"Steve Smith\",\"iban\":\"IE64BOFI90583812345678\",\"bic\":\"BOFIIE2D\",\"serviceId\":\"148754\"}"
+
+response = http.request(request)
 ```
 
 ```python
+import http.client
 
+conn = http.client.HTTPSConnection("uat.mppglobal.com")
+
+payload = "{\"accountHolderName\":\"Steve Smith\",\"iban\":\"IE64BOFI90583812345678\",\"bic\":\"BOFIIE2D\",\"serviceId\":\"148754\"}"
+
+headers = {
+    'x-clientid': "1001",
+    'x-clientpassword': "Str0ngP@ssword",
+    'x-version': "9.0.0",
+    'content-type': "application/json"
+    }
+
+conn.request("POST", "/api/accounts/123456/payment-details/sepa", payload, headers)
+
+res = conn.getresponse()
 ```
 > The above command returns an empty response alongside a HTTP 204
 
@@ -245,24 +307,24 @@ serviceId | integer | Yes | The eSuite ServiceId that this BACS wallet will be u
 ```shell
 curl --request GET \
   --url https://uat.mppglobal.com/api/accounts/123456/payment-details \
-  --header("x-clientid", "433") \
-  --header("x-clientpassword", "MyP@ssword01")\
+  --header("x-clientid", "1001") \
+  --header("x-clientpassword", "Str0ngP@ssword")\
   --data '{}'
 ```
 
 ```csharp
 var client = new RestClient("https://uat.mppglobal.com/api/accounts/123456/payment-details");
 var request = new RestRequest(Method.GET);
-request.AddHeader("x-clientpassword", "MyP@ssw0rd01");
-request.AddHeader("x-clientid", "433");
+request.AddHeader("x-clientpassword", "Str0ngP@ssword");
+request.AddHeader("x-clientid", "1001");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
 IRestResponse response = client.Execute(request);
 ```
 
 ```java
 HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/123456/payment-details")
-  .header("x-clientid", "433")
-  .header("x-clientpassword", "MyP@ssw0rd01")
+  .header("x-clientid", "1001")
+  .header("x-clientpassword", "Str0ngP@ssword")
   .body("{}")
   .asString();
 ```
