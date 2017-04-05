@@ -91,7 +91,7 @@ html, body {
   bottom: 0;
   width: $nav-width;
   background-color: $nav-bg;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: normal;
 
   // language selector for mobile devices
@@ -212,7 +212,7 @@ html, body {
 
     .tocify-item>a {
       padding-left: $nav-padding + $nav-indent;
-      font-size: 13px;
+      font-size: 15px;
       font-weight: normal;
     }
 
@@ -399,8 +399,8 @@ html, body {
 
   h1 {
     @extend %header-font;
-    font-size: 26px;
-    font-weight:bold;
+    font-size: 32px;
+    font-weight:normal;
     padding-top: 0.5em;
     padding-bottom: 0.65em;
     border-bottom: 1px solid #ddd;
@@ -418,8 +418,9 @@ html, body {
 
   h2 {
     @extend %header-font;
-    font-size: 20px;
-    font-weight:bold;
+    font-size: 24px;
+    font-weight:normal;
+    color:#333;
     margin-top: 4em;
     margin-bottom: 0;
     border-top: 1px solid #ddd;
@@ -430,7 +431,8 @@ html, body {
 
   h3 {
     @extend %header-font;
-    font-size: 16px;
+    font-size: 18px;
+    color:#333;
     margin-bottom: 0;
     padding-top: 1.2em;
     padding-bottom: 1em;
