@@ -37,13 +37,46 @@ HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/acco
   .header("x-clientid", "433")
   .header("x-clientpassword", "MyP@ssword01")
   .header("content-type", "application/json")
-  .body("{\"cardNumber\":\"4111111111111111\",\"cardType\":\"Visa\",\"expiryDate\":\"01/19\",
-     + "\"issueCode\":null,\"securityCode\":\"123\",\"billingHouseName\":\"Lilac Cottage\",
-     + "\"billingHouseFlatNumber\":\"12\",\"billingStreet\":\"Windermere Road\",
-     + "\"billingDistrict\":null,\"billingTownCity\":\"Chester\",\"billingCounty\":\"Cheshire\",
-     + "\"billingPostcode\":\"CH638BF\",\"billingCountry\":\"United Kingdom\",\"setDefault\":true,
-     + "\"associatedName\":\"My Visa Card\",\"skipPreAuth\":false}")
-  .asString();
+  .body("{\"cardNumber\":\"4111111111111111\",\"cardType\":\"Visa\",\"expiryDate\":\"01/19\",\"issueCode\":null,\"securityCode\":\"123\",\"billingHouseName\":\"Lilac Cottage\",\"billingHouseFlatNumber\":\"12\",\"billingStreet\":\"Windermere Road\",\"billingDistrict\":null,\"billingTownCity\":\"Chester\",\"billingCounty\":\"Cheshire\",\"billingPostcode\":\"CH638BF\",\"billingCountry\":\"United Kingdom\",\"setDefault\":true,\"associatedName\":\"My Visa Card\",\"skipPreAuth\":false}").asString();
+```
+
+```ruby
+require 'uri'
+require 'net/http'
+
+url = URI("https://uat.mppglobal.com/api/accounts/%7BaccountId%7D/payment-details/card")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Post.new(url)
+request["x-tokenid"] = '1001'
+request["x-sessionid"] = 'Str0ngP@ssword'
+request["x-version"] = '9.0.0'
+request["content-type"] = 'application/json'
+request.body = "{\"cardNumber\":\"4111111111111111\",\"cardType\":\"Visa\",\"expiryDate\":\"01/19\",\"issueCode\":null,\"cvv\":\"123\",\"billingHouseName\":\"Lilac House\",\"billingHouseFlatNumber\":\"12\",\"billingStreet\":\"Windermere Road\",\"billingDistrict\":null,\"billingTownCity\":\"Chester\",\"billingCounty\":\"Cheshire\",\"billingPostcode\":\"CH638BF\",\"billingCountry\":\"United Kingdom\",\"setDefault\":true,\"associatedName\":\"My Visa Card\",\"skipPreAuth\":false}"
+
+response = http.request(request)
+```
+
+```python
+import http.client
+
+conn = http.client.HTTPSConnection("uat.mppglobal.com")
+
+payload = "{\"cardNumber\":\"4111111111111111\",\"cardType\":\"Visa\",\"expiryDate\":\"01/19\",\"issueCode\":null,\"cvv\":\"123\",\"billingHouseName\":\"Lilac House\",\"billingHouseFlatNumber\":\"12\",\"billingStreet\":\"Windermere Road\",\"billingDistrict\":null,\"billingTownCity\":\"Chester\",\"billingCounty\":\"Cheshire\",\"billingPostcode\":\"CH638BF\",\"billingCountry\":\"United Kingdom\",\"setDefault\":true,\"associatedName\":\"My Visa Card\",\"skipPreAuth\":false}"
+
+headers = {
+    'x-tokenid': "1001",
+    'x-sessionid': "Str0ngP@ssword",
+    'x-version': "9.0.0",
+    'content-type': "application/json"
+    }
+
+conn.request("POST", "/api/accounts/%7BaccountId%7D/payment-details/card", payload, headers)
+
+res = conn.getresponse()
 ```
 
 > The above command returns JSON structured like this:
@@ -119,6 +152,14 @@ HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/acco
   .asString();
 ```
 
+```ruby
+
+```
+
+```python
+
+```
+
 > The above command returns an empty response alongside a HTTP 204
 
 
@@ -172,6 +213,13 @@ HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/acco
   .asString();
 ```
 
+```ruby
+
+```
+
+```python
+
+```
 > The above command returns an empty response alongside a HTTP 204
 
 
@@ -219,6 +267,43 @@ HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accou
   .asString();
 ```
 
+```ruby
+require 'uri'
+require 'net/http'
+
+url = URI("https://uat.mppglobal.com/api/accounts/123456/payment-details")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Get.new(url)
+request["x-tokenid"] = '1001'
+request["x-sessionid"] = 'Str0ngP@ssword'
+request["x-version"] = '9.0.0'
+request.body = "{}"
+
+response = http.request(request)
+puts response.read_body
+```
+
+```python
+import http.client
+
+conn = http.client.HTTPSConnection("uat.mppglobal.com")
+
+payload = "{}"
+
+headers = {
+    'x-tokenid': "1001",
+    'x-sessionid': "Str0ngP@ssword",
+    'x-version': "9.0.0"
+    }
+
+conn.request("GET", "/api/accounts/123456/payment-details", payload, headers)
+
+res = conn.getresponse()
+```
 > The above command returns JSON structured like this:
 
 ```json
