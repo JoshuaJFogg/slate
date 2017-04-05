@@ -521,7 +521,7 @@ html, body {
 
   code {
     background-color: rgba(0,0,0,0.09);
-    padding: 3px;
+    padding: 4px 10px;
     border-radius: 3px;
     @extend %break-words;
     @extend %code-font;
@@ -533,23 +533,29 @@ html, body {
   }
 
   aside {
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
     
-    margin-top: 1.5em;
+    margin-top: 2em;
     margin-bottom: 1.5em;
-    background: $aside-notice-bg;
+    /*background: $aside-notice-bg;*/
+    background: #eee;
     line-height: 1.6;
-    color:#fff;
+    color:#0059b3;
+    font-weight: bold;
 
     &.warning {
-      background-color: $aside-warning-bg;
-      
+      /*background-color: $aside-warning-bg;*/
+      background-color: #eee;
+      color: #cc0000;
+      font-weight: bold;
     }
 
     &.success {
-      background-color: $aside-success-bg;
-      
+      /*background-color: $aside-success-bg;*/
+      background-color: #eee;
+      color: #009933;
+      font-weight: bold;
     }
   }
 
@@ -560,15 +566,18 @@ html, body {
   }
 
   aside.notice:before {
-    @extend %icon-info-sign;
+    /*@extend %icon-info-sign;*/
+    content: url("../images/icon-info.png");
   }
 
   aside.warning:before {
-    @extend %icon-exclamation-sign;
+    /*@extend %icon-exclamation-sign;*/
+    content: url("../images/icon-alert.png");
   }
 
   aside.success:before {
-    @extend %icon-ok-sign;
+    /*@extend %icon-ok-sign;*/
+    content: url("../images/icon-tick.png");
   }
 
   .search-highlight {
