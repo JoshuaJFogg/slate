@@ -361,8 +361,8 @@ html, body {
     font-size: 26px;
     font-weight:bold;
     padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.65em;
+    border-bottom: 1px solid #ddd;
     margin-bottom: $h1-margin-bottom;
     margin-top: 2em;
     /*border-top: 1px solid #ddd;*/
@@ -381,8 +381,8 @@ html, body {
     font-weight:bold;
     margin-top: 4em;
     margin-bottom: 0;
-    border-top: 1px solid #ccc;
-    padding-top: 1.2em;
+    border-top: 1px solid #ddd;
+    padding-top: 1.3em;
     padding-bottom: 1.2em;
     background-image: linear-gradient(to bottom, rgba(#fff, 0.4), rgba(#fff, 0));
   }
@@ -558,7 +558,7 @@ html, body {
     clear:right;
 
     box-sizing: border-box;
-    
+    white-space: pre-wrap;
 
     @extend %right-col;
 
