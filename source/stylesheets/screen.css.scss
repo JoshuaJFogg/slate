@@ -55,6 +55,30 @@ html, body {
     $nav-subitem-bg;
 }
 
+
+
+
+/*
+
+#style-1::-webkit-scrollbar-track
+{ -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar
+{ width: 7px; background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar-thumb
+{ border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #555;
+}
+
+*/
+
+
 .tocify-wrapper {
   transition: left 0.3s ease-in-out;
 
@@ -222,6 +246,22 @@ html, body {
 
 }
 
+.tocify-wrapper::-webkit-scrollbar-track
+{ -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+.tocify-wrapper::-webkit-scrollbar
+{ width: 7px; background-color: #F5F5F5;
+}
+
+.tocify-wrapper::-webkit-scrollbar-thumb
+{ border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #CCC;
+}
+
 // button to show navigation on mobile devices
 #nav-button {
   span {
@@ -254,6 +294,7 @@ html, body {
   &:hover { opacity: 1; }
   &.open {left: $nav-width}
 }
+
 
 
 ////////////////////////////////////////////////////////////////////////////////
