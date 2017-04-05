@@ -6,7 +6,7 @@
 
 ```shell
 curl --request POST \
-  --url https://uat.mppglobal.com/api/ \
+  --url https://uat.mppglobal.com/api/... \
   --header 'content-type: application/json' \
   --header 'x-tokenId: BE52ADA2064C4F9A9D90F28D066D1CEE' \
   --header 'x-sessionId: BE52ADA2064C4F9A9D90F28D066D1RFT' \
@@ -14,7 +14,7 @@ curl --request POST \
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/");
+var client = new RestClient("https://uat.mppglobal.com/api/...");
 var request = new RestRequest(Method.POST);
 request.AddHeader("x-version", "9.0.0");
 request.AddHeader("x-sessionId", "BE52ADA2064C4F9A9D90F28D066D1RFT");
@@ -23,11 +23,47 @@ request.AddHeader("x-tokenId", "BE52ADA2064C4F9A9D90F28D066D1CEE");
 ```
 
 ```java
-HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/")
+HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/...")
   .header("x-tokenId", "BE52ADA2064C4F9A9D90F28D066D1CEE")
   .header("x-sessionId", "BE52ADA2064C4F9A9D90F28D066D1RFT")
   .header("x-version", "9.0.0")
   .asString();
+```
+
+```ruby
+require 'uri'
+require 'net/http'
+
+url = URI("https://uat.mppglobal.com/api/accounts/...")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Post.new(url)
+request["x-tokenid"] = 'BE52ADA2064C4F9A9D90F28D066D1CEE'
+request["x-sessionid"] = 'BE52ADA2064C4F9A9D90F28D066D1RFT'
+request["x-version"] = '9.0.0'
+
+response = http.request(request)
+```
+
+```python
+import http.client
+
+conn = http.client.HTTPSConnection("uat.mppglobal.com")
+
+payload = null
+
+headers = {
+    'x-tokenid': "BE52ADA2064C4F9A9D90F28D066D1CEE",
+    'x-sessionid': "BE52ADA2064C4F9A9D90F28D066D1RFT",
+    'x-version': "9.0.0"
+    }
+
+conn.request("POST", "/api/accounts/...", payload, headers)
+
+res = conn.getresponse()
 ```
 
 
@@ -88,6 +124,41 @@ HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/")
   .asString();
 ```
 
+```ruby
+require 'uri'
+require 'net/http'
+
+url = URI("https://uat.mppglobal.com/api/accounts/...")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Post.new(url)
+request["x-clientid"] = '1001'
+request["x-clientPassword"] = 'Str0ngP@ssword'
+request["x-version"] = '9.0.0'
+
+response = http.request(request)
+```
+
+```python
+import http.client
+
+conn = http.client.HTTPSConnection("uat.mppglobal.com")
+
+payload = null
+
+headers = {
+    'x-tokenid': "1001",
+    'x-clientPassword': "Str0ngP@ssword",
+    'x-version': "9.0.0"
+    }
+
+conn.request("POST", "/api/accounts/...", payload, headers)
+
+res = conn.getresponse()
+```
 
 > Make sure to replace `BE52ADA2064C4F9A9D90F28D066D1CEE` with your API key.
 
@@ -116,40 +187,6 @@ The <code>x-clientId</code> should never be revealed in the public domain nor be
 <aside class="warning">
 If you choose to integrate the eSuite API directly into your technology stack please be aware that in the event you are processing, storing or transmitting card data, your entire application will be inscope for PCI Level one compliance.
 </aside>
-
-## Requests
-
-> To authorize, use this code:
-
-```shell
-curl --request POST \
-  --url https://uat.mppglobal.com/api/ \
-  --header 'content-type: application/json' \
-  --header 'Authorization: 1001' \
-  --header 'x-version: 9.0.0' \
-```
-
-```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/");
-var request = new RestRequest(Method.POST);
-request.AddHeader("x-version", "9.0.0");
-request.AddHeader("Authorization", "Str0ngP@ssword");
-```
-
-```java
-HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/")
-  .header("Authorization", "BE52ADA2064C4F9A9D90F28D066D1CEE")
-  .header("x-version", "9.0.0")
-  .asString();
-```
-
-eSuite uses API keys to allow access to functionality. You can register a new eSuite API key via eSuite.
-
-eSuite expects for the API key to be included in all API requests to the server in a header, Authorization, that looks like the following:
-
-`Authorization: BE52ADA2064C4F9A9D90F28D066D1CEE`
-
-To support both types of integration, client-side and server-side, you will have the ability to restrict the functionality available to the API. These restrictions are configured at the point of generating the API Key in eSuite HQ
 
 ## Versioning
 The eSuite API operates a semantic versioning policy which is denoted using MAJOR.MINOR.PATCH (9.0.0). The x-version header is a mandatory parameter on *all* API requests.
