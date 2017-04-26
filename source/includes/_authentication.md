@@ -5,67 +5,45 @@
 > To authorize, use this code:
 
 ```shell
-curl --request POST \
-  --url https://uat.mppglobal.com/api/... \
-  --header 'content-type: application/json' \
-  --header 'x-tokenId: BE52ADA2064C4F9A9D90F28D066D1CEE' \
-  --header 'x-sessionId: BE52ADA2064C4F9A9D90F28D066D1RFT' \
-  --header 'x-version: 9.0.0' \
+
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/...");
-var request = new RestRequest(Method.POST);
-request.AddHeader("x-version", "9.0.0");
-request.AddHeader("x-sessionId", "BE52ADA2064C4F9A9D90F28D066D1RFT");
-request.AddHeader("x-tokenId", "BE52ADA2064C4F9A9D90F28D066D1CEE");
 
 ```
 
 ```java
-HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/...")
-  .header("x-tokenId", "BE52ADA2064C4F9A9D90F28D066D1CEE")
-  .header("x-sessionId", "BE52ADA2064C4F9A9D90F28D066D1RFT")
-  .header("x-version", "9.0.0")
-  .asString();
+
 ```
 
 ```ruby
-require 'uri'
-require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/...")
-
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true
-http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-
-request = Net::HTTP::Post.new(url)
-request["x-tokenid"] = 'BE52ADA2064C4F9A9D90F28D066D1CEE'
-request["x-sessionid"] = 'BE52ADA2064C4F9A9D90F28D066D1RFT'
-request["x-version"] = '9.0.0'
-
-response = http.request(request)
 ```
 
 ```python
-import http.client
 
-conn = http.client.HTTPSConnection("uat.mppglobal.com")
-
-payload = null
-
-headers = {
-    'x-tokenid': "BE52ADA2064C4F9A9D90F28D066D1CEE",
-    'x-sessionid': "BE52ADA2064C4F9A9D90F28D066D1RFT",
-    'x-version': "9.0.0"
-    }
-
-conn.request("POST", "/api/accounts/...", payload, headers)
-
-res = conn.getresponse()
 ```
 
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://uat.mppglobal.com/api/...",
+  "method": "POST",
+  "headers": {
+    "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
+    "x-version": "9.0.0",
+    "origin": "https://www.mppglobal.com",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": null;
+  }
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
 
 Client-to-server integrations are often the quickest to complete and allow you to get live in a matter of hours. To help aide this, MPP Global has developed the eSuite SDK which is an AngularJS application that contains UI elements covering the standard flows experienced by our exiting clients. If you decide you would prefer to build the eSuite API into your existing technology stack directly, this is certainly possible. Client-to-server API requests are restricted as to what features are available and the data that can be passed, such as configuring a price from the client-side application is not possible as it should never be accessible to the end-user to change how much they pay for an item.
 

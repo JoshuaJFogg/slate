@@ -399,7 +399,7 @@ res = conn.getresponse()
 
 This endpoint retrieves the payment details stored against an eSuite account.
 
-<aside class="warning">Only credit/debit cards and repeatable PayPal tokens are returned via this end-point.</aside>
+<aside class="warning">Only credit/debit cards and repeatable PayPal tokens are returned via this endpoint.</aside>
 
 ### HTTP Request
 
