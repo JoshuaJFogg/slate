@@ -1,6 +1,6 @@
-# Controller Name
+# Analytics
 
-## Specfic name of the endpoint e.g. Create Account
+## Retrieve Analytics Data
 
 ```shell
 
@@ -24,7 +24,7 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/`
+`GET http://uat.mppglobal.com/api/analytics/{method}`
 
 ### Parameters
 

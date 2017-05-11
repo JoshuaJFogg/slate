@@ -16,6 +16,18 @@ includes:
   - introduction
   - authentication
   - accounts
+  - social-signon
+  - address-book
+  - payment-details
+  - account-groups
+  - subscriptions
+  - vouchers
+  - payments
+  - access-management
+  - native-billing
+  - catalogues
+  - carts
+  - analytics
 
 search: true
 ---
