@@ -24,17 +24,16 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/api/carts`
+`POST http://uat.mppglobal.com/api/carts`
 
-### Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-name | string | Yes/No | What does the parameter represent?
 
-<aside class="success">
-Anything that needs to be called out to an integrator. Standard bootstrap classnames are available here: success, warning, error, info
-</aside>
+
+
+
+
+
+
 
 
 ## Create an Account's Cart
@@ -61,17 +60,17 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/api/accounts/{accountId}/carts`
+`POST http://uat.mppglobal.com/api/accounts/{accountId}/carts`
 
-### Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-name | string | Yes/No | What does the parameter represent?
 
-<aside class="success">
-Anything that needs to be called out to an integrator. Standard bootstrap classnames are available here: success, warning, error, info
-</aside>
+
+
+
+
+
+
+
 
 
 ## Add an Item to an Anonymous Cart
@@ -98,17 +97,32 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/api/carts/{cartReference}/line-items`
+`POST http://uat.mppglobal.com/api/carts/{cartReference}/line-items`
 
-### Parameters
+### POST Parameters
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-name | string | Yes/No | What does the parameter represent?
+explicitPricedItem | object | optional | Explicit Priced Item
+explicitPricedItem > description | string | optional | Description
+explicitPricedItem > pricing | object | optional | Pricing
+explicitPricedItem > pricing > grossAmount | number | optional | Gross Amount
+explicitPricedItem > pricing > netAmount | number | optional | Net Amount
+explicitPricedItem > pricing > taxAmount | number | optional | Tax Amount
+explicitPricedItem > pricing > currency | string | optional | Currency
+explicitPricedItem > quantity | integer | optional | Quantity
+explicitPricedItem > productId | integer | optional | Product Id
+explicitPricedItem > customLineItemParameters | array[object] | optional | Custom Parameters
+preconfiguredItem | object | optional | Preconfigured Item
+preconfiguredItem > description | string | optional | Description
+preconfiguredItem > productPriceId | integer | optional | Product Price Id
+preconfiguredItem > quantity | integer | optional | Quantity
+preconfiguredItem > customLineItemParameters | array[object] | optional | Custom Line Item Parameters
 
-<aside class="success">
-Anything that needs to be called out to an integrator. Standard bootstrap classnames are available here: success, warning, error, info
-</aside>
+
+
+
+
 
 
 ## Add an Item to an Account's Cart
@@ -135,17 +149,32 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/api/accounts/{accountId}/carts/{cartReference}/line-items`
+`POST http://uat.mppglobal.com/api/accounts/{accountId}/carts/{cartReference}/line-items`
 
-### Parameters
+### POST Parameters
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-name | string | Yes/No | What does the parameter represent?
+explicitPricedItem | object | optional | Explicit Priced Item
+explicitPricedItem > description | string | optional | Description
+explicitPricedItem > pricing | object | optional | Pricing
+explicitPricedItem > pricing > grossAmount | number | optional | Gross Amount
+explicitPricedItem > pricing > netAmount | number | optional | Net Amount
+explicitPricedItem > pricing > taxAmount | number | optional | Tax Amount
+explicitPricedItem > pricing > currency | string | optional | Currency
+explicitPricedItem > quantity | integer | optional | Quantity
+explicitPricedItem > productId | integer | optional | Product Id
+explicitPricedItem > customLineItemParameters | array[object] | optional | Custom Parameters
+preconfiguredItem | object | optional | Preconfigured Item
+preconfiguredItem > description | string | optional | Description
+preconfiguredItem > productPriceId | integer | optional | Product Price Id
+preconfiguredItem > quantity | integer | optional | Quantity
+preconfiguredItem > customLineItemParameters | array[object] | optional | Custom Line Item Parameters
 
-<aside class="success">
-Anything that needs to be called out to an integrator. Standard bootstrap classnames are available here: success, warning, error, info
-</aside>
+
+
+
+
 
 
 ## Retrieve an Anonymous Cart
@@ -174,15 +203,30 @@ Description of what the endpoint does.
 
 `GET http://uat.mppglobal.com/api/carts/{cartIdentifier}`
 
-### Parameters
+### Response Parameters
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-name | string | Yes/No | What does the parameter represent?
+cartItems | array[object] | Optional | The list of cart Items
+cartItems > lineItemId | integer | Optional | Line Item Id
+cartItems > itemDescription | string | Optional | Description of the Line Item
+cartItems > pricing | object | Optional | Pricing
+cartItems > pricing > grossAmount | number | Optional | Gross Amount
+cartItems > pricing > netAmount | number | Optional | Net Amount
+cartItems > pricing > taxAmount | number | Optional | Tax Amount
+cartItems > pricing > currency | string | Optional | Currency
+cartItems > quantity | integer | Optional | Quantity of items
+cartItems > productInfo | object | Optional | 
+cartItems > productInfo > productId | integer | Optional | List of cart item detail parameters
+cartItems > customLineItemParameters | array[object] | Optional | List of cart item detail parameters
+cartItems > customLineItemParameters > parameterName | string | Optional | Name of the custom parameter
+cartItems > customLineItemParameters > parameterValue | string | Optional | Value of the custom parameter
+cartItems > lineItemReference | string | Optional | Line Item Reference
 
-<aside class="success">
-Anything that needs to be called out to an integrator. Standard bootstrap classnames are available here: success, warning, error, info
-</aside>
+
+
+
+
 
 
 ## Retrieve an Account's Cart
@@ -211,15 +255,29 @@ Description of what the endpoint does.
 
 `GET http://uat.mppglobal.com/api/accounts/{accountId}/carts/{cartIdentifier}`
 
-### Parameters
+### Response Parameters
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-name | string | Yes/No | What does the parameter represent?
+cartItems | array[object] | Optional | The list of cart Items
+cartItems > lineItemId | integer | Optional | Line Item Id
+cartItems > itemDescription | string | Optional | Description of the Line Item
+cartItems > pricing | object | Optional | Pricing
+cartItems > pricing > grossAmount | number | Optional | Gross Amount
+cartItems > pricing > netAmount | number | Optional | Net Amount
+cartItems > pricing > taxAmount | number | Optional | Tax Amount
+cartItems > pricing > currency | string | Optional | Currency
+cartItems > quantity | integer | Optional | Quantity of items
+cartItems > productInfo | object | Optional | 
+cartItems > productInfo > productId | integer | Optional | List of cart item detail parameters
+cartItems > customLineItemParameters | array[object] | Optional | List of cart item detail parameters
+cartItems > customLineItemParameters > parameterName | string | Optional | Name of the custom parameter
+cartItems > customLineItemParameters > parameterValue | string | Optional | Value of the custom parameter
+cartItems > lineItemReference | string | Optional | Line Item Reference
 
-<aside class="success">
-Anything that needs to be called out to an integrator. Standard bootstrap classnames are available here: success, warning, error, info
-</aside>
+
+
+
 
 
 ## Delete an Anonymous Cart
@@ -246,17 +304,17 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/api/carts/{cartResourceReference}`
+`DELETE http://uat.mppglobal.com/api/carts/{cartResourceReference}`
 
-### Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-name | string | Yes/No | What does the parameter represent?
 
-<aside class="success">
-Anything that needs to be called out to an integrator. Standard bootstrap classnames are available here: success, warning, error, info
-</aside>
+
+
+
+
+
+
+
 
 
 ## Delete an Account's Cart
@@ -283,14 +341,13 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/api/accounts/{accountId}/carts/{cartResourceReference}`
+`DELETE http://uat.mppglobal.com/api/accounts/{accountId}/carts/{cartResourceReference}`
 
-### Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-name | string | Yes/No | What does the parameter represent?
 
-<aside class="success">
-Anything that needs to be called out to an integrator. Standard bootstrap classnames are available here: success, warning, error, info
-</aside>
+
+
+
+
+
+

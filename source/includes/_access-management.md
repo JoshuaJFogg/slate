@@ -24,17 +24,21 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/api/accounts/{accountId}/entitlements`
+`POST http://uat.mppglobal.com/api/accounts/{accountId}/entitlements`
 
-### Parameters
+### POST Parameters
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-name | string | Yes/No | What does the parameter represent?
+name | string | Optional | The name of entitlement
+identifier | string | Yes | The identifier of entitlement
+startDate | string | Yes | The create date of the entitlement
+endDate | string | Yes | The expiry of the entitlement
 
-<aside class="success">
-Anything that needs to be called out to an integrator. Standard bootstrap classnames are available here: success, warning, error, info
-</aside>
+
+
+
+
 
 
 ## Search for Access
@@ -63,15 +67,25 @@ Description of what the endpoint does.
 
 `GET http://uat.mppglobal.com/api/accounts/{accountId}/entitlements/search`
 
-### Parameters
+### Query string
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-name | string | Yes/No | What does the parameter represent?
+createDateMin | string | Optional | 1 validations
+createDateMax | string | Optional | 1 validations
+startDateMin | string | Optional | 1 validations
+startDateMax | string | Optional | 1 validations
+endDateMin | string | Optional | 1 validations
+endDateMax | string | Optional | 1 validations
+entitlementIdentifier | string | Optional | 
+rowsPerPage | integer | Optional | 1 validations
+currentPage | integer | Optional | 1 validations
+exactMatch | boolean | Optional | 
 
-<aside class="success">
-Anything that needs to be called out to an integrator. Standard bootstrap classnames are available here: success, warning, error, info
-</aside>
+
+
+
+
 
 
 ## Retrieve all Access
@@ -100,15 +114,20 @@ Description of what the endpoint does.
 
 `GET http://uat.mppglobal.com/api/accounts/{accountId}/entitlements`
 
-### Parameters
+### Response Parameters
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-name | string | Yes/No | What does the parameter represent?
+entitlements | string | Optional | The list of current account entitlements
+name | string | Optional | The name of entitlement
+identifier | string | Required | The identifier of entitlement
+startDate | string | Required | The create date of the entitlement
+endDate | string | Required | The expire date of the entitlement
 
-<aside class="success">
-Anything that needs to be called out to an integrator. Standard bootstrap classnames are available here: success, warning, error, info
-</aside>
+
+
+
+
 
 
 ## Validate Access
@@ -137,15 +156,16 @@ Description of what the endpoint does.
 
 `GET http://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}`
 
-### Parameters
+### Query String
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-name | string | Yes/No | What does the parameter represent?
+incrementUsage | boolean | Optional | 
+deviceIdentifier | string | Optional | 
 
-<aside class="success">
-Anything that needs to be called out to an integrator. Standard bootstrap classnames are available here: success, warning, error, info
-</aside>
+
+
+
 
 
 ## Delete Access
@@ -172,14 +192,11 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}`
+`DELETE http://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}`
 
-### Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-name | string | Yes/No | What does the parameter represent?
 
-<aside class="success">
-Anything that needs to be called out to an integrator. Standard bootstrap classnames are available here: success, warning, error, info
-</aside>
+
+
+
+

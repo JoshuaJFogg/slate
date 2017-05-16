@@ -24,17 +24,44 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/api/accounts/external-providers`
+`POST http://uat.mppglobal.com/api/accounts/external-providers`
 
-### Parameters
+### Response Parameters
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-name | string | Yes/No | What does the parameter represent?
+account | object | Optional | Account
+account > accountId | integer | Optional | Id of the account
+account > resourceReference | string | Optional | Resource reference
+account > status | string | Optional | Status of account
+account > email | string | Optional | Email of account
+account > clientUserId | string | Yes | Client Id of the user
+account > password | string | Optional | Account password
+account > currentPassword | string | Optional | Current account password
+account > newPassword | string | Optional | New account password
+account > salutation | string | Optional | Salutation for account
+account > firstName | string | Optional | Account first name
+account > lastName | string | Optional | Account last name
+account > phoneNumber | string | Optional | Account phone number
+account > mobileNumber | string | Optional | Account mobile number
+account > dateOfBirth | string | Optional | Date of birth of the Account
+account > gender | string | Optional | Gender
+account > addresses | array[object] | Optional | Addresses of Account
+account > addresses > addressType | string | Optional | Address type
+account > addresses > houseName | string | Optional | House name
+account > addresses > houseNumber | string | Optional | House number
+account > addresses > street | string | Optional | Street name
+account > addresses > townCity | string | Optional | Name of town city
+account > addresses > district | string | Optional | Name of district
+account > addresses > state | string | Optional | State
+account > addresses > county | string | Optional | County
+account > addresses > postCode | string | Optional | Postcode
+account > addresses > country | string | Optional | Country
+account > addresses > isDefault | boolean | Optional | Is default
+account > customParameters | object | Optional | Custom parameters
+sessionToken | string | Optional | The session token
 
-<aside class="success">
-Anything that needs to be called out to an integrator. Standard bootstrap classnames are available here: success, warning, error, info
-</aside>
+
 
 
 ## Retrieve Available Third parties 
@@ -63,15 +90,15 @@ Description of what the endpoint does.
 
 `GET http://uat.mppglobal.com/api/accounts/{accountId}/external-providers`
 
-### Parameters
+### Response Parameters
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-name | string | Yes/No | What does the parameter represent?
+availableProviders | array[object] | Optional | {MppGlobal.Api.Rest.Dtos.v1.UserAuthenticationProvider}
+availableProviders > providerName | string | Optional | The name of 3rd party authentication provider
+availableProviders > accountLinked | boolean | Optional | The account status
 
-<aside class="success">
-Anything that needs to be called out to an integrator. Standard bootstrap classnames are available here: success, warning, error, info
-</aside>
+
 
 
 ## Link Facebook Account 
@@ -98,17 +125,19 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/api/accounts/link/external-providers/facebook`
+`POST http://uat.mppglobal.com/api/accounts/link/external-providers/facebook`
 
-### Parameters
+### POST Parameters
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-name | string | Yes/No | What does the parameter represent?
+facebookRedirectURI | string | Yes | Gets or sets the FacebookRedirectURI
+authorisationCode | string | Optional | AuthorisationCode
+accessToken | string | Optional | AccessToken
+applicationIdentifier | string | Yes | ApplicationIdentifier
 
-<aside class="success">
-Anything that needs to be called out to an integrator. Standard bootstrap classnames are available here: success, warning, error, info
-</aside>
+
+
 
 
 ## Link Janrain Account 
@@ -135,17 +164,17 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/api/accounts/link/external-providers/janrain`
+`POST http://uat.mppglobal.com/api/accounts/link/external-providers/janrain`
 
-### Parameters
+### POST Parameters
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-name | string | Yes/No | What does the parameter represent?
+accessToken | string | Yes | Gets or sets the AccessToken
 
-<aside class="success">
-Anything that needs to be called out to an integrator. Standard bootstrap classnames are available here: success, warning, error, info
-</aside>
+
+
+
 
 
 ## Authenticate via Facebook 
@@ -172,17 +201,20 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/api/accounts/authenticate/external-providers/facebook`
+`POST http://uat.mppglobal.com/api/accounts/authenticate/external-providers/facebook`
 
-### Parameters
+### POST Parameters
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-name | string | Yes/No | What does the parameter represent?
+facebookRedirectURI | string | Yes | FacebookRedirectURI
+authorisationCode | string | Optional | Authorisation Code
+accessToken | string | Optional | Access Token
+applicationIdentifier | string | Yes | Application Identifier
 
-<aside class="success">
-Anything that needs to be called out to an integrator. Standard bootstrap classnames are available here: success, warning, error, info
-</aside>
+
+
+
 
 
 ## Authenticate via Janrain 
@@ -209,14 +241,14 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/api/accounts/authenticate/external-providers/janrain`
+`POST http://uat.mppglobal.com/api/accounts/authenticate/external-providers/janrain`
 
-### Parameters
+### POST Parameters
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-name | string | Yes/No | What does the parameter represent?
+accessToken | string | Yes | Gets the access token
 
-<aside class="success">
-Anything that needs to be called out to an integrator. Standard bootstrap classnames are available here: success, warning, error, info
-</aside>
+
+
+

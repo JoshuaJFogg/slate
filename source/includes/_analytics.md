@@ -26,12 +26,16 @@ Description of what the endpoint does.
 
 `GET http://uat.mppglobal.com/api/analytics/{method}`
 
-### Parameters
+### Query string
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-name | string | Yes/No | What does the parameter represent?
+startdate | string | optional | DateTime (optional) for start of query
+enddate | string | optional | DateTime (optional) for end of query
 
-<aside class="success">
-Anything that needs to be called out to an integrator. Standard bootstrap classnames are available here: success, warning, error, info
-</aside>
+
+
+
+
+
+

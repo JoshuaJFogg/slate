@@ -26,15 +26,60 @@ Description of what the endpoint does.
 
 `GET http://uat.mppglobal.com/api/subscriptions`
 
-### Parameters
+### Response Parameters
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-name | string | Yes/No | What does the parameter represent?
+subscriptionsInfo | array[object] | Optional | Subscriptions info
+subscriptionsInfo > subscriptionId | string | Optional | Subscription id
+subscriptionsInfo > resourceReference | string | Optional | Resource reference
+subscriptionsInfo > subscriptionGroup | string | Optional | Subscription group
+subscriptionsInfo > subscriptionGroupTag | string | Optional | Subscription group tag
+subscriptionsInfo > subscriptionGroupStatus | string | Optional | Subscription group status
+subscriptionsInfo > subscriptionDescription | string | Optional | Subscription description
+subscriptionsInfo > subscriptionTitle | string | Optional | Subscription title
+subscriptionsInfo > subscriptionType | string | Optional | Subscription type
+subscriptionsInfo > subscriptionStatus | string | Optional | Subscription status
+subscriptionsInfo > initialPricingEnabled | boolean | Optional | Initial pricing enabled
+subscriptionsInfo > trialInfo | object | Optional | Trial info
+subscriptionsInfo > trialInfo > trialEnabled | boolean | Optional | Trial enabled
+subscriptionsInfo > trialInfo > trialUnit | string | Optional | Trial unit
+subscriptionsInfo > trialInfo > trialPeriod | integer | Optional | Trial period
+subscriptionsInfo > trialInfo > discountPercentage | number | Optional | Discount percentage
+subscriptionsInfo > trialInfo > nonPaymentTrial | boolean | Optional | Non payment trial
+subscriptionsInfo > contractInfo | object | Optional | Contract info
+subscriptionsInfo > contractInfo > contractUnit | string | Optional | Contract Unit
+subscriptionsInfo > contractInfo > contractPeriod | integer | Optional | Contract period
+subscriptionsInfo > contractInfo > autoRenewDefault | string | Optional | Auto renew default
+subscriptionsInfo > pricingInfo | array[object] | Optional | Subscription pricing
+subscriptionsInfo > pricingInfo > currency | string | Optional | Currency
+subscriptionsInfo > pricingInfo > initialPrice | number | Optional | Initial price
+subscriptionsInfo > pricingInfo > priceIsGross | boolean | Optional | Price is gross
+subscriptionsInfo > pricingInfo > renewalPrice | number | Optional | Renewal price
+subscriptionsInfo > pricingInfo > priceId | integer | Optional | Price id
+subscriptionsInfo > pricingInfo > taxCategory | string | Optional | Tax category
+subscriptionsInfo > pricingInfo > resourceReference | string | Optional | Resource reference
+subscriptionsInfo > pricingInfo > paymentMethod | string | Optional | Payment Method
+subscriptionsInfo > allowedPaymentMethods | array[string] | Optional | Alowed payment methods
+subscriptionsInfo > customParameters | array[object] | Optional | Custom parameters
+subscriptionsInfo > customParameters > parameterName | string | Optional | Name of the custom parameter
+subscriptionsInfo > customParameters > parameterType | string | Optional | Parameter type
+subscriptionsInfo > customParameters > parameterValue | string | Optional | Value of the custom parameter
+subscriptionsInfo > images | array[object] | Optional | Images
+subscriptionsInfo > images > imageId | integer | Optional | Image identifier
+subscriptionsInfo > images > displayName | string | Optional | Display name
+subscriptionsInfo > images > fileName | string | Optional | File name
+subscriptionsInfo > images > default | boolean | Optional | Specify if image is default
+subscriptionsInfo > images > location | string | Optional | Path to the image
+subscriptionsInfo > groupLicensing | object | Optional | Group licensing
+subscriptionsInfo > groupLicensing > standard | integer | Optional | Standard
+subscriptionsInfo > groupLicensing > overflow | integer | Optional | Overflow
 
-<aside class="success">
-Anything that needs to be called out to an integrator. Standard bootstrap classnames are available here: success, warning, error, info
-</aside>
+
+
+
+
+
 
 
 ## Retrieve Filtered Subscriptions
@@ -63,15 +108,59 @@ Description of what the endpoint does.
 
 `GET http://uat.mppglobal.com/api/subscriptions/search`
 
-### Parameters
+### Response Parameters
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-name | string | Yes/No | What does the parameter represent?
+subscriptionsInfo | array[object] | Optional | Subscriptions info
+subscriptionsInfo > subscriptionId | string | Optional | Subscription id
+subscriptionsInfo > resourceReference | string | Optional | Resource reference
+subscriptionsInfo > subscriptionGroup | string | Optional | Subscription group
+subscriptionsInfo > subscriptionGroupTag | string | Optional | Subscription group tag
+subscriptionsInfo > subscriptionGroupStatus | string | Optional | Subscription group status
+subscriptionsInfo > subscriptionDescription | string | Optional | Subscription description
+subscriptionsInfo > subscriptionTitle | string | Optional | Subscription title
+subscriptionsInfo > subscriptionType | string | Optional | Subscription type
+subscriptionsInfo > subscriptionStatus | string | Optional | Subscription status
+subscriptionsInfo > initialPricingEnabled | boolean | Optional | Initial pricing enabled
+subscriptionsInfo > trialInfo | object | Optional | Trial info
+subscriptionsInfo > trialInfo > trialEnabled | boolean | Optional | Trial enabled
+subscriptionsInfo > trialInfo > trialUnit | string | Optional | Trial unit
+subscriptionsInfo > trialInfo > trialPeriod | integer | Optional | Trial period
+subscriptionsInfo > trialInfo > discountPercentage | number | Optional | Discount percentage
+subscriptionsInfo > trialInfo > nonPaymentTrial | boolean | Optional | Non payment trial
+subscriptionsInfo > contractInfo | object | Optional | Contract info
+subscriptionsInfo > contractInfo > contractUnit | string | Optional | Contract Unit
+subscriptionsInfo > contractInfo > contractPeriod | integer | Optional | Contract period
+subscriptionsInfo > contractInfo > autoRenewDefault | string | Optional | Auto renew default
+subscriptionsInfo > pricingInfo | array[object] | Optional | Subscription pricing
+subscriptionsInfo > pricingInfo > currency | string | Optional | Currency
+subscriptionsInfo > pricingInfo > initialPrice | number | Optional | Initial price
+subscriptionsInfo > pricingInfo > priceIsGross | boolean | Optional | Price is gross
+subscriptionsInfo > pricingInfo > renewalPrice | number | Optional | Renewal price
+subscriptionsInfo > pricingInfo > priceId | integer | Optional | Price id
+subscriptionsInfo > pricingInfo > taxCategory | string | Optional | Tax category
+subscriptionsInfo > pricingInfo > resourceReference | string | Optional | Resource reference
+subscriptionsInfo > pricingInfo > paymentMethod | string | Optional | Payment Method
+subscriptionsInfo > allowedPaymentMethods | array[string] | Optional | Alowed payment methods
+subscriptionsInfo > customParameters | array[object] | Optional | Custom parameters
+subscriptionsInfo > customParameters > parameterName | string | Optional | Name of the custom parameter
+subscriptionsInfo > customParameters > parameterType | string | Optional | Parameter type
+subscriptionsInfo > customParameters > parameterValue | string | Optional | Value of the custom parameter
+subscriptionsInfo > images | array[object] | Optional | Images
+subscriptionsInfo > images > imageId | integer | Optional | Image identifier
+subscriptionsInfo > images > displayName | string | Optional | Display name
+subscriptionsInfo > images > fileName | string | Optional | File name
+subscriptionsInfo > images > default | boolean | Optional | Specify if image is default
+subscriptionsInfo > images > location | string | Optional | Path to the image
+subscriptionsInfo > groupLicensing | object | Optional | Group licensing
+subscriptionsInfo > groupLicensing > standard | integer | Optional | Standard
+subscriptionsInfo > groupLicensing > overflow | integer | Optional | Overflow
 
-<aside class="success">
-Anything that needs to be called out to an integrator. Standard bootstrap classnames are available here: success, warning, error, info
-</aside>
+
+
+
+
 
 
 ## Retrieve All Products
@@ -100,15 +189,48 @@ Description of what the endpoint does.
 
 `GET http://uat.mppglobal.com/api/products`
 
-### Parameters
+### Response Parameters
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-name | string | Yes/No | What does the parameter represent?
+products | array[object] | Optional | List of products
+products > productId | integer | Optional | Product identifier
+products > status | string | Optional | Product status
+products > title | string | Optional | Title
+products > description | string | Optional | Description
+products > pricing | array[object] | Optional | Pricing
+products > pricing > currency | string | Optional | IsoCode
+products > pricing > purchaseInfo | array[object] | Optional | Purchase info
+products > pricing > purchaseInfo > paymentMethod | array[object] | Optional | Payment method
+products > pricing > purchaseInfo > paymentMethod > grossAmount | number | Optional | Gross amount
+products > pricing > purchaseInfo > paymentMethod > paymentMethod | string | Optional | Payment method
+products > pricing > purchaseInfo > paymentMethod > priceId | string | Optional | Price id
+products > pricing > purchaseInfo > paymentMethod > resourceReference | string | Optional | Resource Reference for the PriceId
+products > pricing > purchaseInfo > roleInfo | object | Optional | Pricing role
+products > pricing > purchaseInfo > roleInfo > roleId | string | Optional | Role identifier
+products > pricing > purchaseInfo > roleInfo > clientRef | string | Optional | Client reference
+products > pricing > purchaseInfo > roleInfo > title | string | Optional | Title
+products > images | array[object] | Optional | Images of the product
+products > images > imageId | integer | Optional | Image identifier
+products > images > displayName | string | Optional | Display name
+products > images > fileName | string | Optional | File name
+products > images > default | boolean | Optional | Specify if image is default
+products > images > location | string | Optional | Path to the image
+products > supplier | object | Optional | Suplier details
+products > supplier > suppliedId | integer | Optional | Suplier identifier
+products > supplier > name | string | Optional | Name
+products > type | object | Optional | Product type
+products > type > typeId | integer | Optional | Type id
+products > type > name | string | Optional | Type name
+products > customParameters | array[object] | Optional | Custom parameters
+products > customParameters > parameterName | string | Optional | Name of the custom parameter
+products > customParameters > parameterValue | string | Optional | Value of the custom parameter
+products > resourceReference | string | Optional | Resource Reference for the ProductId
 
-<aside class="success">
-Anything that needs to be called out to an integrator. Standard bootstrap classnames are available here: success, warning, error, info
-</aside>
+
+
+
+
 
 
 ## Retrieve Filtered Products
@@ -137,12 +259,45 @@ Description of what the endpoint does.
 
 `GET http://uat.mppglobal.com/api/products/search`
 
-### Parameters
+### Response Parameters
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-name | string | Yes/No | What does the parameter represent?
+products | array[object] | Optional | List of products
+products > productId | integer | Optional | Product identifier
+products > status | string | Optional | Product status
+products > title | string | Optional | Title
+products > description | string | Optional | Description
+products > pricing | array[object] | Optional | Pricing
+products > pricing > currency | string | Optional | IsoCode
+products > pricing > purchaseInfo | array[object] | Optional | Purchase info
+products > pricing > purchaseInfo > paymentMethod | array[object] | Optional | Payment method
+products > pricing > purchaseInfo > paymentMethod > grossAmount | number | Optional | Gross amount
+products > pricing > purchaseInfo > paymentMethod > paymentMethod | string | Optional | Payment method
+products > pricing > purchaseInfo > paymentMethod > priceId | string | Optional | Price id
+products > pricing > purchaseInfo > paymentMethod > resourceReference | string | Optional | Resource Reference for the PriceId
+products > pricing > purchaseInfo > roleInfo | object | Optional | Pricing role
+products > pricing > purchaseInfo > roleInfo > roleId | string | Optional | Role identifier
+products > pricing > purchaseInfo > roleInfo > clientRef | string | Optional | Client reference
+products > pricing > purchaseInfo > roleInfo > title | string | Optional | Title
+products > images | array[object] | Optional | Images of the product
+products > images > imageId | integer | Optional | Image identifier
+products > images > displayName | string | Optional | Display name
+products > images > fileName | string | Optional | File name
+products > images > default | boolean | Optional | Specify if image is default
+products > images > location | string | Optional | Path to the image
+products > supplier | object | Optional | Suplier details
+products > supplier > suppliedId | integer | Optional | Suplier identifier
+products > supplier > name | string | Optional | Name
+products > type | object | Optional | Product type
+products > type > typeId | integer | Optional | Type id
+products > type > name | string | Optional | Type name
+products > customParameters | array[object] | Optional | Custom parameters
+products > customParameters > parameterName | string | Optional | Name of the custom parameter
+products > customParameters > parameterValue | string | Optional | Value of the custom parameter
+products > resourceReference | string | Optional | Resource Reference for the ProductId
 
-<aside class="success">
-Anything that needs to be called out to an integrator. Standard bootstrap classnames are available here: success, warning, error, info
-</aside>
+
+
+
+
