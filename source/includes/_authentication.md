@@ -5,23 +5,23 @@
 > To authorize, use this code:
 
 ```shell
-
+Not Supported
 ```
 
 ```csharp
-
+Not Supported
 ```
 
 ```java
-
+Not Supported
 ```
 
 ```ruby
-
+Not Supported
 ```
 
 ```python
-
+Not Supported
 ```
 
 ```javascript

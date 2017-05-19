@@ -173,7 +173,7 @@ _* It is mandatory to pass either an email address or a clientUserId. It is poss
 
 ```shell
 curl --request GET \
-  --url https://uat.mppglobal.com/api/accounts/123456 \
+  --url https://uat.mppglobal.com/api/accounts/{accountId} \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
   --header 'x-version: 9.0.0' \
@@ -181,7 +181,7 @@ curl --request GET \
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/123456");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}");
 var request = new RestRequest(Method.GET);
 request.AddHeader("x-version", "9.0.0");
 request.AddHeader("x-clientId", "1001");
@@ -191,7 +191,7 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/123456")
+HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountId}")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-version", "9.0.0")
@@ -203,7 +203,7 @@ HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accou
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/123456")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountId}")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -232,7 +232,7 @@ headers = {
     'x-version': "9.0.0"
     }
 
-conn.request("GET", "/api/accounts/123456", payload, headers)
+conn.request("GET", "/api/accounts/{accountId}", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -244,7 +244,7 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/123456",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountId}",
   "method": "GET",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
@@ -299,7 +299,7 @@ $.ajax(settings).done(function (response) {
 Once an account has been created within the eSuite platform, it is possible to return the account resource using the REST API.
 ### URL Endpoint
 
-`GET http://uat.mppglobal.com/api/accounts/123456`
+`GET http://uat.mppglobal.com/api/accounts/{accountId}`
 
 ### Response Parameters
 
@@ -332,7 +332,7 @@ customParameters | dictionary | No | A collection of custom attributes stored ag
 
 ```shell
 curl --request PUT \
-  --url https://uat.mppglobal.com/api/accounts/123456 \
+  --url https://uat.mppglobal.com/api/accounts/{accountId} \
   --header 'content-type: application/json' \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
@@ -341,7 +341,7 @@ curl --request PUT \
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/123456");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}");
 var request = new RestRequest(Method.PUT);
 request.AddHeader("content-type", "application/json");
 request.AddHeader("x-version", "9.0.0");
@@ -352,7 +352,7 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.put("https://uat.mppglobal.com/api/accounts/123456")
+HttpResponse<String> response = Unirest.put("https://uat.mppglobal.com/api/accounts/{accountId}")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-version", "9.0.0")
@@ -365,7 +365,7 @@ HttpResponse<String> response = Unirest.put("https://uat.mppglobal.com/api/accou
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/123456")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountId}")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -396,7 +396,7 @@ headers = {
     'content-type': "application/json"
     }
 
-conn.request("PUT", "/api/accounts/123456", payload, headers)
+conn.request("PUT", "/api/accounts/{accountId}", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -408,7 +408,7 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/123456",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountId}",
   "method": "PUT",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
@@ -465,7 +465,7 @@ It is a requirement of the eSuite platform that an account be created in order t
 
 ### URL Endpoint
 
-`PUT http://uat.mppglobal.com/api/accounts/123456`
+`PUT http://uat.mppglobal.com/api/accounts/{accountId}`
 
 ### PUT Parameters
 
@@ -501,7 +501,7 @@ _* It is mandatory to pass either an email address or a clientUserId. It is poss
 
 ```shell
 curl --request DELETE \
-  --url https://uat.mppglobal.com/api/accounts/123456 \
+  --url https://uat.mppglobal.com/api/accounts/{accountId} \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
   --header 'x-version: 9.0.0' \
@@ -509,7 +509,7 @@ curl --request DELETE \
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/123456");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}");
 var request = new RestRequest(Method.DELETE);
 request.AddHeader("x-version", "9.0.0");
 request.AddHeader("x-clientId", "1001");
@@ -519,7 +519,7 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.put("https://uat.mppglobal.com/api/accounts/123456")
+HttpResponse<String> response = Unirest.put("https://uat.mppglobal.com/api/accounts/{accountId}")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-version", "9.0.0")
@@ -531,7 +531,7 @@ HttpResponse<String> response = Unirest.put("https://uat.mppglobal.com/api/accou
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/123456")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountId}")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -561,7 +561,7 @@ headers = {
     'x-version': "9.0.0"
     }
 
-conn.request("DELETE", "/api/accounts/123456", payload, headers)
+conn.request("DELETE", "/api/accounts/{accountId}", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -573,7 +573,7 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/123456",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountId}",
   "method": "DELETE",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
@@ -599,14 +599,14 @@ It is a requirement of the eSuite platform that an account be created in order t
 
 ### URL Endpoint
 
-`DELETE http://uat.mppglobal.com/api/accounts/123456`
+`DELETE http://uat.mppglobal.com/api/accounts/{accountId}`
 
 
 ## Trigger Account Verification
 
 ```shell
 curl --request POST \
-  --url https://uat.mppglobal.com/api/accounts/123456/verify \
+  --url https://uat.mppglobal.com/api/accounts/{accountId}/verify \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
   --header 'x-version: 9.0.0' \
@@ -614,7 +614,7 @@ curl --request POST \
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/123456/verify");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/verify");
 var request = new RestRequest(Method.POST);
 request.AddHeader("x-version", "9.0.0");
 request.AddHeader("x-clientId", "1001");
@@ -624,7 +624,7 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/123456/verify")
+HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/{accountId}/verify")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-version", "9.0.0")
@@ -636,7 +636,7 @@ HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/acco
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/123456/verify")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/verify")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -666,7 +666,7 @@ headers = {
     'x-version': "9.0.0"
     }
 
-conn.request("POST", "/api/accounts/123456/verify", payload, headers)
+conn.request("POST", "/api/accounts/{accountId}/verify", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -678,7 +678,7 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/123456/verify",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/verify",
   "method": "POST",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
@@ -704,5 +704,342 @@ It is a requirement of the eSuite platform that an account be created in order t
 
 ### URL Endpoint
 
-`POST http://uat.mppglobal.com/api/accounts/123456/verify`
+`POST http://uat.mppglobal.com/api/accounts/{accountId}/verify`
 
+## Complete Account Verification
+
+```shell
+curl --request POST \
+  --url https://uat.mppglobal.com/api/accounts/verify \
+  --header 'x-clientId: 1001' \
+  --header 'x-clientPassword: Str0ngP@ssword' \
+  --header 'x-version: 9.0.0' \
+  --data '{"verificationToken":"BE52ADA2064C4F9A9D90F28D066D1RFT"}'
+```
+
+```csharp
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/verify");
+var request = new RestRequest(Method.POST);
+request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-clientId", "1001");
+request.AddHeader("x-clientPassword", "Str0ngP@ssword");
+request.AddParameter("application/json", "{\"verificationToken\":\"BE52ADA2064C4F9A9D90F28D066D1RFT\"}", ParameterType.RequestBody);
+IRestResponse response = client.Execute(request);
+```
+
+```java
+HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/verify")
+  .header("x-clientId", "1001")
+  .header("x-clientPassword", "Str0ngP@ssword")
+  .header("x-version", "9.0.0")
+  .body("{\"verificationToken\":\"BE52ADA2064C4F9A9D90F28D066D1RFT\"}")
+  .asString();
+```
+
+```ruby
+require 'uri'
+require 'net/http'
+
+url = URI("https://uat.mppglobal.com/api/accounts/verify")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Patch.new(url)
+request["x-clientid"] = '1001'
+request["x-clientPassword"] = 'Str0ngP@ssword'
+request["x-version"] = '9.0.0'
+request.body = "{\"verificationToken\":\"BE52ADA2064C4F9A9D90F28D066D1RFT\"}"
+
+response = http.request(request)
+puts response.read_body
+```
+
+```python
+import http.client
+
+conn = http.client.HTTPSConnection("uat.mppglobal.com")
+
+payload = "{\"verificationToken\":\"BE52ADA2064C4F9A9D90F28D066D1RFT\"}"
+
+
+headers = {
+    'x-tokenid': "1001",
+    'x-clientPassword': "Str0ngP@ssword",
+    'x-version': "9.0.0"
+    }
+
+conn.request("PATCH", "/api/accounts/verify", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))
+```
+
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://uat.mppglobal.com/api/accounts/verify",
+  "method": "PATCH",
+  "headers": {
+    "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
+    "x-version": "9.0.0",
+    "origin": "https://www.mppglobal.com"
+  },
+   "data": "{\"verificationToken\":\"BE52ADA2064C4F9A9D90F28D066D1RFT\"}"
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> The above command returns a HTTP 204 confirming verification.
+
+
+Following the receiving of a verification email, the link contained within will take the customer to a page which has integrated this API methods and pass the verification token to eSuite to verifiy the account.
+
+### HTTP Request
+
+`PATCH http://uat.mppglobal.com/api/accounts/verify`
+
+### Request Parameters
+
+Parameter | Type | Mandatory | Description | 
+--------- | ------- | ------- | ----------- |
+verificationToken | string | Yes | This parameter represents the token that was contained within the email sent to the account.
+
+## Trigger Forgotten Password
+
+```shell
+curl --request POST \
+  --url https://uat.mppglobal.com/api/accounts/forgotten-password \
+  --header 'x-clientId: 1001' \
+  --header 'x-clientPassword: Str0ngP@ssword' \
+  --header 'x-version: 9.0.0' \
+  --data '{"emailAddress":"john.smith@mppglobal.com"}'
+```
+
+```csharp
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/forgotten-password");
+var request = new RestRequest(Method.POST);
+request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-clientId", "1001");
+request.AddHeader("x-clientPassword", "Str0ngP@ssword");
+request.AddParameter("application/json","{\"emailAddress\":\"john.smith@mppglobal.com\"}", ParameterType.RequestBody);
+IRestResponse response = client.Execute(request);
+```
+
+```java
+HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/forgotten-password")
+  .header("x-clientId", "1001")
+  .header("x-clientPassword", "Str0ngP@ssword")
+  .header("x-version", "9.0.0")
+  .header("content-type", "application/json")
+  .body("{\"emailAddress\":\"john.smith@mppglobal.com\"}")
+  .asString();
+```
+
+```ruby
+require 'uri'
+require 'net/http'
+
+url = URI("https://uat.mppglobal.com/api/accounts/forgotten-password")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Post.new(url)
+request["content-type"] = 'application/json'
+request["x-clientid"] = '1001'
+request["x-clientPassword"] = 'Str0ngP@ssword'
+request["x-version"] = '9.0.0'
+request.body = "{\"emailAddress\":\"john.smith@mppglobal.com\"}"
+
+response = http.request(request)
+puts response.read_body
+```
+
+```python
+import http.client
+
+conn = http.client.HTTPSConnection("uat.mppglobal.com")
+
+payload = "{\"emailAddress\":\"john.smith@mppglobal.com\"}"
+
+headers = {
+    'x-tokenid': "1001",
+    'x-clientPassword': "Str0ngP@ssword",
+    'x-version': "9.0.0",
+    'content-type': "application/json"
+    }
+
+conn.request("POST", "/api/accounts/forgotten-password", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))
+```
+
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://uat.mppglobal.com/api/accounts/forgotten-password",
+  "method": "POST",
+  "headers": {
+    "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
+    "x-version": "9.0.0",
+    "origin": "https://www.mppglobal.com",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"emailAddress\":\"john.smith@mppglobal.com\"}"
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> The above command returns a HTTP 204 confirming verification.
+
+
+In the event a customer is unable to access their account due to forgetting their credentials, this API method should be called to trigger an email to be sent to the customers which contains a link that will allow them to reset their password.
+### HTTP Request
+
+`POST http://uat.mppglobal.com/api/accounts/forgotten-password`
+
+### Request Parameters
+
+Parameter | Type | Mandatory | Description | 
+--------- | ------- | ------- | ----------- |
+emailAddress | string | Yes | The email address associated to the customers account
+
+## Reset Password
+
+```shell
+curl --request PATCH \
+  --url https://uat.mppglobal.com/api/accounts/update-password \
+  --header 'x-clientId: 1001' \
+  --header 'x-clientPassword: Str0ngP@ssword' \
+  --header 'x-sessionid: BE52ADA2064C4F9A9D90F28D066D1RFT' \
+  --header 'x-version: 9.0.0' \
+  --header 'content-type: application/json' \
+  --data '{"password":"ReallyStr0ngP@ss0rd","login":true}'
+```
+
+```csharp
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/update-password");
+var request = new RestRequest(Method.PATCH);
+request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-clientId", "1001");
+request.AddHeader("x-clientPassword", "Str0ngP@ssword");
+request.AddHeader("x-sessionid", "BE52ADA2064C4F9A9D90F28D066D1RFT");
+request.AddParameter("application/json", "{\"password\":\"ReallyStr0ngP@ss0rd\",\"login\":true}", ParameterType.RequestBody);
+IRestResponse response = client.Execute(request);
+```
+
+```java
+HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/accounts/update-password")
+  .header("x-clientId", "1001")
+  .header("x-clientPassword", "Str0ngP@ssword")
+  .header("x-sessionid", "BE52ADA2064C4F9A9D90F28D066D1RFT")
+  .header("x-version", "9.0.0")
+  .header("content-type", "application/json")
+  .body("{\"password\":\"ReallyStr0ngP@ss0rd\",\"login\":true}")
+  .asString();
+```
+
+```ruby
+require 'uri'
+require 'net/http'
+
+url = URI("https://uat.mppglobal.com/api/accounts/update-password")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Patch.new(url)
+request["x-clientid"] = '1001'
+request["x-clientPassword"] = 'Str0ngP@ssword',
+request["x-sessionid"] = 'BE52ADA2064C4F9A9D90F28D066D1RFT',
+request["x-version"] = '9.0.0'
+request["content-type"] = 'application/json'
+request.body = "{\"password\":\"ReallyStr0ngP@ss0rd\",\"login\":true}"
+
+
+response = http.request(request)
+puts response.read_body
+```
+
+```python
+import http.client
+
+conn = http.client.HTTPSConnection("uat.mppglobal.com")
+
+payload = "{\"password\":\"ReallyStr0ngP@ss0rd\",\"login\":true}"
+
+
+headers = {
+    'x-tokenid': "1001",
+    'x-clientPassword': "Str0ngP@ssword",
+    "x-sessionid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
+    'x-version': "9.0.0",
+    'content-type': "application/json"
+    }
+
+conn.request("PATCH", "/api/accounts/update-password", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))
+```
+
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://uat.mppglobal.com/api/accounts/update-password",
+  "method": "PATCH",
+  "headers": {
+    "x-sessionid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
+    "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
+    "x-version": "9.0.0",
+    "origin": "https://www.mppglobal.com",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"password\":\"ReallyStr0ngP@ss0rd\",\"login\":true}"
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> The above command returns the following JSON document if login was provided as true:
+
+```json
+{
+  "sessionToken" : "b6dab2afbc4d42a385746a51b3bd2ed6"
+}
+```
+
+### HTTP Request
+
+`PATCH http://uat.mppglobal.com/api/accounts/update-password`
+
+### Request Parameters
+
+Parameter | Type | Mandatory | Description | 
+--------- | ------- | ------- | ----------- |
+password | string | Yes | The new password for the account.
+login | boolean | Yes | An indication as to whether the customer should be provided a session following password update.
