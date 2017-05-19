@@ -28,6 +28,7 @@ includes:
   - catalogues
   - carts
   - analytics
+  - errors
 
 search: true
 ---

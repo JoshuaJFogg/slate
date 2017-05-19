@@ -7,3 +7,4 @@ In order ensure the eSuite REST API is secure, certain features are not availabl
 
 The API has also been built using the OpenAPI Specification (formally the Swagger Specification) which will allow you to automatically generate code and test file.
 
+You can generate your bindings against our UAT swagger [here](https://uat.mppglobal.com:443/swagger/docs/9).

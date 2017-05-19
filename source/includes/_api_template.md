@@ -14,6 +14,18 @@
 
 ```
 
+```ruby
+
+```
+
+```python
+
+```
+
+```javascript
+
+```
+
 > The above command returns JSON structured like this:
 
 ```json

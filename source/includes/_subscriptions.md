@@ -35,40 +35,40 @@ cvv | string | Optional | Gets or sets the CVV
 renewalDay | integer | Optional | Gets or sets the renewal day
 renewalDayOffset | integer | Optional | Gets or sets the renewal day offset
 startDate | string | Optional | Gets or sets the start date
-pricing | object | Optional | {MppGlobal.Api.Rest.Dtos.v1.PricingDirect} Price for add subscription direct.
+pricing | object | Optional | Price for add subscription direct.
 pricing > subscriptionId | integer | Optional | Gets or sets the price id
 pricing > priceId | integer | Optional | Gets or sets the price id
 pricing > paymentMethod | string | Optional | Gets or sets the payment method
 pricing > currency | string | Optional | Gets or sets the currency
 pricing > price | number | Optional | Gets or sets the price
-pricing > taxInfo | object | Optional | {MppGlobal.Api.Rest.Dtos.v1.TaxRegionInfo} Tax region info class
+pricing > taxInfo | object | Optional |  Tax region info class
 pricing > taxInfo > zeroRated | string | Optional | Gets or sets the zero rated
 pricing > taxInfo > country | string | Optional | Gets or sets the country
 pricing > taxInfo > state | string | Optional | Gets or sets the state
 pricing > taxInfo > county | string | Optional | Gets or sets the county
 pricing > taxInfo > city | string | Optional | Gets or sets the city
-pricing > priceItems | array[object] | Optional | {MppGlobal.Api.Rest.Dtos.v1.PricingItem} Gets or sets the price items
+pricing > priceItems | array[object] | Optional |  Gets or sets the price items
 pricing > priceItems > externalReference | string | Optional | Gets or sets the external reference
 pricing > priceItems > supplierId | integer | Optional | Gets or sets the supplier id
 pricing > priceItems > price | number | Optional | Gets or sets the price
 pricing > priceItems > description | string | Optional | Gets or sets the description
-entitlements | array[object] | Optional | {MppGlobal.Api.Rest.Dtos.v1.EntitlementParameter} Gets or sets the entitlements
+entitlements | array[object] | Optional |  Gets or sets the entitlements
 entitlements > identifier | string | Optional | Gets or sets the identifier of the entitlement
 entitlements > startDate | string | Optional | Gets or sets the create date of the entitlement
 entitlements > expiryDate | string | Optional | Gets or sets the expire date of the entitlement
 customOrderParameters | object | Optional | Gets or sets the custom order parameters
 customSubscriptionParameters | object | Optional | Gets or sets the custom subscription parameters
-groupSubscriptionInfo | object | Optional | {MppGlobal.Api.Rest.Dtos.v1.GroupSubscriptionInfoSummary} Group subscription info summary
+groupSubscriptionInfo | object | Optional |  Group subscription info summary
 groupSubscriptionInfo > groupToken | string | Optional | Gets or sets the group token
-groupSubscriptionInfo > subscriberAccounts | array[object] | Optional | {MppGlobal.Api.Rest.Dtos.v1.SubscriberAccount} Gets or sets the subscriber accounts
-groupSubscriptionInfo > subscriberAccounts > clientUserId | string | Optional | Gets or sets the client user id
-groupSubscriptionInfo > subscriberAccounts > emailAddress | string | Optional | Email Address
-groupSubscriptionInfo > subscriberAccounts > taxInfo | object | Optional | {MppGlobal.Api.Rest.Dtos.v1.TaxRegionInfo} Tax region info class
-groupSubscriptionInfo > subscriberAccounts > taxInfo > zeroRated | string | Optional | Gets or sets the zero rated
-groupSubscriptionInfo > subscriberAccounts > taxInfo > country | string | Optional | Gets or sets the country
-groupSubscriptionInfo > subscriberAccounts > taxInfo > state | string | Optional | Gets or sets the state
-groupSubscriptionInfo > subscriberAccounts > taxInfo > county | string | Optional | Gets or sets the county
-groupSubscriptionInfo > subscriberAccounts > taxInfo > city | string | Optional | Gets or sets the city
+groupSubscriptionInfo > subscriberAccounts | array[object] | Optional | Gets or sets the subscriber accounts
+ > subscriberAccounts > clientUserId | string | Optional | Gets or sets the client user id
+ > subscriberAccounts > emailAddress | string | Optional | Email Address
+ > subscriberAccounts > taxInfo | object | Optional | Tax region info class
+ > taxInfo > zeroRated | string | Optional | Gets or sets the zero rated
+ > taxInfo > country | string | Optional | Gets or sets the country
+ > taxInfo > state | string | Optional | Gets or sets the state
+ > taxInfo > county | string | Optional | Gets or sets the county
+ > taxInfo > city | string | Optional | Gets or sets the city
 
 
 
