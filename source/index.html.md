@@ -7,7 +7,7 @@ language_tabs:
   - java : Java
   - ruby : Ruby
   - python : Python
-  - javascript : Javascript
+  - javascript : jQuery
   
 toc_footers:
   - <a href='https://mppglobal.com'>Documentation Powered by eSuite</a>
@@ -16,17 +16,9 @@ includes:
   - introduction
   - authentication
   - accounts
-  - social-signon
+  - access-management
   - address-book
   - payment-details
-  - account-groups
-  - subscriptions
-  - vouchers
-  - payments
-  - access-management
-  - native-billing
-  - catalogues
-  - carts
   - analytics
   - errors
 

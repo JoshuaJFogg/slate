@@ -263,7 +263,6 @@ $.ajax(settings).done(function (response) {
 
 ```json
 {
-  "account": {
     "accountId": 2032774,
     "resourceReference": "0010AL6OI8WQFGYUT0",
     "status": "Active",
@@ -292,7 +291,6 @@ $.ajax(settings).done(function (response) {
       "colour": "Blue",
       "referrer": "Facebook"
     }
-  }
  }
 ```
 
