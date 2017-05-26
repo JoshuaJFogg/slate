@@ -115,9 +115,15 @@ townCity | string |mandatory | The town or city the address is associated |
 district | string |optional | The district associated with the address |
 state | string |optional | The state that the address is located |
 county | string |optional | The county the address is associated |
-postCode | string |optional | The postcode of the address that has been added |
-country | string |optional | The country the address is specific to |
+postCode | string |mandatory | The postcode of the address that has been added |
+country | string |mandatory | The country the address is specific to |
 isDefault | boolean |optional | An indication as to whether the address is the default address for the account |
+
+*Either houseName or houseNumber is required but both are not mandatory.
+
+
+
+
 
 ## Retrieve Address Book
 

@@ -382,7 +382,7 @@ res = conn.getresponse()
         "billingCounty": "Manchester",
         "billingPostcode": "111111",
         "billingCountry": "United Kindom",
-        "cardNumber": "4111111111111111",
+        "cardNumber": "****-****-****-1111",
         "cardType": "visa",
         "expiryDate": "01/20",
         "isDefault": true,
@@ -405,4 +405,26 @@ This endpoint retrieves the payment details stored against an eSuite account.
 
 `GET https://uat.mppglobal.com/api/accounts/:accountId/payment-details`
 
+### Response Parameters
 
+Parameter | Type | Description | 
+--------- | ------- | ------- | 
+paymentDetails | array[object] | The collection of payment details available for the account. |
+cards | array[object] | The collection of payment cards available for the account. |
+cards > associatedName | string | Associated name to identify the card. |
+cards > billingHouseName | string | The name of the house the card is associated to. |
+cards > billingHouseFlatNumber | string | The number of the house the card is associated to. |
+cards > billingStreet | string | The street associated to the card. |
+cards > billingDistrict | string | The district associated to the card. |
+cards > billingTownCity | string | The town or city associated to the card. |
+cards > billingCounty | string | The county associated to the card. |
+cards > billingPostcode | string | The postcode associated to the card. |
+cards > billingCountry | string | The country associated to the card. |
+cards > cardNumber | string | A masked representation of the card. |
+cards > cardType | string | The card brand associated to the card. |
+cards > expiryDate | string | The date at which the card is due to expire. |
+cards > isDefault | boolean | An indication as to whether this card is the default for the account. |
+cards > issueCode | string | Issue number typically found on debit and bank cards. |
+cards > paymentDetailId | string | The identifier of the card within eSuite. |
+payPal | object | PayPal object detailing information about the customers PayPal account. |
+paymentDetailId | string | The identifier of the PayPal wallet within eSuite. |

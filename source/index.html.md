@@ -14,7 +14,7 @@ toc_footers:
 
 includes:
   - introduction
-  - authentication
+  - api-authentication
   - accounts
   - access-management
   - address-book
