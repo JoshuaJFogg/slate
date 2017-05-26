@@ -549,6 +549,13 @@ html, body {
     &.warning {
       /*background-color: $aside-warning-bg;*/
       background-color: #eee;
+      color: #d56b15;
+      font-weight: bold;
+    }
+
+    &.error {
+      /*background-color: $aside-warning-bg;*/
+      background-color: #eee;
       color: #cc4040;
       font-weight: bold;
     }
@@ -573,6 +580,11 @@ html, body {
   }
 
   aside.warning:before {
+    /*@extend %icon-exclamation-sign;*/
+    content: url("../images/icon-warning.png");
+  }
+
+  aside.error:before {
     /*@extend %icon-exclamation-sign;*/
     content: url("../images/icon-alert.png");
   }
