@@ -3,22 +3,98 @@
 ## Add a Voucher to a Subscription
 
 ```shell
-
+curl --request POST \
+  --url http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionId}/vouchers \
+  --header 'content-type: application/json' \
+  --header 'x-clientId: 1001' \
+  --header 'x-clientPassword: Str0ngP@ssword' \
+  --header 'x-version: 9.0.0' \
+  --data '{"voucherCode":"TWOFORONE"}'
 ```
 
 ```csharp
-
+var client = new RestClient("http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionId}/vouchers");
+var request = new RestRequest(Method.POST);
+request.AddHeader("content-type", "application/json");
+request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-clientId", "1001");
+request.AddHeader("x-clientPassword", "Str0ngP@ssword");
+request.AddParameter("application/json", "{\"voucherCode\":\"TWOFORONE\"}", ParameterType.RequestBody);
+IRestResponse response = client.Execute(request);
 ```
 
 ```java
-
+HttpResponse<String> response = Unirest.post("http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionId}/vouchers")
+  .header("x-clientId", "1001")
+  .header("x-clientPassword", "Str0ngP@ssword")
+  .header("x-version", "9.0.0")
+  .header("content-type", "application/json")
+  .body("{\"voucherCode\":\"TWOFORONE\"}")
+  .asString();
 ```
 
-> The above command returns JSON structured like this:
+```ruby
+require 'uri'
+require 'net/http'
 
-```json
+url = URI("http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionId}/vouchers")
 
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Post.new(url)
+request["x-clientid"] = '1001'
+request["x-clientPassword"] = 'Str0ngP@ssword'
+request["x-version"] = '9.0.0'
+request["content-type"] = 'application/json'
+request.body = "{\"voucherCode\":\"TWOFORONE\"}"
+response = http.request(request)
+puts response.read_body
 ```
+
+```python
+import http.client
+
+conn = http.client.HTTPSConnection("uat.mppglobal.com")
+
+payload = "{\"voucherCode\":\"TWOFORONE\"}"
+
+headers = {
+    'x-tokenid': "1001",
+    'x-clientPassword': "Str0ngP@ssword",
+    'x-version': "9.0.0",
+    'content-type': "application/json"
+    }
+
+conn.request("POST", "/api/accounts/{accountId}/subscriptions/{subscriptionId}/vouchers", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))
+```
+
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionId}/vouchers",
+  "method": "POST",
+  "headers": {
+    "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
+    "x-version": "9.0.0",
+    "origin": "https://www.mppglobal.com",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"voucherCode\":\"TWOFORONE\"}"}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
 
 Description of what the endpoint does.
 
@@ -30,7 +106,7 @@ Description of what the endpoint does.
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-voucherCode | string | Optional | voucher code
+voucherCode | string | Optional | The voucher to be added to the subscription
 
 
 
@@ -38,7 +114,7 @@ voucherCode | string | Optional | voucher code
 
 
 
-## Retrieve Voucher Configuration
+## Validate a voucher code
 
 ```shell
 
@@ -111,9 +187,3 @@ productIds | array[integer] | Optional | Product ids
 configurationType | string | Optional | Configuration type
 productSource | string | Optional | Product source
 customParameters | object | Optional | Custom parameters
-
-
-
-
-
-

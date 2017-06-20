@@ -19,6 +19,9 @@ includes:
   - access-management
   - address-book
   - payment-details
+  - native-billing
+  - session-management
+  - catalogues
   - analytics
   - errors
 

@@ -1041,3 +1041,171 @@ Parameter | Type | Mandatory | Description |
 --------- | ------- | ------- | ----------- |
 password | string | Yes | The new password for the account.
 login | boolean | Yes | An indication as to whether the customer should be provided a session following password update.
+
+## Retrieve Transaction Summary
+
+```shell
+curl --request GET \
+  --url https://uat.mppglobal.com/api/accounts/{accountId}/transaction-summary \
+  --header 'x-clientId: 1001' \
+  --header 'x-clientPassword: Str0ngP@ssword' \
+  --header 'x-version: 9.0.0' \
+  --data '{}'
+```
+
+```csharp
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/transaction-summary");
+var request = new RestRequest(Method.GET);
+request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-clientId", "1001");
+request.AddHeader("x-clientPassword", "Str0ngP@ssword");
+request.AddParameter("undefined", "{}", ParameterType.RequestBody);
+IRestResponse response = client.Execute(request);
+```
+
+```java
+HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountId}/transaction-summary")
+  .header("x-clientId", "1001")
+  .header("x-clientPassword", "Str0ngP@ssword")
+  .header("x-sessionid", "BE52ADA2064C4F9A9D90F28D066D1RFT")
+  .header("x-version", "9.0.0")
+  .body("{}")
+  .asString();
+```
+
+```ruby
+require 'uri'
+require 'net/http'
+
+url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/transaction-summary")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Get.new(url)
+request["x-clientid"] = '1001'
+request["x-clientPassword"] = 'Str0ngP@ssword',
+request["x-sessionid"] = 'BE52ADA2064C4F9A9D90F28D066D1RFT',
+request["x-version"] = '9.0.0'
+request.body = "{}"
+
+response = http.request(request)
+puts response.read_body
+```
+
+```python
+import http.client
+
+conn = http.client.HTTPSConnection("uat.mppglobal.com")
+
+payload = "{}"
+
+headers = {
+    'x-tokenid': "1001",
+    'x-clientPassword': "Str0ngP@ssword",
+    'x-version': "9.0.0"
+    }
+
+conn.request("GET", "/api/accounts/{accountId}/transaction-summary", payload)
+
+res = conn.getresponse()
+data = res.read()
+```
+
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/transaction-summary",
+  "method": "GET",
+  "headers": {
+    "x-sessionid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
+    "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
+    "x-version": "9.0.0",
+    "origin": "https://www.mppglobal.com"
+  },
+  "data": "{}"
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "totalCustomerValue": [
+    {
+      "totalValue": 56.2,
+      "currency": "USD"
+    }
+  ],
+  "totalPaymentsToDate": [
+    {
+      "currency": "USD",
+      "quantity": 2,
+      "totalValue": 18,
+      "averageValue": 9
+    }
+  ],
+  "totalRefundsToDate": [
+    {
+      "currency": "USD",
+      "quantity": 3,
+      "totalValue": 21,
+      "averageValue": 7
+    }
+  ],
+  "outstandingPaymentsToDate": [
+    {
+      "currency": "USD",
+      "quantity": 2,
+      "totalValue": 21,
+      "averageValue": 11.5
+    }
+  ],
+  "outstandingCreditBalance": [
+    {
+      "totalValue": 6.27,
+      "currency": "USD"
+    }
+  ]
+}
+```
+
+Calling this endpoint will provide a breakdown of the accounts transaction summary both historically and future dated.
+
+### HTTP Request
+
+`GET http://uat.mppglobal.com/accounts/{accountId}/transaction-summary`
+
+### Parameters
+
+Parameter | Description | 
+--------- | ------- | 
+totalCustomerValue | Customer value broken down by currency | 
+totalCustomerValue > totalValue | The sum of all payments minus any refunds |
+totalCustomerValue > currency | The currency the value represents | 
+totalPaymentsToDate | Total number of payments taken, broken down by currency | 
+totalPaymentsToDate > totalValue | The sum of all payments taken against the account |
+totalPaymentsToDate > averageValue | The average transaction amount |
+totalPaymentsToDate > currency | The currency the value represents | 
+totalPaymentsToDate > quantity | The number of payments which have been taken against the account | 
+totalRefundsToDate | All refunds applied, broken down by currency | 
+totalRefundsToDate > totalValue | The sum of all refunds against the account |
+totalRefundsToDate > averageValue | The average transaction refund amount |
+totalRefundsToDate > currency | The currency the value represents | 
+totalRefundsToDate > quantity | integer | 
+outstandingPaymentsToDate | All outstanding payments, broken down by currency | 
+outstandingPaymentsToDate > totalValue | The sum of all payments yet to be taken against the account  |
+outstandingPaymentsToDate > averageValue | The average transaction amount |
+outstandingPaymentsToDate > currency | The currency the value represents | 
+outstandingPaymentsToDate > quantity | Total number of outstanding payments | 
+outstandingCreditBalance | All outstanding credit balances broken down by currency |
+outstandingCreditBalance > totalValue | The total amount credit on the account |
+outstandingCreditBalance > currency | The currency the value represents | 
+
+

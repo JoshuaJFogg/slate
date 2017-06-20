@@ -458,5 +458,146 @@ In the event access should be removed from an account, this API method should be
 
 
 
+## Search Access
 
+```shell
+curl --request GET \
+  --url https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/search?rowsPerPage=10&currentPage=1&exactMatch=false \
+  --header 'x-clientId: 1001' \
+  --header 'x-clientPassword: Str0ngP@ssword' \
+  --header 'x-version: 9.0.0' \
+  --data '{}'
+```
+
+```csharp
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/search?rowsPerPage=10&currentPage=1&exactMatch=false");
+var request = new RestRequest(Method.GET);
+request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-clientId", "1001");
+request.AddHeader("x-clientPassword", "Str0ngP@ssword");
+request.AddParameter("undefined", "{}", ParameterType.RequestBody);
+IRestResponse response = client.Execute(request);
+```
+
+```java
+HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/search?rowsPerPage=10&currentPage=1&exactMatch=false")
+  .header("x-clientId", "1001")
+  .header("x-clientPassword", "Str0ngP@ssword")
+  .header("x-version", "9.0.0")
+  .body("{}")
+  .asString();
+```
+
+```ruby
+require 'uri'
+require 'net/http'
+
+url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/search?rowsPerPage=10&currentPage=1&exactMatch=false")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Get.new(url)
+request["x-clientid"] = '1001'
+request["x-clientPassword"] = 'Str0ngP@ssword'
+request["x-version"] = '9.0.0'
+request.body = "{}"
+
+response = http.request(request)
+puts response.read_body
+```
+
+```python
+import http.client
+
+conn = http.client.HTTPSConnection("uat.mppglobal.com")
+
+payload = "{}"
+
+headers = {
+    'x-tokenid': "1001",
+    'x-clientPassword': "Str0ngP@ssword",
+    'x-version': "9.0.0"
+    }
+
+conn.request("GET", "/api/accounts/{accountId}/entitlements/search?rowsPerPage=10&currentPage=1&exactMatch=false", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))
+```
+
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/search?rowsPerPage=10&currentPage=1&exactMatch=false",
+  "method": "GET",
+  "headers": {
+    "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
+    "x-version": "9.0.0",
+    "origin": "https://www.mppglobal.com"
+  },
+  "data": "{}"
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "totalNumberOfRecords": 2973,
+    "pageNumber": 1,
+    "resultsPerPage": 10,
+    "items": [
+      {
+        "name": "Open Access to the Tribune",
+        "identifier": "TheTribuneOpen",
+        "startDate": "2015-01-01T00:00:00",
+        "endDate": "2019-01-01T00:00:00"
+      }
+    ]
+}
+```
+
+This endpoint is available for all access for a specific account, regardless of whether it is active.
+
+### HTTP Request
+
+`GET http://uat.mppglobal.com/api/accounts/{accountId}/entitlements/search`
+
+### Query Parameters
+
+Parameter | Type | Mandatory | Description | 
+--------- | ------- | ------- | ----------- |
+createDateMin | string | Optional | Earliest creation date to search 
+createDateMax | string | Optional | Latest creation date to search
+startDateMin | string | Optional | Earliest Entitlement start date to search
+startDateMax | string | Optional | Latest Entitlement start date to search
+endDateMin | string | Optional | Earliest Entitlement expiration date to search
+endDateMax | string | Optional | Latest Entitlement expiration date to search
+entitlementIdentifier | string | Optional | The name of entitlement
+rowsPerPage | integer | Optional | Number of items to return in the response
+currentPage | integer | Optional | Page to return
+exactMatch | boolean | Optional | Indication whether to exactly match the entitlementIdentifer (default to false)
+
+<aside class="info">Passing no query parameters will return a 204.</aside>
+
+
+### Response Parameters
+
+Parameter | Type | Mandatory | Description | 
+--------- | ------- | ------- | ----------- |
+entitlements | string | Optional | The list of current account entitlements
+name | string | Optional | The name of entitlement
+identifier | string | Required | The identifier of entitlement
+startDate | string | Required | The create date of the entitlement
+endDate | string | Required | The expire date of the entitlement
 
