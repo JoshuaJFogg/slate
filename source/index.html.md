@@ -2,6 +2,7 @@
 title: eSuite API Reference
 
 language_tabs:
+  - json : JSON
   - shell : cURL
   - csharp : C#
   - java : Java
