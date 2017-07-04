@@ -2,7 +2,6 @@
 title: eSuite API Reference
 
 language_tabs:
-  - json : JSON
   - shell : cURL
   - csharp : C#
   - java : Java
@@ -17,13 +16,17 @@ includes:
   - introduction
   - api-authentication
   - accounts
-  - access-management
   - address-book
   - payment-details
+  - subscription-management
+  - payment-instructions
+  - access-management
   - native-billing
   - session-management
   - catalogues
+  - customer-support-log
   - analytics
+  - bulk-actions
   - errors
 
 search: true

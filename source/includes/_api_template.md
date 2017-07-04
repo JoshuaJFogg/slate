@@ -2,10 +2,6 @@
 
 ## Specfic name of the endpoint e.g. Create Account
 
-```json
-
-```
-
 ```shell
 
 ```

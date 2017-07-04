@@ -326,7 +326,7 @@ address > postCode | string | Yes | The post code associated to the address
 address > country | string | Yes | The country the account resides
 customParameters | dictionary | No | A collection of custom attributes stored against the account
 
-## Edit Account
+## Update Account
 
 ```shell
 curl --request PUT \
