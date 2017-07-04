@@ -91,8 +91,9 @@ html, body {
   bottom: 0;
   width: $nav-width;
   background-color: $nav-bg;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: normal;
+  border-right: 1px solid #ddd;
 
   // language selector for mobile devices
   .lang-selector {
@@ -253,8 +254,10 @@ html, body {
 }
 
 .tocify-wrapper::-webkit-scrollbar
-{ width: 7px; background-color: #F5F5F5;
+{ width: 0; background-color: #F5F5F5;
 }
+/*{ width: 7px; background-color: #F5F5F5;
+}*/
 
 .tocify-wrapper::-webkit-scrollbar-thumb
 { border-radius: 10px;
@@ -380,7 +383,7 @@ html, body {
 
   &>h1, &>h2, &>h3, &>h4, &>h5, &>h6, &>p, &>table, &>ul, &>ol, &>aside, &>dl {
     margin-right: $examples-width;
-    padding: 0 $main-padding;
+    padding: 0 $main-padding 0 $left-padding;
     box-sizing: border-box;
     display: block;
     font-weight:normal;
@@ -432,13 +435,13 @@ html, body {
   h3 {
     @extend %header-font;
     font-size: 18px;
-    color:#333;
+    color:#000;
     margin-bottom: 0;
     padding-top: 1.2em;
     padding-bottom: 1em;
-    font-weight: bolder;
+    /*font-weight: bolder;
     font-weight:bold;
-    /*text-decoration: underline;*/
+    text-decoration: underline;*/
   }
   
   
@@ -603,6 +606,8 @@ html, body {
     background: linear-gradient(to top left, #F7E633 0%, #F1D32F 100%);
   }
 }
+
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // CODE SAMPLE STYLES

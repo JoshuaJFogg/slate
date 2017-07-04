@@ -21,16 +21,16 @@ under the License.
 // Use these settings to help adjust the appearance of Slate
 
 
-// BACKGROUND COLORS
+// BACKGROUND COLORS   1c1e22
 ////////////////////
-$nav-bg: #fff !default;
-$examples-bg: #1d2c3a !default;
-$code-bg: #1b2438 !default;
-$code-annotation-bg: #141b2a !default;
+$nav-bg: #f5f7fa !default;
+$examples-bg: #1c1e22 !default;
+$code-bg: #1c1e22 !default;
+$code-annotation-bg: #1c1e22 !default;
 $nav-subitem-bg: #a3dbe6 !default;
 $nav-active-bg: #01a6c6 !default;
 $lang-select-border: #000 !default;
-$lang-select-bg: #141b2a !default;
+$lang-select-bg: #1c1e22 !default;
 $lang-select-active-bg: $examples-bg !default; // feel free to change this to blue or something
 $lang-select-pressed-bg: #111 !default; // color of language tab bg when mouse is pressed
 $main-bg: #fff !default;
@@ -53,10 +53,11 @@ $lang-select-pressed-text: #fff !default; // color of language tab text when mou
 // SIZES
 ////////////////////
 $nav-width: 250px !default; // width of the navbar
-$examples-width: 48% !default; // portion of the screen taken up by code examples
+$examples-width: 46% !default; // portion of the screen taken up by code examples
 $logo-margin: 20px !default; // margin between nav items and logo, ignored if search is active
-$main-padding: 28px !default; // padding to left and right of content & examples
-$nav-padding: 15px !default; // padding to left and right of navbar
+$left-padding: 37px !default; // padding to left and right of content & examples
+$main-padding: 30px !default; // padding to left and right of content & examples
+$nav-padding: 17px !default; // padding to left and right of navbar
 $nav-v-padding: 20px !default; // padding used vertically around search boxes and results
 $nav-indent: 10px !default; // extra padding for ToC subitems
 $code-annotation-padding: 13px !default; // padding inside code annotations
