@@ -1,6 +1,6 @@
 # Access Management
 
-## Create Access
+## CRUD: Create Access
 
 ```shell
 curl --request POST \
@@ -102,7 +102,7 @@ startDate | string | Yes | The create date of the entitlement
 endDate | string | Yes | The expiry of the entitlement
 
 
-## Retrieve Access
+## CRUD: Retrieve Access
 
 ```shell
 curl --request GET \
@@ -223,6 +223,114 @@ name | string | Optional | The name of entitlement
 identifier | string | Required | The identifier of entitlement
 startDate | string | Required | The create date of the entitlement
 endDate | string | Required | The expire date of the entitlement
+
+## CRUD: Delete Access
+
+```shell
+curl --request DELETE \
+  --url https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier} \
+  --header 'x-clientId: 1001' \
+  --header 'x-clientPassword: Str0ngP@ssword' \
+  --header 'x-version: 9.0.0' \
+  --data '{}'
+```
+
+```csharp
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}");
+var request = new RestRequest(Method.DELETE);
+request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-clientId", "1001");
+request.AddHeader("x-clientPassword", "Str0ngP@ssword");
+request.AddParameter("undefined", "{}", ParameterType.RequestBody);
+IRestResponse response = client.Execute(request);
+```
+
+```java
+HttpResponse<String> response = Unirest.put("https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}")
+  .header("x-clientId", "1001")
+  .header("x-clientPassword", "Str0ngP@ssword")
+  .header("x-version", "9.0.0")
+  .body("{}")
+  .asString();
+```
+
+```ruby
+require 'uri'
+require 'net/http'
+
+url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Delete.new(url)
+request["x-clientid"] = '1001'
+request["x-clientPassword"] = 'Str0ngP@ssword'
+request["x-version"] = '9.0.0'
+
+request.body = "{}"
+
+response = http.request(request)
+puts response.read_body
+```
+
+```python
+import http.client
+
+conn = http.client.HTTPSConnection("uat.mppglobal.com")
+
+payload = "{}"
+
+headers = {
+    'x-tokenid': "1001",
+    'x-clientPassword': "Str0ngP@ssword",
+    'x-version': "9.0.0"
+    }
+
+conn.request("DELETE", "/api/accounts/{accountId}/entitlements/{entitlementIdentifier}", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))
+```
+
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}",
+  "method": "DELETE",
+  "headers": {
+    "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
+    "x-version": "9.0.0",
+    "origin": "https://www.mppglobal.com"
+  },
+  "processData": false,
+  "data": "{}"
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> The above command returns an empty JSON document:
+
+```json
+
+```
+
+In the event access should be removed from an account, this API method should be triggered
+
+### HTTP Request
+
+`DELETE http://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}`
+
+<aside class="warning">Executing this API will not remove access from the account until the access rights of the account are checked again.</aside>
+
+
 
 ## Validate Access
 
@@ -345,117 +453,6 @@ Parameter | Type | Description |
 remainingTime | string | The remaining amount of time the customer has access (DD.HH:MM:SS)
 deviceLimitExceeded | boolean | An indication as to whether the customer is consuming content on the maximum number of devices
 entitlementAvailable | boolean | An indication as to whether the customer has access to the entitlement
-
-
-
-
-
-## Delete Access
-
-```shell
-curl --request DELETE \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier} \
-  --header 'x-clientId: 1001' \
-  --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
-  --data '{}'
-```
-
-```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}");
-var request = new RestRequest(Method.DELETE);
-request.AddHeader("x-version", "9.0.0");
-request.AddHeader("x-clientId", "1001");
-request.AddHeader("x-clientPassword", "Str0ngP@ssword");
-request.AddParameter("undefined", "{}", ParameterType.RequestBody);
-IRestResponse response = client.Execute(request);
-```
-
-```java
-HttpResponse<String> response = Unirest.put("https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}")
-  .header("x-clientId", "1001")
-  .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
-  .body("{}")
-  .asString();
-```
-
-```ruby
-require 'uri'
-require 'net/http'
-
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}")
-
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true
-http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-
-request = Net::HTTP::Delete.new(url)
-request["x-clientid"] = '1001'
-request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
-
-request.body = "{}"
-
-response = http.request(request)
-puts response.read_body
-```
-
-```python
-import http.client
-
-conn = http.client.HTTPSConnection("uat.mppglobal.com")
-
-payload = "{}"
-
-headers = {
-    'x-tokenid': "1001",
-    'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
-    }
-
-conn.request("DELETE", "/api/accounts/{accountId}/entitlements/{entitlementIdentifier}", payload, headers)
-
-res = conn.getresponse()
-data = res.read()
-
-print(data.decode("utf-8"))
-```
-
-```javascript
-var settings = {
-  "async": true,
-  "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}",
-  "method": "DELETE",
-  "headers": {
-    "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
-    "x-version": "9.0.0",
-    "origin": "https://www.mppglobal.com"
-  },
-  "processData": false,
-  "data": "{}"
-}
-
-$.ajax(settings).done(function (response) {
-  console.log(response);
-});
-```
-
-> The above command returns an empty JSON document:
-
-```json
-
-```
-
-In the event access should be removed from an account, this API method should be triggered
-
-### HTTP Request
-
-`DELETE http://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}`
-
-<aside class="warning">Executing this API will not remove access from the account until the access rights of the account are checked again.</aside>
-
 
 
 ## Search Access

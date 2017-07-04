@@ -1,6 +1,6 @@
 # Accounts
 
-## Create Account
+## CRUD: Create Account
 
 ```shell
 curl --request POST \
@@ -169,7 +169,7 @@ customParameters | dictionary | No | A collection of custom attributes stored ag
 _* It is mandatory to pass either an email address or a clientUserId. It is possible to provide both._
 
 
-## Retrieve Account
+## CRUD: Retrieve Account
 
 ```shell
 curl --request GET \
@@ -326,7 +326,7 @@ address > postCode | string | Yes | The post code associated to the address
 address > country | string | Yes | The country the account resides
 customParameters | dictionary | No | A collection of custom attributes stored against the account
 
-## Update Account
+## CRUD: Update Account
 
 ```shell
 curl --request PUT \
@@ -495,7 +495,7 @@ customParameters | dictionary | No | A collection of custom attributes stored ag
 _* It is mandatory to pass either an email address or a clientUserId. It is possible to provide both._
 
 
-## Delete Account
+## CRUD: Delete Account
 
 ```shell
 curl --request DELETE \

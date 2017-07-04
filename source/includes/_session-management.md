@@ -1,6 +1,6 @@
 # Session Management
 
-## Retrieve a Session
+## CRUD: Retrieve a Session
 
 ```shell
 curl --request GET \
@@ -125,7 +125,7 @@ shortSessionExpiry | string | The date and time the shortSession will expire |
 longSessionActive | boolean | An indication as to whether the LongSession aspect of the session is still active | 
 longSessionExpiry | string | The date and time the longSession will expire | 
 
-## Delete a Session
+## CRUD: Delete a Session
 
 ```shell
 curl --request DELETE \

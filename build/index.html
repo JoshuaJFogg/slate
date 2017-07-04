@@ -290,7 +290,7 @@ If you choose to integrate the eSuite API directly into your technology stack pl
 
           <h1 id="accounts">Accounts</h1>
 
-<h2 id="create-account">Create Account</h2>
+<h2 id="crud-create-account">CRUD: Create Account</h2>
 <pre class="highlight shell tab-shell"><code>curl --request POST <span class="se">\</span>
   --url https://uat.mppglobal.com/api/accounts <span class="se">\</span>
   --header <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
@@ -556,7 +556,7 @@ If you choose to integrate the eSuite API directly into your technology stack pl
 
 <p><em>* It is mandatory to pass either an email address or a clientUserId. It is possible to provide both.</em></p>
 
-<h2 id="retrieve-account">Retrieve Account</h2>
+<h2 id="crud-retrieve-account">CRUD: Retrieve Account</h2>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
   --url https://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span> <span class="se">\</span>
   --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
@@ -812,7 +812,7 @@ If you choose to integrate the eSuite API directly into your technology stack pl
 </tr>
 </tbody></table>
 
-<h2 id="update-account">Update Account</h2>
+<h2 id="crud-update-account">CRUD: Update Account</h2>
 <pre class="highlight shell tab-shell"><code>curl --request PUT <span class="se">\</span>
   --url https://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span> <span class="se">\</span>
   --header <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
@@ -1078,7 +1078,7 @@ If you choose to integrate the eSuite API directly into your technology stack pl
 
 <p><em>* It is mandatory to pass either an email address or a clientUserId. It is possible to provide both.</em></p>
 
-<h2 id="delete-account">Delete Account</h2>
+<h2 id="crud-delete-account">CRUD: Delete Account</h2>
 <pre class="highlight shell tab-shell"><code>curl --request DELETE <span class="se">\</span>
   --url https://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span> <span class="se">\</span>
   --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
@@ -1792,7 +1792,7 @@ If you choose to integrate the eSuite API directly into your technology stack pl
 
           <h1 id="address-book">Address Book</h1>
 
-<h2 id="create-address">Create Address</h2>
+<h2 id="crud-create-address">CRUD: Create Address</h2>
 <pre class="highlight shell tab-shell"><code>curl --request POST <span class="se">\</span>
   --url https://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span>/addresses <span class="se">\</span>
   --header <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
@@ -1954,7 +1954,7 @@ If you choose to integrate the eSuite API directly into your technology stack pl
 
 <p>*Either houseName or houseNumber is required but both are not mandatory.</p>
 
-<h2 id="retrieve-address-book">Retrieve Address Book</h2>
+<h2 id="crud-retrieve-address-book">CRUD: Retrieve Address Book</h2>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
   --url https://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span>/addresses <span class="se">\</span>
   --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
@@ -2718,7 +2718,7 @@ Remember — you must authorise a card before it can be used
 
           <h1 id="subscription-management">Subscription Management</h1>
 
-<h2 id="create-a-subscription-holiday">Create a subscription holiday</h2>
+<h2 id="crud-create-a-holiday">CRUD: Create a holiday</h2>
 <pre class="highlight shell tab-shell"><code>curl --request POST <span class="se">\</span>
   --url https://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span>/subscriptions/<span class="o">{</span>subscriptionReference<span class="o">}</span>/holidays <span class="se">\</span>
   --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
@@ -2841,132 +2841,7 @@ Remember — you must authorise a card before it can be used
 </tr>
 </tbody></table>
 
-<h2 id="retrieve-all-subscription-holidays">Retrieve all subscription holidays</h2>
-<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
-  --url https://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span>/subscriptions/<span class="o">{</span>subscriptionReference<span class="o">}</span>/holidays <span class="se">\</span>
-  --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
-  --header <span class="s1">'x-clientPassword: Str0ngP@ssword'</span> <span class="se">\</span>
-  --header <span class="s1">'x-version: 9.0.0'</span> <span class="se">\</span>
-  --data <span class="s1">'{}'</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays"</span><span class="p">);</span>
-<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="n">Method</span><span class="p">.</span><span class="n">GET</span><span class="p">);</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-version"</span><span class="p">,</span> <span class="s">"9.0.0"</span><span class="p">);</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientId"</span><span class="p">,</span> <span class="s">"1001"</span><span class="p">);</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientPassword"</span><span class="p">,</span> <span class="s">"Str0ngP@ssword"</span><span class="p">);</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">AddParameter</span><span class="p">(</span><span class="s">"undefined"</span><span class="p">,</span> <span class="s">"{}"</span><span class="p">,</span> <span class="n">ParameterType</span><span class="p">.</span><span class="n">RequestBody</span><span class="p">);</span>
-<span class="n">IRestResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientId"</span><span class="o">,</span> <span class="s">"1001"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientPassword"</span><span class="o">,</span> <span class="s">"Str0ngP@ssword"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-version"</span><span class="o">,</span> <span class="s">"9.0.0"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"{}"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
-</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
-<span class="nb">require</span> <span class="s1">'net/http'</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays"</span><span class="p">)</span>
-
-<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
-<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
-<span class="n">http</span><span class="p">.</span><span class="nf">verify_mode</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">SSL</span><span class="o">::</span><span class="no">VERIFY_NONE</span>
-
-<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientid"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1001'</span>
-<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientPassword"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Str0ngP@ssword'</span>
-<span class="n">request</span><span class="p">[</span><span class="s2">"x-version"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'9.0.0'</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"{}"</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
-
-<span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">(</span><span class="s">"uat.mppglobal.com"</span><span class="p">)</span>
-
-<span class="n">payload</span> <span class="o">=</span> <span class="s">"{}"</span>
-
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">'x-tokenid'</span><span class="p">:</span> <span class="s">"1001"</span><span class="p">,</span>
-    <span class="s">'x-clientPassword'</span><span class="p">:</span> <span class="s">"Str0ngP@ssword"</span><span class="p">,</span>
-    <span class="s">'x-version'</span><span class="p">:</span> <span class="s">"9.0.0"</span>
-    <span class="p">}</span>
-
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays"</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
-
-<span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays"</span><span class="p">,</span>
-  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
-  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"x-tokenid"</span><span class="p">:</span> <span class="s2">"BE52ADA2064C4F9A9D90F28D066D1RFT"</span><span class="p">,</span>
-    <span class="s2">"x-sessionid"</span><span class="p">:</span> <span class="s2">"a0c595bd26004ff4bb7d4cb1b1c81a6d"</span><span class="p">,</span>
-    <span class="s2">"x-version"</span><span class="p">:</span> <span class="s2">"9.0.0"</span><span class="p">,</span>
-    <span class="s2">"origin"</span><span class="p">:</span> <span class="s2">"https://www.mppglobal.com"</span>
-  <span class="p">},</span>
-  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{}"</span>
-<span class="p">}</span>
-
-<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
-  </span><span class="s2">"subscriptionHolidayReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QIUQIEUQIEU8173"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"subscriptionReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASJDKAS6712KDASK"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-04T00:00:00"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"endDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-14T23:59:59"</span><span class="w">
-</span><span class="p">}]</span><span class="w">
-</span></code></pre>
-<p>This endpoint allows you to retrieve all configured subscription holidays for a specific accounts subscription.</p>
-
-<h3 id="url-endpoint">URL Endpoint</h3>
-
-<p><code class="prettyprint">GET http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/</code></p>
-
-<h3 id="response-parameters">Response Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td></td>
-<td>array[objects]</td>
-<td>The collection of support log entries.</td>
-</tr>
-<tr>
-<td>subscriptionHolidayReference</td>
-<td>string</td>
-<td>Reference to the holiday.</td>
-</tr>
-<tr>
-<td>subscriptionReference</td>
-<td>string</td>
-<td>Reference to the subscription.</td>
-</tr>
-<tr>
-<td>startDate</td>
-<td>string</td>
-<td>The date at which the holiday period should begin.</td>
-</tr>
-<tr>
-<td>endDate</td>
-<td>string</td>
-<td>The date at which the subscription should become active.</td>
-</tr>
-</tbody></table>
-
-<h2 id="retrieve-a-subscription-holiday">Retrieve a subscription holiday</h2>
+<h2 id="crud-retrieve-a-holiday">CRUD: Retrieve a holiday</h2>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
   --url https://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span>/subscriptions/<span class="o">{</span>subscriptionReference<span class="o">}</span>/holidays/<span class="o">{</span>subscriptionHolidayReference<span class="o">}</span> <span class="se">\</span>
   --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
@@ -3086,7 +2961,7 @@ Remember — you must authorise a card before it can be used
 </tr>
 </tbody></table>
 
-<h2 id="update-a-subscription-holiday">Update a subscription holiday</h2>
+<h2 id="crud-update-a-holiday">CRUD: Update a holiday</h2>
 <pre class="highlight shell tab-shell"><code>curl --request PUT <span class="se">\</span>
   --url https://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span>/subscriptions/<span class="o">{</span>subscriptionReference<span class="o">}</span>/holidays/<span class="o">{</span>subscriptionHolidayReference<span class="o">}</span> <span class="se">\</span>
   --header <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
@@ -3217,7 +3092,7 @@ Remember — you must authorise a card before it can be used
 </tr>
 </tbody></table>
 
-<h2 id="delete-a-subcription-holiday">Delete a subcription holiday</h2>
+<h2 id="crud-delete-a-holiday">CRUD: Delete a holiday</h2>
 <pre class="highlight shell tab-shell"><code>curl --request DELETE <span class="se">\</span>
   --url https://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span>/subscriptions/<span class="o">{</span>subscriptionReference<span class="o">}</span>/holidays/<span class="o">{</span>subscriptionHolidayReference<span class="o">}</span> <span class="se">\</span>
   --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
@@ -3301,9 +3176,134 @@ Remember — you must authorise a card before it can be used
 
 <p><code class="prettyprint">DELETE http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}</code></p>
 
+<h2 id="retrieve-all-subscription-holidays">Retrieve all subscription holidays</h2>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url https://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span>/subscriptions/<span class="o">{</span>subscriptionReference<span class="o">}</span>/holidays <span class="se">\</span>
+  --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
+  --header <span class="s1">'x-clientPassword: Str0ngP@ssword'</span> <span class="se">\</span>
+  --header <span class="s1">'x-version: 9.0.0'</span> <span class="se">\</span>
+  --data <span class="s1">'{}'</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="n">Method</span><span class="p">.</span><span class="n">GET</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-version"</span><span class="p">,</span> <span class="s">"9.0.0"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientId"</span><span class="p">,</span> <span class="s">"1001"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientPassword"</span><span class="p">,</span> <span class="s">"Str0ngP@ssword"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddParameter</span><span class="p">(</span><span class="s">"undefined"</span><span class="p">,</span> <span class="s">"{}"</span><span class="p">,</span> <span class="n">ParameterType</span><span class="p">.</span><span class="n">RequestBody</span><span class="p">);</span>
+<span class="n">IRestResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientId"</span><span class="o">,</span> <span class="s">"1001"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientPassword"</span><span class="o">,</span> <span class="s">"Str0ngP@ssword"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-version"</span><span class="o">,</span> <span class="s">"9.0.0"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"{}"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">verify_mode</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">SSL</span><span class="o">::</span><span class="no">VERIFY_NONE</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientid"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1001'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientPassword"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Str0ngP@ssword'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-version"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'9.0.0'</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"{}"</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">(</span><span class="s">"uat.mppglobal.com"</span><span class="p">)</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="s">"{}"</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'x-tokenid'</span><span class="p">:</span> <span class="s">"1001"</span><span class="p">,</span>
+    <span class="s">'x-clientPassword'</span><span class="p">:</span> <span class="s">"Str0ngP@ssword"</span><span class="p">,</span>
+    <span class="s">'x-version'</span><span class="p">:</span> <span class="s">"9.0.0"</span>
+    <span class="p">}</span>
+
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays"</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"x-tokenid"</span><span class="p">:</span> <span class="s2">"BE52ADA2064C4F9A9D90F28D066D1RFT"</span><span class="p">,</span>
+    <span class="s2">"x-sessionid"</span><span class="p">:</span> <span class="s2">"a0c595bd26004ff4bb7d4cb1b1c81a6d"</span><span class="p">,</span>
+    <span class="s2">"x-version"</span><span class="p">:</span> <span class="s2">"9.0.0"</span><span class="p">,</span>
+    <span class="s2">"origin"</span><span class="p">:</span> <span class="s2">"https://www.mppglobal.com"</span>
+  <span class="p">},</span>
+  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{}"</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
+  </span><span class="s2">"subscriptionHolidayReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QIUQIEUQIEU8173"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"subscriptionReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASJDKAS6712KDASK"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-04T00:00:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"endDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-14T23:59:59"</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows you to retrieve all configured subscription holidays for a specific accounts subscription.</p>
+
+<h3 id="url-endpoint">URL Endpoint</h3>
+
+<p><code class="prettyprint">GET http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/</code></p>
+
+<h3 id="response-parameters">Response Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td></td>
+<td>array[objects]</td>
+<td>The collection of support log entries.</td>
+</tr>
+<tr>
+<td>subscriptionHolidayReference</td>
+<td>string</td>
+<td>Reference to the holiday.</td>
+</tr>
+<tr>
+<td>subscriptionReference</td>
+<td>string</td>
+<td>Reference to the subscription.</td>
+</tr>
+<tr>
+<td>startDate</td>
+<td>string</td>
+<td>The date at which the holiday period should begin.</td>
+</tr>
+<tr>
+<td>endDate</td>
+<td>string</td>
+<td>The date at which the subscription should become active.</td>
+</tr>
+</tbody></table>
+
           <h1 id="payment-instructions">Payment Instructions</h1>
 
-<h2 id="create-a-payment-instruction">Create a Payment Instruction</h2>
+<h2 id="crud-create-a-payment-instruction">CRUD: Create a Payment Instruction</h2>
 <pre class="highlight shell tab-shell"><code>curl --request POST <span class="se">\</span>
   --url https://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span>/payment-instructions <span class="se">\</span>
   --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
@@ -3394,168 +3394,7 @@ Remember — you must authorise a card before it can be used
 </tr>
 </tbody></table>
 
-<h2 id="retrieve-a-summary-of-payment-instructions">Retrieve a summary of Payment Instructions</h2>
-<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
-  --url https://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span>/payment-instructions/summary <span class="se">\</span>
-  --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
-  --header <span class="s1">'x-clientPassword: Str0ngP@ssword'</span> <span class="se">\</span>
-  --header <span class="s1">'x-version: 9.0.0'</span> <span class="se">\</span>
-  --data <span class="s1">'{}'</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/summary"</span><span class="p">);</span>
-<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="n">Method</span><span class="p">.</span><span class="n">GET</span><span class="p">);</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-version"</span><span class="p">,</span> <span class="s">"9.0.0"</span><span class="p">);</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientId"</span><span class="p">,</span> <span class="s">"1001"</span><span class="p">);</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientPassword"</span><span class="p">,</span> <span class="s">"Str0ngP@ssword"</span><span class="p">);</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">AddParameter</span><span class="p">(</span><span class="s">"undefined"</span><span class="p">,</span> <span class="s">"{}"</span><span class="p">,</span> <span class="n">ParameterType</span><span class="p">.</span><span class="n">RequestBody</span><span class="p">);</span>
-<span class="n">IRestResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/summary"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientId"</span><span class="o">,</span> <span class="s">"1001"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientPassword"</span><span class="o">,</span> <span class="s">"Str0ngP@ssword"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-version"</span><span class="o">,</span> <span class="s">"9.0.0"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"{}"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
-</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
-<span class="nb">require</span> <span class="s1">'net/http'</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/summary"</span><span class="p">)</span>
-
-<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
-<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
-<span class="n">http</span><span class="p">.</span><span class="nf">verify_mode</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">SSL</span><span class="o">::</span><span class="no">VERIFY_NONE</span>
-
-<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientid"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1001'</span>
-<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientPassword"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Str0ngP@ssword'</span>
-<span class="n">request</span><span class="p">[</span><span class="s2">"x-version"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'9.0.0'</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"{}"</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
-
-<span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">(</span><span class="s">"uat.mppglobal.com"</span><span class="p">)</span>
-
-<span class="n">payload</span> <span class="o">=</span> <span class="s">"{}"</span>
-
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">'x-tokenid'</span><span class="p">:</span> <span class="s">"1001"</span><span class="p">,</span>
-    <span class="s">'x-clientPassword'</span><span class="p">:</span> <span class="s">"Str0ngP@ssword"</span><span class="p">,</span>
-    <span class="s">'x-version'</span><span class="p">:</span> <span class="s">"9.0.0"</span>
-    <span class="p">}</span>
-
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/api/accounts/{accountId}/payment-instructions/summary"</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
-
-<span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/summary"</span><span class="p">,</span>
-  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
-  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"x-tokenid"</span><span class="p">:</span> <span class="s2">"BE52ADA2064C4F9A9D90F28D066D1RFT"</span><span class="p">,</span>
-    <span class="s2">"x-sessionid"</span><span class="p">:</span> <span class="s2">"a0c595bd26004ff4bb7d4cb1b1c81a6d"</span><span class="p">,</span>
-    <span class="s2">"x-version"</span><span class="p">:</span> <span class="s2">"9.0.0"</span><span class="p">,</span>
-    <span class="s2">"origin"</span><span class="p">:</span> <span class="s2">"https://www.mppglobal.com"</span>
-  <span class="p">},</span>
-  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{}"</span>
-<span class="p">}</span>
-
-<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"paymentInstructions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"paymentInstructionReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0010J3O92YZYM43OP0"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pending"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"cartReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0010KCKSYU72H5M3X0"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"nextFulfilmentReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0010L00WASCMKX7UO3"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"nextFulfilmentDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-04T08:51:27.1816315Z"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"lastPaymentDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-04T08:51:27.1816315Z"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"nextPaymentDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-04T08:51:27.1816315Z"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"customPaymentInstructionParameters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"paymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pre-paid"</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint allows you to retrieve a summary of all payment instructions against a specific account.</p>
-
-<h3 id="url-endpoint">URL Endpoint</h3>
-
-<p><code class="prettyprint">GET http://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/summary/</code></p>
-
-<h3 id="response-parameters">Response Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>paymentInstructions</td>
-<td>array[objects]</td>
-<td>The collection of payment instructions.</td>
-</tr>
-<tr>
-<td>paymentInstructions &gt; paymentInstructionReference</td>
-<td>string</td>
-<td>The identifier for the specific payment instruction.</td>
-</tr>
-<tr>
-<td>paymentInstructions &gt; cartReference</td>
-<td>string</td>
-<td>The identifier for the Cart for the payment instruction.</td>
-</tr>
-<tr>
-<td>paymentInstructions &gt; nextFulfilmentReference</td>
-<td>string</td>
-<td>The identifier for the next fulfilment on the payment instruction.</td>
-</tr>
-<tr>
-<td>paymentInstructions &gt; nextFulfilmentDate</td>
-<td>string</td>
-<td>The next date a fulfilment will be dispatched.</td>
-</tr>
-<tr>
-<td>paymentInstructions &gt; lastPaymentDate</td>
-<td>integer</td>
-<td>The date the last payment was taken against the payment instruction.</td>
-</tr>
-<tr>
-<td>paymentInstructions &gt; nextPaymentDate</td>
-<td>string</td>
-<td>The next scheduled date a payment will be taken.</td>
-</tr>
-<tr>
-<td>paymentInstructions &gt; description</td>
-<td>string</td>
-<td>The name/description of the payment instruction</td>
-</tr>
-<tr>
-<td>paymentInstructions &gt; customPaymentInstructionParameters</td>
-<td>dictionary</td>
-<td>This is a collection of custom attributes against the payment instructions.</td>
-</tr>
-<tr>
-<td>paymentInstructions &gt; parameterName</td>
-<td>string</td>
-<td>Representation of all custom parameters against the payment instruction.</td>
-</tr>
-</tbody></table>
-
-<h2 id="retrieve-a-payment-instruction">Retrieve a Payment Instruction</h2>
+<h2 id="crud-retrieve-a-payment-instruction">CRUD: Retrieve a Payment Instruction</h2>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
   --url https://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span>/payment-instructions/<span class="o">{</span>paymentInstructionReference<span class="o">}</span> <span class="se">\</span>
   --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
@@ -3841,7 +3680,7 @@ Remember — you must authorise a card before it can be used
 </tr>
 </tbody></table>
 
-<h2 id="update-a-payment-instruction">Update a Payment Instruction</h2>
+<h2 id="crud-update-a-payment-instruction">CRUD: Update a Payment Instruction</h2>
 <pre class="highlight shell tab-shell"><code>curl --request PUT <span class="se">\</span>
   --url https://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span>/payment-instructions/<span class="o">{</span>paymentInstructionReference<span class="o">}</span> <span class="se">\</span>
   --header <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
@@ -3966,9 +3805,170 @@ Remember — you must authorise a card before it can be used
 </tr>
 </tbody></table>
 
+<h2 id="retrieve-a-summary-of-payment-instructions">Retrieve a summary of Payment Instructions</h2>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url https://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span>/payment-instructions/summary <span class="se">\</span>
+  --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
+  --header <span class="s1">'x-clientPassword: Str0ngP@ssword'</span> <span class="se">\</span>
+  --header <span class="s1">'x-version: 9.0.0'</span> <span class="se">\</span>
+  --data <span class="s1">'{}'</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/summary"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="n">Method</span><span class="p">.</span><span class="n">GET</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-version"</span><span class="p">,</span> <span class="s">"9.0.0"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientId"</span><span class="p">,</span> <span class="s">"1001"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientPassword"</span><span class="p">,</span> <span class="s">"Str0ngP@ssword"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddParameter</span><span class="p">(</span><span class="s">"undefined"</span><span class="p">,</span> <span class="s">"{}"</span><span class="p">,</span> <span class="n">ParameterType</span><span class="p">.</span><span class="n">RequestBody</span><span class="p">);</span>
+<span class="n">IRestResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/summary"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientId"</span><span class="o">,</span> <span class="s">"1001"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientPassword"</span><span class="o">,</span> <span class="s">"Str0ngP@ssword"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-version"</span><span class="o">,</span> <span class="s">"9.0.0"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"{}"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/summary"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">verify_mode</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">SSL</span><span class="o">::</span><span class="no">VERIFY_NONE</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientid"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1001'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientPassword"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Str0ngP@ssword'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-version"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'9.0.0'</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"{}"</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">(</span><span class="s">"uat.mppglobal.com"</span><span class="p">)</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="s">"{}"</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'x-tokenid'</span><span class="p">:</span> <span class="s">"1001"</span><span class="p">,</span>
+    <span class="s">'x-clientPassword'</span><span class="p">:</span> <span class="s">"Str0ngP@ssword"</span><span class="p">,</span>
+    <span class="s">'x-version'</span><span class="p">:</span> <span class="s">"9.0.0"</span>
+    <span class="p">}</span>
+
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/api/accounts/{accountId}/payment-instructions/summary"</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/summary"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"x-tokenid"</span><span class="p">:</span> <span class="s2">"BE52ADA2064C4F9A9D90F28D066D1RFT"</span><span class="p">,</span>
+    <span class="s2">"x-sessionid"</span><span class="p">:</span> <span class="s2">"a0c595bd26004ff4bb7d4cb1b1c81a6d"</span><span class="p">,</span>
+    <span class="s2">"x-version"</span><span class="p">:</span> <span class="s2">"9.0.0"</span><span class="p">,</span>
+    <span class="s2">"origin"</span><span class="p">:</span> <span class="s2">"https://www.mppglobal.com"</span>
+  <span class="p">},</span>
+  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{}"</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"paymentInstructions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"paymentInstructionReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0010J3O92YZYM43OP0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pending"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"cartReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0010KCKSYU72H5M3X0"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"nextFulfilmentReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0010L00WASCMKX7UO3"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"nextFulfilmentDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-04T08:51:27.1816315Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"lastPaymentDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-04T08:51:27.1816315Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"nextPaymentDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-04T08:51:27.1816315Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"customPaymentInstructionParameters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"paymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pre-paid"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows you to retrieve a summary of all payment instructions against a specific account.</p>
+
+<h3 id="url-endpoint">URL Endpoint</h3>
+
+<p><code class="prettyprint">GET http://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/summary/</code></p>
+
+<h3 id="response-parameters">Response Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>paymentInstructions</td>
+<td>array[objects]</td>
+<td>The collection of payment instructions.</td>
+</tr>
+<tr>
+<td>paymentInstructions &gt; paymentInstructionReference</td>
+<td>string</td>
+<td>The identifier for the specific payment instruction.</td>
+</tr>
+<tr>
+<td>paymentInstructions &gt; cartReference</td>
+<td>string</td>
+<td>The identifier for the Cart for the payment instruction.</td>
+</tr>
+<tr>
+<td>paymentInstructions &gt; nextFulfilmentReference</td>
+<td>string</td>
+<td>The identifier for the next fulfilment on the payment instruction.</td>
+</tr>
+<tr>
+<td>paymentInstructions &gt; nextFulfilmentDate</td>
+<td>string</td>
+<td>The next date a fulfilment will be dispatched.</td>
+</tr>
+<tr>
+<td>paymentInstructions &gt; lastPaymentDate</td>
+<td>integer</td>
+<td>The date the last payment was taken against the payment instruction.</td>
+</tr>
+<tr>
+<td>paymentInstructions &gt; nextPaymentDate</td>
+<td>string</td>
+<td>The next scheduled date a payment will be taken.</td>
+</tr>
+<tr>
+<td>paymentInstructions &gt; description</td>
+<td>string</td>
+<td>The name/description of the payment instruction</td>
+</tr>
+<tr>
+<td>paymentInstructions &gt; customPaymentInstructionParameters</td>
+<td>dictionary</td>
+<td>This is a collection of custom attributes against the payment instructions.</td>
+</tr>
+<tr>
+<td>paymentInstructions &gt; parameterName</td>
+<td>string</td>
+<td>Representation of all custom parameters against the payment instruction.</td>
+</tr>
+</tbody></table>
+
           <h1 id="access-management">Access Management</h1>
 
-<h2 id="create-access">Create Access</h2>
+<h2 id="crud-create-access">CRUD: Create Access</h2>
 <pre class="highlight shell tab-shell"><code>curl --request POST <span class="se">\</span>
   --url https://uat.mppglobal.com/api/accounts/%7BaccountId%7D/entitlements <span class="se">\</span>
   --header <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
@@ -4077,7 +4077,7 @@ Remember — you must authorise a card before it can be used
 </tr>
 </tbody></table>
 
-<h2 id="retrieve-access">Retrieve Access</h2>
+<h2 id="crud-retrieve-access">CRUD: Retrieve Access</h2>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
   --url https://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span>/entitlements <span class="se">\</span>
   --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
@@ -4210,6 +4210,93 @@ Remember — you must authorise a card before it can be used
 <td>The expire date of the entitlement</td>
 </tr>
 </tbody></table>
+
+<h2 id="crud-delete-access">CRUD: Delete Access</h2>
+<pre class="highlight shell tab-shell"><code>curl --request DELETE <span class="se">\</span>
+  --url https://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span>/entitlements/<span class="o">{</span>entitlementIdentifier<span class="o">}</span> <span class="se">\</span>
+  --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
+  --header <span class="s1">'x-clientPassword: Str0ngP@ssword'</span> <span class="se">\</span>
+  --header <span class="s1">'x-version: 9.0.0'</span> <span class="se">\</span>
+  --data <span class="s1">'{}'</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="n">Method</span><span class="p">.</span><span class="n">DELETE</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-version"</span><span class="p">,</span> <span class="s">"9.0.0"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientId"</span><span class="p">,</span> <span class="s">"1001"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientPassword"</span><span class="p">,</span> <span class="s">"Str0ngP@ssword"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddParameter</span><span class="p">(</span><span class="s">"undefined"</span><span class="p">,</span> <span class="s">"{}"</span><span class="p">,</span> <span class="n">ParameterType</span><span class="p">.</span><span class="n">RequestBody</span><span class="p">);</span>
+<span class="n">IRestResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Unirest</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientId"</span><span class="o">,</span> <span class="s">"1001"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientPassword"</span><span class="o">,</span> <span class="s">"Str0ngP@ssword"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-version"</span><span class="o">,</span> <span class="s">"9.0.0"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"{}"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">verify_mode</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">SSL</span><span class="o">::</span><span class="no">VERIFY_NONE</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Delete</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientid"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1001'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientPassword"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Str0ngP@ssword'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-version"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'9.0.0'</span>
+
+<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"{}"</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">(</span><span class="s">"uat.mppglobal.com"</span><span class="p">)</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="s">"{}"</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'x-tokenid'</span><span class="p">:</span> <span class="s">"1001"</span><span class="p">,</span>
+    <span class="s">'x-clientPassword'</span><span class="p">:</span> <span class="s">"Str0ngP@ssword"</span><span class="p">,</span>
+    <span class="s">'x-version'</span><span class="p">:</span> <span class="s">"9.0.0"</span>
+    <span class="p">}</span>
+
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"DELETE"</span><span class="p">,</span> <span class="s">"/api/accounts/{accountId}/entitlements/{entitlementIdentifier}"</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"DELETE"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"x-tokenid"</span><span class="p">:</span> <span class="s2">"BE52ADA2064C4F9A9D90F28D066D1RFT"</span><span class="p">,</span>
+    <span class="s2">"x-version"</span><span class="p">:</span> <span class="s2">"9.0.0"</span><span class="p">,</span>
+    <span class="s2">"origin"</span><span class="p">:</span> <span class="s2">"https://www.mppglobal.com"</span>
+  <span class="p">},</span>
+  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{}"</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above command returns an empty JSON document:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span></code></pre>
+<p>In the event access should be removed from an account, this API method should be triggered</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">DELETE http://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}</code></p>
+
+<aside class="warning">Executing this API will not remove access from the account until the access rights of the account are checked again.</aside>
 
 <h2 id="validate-access">Validate Access</h2>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
@@ -4347,93 +4434,6 @@ Remember — you must authorise a card before it can be used
 <td>An indication as to whether the customer has access to the entitlement</td>
 </tr>
 </tbody></table>
-
-<h2 id="delete-access">Delete Access</h2>
-<pre class="highlight shell tab-shell"><code>curl --request DELETE <span class="se">\</span>
-  --url https://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span>/entitlements/<span class="o">{</span>entitlementIdentifier<span class="o">}</span> <span class="se">\</span>
-  --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
-  --header <span class="s1">'x-clientPassword: Str0ngP@ssword'</span> <span class="se">\</span>
-  --header <span class="s1">'x-version: 9.0.0'</span> <span class="se">\</span>
-  --data <span class="s1">'{}'</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}"</span><span class="p">);</span>
-<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="n">Method</span><span class="p">.</span><span class="n">DELETE</span><span class="p">);</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-version"</span><span class="p">,</span> <span class="s">"9.0.0"</span><span class="p">);</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientId"</span><span class="p">,</span> <span class="s">"1001"</span><span class="p">);</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientPassword"</span><span class="p">,</span> <span class="s">"Str0ngP@ssword"</span><span class="p">);</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">AddParameter</span><span class="p">(</span><span class="s">"undefined"</span><span class="p">,</span> <span class="s">"{}"</span><span class="p">,</span> <span class="n">ParameterType</span><span class="p">.</span><span class="n">RequestBody</span><span class="p">);</span>
-<span class="n">IRestResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Unirest</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientId"</span><span class="o">,</span> <span class="s">"1001"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientPassword"</span><span class="o">,</span> <span class="s">"Str0ngP@ssword"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-version"</span><span class="o">,</span> <span class="s">"9.0.0"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"{}"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
-</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
-<span class="nb">require</span> <span class="s1">'net/http'</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}"</span><span class="p">)</span>
-
-<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
-<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
-<span class="n">http</span><span class="p">.</span><span class="nf">verify_mode</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">SSL</span><span class="o">::</span><span class="no">VERIFY_NONE</span>
-
-<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Delete</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientid"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1001'</span>
-<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientPassword"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Str0ngP@ssword'</span>
-<span class="n">request</span><span class="p">[</span><span class="s2">"x-version"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'9.0.0'</span>
-
-<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"{}"</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
-
-<span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">(</span><span class="s">"uat.mppglobal.com"</span><span class="p">)</span>
-
-<span class="n">payload</span> <span class="o">=</span> <span class="s">"{}"</span>
-
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">'x-tokenid'</span><span class="p">:</span> <span class="s">"1001"</span><span class="p">,</span>
-    <span class="s">'x-clientPassword'</span><span class="p">:</span> <span class="s">"Str0ngP@ssword"</span><span class="p">,</span>
-    <span class="s">'x-version'</span><span class="p">:</span> <span class="s">"9.0.0"</span>
-    <span class="p">}</span>
-
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"DELETE"</span><span class="p">,</span> <span class="s">"/api/accounts/{accountId}/entitlements/{entitlementIdentifier}"</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
-
-<span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}"</span><span class="p">,</span>
-  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"DELETE"</span><span class="p">,</span>
-  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"x-tokenid"</span><span class="p">:</span> <span class="s2">"BE52ADA2064C4F9A9D90F28D066D1RFT"</span><span class="p">,</span>
-    <span class="s2">"x-version"</span><span class="p">:</span> <span class="s2">"9.0.0"</span><span class="p">,</span>
-    <span class="s2">"origin"</span><span class="p">:</span> <span class="s2">"https://www.mppglobal.com"</span>
-  <span class="p">},</span>
-  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{}"</span>
-<span class="p">}</span>
-
-<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre>
-<blockquote>
-<p>The above command returns an empty JSON document:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="w">
-</span></code></pre>
-<p>In the event access should be removed from an account, this API method should be triggered</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">DELETE http://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}</code></p>
-
-<aside class="warning">Executing this API will not remove access from the account until the access rights of the account are checked again.</aside>
 
 <h2 id="search-access">Search Access</h2>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
@@ -5148,7 +5148,7 @@ Remember — you must authorise a card before it can be used
 
           <h1 id="session-management">Session Management</h1>
 
-<h2 id="retrieve-a-session">Retrieve a Session</h2>
+<h2 id="crud-retrieve-a-session">CRUD: Retrieve a Session</h2>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
   --url https://uat.mppglobal.com/api/sessions/<span class="o">{</span>sessionToken<span class="o">}</span> <span class="se">\</span>
   --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
@@ -5292,7 +5292,7 @@ Remember — you must authorise a card before it can be used
 </tr>
 </tbody></table>
 
-<h2 id="delete-a-session">Delete a Session</h2>
+<h2 id="crud-delete-a-session">CRUD: Delete a Session</h2>
 <pre class="highlight shell tab-shell"><code>curl --request DELETE <span class="se">\</span>
   --url https://uat.mppglobal.com/api/sessions/<span class="o">{</span>sessionToken<span class="o">}</span> <span class="se">\</span>
   --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
@@ -6855,7 +6855,7 @@ Remember — you must authorise a card before it can be used
 
           <h1 id="customer-support-logs">Customer Support Logs</h1>
 
-<h2 id="create-support-log">Create Support Log</h2>
+<h2 id="crud-create-support-log">CRUD: Create Support Log</h2>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"logType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SupportNote"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"logStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Open"</span><span class="p">,</span><span class="w">
@@ -6994,6 +6994,370 @@ Remember — you must authorise a card before it can be used
 <td>This parameter is provided to track the system account who created the log entry.</td>
 </tr>
 </tbody></table>
+
+<h2 id="crud-retrieve-a-support-log">CRUD: Retrieve a Support Log</h2>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url https://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span>/support-logs/<span class="o">{</span>supportLogReference<span class="o">}</span> <span class="se">\</span>
+  --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
+  --header <span class="s1">'x-clientPassword: Str0ngP@ssword'</span> <span class="se">\</span>
+  --header <span class="s1">'x-version: 9.0.0'</span> <span class="se">\</span>
+  --data <span class="s1">'{}'</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="n">Method</span><span class="p">.</span><span class="n">GET</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-version"</span><span class="p">,</span> <span class="s">"9.0.0"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientId"</span><span class="p">,</span> <span class="s">"1001"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientPassword"</span><span class="p">,</span> <span class="s">"Str0ngP@ssword"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddParameter</span><span class="p">(</span><span class="s">"undefined"</span><span class="p">,</span> <span class="s">"{}"</span><span class="p">,</span> <span class="n">ParameterType</span><span class="p">.</span><span class="n">RequestBody</span><span class="p">);</span>
+<span class="n">IRestResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientId"</span><span class="o">,</span> <span class="s">"1001"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientPassword"</span><span class="o">,</span> <span class="s">"Str0ngP@ssword"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-version"</span><span class="o">,</span> <span class="s">"9.0.0"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"{}"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">verify_mode</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">SSL</span><span class="o">::</span><span class="no">VERIFY_NONE</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientid"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1001'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientPassword"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Str0ngP@ssword'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-version"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'9.0.0'</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"{}"</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">(</span><span class="s">"uat.mppglobal.com"</span><span class="p">)</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="s">"{}"</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'x-tokenid'</span><span class="p">:</span> <span class="s">"1001"</span><span class="p">,</span>
+    <span class="s">'x-clientPassword'</span><span class="p">:</span> <span class="s">"Str0ngP@ssword"</span><span class="p">,</span>
+    <span class="s">'x-version'</span><span class="p">:</span> <span class="s">"9.0.0"</span>
+    <span class="p">}</span>
+
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/api/accounts/{accountId}/support-logs/{supportLogReference}"</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"x-tokenid"</span><span class="p">:</span> <span class="s2">"BE52ADA2064C4F9A9D90F28D066D1RFT"</span><span class="p">,</span>
+    <span class="s2">"x-sessionid"</span><span class="p">:</span> <span class="s2">"a0c595bd26004ff4bb7d4cb1b1c81a6d"</span><span class="p">,</span>
+    <span class="s2">"x-version"</span><span class="p">:</span> <span class="s2">"9.0.0"</span><span class="p">,</span>
+    <span class="s2">"origin"</span><span class="p">:</span> <span class="s2">"https://www.mppglobal.com"</span>
+  <span class="p">},</span>
+  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{}"</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"logType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SupportNote"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"logStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Open"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"logTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unable to access content."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"logDetails"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Due to the use of cellular data."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"systemAccountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1634375</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"supportLogReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0010XABJN0X22IVB90"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"createdDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-04T08:57:14.487"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lastUpdatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-04T08:57:14.487"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows you to retrieve a specific support log, for a specific account. </p>
+
+<h3 id="url-endpoint">URL Endpoint</h3>
+
+<p><code class="prettyprint">GET http://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}/</code></p>
+
+<h3 id="response-parameters">Response Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>logType</td>
+<td>string</td>
+<td>The type of log entry.</td>
+</tr>
+<tr>
+<td>logStatus</td>
+<td>string</td>
+<td>Indication whether the log entry is open or closed.</td>
+</tr>
+<tr>
+<td>logTitle</td>
+<td>string</td>
+<td>A summary of what the log entry details.</td>
+</tr>
+<tr>
+<td>logDetails</td>
+<td>string</td>
+<td>Specific information about the log entry being added.</td>
+</tr>
+<tr>
+<td>systemAccountId</td>
+<td>integer</td>
+<td>This parameter is provided to track the system account who created the log entry.</td>
+</tr>
+<tr>
+<td>supportLogReference</td>
+<td>string</td>
+<td>This parameter is provided to track the system account who created the log entry.</td>
+</tr>
+<tr>
+<td>createdDate</td>
+<td>string</td>
+<td>This parameter is provided to track the system account who created the log entry.</td>
+</tr>
+<tr>
+<td>lastUpdatedDate</td>
+<td>string</td>
+<td>This parameter is provided to track the system account who created the log entry.</td>
+</tr>
+</tbody></table>
+
+<h2 id="crud-update-a-support-log">CRUD: Update a Support Log</h2>
+<pre class="highlight shell tab-shell"><code>curl --request PUT <span class="se">\</span>
+  --url https://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span>/support-logs/<span class="o">{</span>supportLogReference<span class="o">}</span> <span class="se">\</span>
+  --header <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
+  --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
+  --header <span class="s1">'x-clientPassword: Str0ngP@ssword'</span> <span class="se">\</span>
+  --header <span class="s1">'x-version: 9.0.0'</span> <span class="se">\</span>
+  --data <span class="s1">'[{"op":"replace","path":"/LogTitle","value":"A new log title"},{"op":"replace","path":"/LogDetails","value":"Re-write of the details"},{"op":"replace","path":"/LogStatus","value":"Closed"}]'</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="n">Method</span><span class="p">.</span><span class="n">PUT</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"content-type"</span><span class="p">,</span> <span class="s">"application/json"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-version"</span><span class="p">,</span> <span class="s">"9.0.0"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientId"</span><span class="p">,</span> <span class="s">"1001"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientPassword"</span><span class="p">,</span> <span class="s">"Str0ngP@ssword"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddParameter</span><span class="p">(</span><span class="s">"application/json"</span><span class="p">,</span> <span class="s">"[{\"op\":\"replace\",\"path\":\"/LogTitle\",\"value\":\"A new log title\"},{\"op\":\"replace\",\"path\":\"/LogDetails\",\"value\":\"Re-write of the details\"},{\"op\":\"replace\",\"path\":\"/LogStatus\",\"value\":\"Closed\"}]"</span><span class="p">,</span> <span class="n">ParameterType</span><span class="p">.</span><span class="n">RequestBody</span><span class="p">);</span>
+<span class="n">IRestResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Unirest</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientId"</span><span class="o">,</span> <span class="s">"1001"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientPassword"</span><span class="o">,</span> <span class="s">"Str0ngP@ssword"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-version"</span><span class="o">,</span> <span class="s">"9.0.0"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"content-type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"[{\"op\":\"replace\",\"path\":\"/LogTitle\",\"value\":\"A new log title\"},{\"op\":\"replace\",\"path\":\"/LogDetails\",\"value\":\"Re-write of the details\"},{\"op\":\"replace\",\"path\":\"/LogStatus\",\"value\":\"Closed\"}]"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">verify_mode</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">SSL</span><span class="o">::</span><span class="no">VERIFY_NONE</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Post</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientid"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1001'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientPassword"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Str0ngP@ssword'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-version"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'9.0.0'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"content-type"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"[{</span><span class="se">\"</span><span class="s2">op</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">replace</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">path</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">/LogTitle</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">A new log title</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">op</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">replace</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">path</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">/LogDetails</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Re-write of the details</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">op</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">replace</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">path</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">/LogStatus</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Closed</span><span class="se">\"</span><span class="s2">}]"</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">(</span><span class="s">"uat.mppglobal.com"</span><span class="p">)</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="s">"[{</span><span class="se">\"</span><span class="s">op</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">replace</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">path</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">/LogTitle</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">value</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">A new log title</span><span class="se">\"</span><span class="s">},{</span><span class="se">\"</span><span class="s">op</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">replace</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">path</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">/LogDetails</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">value</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">Re-write of the details</span><span class="se">\"</span><span class="s">},{</span><span class="se">\"</span><span class="s">op</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">replace</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">path</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">/LogStatus</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">value</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">Closed</span><span class="se">\"</span><span class="s">}]"</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'x-tokenid'</span><span class="p">:</span> <span class="s">"1001"</span><span class="p">,</span>
+    <span class="s">'x-clientPassword'</span><span class="p">:</span> <span class="s">"Str0ngP@ssword"</span><span class="p">,</span>
+    <span class="s">'x-version'</span><span class="p">:</span> <span class="s">"9.0.0"</span><span class="p">,</span>
+    <span class="s">'content-type'</span><span class="p">:</span> <span class="s">"application/json"</span>
+    <span class="p">}</span>
+
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"PUT"</span><span class="p">,</span> <span class="s">"/api/accounts/{accountId}/support-logs/{supportLogReference}"</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"x-tokenid"</span><span class="p">:</span> <span class="s2">"BE52ADA2064C4F9A9D90F28D066D1RFT"</span><span class="p">,</span>
+    <span class="s2">"x-version"</span><span class="p">:</span> <span class="s2">"9.0.0"</span><span class="p">,</span>
+    <span class="s2">"origin"</span><span class="p">:</span> <span class="s2">"https://www.mppglobal.com"</span><span class="p">,</span>
+    <span class="s2">"content-type"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+  <span class="p">},</span>
+  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"[{\"op\":\"replace\",\"path\":\"/LogTitle\",\"value\":\"A new log title\"},{\"op\":\"replace\",\"path\":\"/LogDetails\",\"value\":\"Re-write of the details\"},{\"op\":\"replace\",\"path\":\"/LogStatus\",\"value\":\"Closed\"}]"</span> 
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span></code></pre>
+<p>In the event you need to update a support log entry, this end point should be called to edit non-system generated logs.</p>
+
+<h3 id="url-endpoint">URL Endpoint</h3>
+
+<p><code class="prettyprint">PUT http://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}</code></p>
+
+<h3 id="put-parameters">PUT Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>array[objects]</td>
+<td>Yes</td>
+<td>A collection of updates that should be made to the resource</td>
+<td></td>
+</tr>
+<tr>
+<td>op</td>
+<td>string</td>
+<td>Yes</td>
+<td>The type of change that should be executed. add, replace and remove are available operations.</td>
+</tr>
+<tr>
+<td>path</td>
+<td>string</td>
+<td>Yes</td>
+<td>The name of the parameter that should be updated.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Yes</td>
+<td>The new value to store against the parameter.</td>
+</tr>
+</tbody></table>
+
+<h2 id="crud-delete-a-support-log">CRUD: Delete a Support Log</h2>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"logType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SupportNote"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"logStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Open"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"logTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unable to access content."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"logDetails"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Due to the use of cellular data."</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"systemAccountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1634375</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"supportLogReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0010XABJN0X22IVB90"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"createdDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-04T08:57:14.487"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lastUpdatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-04T08:57:14.487"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight shell tab-shell"><code>curl --request DELETE <span class="se">\</span>
+  --url https://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span>/support-logs/<span class="o">{</span>supportLogReference<span class="o">}</span> <span class="se">\</span>
+  --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
+  --header <span class="s1">'x-clientPassword: Str0ngP@ssword'</span> <span class="se">\</span>
+  --header <span class="s1">'x-version: 9.0.0'</span> <span class="se">\</span>
+  --data <span class="s1">'{}'</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="n">Method</span><span class="p">.</span><span class="n">DELETE</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-version"</span><span class="p">,</span> <span class="s">"9.0.0"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientId"</span><span class="p">,</span> <span class="s">"1001"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientPassword"</span><span class="p">,</span> <span class="s">"Str0ngP@ssword"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddParameter</span><span class="p">(</span><span class="s">"undefined"</span><span class="p">,</span> <span class="s">"{}"</span><span class="p">,</span> <span class="n">ParameterType</span><span class="p">.</span><span class="n">RequestBody</span><span class="p">);</span>
+<span class="n">IRestResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Unirest</span><span class="o">.</span><span class="na">delete</span><span class="o">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientId"</span><span class="o">,</span> <span class="s">"1001"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientPassword"</span><span class="o">,</span> <span class="s">"Str0ngP@ssword"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-version"</span><span class="o">,</span> <span class="s">"9.0.0"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"{}"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">verify_mode</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">SSL</span><span class="o">::</span><span class="no">VERIFY_NONE</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Delete</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientid"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1001'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientPassword"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Str0ngP@ssword'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-version"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'9.0.0'</span>
+
+<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"{}"</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">(</span><span class="s">"uat.mppglobal.com"</span><span class="p">)</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="s">"{}"</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'x-tokenid'</span><span class="p">:</span> <span class="s">"1001"</span><span class="p">,</span>
+    <span class="s">'x-clientPassword'</span><span class="p">:</span> <span class="s">"Str0ngP@ssword"</span><span class="p">,</span>
+    <span class="s">'x-version'</span><span class="p">:</span> <span class="s">"9.0.0"</span>
+    <span class="p">}</span>
+
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"DELETE"</span><span class="p">,</span> <span class="s">"/api/accounts/{accountId}/support-logs/{supportLogReference}"</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"DELETE"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"x-tokenid"</span><span class="p">:</span> <span class="s2">"BE52ADA2064C4F9A9D90F28D066D1RFT"</span><span class="p">,</span>
+    <span class="s2">"x-version"</span><span class="p">:</span> <span class="s2">"9.0.0"</span><span class="p">,</span>
+    <span class="s2">"origin"</span><span class="p">:</span> <span class="s2">"https://www.mppglobal.com"</span>
+  <span class="p">},</span>
+  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{}"</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above command returns a HTTP 204 upon completion.</p>
+</blockquote>
+
+<p>In the event a support log entry has been added in error, this endpoint will allow you to delete the resource. The endpoint will not allow you to delete a system generated note.</p>
+
+<h3 id="url-endpoint">URL Endpoint</h3>
+
+<p><code class="prettyprint">DELETE http://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}</code></p>
 
 <h2 id="retrieve-all-support-logs">Retrieve All Support Logs</h2>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
@@ -7193,370 +7557,6 @@ Remember — you must authorise a card before it can be used
 <td>The current page number.</td>
 </tr>
 </tbody></table>
-
-<h2 id="retrieve-a-support-log">Retrieve a Support Log</h2>
-<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
-  --url https://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span>/support-logs/<span class="o">{</span>supportLogReference<span class="o">}</span> <span class="se">\</span>
-  --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
-  --header <span class="s1">'x-clientPassword: Str0ngP@ssword'</span> <span class="se">\</span>
-  --header <span class="s1">'x-version: 9.0.0'</span> <span class="se">\</span>
-  --data <span class="s1">'{}'</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}"</span><span class="p">);</span>
-<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="n">Method</span><span class="p">.</span><span class="n">GET</span><span class="p">);</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-version"</span><span class="p">,</span> <span class="s">"9.0.0"</span><span class="p">);</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientId"</span><span class="p">,</span> <span class="s">"1001"</span><span class="p">);</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientPassword"</span><span class="p">,</span> <span class="s">"Str0ngP@ssword"</span><span class="p">);</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">AddParameter</span><span class="p">(</span><span class="s">"undefined"</span><span class="p">,</span> <span class="s">"{}"</span><span class="p">,</span> <span class="n">ParameterType</span><span class="p">.</span><span class="n">RequestBody</span><span class="p">);</span>
-<span class="n">IRestResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientId"</span><span class="o">,</span> <span class="s">"1001"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientPassword"</span><span class="o">,</span> <span class="s">"Str0ngP@ssword"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-version"</span><span class="o">,</span> <span class="s">"9.0.0"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"{}"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
-</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
-<span class="nb">require</span> <span class="s1">'net/http'</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}"</span><span class="p">)</span>
-
-<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
-<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
-<span class="n">http</span><span class="p">.</span><span class="nf">verify_mode</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">SSL</span><span class="o">::</span><span class="no">VERIFY_NONE</span>
-
-<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientid"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1001'</span>
-<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientPassword"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Str0ngP@ssword'</span>
-<span class="n">request</span><span class="p">[</span><span class="s2">"x-version"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'9.0.0'</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"{}"</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
-
-<span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">(</span><span class="s">"uat.mppglobal.com"</span><span class="p">)</span>
-
-<span class="n">payload</span> <span class="o">=</span> <span class="s">"{}"</span>
-
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">'x-tokenid'</span><span class="p">:</span> <span class="s">"1001"</span><span class="p">,</span>
-    <span class="s">'x-clientPassword'</span><span class="p">:</span> <span class="s">"Str0ngP@ssword"</span><span class="p">,</span>
-    <span class="s">'x-version'</span><span class="p">:</span> <span class="s">"9.0.0"</span>
-    <span class="p">}</span>
-
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/api/accounts/{accountId}/support-logs/{supportLogReference}"</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
-
-<span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}"</span><span class="p">,</span>
-  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
-  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"x-tokenid"</span><span class="p">:</span> <span class="s2">"BE52ADA2064C4F9A9D90F28D066D1RFT"</span><span class="p">,</span>
-    <span class="s2">"x-sessionid"</span><span class="p">:</span> <span class="s2">"a0c595bd26004ff4bb7d4cb1b1c81a6d"</span><span class="p">,</span>
-    <span class="s2">"x-version"</span><span class="p">:</span> <span class="s2">"9.0.0"</span><span class="p">,</span>
-    <span class="s2">"origin"</span><span class="p">:</span> <span class="s2">"https://www.mppglobal.com"</span>
-  <span class="p">},</span>
-  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{}"</span>
-<span class="p">}</span>
-
-<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"logType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SupportNote"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"logStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Open"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"logTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unable to access content."</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"logDetails"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Due to the use of cellular data."</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"systemAccountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1634375</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"supportLogReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0010XABJN0X22IVB90"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"createdDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-04T08:57:14.487"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"lastUpdatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-04T08:57:14.487"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint allows you to retrieve a specific support log, for a specific account. </p>
-
-<h3 id="url-endpoint">URL Endpoint</h3>
-
-<p><code class="prettyprint">GET http://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}/</code></p>
-
-<h3 id="response-parameters">Response Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>logType</td>
-<td>string</td>
-<td>The type of log entry.</td>
-</tr>
-<tr>
-<td>logStatus</td>
-<td>string</td>
-<td>Indication whether the log entry is open or closed.</td>
-</tr>
-<tr>
-<td>logTitle</td>
-<td>string</td>
-<td>A summary of what the log entry details.</td>
-</tr>
-<tr>
-<td>logDetails</td>
-<td>string</td>
-<td>Specific information about the log entry being added.</td>
-</tr>
-<tr>
-<td>systemAccountId</td>
-<td>integer</td>
-<td>This parameter is provided to track the system account who created the log entry.</td>
-</tr>
-<tr>
-<td>supportLogReference</td>
-<td>string</td>
-<td>This parameter is provided to track the system account who created the log entry.</td>
-</tr>
-<tr>
-<td>createdDate</td>
-<td>string</td>
-<td>This parameter is provided to track the system account who created the log entry.</td>
-</tr>
-<tr>
-<td>lastUpdatedDate</td>
-<td>string</td>
-<td>This parameter is provided to track the system account who created the log entry.</td>
-</tr>
-</tbody></table>
-
-<h2 id="update-a-support-log">Update a Support Log</h2>
-<pre class="highlight shell tab-shell"><code>curl --request PUT <span class="se">\</span>
-  --url https://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span>/support-logs/<span class="o">{</span>supportLogReference<span class="o">}</span> <span class="se">\</span>
-  --header <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
-  --header <span class="s1">'x-clientPassword: Str0ngP@ssword'</span> <span class="se">\</span>
-  --header <span class="s1">'x-version: 9.0.0'</span> <span class="se">\</span>
-  --data <span class="s1">'[{"op":"replace","path":"/LogTitle","value":"A new log title"},{"op":"replace","path":"/LogDetails","value":"Re-write of the details"},{"op":"replace","path":"/LogStatus","value":"Closed"}]'</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}"</span><span class="p">);</span>
-<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="n">Method</span><span class="p">.</span><span class="n">PUT</span><span class="p">);</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"content-type"</span><span class="p">,</span> <span class="s">"application/json"</span><span class="p">);</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-version"</span><span class="p">,</span> <span class="s">"9.0.0"</span><span class="p">);</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientId"</span><span class="p">,</span> <span class="s">"1001"</span><span class="p">);</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientPassword"</span><span class="p">,</span> <span class="s">"Str0ngP@ssword"</span><span class="p">);</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">AddParameter</span><span class="p">(</span><span class="s">"application/json"</span><span class="p">,</span> <span class="s">"[{\"op\":\"replace\",\"path\":\"/LogTitle\",\"value\":\"A new log title\"},{\"op\":\"replace\",\"path\":\"/LogDetails\",\"value\":\"Re-write of the details\"},{\"op\":\"replace\",\"path\":\"/LogStatus\",\"value\":\"Closed\"}]"</span><span class="p">,</span> <span class="n">ParameterType</span><span class="p">.</span><span class="n">RequestBody</span><span class="p">);</span>
-<span class="n">IRestResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Unirest</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientId"</span><span class="o">,</span> <span class="s">"1001"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientPassword"</span><span class="o">,</span> <span class="s">"Str0ngP@ssword"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-version"</span><span class="o">,</span> <span class="s">"9.0.0"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"content-type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"[{\"op\":\"replace\",\"path\":\"/LogTitle\",\"value\":\"A new log title\"},{\"op\":\"replace\",\"path\":\"/LogDetails\",\"value\":\"Re-write of the details\"},{\"op\":\"replace\",\"path\":\"/LogStatus\",\"value\":\"Closed\"}]"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
-</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
-<span class="nb">require</span> <span class="s1">'net/http'</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}"</span><span class="p">)</span>
-
-<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
-<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
-<span class="n">http</span><span class="p">.</span><span class="nf">verify_mode</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">SSL</span><span class="o">::</span><span class="no">VERIFY_NONE</span>
-
-<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Post</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientid"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1001'</span>
-<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientPassword"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Str0ngP@ssword'</span>
-<span class="n">request</span><span class="p">[</span><span class="s2">"x-version"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'9.0.0'</span>
-<span class="n">request</span><span class="p">[</span><span class="s2">"content-type"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"[{</span><span class="se">\"</span><span class="s2">op</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">replace</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">path</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">/LogTitle</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">A new log title</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">op</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">replace</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">path</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">/LogDetails</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Re-write of the details</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">op</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">replace</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">path</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">/LogStatus</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Closed</span><span class="se">\"</span><span class="s2">}]"</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
-
-<span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">(</span><span class="s">"uat.mppglobal.com"</span><span class="p">)</span>
-
-<span class="n">payload</span> <span class="o">=</span> <span class="s">"[{</span><span class="se">\"</span><span class="s">op</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">replace</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">path</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">/LogTitle</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">value</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">A new log title</span><span class="se">\"</span><span class="s">},{</span><span class="se">\"</span><span class="s">op</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">replace</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">path</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">/LogDetails</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">value</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">Re-write of the details</span><span class="se">\"</span><span class="s">},{</span><span class="se">\"</span><span class="s">op</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">replace</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">path</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">/LogStatus</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">value</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">Closed</span><span class="se">\"</span><span class="s">}]"</span>
-
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">'x-tokenid'</span><span class="p">:</span> <span class="s">"1001"</span><span class="p">,</span>
-    <span class="s">'x-clientPassword'</span><span class="p">:</span> <span class="s">"Str0ngP@ssword"</span><span class="p">,</span>
-    <span class="s">'x-version'</span><span class="p">:</span> <span class="s">"9.0.0"</span><span class="p">,</span>
-    <span class="s">'content-type'</span><span class="p">:</span> <span class="s">"application/json"</span>
-    <span class="p">}</span>
-
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"PUT"</span><span class="p">,</span> <span class="s">"/api/accounts/{accountId}/support-logs/{supportLogReference}"</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
-
-<span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}"</span><span class="p">,</span>
-  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
-  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"x-tokenid"</span><span class="p">:</span> <span class="s2">"BE52ADA2064C4F9A9D90F28D066D1RFT"</span><span class="p">,</span>
-    <span class="s2">"x-version"</span><span class="p">:</span> <span class="s2">"9.0.0"</span><span class="p">,</span>
-    <span class="s2">"origin"</span><span class="p">:</span> <span class="s2">"https://www.mppglobal.com"</span><span class="p">,</span>
-    <span class="s2">"content-type"</span><span class="p">:</span> <span class="s2">"application/json"</span>
-  <span class="p">},</span>
-  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"[{\"op\":\"replace\",\"path\":\"/LogTitle\",\"value\":\"A new log title\"},{\"op\":\"replace\",\"path\":\"/LogDetails\",\"value\":\"Re-write of the details\"},{\"op\":\"replace\",\"path\":\"/LogStatus\",\"value\":\"Closed\"}]"</span> 
-<span class="p">}</span>
-
-<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="w">
-</span></code></pre>
-<p>In the event you need to update a support log entry, this end point should be called to edit non-system generated logs.</p>
-
-<h3 id="url-endpoint">URL Endpoint</h3>
-
-<p><code class="prettyprint">PUT http://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}</code></p>
-
-<h3 id="put-parameters">PUT Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Mandatory</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>array[objects]</td>
-<td>Yes</td>
-<td>A collection of updates that should be made to the resource</td>
-<td></td>
-</tr>
-<tr>
-<td>op</td>
-<td>string</td>
-<td>Yes</td>
-<td>The type of change that should be executed. add, replace and remove are available operations.</td>
-</tr>
-<tr>
-<td>path</td>
-<td>string</td>
-<td>Yes</td>
-<td>The name of the parameter that should be updated.</td>
-</tr>
-<tr>
-<td>value</td>
-<td>string</td>
-<td>Yes</td>
-<td>The new value to store against the parameter.</td>
-</tr>
-</tbody></table>
-
-<h2 id="delete-a-support-log">Delete a Support Log</h2>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"logType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SupportNote"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"logStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Open"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"logTitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Unable to access content."</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"logDetails"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Due to the use of cellular data."</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"systemAccountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1634375</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"supportLogReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0010XABJN0X22IVB90"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"createdDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-04T08:57:14.487"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"lastUpdatedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-04T08:57:14.487"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><pre class="highlight shell tab-shell"><code>curl --request DELETE <span class="se">\</span>
-  --url https://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span>/support-logs/<span class="o">{</span>supportLogReference<span class="o">}</span> <span class="se">\</span>
-  --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
-  --header <span class="s1">'x-clientPassword: Str0ngP@ssword'</span> <span class="se">\</span>
-  --header <span class="s1">'x-version: 9.0.0'</span> <span class="se">\</span>
-  --data <span class="s1">'{}'</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}"</span><span class="p">);</span>
-<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="n">Method</span><span class="p">.</span><span class="n">DELETE</span><span class="p">);</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-version"</span><span class="p">,</span> <span class="s">"9.0.0"</span><span class="p">);</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientId"</span><span class="p">,</span> <span class="s">"1001"</span><span class="p">);</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientPassword"</span><span class="p">,</span> <span class="s">"Str0ngP@ssword"</span><span class="p">);</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">AddParameter</span><span class="p">(</span><span class="s">"undefined"</span><span class="p">,</span> <span class="s">"{}"</span><span class="p">,</span> <span class="n">ParameterType</span><span class="p">.</span><span class="n">RequestBody</span><span class="p">);</span>
-<span class="n">IRestResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Unirest</span><span class="o">.</span><span class="na">delete</span><span class="o">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientId"</span><span class="o">,</span> <span class="s">"1001"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientPassword"</span><span class="o">,</span> <span class="s">"Str0ngP@ssword"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-version"</span><span class="o">,</span> <span class="s">"9.0.0"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"{}"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
-</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
-<span class="nb">require</span> <span class="s1">'net/http'</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}"</span><span class="p">)</span>
-
-<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
-<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
-<span class="n">http</span><span class="p">.</span><span class="nf">verify_mode</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">SSL</span><span class="o">::</span><span class="no">VERIFY_NONE</span>
-
-<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Delete</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientid"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1001'</span>
-<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientPassword"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Str0ngP@ssword'</span>
-<span class="n">request</span><span class="p">[</span><span class="s2">"x-version"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'9.0.0'</span>
-
-<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"{}"</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
-
-<span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">(</span><span class="s">"uat.mppglobal.com"</span><span class="p">)</span>
-
-<span class="n">payload</span> <span class="o">=</span> <span class="s">"{}"</span>
-
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">'x-tokenid'</span><span class="p">:</span> <span class="s">"1001"</span><span class="p">,</span>
-    <span class="s">'x-clientPassword'</span><span class="p">:</span> <span class="s">"Str0ngP@ssword"</span><span class="p">,</span>
-    <span class="s">'x-version'</span><span class="p">:</span> <span class="s">"9.0.0"</span>
-    <span class="p">}</span>
-
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"DELETE"</span><span class="p">,</span> <span class="s">"/api/accounts/{accountId}/support-logs/{supportLogReference}"</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
-
-<span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}"</span><span class="p">,</span>
-  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"DELETE"</span><span class="p">,</span>
-  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"x-tokenid"</span><span class="p">:</span> <span class="s2">"BE52ADA2064C4F9A9D90F28D066D1RFT"</span><span class="p">,</span>
-    <span class="s2">"x-version"</span><span class="p">:</span> <span class="s2">"9.0.0"</span><span class="p">,</span>
-    <span class="s2">"origin"</span><span class="p">:</span> <span class="s2">"https://www.mppglobal.com"</span>
-  <span class="p">},</span>
-  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{}"</span>
-<span class="p">}</span>
-
-<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre>
-<blockquote>
-<p>The above command returns a HTTP 204 upon completion.</p>
-</blockquote>
-
-<p>In the event a support log entry has been added in error, this endpoint will allow you to delete the resource. The endpoint will not allow you to delete a system generated note.</p>
-
-<h3 id="url-endpoint">URL Endpoint</h3>
-
-<p><code class="prettyprint">DELETE http://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}</code></p>
 
           <h1 id="analytics">Analytics</h1>
 

@@ -1,6 +1,6 @@
 # Address Book
 
-## Create Address
+## CRUD: Create Address
 
 ```shell
 curl --request POST \
@@ -125,7 +125,7 @@ isDefault | boolean |optional | An indication as to whether the address is the d
 
 
 
-## Retrieve Address Book
+## CRUD: Retrieve Address Book
 
 ```shell
 curl --request GET \
