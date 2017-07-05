@@ -90,7 +90,10 @@ In addition to gaining entitlements via purchasing content, it is possible to pr
 
 ### HTTP Request
 
-`POST http://uat.mppglobal.com/api/accounts/{accountId}/entitlements`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/entitlements</span>
+</div>
 
 ### POST Parameters
 
@@ -212,7 +215,10 @@ This endpoint is available for retrieving all active access for a specific accou
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/api/accounts/{accountId}/entitlements`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/entitlements</span>
+</div>
 
 ### Response Parameters
 
@@ -326,7 +332,10 @@ In the event access should be removed from an account, this API method should be
 
 ### HTTP Request
 
-`DELETE http://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-delete">DELETE</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}</span>
+</div>
 
 <aside class="warning">Executing this API will not remove access from the account until the access rights of the account are checked again.</aside>
 
@@ -437,7 +446,10 @@ In order to check if an account has access to content, this API method should be
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}</span>
+</div>
 
 ### Query Parameters
 
@@ -568,7 +580,10 @@ This endpoint is available for all access for a specific account, regardless of 
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/api/accounts/{accountId}/entitlements/search`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/search</span>
+</div>
 
 ### Query Parameters
 

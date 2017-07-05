@@ -88,7 +88,10 @@ This endpoint can be used to extract predefined datasets from eSuite for use in 
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/api/analytics/{method}`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/analytics/{method}</span>
+</div>
 
 ### Query string
 

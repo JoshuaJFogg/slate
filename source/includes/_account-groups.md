@@ -24,7 +24,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`POST http://uat.mppglobal.com/api/accounts/{accountId}/groups`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/groups</span>
+</div>
 
 ### POST Parameters
 
@@ -61,7 +64,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/api/accounts/{accountId}/groups`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/groups</span>
+</div>
 
 ### Response Parameters
 
@@ -115,7 +121,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members</span>
+</div>
 
 ### Query String Parameters
 
@@ -156,7 +165,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`POST http://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members</span>
+</div>
 
 ### POST Parameters
 
@@ -194,8 +206,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`DELETE http://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members/{accountId}`
-
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-delete">DELETE</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members/{accountId}</span>
+</div>
 
 
 
@@ -225,7 +239,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/subscriptions`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/subscriptions</span>
+</div>
 
 ### Response Parameters
 
@@ -347,9 +364,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`DELETE http://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/subscriptions/{subscriptionId}/members/{accountId}`
-
-
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-delete">DELETE</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/subscriptions/{subscriptionId}/members/{accountId}</span>
+</div>
 
 
 
@@ -377,7 +395,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`PATCH http://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/subscriptions/{subscriptionId}/licenses`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-patch">PATCH</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/subscriptions/{subscriptionId}/licenses</span>
+</div>
 
 ### PATCH Parameters
 
@@ -416,7 +437,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`POST http://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/subscriptions/{subscriptionId}/members`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/subscriptions/{subscriptionId}/members</span>
+</div>
 
 ### POST Parameters
 

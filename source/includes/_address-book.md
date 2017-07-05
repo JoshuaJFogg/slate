@@ -102,7 +102,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`POST http://uat.mppglobal.com/api/accounts/{accountId}/addresses`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/addresses</span>
+</div>
 
 ### POST Parameters
 
@@ -241,7 +244,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/api/accounts/{accountId}/addresses`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/addresses</span>
+</div>
 
 ### Response Parameters
 

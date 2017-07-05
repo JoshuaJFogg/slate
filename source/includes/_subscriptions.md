@@ -99,7 +99,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`POST http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions</span>
+</div>
 
 ### Parameters
 
@@ -174,7 +177,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions</span>
+</div>
 
 ### Response Parameters
 
@@ -296,7 +302,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`PATCH http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-patch">PATCH</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions</span>
+</div>
 
 ### PATCH Parameters
 
@@ -349,7 +358,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`PATCH http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionId}/status`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-patch">PATCH</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionId}/status</span>
+</div>
 
 ### Parameters
 
@@ -386,7 +398,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`PATCH http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionId}`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-patch">PATCH</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionId}</span>
+</div>
 
 ### Parameters
 

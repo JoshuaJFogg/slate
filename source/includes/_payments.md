@@ -24,7 +24,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`POST http://uat.mppglobal.com/api/accounts/{accountId}/orders`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/orders</span>
+</div>
 
 ### POST Parameters
 
@@ -99,7 +102,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`POST http://uat.mppglobal.com/api/orders/{orderId}/refund`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/orders/{orderId}/refund</span>
+</div>
 
 ### POST Parameters
 
@@ -139,7 +145,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`PATCH http://uat.mppglobal.com/api/orders/{orderId}/cancellations`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-patch">PATCH</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/orders/{orderId}/cancellations</span>
+</div>
 
 ### Parameters
 
@@ -179,7 +188,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`POST http://uat.mppglobal.com/api/accounts/{accountId}/service-credits`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/service-credits</span>
+</div>
 
 ### Parameters
 
@@ -223,7 +235,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/api/accounts/{accountId}/service-credits`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/service-credits</span>
+</div>
 
 ### Response Parameters
 
@@ -263,7 +278,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/api/accounts/{accountId}/orders`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/orders</span>
+</div>
 
 ### Query string
 
@@ -304,7 +322,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`PATCH http://uat.mppglobal.com/api/orders/{orderId}/complete`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-patch">PATCH</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/orders/{orderId}/complete</span>
+</div>
 
 ### PATCH Parameters
 
@@ -342,7 +363,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`PATCH http://uat.mppglobal.com/api/accounts/{accountId}/orders`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-patch">PATCH</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/orders</span>
+</div>
 
 ### PATCH Parameters
 

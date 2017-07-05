@@ -24,7 +24,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`POST http://uat.mppglobal.com/api/accounts/external-providers`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/external-providers</span>
+</div>
 
 ### Response Parameters
 
@@ -88,7 +91,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/api/accounts/{accountId}/external-providers`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/external-providers</span>
+</div>
 
 ### Response Parameters
 
@@ -125,7 +131,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`POST http://uat.mppglobal.com/api/accounts/link/external-providers/facebook`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/link/external-providers/facebook</span>
+</div>
 
 ### POST Parameters
 
@@ -164,7 +173,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`POST http://uat.mppglobal.com/api/accounts/link/external-providers/janrain`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/link/external-providers/janrain</span>
+</div>
 
 ### POST Parameters
 
@@ -201,7 +213,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`POST http://uat.mppglobal.com/api/accounts/authenticate/external-providers/facebook`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/authenticate/external-providers/facebook</span>
+</div>
 
 ### POST Parameters
 
@@ -241,7 +256,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`POST http://uat.mppglobal.com/api/accounts/authenticate/external-providers/janrain`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/authenticate/external-providers/janrain</span>
+</div>
 
 ### POST Parameters
 

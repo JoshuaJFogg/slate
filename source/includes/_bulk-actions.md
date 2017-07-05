@@ -98,7 +98,10 @@ This endpoint is available to allow you to bulk create access for multiple accou
 
 ### HTTP Request
 
-`POST http://uat.mppglobal.com/bulk/entitlements/`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/bulk/entitlements/</span>
+</div>
 
 ### Request Parameters
 

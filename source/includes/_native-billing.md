@@ -4,7 +4,7 @@
 
 ```shell
 curl --request POST \
-  --url http://uat.mppglobal.com/api/native-billing/roku \
+  --url https://uat.mppglobal.com/api/native-billing/roku \
   --header 'content-type: application/json' \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
@@ -14,7 +14,7 @@ curl --request POST \
 ```
 
 ```csharp
-var client = new RestClient("http://uat.mppglobal.com/api/native-billing/roku");
+var client = new RestClient("https://uat.mppglobal.com/api/native-billing/roku");
 var request = new RestRequest(Method.POST);
 request.AddHeader("content-type", "application/json");
 request.AddHeader("x-version", "9.0.0");
@@ -25,7 +25,7 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.post("http://uat.mppglobal.com/api/native-billing/roku")
+HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/native-billing/roku")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-version", "9.0.0")
@@ -38,7 +38,7 @@ HttpResponse<String> response = Unirest.post("http://uat.mppglobal.com/api/nativ
 require 'uri'
 require 'net/http'
 
-url = URI("http://uat.mppglobal.com/api/native-billing/roku")
+url = URI("https://uat.mppglobal.com/api/native-billing/roku")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -81,7 +81,7 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://uat.mppglobal.com/api/native-billing/roku",
+  "url": "https://uat.mppglobal.com/api/native-billing/roku",
   "method": "POST",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
@@ -103,7 +103,10 @@ This endpoint allows you to pass through the Roku transactionId alongside custom
 
 ### HTTP Request
 
-`POST http://uat.mppglobal.com/api/native-billing/roku/`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/native-billing/roku/</span>
+</div>
 
 ### POST Parameters
 
@@ -126,7 +129,7 @@ newAccountDetails > lastName | string | Optional | The customer's last name, as 
 
 ```shell
 curl --request POST \
-  --url http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/roku \
+  --url https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/roku \
   --header 'content-type: application/json' \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
@@ -136,7 +139,7 @@ curl --request POST \
 ```
 
 ```csharp
-var client = new RestClient("http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/roku");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/roku");
 var request = new RestRequest(Method.POST);
 request.AddHeader("content-type", "application/json");
 request.AddHeader("x-version", "9.0.0");
@@ -147,7 +150,7 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.post("http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/roku")
+HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/roku")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-version", "9.0.0")
@@ -160,7 +163,7 @@ HttpResponse<String> response = Unirest.post("http://uat.mppglobal.com/api/accou
 require 'uri'
 require 'net/http'
 
-url = URI("http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/roku")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/roku")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -203,7 +206,7 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/roku",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/roku",
   "method": "POST",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
@@ -225,7 +228,10 @@ this endpoint should be called when an existing account has made a purchase via 
 
 ### HTTP Request
 
-`POST http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/roku`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/roku</span>
+</div>
 
 ### POST Parameters
 
@@ -243,7 +249,7 @@ rokuTransactionId | string | Optional | The roku transaction ID that is to be va
 
 ```shell
 curl --request POST \
-  --url http://uat.mppglobal.com/api/native-billing/itunes \
+  --url https://uat.mppglobal.com/api/native-billing/itunes \
   --header 'content-type: application/json' \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
@@ -252,7 +258,7 @@ curl --request POST \
  ```
 
 ```csharp
-var client = new RestClient("http://uat.mppglobal.com/api/native-billing/itunes");
+var client = new RestClient("https://uat.mppglobal.com/api/native-billing/itunes");
 var request = new RestRequest(Method.POST);
 request.AddHeader("content-type", "application/json");
 request.AddHeader("x-version", "9.0.0");
@@ -263,7 +269,7 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.post("http://uat.mppglobal.com/api/native-billing/itunes")
+HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/native-billing/itunes")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-version", "9.0.0")
@@ -276,7 +282,7 @@ HttpResponse<String> response = Unirest.post("http://uat.mppglobal.com/api/nativ
 require 'uri'
 require 'net/http'
 
-url = URI("http://uat.mppglobal.com/api/native-billing/itunes")
+url = URI("https://uat.mppglobal.com/api/native-billing/itunes")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -319,7 +325,7 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://uat.mppglobal.com/api/native-billing/itunes",
+  "url": "https://uat.mppglobal.com/api/native-billing/itunes",
   "method": "POST",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
@@ -340,7 +346,10 @@ For first time sign-up and subscribers, calling this endpoint containing informa
 
 ### HTTP Request
 
-`POST http://uat.mppglobal.com/api/native-billing/itunes`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/native-billing/itunes</span>
+</div>
 
 ### POST Parameters
 
@@ -366,7 +375,7 @@ newAccountDetails > lastName | string | Optional | The customer's last name, as 
 
 ```shell
 curl --request POST \
-  --url http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/itunes \
+  --url https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/itunes \
   --header 'content-type: application/json' \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
@@ -375,7 +384,7 @@ curl --request POST \
 ```
 
 ```csharp
-var client = new RestClient("http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/itunes");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/itunes");
 var request = new RestRequest(Method.POST);
 request.AddHeader("content-type", "application/json");
 request.AddHeader("x-version", "9.0.0");
@@ -386,7 +395,7 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.post("http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/itunes")
+HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/itunes")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-version", "9.0.0")
@@ -399,7 +408,7 @@ HttpResponse<String> response = Unirest.post("http://uat.mppglobal.com/api/accou
 require 'uri'
 require 'net/http'
 
-url = URI("http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/itunes")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/itunes")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -442,7 +451,7 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/itunes",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/itunes",
   "method": "POST",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
@@ -463,7 +472,10 @@ For existing accounts.
 
 ### HTTP Request
 
-`POST http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/itunes`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/itunes</span>
+</div>
 
 ### POST Parameters
 

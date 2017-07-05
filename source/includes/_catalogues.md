@@ -163,7 +163,10 @@ This endpoint will return all configured subscription services for your instance
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/api/subscriptions`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/subscriptions</span>
+</div>
 
 ### Response Parameters
 
@@ -377,7 +380,10 @@ This endpoint will return you a subset of your configured subscription services,
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/api/subscriptions/search`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/subscriptions/search</span>
+</div>
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
@@ -596,7 +602,10 @@ To return all configured products within your instance of eSuite, this endpoint 
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/api/products`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/products</span>
+</div>
 
 ### Response Parameters
 
@@ -796,7 +805,10 @@ To return only a subset of your product catalogoue, this endpoint should be call
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/api/products/search`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/products/search</span>
+</div>
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |

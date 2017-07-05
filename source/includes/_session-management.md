@@ -107,7 +107,10 @@ Calling this endpoint will return information about the current state of the ses
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/sessions/{sessionToken}`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/sessions/{sessionToken}</span>
+</div>
 
 ### Request Parameters
 
@@ -225,7 +228,10 @@ If you would like to delete a session on eSuite, calling this endpoint will expi
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/sessions/{sessionToken}`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/sessions/{sessionToken}</span>
+</div>
 
 ### Query Parameters
 

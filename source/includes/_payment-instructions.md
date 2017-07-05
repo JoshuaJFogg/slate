@@ -88,7 +88,10 @@ This endpoint allows you to create a payment instruction.
 
 ### HTTP Request
 
-`POST https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions</span>
+</div>
 
 ### Request Parameters
 
@@ -245,7 +248,10 @@ This endpoint allows you to retrieve a specific support log, for a specific acco
 
 ### URL Endpoint
 
-`GET http://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}/`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}/</span>
+</div>
 
 ### Response Parameters
 
@@ -381,9 +387,13 @@ $.ajax(settings).done(function (response) {
 > The above command returns a HTTP 204:
 
 In the event you need to update a payment instruction, this end point should be called to edit specific attributes of the payment instructions.
+
 ### URL Endpoint
 
-`PUT http://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-put">PUT</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}</span>
+</div>
 
 ### PUT Parameters
 
@@ -511,7 +521,10 @@ This endpoint allows you to retrieve a summary of all payment instructions again
 
 ### URL Endpoint
 
-`GET http://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/summary/`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/summary/</span>
+</div>
 
 ### Response Parameters
 

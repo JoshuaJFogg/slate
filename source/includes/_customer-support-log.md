@@ -116,7 +116,10 @@ This endpoint allows you to create a support log against a specific account.
 
 ### HTTP Request
 
-`POST https://uat.mppglobal.com/api/accounts/{accountId}/support-logs`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/support-logs</span>
+</div>
 
 ### Request Parameters
 
@@ -238,7 +241,10 @@ This endpoint allows you to retrieve a specific support log, for a specific acco
 
 ### URL Endpoint
 
-`GET http://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}/`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}/</span>
+</div>
 
 ### Response Parameters
 
@@ -359,7 +365,10 @@ $.ajax(settings).done(function (response) {
 In the event you need to update a support log entry, this end point should be called to edit non-system generated logs.
 ### URL Endpoint
 
-`PUT http://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-put">PUT</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}</span>
+</div>
 
 ### PUT Parameters
 
@@ -482,7 +491,10 @@ In the event a support log entry has been added in error, this endpoint will all
 
 ### URL Endpoint
 
-`DELETE http://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-delete">DELETE</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}</span>
+</div>
 
 ## Retrieve All Support Logs
 
@@ -610,7 +622,10 @@ This endpoint allows you to retrieve all support logs for a specific account. Th
 
 ### URL Endpoint
 
-`GET http://uat.mppglobal.com/api/accounts/{accountId}/support-logs/`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/</span>
+</div>
 
 ### Query String Parameters
 

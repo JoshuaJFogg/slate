@@ -24,14 +24,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`POST http://uat.mppglobal.com/api/carts`
-
-
-
-
-
-
-
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/carts</span>
+</div>
 
 
 
@@ -60,8 +56,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`POST http://uat.mppglobal.com/api/accounts/{accountId}/carts`
-
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/carts</span>
+</div>
 
 
 
@@ -97,7 +95,11 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`POST http://uat.mppglobal.com/api/carts/{cartReference}/line-items`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/carts/{cartReference}/line-items</span>
+</div>
+
 
 ### POST Parameters
 
@@ -149,7 +151,11 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`POST http://uat.mppglobal.com/api/accounts/{accountId}/carts/{cartReference}/line-items`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/carts/{cartReference}/line-items</span>
+</div>
+
 
 ### POST Parameters
 
@@ -201,7 +207,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/api/carts/{cartIdentifier}`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/carts/{cartIdentifier}</span>
+</div>
 
 ### Response Parameters
 
@@ -253,7 +262,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/api/accounts/{accountId}/carts/{cartIdentifier}`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/carts/{cartIdentifier}</span>
+</div>
 
 ### Response Parameters
 
@@ -304,8 +316,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`DELETE http://uat.mppglobal.com/api/carts/{cartResourceReference}`
-
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-delete">DELETE</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/carts/{cartResourceReference}</span>
+</div>
 
 
 
@@ -341,8 +355,10 @@ Description of what the endpoint does.
 
 ### HTTP Request
 
-`DELETE http://uat.mppglobal.com/api/accounts/{accountId}/carts/{cartResourceReference}`
-
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-delete">DELETE</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/carts/{cartResourceReference}</span>
+</div>
 
 
 

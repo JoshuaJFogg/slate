@@ -137,7 +137,10 @@ It is a requirement of the eSuite platform that an account be created in order t
 
 ### URL Endpoint
 
-`POST http://uat.mppglobal.com/api/accounts`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts</span>
+</div>
 
 ### POST Parameters
 
@@ -297,7 +300,11 @@ $.ajax(settings).done(function (response) {
 Once an account has been created within the eSuite platform, it is possible to return the account resource using the REST API.
 ### URL Endpoint
 
-`GET http://uat.mppglobal.com/api/accounts/{accountId}`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}</span>
+</div>
+
 
 ### Response Parameters
 
@@ -462,8 +469,11 @@ $.ajax(settings).done(function (response) {
 It is a requirement of the eSuite platform that an account be created in order to perform future actions such as payments and subscription purchases.
 
 ### URL Endpoint
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-put">PUT</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}</span>
+</div>
 
-`PUT http://uat.mppglobal.com/api/accounts/{accountId}`
 
 ### PUT Parameters
 
@@ -597,8 +607,10 @@ It is a requirement of the eSuite platform that an account be created in order t
 
 ### URL Endpoint
 
-`DELETE http://uat.mppglobal.com/api/accounts/{accountId}`
-
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-delete">DELETE</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}</span>
+</div>
 
 ## Trigger Account Verification
 
@@ -702,7 +714,10 @@ It is a requirement of the eSuite platform that an account be created in order t
 
 ### URL Endpoint
 
-`POST http://uat.mppglobal.com/api/accounts/{accountId}/verify`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/verify</span>
+</div>
 
 ## Complete Account Verification
 
@@ -802,7 +817,11 @@ Following the receiving of a verification email, the link contained within will 
 
 ### HTTP Request
 
-`PATCH http://uat.mppglobal.com/api/accounts/verify`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-patch">PATCH</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/verify</span>
+</div>
+
 
 ### Request Parameters
 
@@ -911,7 +930,10 @@ $.ajax(settings).done(function (response) {
 In the event a customer is unable to access their account due to forgetting their credentials, this API method should be called to trigger an email to be sent to the customers which contains a link that will allow them to reset their password.
 ### HTTP Request
 
-`POST http://uat.mppglobal.com/api/accounts/forgotten-password`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/forgotten-password</span>
+</div>
 
 ### Request Parameters
 
@@ -1033,7 +1055,10 @@ $.ajax(settings).done(function (response) {
 
 ### HTTP Request
 
-`PATCH http://uat.mppglobal.com/api/accounts/update-password`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-patch">PATCH</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/update-password</span>
+</div>
 
 ### Request Parameters
 
@@ -1180,7 +1205,10 @@ Calling this endpoint will provide a breakdown of the accounts transaction summa
 
 ### HTTP Request
 
-`GET http://uat.mppglobal.com/accounts/{accountId}/transaction-summary`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/accounts/{accountId}/transaction-summary</span>
+</div>
 
 ### Parameters
 

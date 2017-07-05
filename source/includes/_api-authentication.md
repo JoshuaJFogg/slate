@@ -57,7 +57,7 @@ This is your API Key for the eSuite API. When you are set up on the eSuite platf
 
 ### Origin
 
-As part of the API Key provisioning process, your API key will be bound to a specific Origin that reflects the location at which you will be making your API request from. It is possible to bind multiple Origin domains to a single API Key, the only restriction on the domains used as Origins is that they are all HTTPS. Whilst you are getting your system set up, the API Key for the UAT environment will be bound to http://localhost so that you can begin work straight away.
+As part of the API Key provisioning process, your API key will be bound to a specific Origin that reflects the location at which you will be making your API request from. It is possible to bind multiple Origin domains to a single API Key, the only restriction on the domains used as Origins is that they are all HTTPS. Whilst you are getting your system set up, the API Key for the UAT environment will be bound to https://localhost so that you can begin work straight away.
 
 `Origin: https://mywebsite-domain.com`
 

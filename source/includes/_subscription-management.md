@@ -113,7 +113,10 @@ This endpoint allows you to create a holiday period for a specific subscription.
 
 ### HTTP Request
 
-`POST https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays</span>
+</div>
 
 ### Request Parameters
 
@@ -230,8 +233,10 @@ This endpoint allows you to retrieve all configured subscription holidays for a 
 
 ### URL Endpoint
 
-`GET http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/`
-
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/</span>
+</div>
 
 ### Response Parameters
 
@@ -354,7 +359,10 @@ In the event you need to update a subscription holiday, this end point should be
 
 ### URL Endpoint
 
-`PUT http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-put">PUT</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}</span>
+</div>
 
 ### PUT Parameters
 
@@ -464,7 +472,10 @@ If an account would like to cancel their subscription holiday, this endpoint sho
 
 ### URL Endpoint
 
-`DELETE http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-delete">DELETE</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}</span>
+</div>
 
 ## Retrieve all subscription holidays
 
@@ -572,8 +583,10 @@ This endpoint allows you to retrieve all configured subscription holidays for a 
 
 ### URL Endpoint
 
-`GET http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/`
-
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/</span>
+</div>
 
 ### Response Parameters
 

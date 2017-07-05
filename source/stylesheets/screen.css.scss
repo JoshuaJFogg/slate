@@ -397,7 +397,7 @@ html, body {
 
   // the div is the tocify hidden div for placeholding stuff
   &>h1, &>h2, &>div {
-    clear:both;
+    /*clear:both;*/
   }
 
   h1 {
@@ -478,6 +478,7 @@ html, body {
       text-align: left;
       vertical-align: top;
       line-height: 1.6;
+      font-size:15px;
     }
 
     th {
@@ -536,6 +537,9 @@ html, body {
     background-color: transparent;
     padding: 0;
   }
+
+
+
 
   aside {
     padding-top: 1.5em;
@@ -607,7 +611,54 @@ html, body {
   }
 }
 
+  .endpoint-cont {
+  width:47%;
+  border:1px solid #eee;
+  border-radius:4px;
+  display:flex;
+  position:relative;
+  margin-left:36px;
+  margin-bottom:20px;
+  }
 
+  .endpoint-verb {
+  border-bottom-left-radius:4px;
+  border-top-left-radius:4px;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  padding:10px 20px;
+  margin:-1px;
+
+  }
+
+  .endpoint-verb-get {
+  background: #009cde;
+  }
+  .endpoint-verb-post {
+  background: #00b680;
+  }
+  .endpoint-verb-patch {
+  background: #640487;
+  }
+  .endpoint-verb-put {
+  background: #f08d00;
+  }
+  .endpoint-verb-delete {
+  background: #d4005e;
+  }
+
+  .endpoint-path {
+  font-family: bt_mono,'Courier New',monospace;
+  margin-left:5px;
+  padding:10px;
+  font-size:13px;
+  color:#333;
+  word-wrap: break-word;
+  display: inline-block;
+  overflow: auto;
+  }
+  .endpoint-clear {height:20px;position:absolute;}
 
 ////////////////////////////////////////////////////////////////////////////////
 // CODE SAMPLE STYLES
@@ -719,5 +770,14 @@ html, body {
 .highlight, .highlight .w {
   background-color: $code-bg;
 }
+
+
+
+
+
+
+
+
+
 
 

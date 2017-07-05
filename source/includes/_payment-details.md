@@ -91,7 +91,10 @@ In order to make a purchase using a credit or debit card, a card must be added t
 
 ### URL End-point
 
-`POST https://uat.mppglobal.com/api/accounts/:accountId/payment-details/card`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/:accountId/payment-details/card</span>
+</div>
 
 ### POST Parameters
 
@@ -198,7 +201,10 @@ In order to make a purchase using BACS Direct Debit, a BACS wallet must be added
 
 ### URL End-point
 
-`POST https://uat.mppglobal.com/api/accounts/:accountId/payment-details/bacs`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/:accountId/payment-details/bacs</span>
+</div>
 
 ### POST Parameters
 
@@ -289,7 +295,10 @@ In order to make a purchase using SEPA Direct Debit, a SEPA wallet must be added
 
 ### URL End-point
 
-`POST https://uat.mppglobal.com/api/accounts/:accountId/payment-details/sepa`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/:accountId/payment-details/sepa</span>
+</div>
 
 ### POST Parameters
 
@@ -403,7 +412,10 @@ This endpoint retrieves the payment details stored against an eSuite account.
 
 ### HTTP Request
 
-`GET https://uat.mppglobal.com/api/accounts/:accountId/payment-details`
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/:accountId/payment-details</span>
+</div>
 
 ### Response Parameters
 
