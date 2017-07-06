@@ -91,7 +91,7 @@ html, body {
   bottom: 0;
   width: $nav-width;
   background-color: $nav-bg;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: normal;
   border-right: 1px solid #ddd;
 
@@ -213,7 +213,7 @@ html, body {
 
     .tocify-item>a {
       padding-left: $nav-padding + $nav-indent;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: normal;
     }
 
@@ -402,8 +402,8 @@ html, body {
 
   h1 {
     @extend %header-font;
-    font-size: 32px;
-    font-weight:normal;
+    font-size: 34px;
+    font-weight:lighter;
     padding-top: 0.5em;
     padding-bottom: 0.65em;
     border-bottom: 1px solid #ddd;
@@ -411,19 +411,19 @@ html, body {
     margin-top: 2em;
     /*border-top: 1px solid #ddd;*/
     background-image: linear-gradient(to bottom, #fff, #fff);
-    color:#05a4c6;
+    color:#333; /*05a4c6*/
   }
 
   h1:first-child, div:first-child + h1 {
     border-top-width: 0;
-    margin-top: 0;
+    margin-top: 10px;
   }
 
   h2 {
     @extend %header-font;
-    font-size: 24px;
+    font-size: 22px;
     font-weight:normal;
-    color:#333;
+    color:#272727;
     margin-top: 4em;
     margin-bottom: 0;
     border-top: 1px solid #ddd;
@@ -434,8 +434,8 @@ html, body {
 
   h3 {
     @extend %header-font;
-    font-size: 18px;
-    color:#000;
+    font-size: 17px;
+    color:#272727;
     margin-bottom: 0;
     padding-top: 1.2em;
     padding-bottom: 1em;
@@ -478,7 +478,7 @@ html, body {
       text-align: left;
       vertical-align: top;
       line-height: 1.6;
-      font-size:15px;
+      font-size:14px;
     }
 
     th {
@@ -581,6 +581,10 @@ html, body {
     font-size: 14px;
   }
 
+  aside.info:before {
+    /*@extend %icon-info-sign;*/
+    content: url("../images/icon-info.png");
+  }
   aside.notice:before {
     /*@extend %icon-info-sign;*/
     content: url("../images/icon-info.png");
@@ -629,7 +633,6 @@ html, body {
   text-align: center;
   padding:10px 20px;
   margin:-1px;
-
   }
 
   .endpoint-verb-get {

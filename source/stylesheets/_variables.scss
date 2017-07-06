@@ -28,7 +28,7 @@ $examples-bg: #1c1e22 !default;
 $code-bg: #1c1e22 !default;
 $code-annotation-bg: #1c1e22 !default;
 $nav-subitem-bg: #beedf4 !default; /*a3dbe6*/
-$nav-active-bg: #04b5d6 !default; /*01a6c6*/
+$nav-active-bg: #3eb1c0 !default; /*01a6c6*/
 $lang-select-border: #000 !default;
 $lang-select-bg: #1c1e22 !default;
 $lang-select-active-bg: $examples-bg !default; // feel free to change this to blue or something
@@ -70,8 +70,8 @@ $phone-width: $tablet-width - $nav-width !default; // min width before reverting
 ////////////////////
 %default-font {
   /*font-family: "Open Sans", Helvetica, Arial, "Microsoft Yahei","微软雅黑", STXihei, "华文细黑", sans-serif;*/
-  font-family: Gesta, "Open Sans", Helvetica, Arial, "Microsoft Yahei","微软雅黑", STXihei, "华文细黑", sans-serif;
-  font-size: 16px;
+  font-family: "Open Sans", Helvetica, Arial, "Microsoft Yahei","微软雅黑", STXihei, "华文细黑", sans-serif;
+  font-size: 15px;
   font-weight: 600;
 }
 
