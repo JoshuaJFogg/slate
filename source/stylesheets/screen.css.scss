@@ -474,6 +474,15 @@ html, body {
   table {
     margin-bottom: 1em;
     overflow: auto;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px #ccc;
+    padding-top:20px;
+    padding-bottom:20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 2em;
+    width:48%;
     th,td {
       text-align: left;
       vertical-align: top;
