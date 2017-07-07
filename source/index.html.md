@@ -18,8 +18,11 @@ includes:
   - accounts
   - address-book
   - payment-details
+  - purchases-payments
   - subscription-management
+  - payments-management
   - payment-instructions
+  - fulfilment-management
   - access-management
   - native-billing
   - session-management

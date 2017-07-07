@@ -290,7 +290,7 @@ customPaymentInstructionParameters | dictionary | This is a collection of custom
 ## CRUD: Update a Payment Instruction
 
 ```shell
-curl --request PUT \
+curl --request PATCH \
   --url https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference} \
   --header 'content-type: application/json' \
   --header 'x-clientId: 1001' \
@@ -301,7 +301,7 @@ curl --request PUT \
 
 ```csharp
 var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}");
-var request = new RestRequest(Method.PUT);
+var request = new RestRequest(Method.patch);
 request.AddHeader("content-type", "application/json");
 request.AddHeader("x-version", "9.0.0");
 request.AddHeader("x-clientId", "1001");
@@ -311,7 +311,7 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.put("https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}")
+HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-version", "9.0.0")
@@ -330,7 +330,7 @@ http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
 http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-request = Net::HTTP::Post.new(url)
+request = Net::HTTP::Patch.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
 request["x-version"] = '9.0.0'
@@ -355,7 +355,7 @@ headers = {
     'content-type': "application/json"
     }
 
-conn.request("PUT", "/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}", payload, headers)
+conn.request("PATCH", "/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -368,7 +368,7 @@ var settings = {
   "async": true,
   "crossDomain": true,
   "url": "https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}",
-  "method": "PUT",
+  "method": "PATCH",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
     "x-version": "9.0.0",
@@ -391,11 +391,11 @@ In the event you need to update a payment instruction, this end point should be 
 ### URL Endpoint
 
 <div class="endpoint-cont">
-<span class="endpoint-verb endpoint-verb-put">PUT</span>
+<span class="endpoint-verb endpoint-verb-patch">PATCH</span>
 <span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}</span>
 </div>
 
-### PUT Parameters
+### PATCH Parameters
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
