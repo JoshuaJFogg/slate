@@ -59,7 +59,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "{}"
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0"
     }

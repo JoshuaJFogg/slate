@@ -64,7 +64,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "{\"startDate\":\"2017-07-04T00:00:00\",\"endDate\":\"2017-07-14T23:59:59\"}"
 
 headers = { 
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0",
     'content-type': "application/json" }
@@ -185,7 +185,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "{}"
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0"
     }
@@ -309,7 +309,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "[{\"op\":\"replace\",\"path\":\"/StartDate/\",\"value\":\"2017-08-04 00:00:00Z\"},{\"op\":\"replace\",\"path\":\"/EndDate/\",\"value\":\"2017-09-04 00:00:00Z\"}]"
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0",
     'content-type': "application/json"
@@ -432,7 +432,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "{}"
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0"
     }
@@ -535,7 +535,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "{}"
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0"
     }

@@ -61,7 +61,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "{\"voucherCode\":\"TWOFORONE\"}"
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0",
     'content-type': "application/json"

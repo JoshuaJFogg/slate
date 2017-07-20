@@ -62,7 +62,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "{\"name\":\"Open Access to the Tribune\",\"identifier\":\"TheTribuneOpen\",\"startDate\":\"2015-01-01T00:00:00\",\"endDate\":\"2019-01-01T00:00:00\"}"
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0",
     'content-type': "application/json"
@@ -163,7 +163,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "{}"
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0"
     }
@@ -289,7 +289,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "{}"
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0"
     }
@@ -400,7 +400,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "{}"
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0"
     }
@@ -525,7 +525,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "{}"
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0"
     }

@@ -61,7 +61,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "{\"houseName\":\"Orange House\",\"houseNumber\":\"119\",\"street\":\"Colourful Street\",\"townCity\":\"East Village\",\"district\":null,\"state\":null,\"county\":\"Merseyside\",\"postCode\":\"CH11 1GV\",\"country\":\"United Kingdom\",\"isDefault\":true}"
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0",
     'content-type': "application/json"
@@ -186,7 +186,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "{}"
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0"
     }

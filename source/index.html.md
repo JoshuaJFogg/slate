@@ -15,6 +15,7 @@ toc_footers:
 includes:
   - introduction
   - api-authentication
+  - standard-workflow-configuration
   - accounts
   - address-book
   - payment-details

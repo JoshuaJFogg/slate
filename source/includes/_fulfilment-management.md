@@ -62,7 +62,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "[{\"op\":\"replace\",\"path\":\"/Status\",\"value\":\"Cancelled\"},{\"op\":\"add\",\"path\":\"/CustomFulfilmentParameters/ParameterName\",\"value\":\"NewParameterValue\"},{\"op\":\"replace\",\"path\":\"/AddressReference\",\"value\":\"QIUQIEUQIEU8173\"},{\"op\":\"replace\",\"path\":\"/ExpectedDeliveryDate\",\"value\":\"2017-07-07T00:00:00\"},{\"op\":\"replace\",\"path\":\"/SupplierNotificationDate\",\"value\":\"2017-06-07T00:00:00\"}]"
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0",
     'content-type': "application/json"
@@ -180,7 +180,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "{\"paymentDate\":\"2017-07-07T08:14:59.126Z\",\"paymentMethod\":\"string\",\"vatAmount\":2,\"grossAmount\":10,\"netAmount\":8,\"currency\":\"GBP\",\"customPaymentParameters\":{\"parameterName\":\"parameterValue\"}}"
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0",
     'content-type': "application/json"
@@ -213,11 +213,11 @@ If you need to add an additional payment to a specific fulfilment, this end poin
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-paymentDate | string | Yes* | The identifier used when eSuite is primary IDAM.
-paymentMethod | string | Yes* | The identifier used when eSuite is primary IDAM.
-grossAmount | string | Yes* | The identifier used when eSuite is primary IDAM.
-netAmount | string | Yes* | The identifier used when eSuite is primary IDAM.
-vatAmount | string | Yes* | The identifier used when eSuite is primary IDAM.
-currency | string | Yes* | The identifier used when eSuite is primary IDAM.
-customPaymentParameters | string | Yes* | The identifier used when eSuite is primary IDAM.
-customPaymentParameters ..> | string | Yes* | The identifier used when eSuite is primary IDAM.
+paymentDate | string | Yes | The date the payment should be submitted.
+paymentMethod | string | Yes | The payment method the payment should be taken
+grossAmount | string | Yes | The amount to submit to the merchant.
+netAmount | string | Yes | The amount to charge minus tax.
+vatAmount | string | Yes | The amount apportioned to tax.
+currency | string | Yes | ISO Currency code
+customPaymentParameters | dictionary | No | This is a collection of custom attributes against the payments.
+customPaymentParameters ..> parameterName | string | No | Representation of each custom parameters against the payment.

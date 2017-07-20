@@ -16,12 +16,12 @@
 
 Error Code | Meaning
 ---------- | -------
-400 | Bad Request -- Your request is malformed in some way
-401 | Unauthorized -- The API key provided is not valid
-403 | Forbidden -- The resource is not accessible using the provided API key
-404 | Not Found -- The specified resource could not be found
-405 | Method Not Allowed -- You tried to access a resource with an invalid method
-406 | Not Acceptable -- You requested a format that isn't json
-412 | Pre-Condition Failed -- The request has failed basic validation
-500 | Internal Server Error -- We had a problem with our server. Try again later.
-503 | Service Unavailable -- We're temporarily offline for maintenance. Please try again later.
+400 | `Bad Request` -- Your request is malformed in some way
+401 | `Unauthorized` -- The API key provided is not valid
+403 | `Forbidden` -- The resource is not accessible using the provided API key
+404 | `Not Found` -- The specified resource could not be found
+405 | `Method Not Allowed` -- You tried to access a resource with an invalid method
+406 | `Not Acceptable` -- You requested a format that isn't json
+412 | `Pre-Condition Failed` -- The request has failed basic validation
+500 | `Internal Server Error` -- We had a problem with our server. Try again later.
+503 | `Service Unavailable` -- We're temporarily offline for maintenance. Please try again later.

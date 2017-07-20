@@ -64,7 +64,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "{\"cartReference\":\"A12347853S\",\"paymentMethod\":\"SEPA\",\"addressReference\":\"B123678542\",\"voucherCode\":\"5OFFABCD\",\"fulfilmentInfo\":[{\"fulfilmentType\":\"Digital\",\"addressReference\":\"B123678542GV\",\"fulfilmentDates\":[\"2018-03-01T00:00:00\"],\"leadTime\":4,\"associatedPayments\":{\"paymentDates\":[\"2018-03-01T00:00:00\",\"2018-05-01T00:00:00\",\"2018-05-01T00:00:00\"],\"customPaymentParameters\":{\"originator\":\"DirectSale\"}},\"customFulfilmentParameters\":{\"instructions\":\"Leave in garage.\"}}],\"synchronousPaymentInfo\":{\"paymentMethod\":\"CreditCard\",\"customPaymentParameters\":null},\"customPaymentInstructionParameters\":{\"paymentType\":\"pre-paid\"}}"
 
 headers = { 
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0",
     'content-type': "application/json" }
@@ -97,8 +97,23 @@ This endpoint allows you to create a payment instruction.
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-logType | string | Yes | The type of log entry. Only SupportNote is accepted on the POST.
-
+cartReference | string | Yes | The cart which is default for the payment instruction.
+paymentMethod | string | Yes | The default payment method for the payment instruction.
+addressReference | string | Yes | The reference addrress the fulfilments will be delivered to.
+voucherCode | string | Yes | A discount code generated from eSuite
+fulfilmentInfo | array[objects] | Yes | Information relating to each fulfilment and associated payments
+..> fulfilmentType ||||
+..> addressReference ||||
+..> fulfilmentDates|array[string]|||
+..> leadTime |integer|No|The number of days lead time needed by a supplier |
+..> associatedPayments||||
+..> associatedPayments ..> paymentDates|array[string]|||
+..> customPaymentParameters||||
+..> customPaymentParameters ..> ParameterName||||
+customFulfilmentParameters| dictionary | No |This is a collection of custom attributes against the fulfilments.
+customFulfilmentParameters ..> parameterName|Representation of all custom parameters against the fulfilments.
+customPaymentInstructionParameters | dictionary | No |This is a collection of custom attributes against the payment instructions.
+.. > customPaymentInstructionParameters > parameterName  | string | No | Representation of all custom parameters against the payment instruction.
 
 
 ## CRUD: Retrieve a Payment Instruction
@@ -159,7 +174,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "{}"
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0"
     }
@@ -349,7 +364,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "[{\"op\":\"replace\",\"path\":\"/Status\",\"value\":\"Cancelled\"},{\"op\":\"add\",\"path\":\"/CancellationCode\",\"value\":\"0.14\"},{\"op\":\"add\",\"path\":\"/CancellationReason\",\"value\":\"this is a value\"}]"
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0",
     'content-type': "application/json"
@@ -462,7 +477,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "{}"
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0"
     }

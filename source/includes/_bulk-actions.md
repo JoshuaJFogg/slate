@@ -2,16 +2,6 @@
 
 ## Create Access
 
-```json
-{
-  "entitlementIdentifier": "specific-access",
-  "startDate": "2017-07-03T11:31:41.0353603Z",
-  "endDate": "2017-07-13T11:31:41.0353603Z",
-  "accountIds": [123456,123457,123458],
-  "clientUserIds": ["A123456","A123457","A123458"]
-}
-```
-
 ```shell
 curl --request POST \
   --url https://uat.mppglobal.com/api/bulk/entitlements \
@@ -72,7 +62,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "{\"entitlementIdentifier\":\"specific-access\",\"startDate\":\"2017-07-03T11:31:41.0353603Z\",\"endDate\":\"2017-07-13T11:31:41.0353603Z\",\"accountIds\":[123456,123457,123458],\"clientUserIds\":[\"A123456\",\"A123457\",\"A123458\"]}"
 
 headers = { 
-     'x-tokenid': "1001",
+     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0",
     'content-type': "application/json" }
@@ -107,10 +97,10 @@ This endpoint is available to allow you to bulk create access for multiple accou
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-entitlementIdentifier | string | Yes | The access the account should given
-startDate | dateTime | Yes | The date at which the access should become active
-endDate | dateTime | Yes | The date at which access to the content should be deactivated.
-accountIds | array[integer] | No* | A collection of all accounts that should have access given, based upon accountId.
-clientUserIds | array[string] | No* | A collection of all accounts that should have access given, based upon ClientUserId
+`entitlementIdentifier` | string | Yes | The access the account should given
+`startDate` | dateTime | Yes | The date at which the access should become active
+`endDate` | dateTime | Yes | The date at which access to the content should be deactivated.
+`accountIds` | array[integer] | No* | A collection of all accounts that should have access given, based upon accountId.
+`clientUserIds` | array[string] | No* | A collection of all accounts that should have access given, based upon ClientUserId
 
 \* It is required that either an array of accountIds or clientUserIds must be passed but it is not required to pass both.

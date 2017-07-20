@@ -62,7 +62,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "{\"email\":\"john.smith@mppglobal.com\",\"clientUserId\":\"mpp-123456\",\"salutation\":\"Mr\",\"firstName\":\"John\",\"lastName\":\"Smith\",\"phoneNumber\":\"01513287445\",\"dateOfBirth\":\"1991-04-12T00:00:01\",\"gender\":\"Male\",\"addresses\":[{\"addressType\":\"Home\",\"houseName\":\"Blosson Cottage\",\"houseNumber\":\"12a\",\"street\":\"Flower Street\",\"townCity\":\"Garden\",\"district\":\"Allotment\",\"county\":null,\"postCode\":\"NE21ZZ\",\"country\":\"United Kingdom\"}],\"customParameters\":{\"colour\":\"Blue\",\"referrer\":\"Facebook\"}}"
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0",
     'content-type': "application/json"
@@ -230,7 +230,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "{}"
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0"
     }
@@ -395,7 +395,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "{\"email\":\"john.smith@mppglobal.com\",\"clientUserId\":\"mpp-123456\",\"salutation\":\"Mr\",\"firstName\":\"John\",\"lastName\":\"Smith\",\"phoneNumber\":\"01513287445\",\"dateOfBirth\":\"1991-04-12T00:00:01\",\"gender\":\"Male\",\"addresses\":[{\"addressType\":\"Home\",\"houseName\":\"Blosson Cottage\",\"houseNumber\":\"12a\",\"street\":\"Flower Street\",\"townCity\":\"Garden\",\"district\":\"Allotment\",\"county\":null,\"postCode\":\"NE21ZZ\",\"country\":\"United Kingdom\"}],\"customParameters\":{\"colour\":\"Blue\",\"referrer\":\"Facebook\"}}"
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0",
     'content-type': "application/json"
@@ -564,7 +564,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "{}"
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0"
     }
@@ -671,7 +671,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "{}"
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0"
     }
@@ -778,7 +778,7 @@ payload = "{\"verificationToken\":\"BE52ADA2064C4F9A9D90F28D066D1RFT\"}"
 
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0"
     }
@@ -889,7 +889,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "{\"emailAddress\":\"john.smith@mppglobal.com\"}"
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0",
     'content-type': "application/json"
@@ -1008,7 +1008,7 @@ payload = "{\"password\":\"ReallyStr0ngP@ss0rd\",\"login\":true}"
 
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     "x-sessionid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
     'x-version': "9.0.0",
@@ -1127,7 +1127,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "{}"
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0"
     }

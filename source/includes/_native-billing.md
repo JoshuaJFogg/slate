@@ -63,7 +63,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "{\"rokuTransactionId\":\"1244567865\",\"email\":\"john.smith@mppglobal.com\",\"password\":\"SuperStrongP@ssword01\",\"newAccountDetails\":{\"firstName\":\"John\",\"lastName\":\"Smith\"}}"
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0",
     'content-type': "application/json"
@@ -188,7 +188,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "{\"rokuTransactionId\":\"1244567865\"}}"
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0",
     'content-type': "application/json"
@@ -307,7 +307,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "{\"receipt\":\"AsedRFTCDsd....TGFESSCGcxcsd484\",\"email\":\"john.smith@mppglobal.com\",\"password\":\"@ReallyStrongP@ssw0rd\",\"newaccountdetails\":{\"firstName\":\"John\",\"lastName\":\"Smith\"},\"currency\":\"GBP\",\"price\":12.5}"
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0",
     'content-type': "application/json"
@@ -433,7 +433,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "{\"receipt\":\"AsedRFTCDsd....TGFESSCGcxcsd484\",\"currency\":\"GBP\",\"price\":12.5}"
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     'x-version': "9.0.0",
     'content-type': "application/json"

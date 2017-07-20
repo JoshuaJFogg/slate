@@ -180,7 +180,7 @@
 
 <h3 id="origin">Origin</h3>
 
-<p>As part of the API Key provisioning process, your API key will be bound to a specific Origin that reflects the location at which you will be making your API request from. It is possible to bind multiple Origin domains to a single API Key, the only restriction on the domains used as Origins is that they are all HTTPS. Whilst you are getting your system set up, the API Key for the UAT environment will be bound to http://localhost so that you can begin work straight away.</p>
+<p>As part of the API Key provisioning process, your API key will be bound to a specific Origin that reflects the location at which you will be making your API request from. It is possible to bind multiple Origin domains to a single API Key, the only restriction on the domains used as Origins is that they are all HTTPS. Whilst you are getting your system set up, the API Key for the UAT environment will be bound to https://localhost so that you can begin work straight away.</p>
 
 <p><code class="prettyprint">Origin: https://mywebsite-domain.com</code></p>
 
@@ -408,7 +408,10 @@ If you choose to integrate the eSuite API directly into your technology stack pl
 
 <h3 id="url-endpoint">URL Endpoint</h3>
 
-<p><code class="prettyprint">POST http://uat.mppglobal.com/api/accounts</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts</span>
+</div>
 
 <h3 id="post-parameters">POST Parameters</h3>
 
@@ -666,7 +669,10 @@ If you choose to integrate the eSuite API directly into your technology stack pl
 
 <h3 id="url-endpoint">URL Endpoint</h3>
 
-<p><code class="prettyprint">GET http://uat.mppglobal.com/api/accounts/{accountId}</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}</span>
+</div>
 
 <h3 id="response-parameters">Response Parameters</h3>
 
@@ -930,7 +936,10 @@ If you choose to integrate the eSuite API directly into your technology stack pl
 
 <h3 id="url-endpoint">URL Endpoint</h3>
 
-<p><code class="prettyprint">PUT http://uat.mppglobal.com/api/accounts/{accountId}</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-put">PUT</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}</span>
+</div>
 
 <h3 id="put-parameters">PUT Parameters</h3>
 
@@ -1161,7 +1170,10 @@ If you choose to integrate the eSuite API directly into your technology stack pl
 
 <h3 id="url-endpoint">URL Endpoint</h3>
 
-<p><code class="prettyprint">DELETE http://uat.mppglobal.com/api/accounts/{accountId}</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-delete">DELETE</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}</span>
+</div>
 
 <h2 id="trigger-account-verification">Trigger Account Verification</h2>
 <pre class="highlight shell tab-shell"><code>curl --request POST <span class="se">\</span>
@@ -1246,7 +1258,10 @@ If you choose to integrate the eSuite API directly into your technology stack pl
 
 <h3 id="url-endpoint">URL Endpoint</h3>
 
-<p><code class="prettyprint">POST http://uat.mppglobal.com/api/accounts/{accountId}/verify</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/verify</span>
+</div>
 
 <h2 id="complete-account-verification">Complete Account Verification</h2>
 <pre class="highlight shell tab-shell"><code>curl --request POST <span class="se">\</span>
@@ -1329,7 +1344,10 @@ If you choose to integrate the eSuite API directly into your technology stack pl
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PATCH http://uat.mppglobal.com/api/accounts/verify</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-patch">PATCH</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/verify</span>
+</div>
 
 <h3 id="request-parameters">Request Parameters</h3>
 
@@ -1434,7 +1452,10 @@ If you choose to integrate the eSuite API directly into your technology stack pl
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://uat.mppglobal.com/api/accounts/forgotten-password</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/forgotten-password</span>
+</div>
 
 <h3 id="request-parameters">Request Parameters</h3>
 
@@ -1549,7 +1570,10 @@ If you choose to integrate the eSuite API directly into your technology stack pl
 </span></code></pre>
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PATCH http://uat.mppglobal.com/api/accounts/update-password</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-patch">PATCH</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/update-password</span>
+</div>
 
 <h3 id="request-parameters">Request Parameters</h3>
 
@@ -1694,7 +1718,10 @@ If you choose to integrate the eSuite API directly into your technology stack pl
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://uat.mppglobal.com/accounts/{accountId}/transaction-summary</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/accounts/{accountId}/transaction-summary</span>
+</div>
 
 <h3 id="parameters">Parameters</h3>
 
@@ -1878,7 +1905,10 @@ If you choose to integrate the eSuite API directly into your technology stack pl
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://uat.mppglobal.com/api/accounts/{accountId}/addresses</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/addresses</span>
+</div>
 
 <h3 id="post-parameters">POST Parameters</h3>
 
@@ -2051,7 +2081,10 @@ If you choose to integrate the eSuite API directly into your technology stack pl
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://uat.mppglobal.com/api/accounts/{accountId}/addresses</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/addresses</span>
+</div>
 
 <h3 id="response-parameters">Response Parameters</h3>
 
@@ -2201,7 +2234,10 @@ If you choose to integrate the eSuite API directly into your technology stack pl
 
 <h3 id="url-end-point">URL End-point</h3>
 
-<p><code class="prettyprint">POST https://uat.mppglobal.com/api/accounts/:accountId/payment-details/card</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/:accountId/payment-details/card</span>
+</div>
 
 <h3 id="post-parameters">POST Parameters</h3>
 
@@ -2375,7 +2411,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="url-end-point">URL End-point</h3>
 
-<p><code class="prettyprint">POST https://uat.mppglobal.com/api/accounts/:accountId/payment-details/bacs</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/:accountId/payment-details/bacs</span>
+</div>
 
 <h3 id="post-parameters">POST Parameters</h3>
 
@@ -2484,7 +2523,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="url-end-point">URL End-point</h3>
 
-<p><code class="prettyprint">POST https://uat.mppglobal.com/api/accounts/:accountId/payment-details/sepa</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/:accountId/payment-details/sepa</span>
+</div>
 
 <h3 id="post-parameters">POST Parameters</h3>
 
@@ -2608,7 +2650,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET https://uat.mppglobal.com/api/accounts/:accountId/payment-details</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/:accountId/payment-details</span>
+</div>
 
 <h3 id="response-parameters">Response Parameters</h3>
 
@@ -2716,6 +2761,260 @@ Remember — you must authorise a card before it can be used
 </tr>
 </tbody></table>
 
+          <h1 id="purchases-and-payments">Purchases and Payments</h1>
+
+<h2 id="specfic-name-of-the-endpoint-e-g-create-account">Specfic name of the endpoint e.g. Create Account</h2>
+<pre class="highlight shell tab-shell"><code>
+</code></pre><pre class="highlight csharp tab-csharp"><code>
+</code></pre><pre class="highlight java tab-java"><code>
+</code></pre><pre class="highlight ruby tab-ruby"><code>
+</code></pre><pre class="highlight python tab-python"><code>
+</code></pre><pre class="highlight javascript tab-javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span></code></pre>
+<p>Description of what the endpoint does.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/</span>
+</div>
+
+<h3 id="parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Yes/No</td>
+<td>What does the parameter represent?</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+Anything that needs to be called out to an integrator. Standard bootstrap classnames are available here: success, warning, error, info
+</aside>
+
+<h2 id="purchase-service-credits">Purchase Service Credits</h2>
+<pre class="highlight shell tab-shell"><code>
+</code></pre><pre class="highlight csharp tab-csharp"><code>
+</code></pre><pre class="highlight java tab-java"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span></code></pre>
+<p>Description of what the endpoint does.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/service-credits</span>
+</div>
+
+<h3 id="parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>paymentMethod</td>
+<td>string</td>
+<td>Optional</td>
+<td>Gets or sets the payment method</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>string</td>
+<td>Optional</td>
+<td>Currency</td>
+</tr>
+<tr>
+<td>cvv</td>
+<td>string</td>
+<td>Optional</td>
+<td>Gets or sets the cv2 number</td>
+</tr>
+<tr>
+<td>voucherCode</td>
+<td>string</td>
+<td>Optional</td>
+<td>Gets or sets the voucher code</td>
+</tr>
+<tr>
+<td>paidCredits</td>
+<td>number</td>
+<td>Optional</td>
+<td>Gets or sets the paid credits</td>
+</tr>
+<tr>
+<td>freeCredits</td>
+<td>number</td>
+<td>Optional</td>
+<td>Gets or sets the free credits</td>
+</tr>
+<tr>
+<td>asynchronousProcessingParameters</td>
+<td>object</td>
+<td>Optional</td>
+<td>Asynchronous Processing Parameters</td>
+</tr>
+</tbody></table>
+
+<h2 id="retrieve-service-credits-balance">Retrieve Service Credits Balance</h2>
+<pre class="highlight shell tab-shell"><code>
+</code></pre><pre class="highlight csharp tab-csharp"><code>
+</code></pre><pre class="highlight java tab-java"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span></code></pre>
+<p>Description of what the endpoint does.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/service-credits</span>
+</div>
+
+<h3 id="response-parameters">Response Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>credit</td>
+<td>array[object]</td>
+<td>Optional</td>
+<td>Credit</td>
+</tr>
+<tr>
+<td>credit &gt; currency</td>
+<td>string</td>
+<td>Optional</td>
+<td>Currency</td>
+</tr>
+<tr>
+<td>credit &gt; amount</td>
+<td>number</td>
+<td>Optional</td>
+<td>Amount</td>
+</tr>
+<tr>
+<td>creditPurchases</td>
+<td>integer</td>
+<td>Optional</td>
+<td>Credit purchases</td>
+</tr>
+</tbody></table>
+
+<h2 id="complete-asynchronous-service-credits-payment">Complete Asynchronous Service Credits Payment</h2>
+<pre class="highlight shell tab-shell"><code>
+</code></pre><pre class="highlight csharp tab-csharp"><code>
+</code></pre><pre class="highlight java tab-java"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span></code></pre>
+<p>Description of what the endpoint does.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-patch">PATCH</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/orders/{orderId}/complete</span>
+</div>
+
+<h3 id="patch-parameters">PATCH Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>reason</td>
+<td>string</td>
+<td>Optional</td>
+<td>The reason for the edit</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>number</td>
+<td>Optional</td>
+<td>The new amount to be passed in</td>
+</tr>
+</tbody></table>
+
+<h2 id="complete-asynchronous-payment">Complete Asynchronous Payment</h2>
+<pre class="highlight shell tab-shell"><code>
+</code></pre><pre class="highlight csharp tab-csharp"><code>
+</code></pre><pre class="highlight java tab-java"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span></code></pre>
+<p>Description of what the endpoint does.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-patch">PATCH</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/orders</span>
+</div>
+
+<h3 id="patch-parameters">PATCH Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>asynchronousProcessingParameters</td>
+<td>object</td>
+<td>Optional</td>
+<td>Asybchronous processing parameters</td>
+</tr>
+</tbody></table>
+
           <h1 id="subscription-management">Subscription Management</h1>
 
 <h2 id="crud-create-a-holiday">CRUD: Create a holiday</h2>
@@ -2815,7 +3114,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays</span>
+</div>
 
 <h3 id="request-parameters">Request Parameters</h3>
 
@@ -2928,7 +3230,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="url-endpoint">URL Endpoint</h3>
 
-<p><code class="prettyprint">GET http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/</span>
+</div>
 
 <h3 id="response-parameters">Response Parameters</h3>
 
@@ -3054,7 +3359,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="url-endpoint">URL Endpoint</h3>
 
-<p><code class="prettyprint">PUT http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-put">PUT</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}</span>
+</div>
 
 <h3 id="put-parameters">PUT Parameters</h3>
 
@@ -3174,7 +3482,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="url-endpoint">URL Endpoint</h3>
 
-<p><code class="prettyprint">DELETE http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-delete">DELETE</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}</span>
+</div>
 
 <h2 id="retrieve-all-subscription-holidays">Retrieve all subscription holidays</h2>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
@@ -3263,7 +3574,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="url-endpoint">URL Endpoint</h3>
 
-<p><code class="prettyprint">GET http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/</span>
+</div>
 
 <h3 id="response-parameters">Response Parameters</h3>
 
@@ -3298,6 +3612,674 @@ Remember — you must authorise a card before it can be used
 <td>endDate</td>
 <td>string</td>
 <td>The date at which the subscription should become active.</td>
+</tr>
+</tbody></table>
+
+          <h1 id="payment-management">Payment Management</h1>
+
+<h2 id="crud-create-a-payment">CRUD: Create a Payment</h2>
+<pre class="highlight shell tab-shell"><code>
+</code></pre><pre class="highlight csharp tab-csharp"><code>
+</code></pre><pre class="highlight java tab-java"><code>
+</code></pre><pre class="highlight ruby tab-ruby"><code>
+</code></pre><pre class="highlight python tab-python"><code>
+</code></pre><pre class="highlight javascript tab-javascript"><code>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">
+</span></code></pre>
+<p>This end point is present for server-side integrations to take a payment against an account.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/orders</span>
+</div>
+
+<h3 id="post-parameters">POST Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>settlementType</td>
+<td>string</td>
+<td>Optional</td>
+<td>Gets or sets the SettlementType</td>
+</tr>
+<tr>
+<td>pricing</td>
+<td>object</td>
+<td>Optional</td>
+<td>{MppGlobal.Api.Rest.Dtos.v1.Pricing} Price for create session</td>
+</tr>
+<tr>
+<td>pricing &gt; priceId</td>
+<td>integer</td>
+<td>Optional</td>
+<td>Gets or sets the price id</td>
+</tr>
+<tr>
+<td>pricing &gt; paymentMethod</td>
+<td>string</td>
+<td>Optional</td>
+<td>Gets or sets the payment method</td>
+</tr>
+<tr>
+<td>pricing &gt; currency</td>
+<td>string</td>
+<td>Optional</td>
+<td>Gets or sets the currency</td>
+</tr>
+<tr>
+<td>pricing &gt; price</td>
+<td>number</td>
+<td>Optional</td>
+<td>Gets or sets the price</td>
+</tr>
+<tr>
+<td>pricing &gt; taxInfo</td>
+<td>object</td>
+<td>Optional</td>
+<td>{MppGlobal.Api.Rest.Dtos.v1.TaxRegionInfo} Tax region info class</td>
+</tr>
+<tr>
+<td>pricing &gt; taxInfo &gt; zeroRated</td>
+<td>string</td>
+<td>Optional</td>
+<td>Gets or sets the zero rated</td>
+</tr>
+<tr>
+<td>pricing &gt; taxInfo &gt; country</td>
+<td>string</td>
+<td>Optional</td>
+<td>Gets or sets the country</td>
+</tr>
+<tr>
+<td>pricing &gt; taxInfo &gt; state</td>
+<td>string</td>
+<td>Optional</td>
+<td>Gets or sets the state</td>
+</tr>
+<tr>
+<td>pricing &gt; taxInfo &gt; county</td>
+<td>string</td>
+<td>Optional</td>
+<td>Gets or sets the county</td>
+</tr>
+<tr>
+<td>pricing &gt; taxInfo &gt; city</td>
+<td>string</td>
+<td>Optional</td>
+<td>Gets or sets the city</td>
+</tr>
+<tr>
+<td>pricing &gt; priceItems</td>
+<td>string</td>
+<td>Optional</td>
+<td>Gets or sets the price items</td>
+</tr>
+<tr>
+<td>pricing &gt; priceItems &gt; externalReference</td>
+<td>string</td>
+<td>Optional</td>
+<td>Gets or sets the external reference</td>
+</tr>
+<tr>
+<td>pricing &gt; priceItems &gt; supplierId</td>
+<td>integer</td>
+<td>Optional</td>
+<td>Gets or sets the supplier id</td>
+</tr>
+<tr>
+<td>pricing &gt; priceItems &gt; price</td>
+<td>number</td>
+<td>Optional</td>
+<td>Gets or sets the price</td>
+</tr>
+<tr>
+<td>pricing &gt; priceItems &gt; description</td>
+<td>string</td>
+<td>Optional</td>
+<td>Gets or sets the description</td>
+</tr>
+<tr>
+<td>cvv</td>
+<td>string</td>
+<td>Optional</td>
+<td>Gets or sets the cv2 number</td>
+</tr>
+<tr>
+<td>voucherCode</td>
+<td>string</td>
+<td>Optional</td>
+<td>Gets or sets the promotion code</td>
+</tr>
+<tr>
+<td>orderItems</td>
+<td>string</td>
+<td>Optional</td>
+<td>Gets or sets the order items</td>
+</tr>
+<tr>
+<td>orderItems &gt; priceBreakDown</td>
+<td>object</td>
+<td>Optional</td>
+<td>Order price breakdown</td>
+</tr>
+<tr>
+<td>orderItems &gt; priceBreakDown &gt; grossAmount</td>
+<td>number</td>
+<td>Optional</td>
+<td>Gross amount</td>
+</tr>
+<tr>
+<td>orderItems &gt; priceBreakDown &gt; netAmount</td>
+<td>number</td>
+<td>Optional</td>
+<td>Net amount</td>
+</tr>
+<tr>
+<td>orderItems &gt; priceBreakDown &gt; taxAmount</td>
+<td>number</td>
+<td>Optional</td>
+<td>Tax amount</td>
+</tr>
+<tr>
+<td>orderItems &gt; orderReference</td>
+<td>string</td>
+<td>Optional</td>
+<td>Gets or sets the order reference</td>
+</tr>
+<tr>
+<td>orderItems &gt; description</td>
+<td>string</td>
+<td>Optional</td>
+<td>Gets or sets the description</td>
+</tr>
+<tr>
+<td>orderItems &gt; comments</td>
+<td>string</td>
+<td>Optional</td>
+<td>Gets or sets the comments</td>
+</tr>
+<tr>
+<td>orderItems &gt; customOrderParameters</td>
+<td>object</td>
+<td>Optional</td>
+<td>Gets or sets the custom order parameters</td>
+</tr>
+<tr>
+<td>orderItems &gt; entitlements</td>
+<td>string</td>
+<td>Optional</td>
+<td>Gets or sets the entitlement parameters</td>
+</tr>
+<tr>
+<td>orderItems &gt; entitlements &gt; identifier</td>
+<td>string</td>
+<td>Optional</td>
+<td>Gets or sets the identifier of the entitlement</td>
+</tr>
+<tr>
+<td>orderItems &gt; entitlements &gt; startDate</td>
+<td>string</td>
+<td>Optional</td>
+<td>Gets or sets the create date of the entitlement</td>
+</tr>
+<tr>
+<td>orderItems &gt; entitlements &gt; expiryDate</td>
+<td>string</td>
+<td>Optional</td>
+<td>Gets or sets the expire date of the entitlement</td>
+</tr>
+<tr>
+<td>orderItems &gt; taxInfo</td>
+<td>object</td>
+<td>Optional</td>
+<td>Tax region info class</td>
+</tr>
+<tr>
+<td>orderItems &gt; taxInfo &gt; zeroRated</td>
+<td>string</td>
+<td>Optional</td>
+<td>Gets or sets the zero rated</td>
+</tr>
+<tr>
+<td>orderItems &gt; taxInfo &gt; country</td>
+<td>string</td>
+<td>Optional</td>
+<td>Gets or sets the country</td>
+</tr>
+<tr>
+<td>orderItems &gt; taxInfo &gt; state</td>
+<td>string</td>
+<td>Optional</td>
+<td>Gets or sets the state</td>
+</tr>
+<tr>
+<td>orderItems &gt; taxInfo &gt; county</td>
+<td>string</td>
+<td>Optional</td>
+<td>Gets or sets the county</td>
+</tr>
+<tr>
+<td>orderItems &gt; taxInfo &gt; city</td>
+<td>string</td>
+<td>Optional</td>
+<td>Gets or sets the city</td>
+</tr>
+<tr>
+<td>asynchronousProcessingParameters</td>
+<td>object</td>
+<td>Optional</td>
+<td>Asynchronous Processing Parameters</td>
+</tr>
+</tbody></table>
+
+<h2 id="crud-retrieve-payments">CRUD: Retrieve Payments</h2>
+<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
+  --url <span class="s1">'https://uat.mppglobal.com/api/accounts/{accountId}/payments?createDateFrom=2010-07-06T09:06:28.640Z&amp;createDateTo=2017-07-06T09:06:28.640Z&amp;rowsPerPage=10&amp;currentPage=1'</span> <span class="se">\</span>
+  --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
+  --header <span class="s1">'x-clientPassword: Str0ngP@ssword'</span> <span class="se">\</span>
+  --header <span class="s1">'x-version: 9.0.0'</span> <span class="se">\</span>
+  --data <span class="s1">'{}'</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/payments?createDateFrom=2010-07-06T09:06:28.640Z&amp;createDateTo=2017-07-06T09:06:28.640Z&amp;rowsPerPage=10&amp;currentPage=1"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="n">Method</span><span class="p">.</span><span class="n">GET</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-version"</span><span class="p">,</span> <span class="s">"9.0.0"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientId"</span><span class="p">,</span> <span class="s">"1001"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientPassword"</span><span class="p">,</span> <span class="s">"Str0ngP@ssword"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddParameter</span><span class="p">(</span><span class="s">"undefined"</span><span class="p">,</span> <span class="s">"{}"</span><span class="p">,</span> <span class="n">ParameterType</span><span class="p">.</span><span class="n">RequestBody</span><span class="p">);</span>
+<span class="n">IRestResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Unirest</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/payments?createDateFrom=2010-07-06T09:06:28.640Z&amp;createDateTo=2017-07-06T09:06:28.640Z&amp;rowsPerPage=10&amp;currentPage=1"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientId"</span><span class="o">,</span> <span class="s">"1001"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientPassword"</span><span class="o">,</span> <span class="s">"Str0ngP@ssword"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-version"</span><span class="o">,</span> <span class="s">"9.0.0"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"{}"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/payments?createDateFrom=2010-07-06T09:06:28.640Z&amp;createDateTo=2017-07-06T09:06:28.640Z&amp;rowsPerPage=10&amp;currentPage=1"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">verify_mode</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">SSL</span><span class="o">::</span><span class="no">VERIFY_NONE</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Get</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientid"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1001'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientPassword"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Str0ngP@ssword'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-version"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'9.0.0'</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"{}"</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">(</span><span class="s">"uat.mppglobal.com"</span><span class="p">)</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="s">"{}"</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'x-tokenid'</span><span class="p">:</span> <span class="s">"1001"</span><span class="p">,</span>
+    <span class="s">'x-clientPassword'</span><span class="p">:</span> <span class="s">"Str0ngP@ssword"</span><span class="p">,</span>
+    <span class="s">'x-version'</span><span class="p">:</span> <span class="s">"9.0.0"</span>
+    <span class="p">}</span>
+
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/api/accounts/{accountId}/payments?createDateFrom=2010-07-06T09:06:28.640Z&amp;createDateTo=2017-07-06T09:06:28.640Z&amp;rowsPerPage=10&amp;currentPage=1"</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/payments?createDateFrom=2010-07-06T09:06:28.640Z&amp;createDateTo=2017-07-06T09:06:28.640Z&amp;rowsPerPage=10&amp;currentPage=1"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"GET"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"x-tokenid"</span><span class="p">:</span> <span class="s2">"BE52ADA2064C4F9A9D90F28D066D1RFT"</span><span class="p">,</span>
+    <span class="s2">"x-sessionid"</span><span class="p">:</span> <span class="s2">"a0c595bd26004ff4bb7d4cb1b1c81a6d"</span><span class="p">,</span>
+    <span class="s2">"x-version"</span><span class="p">:</span> <span class="s2">"9.0.0"</span><span class="p">,</span>
+    <span class="s2">"origin"</span><span class="p">:</span> <span class="s2">"https://www.mppglobal.com"</span>
+  <span class="p">},</span>
+  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{}"</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"totalNumberOfRecords"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"pageNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"resultsPerPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"cartReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0010OOFT3RWEJPHMK1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"fulfilmentReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0010OOZT3RWEJPHMK1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Complete"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"paymentReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0010OOPP3RWEJPHMK1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"paymentDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-06T09:06:28.640Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A example payment description"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"priceBreakdown"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"grossAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.00</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"netAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">8.00</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"taxAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.00</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"customPaymentParameters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"externalPaymentRefernece"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"AB45frdSEGDF"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows you to retrieve all payments for a given account.</p>
+
+<h3 id="url-endpoint">URL Endpoint</h3>
+
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/payments</span>
+</div>
+
+<h3 id="response-parameters">Response Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td></td>
+<td>array[objects]</td>
+<td>The collection of support log entries.</td>
+</tr>
+<tr>
+<td>subscriptionHolidayReference</td>
+<td>string</td>
+<td>Reference to the holiday.</td>
+</tr>
+<tr>
+<td>subscriptionReference</td>
+<td>string</td>
+<td>Reference to the subscription.</td>
+</tr>
+<tr>
+<td>startDate</td>
+<td>string</td>
+<td>The date at which the holiday period should begin.</td>
+</tr>
+<tr>
+<td>endDate</td>
+<td>string</td>
+<td>The date at which the subscription should become active.</td>
+</tr>
+</tbody></table>
+
+<h2 id="crud-update-a-payment">CRUD: Update a Payment</h2>
+<pre class="highlight shell tab-shell"><code>curl --request PATCH <span class="se">\</span>
+  --url https://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span>//api/payments/<span class="o">{</span>paymentReference<span class="o">}</span> <span class="se">\</span>
+  --header <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
+  --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
+  --header <span class="s1">'x-clientPassword: Str0ngP@ssword'</span> <span class="se">\</span>
+  --header <span class="s1">'x-version: 9.0.0'</span> <span class="se">\</span>
+  --data <span class="s1">'[{"op":"replace","path":"/status","value":"pending"}]'</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}//api/payments/{paymentReference}"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="n">Method</span><span class="p">.</span><span class="n">PATCH</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"content-type"</span><span class="p">,</span> <span class="s">"application/json"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-version"</span><span class="p">,</span> <span class="s">"9.0.0"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientId"</span><span class="p">,</span> <span class="s">"1001"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientPassword"</span><span class="p">,</span> <span class="s">"Str0ngP@ssword"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddParameter</span><span class="p">(</span><span class="s">"application/json"</span><span class="p">,</span> <span class="s">"[{\"op\":\"replace\",\"path\":\"/status\",\"value\":\"pending\"}]"</span><span class="p">,</span> <span class="n">ParameterType</span><span class="p">.</span><span class="n">RequestBody</span><span class="p">);</span>
+<span class="n">IRestResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Unirest</span><span class="o">.</span><span class="na">patch</span><span class="o">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}//api/payments/{paymentReference}"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientId"</span><span class="o">,</span> <span class="s">"1001"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientPassword"</span><span class="o">,</span> <span class="s">"Str0ngP@ssword"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-version"</span><span class="o">,</span> <span class="s">"9.0.0"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"content-type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"[{\"op\":\"replace\",\"path\":\"/status\",\"value\":\"pending\"}]"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}//api/payments/{paymentReference}"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">verify_mode</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">SSL</span><span class="o">::</span><span class="no">VERIFY_NONE</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Patch</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientid"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1001'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientPassword"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Str0ngP@ssword'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-version"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'9.0.0'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"content-type"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"[{</span><span class="se">\"</span><span class="s2">op</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">replace</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">path</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">/status</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">pending</span><span class="se">\"</span><span class="s2">}]"</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">(</span><span class="s">"uat.mppglobal.com"</span><span class="p">)</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="s">"[{</span><span class="se">\"</span><span class="s">op</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">replace</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">path</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">/status</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">value</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">pending</span><span class="se">\"</span><span class="s">}]"</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'x-tokenid'</span><span class="p">:</span> <span class="s">"1001"</span><span class="p">,</span>
+    <span class="s">'x-clientPassword'</span><span class="p">:</span> <span class="s">"Str0ngP@ssword"</span><span class="p">,</span>
+    <span class="s">'x-version'</span><span class="p">:</span> <span class="s">"9.0.0"</span><span class="p">,</span>
+    <span class="s">'content-type'</span><span class="p">:</span> <span class="s">"application/json"</span>
+    <span class="p">}</span>
+
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"PATCH"</span><span class="p">,</span> <span class="s">"/api/accounts/{accountId}//api/payments/{paymentReference}"</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}//api/payments/{paymentReference}"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"x-tokenid"</span><span class="p">:</span> <span class="s2">"BE52ADA2064C4F9A9D90F28D066D1RFT"</span><span class="p">,</span>
+    <span class="s2">"x-version"</span><span class="p">:</span> <span class="s2">"9.0.0"</span><span class="p">,</span>
+    <span class="s2">"origin"</span><span class="p">:</span> <span class="s2">"https://www.mppglobal.com"</span><span class="p">,</span>
+    <span class="s2">"content-type"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+  <span class="p">},</span>
+  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"[{\"op\":\"replace\",\"path\":\"/status\",\"value\":\"pending\"}]"</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above command returns a HTTP 204.</p>
+</blockquote>
+
+<p>This endpoint allows you to edit parameters of the payment that has been returned in the GET request (including custom parameters).</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-patch">PATCH</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/payments/{paymentReferene}</span>
+</div>
+
+<h3 id="post-parameters">POST Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>-</td>
+<td>array[objects]</td>
+<td>Yes</td>
+<td>A collection of updates that should be made to the resource</td>
+</tr>
+<tr>
+<td>op</td>
+<td>string</td>
+<td>Yes</td>
+<td>The type of change that should be executed. add, replace and remove are available operations.</td>
+</tr>
+<tr>
+<td>path</td>
+<td>string</td>
+<td>Yes</td>
+<td>The name of the parameter that should be updated.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Yes</td>
+<td>The new value to store against the parameter.</td>
+</tr>
+</tbody></table>
+
+<h2 id="refund-a-payment">Refund a Payment</h2>
+<pre class="highlight shell tab-shell"><code>curl --request POST <span class="se">\</span>
+  --url https://uat.mppglobal.com/api/payments/<span class="o">{</span>paymentReference<span class="o">}</span>/refund <span class="se">\</span>
+  --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
+  --header <span class="s1">'x-clientPassword: Str0ngP@ssword'</span> <span class="se">\</span>
+  --header <span class="s1">'x-version: 9.0.0'</span> <span class="se">\</span>
+  --header <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
+  --header <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
+--data <span class="s1">'{"amount":20,"triggerBackOfficeEmail":true,"reason":"Customer has returned their goods.","reasonCode":"0012B","refundAsServiceCredits":true,"serviceCreditExpiry":"2018-07-05"}'</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://uat.mppglobal.com/api/payments/{paymentReference}/refund"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="n">Method</span><span class="p">.</span><span class="n">POST</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-version"</span><span class="p">,</span> <span class="s">"9.0.0"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientId"</span><span class="p">,</span> <span class="s">"1001"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientPassword"</span><span class="p">,</span> <span class="s">"Str0ngP@ssword"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"content-type"</span><span class="p">,</span> <span class="s">"application/json"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddParameter</span><span class="p">(</span><span class="s">"application/json"</span><span class="p">,</span> <span class="s">"{\"amount\":20,\"triggerBackOfficeEmail\":true,\"reason\":\"Customer has returned their goods.\",\"reasonCode\":\"0012B\",\"refundAsServiceCredits\":true,\"serviceCreditExpiry\":\"2018-07-05\"}"</span><span class="p">,</span> <span class="n">ParameterType</span><span class="p">.</span><span class="n">RequestBody</span><span class="p">);</span>
+<span class="n">IRestResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Unirest</span><span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="s">"https://uat.mppglobal.com/api/payments/{paymentReference}/refund"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientId"</span><span class="o">,</span> <span class="s">"1001"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientPassword"</span><span class="o">,</span> <span class="s">"Str0ngP@ssword"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-sessionid"</span><span class="o">,</span> <span class="s">"BE52ADA2064C4F9A9D90F28D066D1RFT"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-version"</span><span class="o">,</span> <span class="s">"9.0.0"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"content-type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"{\"amount\":20,\"triggerBackOfficeEmail\":true,\"reason\":\"Customer has returned their goods.\",\"reasonCode\":\"0012B\",\"refundAsServiceCredits\":true,\"serviceCreditExpiry\":\"2018-07-05\"}"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://uat.mppglobal.com/api/payments/{paymentReference}/refund"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">verify_mode</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">SSL</span><span class="o">::</span><span class="no">VERIFY_NONE</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Post</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"content-type"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientid"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1001'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientPassword"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Str0ngP@ssword'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-version"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'9.0.0'</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"{</span><span class="se">\"</span><span class="s2">amount</span><span class="se">\"</span><span class="s2">:20,</span><span class="se">\"</span><span class="s2">triggerBackOfficeEmail</span><span class="se">\"</span><span class="s2">:true,</span><span class="se">\"</span><span class="s2">reason</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Customer has returned their goods.</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">reasonCode</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">0012B</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">refundAsServiceCredits</span><span class="se">\"</span><span class="s2">:true,</span><span class="se">\"</span><span class="s2">serviceCreditExpiry</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">2018-07-05</span><span class="se">\"</span><span class="s2">}"</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">(</span><span class="s">"uat.mppglobal.com"</span><span class="p">)</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="s">"{</span><span class="se">\"</span><span class="s">amount</span><span class="se">\"</span><span class="s">:20,</span><span class="se">\"</span><span class="s">triggerBackOfficeEmail</span><span class="se">\"</span><span class="s">:true,</span><span class="se">\"</span><span class="s">reason</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">Customer has returned their goods.</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">reasonCode</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">0012B</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">refundAsServiceCredits</span><span class="se">\"</span><span class="s">:true,</span><span class="se">\"</span><span class="s">serviceCreditExpiry</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">2018-07-05</span><span class="se">\"</span><span class="s">}"</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> 
+    <span class="s">'x-tokenid'</span><span class="p">:</span> <span class="s">"1001"</span><span class="p">,</span>
+    <span class="s">'x-clientPassword'</span><span class="p">:</span> <span class="s">"Str0ngP@ssword"</span><span class="p">,</span>
+    <span class="s">'x-version'</span><span class="p">:</span> <span class="s">"9.0.0"</span><span class="p">,</span>
+    <span class="s">'content-type'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
+
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="s">"/api/payments/{paymentReference}/refund"</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Not</span> <span class="nx">available</span> <span class="nx">from</span> <span class="nx">a</span> <span class="nx">client</span><span class="o">-</span><span class="nx">side</span> <span class="nx">application</span>
+</code></pre>
+<blockquote>
+<p>The above command returns a HTTP 204 with a location header of the new payment reference created:</p>
+</blockquote>
+
+<p>Description of what the endpoint does.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/orders/{orderId}/refund</span>
+</div>
+
+<h3 id="post-parameters">POST Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>amount</td>
+<td>number</td>
+<td>Yes</td>
+<td>The amount of money that should be refunded to the account.</td>
+</tr>
+<tr>
+<td>triggerBackOfficeEmail</td>
+<td>boolean</td>
+<td>Optional</td>
+<td>An indication as to whether a backoffice system should be notified.</td>
+</tr>
+<tr>
+<td>reason</td>
+<td>string</td>
+<td>Optional</td>
+<td>Additional information as to why the refund is being performed</td>
+</tr>
+<tr>
+<td>reasonCode</td>
+<td>string</td>
+<td>Optional</td>
+<td>A code specific to your business for refund types</td>
+</tr>
+<tr>
+<td>refundAsServiceCredits</td>
+<td>bool</td>
+<td>Optional</td>
+<td>Define whether you would like the refund to be executed against the originating payment method or as a credit on the account.</td>
+</tr>
+<tr>
+<td>serviceCreditExpiry</td>
+<td>string</td>
+<td>Optional</td>
+<td>The date at which the service credits would expire.</td>
 </tr>
 </tbody></table>
 
@@ -3374,7 +4356,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions</span>
+</div>
 
 <h3 id="request-parameters">Request Parameters</h3>
 
@@ -3387,10 +4372,106 @@ Remember — you must authorise a card before it can be used
 </tr>
 </thead><tbody>
 <tr>
-<td>logType</td>
+<td>cartReference</td>
 <td>string</td>
 <td>Yes</td>
-<td>The type of log entry. Only SupportNote is accepted on the POST.</td>
+<td>The cart which is default for the payment instruction.</td>
+</tr>
+<tr>
+<td>paymentMethod</td>
+<td>string</td>
+<td>Yes</td>
+<td>The default payment method for the payment instruction.</td>
+</tr>
+<tr>
+<td>addressReference</td>
+<td>string</td>
+<td>Yes</td>
+<td>The reference addrress the fulfilments will be delivered to.</td>
+</tr>
+<tr>
+<td>voucherCode</td>
+<td>string</td>
+<td>Yes</td>
+<td>A discount code generated from eSuite</td>
+</tr>
+<tr>
+<td>fulfilmentInfo</td>
+<td>array[objects]</td>
+<td>Yes</td>
+<td>Information relating to each fulfilment and associated payments</td>
+</tr>
+<tr>
+<td>..&gt; fulfilmentType</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>..&gt; addressReference</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>..&gt; fulfilmentDates</td>
+<td>array[string]</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>..&gt; leadTime</td>
+<td>integer</td>
+<td>No</td>
+<td>The number of days lead time needed by a supplier</td>
+</tr>
+<tr>
+<td>..&gt; associatedPayments</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>..&gt; associatedPayments ..&gt; paymentDates</td>
+<td>array[string]</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>..&gt; customPaymentParameters</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>..&gt; customPaymentParameters ..&gt; ParameterName</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>customFulfilmentParameters</td>
+<td>dictionary</td>
+<td>No</td>
+<td>This is a collection of custom attributes against the fulfilments.</td>
+</tr>
+<tr>
+<td>customFulfilmentParameters ..&gt; parameterName</td>
+<td>Representation of all custom parameters against the fulfilments.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>customPaymentInstructionParameters</td>
+<td>dictionary</td>
+<td>No</td>
+<td>This is a collection of custom attributes against the payment instructions.</td>
+</tr>
+<tr>
+<td>.. &gt; customPaymentInstructionParameters &gt; parameterName</td>
+<td>string</td>
+<td>No</td>
+<td>Representation of all custom parameters against the payment instruction.</td>
 </tr>
 </tbody></table>
 
@@ -3522,7 +4603,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="url-endpoint">URL Endpoint</h3>
 
-<p><code class="prettyprint">GET http://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}/</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}/</span>
+</div>
 
 <h3 id="response-parameters">Response Parameters</h3>
 
@@ -3681,7 +4765,7 @@ Remember — you must authorise a card before it can be used
 </tbody></table>
 
 <h2 id="crud-update-a-payment-instruction">CRUD: Update a Payment Instruction</h2>
-<pre class="highlight shell tab-shell"><code>curl --request PUT <span class="se">\</span>
+<pre class="highlight shell tab-shell"><code>curl --request PATCH <span class="se">\</span>
   --url https://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span>/payment-instructions/<span class="o">{</span>paymentInstructionReference<span class="o">}</span> <span class="se">\</span>
   --header <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
   --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
@@ -3689,14 +4773,14 @@ Remember — you must authorise a card before it can be used
   --header <span class="s1">'x-version: 9.0.0'</span> <span class="se">\</span>
  --data <span class="s1">'[{"op":"replace","path":"/Status","value":"Cancelled"},{"op":"add","path":"/CancellationCode","value":"0.14"},{"op":"add","path":"/CancellationReason","value":"this is a value"}]'</span>
 </code></pre><pre class="highlight csharp tab-csharp"><code><span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}"</span><span class="p">);</span>
-<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="n">Method</span><span class="p">.</span><span class="n">PUT</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="n">Method</span><span class="p">.</span><span class="n">patch</span><span class="p">);</span>
 <span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"content-type"</span><span class="p">,</span> <span class="s">"application/json"</span><span class="p">);</span>
 <span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-version"</span><span class="p">,</span> <span class="s">"9.0.0"</span><span class="p">);</span>
 <span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientId"</span><span class="p">,</span> <span class="s">"1001"</span><span class="p">);</span>
 <span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientPassword"</span><span class="p">,</span> <span class="s">"Str0ngP@ssword"</span><span class="p">);</span>
 <span class="n">request</span><span class="p">.</span><span class="nf">AddParameter</span><span class="p">(</span><span class="s">"application/json"</span><span class="p">,</span> <span class="s">"[{\"op\":\"replace\",\"path\":\"/Status\",\"value\":\"Cancelled\"},{\"op\":\"add\",\"path\":\"/CancellationCode\",\"value\":\"0.14\"},{\"op\":\"add\",\"path\":\"/CancellationReason\",\"value\":\"this is a value\"}]"</span><span class="p">,</span> <span class="n">ParameterType</span><span class="p">.</span><span class="n">RequestBody</span><span class="p">);</span>
 <span class="n">IRestResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Unirest</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}"</span><span class="o">)</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Unirest</span><span class="o">.</span><span class="na">patch</span><span class="o">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientId"</span><span class="o">,</span> <span class="s">"1001"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientPassword"</span><span class="o">,</span> <span class="s">"Str0ngP@ssword"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-version"</span><span class="o">,</span> <span class="s">"9.0.0"</span><span class="o">)</span>
@@ -3712,7 +4796,7 @@ Remember — you must authorise a card before it can be used
 <span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
 <span class="n">http</span><span class="p">.</span><span class="nf">verify_mode</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">SSL</span><span class="o">::</span><span class="no">VERIFY_NONE</span>
 
-<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Post</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Patch</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">request</span><span class="p">[</span><span class="s2">"x-clientid"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1001'</span>
 <span class="n">request</span><span class="p">[</span><span class="s2">"x-clientPassword"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Str0ngP@ssword'</span>
 <span class="n">request</span><span class="p">[</span><span class="s2">"x-version"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'9.0.0'</span>
@@ -3734,7 +4818,7 @@ Remember — you must authorise a card before it can be used
     <span class="s">'content-type'</span><span class="p">:</span> <span class="s">"application/json"</span>
     <span class="p">}</span>
 
-<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"PUT"</span><span class="p">,</span> <span class="s">"/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}"</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"PATCH"</span><span class="p">,</span> <span class="s">"/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}"</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
@@ -3744,7 +4828,7 @@ Remember — you must authorise a card before it can be used
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}"</span><span class="p">,</span>
-  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PUT"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PATCH"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"x-tokenid"</span><span class="p">:</span> <span class="s2">"BE52ADA2064C4F9A9D90F28D066D1RFT"</span><span class="p">,</span>
     <span class="s2">"x-version"</span><span class="p">:</span> <span class="s2">"9.0.0"</span><span class="p">,</span>
@@ -3767,9 +4851,12 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="url-endpoint">URL Endpoint</h3>
 
-<p><code class="prettyprint">PUT http://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-patch">PATCH</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}</span>
+</div>
 
-<h3 id="put-parameters">PUT Parameters</h3>
+<h3 id="patch-parameters">PATCH Parameters</h3>
 
 <table><thead>
 <tr>
@@ -3903,7 +4990,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="url-endpoint">URL Endpoint</h3>
 
-<p><code class="prettyprint">GET http://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/summary/</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/summary/</span>
+</div>
 
 <h3 id="response-parameters">Response Parameters</h3>
 
@@ -3963,6 +5053,267 @@ Remember — you must authorise a card before it can be used
 <td>paymentInstructions &gt; parameterName</td>
 <td>string</td>
 <td>Representation of all custom parameters against the payment instruction.</td>
+</tr>
+</tbody></table>
+
+          <h1 id="fulfilment-management">Fulfilment Management</h1>
+
+<h2 id="crud-edit-a-fulfilment">CRUD: Edit a Fulfilment</h2>
+<pre class="highlight shell tab-shell"><code>curl --request PATCH <span class="se">\</span>
+  --url https://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span>/fulfiment/<span class="o">{</span>fulfilmentReference<span class="o">}</span> <span class="se">\</span>
+  --header <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
+  --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
+  --header <span class="s1">'x-clientPassword: Str0ngP@ssword'</span> <span class="se">\</span>
+  --header <span class="s1">'x-version: 9.0.0'</span> <span class="se">\</span>
+  --data <span class="s1">'[{"op":"replace","path":"/Status","value":"Cancelled"},{"op":"add","path":"/CustomFulfilmentParameters/ParameterName","value":"NewParameterValue"},{"op":"replace","path":"/AddressReference","value":"QIUQIEUQIEU8173"},{"op":"replace","path":"/ExpectedDeliveryDate","value":"2017-07-07T00:00:00"},{"op":"replace","path":"/SupplierNotificationDate","value":"2017-06-07T00:00:00"}]'</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/fulfiment/{fulfilmentReference}"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="n">Method</span><span class="p">.</span><span class="n">patch</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"content-type"</span><span class="p">,</span> <span class="s">"application/json"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-version"</span><span class="p">,</span> <span class="s">"9.0.0"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientId"</span><span class="p">,</span> <span class="s">"1001"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientPassword"</span><span class="p">,</span> <span class="s">"Str0ngP@ssword"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddParameter</span><span class="p">(</span><span class="s">"application/json"</span><span class="p">,</span> <span class="s">"[{\"op\":\"replace\",\"path\":\"/Status\",\"value\":\"Cancelled\"},{\"op\":\"add\",\"path\":\"/CustomFulfilmentParameters/ParameterName\",\"value\":\"NewParameterValue\"},{\"op\":\"replace\",\"path\":\"/AddressReference\",\"value\":\"QIUQIEUQIEU8173\"},{\"op\":\"replace\",\"path\":\"/ExpectedDeliveryDate\",\"value\":\"2017-07-07T00:00:00\"},{\"op\":\"replace\",\"path\":\"/SupplierNotificationDate\",\"value\":\"2017-06-07T00:00:00\"}]"</span><span class="p">,</span> <span class="n">ParameterType</span><span class="p">.</span><span class="n">RequestBody</span><span class="p">);</span>
+<span class="n">IRestResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Unirest</span><span class="o">.</span><span class="na">patch</span><span class="o">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/fulfiment/{fulfilmentReference}"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientId"</span><span class="o">,</span> <span class="s">"1001"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientPassword"</span><span class="o">,</span> <span class="s">"Str0ngP@ssword"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-version"</span><span class="o">,</span> <span class="s">"9.0.0"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"content-type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"[{\"op\":\"replace\",\"path\":\"/Status\",\"value\":\"Cancelled\"},{\"op\":\"add\",\"path\":\"/CustomFulfilmentParameters/ParameterName\",\"value\":\"NewParameterValue\"},{\"op\":\"replace\",\"path\":\"/AddressReference\",\"value\":\"QIUQIEUQIEU8173\"},{\"op\":\"replace\",\"path\":\"/ExpectedDeliveryDate\",\"value\":\"2017-07-07T00:00:00\"},{\"op\":\"replace\",\"path\":\"/SupplierNotificationDate\",\"value\":\"2017-06-07T00:00:00\"}]"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/fulfiment/{fulfilmentReference}"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">verify_mode</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">SSL</span><span class="o">::</span><span class="no">VERIFY_NONE</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Patch</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientid"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1001'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientPassword"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Str0ngP@ssword'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-version"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'9.0.0'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"content-type"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"[{</span><span class="se">\"</span><span class="s2">op</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">replace</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">path</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">/Status</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Cancelled</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">op</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">add</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">path</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">/CustomFulfilmentParameters/ParameterName</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">NewParameterValue</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">op</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">replace</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">path</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">/AddressReference</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">QIUQIEUQIEU8173</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">op</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">replace</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">path</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">/ExpectedDeliveryDate</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">2017-07-07T00:00:00</span><span class="se">\"</span><span class="s2">},{</span><span class="se">\"</span><span class="s2">op</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">replace</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">path</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">/SupplierNotificationDate</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">value</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">2017-06-07T00:00:00</span><span class="se">\"</span><span class="s2">}]"</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">(</span><span class="s">"uat.mppglobal.com"</span><span class="p">)</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="s">"[{</span><span class="se">\"</span><span class="s">op</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">replace</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">path</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">/Status</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">value</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">Cancelled</span><span class="se">\"</span><span class="s">},{</span><span class="se">\"</span><span class="s">op</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">add</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">path</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">/CustomFulfilmentParameters/ParameterName</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">value</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">NewParameterValue</span><span class="se">\"</span><span class="s">},{</span><span class="se">\"</span><span class="s">op</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">replace</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">path</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">/AddressReference</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">value</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">QIUQIEUQIEU8173</span><span class="se">\"</span><span class="s">},{</span><span class="se">\"</span><span class="s">op</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">replace</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">path</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">/ExpectedDeliveryDate</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">value</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">2017-07-07T00:00:00</span><span class="se">\"</span><span class="s">},{</span><span class="se">\"</span><span class="s">op</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">replace</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">path</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">/SupplierNotificationDate</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">value</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">2017-06-07T00:00:00</span><span class="se">\"</span><span class="s">}]"</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'x-tokenid'</span><span class="p">:</span> <span class="s">"1001"</span><span class="p">,</span>
+    <span class="s">'x-clientPassword'</span><span class="p">:</span> <span class="s">"Str0ngP@ssword"</span><span class="p">,</span>
+    <span class="s">'x-version'</span><span class="p">:</span> <span class="s">"9.0.0"</span><span class="p">,</span>
+    <span class="s">'content-type'</span><span class="p">:</span> <span class="s">"application/json"</span>
+    <span class="p">}</span>
+
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"PATCH"</span><span class="p">,</span> <span class="s">"/api/accounts/{accountId}/fulfiment/{fulfilmentReference}"</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/fulfiment/{fulfilmentReference}"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"PATCH"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"x-tokenid"</span><span class="p">:</span> <span class="s2">"BE52ADA2064C4F9A9D90F28D066D1RFT"</span><span class="p">,</span>
+    <span class="s2">"x-version"</span><span class="p">:</span> <span class="s2">"9.0.0"</span><span class="p">,</span>
+    <span class="s2">"origin"</span><span class="p">:</span> <span class="s2">"https://www.mppglobal.com"</span><span class="p">,</span>
+    <span class="s2">"content-type"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+  <span class="p">},</span>
+  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"[{\"op\":\"replace\",\"path\":\"/Status\",\"value\":\"Cancelled\"},{\"op\":\"add\",\"path\":\"/CustomFulfilmentParameters/ParameterName\",\"value\":\"NewParameterValue\"},{\"op\":\"replace\",\"path\":\"/AddressReference\",\"value\":\"QIUQIEUQIEU8173\"},{\"op\":\"replace\",\"path\":\"/ExpectedDeliveryDate\",\"value\":\"2017-07-07T00:00:00\"},{\"op\":\"replace\",\"path\":\"/SupplierNotificationDate\",\"value\":\"2017-06-07T00:00:00\"}]"</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above command returns a HTTP 204:</p>
+</blockquote>
+
+<p>In the event you need to update a fulfilment, this end point should be called to edit specific attributes of the fulfilment.</p>
+
+<h3 id="url-endpoint">URL Endpoint</h3>
+
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-patch">PATCH</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/fulfiment/{fulfilmentReference}</span>
+</div>
+
+<h3 id="patch-parameters">PATCH Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>-</td>
+<td>array[objects]</td>
+<td>Yes</td>
+<td>A collection of updates that should be made to the resource</td>
+</tr>
+<tr>
+<td>op</td>
+<td>string</td>
+<td>Yes</td>
+<td>The type of change that should be executed. add, replace and remove are available operations.</td>
+</tr>
+<tr>
+<td>path</td>
+<td>string</td>
+<td>Yes</td>
+<td>The name of the parameter that should be updated.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Yes</td>
+<td>The new value to store against the parameter.</td>
+</tr>
+</tbody></table>
+
+<h2 id="add-additional-payment">Add additional payment</h2>
+<pre class="highlight shell tab-shell"><code>curl --request POST <span class="se">\</span>
+  --url https://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span>/fulfilments/<span class="o">{</span>fulfilmentReference<span class="o">}</span>/payments/ <span class="se">\</span>
+  --header <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
+  --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
+  --header <span class="s1">'x-clientPassword: Str0ngP@ssword'</span> <span class="se">\</span>
+  --header <span class="s1">'x-version: 9.0.0'</span> <span class="se">\</span>
+  --data <span class="s1">'{"paymentDate":"2017-07-07T08:14:59.126Z","paymentMethod":"string","vatAmount":2,"grossAmount":10,"netAmount":8,"currency":"GBP","customPaymentParameters":{"parameterName":"parameterValue"}}'</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/fulfilments/{fulfilmentReference}/payments/"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="n">Method</span><span class="p">.</span><span class="n">POST</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"content-type"</span><span class="p">,</span> <span class="s">"application/json"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-version"</span><span class="p">,</span> <span class="s">"9.0.0"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientId"</span><span class="p">,</span> <span class="s">"1001"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientPassword"</span><span class="p">,</span> <span class="s">"Str0ngP@ssword"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddParameter</span><span class="p">(</span><span class="s">"application/json"</span><span class="p">,</span> <span class="s">"{\"paymentDate\":\"2017-07-07T08:14:59.126Z\",\"paymentMethod\":\"string\",\"vatAmount\":2,\"grossAmount\":10,\"netAmount\":8,\"currency\":\"GBP\",\"customPaymentParameters\":{\"parameterName\":\"parameterValue\"}}"</span><span class="p">,</span> <span class="n">ParameterType</span><span class="p">.</span><span class="n">RequestBody</span><span class="p">);</span>
+<span class="n">IRestResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Unirest</span><span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/fulfilments/{fulfilmentReference}/payments/"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientId"</span><span class="o">,</span> <span class="s">"1001"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientPassword"</span><span class="o">,</span> <span class="s">"Str0ngP@ssword"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-version"</span><span class="o">,</span> <span class="s">"9.0.0"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"content-type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"{\"paymentDate\":\"2017-07-07T08:14:59.126Z\",\"paymentMethod\":\"string\",\"vatAmount\":2,\"grossAmount\":10,\"netAmount\":8,\"currency\":\"GBP\",\"customPaymentParameters\":{\"parameterName\":\"parameterValue\"}}"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/fulfilments/{fulfilmentReference}/payments/"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">verify_mode</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">SSL</span><span class="o">::</span><span class="no">VERIFY_NONE</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Post</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientid"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1001'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientPassword"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Str0ngP@ssword'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-version"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'9.0.0'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"content-type"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"{</span><span class="se">\"</span><span class="s2">paymentDate</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">2017-07-07T08:14:59.126Z</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">paymentMethod</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">string</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">vatAmount</span><span class="se">\"</span><span class="s2">:2,</span><span class="se">\"</span><span class="s2">grossAmount</span><span class="se">\"</span><span class="s2">:10,</span><span class="se">\"</span><span class="s2">netAmount</span><span class="se">\"</span><span class="s2">:8,</span><span class="se">\"</span><span class="s2">currency</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">GBP</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">customPaymentParameters</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">parameterName</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">parameterValue</span><span class="se">\"</span><span class="s2">}}"</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">(</span><span class="s">"uat.mppglobal.com"</span><span class="p">)</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="s">"{</span><span class="se">\"</span><span class="s">paymentDate</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">2017-07-07T08:14:59.126Z</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">paymentMethod</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">string</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">vatAmount</span><span class="se">\"</span><span class="s">:2,</span><span class="se">\"</span><span class="s">grossAmount</span><span class="se">\"</span><span class="s">:10,</span><span class="se">\"</span><span class="s">netAmount</span><span class="se">\"</span><span class="s">:8,</span><span class="se">\"</span><span class="s">currency</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">GBP</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">customPaymentParameters</span><span class="se">\"</span><span class="s">:{</span><span class="se">\"</span><span class="s">parameterName</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">parameterValue</span><span class="se">\"</span><span class="s">}}"</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'x-tokenid'</span><span class="p">:</span> <span class="s">"1001"</span><span class="p">,</span>
+    <span class="s">'x-clientPassword'</span><span class="p">:</span> <span class="s">"Str0ngP@ssword"</span><span class="p">,</span>
+    <span class="s">'x-version'</span><span class="p">:</span> <span class="s">"9.0.0"</span><span class="p">,</span>
+    <span class="s">'content-type'</span><span class="p">:</span> <span class="s">"application/json"</span>
+    <span class="p">}</span>
+
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="s">"/api/accounts/{accountId}/fulfilments/{fulfilmentReference}/payments/"</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="nx">Not</span> <span class="nx">available</span> <span class="nx">from</span> <span class="nx">a</span> <span class="nx">client</span><span class="o">-</span><span class="nx">side</span> <span class="nx">application</span><span class="p">.</span>
+</code></pre>
+<p>If you need to add an additional payment to a specific fulfilment, this end point can be called. This is typically if the account has changed the contents of the fulfilment to something more expensive.</p>
+
+<h3 id="url-endpoint">URL Endpoint</h3>
+
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/fulfilments/{fulfilmentReference}/payments/</span>
+</div>
+
+<h3 id="post-parameters">POST Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>paymentDate</td>
+<td>string</td>
+<td>Yes</td>
+<td>The date the payment should be submitted.</td>
+</tr>
+<tr>
+<td>paymentMethod</td>
+<td>string</td>
+<td>Yes</td>
+<td>The payment method the payment should be taken</td>
+</tr>
+<tr>
+<td>grossAmount</td>
+<td>string</td>
+<td>Yes</td>
+<td>The amount to submit to the merchant.</td>
+</tr>
+<tr>
+<td>netAmount</td>
+<td>string</td>
+<td>Yes</td>
+<td>The amount to charge minus tax.</td>
+</tr>
+<tr>
+<td>vatAmount</td>
+<td>string</td>
+<td>Yes</td>
+<td>The amount apportioned to tax.</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>string</td>
+<td>Yes</td>
+<td>ISO Currency code</td>
+</tr>
+<tr>
+<td>customPaymentParameters</td>
+<td>dictionary</td>
+<td>No</td>
+<td>This is a collection of custom attributes against the payments.</td>
+</tr>
+<tr>
+<td>customPaymentParameters ..&gt; parameterName</td>
+<td>string</td>
+<td>No</td>
+<td>Representation of each custom parameters against the payment.</td>
 </tr>
 </tbody></table>
 
@@ -4039,7 +5390,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://uat.mppglobal.com/api/accounts/{accountId}/entitlements</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/entitlements</span>
+</div>
 
 <h3 id="post-parameters">POST Parameters</h3>
 
@@ -4167,7 +5521,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://uat.mppglobal.com/api/accounts/{accountId}/entitlements</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/entitlements</span>
+</div>
 
 <h3 id="response-parameters">Response Parameters</h3>
 
@@ -4294,7 +5651,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">DELETE http://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-delete">DELETE</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}</span>
+</div>
 
 <aside class="warning">Executing this API will not remove access from the account until the access rights of the account are checked again.</aside>
 
@@ -4383,7 +5743,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}</span>
+</div>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -4528,7 +5891,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://uat.mppglobal.com/api/accounts/{accountId}/entitlements/search</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/search</span>
+</div>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -4650,14 +6016,14 @@ Remember — you must authorise a card before it can be used
 
 <h2 id="validate-a-roku-purchase">Validate a Roku Purchase</h2>
 <pre class="highlight shell tab-shell"><code>curl --request POST <span class="se">\</span>
-  --url http://uat.mppglobal.com/api/native-billing/roku <span class="se">\</span>
+  --url https://uat.mppglobal.com/api/native-billing/roku <span class="se">\</span>
   --header <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
   --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
   --header <span class="s1">'x-clientPassword: Str0ngP@ssword'</span> <span class="se">\</span>
   --header <span class="s1">'x-version: 9.0.0'</span> <span class="se">\</span>
 
   --data <span class="s1">'{"rokuTransactionId":"1244567865","email":"john.smith@mppglobal.com","password":"SuperStrongP@ssword01","newAccountDetails":{"firstName":"John","lastName":"Smith"}}'</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"http://uat.mppglobal.com/api/native-billing/roku"</span><span class="p">);</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://uat.mppglobal.com/api/native-billing/roku"</span><span class="p">);</span>
 <span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="n">Method</span><span class="p">.</span><span class="n">POST</span><span class="p">);</span>
 <span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"content-type"</span><span class="p">,</span> <span class="s">"application/json"</span><span class="p">);</span>
 <span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-version"</span><span class="p">,</span> <span class="s">"9.0.0"</span><span class="p">);</span>
@@ -4665,7 +6031,7 @@ Remember — you must authorise a card before it can be used
 <span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientPassword"</span><span class="p">,</span> <span class="s">"Str0ngP@ssword"</span><span class="p">);</span>
 <span class="n">request</span><span class="p">.</span><span class="nf">AddParameter</span><span class="p">(</span><span class="s">"application/json"</span><span class="p">,</span> <span class="s">"{\"rokuTransactionId\":\"1244567865\",\"email\":\"john.smith@mppglobal.com\",\"password\":\"SuperStrongP@ssword01\",\"newAccountDetails\":{\"firstName\":\"John\",\"lastName\":\"Smith\"}}"</span><span class="p">,</span> <span class="n">ParameterType</span><span class="p">.</span><span class="n">RequestBody</span><span class="p">);</span>
 <span class="n">IRestResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Unirest</span><span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="s">"http://uat.mppglobal.com/api/native-billing/roku"</span><span class="o">)</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Unirest</span><span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="s">"https://uat.mppglobal.com/api/native-billing/roku"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientId"</span><span class="o">,</span> <span class="s">"1001"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientPassword"</span><span class="o">,</span> <span class="s">"Str0ngP@ssword"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-version"</span><span class="o">,</span> <span class="s">"9.0.0"</span><span class="o">)</span>
@@ -4675,7 +6041,7 @@ Remember — you must authorise a card before it can be used
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'net/http'</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"http://uat.mppglobal.com/api/native-billing/roku"</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://uat.mppglobal.com/api/native-billing/roku"</span><span class="p">)</span>
 
 <span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
 <span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
@@ -4712,7 +6078,7 @@ Remember — you must authorise a card before it can be used
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://uat.mppglobal.com/api/native-billing/roku"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://uat.mppglobal.com/api/native-billing/roku"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"x-tokenid"</span><span class="p">:</span> <span class="s2">"BE52ADA2064C4F9A9D90F28D066D1RFT"</span><span class="p">,</span>
@@ -4732,7 +6098,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://uat.mppglobal.com/api/native-billing/roku/</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/native-billing/roku/</span>
+</div>
 
 <h3 id="post-parameters">POST Parameters</h3>
 
@@ -4784,14 +6153,14 @@ Remember — you must authorise a card before it can be used
 
 <h2 id="validate-existing-accounts-roku-purchase">Validate Existing Account&rsquo;s Roku Purchase</h2>
 <pre class="highlight shell tab-shell"><code>curl --request POST <span class="se">\</span>
-  --url http://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span>/subscriptions/native-billing/roku <span class="se">\</span>
+  --url https://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span>/subscriptions/native-billing/roku <span class="se">\</span>
   --header <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
   --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
   --header <span class="s1">'x-clientPassword: Str0ngP@ssword'</span> <span class="se">\</span>
   --header <span class="s1">'x-version: 9.0.0'</span> <span class="se">\</span>
 
   --data <span class="s1">'{"rokuTransactionId":"1244567865"}'</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/roku"</span><span class="p">);</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/roku"</span><span class="p">);</span>
 <span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="n">Method</span><span class="p">.</span><span class="n">POST</span><span class="p">);</span>
 <span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"content-type"</span><span class="p">,</span> <span class="s">"application/json"</span><span class="p">);</span>
 <span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-version"</span><span class="p">,</span> <span class="s">"9.0.0"</span><span class="p">);</span>
@@ -4799,7 +6168,7 @@ Remember — you must authorise a card before it can be used
 <span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientPassword"</span><span class="p">,</span> <span class="s">"Str0ngP@ssword"</span><span class="p">);</span>
 <span class="n">request</span><span class="p">.</span><span class="nf">AddParameter</span><span class="p">(</span><span class="s">"application/json"</span><span class="p">,</span> <span class="s">"{\"rokuTransactionId\":\"1244567865\"}}"</span><span class="p">,</span> <span class="n">ParameterType</span><span class="p">.</span><span class="n">RequestBody</span><span class="p">);</span>
 <span class="n">IRestResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Unirest</span><span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="s">"http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/roku"</span><span class="o">)</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Unirest</span><span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/roku"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientId"</span><span class="o">,</span> <span class="s">"1001"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientPassword"</span><span class="o">,</span> <span class="s">"Str0ngP@ssword"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-version"</span><span class="o">,</span> <span class="s">"9.0.0"</span><span class="o">)</span>
@@ -4809,7 +6178,7 @@ Remember — you must authorise a card before it can be used
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'net/http'</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/roku"</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/roku"</span><span class="p">)</span>
 
 <span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
 <span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
@@ -4846,7 +6215,7 @@ Remember — you must authorise a card before it can be used
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/roku"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/roku"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"x-tokenid"</span><span class="p">:</span> <span class="s2">"BE52ADA2064C4F9A9D90F28D066D1RFT"</span><span class="p">,</span>
@@ -4866,7 +6235,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/roku</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/roku</span>
+</div>
 
 <h3 id="post-parameters">POST Parameters</h3>
 
@@ -4888,13 +6260,13 @@ Remember — you must authorise a card before it can be used
 
 <h2 id="validate-itunes-purchase">Validate iTunes Purchase</h2>
 <pre class="highlight shell tab-shell"><code>curl --request POST <span class="se">\</span>
-  --url http://uat.mppglobal.com/api/native-billing/itunes <span class="se">\</span>
+  --url https://uat.mppglobal.com/api/native-billing/itunes <span class="se">\</span>
   --header <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
   --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
   --header <span class="s1">'x-clientPassword: Str0ngP@ssword'</span> <span class="se">\</span>
   --header <span class="s1">'x-version: 9.0.0'</span> <span class="se">\</span>
   --data <span class="s1">'{"receipt":"AsedRFTCDsd....TGFESSCGcxcsd484","email":"john.smith@mppglobal.com","password":"@ReallyStrongP@ssw0rd","newaccountdetails":{"firstName":"John","lastName":"Smith"},"currency":"GBP","price":12.5}'</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"http://uat.mppglobal.com/api/native-billing/itunes"</span><span class="p">);</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://uat.mppglobal.com/api/native-billing/itunes"</span><span class="p">);</span>
 <span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="n">Method</span><span class="p">.</span><span class="n">POST</span><span class="p">);</span>
 <span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"content-type"</span><span class="p">,</span> <span class="s">"application/json"</span><span class="p">);</span>
 <span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-version"</span><span class="p">,</span> <span class="s">"9.0.0"</span><span class="p">);</span>
@@ -4902,7 +6274,7 @@ Remember — you must authorise a card before it can be used
 <span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientPassword"</span><span class="p">,</span> <span class="s">"Str0ngP@ssword"</span><span class="p">);</span>
 <span class="n">request</span><span class="p">.</span><span class="nf">AddParameter</span><span class="p">(</span><span class="s">"application/json"</span><span class="p">,</span> <span class="s">"{\"receipt\":\"AsedRFTCDsd....TGFESSCGcxcsd484\",\"email\":\"john.smith@mppglobal.com\",\"password\":\"@ReallyStrongP@ssw0rd\",\"newaccountdetails\":{\"firstName\":\"John\",\"lastName\":\"Smith\"},\"currency\":\"GBP\",\"price\":12.5}"</span><span class="p">,</span> <span class="n">ParameterType</span><span class="p">.</span><span class="n">RequestBody</span><span class="p">);</span>
 <span class="n">IRestResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Unirest</span><span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="s">"http://uat.mppglobal.com/api/native-billing/itunes"</span><span class="o">)</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Unirest</span><span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="s">"https://uat.mppglobal.com/api/native-billing/itunes"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientId"</span><span class="o">,</span> <span class="s">"1001"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientPassword"</span><span class="o">,</span> <span class="s">"Str0ngP@ssword"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-version"</span><span class="o">,</span> <span class="s">"9.0.0"</span><span class="o">)</span>
@@ -4912,7 +6284,7 @@ Remember — you must authorise a card before it can be used
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'net/http'</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"http://uat.mppglobal.com/api/native-billing/itunes"</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://uat.mppglobal.com/api/native-billing/itunes"</span><span class="p">)</span>
 
 <span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
 <span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
@@ -4949,7 +6321,7 @@ Remember — you must authorise a card before it can be used
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://uat.mppglobal.com/api/native-billing/itunes"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://uat.mppglobal.com/api/native-billing/itunes"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"x-tokenid"</span><span class="p">:</span> <span class="s2">"BE52ADA2064C4F9A9D90F28D066D1RFT"</span><span class="p">,</span>
@@ -4969,7 +6341,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://uat.mppglobal.com/api/native-billing/itunes</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/native-billing/itunes</span>
+</div>
 
 <h3 id="post-parameters">POST Parameters</h3>
 
@@ -5033,13 +6408,13 @@ Remember — you must authorise a card before it can be used
 
 <h2 id="validate-existing-accounts-itunes-purchase">Validate Existing Account&rsquo;s iTunes Purchase</h2>
 <pre class="highlight shell tab-shell"><code>curl --request POST <span class="se">\</span>
-  --url http://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span>/subscriptions/native-billing/itunes <span class="se">\</span>
+  --url https://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span>/subscriptions/native-billing/itunes <span class="se">\</span>
   --header <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
   --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
   --header <span class="s1">'x-clientPassword: Str0ngP@ssword'</span> <span class="se">\</span>
   --header <span class="s1">'x-version: 9.0.0'</span> <span class="se">\</span>
   --data <span class="s1">'{"receipt":"AsedRFTCDsd....TGFESSCGcxcsd484","currency":"GBP","price":12.5}
-</span></code></pre><pre class="highlight csharp tab-csharp"><code><span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/itunes"</span><span class="p">);</span>
+</span></code></pre><pre class="highlight csharp tab-csharp"><code><span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/itunes"</span><span class="p">);</span>
 <span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="n">Method</span><span class="p">.</span><span class="n">POST</span><span class="p">);</span>
 <span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"content-type"</span><span class="p">,</span> <span class="s">"application/json"</span><span class="p">);</span>
 <span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-version"</span><span class="p">,</span> <span class="s">"9.0.0"</span><span class="p">);</span>
@@ -5047,7 +6422,7 @@ Remember — you must authorise a card before it can be used
 <span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientPassword"</span><span class="p">,</span> <span class="s">"Str0ngP@ssword"</span><span class="p">);</span>
 <span class="n">request</span><span class="p">.</span><span class="nf">AddParameter</span><span class="p">(</span><span class="s">"application/json"</span><span class="p">,</span> <span class="s">"{\"receipt\":\"AsedRFTCDsd....TGFESSCGcxcsd484\",\"currency\":\"GBP\",\"price\":12.5}"</span><span class="p">,</span> <span class="n">ParameterType</span><span class="p">.</span><span class="n">RequestBody</span><span class="p">);</span>
 <span class="n">IRestResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Unirest</span><span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="s">"http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/itunes"</span><span class="o">)</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Unirest</span><span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/itunes"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientId"</span><span class="o">,</span> <span class="s">"1001"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientPassword"</span><span class="o">,</span> <span class="s">"Str0ngP@ssword"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-version"</span><span class="o">,</span> <span class="s">"9.0.0"</span><span class="o">)</span>
@@ -5057,7 +6432,7 @@ Remember — you must authorise a card before it can be used
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'net/http'</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/itunes"</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/itunes"</span><span class="p">)</span>
 
 <span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
 <span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
@@ -5094,7 +6469,7 @@ Remember — you must authorise a card before it can be used
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/itunes"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/itunes"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"x-tokenid"</span><span class="p">:</span> <span class="s2">"BE52ADA2064C4F9A9D90F28D066D1RFT"</span><span class="p">,</span>
@@ -5114,7 +6489,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/itunes</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/native-billing/itunes</span>
+</div>
 
 <h3 id="post-parameters">POST Parameters</h3>
 
@@ -5236,7 +6614,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://uat.mppglobal.com/sessions/{sessionToken}</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/sessions/{sessionToken}</span>
+</div>
 
 <h3 id="request-parameters">Request Parameters</h3>
 
@@ -5375,7 +6756,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://uat.mppglobal.com/sessions/{sessionToken}</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/sessions/{sessionToken}</span>
+</div>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -5540,7 +6924,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://uat.mppglobal.com/api/subscriptions</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/subscriptions</span>
+</div>
 
 <h3 id="response-parameters">Response Parameters</h3>
 
@@ -5916,7 +7303,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://uat.mppglobal.com/api/subscriptions/search</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/subscriptions/search</span>
+</div>
 
 <table><thead>
 <tr>
@@ -6306,7 +7696,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://uat.mppglobal.com/api/products</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/products</span>
+</div>
 
 <h3 id="response-parameters">Response Parameters</h3>
 
@@ -6619,7 +8012,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://uat.mppglobal.com/api/products/search</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/products/search</span>
+</div>
 
 <table><thead>
 <tr>
@@ -6951,7 +8347,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST https://uat.mppglobal.com/api/accounts/{accountId}/support-logs</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/support-logs</span>
+</div>
 
 <h3 id="request-parameters">Request Parameters</h3>
 
@@ -7086,7 +8485,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="url-endpoint">URL Endpoint</h3>
 
-<p><code class="prettyprint">GET http://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}/</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}/</span>
+</div>
 
 <h3 id="response-parameters">Response Parameters</h3>
 
@@ -7227,7 +8629,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="url-endpoint">URL Endpoint</h3>
 
-<p><code class="prettyprint">PUT http://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-put">PUT</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}</span>
+</div>
 
 <h3 id="put-parameters">PUT Parameters</h3>
 
@@ -7357,7 +8762,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="url-endpoint">URL Endpoint</h3>
 
-<p><code class="prettyprint">DELETE http://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-delete">DELETE</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}</span>
+</div>
 
 <h2 id="retrieve-all-support-logs">Retrieve All Support Logs</h2>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
@@ -7466,7 +8874,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="url-endpoint">URL Endpoint</h3>
 
-<p><code class="prettyprint">GET http://uat.mppglobal.com/api/accounts/{accountId}/support-logs/</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/</span>
+</div>
 
 <h3 id="query-string-parameters">Query String Parameters</h3>
 
@@ -7630,7 +9041,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://uat.mppglobal.com/api/analytics/{method}</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/analytics/{method}</span>
+</div>
 
 <h3 id="query-string">Query string</h3>
 
@@ -7872,7 +9286,10 @@ Remember — you must authorise a card before it can be used
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://uat.mppglobal.com/bulk/entitlements/</code></p>
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/bulk/entitlements/</span>
+</div>
 
 <h3 id="request-parameters">Request Parameters</h3>
 

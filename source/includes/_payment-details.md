@@ -68,7 +68,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "{\"cardNumber\":\"4111111111111111\",\"cardType\":\"Visa\",\"expiryDate\":\"01/19\",\"issueCode\":null,\"cvv\":\"123\",\"billingHouseName\":\"Lilac House\",\"billingHouseFlatNumber\":\"12\",\"billingStreet\":\"Windermere Road\",\"billingDistrict\":null,\"billingTownCity\":\"Chester\"\"billingCounty\":\"Cheshire\",\"billingPostcode\":\"CH638BF\",\"billingCountry\":\"United Kingdom\",\"setDefault\":true,\"associatedName\":\"My Visa Card\",\"skipPreAuth\":false}"
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-sessionid': "Str0ngP@ssword",
     'x-version': "9.0.0",
     'content-type': "application/json"
@@ -366,7 +366,7 @@ conn = http.client.HTTPSConnection("uat.mppglobal.com")
 payload = "{}"
 
 headers = {
-    'x-tokenid': "1001",
+    'x-clientid' : '1001',
     'x-sessionid': "Str0ngP@ssword",
     'x-version': "9.0.0"
     }
