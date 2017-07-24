@@ -2,16 +2,6 @@
 
 ## CRUD: Create Support Log
 
-```json
-{
-  "logType": "SupportNote",
-  "logStatus": "Open",
-  "logTitle": "Unable to access content.",
-  "logDetails": "Due to the use of cellular data.",
-  "systemAccountId": 12548695
-}
-```
-
 ```shell
 curl --request POST \
   --url https://uat.mppglobal.com/api/accounts/{accountId}/support-logs \

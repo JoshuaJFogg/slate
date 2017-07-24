@@ -395,4 +395,116 @@ Parameter | Type  | Description |
  &#62;   `name` | string | Type fo direct debit.
  &#62;  `allowed` | bool | An indication as to whether it is available.
 
- 
+## Complete a Subscription Purchase
+
+```shell
+Not available
+```
+
+```csharp
+Not available
+```
+
+```java
+Not available
+```
+
+```ruby
+Not available
+```
+
+```python
+Not available
+```
+
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://uat.mppglobal.com/api/workflow/purchases/subscriptions",
+  "method": "POST",
+  "headers": {
+    "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
+    "x-sessionid": "a0c595bd26004ff4bb7d4cb1b1c81a6d",
+    "x-version": "9.0.0",
+    "origin": "https://www.mppglobal.com",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{}"
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "amountCharged": 10,
+  "currency": "GBP",
+  "paymentType": "eWallet",
+  "subscriptionStatus": "Active",
+  "renewalDay": 1,
+  "renewalDayOffset": 0,
+  "startDate": "2015-01-01T00:00:00",
+  "renewalDate": "2017-01-01T00:00:00",
+  "orderReference": 12548,
+  "subscriptionId": 4555888,
+  "subscriptionPriceId": 568845,
+  "subscriptionReference": "458845",
+  "resourceReference": "ResourceReference",
+  "asynchronousProcessingParameters": {
+    "name1": "value1"
+  }
+}
+```
+
+For the most simple integration, calling this endpoint will generate a payment session token that can be used for the client-side application (eSuite SDK) to purchase a pre-configured product.
+
+### HTTP Request
+
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/workflow/configurations/</span>
+</div>
+
+### Request Parameters
+
+Parameter | Type  | Description | 
+--------- | ------- | ------- | 
+`voucherCode` | integer | The associated ClientId to your eSuite instance.
+`cvv` | string | The name associated to your eSuite instance.
+`renewalDay` | string | Friendly name of your configured time zone.
+`renewalDayOffset` | string | ISO representation of the configured culture.
+`startDate` | string | ISO representation of the configured culture.
+`paymentMethod` | string | ISO representation of the configured culture.
+`entitlements` | object | ISO representation of the configured culture.
+`entitlements` > `identifier` | string | ISO representation of the configured culture.
+`entitlements` > `startDate` | string | ISO representation of the configured culture.
+`entitlements` > `expiryDate` | string | ISO representation of the configured culture.
+`customOrderParameters` | dictionary | ISO representation of the configured culture.
+`customOrderParameters` > `parameterName` | string | ISO representation of the configured culture.
+`customSubscriptionParameters` | string | ISO representation of the configured culture.
+`customSubscriptionParameters` > `parameterName` | string | ISO representation of the configured culture.
+`taxInfo` | object | ISO representation of the configured culture.
+`taxInfo` > `zeroRated` | string | ISO representation of the configured culture.
+`taxInfo` > `country` | string | ISO representation of the configured culture.
+`taxInfo` > `state` | string | ISO representation of the configured culture.
+`taxInfo` > `county` | string | ISO representation of the configured culture.
+`taxInfo` > `city` | string | ISO representation of the configured culture.
+`groupSubscriptionInfo` | string | ISO representation of the configured culture.
+`groupSubscriptionInfo` > `groupToken` | string | ISO representation of the configured culture.
+`groupSubscriptionInfo` > `subscriberAccounts` | array[object] | ISO representation of the configured culture.
+`subscriberAccounts` > `clientUserId` | string | ISO representation of the configured culture.
+`subscriberAccounts` > `emailAddress` | string | ISO representation of the configured culture.
+`subscriberAccounts` > `taxInfo` | object | ISO representation of the configured culture.
+`taxInfo` > `zeroRated` | string | ISO representation of the configured culture.
+`taxInfo` > `country` | string | ISO representation of the configured culture.
+`taxInfo` > `state` | string | ISO representation of the configured culture.
+`taxInfo` > `county` | string | ISO representation of the configured culture.
+`taxInfo` > `city` | string | ISO representation of the configured culture.
+
+  
