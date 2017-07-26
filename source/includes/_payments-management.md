@@ -45,30 +45,30 @@ This end point is present for server-side integrations to take a payment against
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-settlementType | string | Optional | Gets or sets the SettlementType
-pricing | object | Optional | {MppGlobal.Api.Rest.Dtos.v1.Pricing} Price for create session
-pricing > priceId | integer | Optional | Gets or sets the price id
-pricing > paymentMethod | string | Optional | Gets or sets the payment method
-pricing > currency | string | Optional | Gets or sets the currency
+`settlementType` | string | Optional | Gets or sets the SettlementType
+`pricing` | object | Optional | {MppGlobal.Api.Rest.Dtos.v1.Pricing} Price for create session
+`priceId | integer | Optional | Gets or sets the price id
+`paymentMethod | string | Optional | Gets or sets the payment method
+`currency | string | Optional | Gets or sets the currency
 pricing > price | number | Optional | Gets or sets the price
 pricing > taxInfo | object | Optional | {MppGlobal.Api.Rest.Dtos.v1.TaxRegionInfo} Tax region info class
-pricing > taxInfo > zeroRated | string | Optional | Gets or sets the zero rated
-pricing > taxInfo > country | string | Optional | Gets or sets the country
-pricing > taxInfo > state | string | Optional | Gets or sets the state
-pricing > taxInfo > county | string | Optional | Gets or sets the county
-pricing > taxInfo > city | string | Optional | Gets or sets the city
+taxInfo > zeroRated | string | Optional | Gets or sets the zero rated
+taxInfo > country | string | Optional | Gets or sets the country
+taxInfo > state | string | Optional | Gets or sets the state
+taxInfo > county | string | Optional | Gets or sets the county
+taxInfo > city | string | Optional | Gets or sets the city
 pricing > priceItems | string | Optional | Gets or sets the price items
-pricing > priceItems > externalReference | string | Optional | Gets or sets the external reference
-pricing > priceItems > supplierId | integer | Optional | Gets or sets the supplier id
-pricing > priceItems > price | number | Optional | Gets or sets the price
-pricing > priceItems > description | string | Optional | Gets or sets the description
+priceItems > externalReference | string | Optional | Gets or sets the external reference
+priceItems > supplierId | integer | Optional | Gets or sets the supplier id
+priceItems > price | number | Optional | Gets or sets the price
+priceItems > description | string | Optional | Gets or sets the description
 cvv | string | Optional | Gets or sets the cv2 number
 voucherCode | string | Optional | Gets or sets the promotion code
 orderItems | string | Optional | Gets or sets the order items
 orderItems > priceBreakDown | object | Optional | Order price breakdown
-orderItems > priceBreakDown > grossAmount | number | Optional | Gross amount
-orderItems > priceBreakDown > netAmount | number | Optional | Net amount
-orderItems > priceBreakDown > taxAmount | number | Optional | Tax amount
+priceBreakDown > grossAmount | number | Optional | Gross amount
+priceBreakDown > netAmount | number | Optional | Net amount
+priceBreakDown > taxAmount | number | Optional | Tax amount
 orderItems > orderReference | string | Optional | Gets or sets the order reference
 orderItems > description | string | Optional | Gets or sets the description
 orderItems > comments | string | Optional | Gets or sets the comments
@@ -77,13 +77,13 @@ orderItems > entitlements | string | Optional | Gets or sets the entitlement par
 orderItems > entitlements > identifier | string | Optional | Gets or sets the identifier of the entitlement
 orderItems > entitlements > startDate | string | Optional | Gets or sets the create date of the entitlement
 orderItems > entitlements > expiryDate | string | Optional | Gets or sets the expire date of the entitlement
-orderItems > taxInfo | object | Optional | Tax region info class
-orderItems > taxInfo > zeroRated | string | Optional | Gets or sets the zero rated
-orderItems > taxInfo > country | string | Optional | Gets or sets the country
-orderItems > taxInfo > state | string | Optional | Gets or sets the state
-orderItems > taxInfo > county | string | Optional | Gets or sets the county
-orderItems > taxInfo > city | string | Optional | Gets or sets the city
-asynchronousProcessingParameters | object | Optional | Asynchronous Processing Parameters
+`orderItems` > `taxInfo` | object | Optional | Tax region info class
+`taxInfo` > `zeroRated` | string | Optional | Gets or sets the zero rated
+`taxInfo` > `country` | string | Optional | Gets or sets the country
+`taxInfo` > `state` | string | Optional | Gets or sets the state
+`taxInfo` > `county` | string | Optional | Gets or sets the county
+`taxInfo` > `city` | string | Optional | Gets or sets the city
+`asynchronousProcessingParameters` | object | Optional | Asynchronous Processing Parameters
 
 
 ## CRUD: Retrieve Payments

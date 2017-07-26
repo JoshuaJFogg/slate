@@ -116,17 +116,17 @@ Calling this endpoint will return information about the current state of the ses
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-sessionToken | string | Yes | The session token that should be retrieved
+`sessionToken` | string | Yes | The session token that should be retrieved
 
 ### Response Parameters
 
 Parameter | Type | Mandatory | 
 --------- | ------- | ------- | 
-accountId | string | An indication of the account the session is tied to | 
-shortSessionActive | boolean | An indication as to whether the shortSession aspect of the session is still active | 
-shortSessionExpiry | string | The date and time the shortSession will expire | 
-longSessionActive | boolean | An indication as to whether the LongSession aspect of the session is still active | 
-longSessionExpiry | string | The date and time the longSession will expire | 
+`accountId` | string | An indication of the account the session is tied to | 
+`shortSessionActive` | boolean | An indication as to whether the shortSession aspect of the session is still active | 
+`shortSessionExpiry` | string | The date and time the shortSession will expire | 
+`longSessionActive` | boolean | An indication as to whether the LongSession aspect of the session is still active | 
+`longSessionExpiry` | string | The date and time the longSession will expire | 
 
 ## CRUD: Delete a Session
 
@@ -237,5 +237,5 @@ If you would like to delete a session on eSuite, calling this endpoint will expi
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-sessionToken | string | Yes | The session token that should be deleted
+`sessionToken` | string | Yes | The session token that should be deleted
 

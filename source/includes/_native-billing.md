@@ -112,12 +112,12 @@ This endpoint allows you to pass through the Roku transactionId alongside custom
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-rokuTransactionId | string | Optional | The roku transaction ID that is to be validated
-email | string | Optional | Email address of the customer's Roku billing account
-password | string | Optional | Customer's password
-newAccountDetails | object | Optional | A sub-object of RokuValidateTransactionRequest, containing additional customer information
-newAccountDetails > firstName | string | Optional | The customer's first name, as forwarded from Roku's native billing
-newAccountDetails > lastName | string | Optional | The customer's last name, as forwarded from Roku's native billing
+`rokuTransactionId` | string | Optional | The roku transaction ID that is to be validated
+`email` | string | Optional | Email address of the customer's Roku billing account
+`password` | string | Optional | Customer's password
+`newAccountDetails` | object | Optional | A sub-object of RokuValidateTransactionRequest, containing additional customer information
+`newAccountDetails` > `firstName` | string | Optional | The customer's first name, as forwarded from Roku's native billing
+`newAccountDetails` > `lastName` | string | Optional | The customer's last name, as forwarded from Roku's native billing
 
 
 
@@ -237,13 +237,7 @@ this endpoint should be called when an existing account has made a purchase via 
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-rokuTransactionId | string | Optional | The roku transaction ID that is to be validated
-
-
-
-
-
-
+`rokuTransactionId` | string | Optional | The roku transaction ID that is to be validated
 
 ## Validate iTunes Purchase
 
@@ -355,14 +349,14 @@ For first time sign-up and subscribers, calling this endpoint containing informa
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-receipt | string | Yes | The encrypted receipt returned from the iTunes stored when the app was purchased
-price | number | No | An indication as to the price paid within iTunes
-currency | string | No | The currency used to purchase the iTunes subscription
-email | string | Optional | Email address of the customer's Roku billing account
-password | string | Optional | Customer's password
-newAccountDetails | object | Optional | A sub-object of request, containing additional customer information
-newAccountDetails > firstName | string | Optional | The customer's first name, as forwarded from iTunes's native billing
-newAccountDetails > lastName | string | Optional | The customer's last name, as forwarded from iTunes's native billing
+`receipt` | string | Yes | The encrypted receipt returned from the iTunes stored when the app was purchased
+`price` | number | No | An indication as to the price paid within iTunes
+`currency` | string | No | The currency used to purchase the iTunes subscription
+`email` | string | Optional | Email address of the customer's Roku billing account
+`password` | string | Optional | Customer's password
+`newAccountDetails` | object | Optional | A sub-object of request, containing additional customer information
+`newAccountDetails` > `firstName` | string | Optional | The customer's first name, as forwarded from iTunes's native billing
+`newAccountDetails` > `lastName` | string | Optional | The customer's last name, as forwarded from iTunes's native billing
 
 
 
@@ -481,9 +475,9 @@ For existing accounts.
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-receipt | string | Yes | The encrypted receipt returned from the iTunes stored when the app was purchased
-price | number | No | An indication as to the price paid within iTunes
-currency | string | No | The currency used to purchase the iTunes subscription
+`receipt` | string | Yes | The encrypted receipt returned from the iTunes stored when the app was purchased
+`price` | number | No | An indication as to the price paid within iTunes
+`currency` | string | No | The currency used to purchase the iTunes subscription
 
 
 

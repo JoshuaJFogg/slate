@@ -146,28 +146,28 @@ It is a requirement of the eSuite platform that an account be created in order t
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-email | string | Yes* | The identifier used when eSuite is primary IDAM.
-clientUserId | string | Yes* | The identifier used when eSuite is secondary IDAM. Once set this cannot be changed.
-password | string | Yes | The value provided by the account to pair with the email. 
-salutation | string | No | Available values: Mr, Mrs, Miss and Ms.
-firstName | string | Yes | The first name associated to the account.
-lastName | string | Yes | The last name associated to the account.
-phoneNumber | string | Yes | The home phone number of the account.
-mobileNumber | string | Yes | The mobile number of the account (minus country code).
-dateOfBirth | dateTime | Yes | The birthday of the account.
-gender | string | Yes | Available values: Male, Female and Unspecified.
-addresses | array | Yes | A collection of addresses bound to the account.
-address > addressType | string | Yes | Available values: Home and Billing.
-address > houseName | string | Yes | The name associated to the address.
-address > houseNumber | string | Yes | The building number associated to the address.
-address > street | string | Yes | The street associated to the address.
-address > townCity | string | Yes | The town or city associated to the address
-address > district | string | No | The districtassociated to the address
-address > state | string | No | The state associated to the address
-address > county | string | No | The county associated to the address
-address > postCode | string | Yes | The post code associated to the address
-address > country | string | Yes | The country the account resides
-customParameters | dictionary | No | A collection of custom attributes stored against the account
+`email` | string | Yes* | The identifier used when eSuite is primary IDAM.
+`clientUserId` | string | Yes* | The identifier used when eSuite is secondary IDAM. Once set this cannot be changed.
+`password` | string | Yes | The value provided by the account to pair with the email. 
+`salutation` | string | No | Available values: Mr, Mrs, Miss and Ms.
+`firstName` | string | Yes | The first name associated to the account.
+`lastName` | string | Yes | The last name associated to the account.
+`phoneNumber` | string | Yes | The home phone number of the account.
+`mobileNumber` | string | Yes | The mobile number of the account (minus country code).
+`dateOfBirth` | dateTime | Yes | The birthday of the account.
+`gender` | string | Yes | Available values: Male, Female and Unspecified.
+`addresses` | array | Yes | A collection of addresses bound to the account.
+`address` > `addressType` | string | Yes | Available values: Home and Billing.
+`address` > `houseName` | string | Yes | The name associated to the address.
+`address` > `houseNumber` | string | Yes | The building number associated to the address.
+`address` > `street` | string | Yes | The street associated to the address.
+`address` > `townCity` | string | Yes | The town or city associated to the address
+`address` > `district` | string | No | The districtassociated to the address
+`address` > `state` | string | No | The state associated to the address
+`address` > `county` | string | No | The county associated to the address
+`address` > `postCode` | string | Yes | The post code associated to the address
+`address` > `country` | string | Yes | The country the account resides
+`customParameters` | dictionary | No | A collection of custom attributes stored against the account
 
 _* It is mandatory to pass either an email address or a clientUserId. It is possible to provide both._
 
@@ -310,28 +310,28 @@ Once an account has been created within the eSuite platform, it is possible to r
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-email | string | Yes* | The identifier used when eSuite is primary IDAM.
-clientUserId | string | Yes* | The identifier used when eSuite is secondary IDAM. Once set this cannot be changed.
-password | string | Yes | The value provided by the account to pair with the email. 
-salutation | string | No | Available values: Mr, Mrs, Miss and Ms.
-firstName | string | Yes | The first name associated to the account.
-lastName | string | Yes | The last name associated to the account.
-phoneNumber | string | Yes | The home phone number of the account.
-mobileNumber | string | Yes | The mobile number of the account (minus country code).
-dateOfBirth | dateTime | Yes | The birthday of the account.
-gender | string | Yes | Available values: Male, Female and Unspecified.
-addresses | array | Yes | A collection of addresses bound to the account.
-address > addressType | string | Yes | Available values: Home and Billing.
-address > houseName | string | Yes | The name associated to the address.
-address > houseNumber | string | Yes | The building number associated to the address.
-address > street | string | Yes | The street associated to the address.
-address > townCity | string | Yes | The town or city associated to the address
-address > district | string | No | The districtassociated to the address
-address > state | string | No | The state associated to the address
-address > county | string | No | The county associated to the address
-address > postCode | string | Yes | The post code associated to the address
-address > country | string | Yes | The country the account resides
-customParameters | dictionary | No | A collection of custom attributes stored against the account
+`email` | string | Yes* | The identifier used when eSuite is primary IDAM.
+`clientUserId` | string | Yes* | The identifier used when eSuite is secondary IDAM. Once set this cannot be changed.
+`password` | string | Yes | The value provided by the account to pair with the email. 
+`salutation` | string | No | Available values: Mr, Mrs, Miss and Ms.
+`firstName` | string | Yes | The first name associated to the account.
+`lastName` | string | Yes | The last name associated to the account.
+`phoneNumber` | string | Yes | The home phone number of the account.
+`mobileNumber` | string | Yes | The mobile number of the account (minus country code).
+`dateOfBirth` | dateTime | Yes | The birthday of the account.
+`gender` | string | Yes | Available values: Male, Female and Unspecified.
+`addresses` | array | Yes | A collection of addresses bound to the account.
+`address` > `addressType` | string | Yes | Available values: Home and Billing.
+`address` > `houseName` | string | Yes | The name associated to the address.
+`address` > `houseNumber` | string | Yes | The building number associated to the address.
+`address` > `street` | string | Yes | The street associated to the address.
+`address` > `townCity` | string | Yes | The town or city associated to the address
+`address` > `district` | string | No | The districtassociated to the address
+`address` > `state` | string | No | The state associated to the address
+`address` > `county` | string | No | The county associated to the address
+`address` > `postCode` | string | Yes | The post code associated to the address
+`address` > `country` | string | Yes | The country the account resides
+`customParameters` | dictionary | No | A collection of custom attributes stored against the account
 
 ## CRUD: Update Account
 
@@ -479,28 +479,28 @@ It is a requirement of the eSuite platform that an account be created in order t
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-email | string | Yes* | The identifier used when eSuite is primary IDAM.
-clientUserId | string | Yes* | The identifier used when eSuite is secondary IDAM. Once set this cannot be changed.
-password | string | Yes | The value provided by the account to pair with the email. 
-salutation | string | No | Available values: Mr, Mrs, Miss and Ms.
-firstName | string | Yes | The first name associated to the account.
-lastName | string | Yes | The last name associated to the account.
-phoneNumber | string | Yes | The home phone number of the account.
-mobileNumber | string | Yes | The mobile number of the account (minus country code).
-dateOfBirth | dateTime | Yes | The birthday of the account.
-gender | string | Yes | Available values: Male, Female and Unspecified.
-addresses | array | Yes | A collection of addresses bound to the account.
-address > addressType | string | Yes | Available values: Home and Billing.
-address > houseName | string | Yes | The name associated to the address.
-address > houseNumber | string | Yes | The building number associated to the address.
-address > street | string | Yes | The street associated to the address.
-address > townCity | string | Yes | The town or city associated to the address
-address > district | string | No | The districtassociated to the address
-address > state | string | No | The state associated to the address
-address > county | string | No | The county associated to the address
-address > postCode | string | Yes | The post code associated to the address
-address > country | string | Yes | The country the account resides
-customParameters | dictionary | No | A collection of custom attributes stored against the account
+`email` | string | Yes* | The identifier used when eSuite is primary IDAM.
+`clientUserId` | string | Yes* | The identifier used when eSuite is secondary IDAM. Once set this cannot be changed.
+`password` | string | Yes | The value provided by the account to pair with the email. 
+`salutation` | string | No | Available values: Mr, Mrs, Miss and Ms.
+`firstName` | string | Yes | The first name associated to the account.
+`lastName` | string | Yes | The last name associated to the account.
+`phoneNumber` | string | Yes | The home phone number of the account.
+`mobileNumber` | string | Yes | The mobile number of the account (minus country code).
+`dateOfBirth` | dateTime | Yes | The birthday of the account.
+`gender` | string | Yes | Available values: Male, Female and Unspecified.
+`addresses` | array | Yes | A collection of addresses bound to the account.
+`address` > `addressType` | string | Yes | Available values: Home and Billing.
+`address` > `houseName` | string | Yes | The name associated to the address.
+`address` > `houseNumber` | string | Yes | The building number associated to the address.
+`address` > `street` | string | Yes | The street associated to the address.
+`address` > `townCity` | string | Yes | The town or city associated to the address
+`address` > `district` | string | No | The districtassociated to the address
+`address` > `state` | string | No | The state associated to the address
+`address` > `county` | string | No | The county associated to the address
+`address` > `postCode` | string | Yes | The post code associated to the address
+`address` > `country` | string | Yes | The country the account resides
+`customParameters` | dictionary | No | A collection of custom attributes stored against the account
 
 _* It is mandatory to pass either an email address or a clientUserId. It is possible to provide both._
 
@@ -827,7 +827,7 @@ Following the receiving of a verification email, the link contained within will 
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-verificationToken | string | Yes | This parameter represents the token that was contained within the email sent to the account.
+`verificationToken` | string | Yes | This parameter represents the token that was contained within the email sent to the account.
 
 ## Trigger Forgotten Password
 
@@ -939,7 +939,7 @@ In the event a customer is unable to access their account due to forgetting thei
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-emailAddress | string | Yes | The email address associated to the customers account
+`emailAddress` | string | Yes | The email address associated to the customers account
 
 ## Reset Password
 
@@ -1064,8 +1064,8 @@ $.ajax(settings).done(function (response) {
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-password | string | Yes | The new password for the account.
-login | boolean | Yes | An indication as to whether the customer should be provided a session following password update.
+`password` | string | Yes | The new password for the account.
+`login` | boolean | Yes | An indication as to whether the customer should be provided a session following password update.
 
 ## Retrieve Transaction Summary
 
@@ -1214,26 +1214,26 @@ Calling this endpoint will provide a breakdown of the accounts transaction summa
 
 Parameter | Description | 
 --------- | ------- | 
-totalCustomerValue | Customer value broken down by currency | 
-totalCustomerValue > totalValue | The sum of all payments minus any refunds |
-totalCustomerValue > currency | The currency the value represents | 
-totalPaymentsToDate | Total number of payments taken, broken down by currency | 
-totalPaymentsToDate > totalValue | The sum of all payments taken against the account |
-totalPaymentsToDate > averageValue | The average transaction amount |
-totalPaymentsToDate > currency | The currency the value represents | 
-totalPaymentsToDate > quantity | The number of payments which have been taken against the account | 
-totalRefundsToDate | All refunds applied, broken down by currency | 
-totalRefundsToDate > totalValue | The sum of all refunds against the account |
-totalRefundsToDate > averageValue | The average transaction refund amount |
-totalRefundsToDate > currency | The currency the value represents | 
-totalRefundsToDate > quantity | integer | 
-outstandingPaymentsToDate | All outstanding payments, broken down by currency | 
-outstandingPaymentsToDate > totalValue | The sum of all payments yet to be taken against the account  |
-outstandingPaymentsToDate > averageValue | The average transaction amount |
-outstandingPaymentsToDate > currency | The currency the value represents | 
-outstandingPaymentsToDate > quantity | Total number of outstanding payments | 
-outstandingCreditBalance | All outstanding credit balances broken down by currency |
-outstandingCreditBalance > totalValue | The total amount credit on the account |
-outstandingCreditBalance > currency | The currency the value represents | 
+`totalCustomerValue` | Customer value broken down by currency | 
+`totalCustomerValue` > totalValue | The sum of all payments minus any refunds |
+`totalCustomerValue` > currency | The currency the value represents | 
+`totalPaymentsToDate` | Total number of payments taken, broken down by currency | 
+`totalPaymentsToDate` > totalValue | The sum of all payments taken against the account |
+`totalPaymentsToDate` > averageValue | The average transaction amount |
+`totalPaymentsToDate` > currency | The currency the value represents | 
+`totalPaymentsToDate` > quantity | The number of payments which have been taken against the account | 
+`totalRefundsToDate` | All refunds applied, broken down by currency | 
+`totalRefundsToDate` > totalValue | The sum of all refunds against the account |
+`totalRefundsToDate` > averageValue | The average transaction refund amount |
+`totalRefundsToDate` > currency | The currency the value represents | 
+`totalRefundsToDate` > quantity | integer | 
+`outstandingPaymentsToDate` | All outstanding payments, broken down by currency | 
+`outstandingPaymentsToDate` > totalValue | The sum of all payments yet to be taken against the account  |
+`outstandingPaymentsToDate` > averageValue | The average transaction amount |
+`outstandingPaymentsToDate` > currency | The currency the value represents | 
+`outstandingPaymentsToDate` > quantity | Total number of outstanding payments | 
+`outstandingCreditBalance` | All outstanding credit balances broken down by currency |
+`outstandingCreditBalance` > totalValue | The total amount credit on the account |
+`outstandingCreditBalance` > currency | The currency the value represents | 
 
 

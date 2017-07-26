@@ -111,18 +111,18 @@ Description of what the endpoint does.
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-houseName | string | mandatory* | The name associated to the building |
-houseNumber | string |mandatory* | The building number associated to the address |
-street | string |mandatory | The street the address is located |
-townCity | string |mandatory | The town or city the address is associated |
-district | string |optional | The district associated with the address |
-state | string |optional | The state that the address is located |
-county | string |optional | The county the address is associated |
-postCode | string |mandatory | The postcode of the address that has been added |
-country | string |mandatory | The country the address is specific to |
-isDefault | boolean |optional | An indication as to whether the address is the default address for the account |
+`houseName` | string | mandatory* | The name associated to the building |
+`houseNumber` | string |mandatory* | The building number associated to the address |
+`street` | string |mandatory | The street the address is located |
+`townCity` | string |mandatory | The town or city the address is associated |
+`district` | string |optional | The district associated with the address |
+`state` | string |optional | The state that the address is located |
+`county` | string |optional | The county the address is associated |
+`postCode` | string |mandatory | The postcode of the address that has been added |
+`country` | string |mandatory | The country the address is specific to |
+`isDefault` | boolean |optional | An indication as to whether the address is the default address for the account |
 
-*Either houseName or houseNumber is required but both are not mandatory.
+*Either `houseName` or `houseNumber` is required but both are not mandatory.
 
 
 
@@ -253,18 +253,18 @@ Description of what the endpoint does.
 
 Parameter | Type | Description | 
 --------- | ------- | ------- | 
-addressBook | array[object] | The list of addresses |
-addressIdentifier | string | The address identifier that should be used to identify which address is required in future API requests |
-houseName | string | The name associated to the building |
-houseNumber | string | The building number associated to the address |
-street | string | The street the address is located |
-townCity | string | The town or city the address is associated |
-district | string | The district associated with the address |
-state | string | The state that the address is located |
-county | string | The county the address is associated |
-postCode | string | The postcode of the address that has been added |
-country | string | The country the address is specific to |
-isDefault | boolean | An indication as to whether the address is the default address for the account |
+`addressBook` | array[object] | The list of addresses |
+`addressIdentifier `| string | The address identifier that should be used to identify which address is required in future API requests |
+`houseName `| string | The name associated to the building |
+`houseNumber` | string | The building number associated to the address |
+`street` | string | The street the address is located |
+`townCity` | string | The town or city the address is associated |
+`district` | string | The district associated with the address |
+`state` | string | The state that the address is located |
+`county` | string | The county the address is associated |
+`postCode` | string | The postcode of the address that has been added |
+`country` | string | The country the address is specific to |
+`isDefault` | boolean | An indication as to whether the address is the default address for the account |
 
 
 

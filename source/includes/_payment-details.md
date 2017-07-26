@@ -100,21 +100,21 @@ In order to make a purchase using a credit or debit card, a card must be added t
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-cardNumber | string | Yes | The 13-19 digit number on the face of a credit or debit card.
-cardType | string | Yes | The type of card the account is adding, Visa, Mastercard, Amex, Diners, Discover.
-expiryDate | string | Yes | The date at which the card will expire, mm-yy.
-issueCode | string | No | The number of cards the acquirer has issues for the account.
-securityCode | string | Yes | 3-4 digit code on the rear of a card.
-billingHouseName | string | No | The building name in which the card is registered.
-billingHouseFlatNumber | string | No | The building number at which the card is registered.
-billingStreet | string | No | The street in which the card is registered.
-billingDistrict | string | No | The district in which the card is registered.
-billingTownCity | string | No | The town or city in which the card is registered.
-billingPostcode | string | No | The post code in which the card is registered.
-billingCountry | string | No | The country in which the card is registered.
-setDefault | boolean | No | An indication as to whether this card will be the customers default card.
-associatedName | string | No | A friendly name to identify the payment card to the account.
-skipPreAuth | boolean | No | An indication as to whether the card should be authorised as part of the addition process.
+`cardNumber` | string | Yes | The 13-19 digit number on the face of a credit or debit card.
+`cardType` | string | Yes | The type of card the account is adding, Visa, Mastercard, Amex, Diners, Discover.
+`expiryDate` | string | Yes | The date at which the card will expire, mm-yy.
+`issueCode` | string | No | The number of cards the acquirer has issues for the account.
+`securityCode` | string | Yes | 3-4 digit code on the rear of a card.
+`billingHouseName` | string | No | The building name in which the card is registered.
+`billingHouseFlatNumber` | string | No | The building number at which the card is registered.
+`billingStreet` | string | No | The street in which the card is registered.
+`billingDistrict` | string | No | The district in which the card is registered.
+`billingTownCity` | string | No | The town or city in which the card is registered.
+`billingPostcode` | string | No | The post code in which the card is registered.
+`billingCountry` | string | No | The country in which the card is registered.
+`setDefault` | boolean | No | An indication as to whether this card will be the customers default card.
+`associatedName` | string | No | A friendly name to identify the payment card to the account.
+`skipPreAuth` | boolean | No | An indication as to whether the card should be authorised as part of the addition process.
 
 
 <aside class="error">
@@ -210,11 +210,11 @@ In order to make a purchase using BACS Direct Debit, a BACS wallet must be added
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-accountHolderName | string | Yes | The name associated to the bank account.
-accountNumber | string | Yes | The UK bank account number.
-sortCode | string | Yes | The bank sort code associated to the account.
-bacsReference | string | No | The existing mandate reference if the account is coming from another system.
-serviceId | integer | Yes | The eSuite ServiceId that this BACS wallet will be used for.
+`accountHolderName` | string | Yes | The name associated to the bank account.
+`accountNumber` | string | Yes | The UK bank account number.
+`sortCode` | string | Yes | The bank sort code associated to the account.
+`bacsReference` | string | No | The existing mandate reference if the account is coming from another system.
+`serviceId` | integer | Yes | The eSuite ServiceId that this BACS wallet will be used for.
 
 
 ## Add a SEPA Direct Debit Wallet
@@ -304,10 +304,10 @@ In order to make a purchase using SEPA Direct Debit, a SEPA wallet must be added
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-accountHolderName | string | Yes | The name associated to the bank account.
-iban | string | Yes | The bank account number.
-bic | string | Yes | The bank identification code associated to the account.
-serviceId | integer | Yes | The eSuite ServiceId that this BACS wallet will be used for.
+`accountHolderName` | string | Yes | The name associated to the bank account.
+`iban` | string | Yes | The bank account number.
+`bic` | string | Yes | The bank identification code associated to the account.
+`serviceId` | integer | Yes | The eSuite ServiceId that this BACS wallet will be used for.
 
 
 
@@ -421,22 +421,22 @@ This endpoint retrieves the payment details stored against an eSuite account.
 
 Parameter | Type | Description | 
 --------- | ------- | ------- | 
-paymentDetails | array[object] | The collection of payment details available for the account. |
-cards | array[object] | The collection of payment cards available for the account. |
-cards > associatedName | string | Associated name to identify the card. |
-cards > billingHouseName | string | The name of the house the card is associated to. |
-cards > billingHouseFlatNumber | string | The number of the house the card is associated to. |
-cards > billingStreet | string | The street associated to the card. |
-cards > billingDistrict | string | The district associated to the card. |
-cards > billingTownCity | string | The town or city associated to the card. |
-cards > billingCounty | string | The county associated to the card. |
-cards > billingPostcode | string | The postcode associated to the card. |
-cards > billingCountry | string | The country associated to the card. |
-cards > cardNumber | string | A masked representation of the card. |
-cards > cardType | string | The card brand associated to the card. |
-cards > expiryDate | string | The date at which the card is due to expire. |
-cards > isDefault | boolean | An indication as to whether this card is the default for the account. |
-cards > issueCode | string | Issue number typically found on debit and bank cards. |
-cards > paymentDetailId | string | The identifier of the card within eSuite. |
-payPal | object | PayPal object detailing information about the customers PayPal account. |
-paymentDetailId | string | The identifier of the PayPal wallet within eSuite. |
+`paymentDetails` | array[object] | The collection of payment details available for the account. |
+`cards` | array[object] | The collection of payment cards available for the account. |
+`cards` > `associatedName` | string | Associated name to identify the card. |
+`cards` > `billingHouseName` | string | The name of the house the card is associated to. |
+`cards` > `billingHouseFlatNumber` | string | The number of the house the card is associated to. |
+`cards` > `billingStreet` | string | The street associated to the card. |
+`cards` > `billingDistrict` | string | The district associated to the card. |
+`cards` > `billingTownCity`| string | The town or city associated to the card. |
+`cards` > `billingCounty` | string | The county associated to the card. |
+`cards` > `billingPostcode` | string | The postcode associated to the card. |
+`cards` > `billingCountry` | string | The country associated to the card. |
+`cards` > `cardNumber` | string | A masked representation of the card. |
+`cards` > `cardType` | string | The card brand associated to the card. |
+`cards` > `expiryDate` | string | The date at which the card is due to expire. |
+`cards` > `isDefault` | boolean | An indication as to whether this card is the default for the account. |
+`cards` > `issueCode` | string | Issue number typically found on debit and bank cards. |
+`cards` > `paymentDetailId` | string | The identifier of the card within eSuite. |
+`payPal` | object | PayPal object detailing information about the customers PayPal account. |
+`paymentDetailId` | string | The identifier of the PayPal wallet within eSuite. |

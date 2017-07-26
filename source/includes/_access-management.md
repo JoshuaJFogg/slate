@@ -99,10 +99,10 @@ In addition to gaining entitlements via purchasing content, it is possible to pr
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-name | string | Optional | The name of entitlement
-identifier | string | Yes | The identifier of entitlement
-startDate | string | Yes | The create date of the entitlement
-endDate | string | Yes | The expiry of the entitlement
+`name` | string | Optional | The name of entitlement
+`identifier` | string | Yes | The identifier of entitlement
+`startDate` | string | Yes | The create date of the entitlement
+`endDate` | string | Yes | The expiry of the entitlement
 
 
 ## CRUD: Retrieve Access
@@ -224,11 +224,11 @@ This endpoint is available for retrieving all active access for a specific accou
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-entitlements | string | Optional | The list of current account entitlements
-name | string | Optional | The name of entitlement
-identifier | string | Required | The identifier of entitlement
-startDate | string | Required | The create date of the entitlement
-endDate | string | Required | The expire date of the entitlement
+`entitlements` | string | Optional | The list of current account entitlements
+`name` | string | Optional | The name of entitlement
+`identifier` | string | Required | The identifier of entitlement
+`startDate` | string | Required | The create date of the entitlement
+`endDate` | string | Required | The expire date of the entitlement
 
 ## CRUD: Delete Access
 
@@ -455,16 +455,16 @@ In order to check if an account has access to content, this API method should be
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-incrementUsage | boolean | Optional | This option will default to false if not provided. 
-deviceIdentifier | string | Optional | If device concurrency is being used, this value must be populated.
+`incrementUsage` | boolean | Optional | This option will default to false if not provided. 
+`deviceIdentifier` | string | Optional | If device concurrency is being used, this value must be populated.
 
 ### Response Parameters
 
 Parameter | Type | Description | 
 --------- | ------- | ------- | 
-remainingTime | string | The remaining amount of time the customer has access (DD.HH:MM:SS)
-deviceLimitExceeded | boolean | An indication as to whether the customer is consuming content on the maximum number of devices
-entitlementAvailable | boolean | An indication as to whether the customer has access to the entitlement
+`remainingTime` | string | The remaining amount of time the customer has access (DD.HH:MM:SS)
+`deviceLimitExceeded` | boolean | An indication as to whether the customer is consuming content on the maximum number of devices
+`entitlementAvailable` | boolean | An indication as to whether the customer has access to the entitlement
 
 
 ## Search Access
@@ -589,16 +589,16 @@ This endpoint is available for all access for a specific account, regardless of 
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-createDateMin | string | Optional | Earliest creation date to search 
-createDateMax | string | Optional | Latest creation date to search
-startDateMin | string | Optional | Earliest Entitlement start date to search
-startDateMax | string | Optional | Latest Entitlement start date to search
-endDateMin | string | Optional | Earliest Entitlement expiration date to search
-endDateMax | string | Optional | Latest Entitlement expiration date to search
-entitlementIdentifier | string | Optional | The name of entitlement
-rowsPerPage | integer | Optional | Number of items to return in the response
-currentPage | integer | Optional | Page to return
-exactMatch | boolean | Optional | Indication whether to exactly match the entitlementIdentifer (default to false)
+`createDateMin` | string | Optional | Earliest creation date to search 
+`createDateMax` | string | Optional | Latest creation date to search
+`startDateMin`| string | Optional | Earliest Entitlement start date to search
+`startDateMax` | string | Optional | Latest Entitlement start date to search
+`endDateMin` | string | Optional | Earliest Entitlement expiration date to search
+`endDateMax` | string | Optional | Latest Entitlement expiration date to search
+`entitlementIdentifier` | string | Optional | The name of entitlement
+`rowsPerPage` | integer | Optional | Number of items to return in the response
+`currentPage` | integer | Optional | Page to return
+`exactMatch` | boolean | Optional | Indication whether to exactly match the entitlementIdentifer (default to false)
 
 <aside class="info">Passing no query parameters will return a 204.</aside>
 
@@ -607,9 +607,9 @@ exactMatch | boolean | Optional | Indication whether to exactly match the entitl
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-entitlements | string | Optional | The list of current account entitlements
-name | string | Optional | The name of entitlement
-identifier | string | Required | The identifier of entitlement
-startDate | string | Required | The create date of the entitlement
-endDate | string | Required | The expire date of the entitlement
+`entitlements` | string | Optional | The list of current account entitlements
+`name` | string | Optional | The name of entitlement
+`identifier` | string | Required | The identifier of entitlement
+`startDate` | string | Required | The create date of the entitlement
+`endDate` | string | Required | The expire date of the entitlement
 

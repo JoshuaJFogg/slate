@@ -113,9 +113,9 @@ In the event you need to update a fulfilment, this end point should be called to
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
  - | array[objects] | Yes | A collection of updates that should be made to the resource
-op | string | Yes | The type of change that should be executed. add, replace and remove are available operations.
-path | string | Yes | The name of the parameter that should be updated.
-value | string | Yes | The new value to store against the parameter.
+`op` | string | Yes | The type of change that should be executed. add, replace and remove are available operations.
+`path` | string | Yes | The name of the parameter that should be updated.
+`value` | string | Yes | The new value to store against the parameter.
 
 
 ## Add additional payment
@@ -213,11 +213,11 @@ If you need to add an additional payment to a specific fulfilment, this end poin
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-paymentDate | string | Yes | The date the payment should be submitted.
-paymentMethod | string | Yes | The payment method the payment should be taken
-grossAmount | string | Yes | The amount to submit to the merchant.
-netAmount | string | Yes | The amount to charge minus tax.
-vatAmount | string | Yes | The amount apportioned to tax.
-currency | string | Yes | ISO Currency code
-customPaymentParameters | dictionary | No | This is a collection of custom attributes against the payments.
-customPaymentParameters ..> parameterName | string | No | Representation of each custom parameters against the payment.
+`paymentDate` | string | Yes | The date the payment should be submitted.
+`paymentMethod` | string | Yes | The payment method the payment should be taken
+`grossAmount` | string | Yes | The amount to submit to the merchant.
+`netAmount` | string | Yes | The amount to charge minus tax.
+`vatAmount` | string | Yes | The amount apportioned to tax.
+`currency` | string | Yes | ISO Currency code
+`customPaymentParameters` | dictionary | No | This is a collection of custom attributes against the payments.
+`customPaymentParameters` > `parameterName` | string | No | Representation of each custom parameters against the payment.

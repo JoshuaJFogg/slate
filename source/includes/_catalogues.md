@@ -172,50 +172,50 @@ This endpoint will return all configured subscription services for your instance
 
 Parameter | Type | Description | 
 --------- | ------- |  ----------- |
-subscriptionsInfo | array[object] | Object containing all subscription services on the Client
-subscriptionsInfo > subscriptionId | string | The identifier of the subscription
-subscriptionsInfo > resourceReference | string | The reference of the subscription
-subscriptionsInfo > subscriptionGroup | string | The subscription group the subscription belongs
-subscriptionsInfo > subscriptionGroupTag | string | The subscription group tag the subscription belongs
-subscriptionsInfo > subscriptionGroupStatus | string | The status of the subscription group
-subscriptionsInfo > subscriptionDescription | string | A description of the subscription service
-subscriptionsInfo > subscriptionTitle | string | A title of the subscription service
-subscriptionsInfo > subscriptionType | string | The type of subscription service
-subscriptionsInfo > subscriptionStatus | string | The status of the subscription service
-subscriptionsInfo > initialPricingEnabled | boolean | An indication whether initial pricing is enabled
-subscriptionsInfo > trialInfo | object | Object containing trial information
-subscriptionsInfo > trialInfo > trialEnabled | boolean | An indication whether trials are enabled
-subscriptionsInfo > trialInfo > trialUnit | string | Duration type (month, day, year, etc.)
-subscriptionsInfo > trialInfo > trialPeriod | integer | How long the duration should be
-subscriptionsInfo > trialInfo > discountPercentage | number | How much the price will be discounted
-subscriptionsInfo > trialInfo > nonPaymentTrial | boolean | An indication to whether payment details are required
-subscriptionsInfo > contractInfo | object | Object containing contract information
-subscriptionsInfo > contractInfo > contractUnit | string | Type of contract (day, week, month, etc.)
-subscriptionsInfo > contractInfo > contractPeriod | integer | Number of units the contract runs
-subscriptionsInfo > contractInfo > autoRenewDefault | string | Indication whether the subscription service will renew
-subscriptionsInfo > pricingInfo | array[object] | The collection of all prices configured for the subscription service
-subscriptionsInfo > pricingInfo > currency | string | The currency the price is associated to
-subscriptionsInfo > pricingInfo > initialPrice | number | The price that will be paid on sign-up of the subscription service
-subscriptionsInfo > pricingInfo > priceIsGross | boolean | An indication as to whether the price returned is the gross or net price
-subscriptionsInfo > pricingInfo > renewalPrice | number | The price that will be paid on subsequent renewal purchases
-subscriptionsInfo > pricingInfo > priceId | integer | The eSuite Identifer for the price
-subscriptionsInfo > pricingInfo > taxCategory | string | Tax category
-subscriptionsInfo > pricingInfo > resourceReference | string | The identifier for the price that should be used on purchase calls
-subscriptionsInfo > pricingInfo > paymentMethod | string | The payment method associated to the specific price
-subscriptionsInfo > allowedPaymentMethods | array[string] | The collection of payment methods available on the subscription service
-subscriptionsInfo > customParameters | array[object] | Custom parameters
-subscriptionsInfo > customParameters > parameterName | string | Name of the custom parameter
-subscriptionsInfo > customParameters > parameterType | string | An indication as to what data type the parameter should be displayed e.g. HTML, Decimal
-subscriptionsInfo > customParameters > parameterValue | string | Value of the custom parameter
-subscriptionsInfo > images | array[object] | The overarching object which contains all images for the subscription service
-subscriptionsInfo > images > imageId | integer | The eSuite identifier for the image
-subscriptionsInfo > images > displayName | string | Display name
-subscriptionsInfo > images > fileName | string | The file name associated to the image
-subscriptionsInfo > images > default | boolean | An indication as to whether the image is the default image for the subscription service 
-subscriptionsInfo > images > location | string | The URL location the image is hosted at
-subscriptionsInfo > groupLicensing | object | A breakdown of how many group licenses are associated to the subscription service
-subscriptionsInfo > groupLicensing > standard | integer | The number of standard licenses associated to the subscription service
-subscriptionsInfo > groupLicensing > overflow | integer | The number of overflow licenses associated to the subscription service
+`subscriptionsInfo` | array[object] | Object containing all subscription services on the Client
+`subscriptionsInfo` > `subscriptionId` | string | The identifier of the subscription
+`subscriptionsInfo` > `resourceReference` | string | The reference of the subscription
+`subscriptionsInfo` > `subscriptionGroup` | string | The subscription group the subscription belongs
+`subscriptionsInfo` > `subscriptionGroupTag` | string | The subscription group tag the subscription belongs
+`subscriptionsInfo` > `subscriptionGroupStatus` | string | The status of the subscription group
+`subscriptionsInfo` > `subscriptionDescription` | string | A description of the subscription service
+`subscriptionsInfo` > `subscriptionTitle` | string | A title of the subscription service
+`subscriptionsInfo` > `subscriptionType` | string | The type of subscription service
+`subscriptionsInfo` > `subscriptionStatus` | string | The status of the subscription service
+`subscriptionsInfo` > `initialPricingEnabled` | boolean | An indication whether initial pricing is enabled
+`subscriptionsInfo` > `trialInfo` | object | Object containing trial information
+`trialInfo` > `trialEnabled` | boolean | An indication whether trials are enabled
+`trialInfo` > `trialUnit` | string | Duration type (month, day, year, etc.)
+`trialInfo` > `trialPeriod` | integer | How long the duration should be
+`trialInfo` > `discountPercentage` | number | How much the price will be discounted
+`trialInfo` > `nonPaymentTrial` | boolean | An indication to whether payment details are required
+`subscriptionsInfo` > `contractInfo` | object | Object containing contract information
+`contractInfo` > `contractUnit` | string | Type of contract (day, week, month, etc.)
+`contractInfo` > `contractPeriod` | integer | Number of units the contract runs
+`contractInfo` > `autoRenewDefault` | string | Indication whether the subscription service will renew
+`subscriptionsInfo` > `pricingInfo` | array[object] | The collection of all prices configured for the subscription service
+`pricingInfo` > `currency` | string | The currency the price is associated to
+`pricingInfo` > `initialPrice` | number | The price that will be paid on sign-up of the subscription service
+`pricingInfo` > `priceIsGross` | boolean | An indication as to whether the price returned is the gross or net price
+`pricingInfo` > `renewalPrice` | number | The price that will be paid on subsequent renewal purchases
+`pricingInfo` > `priceId` | integer | The eSuite Identifer for the price
+`pricingInfo` > `taxCategory` | string | Tax category
+`pricingInfo` > `resourceReference` | string | The identifier for the price that should be used on purchase calls
+`pricingInfo` > `paymentMethod` | string | The payment method associated to the specific price
+`subscriptionsInfo` > `allowedPaymentMethods` | array[string] | The collection of payment methods available on the subscription service
+`customParameters` | array[object] | Custom parameters
+`customParameters` > `parameterName` | string | Name of the custom parameter
+`customParameters` > `parameterType` | string | An indication as to what data type the parameter should be displayed e.g. HTML, Decimal
+`customParameters` > `parameterValue` | string | Value of the custom parameter
+`subscriptionsInfo` > `images` | array[object] | The overarching object which contains all images for the subscription service
+`images` > `imageId` | integer | The eSuite identifier for the image
+`images` > `displayName` | string | Display name
+`images` > `fileName` | string | The file name associated to the image
+`images` > `default` | boolean | An indication as to whether the image is the default image for the subscription service 
+`images` > `location` | string | The URL location the image is hosted at
+`subscriptionsInfo` > `groupLicensing` | object | A breakdown of how many group licenses are associated to the subscription service
+`groupLicensing` > `standard` | integer | The number of standard licenses associated to the subscription service
+`groupLicensing` > `overflow` | integer | The number of overflow licenses associated to the subscription service
 
 
 ## Retrieve Filtered Subscription Services
@@ -396,50 +396,50 @@ subscriptionGroupTagName | string | Optional | Subscription service group name
 
 Parameter | Type | Description | 
 --------- | ------- |  ----------- |
-subscriptionsInfo | array[object] | Object containing all subscription services on the Client
-subscriptionsInfo > subscriptionId | string | The identifier of the subscription
-subscriptionsInfo > resourceReference | string | The reference of the subscription
-subscriptionsInfo > subscriptionGroup | string | The subscription group the subscription belongs
-subscriptionsInfo > subscriptionGroupTag | string | The subscription group tag the subscription belongs
-subscriptionsInfo > subscriptionGroupStatus | string | The status of the subscription group
-subscriptionsInfo > subscriptionDescription | string | A description of the subscription service
-subscriptionsInfo > subscriptionTitle | string | A title of the subscription service
-subscriptionsInfo > subscriptionType | string | The type of subscription service
-subscriptionsInfo > subscriptionStatus | string | The status of the subscription service
-subscriptionsInfo > initialPricingEnabled | boolean | An indication whether initial pricing is enabled
-subscriptionsInfo > trialInfo | object | Object containing trial information
-subscriptionsInfo > trialInfo > trialEnabled | boolean | An indication whether trials are enabled
-subscriptionsInfo > trialInfo > trialUnit | string | Duration type (month, day, year, etc.)
-subscriptionsInfo > trialInfo > trialPeriod | integer | How long the duration should be
-subscriptionsInfo > trialInfo > discountPercentage | number | How much the price will be discounted
-subscriptionsInfo > trialInfo > nonPaymentTrial | boolean | An indication to whether payment details are required
-subscriptionsInfo > contractInfo | object | Object containing contract information
-subscriptionsInfo > contractInfo > contractUnit | string | Type of contract (day, week, month, etc.)
-subscriptionsInfo > contractInfo > contractPeriod | integer | Number of units the contract runs
-subscriptionsInfo > contractInfo > autoRenewDefault | string | Indication whether the subscription service will renew
-subscriptionsInfo > pricingInfo | array[object] | The collection of all prices configured for the subscription service
-subscriptionsInfo > pricingInfo > currency | string | The currency the price is associated to
-subscriptionsInfo > pricingInfo > initialPrice | number | The price that will be paid on sign-up of the subscription service
-subscriptionsInfo > pricingInfo > priceIsGross | boolean | An indication as to whether the price returned is the gross or net price
-subscriptionsInfo > pricingInfo > renewalPrice | number | The price that will be paid on subsequent renewal purchases
-subscriptionsInfo > pricingInfo > priceId | integer | The eSuite Identifer for the price
-subscriptionsInfo > pricingInfo > taxCategory | string | Tax category
-subscriptionsInfo > pricingInfo > resourceReference | string | The identifier for the price that should be used on purchase calls
-subscriptionsInfo > pricingInfo > paymentMethod | string | The payment method associated to the specific price
-subscriptionsInfo > allowedPaymentMethods | array[string] | The collection of payment methods available on the subscription service
-subscriptionsInfo > customParameters | array[object] | Custom parameters
-subscriptionsInfo > customParameters > parameterName | string | Name of the custom parameter
-subscriptionsInfo > customParameters > parameterType | string | An indication as to what data type the parameter should be displayed e.g. HTML, Decimal
-subscriptionsInfo > customParameters > parameterValue | string | Value of the custom parameter
-subscriptionsInfo > images | array[object] | The overarching object which contains all images for the subscription service
-subscriptionsInfo > images > imageId | integer | The eSuite identifier for the image
-subscriptionsInfo > images > displayName | string | Display name
-subscriptionsInfo > images > fileName | string | The file name associated to the image
-subscriptionsInfo > images > default | boolean | An indication as to whether the image is the default image for the subscription service 
-subscriptionsInfo > images > location | string | The URL location the image is hosted at
-subscriptionsInfo > groupLicensing | object | A breakdown of how many group licenses are associated to the subscription service
-subscriptionsInfo > groupLicensing > standard | integer | The number of standard licenses associated to the subscription service
-subscriptionsInfo > groupLicensing > overflow | integer | The number of overflow licenses associated to the subscription service
+`subscriptionsInfo` | array[object] | Object containing all subscription services on the Client
+`subscriptionsInfo` > subscriptionId | string | The identifier of the subscription
+`subscriptionsInfo` > resourceReference | string | The reference of the subscription
+`subscriptionsInfo` > subscriptionGroup | string | The subscription group the subscription belongs
+`subscriptionsInfo` > subscriptionGroupTag | string | The subscription group tag the subscription belongs
+`subscriptionsInfo` > subscriptionGroupStatus | string | The status of the subscription group
+`subscriptionsInfo` > subscriptionDescription | string | A description of the subscription service
+`subscriptionsInfo` > subscriptionTitle | string | A title of the subscription service
+`subscriptionsInfo` > subscriptionType | string | The type of subscription service
+`subscriptionsInfo` > subscriptionStatus | string | The status of the subscription service
+`subscriptionsInfo` > initialPricingEnabled | boolean | An indication whether initial pricing is enabled
+`subscriptionsInfo` > trialInfo | object | Object containing trial information
+`trialInfo` > trialEnabled | boolean | An indication whether trials are enabled
+`trialInfo` > trialUnit | string | Duration type (month, day, year, etc.)
+`trialInfo` > trialPeriod | integer | How long the duration should be
+`trialInfo` > discountPercentage | number | How much the price will be discounted
+`trialInfo` > nonPaymentTrial | boolean | An indication to whether payment details are required
+`subscriptionsInfo` > contractInfo | object | Object containing contract information
+`contractInfo` > contractUnit | string | Type of contract (day, week, month, etc.)
+`contractInfo` > contractPeriod | integer | Number of units the contract runs
+`contractInfo` > autoRenewDefault | string | Indication whether the subscription service will renew
+`subscriptionsInfo` > pricingInfo | array[object] | The collection of all prices configured for the subscription service
+`pricingInfo` > currency | string | The currency the price is associated to
+`pricingInfo` > initialPrice | number | The price that will be paid on sign-up of the subscription service
+`pricingInfo` > priceIsGross | boolean | An indication as to whether the price returned is the gross or net price
+`pricingInfo` > renewalPrice | number | The price that will be paid on subsequent renewal purchases
+`pricingInfo` > priceId | integer | The eSuite Identifer for the price
+`pricingInfo` > taxCategory | string | Tax category
+`pricingInfo` > resourceReference | string | The identifier for the price that should be used on purchase calls
+`pricingInfo` > paymentMethod | string | The payment method associated to the specific price
+`subscriptionsInfo` > allowedPaymentMethods | array[string] | The collection of payment methods available on the subscription service
+`subscriptionsInfo` > customParameters | array[object] | Custom parameters
+`customParameters` > parameterName | string | Name of the custom parameter
+`customParameters` > parameterType | string | An indication as to what data type the parameter should be displayed e.g. HTML, Decimal
+`customParameters` > parameterValue | string | Value of the custom parameter
+`subscriptionsInfo` > images | array[object] | The overarching object which contains all images for the subscription service
+`images` > imageId | integer | The eSuite identifier for the image
+`images` > displayName | string | Display name
+`images` > fileName | string | The file name associated to the image
+`images` > default | boolean | An indication as to whether the image is the default image for the subscription service 
+`images` > location | string | The URL location the image is hosted at
+`subscriptionsInfo` > groupLicensing | object | A breakdown of how many group licenses are associated to the subscription service
+`groupLicensing` > standard | integer | The number of standard licenses associated to the subscription service
+`groupLicensing` > overflow | integer | The number of overflow licenses associated to the subscription service
 
 
 
@@ -611,39 +611,39 @@ To return all configured products within your instance of eSuite, this endpoint 
 
 Parameter | Type | Description | 
 --------- | ------- | ----------- |
-products | array[object] | List of products
-products > productId | integer | Product identifier
-products > status | string | Product status
-products > title | string | Title
-products > description | string | Description
-products > pricing | array[object] | Pricing
-products > pricing > currency | string | IsoCode
-products > pricing > purchaseInfo | array[object] | Purchase info
-products > pricing > purchaseInfo > paymentMethod | array[object] | Payment method
-products > pricing > purchaseInfo > paymentMethod > grossAmount | number | Gross amount
-products > pricing > purchaseInfo > paymentMethod > paymentMethod | string | Payment method
-products > pricing > purchaseInfo > paymentMethod > priceId | string | Price id
-products > pricing > purchaseInfo > paymentMethod > resourceReference | string | Resource Reference for the PriceId
-products > pricing > purchaseInfo > roleInfo | object | Pricing role
-products > pricing > purchaseInfo > roleInfo > roleId | string | Role identifier
-products > pricing > purchaseInfo > roleInfo > clientRef | string | Client reference
-products > pricing > purchaseInfo > roleInfo > title | string | Title
-products > images | array[object] | Images of the product
-products > images > imageId | integer | Image identifier
-products > images > displayName | string | Display name
-products > images > fileName | string | File name
-products > images > default | boolean | Specify if image is default
-products > images > location | string | Path to the image
-products > supplier | object | Suplier details
-products > supplier > suppliedId | integer | Suplier identifier
-products > supplier > name | string | Name
-products > type | object | Product type
-products > type > typeId | integer | Type id
-products > type > name | string | Type name
-products > customParameters | array[object] | Custom parameters
-products > customParameters > parameterName | string | Name of the custom parameter
-products > customParameters > parameterValue | string | Value of the custom parameter
-products > resourceReference | string | Resource Reference for the ProductId
+`products` | array[object] | List of products
+`products` > `productId` | integer | Product identifier
+`products` > `status` | string | Product status
+`products` > `title` | string | Title
+`products` > `description` | string | Description
+`products` > `pricing` | array[object] | Pricing
+`pricing` > `currency` | string | IsoCode
+`pricing` > `purchaseInfo` | array[object] | Purchase info
+`purchaseInfo` > `paymentMethod` | array[object] | Payment method
+`paymentMethod` > `grossAmount` | number | Gross amount
+`paymentMethod` > `paymentMethod` | string | Payment method
+`paymentMethod` > `priceId` | string | Price id
+`paymentMethod` > `resourceReference` | string | Resource Reference for the PriceId
+`purchaseInfo` > `roleInfo` | object | Pricing role
+`roleInfo` > `roleId` | string | Role identifier
+`roleInfo` > `clientRef` | string | Client reference
+`roleInfo` > `title` | string | Title
+`products` > `images` | array[object] | Images of the product
+`images` > `imageId` | integer | Image identifier
+`images` > `displayName` | string | Display name
+`images` > `fileName` | string | File name
+`images` > `default` | boolean | Specify if image is default
+`images` > `location` | string | Path to the image
+`products` > `supplier` | object | Suplier details
+`supplier` > `suppliedId` | integer | Suplier identifier
+`supplier` > `name` | string | Name
+`products` > `type` | object | Product type
+`type` > `typeId` | integer | Type id
+`type` > `name` | string | Type name
+`products` > `customParameters` | array[object] | Custom parameters
+`customParameters` > `parameterName` | string | Name of the custom parameter
+`customParameters` > `parameterValue` | string | Value of the custom parameter
+`products` > `resourceReference` | string | Resource Reference for the ProductId
 
 
 
@@ -820,39 +820,39 @@ currency | string | Optional | The currency prices should be returned
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-products | array[object] | List of products
-products > productId | integer | Product identifier
-products > status | string | Product status
-products > title | string | Title
-products > description | string | Description
-products > pricing | array[object] | Pricing
-products > pricing > currency | string | IsoCode
-products > pricing > purchaseInfo | array[object] | Purchase info
-products > pricing > purchaseInfo > paymentMethod | array[object] | Payment method
-products > pricing > purchaseInfo > paymentMethod > grossAmount | number | Gross amount
-products > pricing > purchaseInfo > paymentMethod > paymentMethod | string | Payment method
-products > pricing > purchaseInfo > paymentMethod > priceId | string | Price id
-products > pricing > purchaseInfo > paymentMethod > resourceReference | string | Resource Reference for the PriceId
-products > pricing > purchaseInfo > roleInfo | object | Pricing role
-products > pricing > purchaseInfo > roleInfo > roleId | string | Role identifier
-products > pricing > purchaseInfo > roleInfo > clientRef | string | Client reference
-products > pricing > purchaseInfo > roleInfo > title | string | Title
-products > images | array[object] | Images of the product
-products > images > imageId | integer | Image identifier
-products > images > displayName | string | Display name
-products > images > fileName | string | File name
-products > images > default | boolean | Specify if image is default
-products > images > location | string | Path to the image
-products > supplier | object | Suplier details
-products > supplier > suppliedId | integer | Suplier identifier
-products > supplier > name | string | Name
-products > type | object | Product type
-products > type > typeId | integer | Type id
-products > type > name | string | Type name
-products > customParameters | array[object] | Custom parameters
-products > customParameters > parameterName | string | Name of the custom parameter
-products > customParameters > parameterValue | string | Value of the custom parameter
-products > resourceReference | string | Resource Reference for the ProductId
+`products` | array[object] | List of products
+`products` > `productId` | integer | Product identifier
+`products` > `status` | string | Product status
+`products` > `title` | string | Title
+`products` > `description` | string | Description
+`products` > `pricing` | array[object] | Pricing
+`pricing` > `currency` | string | IsoCode
+`pricing` > `purchaseInfo` | array[object] | Purchase info
+`purchaseInfo` > `paymentMethod` | array[object] | Payment method
+`paymentMethod` > `grossAmount` | number | Gross amount
+`paymentMethod` > `paymentMethod` | string | Payment method
+`paymentMethod` > `priceId` | string | Price id
+`paymentMethod` > `resourceReference` | string | Resource Reference for the PriceId
+`products` > `pricing` > purchaseInfo > roleInfo | object | Pricing role
+`roleInfo` > `roleId` | string | Role identifier
+`roleInfo` > `clientRef` | string | Client reference
+`roleInfo` > `title` | string | Title
+`products` > `images` | array[object] | Images of the product
+`images` > `imageId` | integer | Image identifier
+`images` > `displayName` | string | Display name
+`images` > `fileName` | string | File name
+`images` > `default` | boolean | Specify if image is default
+`images` > `location` | string | Path to the image
+`products` > `supplier` | object | Suplier details
+`suppliedId` | integer | Suplier identifier
+`supplier` > `name` | string | Name
+`products` > `type` | object | Product type
+`type` > `typeId` | integer | Type id
+`type` > `name` | string | Type name
+`products` > `customParameters` | array[object] | Custom parameters
+`customParameters` > `parameterName` | string | Name of the custom parameter
+`customParameters` > `parameterValue` | string | Value of the custom parameter
+`products` > `resourceReference` | string | Resource Reference for the ProductId
 
 
 
