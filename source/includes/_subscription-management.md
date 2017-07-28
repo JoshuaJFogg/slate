@@ -100,6 +100,7 @@ $.ajax(settings).done(function (response) {
 ```
 
 > The above command returns a HTTP 200 with JSON similar to the below.
+
 ```json
 {
   "subscriptionHolidayReference": "QIUQIEUQIEU8173",

@@ -3,23 +3,23 @@
 ## Standard Subscription Purchase
 
 ```shell
-Not available
+
 ```
 
 ```csharp
-Not available
+
 ```
 
 ```java
-Not available
+
 ```
 
 ```ruby
-Not available
+
 ```
 
 ```python
-Not available
+
 ```
 
 ```javascript

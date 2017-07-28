@@ -18,6 +18,8 @@ includes:
   - workflow-configuration
   - workflow-purchases
   - accounts
+  - account-authentication
+  - external-providers
   - address-book
   - payment-details
   - purchases-payments
@@ -29,7 +31,7 @@ includes:
   - native-billing
   - session-management
   - catalogues
-  - customer-support-log
+  - offers
   - analytics
   - bulk-actions
   - errors

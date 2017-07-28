@@ -1,6 +1,6 @@
 # Payment Management
 
-## CRUD: Create a Payment
+## Make a Payment
 
 ```shell
 
@@ -45,46 +45,34 @@ This end point is present for server-side integrations to take a payment against
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-`settlementType` | string | Optional | Gets or sets the SettlementType
-`pricing` | object | Optional | {MppGlobal.Api.Rest.Dtos.v1.Pricing} Price for create session
-`priceId | integer | Optional | Gets or sets the price id
-`paymentMethod | string | Optional | Gets or sets the payment method
-`currency | string | Optional | Gets or sets the currency
-pricing > price | number | Optional | Gets or sets the price
-pricing > taxInfo | object | Optional | {MppGlobal.Api.Rest.Dtos.v1.TaxRegionInfo} Tax region info class
-taxInfo > zeroRated | string | Optional | Gets or sets the zero rated
-taxInfo > country | string | Optional | Gets or sets the country
-taxInfo > state | string | Optional | Gets or sets the state
-taxInfo > county | string | Optional | Gets or sets the county
-taxInfo > city | string | Optional | Gets or sets the city
-pricing > priceItems | string | Optional | Gets or sets the price items
-priceItems > externalReference | string | Optional | Gets or sets the external reference
-priceItems > supplierId | integer | Optional | Gets or sets the supplier id
-priceItems > price | number | Optional | Gets or sets the price
-priceItems > description | string | Optional | Gets or sets the description
-cvv | string | Optional | Gets or sets the cv2 number
-voucherCode | string | Optional | Gets or sets the promotion code
-orderItems | string | Optional | Gets or sets the order items
-orderItems > priceBreakDown | object | Optional | Order price breakdown
-priceBreakDown > grossAmount | number | Optional | Gross amount
-priceBreakDown > netAmount | number | Optional | Net amount
-priceBreakDown > taxAmount | number | Optional | Tax amount
-orderItems > orderReference | string | Optional | Gets or sets the order reference
-orderItems > description | string | Optional | Gets or sets the description
-orderItems > comments | string | Optional | Gets or sets the comments
-orderItems > customOrderParameters | object | Optional | Gets or sets the custom order parameters
-orderItems > entitlements | string | Optional | Gets or sets the entitlement parameters
-orderItems > entitlements > identifier | string | Optional | Gets or sets the identifier of the entitlement
-orderItems > entitlements > startDate | string | Optional | Gets or sets the create date of the entitlement
-orderItems > entitlements > expiryDate | string | Optional | Gets or sets the expire date of the entitlement
-`orderItems` > `taxInfo` | object | Optional | Tax region info class
-`taxInfo` > `zeroRated` | string | Optional | Gets or sets the zero rated
-`taxInfo` > `country` | string | Optional | Gets or sets the country
-`taxInfo` > `state` | string | Optional | Gets or sets the state
-`taxInfo` > `county` | string | Optional | Gets or sets the county
-`taxInfo` > `city` | string | Optional | Gets or sets the city
+`settlementType` | string | No | An indication whether to complete immediately or at a later date. `Pending` or `NextAvailable` are the available values
+`pricing` | object | Optional | Pricing Information object
+`pricing` > `paymentMethod` | string | Optional | The payment method the account would like to pay using
+`pricing` > `currency` | string | Optional | The currency the payment should be taken in
+`voucherCode` | string | No | eSuite generated voucher code that has been provided during the flow |
+`cvv` | string | No |If the purchase is being made using an non-authorised card, this parameter can be passed in to enable authorisation to take place |
+`orderItems` | array[object] | No |A collection of additional entitlements to provide the account on purchase|
+`orderItems` > `description` | object | No |A collection of additional entitlements to provide the account on purchase|
+`orderItems` > `orderReference` | object | No |A collection of additional entitlements to provide the account on purchase|
+`orderItems` > `comment` | object | No |A collection of additional entitlements to provide the account on purchase|
+`orderItems` > `priceBreakdown` | object | No |A collection of additional entitlements to provide the account on purchase|
+`priceBreakdown` > `grossAmount` | decimal | No |A collection of additional entitlements to provide the account on purchase|
+`priceBreakdown` > `netAmount` | decimal | No |A collection of additional entitlements to provide the account on purchase|
+`priceBreakdown` > `taxAmount` | decimal | No |A collection of additional entitlements to provide the account on purchase|
+`orderItems` > `customOrderParameters` | dictionary | No | A collection of custom attributes associated to the payment |
+`customOrderParameters` > `parameterName` | string | No |The custom attribute name|
+`orderItems` > `entitlements` | array[object] | No |A collection of additional entitlements to provide the account on purchase|
+`entitlements` > `identifier` | string | No |Identifier for the entitlement being purchased|
+`entitlements` > `startDate` | string | No |The date on which the entitlement should be valid from|
+`entitlements` > `expiryDate` | string | No |The date at which the account is no longer entitled to the content|
+`orderItems` > `taxInfo` | object | Yes |Collection of tax information|
+`taxInfo` > `category` | boolean | No |Indication as to whether the purchase is tax exempt|
+`taxInfo` > `zeroRated` | boolean | No |Indication as to whether the purchase is tax exempt|
+`taxInfo` > `country` | string | No |Country specific tax rate to use|
+`taxInfo` > `state` | string | No |State specific tax rate to use (US Specific)|
+`taxInfo` > `county` | string | No |County specific tax rate to use (US Specific)|
+`taxInfo` > `city` | string | No |City specific tax rate to use (US Specific)|
 `asynchronousProcessingParameters` | object | Optional | Asynchronous Processing Parameters
-
 
 ## CRUD: Retrieve Payments
 
