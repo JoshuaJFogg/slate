@@ -1,6 +1,6 @@
 # Accounts
 
-## CRUD: Create Account
+## Create Account
 
 ```shell
 curl --request POST \
@@ -172,7 +172,7 @@ Parameter | Type | Mandatory | Description |
 _* It is mandatory to pass either an email address or a clientUserId. It is possible to provide both._
 
 
-## CRUD: Retrieve Account
+## Retrieve Account
 
 ```shell
 curl --request GET \
@@ -333,7 +333,7 @@ Parameter | Type | Mandatory | Description |
 `address` > `country` | string | Yes | The country the account resides
 `customParameters` | dictionary | No | A collection of custom attributes stored against the account
 
-## CRUD: Update Account
+## Update Account
 
 ```shell
 curl --request PUT \
@@ -505,7 +505,7 @@ Parameter | Type | Mandatory | Description |
 _* It is mandatory to pass either an email address or a clientUserId. It is possible to provide both._
 
 
-## CRUD: Delete Account
+## Delete Account
 
 ```shell
 curl --request DELETE \
@@ -1065,7 +1065,7 @@ $.ajax(settings).done(function (response) {
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
 `password` | string | Yes | The new password for the account.
-`login` | boolean | Yes | An indication as to whether the customer should be provided a session following password update.
+`login` | Bool | Yes | An indication as to whether the customer should be provided a session following password update.
 
 ## Retrieve Transaction Summary
 
@@ -1210,30 +1210,30 @@ Calling this endpoint will provide a breakdown of the accounts transaction summa
 <span class="endpoint-path">https://uat.mppglobal.com/accounts/{accountId}/transaction-summary</span>
 </div>
 
-### Parameters
+### Response Parameters
 
 Parameter | Description | 
 --------- | ------- | 
 `totalCustomerValue` | Customer value broken down by currency | 
-`totalCustomerValue` > totalValue | The sum of all payments minus any refunds |
-`totalCustomerValue` > currency | The currency the value represents | 
+`totalCustomerValue` > `totalValue` | The sum of all payments minus any refunds |
+`totalCustomerValue` > `currency` | The currency the value represents | 
 `totalPaymentsToDate` | Total number of payments taken, broken down by currency | 
-`totalPaymentsToDate` > totalValue | The sum of all payments taken against the account |
-`totalPaymentsToDate` > averageValue | The average transaction amount |
-`totalPaymentsToDate` > currency | The currency the value represents | 
-`totalPaymentsToDate` > quantity | The number of payments which have been taken against the account | 
+`totalPaymentsToDate` > `totalValue` | The sum of all payments taken against the account |
+`totalPaymentsToDate` > `averageValue` | The average transaction amount |
+`totalPaymentsToDate` > `currency` | The currency the value represents | 
+`totalPaymentsToDate` > `quantity` | The number of payments which have been taken against the account | 
 `totalRefundsToDate` | All refunds applied, broken down by currency | 
-`totalRefundsToDate` > totalValue | The sum of all refunds against the account |
-`totalRefundsToDate` > averageValue | The average transaction refund amount |
-`totalRefundsToDate` > currency | The currency the value represents | 
-`totalRefundsToDate` > quantity | integer | 
+`totalRefundsToDate` > `totalValue` | The sum of all refunds against the account |
+`totalRefundsToDate` > `averageValue` | The average transaction refund amount |
+`totalRefundsToDate` > `currency` | The currency the value represents | 
+`totalRefundsToDate` > `quantity` | Number of refunds that have taken place | 
 `outstandingPaymentsToDate` | All outstanding payments, broken down by currency | 
-`outstandingPaymentsToDate` > totalValue | The sum of all payments yet to be taken against the account  |
-`outstandingPaymentsToDate` > averageValue | The average transaction amount |
-`outstandingPaymentsToDate` > currency | The currency the value represents | 
-`outstandingPaymentsToDate` > quantity | Total number of outstanding payments | 
+`outstandingPaymentsToDate` > `totalValue` | The sum of all payments yet to be taken against the account  |
+`outstandingPaymentsToDate` > `averageValue` | The average transaction amount |
+`outstandingPaymentsToDate` > `currency` | The currency the value represents | 
+`outstandingPaymentsToDate` > `quantity` | Total number of outstanding payments | 
 `outstandingCreditBalance` | All outstanding credit balances broken down by currency |
-`outstandingCreditBalance` > totalValue | The total amount credit on the account |
-`outstandingCreditBalance` > currency | The currency the value represents | 
+`outstandingCreditBalance` > `totalValue` | The total amount credit on the account |
+`outstandingCreditBalance` > `currency` | The currency the value represents | 
 
 

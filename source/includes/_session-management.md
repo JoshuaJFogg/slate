@@ -1,6 +1,6 @@
 # Session Management
 
-## CRUD: Retrieve a Session
+## Retrieve a Session
 
 ```shell
 curl --request GET \
@@ -118,17 +118,7 @@ Parameter | Type | Mandatory | Description |
 --------- | ------- | ------- | ----------- |
 `sessionToken` | string | Yes | The session token that should be retrieved
 
-### Response Parameters
-
-Parameter | Type | Mandatory | 
---------- | ------- | ------- | 
-`accountId` | string | An indication of the account the session is tied to | 
-`shortSessionActive` | boolean | An indication as to whether the shortSession aspect of the session is still active | 
-`shortSessionExpiry` | string | The date and time the shortSession will expire | 
-`longSessionActive` | boolean | An indication as to whether the LongSession aspect of the session is still active | 
-`longSessionExpiry` | string | The date and time the longSession will expire | 
-
-## CRUD: Delete a Session
+## Delete a Session
 
 ```shell
 curl --request DELETE \

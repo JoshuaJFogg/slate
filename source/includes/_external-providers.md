@@ -123,7 +123,7 @@ Parameter | Type | Description |
 --------- | ------- | ------- | 
 `availableProviders` | array[object] | 
 `availableProviders` > `providerName` | string | The name of the external provider
-`availableProviders` > `accountLinked` | boolean | An indication as to whether the account has been linked to this provider
+`availableProviders` > `accountLinked` | Bool | An indication as to whether the account has been linked to this provider
 
 
 ## Authenticate via Facebook

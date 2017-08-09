@@ -112,9 +112,9 @@ Parameter | Type | Mandatory | Description |
 `billingTownCity` | string | No | The town or city in which the card is registered.
 `billingPostcode` | string | No | The post code in which the card is registered.
 `billingCountry` | string | No | The country in which the card is registered.
-`setDefault` | boolean | No | An indication as to whether this card will be the customers default card.
+`setDefault` | Bool | No | An indication as to whether this card will be the customers default card.
 `associatedName` | string | No | A friendly name to identify the payment card to the account.
-`skipPreAuth` | boolean | No | An indication as to whether the card should be authorised as part of the addition process.
+`skipPreAuth` | Bool | No | An indication as to whether the card should be authorised as part of the addition process.
 
 
 <aside class="error">
@@ -408,8 +408,6 @@ res = conn.getresponse()
 
 This endpoint retrieves the payment details stored against an eSuite account.
 
-<aside class="warning">Only credit/debit cards and repeatable PayPal tokens are returned via this endpoint.</aside>
-
 ### HTTP Request
 
 <div class="endpoint-cont">
@@ -435,8 +433,10 @@ Parameter | Type | Description |
 `cards` > `cardNumber` | string | A masked representation of the card. |
 `cards` > `cardType` | string | The card brand associated to the card. |
 `cards` > `expiryDate` | string | The date at which the card is due to expire. |
-`cards` > `isDefault` | boolean | An indication as to whether this card is the default for the account. |
+`cards` > `isDefault` | Bool | An indication as to whether this card is the default for the account. |
 `cards` > `issueCode` | string | Issue number typically found on debit and bank cards. |
 `cards` > `paymentDetailId` | string | The identifier of the card within eSuite. |
 `payPal` | object | PayPal object detailing information about the customers PayPal account. |
 `paymentDetailId` | string | The identifier of the PayPal wallet within eSuite. |
+
+<aside class="warning">Only credit/debit cards and repeatable PayPal tokens are returned via this endpoint.</aside>

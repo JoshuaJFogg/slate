@@ -1,6 +1,6 @@
 # Payment Instructions
 
-## CRUD: Create a Payment Instruction
+## Create a Payment Instruction
 
 ```shell
 curl --request POST \
@@ -84,7 +84,7 @@ Not available
 > The above command returns a HTTP 201 alongside a response Header of Location.
 
 
-This endpoint allows you to create a payment instruction. 
+This endpoint allows you to create a payment instruction for a specific account. 
 
 ### HTTP Request
 
@@ -100,23 +100,23 @@ Parameter | Type | Mandatory | Description |
 `cartReference` | string | Yes | The cart which is default for the payment instruction.
 `paymentMethod` | string | Yes | The default payment method for the payment instruction.
 `addressReference` | string | Yes | The reference addrress the fulfilments will be delivered to.
-`voucherCode` | string | Yes | A discount code generated from eSuite
+`voucherCode` | string | No | A discount code generated from eSuite
 `fulfilmentInfo` | array[objects] | Yes | Information relating to each fulfilment and associated payments
-`fulfilmentInfo` > `fulfilmentType` ||||
-`fulfilmentInfo` > `addressReference` ||||
-`fulfilmentInfo` > `fulfilmentDates`|array[string]|||
+`fulfilmentInfo` > `fulfilmentType` | string | No | The type of fulfilment being purchase. Only `physical` is available.|
+`fulfilmentInfo` > `addressReference` |string |No |An address reference that will override the top level address|
+`fulfilmentInfo` > `fulfilmentDates`|array[string]| Yes | The collection of dates the fulfilments will be shipped|
 `fulfilmentInfo` > `leadTime`|integer|No|The number of days lead time needed by a supplier |
-`fulfilmentInfo` > `associatedPayments`||||
-`associatedPayments` > `paymentDates`|array[string]|||
-`customPaymentParameters` ||||
-`customPaymentParameters` > `ParameterName`||||
+`fulfilmentInfo` > `associatedPayments`|object|Yes| | Collection of payment information
+`associatedPayments` > `paymentDates`|array[string]|Yes| The dates at which payment should be taken for the fulfilment|
+`customPaymentParameters` | dictionary | No |This is a collection of custom attributes against the payments.
+`customPaymentParameters` > `parameterName` |Representation of all custom parameters against the payments.
 `customFulfilmentParameters` | dictionary | No |This is a collection of custom attributes against the fulfilments.
 `customFulfilmentParameters` > `parameterName` |Representation of all custom parameters against the fulfilments.
 `customPaymentInstructionParameters` | dictionary | No |This is a collection of custom attributes against the payment instructions.
 `customPaymentInstructionParameters` > `parameterName`  | string | No | Representation of all custom parameters against the payment instruction.
 
 
-## CRUD: Retrieve a Payment Instruction
+## Retrieve a Payment Instruction
 
 ```shell
 curl --request GET \
@@ -302,7 +302,7 @@ Parameter | Type |  Description |
 `customPaymentInstructionParameters` | dictionary | This is a collection of custom attributes against the payment instructions.
 `customPaymentInstructionParameters` > `parameterName`  | string | Representation of all custom parameters against the payment instruction.
 
-## CRUD: Update a Payment Instruction
+## Update a Payment Instruction
 
 ```shell
 curl --request PATCH \

@@ -235,23 +235,23 @@ Parameter | Type | Mandatory | Description |
 ## Retrieve a Session Configuration
 
 ```shell
-Not available
+
 ```
 
 ```csharp
-Not available
+
 ```
 
 ```java
-Not available
+
 ```
 
 ```ruby
-Not available
+
 ```
 
 ```python
-Not available
+
 ```
 
 ```javascript
@@ -359,41 +359,41 @@ Parameter | Type  | Description |
 `clientName` | string | The name associated to your eSuite instance.
 `clientDefaultTimeZone` | string | Friendly name of your configured time zone.
 `clientDefaultUICulture` | string | ISO representation of the configured culture.
-`createSessionInfo ` &#709; | object | Overarching session information object.
-&#62; `bypassConfirmationPage` | string | string.
-&#62; `clientUserId` | string | string.
-&#62; `currency` | string | string.
-&#62; `cancelPaymentOnProcessUpdateFailure` | string | string.
-&#62; `function` | string | string.
-&#62; `orderItems`  &#709; | string | string.
-&#62;`description` | string | string.
- &#62;`grossAmount` | string | string.
- &#62;`netAmount` | string | string.
- &#62;`taxInfo`  &#709; | object | string.
- &#62;`taxAmount` | string | string.
- &#62;`category` | string | string.
- &#62;`region` &#709;| object | string.
- &#62;`zeroRated` | string | string.
- &#62;`country` | string | string.
- &#62;`state` | string | string.
- &#62;`county` | string | string.
- &#62;`city` | string | string.
-&#62; &#32; &#32;`requiresDelivery` | string | string.
-&#62; `paymentMethod` | string | string.
-&#62; `productId` | string | string.
-&#62; `returnUrl` | string | string.
-&#62;`serviceId` | string | string.
-&#62; `voucherCode` | string | string.
+`createSessionInfo ` | object | Overarching session information object.
+`createSessionInfo ` > `bypassConfirmationPage` | Bool | An indication as to whether the payment confirmation page should be bypassed following successful purchase.
+`createSessionInfo ` > `clientUserId` | string | The clientUserId of the account.
+`createSessionInfo ` > `currency` | string | The currency configured for the workflow.
+`createSessionInfo ` > `cancelPaymentOnProcessUpdateFailure` | string | Whether the purchase requires external approval.
+`createSessionInfo ` > `function` | string | The type of workflow configured AddSubscription, BuyProduct, etc.
+`createSessionInfo` > `orderItems`   | string | Collection of items to be purchased.
+`orderItems` > `description` | string | The description of each item.
+`orderItems` > `grossAmount` | decimal | The gross amount of each item.
+`orderItems` > `netAmount` | decimal | The net amount of each item.
+`orderItems` > `taxInfo`   | object | Collection of tax information for the item.
+`taxInfo` > `taxAmount` | decimal | The tax amount of each item.
+`taxInfo` > `category` | string | The category of tax associated to the item.
+`taxInfo` > `region` | object | Collection of tax region information.
+`region` > `zeroRated` | bool | Indication whether the item is non-taxable.
+`region` > `country` | string | The country tax rate to apply.
+`region` > `state` | string | The state tax rate to apply.
+`region` > `county` | string |The county tax rate to apply.
+`region` > `city` | string | The city tax rate to apply.
+`createSessionInfo ` > `requiresDelivery` | bool | Indication as to whether the item will require delivery.
+`createSessionInfo ` > `paymentMethod` | string | The default payment method to display.
+`createSessionInfo ` > `productId` | string | The associated ProductId of the purchase.
+`createSessionInfo ` > `returnUrl` | string | The location the consumer should be returned to following purchase.
+`createSessionInfo ` > `serviceId` | string | The associated ServiceId of the purchase.
+`createSessionInfo ` > `voucherCode` | string | Any pre-entered voucher codes.
 `newAccount` | bool | An indication as to whether the flow is for a new or existing account.
-`paymentOptions`  &#709; | object | A collection of payment options and their configuration.
-&#62;  `cardTypes`  &#709; | array[object] | string.
- &#62;  `name` | string | string.
- &#62;   `allowRepeats` | bool | An indication as to whether the card type can be used for one-click payments.
- &#62;  `use3DSecureForAllTransactions` | bool | An indication as to whether the card type requires 3D Secure.
- &#62;   `use3DSecureOnFirstTransaction` | bool | An indication as to whether the card type requires 3D Secure on first use only.
-  `directDebitTypes`  &#709; | array[object] | string.
- &#62;   `name` | string | Type fo direct debit.
- &#62;  `allowed` | bool | An indication as to whether it is available.
+`paymentOptions` | object | A collection of payment options and their configuration.
+`paymentOptions` > `cardTypes`  | array[object] | string.
+`cardTypes` > `name` | string | Collection of cards types available.
+`cardTypes` > `allowRepeats` | bool | An indication as to whether the card type can be used for one-click payments.
+`cardTypes` > `use3DSecureForAllTransactions` | bool | An indication as to whether the card type requires 3D Secure.
+`cardTypes` > `use3DSecureOnFirstTransaction` | bool | An indication as to whether the card type requires 3D Secure on first use only.
+`paymentOptions` > `directDebitTypes` | array[object] | Collection of available Direct Debits.
+`directDebitTypes` > `name` | string | Type fo direct debit.
+`directDebitTypes` > `allowed` | bool | An indication as to whether it is available.
 
 ## Create a Subscription Session
 
@@ -508,7 +508,7 @@ Parameter | Type | Mandatory | Description |
 `priceItems` > `price` | decimal | Yes |The price that will be paid for the line item|
 `priceItems` > `description` | string | Yes |The description that will be displayed to the account|
 `pricing` > `taxInfo` | object | No |Collection of tax information|
-`taxInfo` > `zeroRated` | boolean | No |Indication as to whether the purchase is tax exempt|
+`taxInfo` > `zeroRated` | Bool | No |Indication as to whether the purchase is tax exempt|
 `taxInfo` > `country` | string | No |Country specific tax rate to use|
 `taxInfo` > `state` | string | No |State specific tax rate to use (US Specific)|
 `taxInfo` > `county` | string | No |County specific tax rate to use (US Specific)|
@@ -520,7 +520,7 @@ Parameter | Type | Mandatory | Description |
 `workflowConfiguration` > `email` | string | No | Accounts email address
 `workflowConfiguration` > `voucherCode` | string | No | A pre-configured eSuite voucher code
 `workflowConfiguration` > `securityToken` | string | No | Value that is passed in the `ProcessUpdate` callout to allow you to verify it is a legitimate call out
-`workflowConfiguration` > `disable3DSecure` | boolean | No | An indication that 3D Secure should be disabled. Defaults to `false`
+`workflowConfiguration` > `disable3DSecure` | Bool | No | An indication that 3D Secure should be disabled. Defaults to `false`
 `workflowConfiguration` > `settlementType` | string | No | An indication whether to complete immediately or at a later date. `Pending` or `NextAvailable` are the available values
 `workflowConfiguration` > `permitUnverifiedAccoutPurchase` | bool | No | Prevent accounts who have not verified their emails from making a purchase
 `workflowConfiguration` > `workFlowCustomParameters` | dictionary | No |A collection of custom attributes associated to the configuration
@@ -647,7 +647,7 @@ Parameter | Type | Mandatory | Description |
 `pricing` > `priceId` | integer | Yes |The configured price identifier|
 `pricing` > `paymentMethod` | string | No |The payment method the customer should be presented by default|
 `pricing` > `taxInfo` | object | No |Collection of tax information|
-`taxInfo` > `zeroRated` | boolean | No |Indication as to whether the purchase is tax exempt|
+`taxInfo` > `zeroRated` | Bool | No |Indication as to whether the purchase is tax exempt|
 `taxInfo` > `country` | string | No |Country specific tax rate to use|
 `taxInfo` > `state` | string | No |State specific tax rate to use (US Specific)|
 `taxInfo` > `county` | string | No |County specific tax rate to use (US Specific)|
@@ -659,7 +659,7 @@ Parameter | Type | Mandatory | Description |
 `workflowConfiguration` > `email` | string | No | Accounts email address
 `workflowConfiguration` > `voucherCode` | string | No | A pre-configured eSuite voucher code
 `workflowConfiguration` > `securityToken` | string | No | Value that is passed in the `ProcessUpdate` callout to allow you to verify it is a legitimate call out
-`workflowConfiguration` > `disable3DSecure` | boolean | No | An indication that 3D Secure should be disabled. Defaults to `false`
+`workflowConfiguration` > `disable3DSecure` | Bool | No | An indication that 3D Secure should be disabled. Defaults to `false`
 `workflowConfiguration` > `settlementType` | string | No | An indication whether to complete immediately or at a later date. `Pending` or `NextAvailable` are the available values
 `workflowConfiguration` > `permitUnverifiedAccoutPurchase` | bool | No | Prevent accounts who have not verified their emails from making a purchase
 `workflowConfiguration` > `workFlowCustomParameters` | dictionary | No |A collection of custom attributes associated to the configuration
@@ -789,7 +789,7 @@ Parameter | Type | Mandatory | Description |
 `workflowConfiguration` > `email` | string | No | Accounts email address
 `workflowConfiguration` > `voucherCode` | string | No | A pre-configured eSuite voucher code
 `workflowConfiguration` > `securityToken` | string | No | Value that is passed in the `ProcessUpdate` callout to allow you to verify it is a legitimate call out
-`workflowConfiguration` > `disable3DSecure` | boolean | No | An indication that 3D Secure should be disabled. Defaults to `false`
+`workflowConfiguration` > `disable3DSecure` | Bool | No | An indication that 3D Secure should be disabled. Defaults to `false`
 `workflowConfiguration` > `settlementType` | string | No | An indication whether to complete immediately or at a later date. `Pending` or `NextAvailable` are the available values
 `workflowConfiguration` > `permitUnverifiedAccoutPurchase` | bool | No | Prevent accounts who have not verified their emails from making a purchase
 `workflowConfiguration` > `workFlowCustomParameters` | dictionary | No |A collection of custom attributes associated to the configuration
@@ -807,8 +807,8 @@ Parameter | Type | Mandatory | Description |
 `priceBreakdown` > netAmount | decimal | No |A collection of additional entitlements to provide the account on purchase|
 `priceBreakdown` > taxAmount | decimal | No |A collection of additional entitlements to provide the account on purchase|
 `orderItems` > `taxInfo` | object | Yes |Collection of tax information|
-`taxInfo` > `category` | boolean | No |Indication as to whether the purchase is tax exempt|
-`taxInfo` > `zeroRated` | boolean | No |Indication as to whether the purchase is tax exempt|
+`taxInfo` > `category` | Bool | No |Indication as to whether the purchase is tax exempt|
+`taxInfo` > `zeroRated` | Bool | No |Indication as to whether the purchase is tax exempt|
 `taxInfo` > `country` | string | No |Country specific tax rate to use|
 `taxInfo` > `state` | string | No |State specific tax rate to use (US Specific)|
 `taxInfo` > `county` | string | No |County specific tax rate to use (US Specific)|
@@ -930,7 +930,7 @@ Parameter | Type | Mandatory | Description |
 `workflowConfiguration` > `pricing` | object | Yes | Pricing object for the purchase|
 `pricing` > `currency` | string | No |ISO Currency of the purchase e.g. `EUR`|
 `pricing` > `taxInfo` | object | No |Collection of tax information|
-`taxInfo` > `zeroRated` | boolean | No |Indication as to whether the purchase is tax exempt|
+`taxInfo` > `zeroRated` | Bool | No |Indication as to whether the purchase is tax exempt|
 `taxInfo` > `country` | string | No |Country specific tax rate to use|
 `taxInfo` > `state` | string | No |State specific tax rate to use (US Specific)|
 `taxInfo` > `county` | string | No |County specific tax rate to use (US Specific)|
@@ -946,7 +946,7 @@ Parameter | Type | Mandatory | Description |
 `workflowConfiguration` > `email` | string | No | Accounts email address
 `workflowConfiguration` > `voucherCode` | string | No | A pre-configured eSuite voucher code
 `workflowConfiguration` > `securityToken` | string | No | Value that is passed in the `ProcessUpdate` callout to allow you to verify it is a legitimate call out
-`workflowConfiguration` > `disable3DSecure` | boolean | No | An indication that 3D Secure should be disabled. Defaults to `false`
+`workflowConfiguration` > `disable3DSecure` | Bool | No | An indication that 3D Secure should be disabled. Defaults to `false`
 `workflowConfiguration` > `settlementType` | string | No | An indication whether to complete immediately or at a later date. `Pending` or `NextAvailable` are the available values
 `workflowConfiguration` > `permitUnverifiedAccoutPurchase` | bool | No | Prevent accounts who have not verified their emails from making a purchase
 `workflowConfiguration` > `workFlowCustomParameters` | dictionary | No |A collection of custom attributes associated to the configuration

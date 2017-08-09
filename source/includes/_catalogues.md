@@ -182,13 +182,13 @@ Parameter | Type | Description |
 `subscriptionsInfo` > `subscriptionTitle` | string | A title of the subscription service
 `subscriptionsInfo` > `subscriptionType` | string | The type of subscription service
 `subscriptionsInfo` > `subscriptionStatus` | string | The status of the subscription service
-`subscriptionsInfo` > `initialPricingEnabled` | boolean | An indication whether initial pricing is enabled
+`subscriptionsInfo` > `initialPricingEnabled` | Bool | An indication whether initial pricing is enabled
 `subscriptionsInfo` > `trialInfo` | object | Object containing trial information
-`trialInfo` > `trialEnabled` | boolean | An indication whether trials are enabled
+`trialInfo` > `trialEnabled` | Bool | An indication whether trials are enabled
 `trialInfo` > `trialUnit` | string | Duration type (month, day, year, etc.)
 `trialInfo` > `trialPeriod` | integer | How long the duration should be
 `trialInfo` > `discountPercentage` | number | How much the price will be discounted
-`trialInfo` > `nonPaymentTrial` | boolean | An indication to whether payment details are required
+`trialInfo` > `nonPaymentTrial` | Bool | An indication to whether payment details are required
 `subscriptionsInfo` > `contractInfo` | object | Object containing contract information
 `contractInfo` > `contractUnit` | string | Type of contract (day, week, month, etc.)
 `contractInfo` > `contractPeriod` | integer | Number of units the contract runs
@@ -196,7 +196,7 @@ Parameter | Type | Description |
 `subscriptionsInfo` > `pricingInfo` | array[object] | The collection of all prices configured for the subscription service
 `pricingInfo` > `currency` | string | The currency the price is associated to
 `pricingInfo` > `initialPrice` | number | The price that will be paid on sign-up of the subscription service
-`pricingInfo` > `priceIsGross` | boolean | An indication as to whether the price returned is the gross or net price
+`pricingInfo` > `priceIsGross` | Bool | An indication as to whether the price returned is the gross or net price
 `pricingInfo` > `renewalPrice` | number | The price that will be paid on subsequent renewal purchases
 `pricingInfo` > `priceId` | integer | The eSuite Identifer for the price
 `pricingInfo` > `taxCategory` | string | Tax category
@@ -211,7 +211,7 @@ Parameter | Type | Description |
 `images` > `imageId` | integer | The eSuite identifier for the image
 `images` > `displayName` | string | Display name
 `images` > `fileName` | string | The file name associated to the image
-`images` > `default` | boolean | An indication as to whether the image is the default image for the subscription service 
+`images` > `default` | Bool | An indication as to whether the image is the default image for the subscription service 
 `images` > `location` | string | The URL location the image is hosted at
 `subscriptionsInfo` > `groupLicensing` | object | A breakdown of how many group licenses are associated to the subscription service
 `groupLicensing` > `standard` | integer | The number of standard licenses associated to the subscription service
@@ -387,9 +387,8 @@ This endpoint will return you a subset of your configured subscription services,
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-serviceIds | Array[integer] | Optional | A collection of subscription service Identifiers
-subscriptionGroupTagName | string | Optional | Subscription service group name
-
+`serviceIds` | Array[integer] | No | A collection of subscription service Identifiers
+`subscriptionGroupTagName` | string | No | Subscription service group name
 
 
 ### Response Parameters
@@ -406,13 +405,13 @@ Parameter | Type | Description |
 `subscriptionsInfo` > subscriptionTitle | string | A title of the subscription service
 `subscriptionsInfo` > subscriptionType | string | The type of subscription service
 `subscriptionsInfo` > subscriptionStatus | string | The status of the subscription service
-`subscriptionsInfo` > initialPricingEnabled | boolean | An indication whether initial pricing is enabled
+`subscriptionsInfo` > initialPricingEnabled | Bool | An indication whether initial pricing is enabled
 `subscriptionsInfo` > trialInfo | object | Object containing trial information
-`trialInfo` > trialEnabled | boolean | An indication whether trials are enabled
+`trialInfo` > trialEnabled | Bool | An indication whether trials are enabled
 `trialInfo` > trialUnit | string | Duration type (month, day, year, etc.)
 `trialInfo` > trialPeriod | integer | How long the duration should be
 `trialInfo` > discountPercentage | number | How much the price will be discounted
-`trialInfo` > nonPaymentTrial | boolean | An indication to whether payment details are required
+`trialInfo` > nonPaymentTrial | Bool | An indication to whether payment details are required
 `subscriptionsInfo` > contractInfo | object | Object containing contract information
 `contractInfo` > contractUnit | string | Type of contract (day, week, month, etc.)
 `contractInfo` > contractPeriod | integer | Number of units the contract runs
@@ -420,7 +419,7 @@ Parameter | Type | Description |
 `subscriptionsInfo` > pricingInfo | array[object] | The collection of all prices configured for the subscription service
 `pricingInfo` > currency | string | The currency the price is associated to
 `pricingInfo` > initialPrice | number | The price that will be paid on sign-up of the subscription service
-`pricingInfo` > priceIsGross | boolean | An indication as to whether the price returned is the gross or net price
+`pricingInfo` > priceIsGross | Bool | An indication as to whether the price returned is the gross or net price
 `pricingInfo` > renewalPrice | number | The price that will be paid on subsequent renewal purchases
 `pricingInfo` > priceId | integer | The eSuite Identifer for the price
 `pricingInfo` > taxCategory | string | Tax category
@@ -435,7 +434,7 @@ Parameter | Type | Description |
 `images` > imageId | integer | The eSuite identifier for the image
 `images` > displayName | string | Display name
 `images` > fileName | string | The file name associated to the image
-`images` > default | boolean | An indication as to whether the image is the default image for the subscription service 
+`images` > default | Bool | An indication as to whether the image is the default image for the subscription service 
 `images` > location | string | The URL location the image is hosted at
 `subscriptionsInfo` > groupLicensing | object | A breakdown of how many group licenses are associated to the subscription service
 `groupLicensing` > standard | integer | The number of standard licenses associated to the subscription service
@@ -632,7 +631,7 @@ Parameter | Type | Description |
 `images` > `imageId` | integer | Image identifier
 `images` > `displayName` | string | Display name
 `images` > `fileName` | string | File name
-`images` > `default` | boolean | Specify if image is default
+`images` > `default` | Bool | Specify if image is default
 `images` > `location` | string | Path to the image
 `products` > `supplier` | object | Suplier details
 `supplier` > `suppliedId` | integer | Suplier identifier
@@ -812,8 +811,8 @@ To return only a subset of your product catalogoue, this endpoint should be call
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-productIds | array[integer] | Optional | A collection of product Identifiers
-currency | string | Optional | The currency prices should be returned
+`productIds` | array[integer] | No | A collection of product Identifiers
+`currency` | string | No | The currency prices should be returned
 
 
 ### Response Parameters
@@ -841,7 +840,7 @@ Parameter | Type | Mandatory | Description |
 `images` > `imageId` | integer | Image identifier
 `images` > `displayName` | string | Display name
 `images` > `fileName` | string | File name
-`images` > `default` | boolean | Specify if image is default
+`images` > `default` | Bool | Specify if image is default
 `images` > `location` | string | Path to the image
 `products` > `supplier` | object | Suplier details
 `suppliedId` | integer | Suplier identifier

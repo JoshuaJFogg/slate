@@ -227,7 +227,7 @@ Authentication via a ClientUserId is required when eSuite is not the primary ide
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-`clientUserId` | string | Yes/No | Unique, irrevocable link that was added to the account at the point of registration.
+`clientUserId` | string | Yes | Unique, irrevocable link that was added to the account at the point of registration.
 
 
 <aside class="info">

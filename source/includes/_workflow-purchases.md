@@ -95,7 +95,7 @@ Parameter | Type  | Mandatory| Description |
 `customSubscriptionParameters` | string | No |A collection of custom attributes associated to the subscription|
 `customSubscriptionParameters` > `parameterName` | string | No |The custom attribute name|
 `taxInfo` | object | No |Collection of tax information|
-`taxInfo` > `zeroRated` | boolean | No |Indication as to whether the purchase is tax exempt|
+`taxInfo` > `zeroRated` | Bool | No |Indication as to whether the purchase is tax exempt|
 `taxInfo` > `country` | string | No |Country specific tax rate to use|
 `taxInfo` > `state` | string | No |State specific tax rate to use (US Specific)|
 `taxInfo` > `county` | string | No |County specific tax rate to use (US Specific)|
@@ -197,7 +197,7 @@ Parameter | Type  | Mandatory| Description |
 `orderParameters` | dictionary | No | A collection of custom attributes associated to the payment |
 `orderParameters` > `parameterName` | string | No |The custom attribute name|
 `taxInfo` | object | No |Collection of tax information|
-`taxInfo` > `zeroRated` | boolean | No |Indication as to whether the purchase is tax exempt|
+`taxInfo` > `zeroRated` | Bool | No |Indication as to whether the purchase is tax exempt|
 `taxInfo` > `country` | string | No |Country specific tax rate to use|
 `taxInfo` > `state` | string | No |State specific tax rate to use (US Specific)|
 `taxInfo` > `county` | string | No |County specific tax rate to use (US Specific)|
@@ -290,8 +290,8 @@ Parameter | Type  | Mandatory| Description |
 `orderItems` > `orderReference` | object | No |A collection of additional entitlements to provide the account on purchase|
 `orderItems` > `comment` | object | No |A collection of additional entitlements to provide the account on purchase|
 `orderItems` > `taxInfo` | object | Yes |Collection of tax information|
-`taxInfo` > `category` | boolean | No |Indication as to whether the purchase is tax exempt|
-`taxInfo` > `zeroRated` | boolean | No |Indication as to whether the purchase is tax exempt|
+`taxInfo` > `category` | Bool | No |Indication as to whether the purchase is tax exempt|
+`taxInfo` > `zeroRated` | Bool | No |Indication as to whether the purchase is tax exempt|
 `taxInfo` > `country` | string | No |Country specific tax rate to use|
 `taxInfo` > `state` | string | No |State specific tax rate to use (US Specific)|
 `taxInfo` > `county` | string | No |County specific tax rate to use (US Specific)|

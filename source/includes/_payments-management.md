@@ -46,9 +46,9 @@ This end point is present for server-side integrations to take a payment against
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
 `settlementType` | string | No | An indication whether to complete immediately or at a later date. `Pending` or `NextAvailable` are the available values
-`pricing` | object | Optional | Pricing Information object
-`pricing` > `paymentMethod` | string | Optional | The payment method the account would like to pay using
-`pricing` > `currency` | string | Optional | The currency the payment should be taken in
+`pricing` | object | No | Pricing Information object
+`pricing` > `paymentMethod` | string | No | The payment method the account would like to pay using
+`pricing` > `currency` | string | No | The currency the payment should be taken in
 `voucherCode` | string | No | eSuite generated voucher code that has been provided during the flow |
 `cvv` | string | No |If the purchase is being made using an non-authorised card, this parameter can be passed in to enable authorisation to take place |
 `orderItems` | array[object] | No |A collection of additional entitlements to provide the account on purchase|
@@ -66,15 +66,15 @@ Parameter | Type | Mandatory | Description |
 `entitlements` > `startDate` | string | No |The date on which the entitlement should be valid from|
 `entitlements` > `expiryDate` | string | No |The date at which the account is no longer entitled to the content|
 `orderItems` > `taxInfo` | object | Yes |Collection of tax information|
-`taxInfo` > `category` | boolean | No |Indication as to whether the purchase is tax exempt|
-`taxInfo` > `zeroRated` | boolean | No |Indication as to whether the purchase is tax exempt|
+`taxInfo` > `category` | Bool | No |Indication as to whether the purchase is tax exempt|
+`taxInfo` > `zeroRated` | Bool | No |Indication as to whether the purchase is tax exempt|
 `taxInfo` > `country` | string | No |Country specific tax rate to use|
 `taxInfo` > `state` | string | No |State specific tax rate to use (US Specific)|
 `taxInfo` > `county` | string | No |County specific tax rate to use (US Specific)|
 `taxInfo` > `city` | string | No |City specific tax rate to use (US Specific)|
-`asynchronousProcessingParameters` | object | Optional | Asynchronous Processing Parameters
+`asynchronousProcessingParameters` | object | No | Asynchronous Processing Parameters
 
-## CRUD: Retrieve Payments
+## Retrieve Payments
 
 ```shell
 curl --request GET \
@@ -208,13 +208,13 @@ This endpoint allows you to retrieve all payments for a given account.
 Parameter | Type |  Description | 
 --------- | ------- |  ----------- |
  | array[objects] | The collection of support log entries.
-subscriptionHolidayReference | string | Reference to the holiday. 
-subscriptionReference | string | Reference to the subscription.
-startDate | string | The date at which the holiday period should begin.
-endDate | string | The date at which the subscription should become active.
+`subscriptionHolidayReference` | string | Reference to the holiday. 
+`subscriptionReference` | string | Reference to the subscription.
+`startDate` | string | The date at which the holiday period should begin.
+`endDate` | string | The date at which the subscription should become active.
 
 
-## CRUD: Update a Payment
+## Update a Payment
 
 ```shell
 curl --request PATCH \
@@ -323,13 +323,13 @@ This endpoint allows you to edit parameters of the payment that has been returne
 <span class="endpoint-path">https://uat.mppglobal.com/api/payments/{paymentReferene}</span>
 </div>
 
-### POST Parameters
+### PATCH Parameters
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
  - | array[objects] | Yes | A collection of updates that should be made to the resource
-op | string | Yes | The type of change that should be executed. add, replace and remove are available operations.
-path | string | Yes | The name of the parameter that should be updated.
-value | string | Yes | The new value to store against the parameter.
+`op` | string | Yes | The type of change that should be executed. add, replace and remove are available operations.
+`path` | string | Yes | The name of the parameter that should be updated.
+`value` | string | Yes | The new value to store against the parameter.
 
 ## Refund a Payment
 
@@ -416,7 +416,7 @@ Not available from a client-side application
 
 
 
-Description of what the endpoint does.
+Calling this endpoint will allow the refund of a previously processed order. This endpoint cannot be called for orders that have been imported and processed via a different provider.
 
 ### HTTP Request
 
@@ -429,12 +429,12 @@ Description of what the endpoint does.
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-amount | number | Yes | The amount of money that should be refunded to the account.
-triggerBackOfficeEmail | boolean | Optional | An indication as to whether a backoffice system should be notified.
-reason | string | Optional | Additional information as to why the refund is being performed
-reasonCode | string | Optional | A code specific to your business for refund types
-refundAsServiceCredits | bool | Optional | Define whether you would like the refund to be executed against the originating payment method or as a credit on the account.
-serviceCreditExpiry | string | Optional | The date at which the service credits would expire.
+`amount` | number | Yes | The amount of money that should be refunded to the account.
+`triggerBackOfficeEmail` | Bool | No | An indication as to whether a backoffice system should be notified.
+`reason` | string | No | Additional information as to why the refund is being performed
+`reasonCode` | string | No | A code specific to your business for refund types
+`refundAsServiceCredits` | bool | No | Define whether you would like the refund to be executed against the originating payment method or as a credit on the account.
+`serviceCreditExpiry` | string | No | The date at which the service credits would expire.
 
 
 

@@ -102,7 +102,7 @@ print(data.decode("utf-8"))
 }
 ```
 
-For the completion of standard payment options, making the following `POST` request will purchase the subscription service configured within the initial configuration request. A simple payment type is `CreditCard` `DirectDebit`, `Service Credits` or `SEPA`.
+For the completion of standard payment options, making the following `POST` request will purchase the subscription service provided. A standard payment type is `CreditCard` `DirectDebit`, `Service Credits` or `SEPA`.
 
 
 ### HTTP Request
@@ -133,7 +133,7 @@ Parameter | Type  | Mandatory| Description |
 `customSubscriptionParameters` | string | No |A collection of custom attributes associated to the subscription|
 `customSubscriptionParameters` > `parameterName` | string | No |The custom attribute name|
 `taxInfo` | object | No |Collection of tax information|
-`taxInfo` > `zeroRated` | boolean | No |Indication as to whether the purchase is tax exempt|
+`taxInfo` > `zeroRated` | Bool | No |Indication as to whether the purchase is tax exempt|
 `taxInfo` > `country` | string | No |Country specific tax rate to use|
 `taxInfo` > `state` | string | No |State specific tax rate to use (US Specific)|
 `taxInfo` > `county` | string | No |County specific tax rate to use (US Specific)|
@@ -244,7 +244,7 @@ print(data.decode("utf-8"))
   }
 ```
 
-Description of what the endpoint does.
+For the completion of standard payment options, making the following `POST` request will purchase the service credits. A standard payment type is `CreditCard` `DirectDebit`, `Service Credits` or `SEPA`.
 
 ### HTTP Request
 
@@ -260,8 +260,8 @@ Parameter | Type  | Mandatory| Description |
 `paymentMethod` | string | No |The payment method the account has selected to pay with if it differs from the initial configuration|
 `cvv` | string | No |Security code of a card if the payment method is set to `creditDebitCard`|
 `voucherCode` | string | No |A voucher code provided by the account during the workflow|
-`paidCredits` | number | Optional | The amount of credits the account is purchasing
-`freeCredits` | number | Optional | The amount of credits the account will receive without charge
+`paidCredits` | number | No | The amount of credits the account is purchasing
+`freeCredits` | number | No | The amount of credits the account will receive without charge
 `asynchronousInitiationParameters` | string | No |Parameter set provided if you would like to trigger an advanced payment type|
 `asynchronousInitiationParameters` > `parameterName` | string | No |Parameter name specific to the alternative payment method provided|
 

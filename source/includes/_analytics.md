@@ -97,10 +97,10 @@ This endpoint can be used to extract predefined datasets from eSuite for use in 
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-`startdate` | string | optional | DateTime (optional) for start of query
-`enddate` | string | optional | DateTime (optional) for end of query
-`referencecurrency` | string | optional | If the method returns a financial information. It is possible to restrict down by currency
-`timezoneoffset` | integer | optional | All data stored in eSuite is stored in UTC. If you require it in your local time, provide your UTC offset e.g. 1
+`startdate` | string | No | DateTime (No) for start of query
+`enddate` | string | No | DateTime (No) for end of query
+`referencecurrency` | string | No | If the method returns a financial information. It is possible to restrict down by currency
+`timezoneoffset` | integer | No | All data stored in eSuite is stored in UTC. If you require it in your local time, provide your UTC offset e.g. 1
 
 ### Available Data Sources
 

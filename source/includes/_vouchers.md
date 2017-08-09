@@ -94,9 +94,13 @@ $.ajax(settings).done(function (response) {
   console.log(response);
 });
 ```
+> The above command returns JSON structured like this:
 
+```json
 
-Description of what the endpoint does.
+```
+
+For an existing subscription, calling this endpoint will allow the addition of a voucher code that will take effect on the next renewal.
 
 ### HTTP Request
 
@@ -109,7 +113,7 @@ Description of what the endpoint does.
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-voucherCode | string | Optional | The voucher to be added to the subscription
+`voucherCode` | string | No | The voucher to be added to the subscription
 
 
 
@@ -131,13 +135,25 @@ voucherCode | string | Optional | The voucher to be added to the subscription
 
 ```
 
+```ruby
+
+```
+
+```python
+
+```
+
+```javascript
+
+```
+
 > The above command returns JSON structured like this:
 
 ```json
 
 ```
 
-Description of what the endpoint does.
+This endpoint will allow the validation of a voucher against a specific client-side purchase.
 
 ### HTTP Request
 
@@ -150,46 +166,46 @@ Description of what the endpoint does.
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-purchaseInfo | object | Optional | Voucher purchase info
-purchasePrice | number | Optional | Purchase price
-discountPrice | number | Optional | Discount price
-renewalPrice | number | Optional | Renewal price
-nextPaymentsDates | array[string] | Optional | Next payments dates
-voucherInfo | object | Optional | Voucher info
-startDate | string | Optional | Start date
-expiryDate | string | Optional | Expiry date
-offerInfo | object | Optional | Voucher offer info
-name | string | Optional | Gets or sets the Name
-description | string | Optional | Gets or sets the Description
-usageType | integer | Optional | Gets or sets the UsageType
-applicationData | object | Optional | Application data
-name | string | Optional | Gets or sets the Name
-message | string | Optional | Gets or sets the Message
-message2 | string | Optional | Gets or sets the Message2
-addCredits | object | Optional | Add credits
-amount | integer | Optional | Gets or sets the Amount
-currency | string | Optional | Gets or sets the Currency
-paymentDetailsRequired | boolean | Optional | Gets or sets the PaymentDetailsRequired
-lowStart | object | Optional | Low start
-percentage | number | Optional | Gets or sets the Percentage
-numberOfPeriods | integer | Optional | Gets or sets the NumberOfPeriods
-lockInPeriods | integer | Optional | Gets or sets the lockInPeriods
-closeSubOnExpiry | boolean | Optional | Gets or sets the CloseSubOnExpiry
-serviceIds | array[integer] | Optional | Gets or sets the ServiceIds
-paymentDetailsRequired | boolean | Optional | Gets or sets the PaymentDetailsRequired
-percentageDiscount | object | Optional | Percentage discount
-percentage | number | Optional | Gets or sets the Percentage
-paymentDetailsRequired | boolean | Optional | Gets or sets the PaymentDetailsRequired
-freePeriod | object | Optional | Free period
-numberOfPeriods | integer | Optional | Gets or sets the NumberOfPeriods
-serviceIds | array[integer] | Optional | Gets or sets the ServiceIds
-paymentDetailsRequired | boolean | Optional | Gets or sets the PaymentDetailsRequired
-groupDiscount | object | Optional | Group discount
-activationCodeActivated | boolean | Optional | Activation code activated
-metaData | object | Optional | Group discount offer type
-qualifyingItemCount | integer | Optional | Qualifying item count
-freeItemCountOrDiscountAmount | number | Optional | Free item count or discount amount
-productIds | array[integer] | Optional | Product ids
-configurationType | string | Optional | Configuration type
-productSource | string | Optional | Product source
-customParameters | object | Optional | Custom parameters
+purchaseInfo | object | No | Voucher purchase info
+purchasePrice | number | No | Purchase price
+discountPrice | number | No | Discount price
+renewalPrice | number | No | Renewal price
+nextPaymentsDates | array[string] | No | Next payments dates
+voucherInfo | object | No | Voucher info
+startDate | string | No | Start date
+expiryDate | string | No | Expiry date
+offerInfo | object | No | Voucher offer info
+name | string | No | Gets or sets the Name
+description | string | No | Gets or sets the Description
+usageType | integer | No | Gets or sets the UsageType
+applicationData | object | No | Application data
+name | string | No | Gets or sets the Name
+message | string | No | Gets or sets the Message
+message2 | string | No | Gets or sets the Message2
+addCredits | object | No | Add credits
+amount | integer | No | Gets or sets the Amount
+currency | string | No | Gets or sets the Currency
+paymentDetailsRequired | Bool | No | Gets or sets the PaymentDetailsRequired
+lowStart | object | No | Low start
+percentage | number | No | Gets or sets the Percentage
+numberOfPeriods | integer | No | Gets or sets the NumberOfPeriods
+lockInPeriods | integer | No | Gets or sets the lockInPeriods
+closeSubOnExpiry | Bool | No | Gets or sets the CloseSubOnExpiry
+serviceIds | array[integer] | No | Gets or sets the ServiceIds
+paymentDetailsRequired | Bool | No | Gets or sets the PaymentDetailsRequired
+percentageDiscount | object | No | Percentage discount
+percentage | number | No | Gets or sets the Percentage
+paymentDetailsRequired | Bool | No | Gets or sets the PaymentDetailsRequired
+freePeriod | object | No | Free period
+numberOfPeriods | integer | No | Gets or sets the NumberOfPeriods
+serviceIds | array[integer] | No | Gets or sets the ServiceIds
+paymentDetailsRequired | Bool | No | Gets or sets the PaymentDetailsRequired
+groupDiscount | object | No | Group discount
+activationCodeActivated | Bool | No | Activation code activated
+metaData | object | No | Group discount offer type
+qualifyingItemCount | integer | No | Qualifying item count
+freeItemCountOrDiscountAmount | number | No | Free item count or discount amount
+productIds | array[integer] | No | Product ids
+configurationType | string | No | Configuration type
+productSource | string | No | Product source
+customParameters | object | No | Custom parameters

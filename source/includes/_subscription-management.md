@@ -1,6 +1,287 @@
 # Subscription Management
 
-## CRUD: Create a holiday
+## Retrieve all Subscriptions
+
+```shell
+
+```
+
+```csharp
+
+```
+
+```java
+
+```
+
+```ruby
+
+```
+
+```python
+
+```
+
+```javascript
+
+```
+
+> The above command returns JSON structured like this:
+
+```json
+
+```
+
+Calling this endpoint will return the history of all subscriptions an account has or has previously had.
+
+### HTTP Request
+
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions</span>
+</div>
+
+### Response Parameters
+
+Parameter | Type |  Description | 
+--------- | ------- |  ----------- |
+`subscriptions` | array[object] |  Subscriptions
+`subscriptions` > `accountSubscriptionInfo` | object | Account Subscription Info
+`accountSubscriptionInfo` > `expiryDate` | string | Expiry Date
+accountSubscriptionInfo > firstNonDiscountedBillingPointUtc | string | First Non Discounted Billing PointUTC
+accountSubscriptionInfo > lastDiscountedBillingPointUtc | string | Last Discounted Billing PointUTC
+accountSubscriptionInfo > paymentMethod | string | Payment Method
+accountSubscriptionInfo > recurringPaymentInfo | object | Recurring Payment Info
+recurringPaymentInfo > subscriptionReference | integer | Subscription Reference
+recurringPaymentInfo > resourceReference | string | Unique Resource Reference
+recurringPaymentInfo > configuredSubscriptionPrice | number | Configured Subscription Price
+recurringPaymentInfo > subscribedPrice | number | Subscribed Price
+recurringPaymentInfo > currency | string | Currency
+recurringPaymentInfo > recurringPaymentEnable | string | Recurring Payment Enable
+recurringPaymentInfo > subscriptionLockedIn | string | Subscription LockedIn
+recurringPaymentInfo > nextPaymentDate | string | Next Payment Date
+recurringPaymentInfo > previousBillingInfo | object | Previous Billing Info
+previousBillingInfo > subscriptionPriceId | integer | Subscription Price Id
+previousBillingInfo > totalAmount | number | Total Amount
+previousBillingInfo > totalTaxAmount | number | Total Tax Amount
+previousBillingInfo > totalNetAmount | number | Total Net Amount
+previousBillingInfo > billingDate | string |  Billing Date
+previousBillingInfo > paymentDate | string | Payment Date
+previousBillingInfo > taxInfo | array[object] |Tax info
+taxInfo > regionName | string | Region Name
+taxInfo > regionType | string | Region Type
+taxInfo > displayName | string | Display Name
+taxInfo > category | string | Category
+taxInfo > rate | number | Rate
+taxInfo > amount | number |Amount
+previousBillingInfo > priceItems | array[object] |Price Items
+priceItems > thirdPartyRef | string |Gets or sets the external reference
+priceItems > supplierId | integer |Gets or sets the supplier id
+priceItems > price | number |Gets or sets the price
+priceItems > description | string |Gets or sets the description
+priceItems > isGrossAmount | string |Specify whether is groos amount
+priceItems > taxCategoryName | string |Tax Category Name
+recurringPaymentInfo > groupSubscriptionInfo | object |Group Subscription Info
+groupSubscriptionInfo > licenseLevel | integer |License Level
+groupSubscriptionInfo > overflowLevel | integer |Overflow Level
+groupSubscriptionInfo > subscriberList | array[object] |Subscriber List
+groupSubscriptionInfo > subscriberList > subscriptionId | integer |SubscriptionId
+groupSubscriptionInfo > subscriberList > emailAddress | string |Email Address
+groupSubscriptionInfo > subscriberList > clientUserId | string |ClientUserId
+groupSubscriptionInfo > overFlowCount | integer |Overflow Count
+groupSubscriptionInfo > fullSubscriptionsCount | integer |Full Subscriptions Count
+groupSubscriptionInfo > currentUserInOverFlow | string |Specify whether Current User In OverFlow
+recurringPaymentInfo > voucherCodes | object |Voucher Code
+voucherCodes > voucherCode | string |Voucher Code
+recurringPaymentInfo > voucherCodes > discountPrice | number |Discount Price
+recurringPaymentInfo > statusInfo | object |Status info
+statusInfo > statusId | integer |Status id
+statusInfo > statusDescription | string |Status description
+recurringPaymentInfo > customParameters | object |Custom parameters
+customParameters > | string | The name of the parameter
+accountSubscriptionInfo > paymentScheduleInfo | object |Payment Schedule Info
+paymentScheduleInfo > startDate | string |Start Date
+paymentScheduleInfo > frequency | string |Start Date
+paymentScheduleInfo > totalAmount | number |Total Amount
+paymentScheduleInfo > paymentDayOffset | integer |Payment Day Offset
+paymentScheduleInfo > paymentDay | integer |Payment Day
+paymentScheduleInfo > currency | string |Currency
+paymentScheduleInfo > paymentMethod | string |Payment Method
+paymentScheduleInfo > scheduledPayments | array[objects] |Scheduled Payments
+scheduledPayments > orderId | integer |Order Id
+scheduledPayments > orderDate | string |Order Date
+scheduledPayments > status | string |Status
+scheduledPayments > priceInfo | object |Price Info
+priceInfo > grossAmount | number |Gross Amount
+priceInfo > netAmount | number |Net Amount
+priceInfo > totalTaxAmount | number |Total Tax Amount
+priceInfo > taxInfo | array[object] |Tax Info
+taxInfo > regionName | string |Region Name
+taxInfo > regionType | string |Region Type
+taxInfo > displayName | string |Display Name
+taxInfo > category | string |Category
+taxInfo > rate | number |Rate
+taxInfo > amount | number |Amount
+paymentScheduleInfo > statusInfo | object |Status info
+paymentScheduleInfo > statusId | integer |Status id
+paymentScheduleInfo > statusDescription | string |Status description
+subscriptions > defaultSubscriptionInfo | object |Default Subscription Info
+defaultSubscriptionInfo > customParameters | object |Custom Parameters
+defaultSubscriptionInfo > subscriptionId | integer |Subscription Id
+defaultSubscriptionInfo > subscriptionStatus | string |Subscription Status
+defaultSubscriptionInfo > subscriptionTitle | string |Subscription Title
+defaultSubscriptionInfo > subscriptionGroup | string |Subscription Group
+
+
+
+
+## Cancel a Subscription
+
+```shell
+
+```
+
+```csharp
+
+```
+
+```java
+
+```
+
+```ruby
+
+```
+
+```python
+
+```
+
+```javascript
+
+```
+
+> The above command returns JSON structured like this:
+
+```json
+
+```
+
+Calling this endpoint will allow you to hard cancel a subscription. The successful execution of this call will remove all associated entitlements.
+
+### HTTP Request
+
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions</span>
+</div>
+
+### Patch Parameters
+
+Parameter | Type |  Description | 
+--------- | ------- | ----------- |
+`name` | string | What does the parameter represent?
+
+
+## Manage Subscription renewals
+
+```shell
+
+```
+
+```csharp
+
+```
+
+```java
+
+```
+
+```ruby
+
+```
+
+```python
+
+```
+
+```javascript
+
+```
+
+> The above command returns JSON structured like this:
+
+```json
+
+```
+
+Calling this endpoint will allow you to enable or disable the renewal process for a specific subscription.
+
+### HTTP Request
+
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/status</span>
+</div>
+
+### Patch Parameters
+
+Parameter | Type |  Description | 
+--------- | ------- | ----------- |
+`name` | string | What does the parameter represent?
+
+
+## Add a Voucher Code
+
+```shell
+
+```
+
+```csharp
+
+```
+
+```java
+
+```
+
+```ruby
+
+```
+
+```python
+
+```
+
+```javascript
+
+```
+
+> The above command returns JSON structured like this:
+
+```json
+
+```
+
+Calling this endpoint will allow you to add a voucher code to an existing subscription that will be applied at the next renewal.
+
+### HTTP Request
+
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/vouchers</span>
+</div>
+
+### POST Parameters
+
+Parameter | Type | Mandatory |Description | 
+--------- | ------- | -------- | ----------- |
+`name` | string | What does the parameter represent?
+
+
+
+
+## Create a holiday
 
 ```shell
 curl --request POST \
@@ -128,7 +409,7 @@ Parameter | Type | Mandatory | Description |
 
 
 
-## CRUD: Retrieve a holiday
+## Retrieve a holiday
 
 ```shell
 curl --request GET \
@@ -248,7 +529,7 @@ Parameter | Type |  Description |
 `startDate` | string | The date at which the holiday period should begin.
 `endDate` | string | The date at which the subscription should become active.
 
-## CRUD: Update a holiday
+## Update a holiday
 
 ```shell
 curl --request PATCH \
@@ -374,7 +655,7 @@ Parameter | Type | Mandatory | Description |
 `path` | string | Yes | The name of the parameter that should be updated.
 `value` | string | Yes | The new value to store against the parameter.
 
-## CRUD: Delete a holiday
+## Delete a holiday
 
 ```shell
 curl --request DELETE \

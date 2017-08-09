@@ -1,6 +1,6 @@
 # Address Book
 
-## CRUD: Create Address
+## Create Address
 
 ```shell
 curl --request POST \
@@ -98,7 +98,7 @@ $.ajax(settings).done(function (response) {
 > The resource created is returned in the *Location* header of the response
 
 
-Description of what the endpoint does.
+This endpoint allows the creation of a new address within the eSuite platform for a specific account.
 
 ### HTTP Request
 
@@ -115,12 +115,12 @@ Parameter | Type | Mandatory | Description |
 `houseNumber` | string |mandatory* | The building number associated to the address |
 `street` | string |mandatory | The street the address is located |
 `townCity` | string |mandatory | The town or city the address is associated |
-`district` | string |optional | The district associated with the address |
-`state` | string |optional | The state that the address is located |
-`county` | string |optional | The county the address is associated |
+`district` | string |No | The district associated with the address |
+`state` | string |No | The state that the address is located |
+`county` | string |No | The county the address is associated |
 `postCode` | string |mandatory | The postcode of the address that has been added |
 `country` | string |mandatory | The country the address is specific to |
-`isDefault` | boolean |optional | An indication as to whether the address is the default address for the account |
+`isDefault` | Bool |No | An indication as to whether the address is the default address for the account |
 
 *Either `houseName` or `houseNumber` is required but both are not mandatory.
 
@@ -128,7 +128,7 @@ Parameter | Type | Mandatory | Description |
 
 
 
-## CRUD: Retrieve Address Book
+## Retrieve Address Book
 
 ```shell
 curl --request GET \
@@ -240,7 +240,7 @@ $.ajax(settings).done(function (response) {
 }
 ```
 
-Description of what the endpoint does.
+This endpoint allows the retrieval of all addresses that are stored against a specific account.
 
 ### HTTP Request
 
@@ -264,7 +264,7 @@ Parameter | Type | Description |
 `county` | string | The county the address is associated |
 `postCode` | string | The postcode of the address that has been added |
 `country` | string | The country the address is specific to |
-`isDefault` | boolean | An indication as to whether the address is the default address for the account |
+`isDefault` | Bool | An indication as to whether the address is the default address for the account |
 
 
 

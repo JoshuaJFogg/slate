@@ -1,6 +1,6 @@
 # Fulfilment Management
 
-## CRUD: Edit a Fulfilment
+## Edit a Fulfilment
 
 ```shell
 curl --request PATCH \

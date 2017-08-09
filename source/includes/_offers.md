@@ -205,21 +205,21 @@ Parameter | Type | Description |
 `items` > `addCredits` | array[objects] | Information relating to an AddCredits offer type
 `addCredits` > `amount` | decimal | Amount of credit the account should receive
 `addCredits` > `currency` | string | Currency the credit should be added in
-`addCredits` > `paymentDetailsRequired` | boolean | Indication as to whether the account is required to provide payment information
+`addCredits` > `paymentDetailsRequired` | Bool | Indication as to whether the account is required to provide payment information
 `items` > `lowStart` | array[objects] | Information relating to an LowStart offer type
 `lowStart` > `percentage` | decimal | The percentage discount the account should receive 
 `lowStart` > `numberOfPeriods` | integer | How long the discount should take place
 `lowStart` > `lockInPeriods` | integer | Number of periods before the account can cancel their subscription
-`lowStart` > `closeSubOnExpiry` | boolean | Indication whether the subscription will expire at the same time as the offer
+`lowStart` > `closeSubOnExpiry` | Bool | Indication whether the subscription will expire at the same time as the offer
 `lowStart` > `serviceIds` | array[integer] | Collection of applicable services for the offer
-`lowStart` > `paymentDetailsRequired` | boolean | Indication as to whether the account is required to provide payment information
+`lowStart` > `paymentDetailsRequired` | Bool | Indication as to whether the account is required to provide payment information
 `items` > `percentageDiscount` | array[objects] | Information relating to an PercentageDiscount offer type
 `percentageDiscount` > `percentage` | decimal | The percentage discount that will be received
-`percentageDiscount` > `paymentDetailsRequired` | boolean | Indication as to whether the account is required to provide payment information
+`percentageDiscount` > `paymentDetailsRequired` | Bool | Indication as to whether the account is required to provide payment information
 `items` > `freePeriod` | array[objects] | Information relating to an freePeriod offer type
 `freePeriod` > `numberOfPeriods` | integer | How long the discount should take place
 `freePeriod` > `serviceIds` | array[integer] | Collection of applicable services for the offer
-`freePeriod` > `paymentDetailsRequired` | boolean | Indication as to whether the account is required to provide payment information
+`freePeriod` > `paymentDetailsRequired` | Bool | Indication as to whether the account is required to provide payment information
 `items` > `groupDiscount` | array[objects] | Information relating to an GroupDiscount offer type
 `groupDiscount` > `metaData` | objects | Metadata of the group discount
 `metaData` > `qualifyingItemCount` | integer | The number of items that must be purchased to be applicable for the offer
@@ -228,21 +228,21 @@ Parameter | Type | Description |
 `groupDiscount` > `productSource` | string | Product source
 `groupDiscount` > `customParameters` | dictionary | Dictionary of custom parameters applicable to the discount
 `items` > `fixedPriceDiscount` | array[objects] | Information relating to an FixedPriceDiscount offer type
-`fixedPriceDiscount` > `paymentDetailsRequired` | boolean | Indication as to whether the account is required to provide payment information
+`fixedPriceDiscount` > `paymentDetailsRequired` | Bool | Indication as to whether the account is required to provide payment information
 `fixedPriceDiscount` > `discountAmounts` | array[objects] | Specific currency configuration
 `discountAmounts` > `value` | decimal | Amount to be discounted
 `discountAmounts` > `currency` | string | The associated currency
 `fixedPriceDiscount` > `subscriptionSettings` | array[objects] | Settings associated to the service aspect of a fixed price discount
-`subscriptionSettings` > `enabled` | boolean | Indication as to whether the offer can be used on a subscription purchase
+`subscriptionSettings` > `enabled` | Bool | Indication as to whether the offer can be used on a subscription purchase
 `subscriptionSettings` > `numberOfPeriods` | integer| Number of renewing periods the offer is applicable for
 `subscriptionSettings` > `lockInPeriods` | integer | The number of periods an account would be locked in if the offer was redeemed
-`subscriptionSettings` > `closeSubOnExpiry` | boolean | Indication whether the subscription will expire at the same time as the offer
+`subscriptionSettings` > `closeSubOnExpiry` | Bool | Indication whether the subscription will expire at the same time as the offer
 `subscriptionSettings` > `serviceIds` | array[integer] | Collection of applicable services for the offer
 `fixedPriceDiscount` > `productSettings` | array[objects] | Product specific settings for the offer
-`productSettings` > `enabled` | boolean | Indication as to whether the offer can be used on a product purchase
+`productSettings` > `enabled` | Bool | Indication as to whether the offer can be used on a product purchase
 `productSettings` > `productIds` | array[integer] | Collection of products that can benefit from the offer
 `fixedPriceDiscount` > `miscellaneousChargeSettings` | objects | Details specific to one-off charge
-`miscellaneousChargeSettings` > `enabled` | boolean | Indication as to whether the offer can be used on a one-off charge
+`miscellaneousChargeSettings` > `enabled` | Bool | Indication as to whether the offer can be used on a one-off charge
 
 
 ## Retrieve an Offer
@@ -430,21 +430,21 @@ Parameter | Type | Description |
 `addCredits` | array[objects] | Information relating to an AddCredits offer type
 `addCredits` > `amount` | decimal | Amount of credit the account should receive
 `addCredits` > `currency` | string | Currency the credit should be added in
-`addCredits` > `paymentDetailsRequired` | boolean | Indication as to whether the account is required to provide payment information
+`addCredits` > `paymentDetailsRequired` | Bool | Indication as to whether the account is required to provide payment information
 `lowStart` | array[objects] | Information relating to an LowStart offer type
 `lowStart` > `percentage` | decimal | The percentage discount the account should receive 
 `lowStart` > `numberOfPeriods` | integer | How long the discount should take place
 `lowStart` > `lockInPeriods` | integer | Number of periods before the account can cancel their subscription
-`lowStart` > `closeSubOnExpiry` | boolean | Indication whether the subscription will expire at the same time as the offer
+`lowStart` > `closeSubOnExpiry` | Bool | Indication whether the subscription will expire at the same time as the offer
 `lowStart` > `serviceIds` | array[integer] | Collection of applicable services for the offer
-`lowStart` > `paymentDetailsRequired` | boolean | Indication as to whether the account is required to provide payment information
+`lowStart` > `paymentDetailsRequired` | Bool | Indication as to whether the account is required to provide payment information
 `percentageDiscount` | array[objects] | Information relating to an PercentageDiscount offer type
 `percentageDiscount` > `percentage` | decimal | The percentage discount that will be received
-`percentageDiscount` > `paymentDetailsRequired` | boolean | Indication as to whether the account is required to provide payment information
+`percentageDiscount` > `paymentDetailsRequired` | Bool | Indication as to whether the account is required to provide payment information
 `freePeriod` | array[objects] | Information relating to an freePeriod offer type
 `freePeriod` > `numberOfPeriods` | integer | How long the discount should take place
 `freePeriod` > `serviceIds` | array[integer] | Collection of applicable services for the offer
-`freePeriod` > `paymentDetailsRequired` | boolean | Indication as to whether the account is required to provide payment information
+`freePeriod` > `paymentDetailsRequired` | Bool | Indication as to whether the account is required to provide payment information
 `groupDiscount` | array[objects] | Information relating to an GroupDiscount offer type
 `groupDiscount` > `metaData` | objects | Metadata of the group discount
 `metaData` > `qualifyingItemCount` | integer | The number of items that must be purchased to be applicable for the offer
@@ -453,21 +453,21 @@ Parameter | Type | Description |
 `groupDiscount` > `productSource` | string | Product source
 `groupDiscount` > `customParameters` | dictionary | Dictionary of custom parameters applicable to the discount
 `fixedPriceDiscount` | array[objects] | Information relating to an FixedPriceDiscount offer type
-`fixedPriceDiscount` > `paymentDetailsRequired` | boolean | Indication as to whether the account is required to provide payment information
+`fixedPriceDiscount` > `paymentDetailsRequired` | Bool | Indication as to whether the account is required to provide payment information
 `fixedPriceDiscount` > `discountAmounts` | array[objects] | Specific currency configuration
 `discountAmounts` > `value` | decimal | Amount to be discounted
 `discountAmounts` > `currency` | string | The associated currency
 `fixedPriceDiscount` > `subscriptionSettings` | array[objects] | Settings associated to the service aspect of a fixed price discount
-`subscriptionSettings` > `enabled` | boolean | Indication as to whether the offer can be used on a subscription purchase
+`subscriptionSettings` > `enabled` | Bool | Indication as to whether the offer can be used on a subscription purchase
 `subscriptionSettings` > `numberOfPeriods` | integer| Number of renewing periods the offer is applicable for
 `subscriptionSettings` > `lockInPeriods` | integer | The number of periods an account would be locked in if the offer was redeemed
-`subscriptionSettings` > `closeSubOnExpiry` | boolean | Indication whether the subscription will expire at the same time as the offer
+`subscriptionSettings` > `closeSubOnExpiry` | Bool | Indication whether the subscription will expire at the same time as the offer
 `subscriptionSettings` > `serviceIds` | array[integer] | Collection of applicable services for the offer
 `fixedPriceDiscount` > `productSettings` | array[objects] | Product specific settings for the offer
-`productSettings` > `enabled` | boolean | Indication as to whether the offer can be used on a product purchase
+`productSettings` > `enabled` | Bool | Indication as to whether the offer can be used on a product purchase
 `productSettings` > `productIds` | array[integer] | Collection of products that can benefit from the offer
 `fixedPriceDiscount` > `miscellaneousChargeSettings` | objects | Details specific to one-off charge
-`miscellaneousChargeSettings` > `enabled` | boolean | Indication as to whether the offer can be used on a one-off charge
+`miscellaneousChargeSettings` > `enabled` | Bool | Indication as to whether the offer can be used on a one-off charge
 
 
 ## Retrieve all vouchers

@@ -103,4 +103,5 @@ Parameter | Type | Mandatory | Description |
 `accountIds` | array[integer] | No* | A collection of all accounts that should have access given, based upon accountId.
 `clientUserIds` | array[string] | No* | A collection of all accounts that should have access given, based upon ClientUserId
 
-\* It is required that either an array of accountIds or clientUserIds must be passed but it is not required to pass both.
+
+<aside class="info">It is required that either an array of accountIds or clientUserIds must be passed but it is not required to pass both.</aside>

@@ -112,12 +112,12 @@ This endpoint allows you to pass through the Roku transactionId alongside custom
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-`rokuTransactionId` | string | Optional | The roku transaction ID that is to be validated
-`email` | string | Optional | Email address of the customer's Roku billing account
-`password` | string | Optional | Customer's password
-`newAccountDetails` | object | Optional | A sub-object of RokuValidateTransactionRequest, containing additional customer information
-`newAccountDetails` > `firstName` | string | Optional | The customer's first name, as forwarded from Roku's native billing
-`newAccountDetails` > `lastName` | string | Optional | The customer's last name, as forwarded from Roku's native billing
+`rokuTransactionId` | string | No | The roku transaction ID that is to be validated
+`email` | string | No | Email address of the customer's Roku billing account
+`password` | string | No | Customer's password
+`newAccountDetails` | object | No | A sub-object of RokuValidateTransactionRequest, containing additional customer information
+`newAccountDetails` > `firstName` | string | No | The customer's first name, as forwarded from Roku's native billing
+`newAccountDetails` > `lastName` | string | No | The customer's last name, as forwarded from Roku's native billing
 
 
 
@@ -224,7 +224,7 @@ $.ajax(settings).done(function (response) {
 ```
 
 
-this endpoint should be called when an existing account has made a purchase via Roku. Calling this endpoint will add the Roku subscription to their eSuite account.
+This endpoint should be called when an existing account has made a purchase via Roku. Calling this endpoint will add the Roku subscription to their eSuite account.
 
 ### HTTP Request
 
@@ -237,7 +237,7 @@ this endpoint should be called when an existing account has made a purchase via 
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-`rokuTransactionId` | string | Optional | The roku transaction ID that is to be validated
+`rokuTransactionId` | string | No | The roku transaction ID that is to be validated
 
 ## Validate iTunes Purchase
 
@@ -352,11 +352,11 @@ Parameter | Type | Mandatory | Description |
 `receipt` | string | Yes | The encrypted receipt returned from the iTunes stored when the app was purchased
 `price` | number | No | An indication as to the price paid within iTunes
 `currency` | string | No | The currency used to purchase the iTunes subscription
-`email` | string | Optional | Email address of the customer's Roku billing account
-`password` | string | Optional | Customer's password
-`newAccountDetails` | object | Optional | A sub-object of request, containing additional customer information
-`newAccountDetails` > `firstName` | string | Optional | The customer's first name, as forwarded from iTunes's native billing
-`newAccountDetails` > `lastName` | string | Optional | The customer's last name, as forwarded from iTunes's native billing
+`email` | string | No | Email address of the customer's Roku billing account
+`password` | string | No | Customer's password
+`newAccountDetails` | object | No | A sub-object of request, containing additional customer information
+`newAccountDetails` > `firstName` | string | No | The customer's first name, as forwarded from iTunes's native billing
+`newAccountDetails` > `lastName` | string | No | The customer's last name, as forwarded from iTunes's native billing
 
 
 
@@ -462,7 +462,7 @@ $.ajax(settings).done(function (response) {
 });
 ```
 
-For existing accounts.
+This endpoint should be called when an existing account has made a purchase via iTunes. Calling this endpoint will add the iTunes subscription to their eSuite account.
 
 ### HTTP Request
 

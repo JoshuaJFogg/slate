@@ -25,6 +25,7 @@ includes:
   - purchases-payments
   - subscription-management
   - payments-management
+  - carts
   - payment-instructions
   - fulfilment-management
   - access-management

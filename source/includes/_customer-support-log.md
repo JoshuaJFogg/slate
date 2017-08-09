@@ -1,6 +1,6 @@
 # Customer Support Logs
 
-## CRUD: Create Support Log
+## Create Support Log
 
 ```shell
 curl --request POST \
@@ -121,7 +121,7 @@ Parameter | Type | Mandatory | Description |
 `logDetails` | string | Yes | Specific information about the log entry being added.
 `systemAccountId` | integer | No | This parameter is provided to track the system account who created the log entry.
 
-## CRUD: Retrieve a Support Log
+## Retrieve a Support Log
 
 ```shell
 curl --request GET \
@@ -249,7 +249,7 @@ Parameter | Type |  Description |
 `createdDate` | string | This parameter is provided to track the system account who created the log entry.
 `lastUpdatedDate` | string | This parameter is provided to track the system account who created the log entry.
 
-## CRUD: Update a Support Log
+## Update a Support Log
 
 ```shell
 curl --request PATCH \
@@ -369,7 +369,7 @@ Parameter | Type | Mandatory | Description |
 `path` | string | Yes | The name of the parameter that should be updated.
 `value` | string | Yes | The new value to store against the parameter.
 
-## CRUD: Delete a Support Log
+## Delete a Support Log
 
 ```json
 {
