@@ -207,6 +207,7 @@ var settings = {
   "method": "GET",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
+    "x-sessionId" : "",
     "x-version": "9.0.0",
     "origin": "https://www.mppglobal.com"
   },

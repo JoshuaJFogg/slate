@@ -3,27 +3,100 @@
 ## Create a Cart
 
 ```shell
-
+curl --request POST \
+--url https://uat.mppglobal.com/api/carts \
+--header 'x-clientId: 1001' \
+--header 'x-clientPassword: Str0ngP@ssword' \
+--header 'x-version: 9.0.0' \
+--header 'content-type: application/json' \
+--header 'content-type: application/json' \
+--data '{}'
 ```
 
 ```csharp
-
+var client = new RestClient("https://uat.mppglobal.com/api/carts");
+var request = new RestRequest(Method.POST);
+request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-clientId", "1001");
+request.AddHeader("x-clientPassword", "Str0ngP@ssword");
+request.AddHeader("content-type", "application/json");
+request.AddParameter("application/json", "{}", ParameterType.RequestBody);
+IRestResponse response = client.Execute(request);
 ```
 
 ```java
-
+HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/carts")
+  .header("x-clientId", "1001")
+  .header("x-clientPassword", "Str0ngP@ssword")
+  .header("x-sessionid", "BE52ADA2064C4F9A9D90F28D066D1RFT")
+  .header("x-version", "9.0.0")
+  .header("content-type", "application/json")
+  .body("{}")
+  .asString();
 ```
 
 ```ruby
+require 'uri'
+require 'net/http'
 
+url = URI("https://uat.mppglobal.com/api/carts")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Post.new(url)
+request["content-type"] = 'application/json'
+request["x-clientid"] = '1001'
+request["x-clientPassword"] = 'Str0ngP@ssword'
+request["x-version"] = '9.0.0'
+request.body = "{}"
+
+response = http.request(request)
+puts response.read_body
 ```
 
 ```python
+import http.client
 
+conn = http.client.HTTPSConnection("uat.mppglobal.com")
+
+payload = "{}"
+
+headers = { 
+    'x-clientid' : '1001',
+    'x-clientPassword': "Str0ngP@ssword",
+    'x-version': "9.0.0",
+    'content-type': "application/json" }
+
+conn.request("POST", "/api/carts", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))
 ```
 
 ```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://uat.mppglobal.com/api/carts",
+  "method": "POST",
+  "headers": {
+    "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
+    "x-sessionid": "a0c595bd26004ff4bb7d4cb1b1c81a6d",
+    "x-version": "9.0.0",
+    "origin": "https://www.mppglobal.com",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{}"
+}
 
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 ```
 
 > The above command returns JSON structured like this:
@@ -44,33 +117,112 @@ In order to add items to a cart, the cart must first be created by executing a r
 ## Retrieve a Cart
 
 ```shell
-
+curl --request GET \
+--url https://uat.mppglobal.com/api/carts/{cartReference} \
+--header 'x-clientId: 1001' \
+--header 'x-clientPassword: Str0ngP@ssword' \
+--header 'x-version: 9.0.0' \
+--data '{}'
 ```
 
 ```csharp
-
+var client = new RestClient("https://uat.mppglobal.com/api/carts/{cartReference}");
+var request = new RestRequest(Method.GET);
+request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-clientId", "1001");
+request.AddHeader("x-clientPassword", "Str0ngP@ssword");
+request.AddParameter("undefined", "{}", ParameterType.RequestBody);
+IRestResponse response = client.Execute(request);
 ```
 
 ```java
-
+HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/carts/{cartReference}")
+  .header("x-clientId", "1001")
+  .header("x-clientPassword", "Str0ngP@ssword")
+  .header("x-version", "9.0.0")
+  .body("{}")
+  .asString();
 ```
 
 ```ruby
+require 'uri'
+require 'net/http'
 
+url = URI("https://uat.mppglobal.com/api/carts/{cartReference}")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Get.new(url)
+request["x-clientid"] = '1001'
+request["x-clientPassword"] = 'Str0ngP@ssword'
+request["x-version"] = '9.0.0'
+request.body = "{}"
+
+response = http.request(request)
+puts response.read_body
 ```
 
 ```python
+import http.client
 
+conn = http.client.HTTPSConnection("uat.mppglobal.com")
+
+payload = "{}"
+
+headers = {
+    'x-clientid' : '1001',
+    'x-clientPassword': "Str0ngP@ssword",
+    'x-version': "9.0.0"
+    }
+
+conn.request("GET", "/api/carts/{cartReference}", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))
 ```
 
 ```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://uat.mppglobal.com/api/carts/{cartReference}",
+  "method": "GET",
+  "headers": {
+    "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
+    "x-sessionid": "a0c595bd26004ff4bb7d4cb1b1c81a6d",
+    "x-version": "9.0.0",
+    "origin": "https://www.mppglobal.com"
+  },
+  "data": "{}"
+}
 
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-
+[
+    {
+        "resourceReference": "0010IP4Y47M3256M51",
+        "description": "item description",
+        "pricing": {
+            "grossAmount": 10.00,
+            "netAmount": 8.00,
+            "taxAmount": 2.00,
+            "currency": "EUR"
+        },
+        "quantity": 1,
+        "productInfo": {},
+        "customLineItemParameters": {}
+    }
+]
 ```
 
 This endpoint allows the retrieval of a specific cart that has been created on the eSuite platform.
@@ -79,54 +231,123 @@ This endpoint allows the retrieval of a specific cart that has been created on t
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-get">GET</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/carts/{cartIdentifier}</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/carts/{cartReference}</span>
 </div>
 
 ### Response Parameters
 
 Parameter | Type |  Description | 
 --------- | ------- | ----------- |
-`cartItems` | array[object] | The list of cart Items
-`cartItems` > `lineItemId` | integer | Line Item Id
-`cartItems` > `itemDescription` | string | Description of the Line Item
-`cartItems` > `pricing` | object | Pricing
-`pricing` > `grossAmount` | number |  Gross Amount
-`pricing` > `netAmount` | number | Net Amount
-`pricing` > `taxAmount` | number | Tax Amount
-`pricing` > `currency` | string | Currency
-`cartItems` > `quantity` | integer | Quantity of items
-`cartItems` > `productInfo` | object | Collection of Product information| 
-`productInfo > productId` | integer | List of cart item detail parameters
-`cartItems` > `customLineItemParameters` | array[object] | List of cart item detail parameters
-`customLineItemParameters` > `parameterName` | string | Name of the custom parameter
-`customLineItemParameters` > `parameterValue` | string | Value of the custom parameter
-`cartItems` > `lineItemReference` | string | Line Item Reference
+`lineItemReference` | string | Line Item Reference
+`description` | string | Description of the line item
+`pricing` | object | Collection of information regarding pricing
+`pricing` > `grossAmount` | number | The gross amount of the line item
+`pricing` > `netAmount` | number | The net amount of the line item
+`pricing` > `taxAmount` | number | The tax amount of the line item
+`pricing` > `currency` | string | Currency of the transaction
+`quantity` | integer | Number of the line item being purchased
+`productInfo` | object | Collection of Product information| 
+`productInfo > productId` | integer | The pre-configured product identifier
+`customLineItemParameters` | dictionary | Collection of custom line item parameters
+`customLineItemParameters` > `parameterName` | string | Name associated to the custom parameter
 
 ## Update a Cart
 
 ```shell
-
+curl --request PATCH \
+--url https://uat.mppglobal.com/api/carts/{cartReference} \
+--header 'content-type: application/json' \
+--header 'x-clientId: 1001' \
+--header 'x-clientPassword: Str0ngP@ssword' \
+--header 'x-version: 9.0.0' \
+--data '[{"op":"add","path":"/accountReference","value":"0010X2Y7GLHZ0Y1JH2"}]'
 ```
 
 ```csharp
-
+var client = new RestClient("https://uat.mppglobal.com/api/carts/{cartReference}");
+var request = new RestRequest(Method.PATCH);
+request.AddHeader("content-type", "application/json");
+request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-clientId", "1001");
+request.AddHeader("x-clientPassword", "Str0ngP@ssword");
+request.AddParameter("application/json", "[{\"op\":\"add\",\"path\":\"/accountReference\",\"value\":\"0010X2Y7GLHZ0Y1JH2\"}]", ParameterType.RequestBody);
+IRestResponse response = client.Execute(request);
 ```
 
 ```java
-
+HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/carts/{cartReference}")
+  .header("x-clientId", "1001")
+  .header("x-clientPassword", "Str0ngP@ssword")
+  .header("x-version", "9.0.0")
+  .header("content-type", "application/json")
+  .body("[{\"op\":\"add\",\"path\":\"/accountReference\",\"value\":\"0010X2Y7GLHZ0Y1JH2\"}]")
+  .asString();
 ```
 
 ```ruby
+require 'uri'
+require 'net/http'
 
+url = URI("https://uat.mppglobal.com/api/carts/{cartReference}")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Patch.new(url)
+request["x-clientid"] = '1001'
+request["x-clientPassword"] = 'Str0ngP@ssword'
+request["x-version"] = '9.0.0'
+request["content-type"] = 'application/json'
+request.body = "[{\"op\":\"add\",\"path\":\"/accountReference\",\"value\":\"0010X2Y7GLHZ0Y1JH2\"}]"
+
+response = http.request(request)
+puts response.read_body
 ```
 
 ```python
+import http.client
 
+conn = http.client.HTTPSConnection("uat.mppglobal.com")
+
+payload = "[{\"op\":\"add\",\"path\":\"/accountReference\",\"value\":\"0010X2Y7GLHZ0Y1JH2\"}]"
+
+headers = {
+    'x-clientid' : '1001',
+    'x-clientPassword': "Str0ngP@ssword",
+    'x-version': "9.0.0",
+    'content-type': "application/json"
+    }
+
+conn.request("PATCH", "/api/carts/{cartReference}", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))
 ```
 
 ```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://uat.mppglobal.com/api/carts/{cartReference}",
+  "method": "PATCH",
+  "headers": {
+    "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
+    "x-version": "9.0.0",
+    "origin": "https://www.mppglobal.com",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "[{\"op\":\"add\",\"path\":\"/accountReference\",\"value\":\"0010X2Y7GLHZ0Y1JH2\"}]" 
+}
 
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 ```
+
 
 > The above command returns JSON structured like this:
 
@@ -134,7 +355,7 @@ Parameter | Type |  Description |
 
 ```
 
-An existing cart can be edited by calling the following endpoint. An example where this is required is when associating a cart to a specific eSuite account.
+An existing cart can be edited by calling the following endpoint. An example where this would be required is when associating a cart to a specific eSuite account.
 
 ### HTTP Request
 
@@ -149,34 +370,98 @@ An existing cart can be edited by calling the following endpoint. An example whe
 ## Delete a Cart
 
 ```shell
-
+curl --request DELETE \
+--url https://uat.mppglobal.com/api/carts/{cartReference} \
+--header 'x-clientId: 1001' \
+--header 'x-clientPassword: Str0ngP@ssword' \
+--header 'x-version: 9.0.0' \
+--data '{}'
 ```
 
 ```csharp
-
+var client = new RestClient("https://uat.mppglobal.com/api/carts/{cartReference}");
+var request = new RestRequest(Method.DELETE);
+request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-clientId", "1001");
+request.AddHeader("x-clientPassword", "Str0ngP@ssword");
+request.AddParameter("undefined", "{}", ParameterType.RequestBody);
+IRestResponse response = client.Execute(request);
 ```
 
 ```java
-
+HttpResponse<String> response = Unirest.delete("https://uat.mppglobal.com/api/carts/{cartReference}")
+  .header("x-clientId", "1001")
+  .header("x-clientPassword", "Str0ngP@ssword")
+  .header("x-version", "9.0.0")
+  .body("{}")
+  .asString();
 ```
 
 ```ruby
+require 'uri'
+require 'net/http'
 
+url = URI("https://uat.mppglobal.com/api/carts/{cartReference}")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Delete.new(url)
+request["x-clientid"] = '1001'
+request["x-clientPassword"] = 'Str0ngP@ssword'
+request["x-version"] = '9.0.0'
+
+request.body = "{}"
+
+response = http.request(request)
+puts response.read_body
 ```
 
 ```python
+import http.client
 
+conn = http.client.HTTPSConnection("uat.mppglobal.com")
+
+payload = "{}"
+
+headers = {
+    'x-clientid' : '1001',
+    'x-clientPassword': "Str0ngP@ssword",
+    'x-version': "9.0.0"
+    }
+
+conn.request("DELETE", "/api/carts/{cartReference}", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))
 ```
 
 ```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://uat.mppglobal.com/api/carts/{cartReference}",
+  "method": "DELETE",
+  "headers": {
+    "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
+    "x-version": "9.0.0",
+    "origin": "https://www.mppglobal.com"
+  },
+  "processData": false,
+  "data": "{}"
+}
 
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 ```
 
 > The above command returns JSON structured like this:
 
-```json
 
-```
 
 In order to remove a cart from the eSuite, this endpoint must be called. If the cart is associated to an previous payment, it is deemed immutable and cannot be removed.
 
@@ -192,27 +477,100 @@ In order to remove a cart from the eSuite, this endpoint must be called. If the 
 ## Create a Line-item
 
 ```shell
-
+curl --request POST \
+--url https://uat.mppglobal.com/api/carts/{cartReference/line-items \
+--header 'x-clientId: 1001' \
+--header 'x-clientPassword: Str0ngP@ssword' \
+--header 'x-version: 9.0.0' \
+--header 'content-type: application/json' \
+--header 'content-type: application/json' \
+--data '{"description":"Example line item","pricing":{"grossAmount":10,"netAmount":8,"taxAmount":2,"currency":"GBP"},"quantity":1}'
 ```
 
 ```csharp
-
+var client = new RestClient("https://uat.mppglobal.com/api/carts/{cartReference/line-items");
+var request = new RestRequest(Method.POST);
+request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-clientId", "1001");
+request.AddHeader("x-clientPassword", "Str0ngP@ssword");
+request.AddHeader("content-type", "application/json");
+request.AddParameter("application/json", "{\"description\":\"Example line item\",\"pricing\":{\"grossAmount\":10,\"netAmount\":8,\"taxAmount\":2,\"currency\":\"GBP\"},\"quantity\":1}", ParameterType.RequestBody);
+IRestResponse response = client.Execute(request);
 ```
 
 ```java
-
+HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/carts/{cartReference/line-items")
+  .header("x-clientId", "1001")
+  .header("x-clientPassword", "Str0ngP@ssword")
+  .header("x-sessionid", "BE52ADA2064C4F9A9D90F28D066D1RFT")
+  .header("x-version", "9.0.0")
+  .header("content-type", "application/json")
+  .body("{\"description\":\"Example line item\",\"pricing\":{\"grossAmount\":10,\"netAmount\":8,\"taxAmount\":2,\"currency\":\"GBP\"},\"quantity\":1}")
+  .asString();
 ```
 
 ```ruby
+require 'uri'
+require 'net/http'
 
+url = URI("https://uat.mppglobal.com/api/carts/{cartReference/line-items")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Post.new(url)
+request["content-type"] = 'application/json'
+request["x-clientid"] = '1001'
+request["x-clientPassword"] = 'Str0ngP@ssword'
+request["x-version"] = '9.0.0'
+request.body = "{\"description\":\"Example line item\",\"pricing\":{\"grossAmount\":10,\"netAmount\":8,\"taxAmount\":2,\"currency\":\"GBP\"},\"quantity\":1}"
+
+
+response = http.request(request)
+puts response.read_body
 ```
 
 ```python
+import http.client
 
+conn = http.client.HTTPSConnection("uat.mppglobal.com")
+
+payload = "{\"description\":\"Example line item\",\"pricing\":{\"grossAmount\":10,\"netAmount\":8,\"taxAmount\":2,\"currency\":\"GBP\"},\"quantity\":1}"
+
+headers = { 
+    'x-clientid' : '1001',
+    'x-clientPassword': "Str0ngP@ssword",
+    'x-version': "9.0.0",
+    'content-type': "application/json" }
+
+conn.request("POST", "/api/carts/{cartReference/line-items", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))
 ```
 
 ```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://uat.mppglobal.com/api/carts/{cartReference/line-items",
+  "method": "POST",
+  "headers": {
+    "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",,
+    "x-version": "9.0.0",
+    "origin": "https://www.mppglobal.com",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"description\":\"Example line item\",\"pricing\":{\"grossAmount\":10,\"netAmount\":8,\"taxAmount\":2,\"currency\":\"GBP\"},\"quantity\":1}"
+}
 
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 ```
 
 > The above command returns JSON structured like this:
@@ -235,53 +593,112 @@ In order to add a new item to a cart, this endpoint should be called. This endpo
 
 Parameter | Type | Mandatory | Description | 
 --------- | ------- | ------- | ----------- |
-explicitPricedItem | object | No | Explicit Priced Item
-explicitPricedItem > description | string | No | Description
-explicitPricedItem > pricing | object | No | Pricing
-explicitPricedItem > pricing > grossAmount | number | No | Gross Amount
-explicitPricedItem > pricing > netAmount | number | No | Net Amount
-explicitPricedItem > pricing > taxAmount | number | No | Tax Amount
-explicitPricedItem > pricing > currency | string | No | Currency
-explicitPricedItem > quantity | integer | No | Quantity
-explicitPricedItem > productId | integer | No | Product Id
-explicitPricedItem > customLineItemParameters | array[object] | No | Custom Parameters
-preconfiguredItem | object | No | Preconfigured Item
-preconfiguredItem > description | string | No | Description
-preconfiguredItem > productPriceId | integer | No | Product Price Id
-preconfiguredItem > quantity | integer | No | Quantity
-preconfiguredItem > customLineItemParameters | array[object] | No | Custom Line Item Parameters
+`description` | string | Yes* | Description of the line item
+`pricing` | object | No | Collection of information regarding pricing
+`pricing` > `grossAmount` | number | Yes | The gross amount of the line item
+`pricing` > `netAmount`| number | Yes | The net amount of the line item
+`pricing` > `taxAmount` | number | Yes | The tax amount of the line item
+`pricing` > `currency` | string | Yes* | Currency of the transaction
+`pricing` > `priceId` | string | No* | The pre-configured eSuite price identifier
+`productId` | integer | No | The pre-configured eSuite product identifier
+`quantity` | integer | Yes | Number of the line item being purchased
+`customLineItemParameters` | dictionary | No | Collection of custom line item parameters
+`customLineItemParameters` > parameterName | string | No | Name associated to the custom parameter
 
 ## Delete a Line-item
 
 ```shell
-
+curl --request DELETE \
+--url https://uat.mppglobal.com/api/carts/{cartResourceReference}/line-items/{lineItemResourceReference} \
+--header 'x-clientId: 1001' \
+--header 'x-clientPassword: Str0ngP@ssword' \
+--header 'x-version: 9.0.0' \
+--data '{}'
 ```
 
 ```csharp
-
+var client = new RestClient("https://uat.mppglobal.com/api/carts/{cartResourceReference}/line-items/{lineItemResourceReference}");
+var request = new RestRequest(Method.DELETE);
+request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-clientId", "1001");
+request.AddHeader("x-clientPassword", "Str0ngP@ssword");
+request.AddParameter("undefined", "{}", ParameterType.RequestBody);
+IRestResponse response = client.Execute(request);
 ```
 
 ```java
-
+HttpResponse<String> response = Unirest.delete("https://uat.mppglobal.com/api/carts/{cartResourceReference}/line-items/{lineItemResourceReference}")
+  .header("x-clientId", "1001")
+  .header("x-clientPassword", "Str0ngP@ssword")
+  .header("x-version", "9.0.0")
+  .body("{}")
+  .asString();
 ```
 
 ```ruby
+require 'uri'
+require 'net/http'
 
+url = URI("https://uat.mppglobal.com/api/carts/{cartResourceReference}/line-items/{lineItemResourceReference}")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Delete.new(url)
+request["x-clientid"] = '1001'
+request["x-clientPassword"] = 'Str0ngP@ssword'
+request["x-version"] = '9.0.0'
+
+request.body = "{}"
+
+response = http.request(request)
+puts response.read_body
 ```
 
 ```python
+import http.client
 
+conn = http.client.HTTPSConnection("uat.mppglobal.com")
+
+payload = "{}"
+
+headers = {
+    'x-clientid' : '1001',
+    'x-clientPassword': "Str0ngP@ssword",
+    'x-version': "9.0.0"
+    }
+
+conn.request("DELETE", "/api/carts/{cartResourceReference}/line-items/{lineItemResourceReference}", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))
 ```
 
 ```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://uat.mppglobal.com/api/carts/{cartResourceReference}/line-items/{lineItemResourceReference}",
+  "method": "DELETE",
+  "headers": {
+    "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
+    "x-version": "9.0.0",
+    "origin": "https://www.mppglobal.com"
+  },
+  "processData": false,
+  "data": "{}"
+}
 
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 ```
 
 > The above command returns JSON structured like this:
 
-```json
-
-```
 
 Calling this endpoint will allow you to remove an item from a cart. It will not be possible to remove an line-item from a cart has is deemed immutable due to being involved in a purchase. 
 
@@ -292,54 +709,116 @@ Calling this endpoint will allow you to remove an item from a cart. It will not 
 <span class="endpoint-path">https://uat.mppglobal.com/api/carts/{cartResourceReference}/line-items/{lineItemReference}</span>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Retrieve an Account's Cart
 
-```shell
 
+```shell
+curl --request GET \
+--url https://uat.mppglobal.com/api/accounts/{accountId}/carts/{cartReference} \
+--header 'x-clientId: 1001' \
+--header 'x-clientPassword: Str0ngP@ssword' \
+--header 'x-version: 9.0.0' \
+--data '{}'
 ```
 
 ```csharp
-
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/carts/{cartReference}");
+var request = new RestRequest(Method.GET);
+request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-clientId", "1001");
+request.AddHeader("x-clientPassword", "Str0ngP@ssword");
+request.AddParameter("undefined", "{}", ParameterType.RequestBody);
+IRestResponse response = client.Execute(request);
 ```
 
 ```java
-
+HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountId}/carts/{cartReference}")
+  .header("x-clientId", "1001")
+  .header("x-clientPassword", "Str0ngP@ssword")
+  .header("x-version", "9.0.0")
+  .body("{}")
+  .asString();
 ```
 
 ```ruby
+require 'uri'
+require 'net/http'
 
+url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/carts/{cartReference}")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Get.new(url)
+request["x-clientid"] = '1001'
+request["x-clientPassword"] = 'Str0ngP@ssword'
+request["x-version"] = '9.0.0'
+request.body = "{}"
+
+response = http.request(request)
+puts response.read_body
 ```
 
 ```python
+import http.client
 
+conn = http.client.HTTPSConnection("uat.mppglobal.com")
+
+payload = "{}"
+
+headers = {
+    'x-clientid' : '1001',
+    'x-clientPassword': "Str0ngP@ssword",
+    'x-version': "9.0.0"
+    }
+
+conn.request("GET", "/api/accounts/{accountId}/carts/{cartReference}", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))
 ```
 
 ```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/carts/{cartReference}",
+  "method": "GET",
+  "headers": {
+    "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
+    "x-sessionid": "a0c595bd26004ff4bb7d4cb1b1c81a6d",
+    "x-version": "9.0.0",
+    "origin": "https://www.mppglobal.com"
+  },
+  "data": "{}"
+}
 
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-
+[
+    {
+        "resourceReference": "0010IP4Y47M3256M51",
+        "description": "item description",
+        "pricing": {
+            "grossAmount": 10.00,
+            "netAmount": 8.00,
+            "taxAmount": 2.00,
+            "currency": "EUR"
+        },
+        "quantity": 1,
+        "productInfo": {},
+        "customLineItemParameters": {}
+    }
+]
 ```
 
 Calling this endpoint will allow for the retrieval of all carts associated to an account. The response will include those associated to a payment instruction and those which are still pending completion.
@@ -353,23 +832,20 @@ Calling this endpoint will allow for the retrieval of all carts associated to an
 
 ### Response Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-cartItems | array[object] | No | The list of cart Items
-cartItems > lineItemId | integer | No | Line Item Id
-cartItems > itemDescription | string | No | Description of the Line Item
-cartItems > pricing | object | No | Pricing
-cartItems > pricing > grossAmount | number | No | Gross Amount
-cartItems > pricing > netAmount | number | No | Net Amount
-cartItems > pricing > taxAmount | number | No | Tax Amount
-cartItems > pricing > currency | string | No | Currency
-cartItems > quantity | integer | No | Quantity of items
-cartItems > productInfo | object | No | 
-cartItems > productInfo > productId | integer | No | List of cart item detail parameters
-cartItems > customLineItemParameters | array[object] | No | List of cart item detail parameters
-cartItems > customLineItemParameters > parameterName | string | No | Name of the custom parameter
-cartItems > customLineItemParameters > parameterValue | string | No | Value of the custom parameter
-cartItems > lineItemReference | string | No | Line Item Reference
+Parameter | Type |  Description | 
+--------- | ------- | ----------- |
+`lineItemReference` | string | Line Item Reference
+`description` | string | Description of the line item
+`pricing` | object | Collection of information regarding pricing
+`pricing` > `grossAmount` | number | The gross amount of the line item
+`pricing` > `netAmount` | number | The net amount of the line item
+`pricing` > `taxAmount` | number | The tax amount of the line item
+`pricing` > `currency` | string | Currency of the transaction
+`quantity` | integer | Number of the line item being purchased
+`productInfo` | object | Collection of Product information| 
+`productInfo > productId` | integer | The pre-configured product identifier
+`customLineItemParameters` | dictionary | Collection of custom line item parameters
+`customLineItemParameters` > `parameterName` | string | Name associated to the custom parameter
 
 
 

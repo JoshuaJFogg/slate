@@ -106,12 +106,16 @@ Parameter | Type | Mandatory | Description |
 `fulfilmentInfo` > `addressReference` |string |No |An address reference that will override the top level address|
 `fulfilmentInfo` > `fulfilmentDates`|array[string]| Yes | The collection of dates the fulfilments will be shipped|
 `fulfilmentInfo` > `leadTime`|integer|No|The number of days lead time needed by a supplier |
-`fulfilmentInfo` > `associatedPayments`|object|Yes| | Collection of payment information
+`fulfilmentInfo` > `associatedPayments`|object|Yes| Collection of payments associated to the fulfilment
 `associatedPayments` > `paymentDates`|array[string]|Yes| The dates at which payment should be taken for the fulfilment|
 `customPaymentParameters` | dictionary | No |This is a collection of custom attributes against the payments.
-`customPaymentParameters` > `parameterName` |Representation of all custom parameters against the payments.
+`customPaymentParameters` > `parameterName` | string | No |Representation of all custom parameters against the payments.
 `customFulfilmentParameters` | dictionary | No |This is a collection of custom attributes against the fulfilments.
-`customFulfilmentParameters` > `parameterName` |Representation of all custom parameters against the fulfilments.
+`customFulfilmentParameters` > `parameterName` | string | No |Representation of all custom parameters against the fulfilment.
+`synchronousPaymentInfo` |object| No | An example string
+`synchronousPaymentInfo` > `paymentMethod`| string | Yes |The method by which the payment should be made|
+`synchronousPaymentInfo` > `customPaymentParameters` | dictionary | No |This is a collection of custom attributes against the payments.
+`customPaymentParameters` > `parameterName` | string | No |Representation of all custom parameters against the payments.
 `customPaymentInstructionParameters` | dictionary | No |This is a collection of custom attributes against the payment instructions.
 `customPaymentInstructionParameters` > `parameterName`  | string | No | Representation of all custom parameters against the payment instruction.
 
