@@ -371,19 +371,6 @@ Parameter | Type | Mandatory | Description |
 
 ## Delete a Support Log
 
-```json
-{
-  "logType": "SupportNote",
-  "logStatus": "Open",
-  "logTitle": "Unable to access content.",
-  "logDetails": "Due to the use of cellular data.",
-  "systemAccountId": 1634375,
-  "supportLogReference": "0010XABJN0X22IVB90",
-  "createdDate": "2017-07-04T08:57:14.487",
-  "lastUpdatedDate": "2017-07-04T08:57:14.487"
-}
-```
-
 ```shell
 curl --request DELETE \
   --url https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference} \
