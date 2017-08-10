@@ -66,7 +66,7 @@ Parameter | Type | Mandatory | Description |
 `entitlements` > `startDate` | string | No |The date on which the entitlement should be valid from|
 `entitlements` > `expiryDate` | string | No |The date at which the account is no longer entitled to the content|
 `orderItems` > `taxInfo` | object | Yes |Collection of tax information|
-`taxInfo` > `category` | Bool | No |Indication as to whether the purchase is tax exempt|
+`taxInfo` > `category` | Bool | No |Indication as to which tax category to apply|
 `taxInfo` > `zeroRated` | Bool | No |Indication as to whether the purchase is tax exempt|
 `taxInfo` > `country` | string | No |Country specific tax rate to use|
 `taxInfo` > `state` | string | No |State specific tax rate to use (US Specific)|

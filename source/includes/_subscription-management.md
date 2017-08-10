@@ -172,55 +172,54 @@ Calling this endpoint will return the history of all subscriptions an account ha
 
 Parameter | Type |  Description | 
 --------- | ------- |  ----------- |
-`subscriptions` | array[object] |  Subscriptions
-`subscriptions` > `accountSubscriptionInfo` | object | Account Subscription Info
-`accountSubscriptionInfo` > `expiryDate` | string | Expiry Date
-`accountSubscriptionInfo` > `firstNonDiscountedBillingPointUtc` | string | First Non Discounted Billing PointUTC
-`accountSubscriptionInfo` > `lastDiscountedBillingPointUtc` | string | Last Discounted Billing PointUTC
-`accountSubscriptionInfo` > `paymentMethod` | string | Payment Method
-`accountSubscriptionInfo` > `recurringPaymentInfo` | object | Recurring Payment Info
-`recurringPaymentInfo` > `subscriptionReference` | integer | Subscription Reference
-`recurringPaymentInfo` > `resourceReference` | string | Unique Resource Reference
-`recurringPaymentInfo` > `configuredSubscriptionPrice` | number | Configured Subscription Price
-`recurringPaymentInfo` > `subscribedPrice` | number | Subscribed Price
-`recurringPaymentInfo` > `currency` | string | Currency
-`recurringPaymentInfo` > `recurringPaymentEnable` | string | Recurring Payment Enable
-`recurringPaymentInfo` > `subscriptionLockedIn` | string | Subscription LockedIn
-`recurringPaymentInfo` > `nextPaymentDate` | string | Next Payment Date
-`recurringPaymentInfo` > `previousBillingInfo` | object | Previous Billing Info
-`previousBillingInfo` > `subscriptionPriceId` | integer | Subscription Price Id
-`previousBillingInfo` > `totalAmount` | number | Total Amount
-`previousBillingInfo` > `totalTaxAmount` | number | Total Tax Amount
-`previousBillingInfo` > `totalNetAmount` | number | Total Net Amount
-`previousBillingInfo` > `billingDate` | string |  Billing Date
-`previousBillingInfo` > `paymentDate` | string | Payment Date
-`previousBillingInfo` > `taxInfo` | array[object] |Tax info
-`taxInfo` > `regionName` | string | Region Name
-`taxInfo` > `regionType` | string | Region Type
-`taxInfo` > `displayName` | string | Display Name
-`taxInfo` > `category` | string | Category
-`taxInfo` > `rate` | number | Rate
-`taxInfo` > `amount` | number |Amount
-`previousBillingInfo` > `priceItems` | array[object] |Price Items
-`priceItems` > `thirdPartyRef` | string |Gets or sets the external reference
-`priceItems` > `supplierId` | integer |Gets or sets the supplier id
-`priceItems` > `price` | number |Gets or sets the price
-`priceItems` > `description` | string |Gets or sets the description
-`priceItems` > `isGrossAmount` | string |Specify whether is groos amount
-`priceItems` > `taxCategoryName` | string |Tax Category Name
-`recurringPaymentInfo` > `groupSubscriptionInfo` | object |Group Subscription Info
-`groupSubscriptionInfo` > `licenseLevel` | integer |License Level
-`groupSubscriptionInfo` > `overflowLevel` | integer |Overflow Level
-`groupSubscriptionInfo` > `subscriberList` | array[object] |Subscriber List
-`subscriberList` > `subscriptionId` | integer |SubscriptionId
-`subscriberList` > `emailAddress` | string |Email Address
-`subscriberList` > `clientUserId` | string |ClientUserId
-`groupSubscriptionInfo` > `overFlowCount` | integer |Overflow Count
-`groupSubscriptionInfo` > `fullSubscriptionsCount` | integer |Full Subscriptions Count
-`groupSubscriptionInfo` > `currentUserInOverFlow` | string |Specify whether Current User In OverFlow
-`recurringPaymentInfo` > `voucherCodes` | object | Information relating to a voucher code applied to the subscription
+`subscriptions` | array[object] |  Collection of all subscription an account has purchased
+`subscriptions` > `accountSubscriptionInfo` | object | Collection of subscriptions
+`accountSubscriptionInfo` > `expiryDate` | string | The date at which the subscription expired or will renew
+`accountSubscriptionInfo` > `firstNonDiscountedBillingPointUtc` | string | The first date the account paid full price for the subscription
+`accountSubscriptionInfo` > `lastDiscountedBillingPointUtc` | string | The last date the account received a discount
+`accountSubscriptionInfo` > `paymentMethod` | string | Payment method used for the subscription
+`accountSubscriptionInfo` > `recurringPaymentInfo` | object | Specific information around the subscription recurrance
+`recurringPaymentInfo` > `subscriptionReference` | integer | Subscription Identifier
+`recurringPaymentInfo` > `configuredSubscriptionPrice` | number | Default Price of the subscription service
+`recurringPaymentInfo` > `subscribedPrice` | number | Price of subscription at the point of subscribing
+`recurringPaymentInfo` > `currency` | string | The currency the subscription is related
+`recurringPaymentInfo` > `recurringPaymentEnable` | string | An indication whether the subscription will renew
+`recurringPaymentInfo` > `subscriptionLockedIn` | string | An indication whether the subscription can be cancelled
+`recurringPaymentInfo` > `nextPaymentDate` | string | Date at which the next payment will be taken
+`recurringPaymentInfo` > `previousBillingInfo` | object | Information relating to the previous payment made
+`previousBillingInfo` > `subscriptionPriceId` | integer | Previous price identifier used
+`previousBillingInfo` > `totalAmount` | number | Total amount paid by the account
+`previousBillingInfo` > `totalTaxAmount` | number | Total tax amount paid by the account
+`previousBillingInfo` > `totalNetAmount` | number | Total net amount paid by the account
+`previousBillingInfo` > `billingDate` | string |  The date the account was last billed
+`previousBillingInfo` > `paymentDate` | string | The date the account was debited
+`previousBillingInfo` > `taxInfo` | array[object] |Collection of tax rates applied
+`taxInfo` > `regionName` | string | Name of the tax region
+`taxInfo` > `regionType` | string | The type of region the tax related
+`taxInfo` > `displayName` | string | Friendly name of the tax applied
+`taxInfo` > `category` | string | The category of tax applied
+`taxInfo` > `rate` | number | The tax rate applied
+`taxInfo` > `amount` | number |The amount of tax calculated
+`previousBillingInfo` > `priceItems` | array[object] | Collection of items provided for a dynamic priced subscription
+`priceItems` > `thirdPartyRef` | string | An external referenced provided
+`priceItems` > `supplierId` | integer | An internal supplierId if applicable
+`priceItems` > `price` | number |G The price to charge
+`priceItems` > `description` | string | The description related to the charge
+`priceItems` > `isGrossAmount` | string |An indication whether the price should be charged as gross or net
+`priceItems` > `taxCategoryName` | string |The category of tax that was applied
+`recurringPaymentInfo` > `groupSubscriptionInfo` | object |Information related to a group subscription
+`groupSubscriptionInfo` > `licenseLevel` | integer |The number of standard licenses the subscription has
+`groupSubscriptionInfo` > `overflowLevel` | integer |The number of overflow licenses the subscription has
+`groupSubscriptionInfo` > `subscriberList` | array[object] |Collection of all associated subscribers
+`subscriberList` > `subscriptionId` | integer |The unique identifier to the subscription for the account
+`subscriberList` > `emailAddress` | string | The email address of the subscribed account
+`subscriberList` > `clientUserId` | string | The clientUserId of the subscribed account
+`groupSubscriptionInfo` > `overFlowCount` | integer |The number of overflow licenses used
+`groupSubscriptionInfo` > `fullSubscriptionsCount` | integer |The number of standard licenses used
+`groupSubscriptionInfo` > `currentUserInOverFlow` | string |Indication whether the account is deemed overflow
+`recurringPaymentInfo` > `voucherCodes` | object | Voucher information associated to the subscription
 `voucherCodes` > `voucherCode` | string | The current voucher code against the subscription
-`recurringPaymentInfo` > `voucherCodes` > discountPrice | number | The price charged whilst discounted
+`recurringPaymentInfo` > `voucherCodes` > discountPrice | number | The price charged to the customer as a result of the voucher
 `recurringPaymentInfo` > `statusInfo` | object | Information relating to subscription status
 `statusInfo` > `statusId` | integer | The status identifier for the subscription
 `statusInfo` > `statusDescription` | string | Description of the subscriptions status
@@ -232,8 +231,6 @@ Parameter | Type |  Description |
 `defaultSubscriptionInfo` > `subscriptionStatus` | string | The status of the subscription service
 `defaultSubscriptionInfo` > `subscriptionTitle` | string | The title of the subscription service purchase
 `defaultSubscriptionInfo` > `subscriptionGroup` | string | The group the subscription service belongs
-
-
 
 
 ## Cancel a Subscription
@@ -1187,7 +1184,7 @@ This endpoint allows you to retrieve all configured subscription holidays for a 
 
 Parameter | Type |  Description | 
 --------- | ------- |  ----------- |
-  | array[objects] | The collection of support log entries.
+  | array[objects] | The collection of subscription holidays.
 `subscriptionHolidayReference` | string | Reference to the holiday. 
 `subscriptionReference` | string | Reference to the subscription.
 `startDate` | string | The date at which the holiday period should begin.
