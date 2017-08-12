@@ -3,23 +3,78 @@
 ## Make a Payment
 
 ```shell
-
+curl --request POST \
+  --url https://uat.mppglobal.com/api/accounts/{accountId}/orders \
+  --header 'x-clientId: 1001' \
+  --header 'x-clientPassword: Str0ngP@ssword' \
+  --header 'x-version: 9.0.0' \
+  --header 'content-type: application/json' \
+  --header 'content-type: application/json' \
+  --data '{"logType":"SupportNote","logStatus":"Open","logTitle":"Unable to access content.","logDetails":"Due to the use of cellular data.","systemAccountId":12548695}'
 ```
 
 ```csharp
-
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/orders");
+var request = new RestRequest(Method.POST);
+request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-clientId", "1001");
+request.AddHeader("x-clientPassword", "Str0ngP@ssword");
+request.AddHeader("content-type", "application/json");
+request.AddParameter("application/json", "{\"logType\":\"SupportNote\",\"logStatus\":\"Open\",\"logTitle\":\"Unable to access content.\",\"logDetails\":\"Due to the use of cellular data.\",\"systemAccountId\":12548695}", ParameterType.RequestBody);
+IRestResponse response = client.Execute(request);
 ```
 
 ```java
-
+HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/{accountId}/orders")
+  .header("x-clientId", "1001")
+  .header("x-clientPassword", "Str0ngP@ssword")
+  .header("x-sessionid", "BE52ADA2064C4F9A9D90F28D066D1RFT")
+  .header("x-version", "9.0.0")
+  .header("content-type", "application/json")
+  .body("{\"logType\":\"SupportNote\",\"logStatus\":\"Open\",\"logTitle\":\"Unable to access content.\",\"logDetails\":\"Due to the use of cellular data.\",\"systemAccountId\":12548695}")
+  .asString();
 ```
 
 ```ruby
+require 'uri'
+require 'net/http'
 
+url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/orders")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Post.new(url)
+request["content-type"] = 'application/json'
+request["x-clientid"] = '1001'
+request["x-clientPassword"] = 'Str0ngP@ssword'
+request["x-version"] = '9.0.0'
+request.body = "{\"logType\":\"SupportNote\",\"logStatus\":\"Open\",\"logTitle\":\"Unable to access content.\",\"logDetails\":\"Due to the use of cellular data.\",\"systemAccountId\":12548695}"
+
+response = http.request(request)
+puts response.read_body
 ```
 
 ```python
+import http.client
 
+conn = http.client.HTTPSConnection("uat.mppglobal.com")
+
+payload = "{\"logType\":\"SupportNote\",\"logStatus\":\"Open\",\"logTitle\":\"Unable to access content.\",\"logDetails\":\"Due to the use of cellular data.\",\"systemAccountId\":12548695}"
+
+headers = { 
+    'x-clientid' : '1001',
+    'x-clientPassword': "Str0ngP@ssword",
+    'x-version': "9.0.0",
+    'content-type': "application/json" }
+
+conn.request("POST", "/api/accounts/{accountId}/orders", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))
 ```
 
 ```javascript
@@ -29,10 +84,17 @@
 > The above command returns JSON structured like this:
 
 ```json
-
+{
+    "basketNumber": "433M16125900",
+    "orders": [
+        {
+            "orderId": 16125900
+        }
+    ]
+}
 ```
 
-This end point is present for server-side integrations to take a payment against an account.
+This end point is present for server-side integrations to take a payment against an account for a set of ad-hoc items.
 
 ### HTTP Request
 
@@ -51,14 +113,14 @@ Parameter | Type | Mandatory | Description |
 `pricing` > `currency` | string | No | The currency the payment should be taken in
 `voucherCode` | string | No | eSuite generated voucher code that has been provided during the flow |
 `cvv` | string | No |If the purchase is being made using an non-authorised card, this parameter can be passed in to enable authorisation to take place |
-`orderItems` | array[object] | No |A collection of additional entitlements to provide the account on purchase|
-`orderItems` > `description` | object | No |A collection of additional entitlements to provide the account on purchase|
-`orderItems` > `orderReference` | object | No |A collection of additional entitlements to provide the account on purchase|
-`orderItems` > `comment` | object | No |A collection of additional entitlements to provide the account on purchase|
-`orderItems` > `priceBreakdown` | object | No |A collection of additional entitlements to provide the account on purchase|
-`priceBreakdown` > `grossAmount` | decimal | No |A collection of additional entitlements to provide the account on purchase|
-`priceBreakdown` > `netAmount` | decimal | No |A collection of additional entitlements to provide the account on purchase|
-`priceBreakdown` > `taxAmount` | decimal | No |A collection of additional entitlements to provide the account on purchase|
+`orderItems` | array[object] | No |A collection of items that the account is attempting to purchase
+`orderItems` > `description` | string | No | The description associated to the item
+`orderItems` > `orderReference` | string | No | An external reference that can be associated to each item
+`orderItems` > `comment` | string | No | Additional metadata that may have been provided
+`orderItems` > `priceBreakdown` | object | No | The details relating to the amount the account should pay for the item
+`priceBreakdown` > `grossAmount` | decimal | No | The gross amount for the item
+`priceBreakdown` > `netAmount` | decimal | No | The total amount minue the associated tax amount
+`priceBreakdown` > `taxAmount` | decimal | No |The amount of tax that must be paid on the item
 `orderItems` > `customOrderParameters` | dictionary | No | A collection of custom attributes associated to the payment |
 `customOrderParameters` > `parameterName` | string | No |The custom attribute name|
 `orderItems` > `entitlements` | array[object] | No |A collection of additional entitlements to provide the account on purchase|
@@ -66,7 +128,7 @@ Parameter | Type | Mandatory | Description |
 `entitlements` > `startDate` | string | No |The date on which the entitlement should be valid from|
 `entitlements` > `expiryDate` | string | No |The date at which the account is no longer entitled to the content|
 `orderItems` > `taxInfo` | object | Yes |Collection of tax information|
-`taxInfo` > `category` | Bool | No |Indication as to which tax category to apply|
+`taxInfo` > `category` | string | No |Indication as to which tax category to apply|
 `taxInfo` > `zeroRated` | Bool | No |Indication as to whether the purchase is tax exempt|
 `taxInfo` > `country` | string | No |Country specific tax rate to use|
 `taxInfo` > `state` | string | No |State specific tax rate to use (US Specific)|
@@ -203,15 +265,36 @@ This endpoint allows you to retrieve all payments for a given account.
 <span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/payments</span>
 </div>
 
+### Query Parameters
+
+Parameter | Type | Mandatory | Description | 
+--------- | ------- | ------- | ----------- |
+`createDateFrom` | string | Yes |The earliest date a payment was taken that can be included in the response 
+`createDateTo` | string | Yes | The latest date a payment was taken that can be included in the response 
+`rowsPerPage` | string | Yes | An indication as to how many records to return 
+`currentPage` | string | Yes | The page that should be returned 
+
 ### Response Parameters
 
 Parameter | Type |  Description | 
 --------- | ------- |  ----------- |
- | array[objects] | The collection of support log entries.
-`subscriptionHolidayReference` | string | Reference to the holiday. 
-`subscriptionReference` | string | Reference to the subscription.
-`startDate` | string | The date at which the holiday period should begin.
-`endDate` | string | The date at which the subscription should become active.
+`totalNumberOfRecords` | string | Total number of records available
+`pageNumber` | string | The page of results being displayed
+`resultsPerPage` | string | The total number of records displayed in the response
+`items` | object | Collection of payments associated to the account
+`items` > `cartReference` | string | The specific items that were purchased
+`items` > `fulfilmentReference`  | string | The specific fulfilment this payment is associated
+`items` > `status`  | string | The status of the payment
+`items` > `paymentReference`  | string | The unique identifier associated to the payment
+`items` > `currency`  | string | The date at which the subscription should become active
+`items` > `paymentDate` | string | The date at which the payment was processed
+`items` > `description`  | string | The description associated to the payment
+`items` > `priceBreakdown`  | object | Object relating to the price charged to the account
+`priceBreakdown` > `grossAmount`  | decimal | The total amount paid by the customer for the specific payment
+`priceBreakdown` > `netAmount`  | decimal | The gross amount minus the amount of tax paid
+`priceBreakdown` > `taxAmount`  | decimal | The amount of tax associated to the payment
+`items` > `customPaymentParameters`  | dictionary | A collection of custom attributes associated to the payment 
+`customPaymentParameters` > `parameterName`  | string | The name of the custom attribute
 
 
 ## Update a Payment

@@ -4,47 +4,37 @@
 
 ```shell
 curl --request POST \
-  --url https://uat.mppglobal.com/api/accounts/123456/payment-details/card \
+  --url https://uat.mppglobal.com/api/accounts/{accountId}/payment-details/card \
   --header 'content-type: application/json' \
   --header 'x-clientpassword: Str0ngP@ssword' \
   --header 'x-clientid: 1001' \
-  --data '{"cardNumber":"4111111111111111","cardType":"Visa",
-  "expiryDate":"01/19",  "issueCode":null,"securityCode":"123", 
-  "billingHouseName":"Lilac Cottage","billingHouseFlatNumber":"12",
-  "billingStreet":"Windermere Road","billingDistrict":null,
-  "billingTownCity":"Chester","billingCounty":"Cheshire",
-  "billingPostcode":"CH638BF","billingCountry":"United Kingdom",
-  "setDefault":true,"associatedName":"My Visa Card","skipPreAuth":false}'
+  --data '{"cardNumber":"4111111111111111","cardType":"visa","expiryDate":"11/17","cvv":"123","setDefault":true,"skipPreAuth":false}'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/123456/payment-details/card");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/payment-details/card");
 var request = new RestRequest(Method.POST);
 request.AddHeader("content-type", "application/json");
 request.AddHeader("x-clientpassword", "Str0ngP@ssword");
 request.AddHeader("x-clientid", "1001");
-request.AddParameter("application/json", "{\"cardNumber\":\"4111111111111111\",\"cardType\":\"Visa\",
-  + "\"expiryDate\":\"01/19\",\"issueCode\":null,\"securityCode\":\"123\",
-  + "\"billingHouseName\":\"Lilac Cottage\",\"billingHouseFlatNumber\":\"12\",\"billingStreet\":\"Windermere Road\",
-  + "\"billingDistrict\":null,\"billingTownCity\":\"Chester\",\"billingCounty\":\"Cheshire\",
-  + "\"billingPostcode\":\"CH638BF\",\"billingCountry\":\"United Kingdom\",\"setDefault\":true,
-  + "\"associatedName\":\"My Visa Card\",\"skipPreAuth\":false}", ParameterType.RequestBody);
+request.AddParameter("application/json", "{\"cardNumber\":\"4111111111111111\",\"cardType\":\"visa\",\"expiryDate\":\"11/17\",\"cvv\":\"123\",\"setDefault\":true,\"skipPreAuth\":false}", ParameterType.RequestBody);
 IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/123456/payment-details/card")
+HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/{accountId}/payment-details/card")
   .header("x-clientid", "1001")
   .header("x-clientpassword", "Str0ngP@ssword")
   .header("content-type", "application/json")
-  .body("{\"cardNumber\":\"4111111111111111\",\"cardType\":\"Visa\",\"expiryDate\":\"01/19\",\"issueCode\":null,\"securityCode\":\"123\",\"billingHouseName\":\"Lilac Cottage\",\"billingHouseFlatNumber\":\"12\",\"billingStreet\":\"Windermere Road\",\"billingDistrict\":null,\"billingTownCity\":\"Chester\",\"billingCounty\":\"Cheshire\",\"billingPostcode\":\"CH638BF\",\"billingCountry\":\"United Kingdom\",\"setDefault\":true,\"associatedName\":\"My Visa Card\",\"skipPreAuth\":false}").asString();
+  .body("{\"cardNumber\":\"4111111111111111\",\"cardType\":\"visa\",\"expiryDate\":\"11/17\",\"cvv\":\"123\",\"setDefault\":true,\"skipPreAuth\":false}")
+  .asString();
 ```
 
 ```ruby
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/123456/payment-details/card")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/payment-details/card")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -55,7 +45,7 @@ request["x-tokenid"] = '1001'
 request["x-sessionid"] = 'Str0ngP@ssword'
 request["x-version"] = '9.0.0'
 request["content-type"] = 'application/json'
-request.body = "{\"cardNumber\":\"4111111111111111\",\"cardType\":\"Visa\",\"expiryDate\":\"01/19\",\"issueCode\":null,\"cvv\":\"123\",\"billingHouseName\":\"Lilac House\",\"billingHouseFlatNumber\":\"12\",\"billingStreet\":\"Windermere Road\",\"billingDistrict\":null\"billingTownCity\":\"Chester\",\"billingCounty\":\"Cheshire\",\"billingPostcode\":\"CH638BF\",\"billingCountry\":\"United Kingdom\",\"setDefault\":true,\"associatedName\":\"My Visa Card\",\"skipPreAuth\":false}"
+request.body = "{\"cardNumber\":\"4111111111111111\",\"cardType\":\"visa\",\"expiryDate\":\"11/17\",\"cvv\":\"123\",\"setDefault\":true,\"skipPreAuth\":false}"
 
 response = http.request(request)
 ```
@@ -65,7 +55,7 @@ import http.client
 
 conn = http.client.HTTPSConnection("uat.mppglobal.com")
 
-payload = "{\"cardNumber\":\"4111111111111111\",\"cardType\":\"Visa\",\"expiryDate\":\"01/19\",\"issueCode\":null,\"cvv\":\"123\",\"billingHouseName\":\"Lilac House\",\"billingHouseFlatNumber\":\"12\",\"billingStreet\":\"Windermere Road\",\"billingDistrict\":null,\"billingTownCity\":\"Chester\"\"billingCounty\":\"Cheshire\",\"billingPostcode\":\"CH638BF\",\"billingCountry\":\"United Kingdom\",\"setDefault\":true,\"associatedName\":\"My Visa Card\",\"skipPreAuth\":false}"
+payload = "{\"cardNumber\":\"4111111111111111\",\"cardType\":\"visa\",\"expiryDate\":\"11/17\",\"cvv\":\"123\",\"setDefault\":true,\"skipPreAuth\":false}"
 
 headers = {
     'x-clientid' : '1001',
@@ -74,9 +64,31 @@ headers = {
     'content-type': "application/json"
     }
 
-conn.request("POST", "/api/accounts/123456/payment-details/card", payload, headers)
+conn.request("POST", "/api/accounts/{accountId}/payment-details/card", payload, headers)
 
 res = conn.getresponse()
+```
+
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/payment-details/card",
+  "method": "PUT",
+  "headers": {
+    "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
+    "x-sessionid": "4034510a90854b1a887beec9c5675ff5",
+    "x-version": "9.0.0",
+    "origin": "https://www.mppglobal.com",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"cardNumber\":\"4111111111111111\",\"cardType\":\"visa\",\"expiryDate\":\"11/17\",\"cvv\":\"123\",\"setDefault\":true,\"skipPreAuth\":false}"
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 ```
 
 > The above command returns JSON structured like this:
@@ -125,33 +137,30 @@ Remember — you must authorise a card before it can be used
 
 ```shell
 curl --request POST \
-  --url https://uat.mppglobal.com/api/accounts/123456/payment-details/bacs \
+  --url https://uat.mppglobal.com/api/accounts/{accountId}/payment-details/bacs \
   --header 'content-type: application/json' \
   --header 'x-clientpassword: Str0ngP@ssword' \
   --header 'x-clientid: 1001' \
-  --data '{"accountHolderName":"Steven Smith","accountNumber":"11111111","sortCode":"000000",
-  "bacsReference":"AE34567LZ","serviceId":124875}'
+  --data '{"accountHolderName":"Steven Smith","accountNumber":"11111111","sortCode":"000000"}'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/123456/payment-details/bacs");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/payment-details/bacs");
 var request = new RestRequest(Method.POST);
 request.AddHeader("content-type", "application/json");
 request.AddHeader("x-sessionid", "Str0ngP@ssword");
 request.AddHeader("x-tokenid", "1001");
-request.AddParameter("application/json", "{\"accountHolderName\":\"Steven Smith\",
-  "\"accountNumber\":\"11111111\",\"sortCode\":\"000000\",\"bacsReference\":\"AE34567LZ\",\"serviceId\":124875}", 
+request.AddParameter("application/json", "{\"accountHolderName\":\"John Smith\",  "\"accountNumber\":\"11111111\",\"sortCode\":\"000000\"}", 
   ParameterType.RequestBody);
 IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/123456/payment-details/bacs")
+HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/{accountId}/payment-details/bacs")
   .header("x-tokenid", "1001")
   .header("x-sessionid", "Str0ngP@ssword")
   .header("content-type", "application/json")
-  .body("{\"accountHolderName\":\"Steven Smith\",\"accountNumber\":\"11111111\",\"sortCode\":\"000000\",
-    "\"bacsReference\":\"AE34567LZ\",\"serviceId\":124875}")
+  .body("{\"accountHolderName\":\"Steven Smith\",\"accountNumber\":\"11111111\",\"sortCode\":\"000000\"}")
   .asString();
 ```
 
@@ -159,7 +168,7 @@ HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/acco
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/123456/payment-details/bacs")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/payment-details/bacs")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -170,7 +179,7 @@ request["x-tokenid"] = 'Str0ngP@ssword'
 request["x-sessionid"] = '1001'
 request["x-version"] = '9.0.0'
 request["content-type"] = 'application/json'
-request.body = "{\"accountHolderName\":\"Steven Smith\",\"accountNumber\":\"11111111\",\"sortCode\":\"000000\",\"bacsReference\":\"AE34567LZ\",\"serviceId\":124875}"
+request.body = "{\"accountHolderName\":\"John Smith\",\"accountNumber\":\"11111111\"}"
 
 response = http.request(request)
 ```
@@ -180,7 +189,7 @@ import http.client
 
 conn = http.client.HTTPSConnection("uat.mppglobal.com")
 
-payload = "{\"accountHolderName\":\"Steven Smith\",\"accountNumber\":\"11111111\",\"sortCode\":\"000000\",\"bacsReference\":\"AE34567LZ\",\"serviceId\":124875}"
+payload = "{\"accountHolderName\":\"John Smith\",\"accountNumber\":\"11111111\",\"sortCode\":\"000000\"}"
 
 headers = {
     'x-clientpassword': "Str0ngP@ssword",
@@ -189,9 +198,31 @@ headers = {
     'content-type': "application/json"
     }
 
-conn.request("POST", "/api/accounts/123456/payment-details/bacs", payload, headers)
+conn.request("POST", "/api/accounts/{accountId}/payment-details/bacs", payload, headers)
 
 res = conn.getresponse()
+```
+
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/payment-details/bacs",
+  "method": "PUT",
+  "headers": {
+    "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
+    "x-sessionid": "4034510a90854b1a887beec9c5675ff5",
+    "x-version": "9.0.0",
+    "origin": "https://www.mppglobal.com",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"accountHolderName\":\"John Smith\",\"accountNumber\":\"11111111\",\"sortCode\":\"000000\"}"
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 ```
 
 > The above command returns an empty response alongside a HTTP 204
@@ -226,7 +257,7 @@ curl --request POST \
   --header 'x-clientpassword: Str0ngP@ssword' \
   --header 'x-clientid: 1001' \
   --data '{"accountHolderName":"Steve Smith","iban":"IE64BOFI90583812345678",
-  "bic":"BOFIIE2D","serviceId":148754}'
+  "bic":"BOFIIE2D"}'
 ```
 
 ```csharp
@@ -235,18 +266,16 @@ var request = new RestRequest(Method.POST);
 request.AddHeader("content-type", "application/json");
 request.AddHeader("x-clientpassword", "Str0ngP@ssword");
 request.AddHeader("x-clientid", "1001");
-request.AddParameter("application/json", "{\"accountHolderName\":\"Steve Smith\",
- "\"iban\":\"IE64BOFI90583812345678\",\"bic\":\"BOFIIE2D\",\"serviceId\":148754}", ParameterType.RequestBody);
+request.AddParameter("application/json", "{\"accountHolderName\":\"Steve Smith\", "\"iban\":\"IE64BOFI90583812345678\",\"bic\":\"BOFIIE2D\"}", ParameterType.RequestBody);
 IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/123456/payment-details/sepa")
+HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/{accountId}/payment-details/sepa")
   .header("x-clientid", "1001")
   .header("x-clientpassword", "Str0ngP@ssword")
   .header("content-type", "application/json")
-  .body("{\"accountHolderName\":\"Steve Smith\",\"iban\":\"IE64BOFI90583812345678\",\"bic\":\"BOFIIE2D\",
-   "\"serviceId\":148754}")
+  .body("{\"accountHolderName\":\"John Smith\",\"iban\":\"IE64BOFI90583812345678\",\"bic\":\"BOFIIE2D\")
   .asString();
 ```
 
@@ -254,7 +283,7 @@ HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/acco
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/123456/payment-details/sepa")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/payment-details/sepa")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -265,7 +294,7 @@ request["x-clientid"] = '1001'
 request["x-clientpassword"] = 'Str0ngP@ssword'
 request["x-version"] = '9.0.0'
 request["content-type"] = 'application/json'
-request.body = "{\"accountHolderName\":\"Steve Smith\",\"iban\":\"IE64BOFI90583812345678\",\"bic\":\"BOFIIE2D\",\"serviceId\":\"148754\"}"
+request.body = "{\"accountHolderName\":\"John Smith\",\"iban\":\"IE64BOFI90583812345678\",\"bic\":\"BOFIIE2D\"}"
 
 response = http.request(request)
 ```
@@ -275,7 +304,7 @@ import http.client
 
 conn = http.client.HTTPSConnection("uat.mppglobal.com")
 
-payload = "{\"accountHolderName\":\"Steve Smith\",\"iban\":\"IE64BOFI90583812345678\",\"bic\":\"BOFIIE2D\",\"serviceId\":\"148754\"}"
+payload = "{\"accountHolderName\":\"John Smith\",\"iban\":\"IE64BOFI90583812345678\",\"bic\":\"BOFIIE2D\"}"
 
 headers = {
     'x-clientid': "1001",
@@ -284,10 +313,33 @@ headers = {
     'content-type': "application/json"
     }
 
-conn.request("POST", "/api/accounts/123456/payment-details/sepa", payload, headers)
+conn.request("POST", "/api/accounts/{accountId}/payment-details/sepa", payload, headers)
 
 res = conn.getresponse()
 ```
+
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/payment-details/sepa",
+  "method": "PUT",
+  "headers": {
+    "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
+    "x-sessionid": "4034510a90854b1a887beec9c5675ff5",
+    "x-version": "9.0.0",
+    "origin": "https://www.mppglobal.com",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"accountHolderName\":\"John Smith\",\"iban\":\"IE64BOFI90583812345678\",\"bic\":\"BOFIIE2D\"}"
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
 > The above command returns an empty response alongside a HTTP 204
 
 
@@ -315,14 +367,14 @@ Parameter | Type | Mandatory | Description |
 
 ```shell
 curl --request GET \
-  --url https://uat.mppglobal.com/api/accounts/123456/payment-details \
+  --url https://uat.mppglobal.com/api/accounts/{accountId}/payment-details \
   --header("x-clientid", "1001") \
   --header("x-clientpassword", "Str0ngP@ssword")\
   --data '{}'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/123456/payment-details");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/payment-details");
 var request = new RestRequest(Method.GET);
 request.AddHeader("x-clientpassword", "Str0ngP@ssword");
 request.AddHeader("x-clientid", "1001");
@@ -331,7 +383,7 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/123456/payment-details")
+HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountId}/payment-details")
   .header("x-clientid", "1001")
   .header("x-clientpassword", "Str0ngP@ssword")
   .body("{}")
@@ -342,7 +394,7 @@ HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accou
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/123456/payment-details")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/payment-details")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -371,7 +423,7 @@ headers = {
     'x-version': "9.0.0"
     }
 
-conn.request("GET", "/api/accounts/123456/payment-details", payload, headers)
+conn.request("GET", "/api/accounts/{accountId}/payment-details", payload, headers)
 
 res = conn.getresponse()
 ```

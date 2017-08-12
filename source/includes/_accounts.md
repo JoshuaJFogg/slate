@@ -9,7 +9,7 @@ curl --request POST \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
   --header 'x-version: 9.0.0' \
-  --data '{""email":"john.smith@mppglobal.com","clientUserId":"mpp-123456","salutation":"Mr","firstName":"John","lastName":"Smith","phoneNumber":"01513287445","dateOfBirth":"1991-04-12T00:00:01","gender":"Male","addresses":[{"addressType":"Home","houseName":"Blosson Cottage","houseNumber":"12a","street":"Flower Street","townCity":"Garden","district":"Allotment","county":null,"postCode":"NE21ZZ","country":"United Kingdom"}],"customParameters":{"colour":"Blue","referrer":"Facebook"}}'
+  --data '{"email":"johnsmith-api@mppglobal.com","password":"4034510a@!","clientUserId":"84AF2AAC-C1BD-4A93-AB08-57D2D7A54274"}"
 ```
 
 ```csharp
@@ -19,7 +19,7 @@ request.AddHeader("content-type", "application/json");
 request.AddHeader("x-version", "9.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
-request.AddParameter("application/json", "{\"email\":\"john.smith@mppglobal.com\",\"clientUserId\":\"mpp-123456\",\"salutation\":\"Mr\",\"firstName\":\"John\",\"lastName\":\"Smith\",\"phoneNumber\":\"01513287445\",\"dateOfBirth\":\"1991-04-12T00:00:01\",\"gender\":\"Male\",\"addresses\":[{\"addressType\":\"Home\",\"houseName\":\"Blosson Cottage\",\"houseNumber\":\"12a\",\"street\":\"Flower Street\",\"townCity\":\"Garden\",\"district\":\"Allotment\",\"county\":null,\"postCode\":\"NE21ZZ\",\"country\":\"United Kingdom\"}],\"customParameters\":{\"colour\":\"Blue\",\"referrer\":\"Facebook\"}}", ParameterType.RequestBody);
+request.AddParameter("application/json", "{\"email\":\"johnsmith-api@mppglobal.com\",\"password\":\"4034510a@!\",\"clientUserId\":\"84AF2AAC-C1BD-4A93-AB08-57D2D7A54274\"}", ParameterType.RequestBody);
 IRestResponse response = client.Execute(request);
 ```
 
@@ -29,7 +29,7 @@ HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/acco
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-version", "9.0.0")
   .header("content-type", "application/json")
-  .body("{\"email\":\"john.smith@mppglobal.com\",\"clientUserId\":\"mpp-123456\",\"salutation\":\"Mr\",\"firstName\":\"John\",\"lastName\":\"Smith\",\"phoneNumber\":\"01513287445\",\"dateOfBirth\":\"1991-04-12T00:00:01\",\"gender\":\"Male\",\"addresses\":[{\"addressType\":\"Home\",\"houseName\":\"Blosson Cottage\",\"houseNumber\":\"12a\",\"street\":\"Flower Street\",\"townCity\":\"Garden\",\"district\":\"Allotment\",\"county\":null,\"postCode\":\"NE21ZZ\",\"country\":\"United Kingdom\"}],\"customParameters\":{\"colour\":\"Blue\",\"referrer\":\"Facebook\"}}")
+  .body("{\"email\":\"johnsmith-api@mppglobal.com\",\"password\":\"4034510a@!\",\"clientUserId\":\"84AF2AAC-C1BD-4A93-AB08-57D2D7A54274\"}")
   .asString();
 ```
 
@@ -48,7 +48,7 @@ request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
 request["x-version"] = '9.0.0'
 request["content-type"] = 'application/json'
-request.body = "{\"email\":\"john.smith@mppglobal.com\",\"clientUserId\":\"mpp-123456\",\"salutation\":\"Mr\",\"firstName\":\"John\",\"lastName\":\"Smith\",\"phoneNumber\":\"01513287445\",\"dateOfBirth\":\"1991-04-12T00:00:01\",\"gender\":\"Male\",\"addresses\":[{\"addressType\":\"Home\",\"houseName\":\"Blosson Cottage\",\"houseNumber\":\"12a\",\"street\":\"Flower Street\",\"townCity\":\"Garden\",\"district\":\"Allotment\",\"county\":null,\"postCode\":\"NE21ZZ\",\"country\":\"United Kingdom\"}],\"customParameters\":{\"colour\":\"Blue\",\"referrer\":\"Facebook\"}}"
+request.body = "{\"email\":\"johnsmith-api@mppglobal.com\",\"password\":\"4034510a@!\",\"clientUserId\":\"84AF2AAC-C1BD-4A93-AB08-57D2D7A54274\"}"
 
 response = http.request(request)
 puts response.read_body
@@ -59,7 +59,7 @@ import http.client
 
 conn = http.client.HTTPSConnection("uat.mppglobal.com")
 
-payload = "{\"email\":\"john.smith@mppglobal.com\",\"clientUserId\":\"mpp-123456\",\"salutation\":\"Mr\",\"firstName\":\"John\",\"lastName\":\"Smith\",\"phoneNumber\":\"01513287445\",\"dateOfBirth\":\"1991-04-12T00:00:01\",\"gender\":\"Male\",\"addresses\":[{\"addressType\":\"Home\",\"houseName\":\"Blosson Cottage\",\"houseNumber\":\"12a\",\"street\":\"Flower Street\",\"townCity\":\"Garden\",\"district\":\"Allotment\",\"county\":null,\"postCode\":\"NE21ZZ\",\"country\":\"United Kingdom\"}],\"customParameters\":{\"colour\":\"Blue\",\"referrer\":\"Facebook\"}}"
+payload = "{\"email\":\"johnsmith-api@mppglobal.com\",\"password\":\"4034510a@!\",\"clientUserId\":\"84AF2AAC-C1BD-4A93-AB08-57D2D7A54274\"}"
 
 headers = {
     'x-clientid' : '1001',
@@ -89,7 +89,7 @@ var settings = {
     "content-type": "application/json"
   },
   "processData": false,
-  "data": "{\"email\":\"john.smith@mppglobal.com\",\"clientUserId\":\"mpp-123456\",\"salutation\":\"Mr\",\"firstName\":\"John\",\"lastName\":\"Smith\",\"phoneNumber\":\"01513287445\",\"dateOfBirth\":\"1991-04-12T00:00:01\",\"gender\":\"Male\",\"addresses\":[{\"addressType\":\"Home\",\"houseName\":\"Blosson Cottage\",\"houseNumber\":\"12a\",\"street\":\"Flower Street\",\"townCity\":\"Garden\",\"district\":\"Allotment\",\"county\":null,\"postCode\":\"NE21ZZ\",\"country\":\"United Kingdom\"}],\"customParameters\":{\"colour\":\"Blue\",\"referrer\":\"Facebook\"}}"
+  "data": "{\"email\":\"johnsmith-api@mppglobal.com\",\"password\":\"4034510a@!\"}"
 }
 
 $.ajax(settings).done(function (response) {
@@ -342,7 +342,7 @@ curl --request PUT \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
   --header 'x-version: 9.0.0' \
-  --data '{""email":"john.smith@mppglobal.com","clientUserId":"mpp-123456","salutation":"Mr","firstName":"John","lastName":"Smith","phoneNumber":"01513287445","dateOfBirth":"1991-04-12T00:00:01","gender":"Male","addresses":[{"addressType":"Home","houseName":"Blosson Cottage","houseNumber":"12a","street":"Flower Street","townCity":"Garden","district":"Allotment","county":null,"postCode":"NE21ZZ","country":"United Kingdom"}],"customParameters":{"colour":"Blue","referrer":"Facebook"}}'
+  --data '{"email":"johnsmith-api+1@mppglobal.com","currentPassword":"4034510a@!","newPassword":"4034510aRFT453","firstName":"John","surname":"Smith"}'
 ```
 
 ```csharp
@@ -352,7 +352,7 @@ request.AddHeader("content-type", "application/json");
 request.AddHeader("x-version", "9.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
-request.AddParameter("application/json", "{\"email\":\"john.smith@mppglobal.com\",\"clientUserId\":\"mpp-123456\",\"salutation\":\"Mr\",\"firstName\":\"John\",\"lastName\":\"Smith\",\"phoneNumber\":\"01513287445\",\"dateOfBirth\":\"1991-04-12T00:00:01\",\"gender\":\"Male\",\"addresses\":[{\"addressType\":\"Home\",\"houseName\":\"Blosson Cottage\",\"houseNumber\":\"12a\",\"street\":\"Flower Street\",\"townCity\":\"Garden\",\"district\":\"Allotment\",\"county\":null,\"postCode\":\"NE21ZZ\",\"country\":\"United Kingdom\"}],\"customParameters\":{\"colour\":\"Blue\",\"referrer\":\"Facebook\"}}", ParameterType.RequestBody);
+request.AddParameter("application/json", "{\"email\":\"johnsmith-api+1@mppglobal.com\",\"currentPassword\":\"4034510a@!\",\"newPassword\":\"4034510aRFT453\",\"firstName\":\"John\",\"surname\":\"Smith\"}", ParameterType.RequestBody);
 IRestResponse response = client.Execute(request);
 ```
 
@@ -362,7 +362,7 @@ HttpResponse<String> response = Unirest.put("https://uat.mppglobal.com/api/accou
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-version", "9.0.0")
   .header("content-type", "application/json")
-  .body("{\"email\":\"john.smith@mppglobal.com\",\"clientUserId\":\"mpp-123456\",\"salutation\":\"Mr\",\"firstName\":\"John\",\"lastName\":\"Smith\",\"phoneNumber\":\"01513287445\",\"dateOfBirth\":\"1991-04-12T00:00:01\",\"gender\":\"Male\",\"addresses\":[{\"addressType\":\"Home\",\"houseName\":\"Blosson Cottage\",\"houseNumber\":\"12a\",\"street\":\"Flower Street\",\"townCity\":\"Garden\",\"district\":\"Allotment\",\"county\":null,\"postCode\":\"NE21ZZ\",\"country\":\"United Kingdom\"}],\"customParameters\":{\"colour\":\"Blue\",\"referrer\":\"Facebook\"}}")
+  .body("{\"email\":\"johnsmith-api+1@mppglobal.com\",\"currentPassword\":\"4034510a@!\",\"newPassword\":\"4034510aRFT453\",\"firstName\":\"John\",\"surname\":\"Smith\"}")
   .asString();
 ```
 
@@ -381,7 +381,7 @@ request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
 request["x-version"] = '9.0.0'
 request["content-type"] = 'application/json'
-request.body = "{\"email\":\"john.smith@mppglobal.com\",\"clientUserId\":\"mpp-123456\",\"salutation\":\"Mr\",\"firstName\":\"John\",\"lastName\":\"Smith\",\"phoneNumber\":\"01513287445\",\"dateOfBirth\":\"1991-04-12T00:00:01\",\"gender\":\"Male\",\"addresses\":[{\"addressType\":\"Home\",\"houseName\":\"Blosson Cottage\",\"houseNumber\":\"12a\",\"street\":\"Flower Street\",\"townCity\":\"Garden\",\"district\":\"Allotment\",\"county\":null,\"postCode\":\"NE21ZZ\",\"country\":\"United Kingdom\"}],\"customParameters\":{\"colour\":\"Blue\",\"referrer\":\"Facebook\"}}"
+request.body = "{\"email\":\"johnsmith-api+1@mppglobal.com\",\"currentPassword\":\"4034510a@!\",\"newPassword\":\"4034510aRFT453\",\"firstName\":\"John\",\"surname\":\"Smith\"}"
 
 response = http.request(request)
 puts response.read_body
@@ -392,7 +392,7 @@ import http.client
 
 conn = http.client.HTTPSConnection("uat.mppglobal.com")
 
-payload = "{\"email\":\"john.smith@mppglobal.com\",\"clientUserId\":\"mpp-123456\",\"salutation\":\"Mr\",\"firstName\":\"John\",\"lastName\":\"Smith\",\"phoneNumber\":\"01513287445\",\"dateOfBirth\":\"1991-04-12T00:00:01\",\"gender\":\"Male\",\"addresses\":[{\"addressType\":\"Home\",\"houseName\":\"Blosson Cottage\",\"houseNumber\":\"12a\",\"street\":\"Flower Street\",\"townCity\":\"Garden\",\"district\":\"Allotment\",\"county\":null,\"postCode\":\"NE21ZZ\",\"country\":\"United Kingdom\"}],\"customParameters\":{\"colour\":\"Blue\",\"referrer\":\"Facebook\"}}"
+payload = "{\"email\":\"johnsmith-api+1@mppglobal.com\",\"currentPassword\":\"4034510a@!\",\"newPassword\":\"4034510aRFT453\",\"firstName\":\"John\",\"surname\":\"Smith\"}"
 
 headers = {
     'x-clientid' : '1001',
@@ -422,7 +422,7 @@ var settings = {
     "content-type": "application/json"
   },
   "processData": false,
-  "data": "{\"email\":\"john.smith@mppglobal.com\",\"clientUserId\":\"mpp-123456\",\"salutation\":\"Mr\",\"firstName\":\"John\",\"lastName\":\"Smith\",\"phoneNumber\":\"01513287445\",\"dateOfBirth\":\"1991-04-12T00:00:01\",\"gender\":\"Male\",\"addresses\":[{\"addressType\":\"Home\",\"houseName\":\"Blosson Cottage\",\"houseNumber\":\"12a\",\"street\":\"Flower Street\",\"townCity\":\"Garden\",\"district\":\"Allotment\",\"county\":null,\"postCode\":\"NE21ZZ\",\"country\":\"United Kingdom\"}],\"customParameters\":{\"colour\":\"Blue\",\"referrer\":\"Facebook\"}}"
+  "data": "{\"email\":\"johnsmith-api+1@mppglobal.com\",\"currentPassword\":\"4034510a@!\",\"newPassword\":\"4034510aRFT453\",\"firstName\":\"John\",\"surname\":\"Smith\"}"
 }
 
 $.ajax(settings).done(function (response) {
