@@ -796,16 +796,16 @@ Parameter | Type | Mandatory | Description |
 `workFlowCustomParameters` > `parameterName` | string | No |The custom attribute name|
 `customAccountParameters` | dictionary | No | A collection of custom attributes associated to the account |
 `customAccountParameters` > `parameterName` | string | No |The custom attribute name|
-`orderItems` | array[object] | No |A collection of additional entitlements to provide the account on purchase|
+`orderItems` | array[object] | No |A collection ofitems that will be purchased|
 `orderItems` > `customOrderParameters` | dictionary | No | A collection of custom attributes associated to the payment |
 `customOrderParameters` > `parameterName` | string | No |The custom attribute name|
-`orderItems` > `description` | object | No |A collection of additional entitlements to provide the account on purchase|
-`orderItems` > `orderReference` | object | No |A collection of additional entitlements to provide the account on purchase|
-`orderItems` > `comment` | object | No |A collection of additional entitlements to provide the account on purchase|
-`orderItems` > `priceBreakdown` | object | No |A collection of additional entitlements to provide the account on purchase|
-`priceBreakdown` > grossAmount | decimal | No |A collection of additional entitlements to provide the account on purchase|
-`priceBreakdown` > netAmount | decimal | No |A collection of additional entitlements to provide the account on purchase|
-`priceBreakdown` > taxAmount | decimal | No |A collection of additional entitlements to provide the account on purchase|
+`orderItems` > `description` | string | Yes |The description of the item being purchased|
+`orderItems` > `orderReference` | string | No |External reference for the item being purchased|
+`orderItems` > `comment` | string | No |Additional comment against the item|
+`orderItems` > `priceBreakdown` | object | Yes |The payment amounts related to the purchase|
+`priceBreakdown` > grossAmount | decimal | Yes |The amount the account will be charged|
+`priceBreakdown` > netAmount | decimal | Yes |The amount that will be available after tax|
+`priceBreakdown` > taxAmount | decimal | Yes |The amount of tax associated to the item|
 `orderItems` > `taxInfo` | object | Yes |Collection of tax information|
 `taxInfo` > `category` | Bool | No |Indication as to whether the purchase is tax exempt|
 `taxInfo` > `zeroRated` | Bool | No |Indication as to whether the purchase is tax exempt|
