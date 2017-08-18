@@ -246,7 +246,7 @@ An account is able to authenticate using their Facebook account and then retriev
 ### HTTP Request
 
 <div class="endpoint-cont">
-<span class="endpoint-verb endpoint-verb-get">POST</span>
+<span class="endpoint-verb endpoint-verb-post">POST</span>
 <span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/external-providers/facebook</span>
 </div>
 
@@ -346,7 +346,7 @@ If during the authentication process with Facebook, eSuite deems the Facebook ac
 ### HTTP Request
 
 <div class="endpoint-cont">
-<span class="endpoint-verb endpoint-verb-get">POST</span>
+<span class="endpoint-verb endpoint-verb-post">POST</span>
 <span class="endpoint-path">https://uat.mppglobal.com/api/accounts/external-providers</span>
 </div>
 
@@ -436,7 +436,7 @@ This endpoint allows you to link an existing eSuite account to their Facebook pr
 ### HTTP Request
 
 <div class="endpoint-cont">
-<span class="endpoint-verb endpoint-verb-get">POST</span>
+<span class="endpoint-verb endpoint-verb-post">POST</span>
 <span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/link/external-providers/facebook</span>
 </div>
 

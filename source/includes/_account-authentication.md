@@ -112,7 +112,7 @@ When eSuite is being used as a primary identity platform, authentication is hand
 ### HTTP Request
 
 <div class="endpoint-cont">
-<span class="endpoint-verb endpoint-verb-get">POST</span>
+<span class="endpoint-verb endpoint-verb-post">POST</span>
 <span class="endpoint-path">https://uat.mppglobal.com/authenticate/</span>
 </div>
 
@@ -219,7 +219,7 @@ Authentication via a ClientUserId is required when eSuite is not the primary ide
 ### HTTP Request
 
 <div class="endpoint-cont">
-<span class="endpoint-verb endpoint-verb-get">POST</span>
+<span class="endpoint-verb endpoint-verb-post">POST</span>
 <span class="endpoint-path">https://uat.mppglobal.com/api/authenticate/{clientUserId}</span>
 </div>
 

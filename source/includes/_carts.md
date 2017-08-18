@@ -360,7 +360,7 @@ An existing cart can be edited by calling the following endpoint. An example whe
 ### HTTP Request
 
 <div class="endpoint-cont">
-<span class="endpoint-verb endpoint-verb-delete">PATCH</span>
+<span class="endpoint-verb endpoint-verb-patch">PATCH</span>
 <span class="endpoint-path">https://uat.mppglobal.com/api/carts/{cartResourceReference}</span>
 </div>
 

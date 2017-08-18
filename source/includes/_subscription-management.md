@@ -341,7 +341,7 @@ Calling this endpoint will allow you to hard cancel a subscription. The successf
 ### HTTP Request
 
 <div class="endpoint-cont">
-<span class="endpoint-verb endpoint-verb-get">PATCH</span>
+<span class="endpoint-verb endpoint-verb-patch">PATCH</span>
 <span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionId}</span>
 </div>
 
@@ -578,7 +578,7 @@ Calling this endpoint will allow you to add a voucher code to an existing subscr
 ### HTTP Request
 
 <div class="endpoint-cont">
-<span class="endpoint-verb endpoint-verb-get">POST</span>
+<span class="endpoint-verb endpoint-verb-post">POST</span>
 <span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/vouchers</span>
 </div>
 
@@ -952,7 +952,7 @@ In the event you need to update a subscription holiday, this end point should be
 ### URL Endpoint
 
 <div class="endpoint-cont">
-<span class="endpoint-verb endpoint-verb-put">PATCH</span>
+<span class="endpoint-verb endpoint-verb-patch">PATCH</span>
 <span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}</span>
 </div>
 

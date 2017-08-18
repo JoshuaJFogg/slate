@@ -356,7 +356,7 @@ In the event you need to update a support log entry, this end point should be ca
 ### URL Endpoint
 
 <div class="endpoint-cont">
-<span class="endpoint-verb endpoint-verb-put">PATCH</span>
+<span class="endpoint-verb endpoint-verb-patch">PATCH</span>
 <span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}</span>
 </div>
 

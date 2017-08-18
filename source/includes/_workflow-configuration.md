@@ -488,7 +488,7 @@ If you would like to generate a more specific session for the purpose of purchas
 ### HTTP Request
 
 <div class="endpoint-cont">
-<span class="endpoint-verb endpoint-verb-get">POST</span>
+<span class="endpoint-verb endpoint-verb-post">POST</span>
 <span class="endpoint-path">https://uat.mppglobal.com/api/workflows/configurations/subscriptions</span>
 </div>
 
@@ -634,7 +634,7 @@ If you would like to generate a more specific session for the purpose of purchas
 ### HTTP Request
 
 <div class="endpoint-cont">
-<span class="endpoint-verb endpoint-verb-get">POST</span>
+<span class="endpoint-verb endpoint-verb-post">POST</span>
 <span class="endpoint-path">https://uat.mppglobal.com/api/workflows/configurations/products</span>
 </div>
 
@@ -773,7 +773,7 @@ If you would like to generate a more specific session for a one off charge, call
 ### HTTP Request
 
 <div class="endpoint-cont">
-<span class="endpoint-verb endpoint-verb-get">POST</span>
+<span class="endpoint-verb endpoint-verb-post">POST</span>
 <span class="endpoint-path">https://uat.mppglobal.com/api/workflows/configurations/miscellaneous-charge</span>
 </div>
 
@@ -917,7 +917,7 @@ If you would like to generate a more specific session for the purpose of purchas
 ### HTTP Request
 
 <div class="endpoint-cont">
-<span class="endpoint-verb endpoint-verb-get">POST</span>
+<span class="endpoint-verb endpoint-verb-post">POST</span>
 <span class="endpoint-path">https://uat.mppglobal.com/api/workflows/configurations/service-credits</span>
 </div>
 

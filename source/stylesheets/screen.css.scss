@@ -206,6 +206,12 @@ html, body {
   .tocify-header {
     font-weight: bold;
     font-size: 13px;
+  
+    .tocify-item>a:hover {
+      background-color: #ccc;
+      color: #333;
+    }
+
   }
 
   // Subheaders are the submenus that slide open
@@ -219,6 +225,11 @@ html, body {
       padding-left: $nav-padding + $nav-indent;
       font-size: 13px;
       font-weight: normal;
+    }
+
+    .tocify-item>a:hover {
+      background-color: $nav-active-bg;
+      color: #fff;
     }
 
     // for embossed look:
@@ -485,12 +496,12 @@ html, body {
     padding-bottom:20px;
     padding-left: 15px;
     padding-right: 15px;
-    margin-left: 2em;
+    margin-left: 2.5em;
     width:48%;
     th,td {
       text-align: left;
       vertical-align: top;
-      line-height: 2;
+      line-height: 2.2;
       font-size:14px;
     }
 
@@ -545,6 +556,7 @@ html, body {
     border-radius: 3px;
     @extend %break-words;
     @extend %code-font;
+    font-weight: bold;
   }
 
   pre>code {

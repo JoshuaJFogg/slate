@@ -72,7 +72,7 @@ For the completion of standard payment options, making the following `POST` requ
 ### HTTP Request
 
 <div class="endpoint-cont">
-<span class="endpoint-verb endpoint-verb-get">POST</span>
+<span class="endpoint-verb endpoint-verb-post">POST</span>
 <span class="endpoint-path">https://uat.mppglobal.com/api/workflow/purchases/subscriptions</span>
 </div>
 
@@ -174,7 +174,7 @@ For the completion of standard payment options, making the following `POST` requ
 ### HTTP Request
 
 <div class="endpoint-cont">
-<span class="endpoint-verb endpoint-verb-get">POST</span>
+<span class="endpoint-verb endpoint-verb-post">POST</span>
 <span class="endpoint-path">https://uat.mppglobal.com/api/workflow/purchases/products</span>
 </div>
 
@@ -272,7 +272,7 @@ For the completion of standard payment options, making the following `POST` requ
 ### HTTP Request
 
 <div class="endpoint-cont">
-<span class="endpoint-verb endpoint-verb-get">POST</span>
+<span class="endpoint-verb endpoint-verb-post">POST</span>
 <span class="endpoint-path">https://uat.mppglobal.com/api/workflow/purchases/miscellaneous-charge</span>
 </div>
 
@@ -372,7 +372,7 @@ For the completion of standard payment options, making the following `POST` requ
 ### HTTP Request
 
 <div class="endpoint-cont">
-<span class="endpoint-verb endpoint-verb-get">POST</span>
+<span class="endpoint-verb endpoint-verb-post">POST</span>
 <span class="endpoint-path">https://uat.mppglobal.com/api/workflow/purchases/service-credits</span>
 </div>
 
@@ -456,7 +456,7 @@ For the completion of alternative subscription options, making the following `PA
 ### HTTP Request
 
 <div class="endpoint-cont">
-<span class="endpoint-verb endpoint-verb-get">PATCH</span>
+<span class="endpoint-verb endpoint-verb-patch">PATCH</span>
 <span class="endpoint-path">https://uat.mppglobal.com/api/workflow/purchases/subscription</span>
 </div>
 
@@ -525,7 +525,7 @@ For the completion of alternative product purchase options, making the following
 ### HTTP Request
 
 <div class="endpoint-cont">
-<span class="endpoint-verb endpoint-verb-get">PATCH</span>
+<span class="endpoint-verb endpoint-verb-patch">PATCH</span>
 <span class="endpoint-path">https://uat.mppglobal.com/api/workflow/purchases/products</span>
 </div>
 
@@ -600,7 +600,7 @@ For the completion of alternative one-off charge, making the following `PATCH` r
 ### HTTP Request
 
 <div class="endpoint-cont">
-<span class="endpoint-verb endpoint-verb-get">PATCH</span>
+<span class="endpoint-verb endpoint-verb-patch">PATCH</span>
 <span class="endpoint-path">https://uat.mppglobal.com/api/workflow/purchases/miscellaneous-charge</span>
 </div>
 
@@ -669,7 +669,7 @@ For the completion of alternative credits purchase, making the following `PATCH`
 ### HTTP Request
 
 <div class="endpoint-cont">
-<span class="endpoint-verb endpoint-verb-get">PATCH</span>
+<span class="endpoint-verb endpoint-verb-patch">PATCH</span>
 <span class="endpoint-path">https://uat.mppglobal.com/api/workflow/purchases/service-credits</span>
 </div>
 

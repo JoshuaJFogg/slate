@@ -108,7 +108,7 @@ For the completion of standard payment options, making the following `POST` requ
 ### HTTP Request
 
 <div class="endpoint-cont">
-<span class="endpoint-verb endpoint-verb-get">POST</span>
+<span class="endpoint-verb endpoint-verb-post">POST</span>
 <span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions</span>
 </div>
 
