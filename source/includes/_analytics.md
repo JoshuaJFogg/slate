@@ -104,37 +104,37 @@ This endpoint can be used to extract predefined datasets from eSuite for use in 
 
 ### Available Data Sources
 
-Friendly Name |Method Name |  
---------- |--------- |  
-Account authentication attempts (per day) | `Dynamic_Account_Authentication_Attempts` | 
-Account authentication attempts (per hour) | `Dynamic_Authentication_RequestsPerHour` | 
-Account Status | `Dynamic_Accounts_ByStatus` | 
-Account creation profile | `Dynamic_Accounts_CreatedByDay` | 
-Expiring Cards | `Dynamic_Cards_Expiring_Next_Month` | 
-Consumer Payment Methods | `Dynamic_Consumer_Payment_Methods` | 
-Payment card authorisation attempts | `Dynamic_CreditDebitCard_Autorisations` |  
-Most redeemed Offers | `Dynamic_Most_Redeemed_Offers` | 
-None Subscription Revenue (by day) | `Dynamic_NonSubscriptions_RevenueByDay` | 
-None Subscription Revenue (by payment type) | `Dynamic_NonSubscriptions_RevenueByPaymentType` | 
-Payment Attempts (by period) | `Dynamic_Payment_Attempts_Per_Period` | 
-Promotion Code redemption (by day) | `Dynamic_PromotionCodes_ByDay` | 
-Promotion Code redemption (by period) | `Dynamic_PromotionCodes_RedeemedInPeriod` | 
-All revenue generated per day | `Dynamic_Revenue_AllByDay` |  
-API Method Count | `Dynamic_RPM_GetCountOfApiMethods` | 
-Top RPM Count | `Dynamic_RPM_GetTop50Minutes` | 
-Active Subscription (by day) | `Dynamic_Subscriptions_ActiveByDay` | 
-Active Subscription (by Subscription Service) | `Dynamic_Subscriptions_ActiveByServiceId` | 
-Subscriptions added | `Dynamic_Subscriptions_Added` | 
-Subscription Churn (by month) | `Dynamic_Subscriptions_ChurnbyMonth` | 
-Subscription Churn (by reason) | `Dynamic_Subscriptions_ChurnByReason` | 
-Subscription Churn (by Subscription Sevice) | `Dynamic_Subscriptions_ChurnByService` | 
-Churn Prediction Precision (previous month)  | `Dynamic_Subscriptions_ChurnPredictionPrecisionV5LastMonth` | 
-Churn Prediction Precision (current month) | `Dynamic_Subscriptions_ChurnPredictionPrecisionV5ThisMonth` | 
-Subscription revenue (by day) | `Dynamic_Subscriptions_RevenueByDay` | 
-Subscription revenue (by payment type) | `Dynamic_Subscriptions_RevenueByPaymentType` | 
-Top performing Subscriptions | `Dynamic_Top_Subscription_Types` | 
-Voucher redemption | `Dynamic_Voucher_Codes_Redeemed_Per_Period` | 
-eSuite Core API Requests (per minute) | `RPM_Core_Get` | 
+ |
+--------- 
+`Dynamic_Account_Authentication_Attempts` <br />Account authentication attempts (per day) | 
+`Dynamic_Authentication_RequestsPerHour` <br />Account authentication attempts (per hour) | 
+`Dynamic_Accounts_ByStatus`<br />Account Status |  
+`Dynamic_Accounts_CreatedByDay` <br />Account creation profile | 
+`Dynamic_Cards_Expiring_Next_Month`<br />Expiring Cards | 
+`Dynamic_Consumer_Payment_Methods` <br />Consumer Payment Methods | 
+`Dynamic_CreditDebitCard_Autorisations` <br />Payment card authorisation attempts | 
+`Dynamic_Most_Redeemed_Offers` <br />Most redeemed Offers | 
+`Dynamic_NonSubscriptions_RevenueByDay` <br />None Subscription Revenue (by day) | 
+`Dynamic_NonSubscriptions_RevenueByPaymentType` <br />None Subscription Revenue (by payment type) | 
+`Dynamic_Payment_Attempts_Per_Period` <br />Payment Attempts (by period) | 
+`Dynamic_PromotionCodes_ByDay` <br />Promotion Code redemption (by day) | 
+`Dynamic_PromotionCodes_RedeemedInPeriod` <br />Promotion Code redemption (by period) | 
+`Dynamic_Revenue_AllByDay` <br />All revenue generated per day | 
+`Dynamic_RPM_GetCountOfApiMethods` <br />API Method Count | 
+`Dynamic_RPM_GetTop50Minutes` <br />Top RPM Count | 
+`Dynamic_Subscriptions_ActiveByDay` <br />Active Subscription (by day) | 
+`Dynamic_Subscriptions_ActiveByServiceId` <br />Active Subscription (by Subscription Service) | 
+ Dynamic_Subscriptions_Added` <br />Subscriptions added |
+`Dynamic_Subscriptions_ChurnbyMonth` <br />Subscription Churn (by month) | 
+`Dynamic_Subscriptions_ChurnByReason` <br />ubscription Churn (by reason) | 
+`Dynamic_Subscriptions_ChurnByService` <br />Subscription Churn (by Subscription Sevice) | 
+`Dynamic_Subscriptions_ChurnPredictionPrecisionV5LastMonth` <br />Churn Prediction Precision (previous month)  | 
+`Dynamic_Subscriptions_ChurnPredictionPrecisionV5ThisMonth` <br />Churn Prediction Precision (current month) | 
+`Dynamic_Subscriptions_RevenueByDay` <br />Subscription revenue (by day) | 
+`Dynamic_Subscriptions_RevenueByPaymentType` <br />Subscription revenue (by payment type) | 
+`Dynamic_Top_Subscription_Types` <br />Top performing Subscriptions | 
+`Dynamic_Voucher_Codes_Redeemed_Per_Period` <br />Voucher redemption | 
+`RPM_Core_Get` <br />eSuite Core API Requests (per minute) | 
 
 
 
