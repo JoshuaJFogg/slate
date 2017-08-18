@@ -236,20 +236,20 @@ This endpoint allows the retrieval of a specific cart that has been created on t
 
 ### Response Parameters
 
-Parameter | Type |  Description | 
---------- | ------- | ----------- |
-`lineItemReference` | string | Line Item Reference
-`description` | string | Description of the line item
-`pricing` | object | Collection of information regarding pricing
-`pricing` > `grossAmount` | number | The gross amount of the line item
-`pricing` > `netAmount` | number | The net amount of the line item
-`pricing` > `taxAmount` | number | The tax amount of the line item
-`pricing` > `currency` | string | Currency of the transaction
-`quantity` | integer | Number of the line item being purchased
-`productInfo` | object | Collection of Product information| 
-`productInfo > productId` | integer | The pre-configured product identifier
-`customLineItemParameters` | dictionary | Collection of custom line item parameters
-`customLineItemParameters` > `parameterName` | string | Name associated to the custom parameter
+ |  |  
+--------- | ------- | 
+`lineItemReference` <br />Line Item Reference| <span class="string">string</span> | 
+`description` <br />Description of the line item| <span class="string">string</span> | 
+`pricing` <br />Collection of information regarding pricing| <span class="object">object</span> | 
+`pricing` > `grossAmount` <br />The gross amount of the line item| <span style="font-weight:bold;color:#666;">number</span> | 
+`pricing` > `netAmount` <br />The net amount of the line item| <span style="font-weight:bold;color:#666;">number</span> | 
+`pricing` > `taxAmount` <br />The tax amount of the line item| <span style="font-weight:bold;color:#666;">number</span> | 
+`pricing` > `currency` <br />Currency of the transaction| <span class="string">string</span> | 
+`quantity` <br />Number of the line item being purchased| <span class="integer">integer</span> | 
+`productInfo` <br />Collection of Product information| <span class="object">object</span> | 
+`productInfo > productId` <br />The pre-configured product identifier| <span class="integer">integer</span> | 
+`customLineItemParameters` <br />Collection of custom line item parameters| <span class="dictionary">dictionary</span> | 
+`customLineItemParameters` > `parameterName` <br />Name associated to the custom parameter| <span class="string">string</span> | 
 
 ## Update a Cart
 
@@ -591,19 +591,19 @@ In order to add a new item to a cart, this endpoint should be called. This endpo
 
 ### POST Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-`description` | string | Yes* | Description of the line item
-`pricing` | object | No | Collection of information regarding pricing
-`pricing` > `grossAmount` | number | Yes | The gross amount of the line item
-`pricing` > `netAmount`| number | Yes | The net amount of the line item
-`pricing` > `taxAmount` | number | Yes | The tax amount of the line item
-`pricing` > `currency` | string | Yes* | Currency of the transaction
-`pricing` > `priceId` | string | No* | The pre-configured eSuite price identifier
-`productId` | integer | No | The pre-configured eSuite product identifier
-`quantity` | integer | Yes | Number of the line item being purchased
-`customLineItemParameters` | dictionary | No | Collection of custom line item parameters
-`customLineItemParameters` > parameterName | string | No | Name associated to the custom parameter
+ |  |  | 
+--------- | ------- | ------- | 
+`description` <br />Description of the line item| <span class="string">string</span> | <span class="required">Required*</span> | 
+`pricing` <br />Collection of information regarding pricing| <span class="object">object</span> |  | 
+`pricing` > `grossAmount` <br />The gross amount of the line item| <span style="font-weight:bold;color:#666;">number</span> | <span class="required">Required</span> | 
+`pricing` > `netAmount`<br />The net amount of the line item| <span style="font-weight:bold;color:#666;">number</span> | <span class="required">Required</span> | 
+`pricing` > `taxAmount` <br />The tax amount of the line item| <span style="font-weight:bold;color:#666;">number</span> | <span class="required">Required</span> | 
+`pricing` > `currency` <br />Currency of the transaction| <span class="string">string</span> | <span class="required">Required*</span> | 
+`pricing` > `priceId` <br />The pre-configured eSuite price identifier| <span class="string">string</span> |  | 
+`productId` <br />The pre-configured eSuite product identifier| <span class="integer">integer</span> |  | 
+`quantity` <br />Number of the line item being purchased| <span class="integer">integer</span> | <span class="required">Required</span> | 
+`customLineItemParameters` <br />Collection of custom line item parameters| <span class="dictionary">dictionary</span> |  | 
+`customLineItemParameters` > parameterName <br />Name associated to the custom parameter| <span class="string">string</span> |  | 
 
 ## Delete a Line-item
 
@@ -832,20 +832,20 @@ Calling this endpoint will allow for the retrieval of all carts associated to an
 
 ### Response Parameters
 
-Parameter | Type |  Description | 
---------- | ------- | ----------- |
-`lineItemReference` | string | Line Item Reference
-`description` | string | Description of the line item
-`pricing` | object | Collection of information regarding pricing
-`pricing` > `grossAmount` | number | The gross amount of the line item
-`pricing` > `netAmount` | number | The net amount of the line item
-`pricing` > `taxAmount` | number | The tax amount of the line item
-`pricing` > `currency` | string | Currency of the transaction
-`quantity` | integer | Number of the line item being purchased
-`productInfo` | object | Collection of Product information| 
-`productInfo > productId` | integer | The pre-configured product identifier
-`customLineItemParameters` | dictionary | Collection of custom line item parameters
-`customLineItemParameters` > `parameterName` | string | Name associated to the custom parameter
+ |  |  
+--------- | ------- | 
+`lineItemReference` <br />Line Item Reference| <span class="string">string</span> | 
+`description` <br />Description of the line item| <span class="string">string</span> | 
+`pricing` <br />Collection of information regarding pricing| <span class="object">object</span> | 
+`pricing` > `grossAmount` <br />The gross amount of the line item| <span style="font-weight:bold;color:#666;">number</span> | 
+`pricing` > `netAmount` <br />The net amount of the line item| <span style="font-weight:bold;color:#666;">number</span> | 
+`pricing` > `taxAmount` <br />The tax amount of the line item| <span style="font-weight:bold;color:#666;">number</span> | 
+`pricing` > `currency` <br />Currency of the transaction| <span class="string">string</span> | 
+`quantity` <br />Number of the line item being purchased| <span class="integer">integer</span> | 
+`productInfo` <br />Collection of Product information| <span class="object">object</span> | 
+`productInfo > productId` <br />The pre-configured product identifier| <span class="integer">integer</span> | 
+`customLineItemParameters` <br />Collection of custom line item parameters| <span class="dictionary">dictionary</span> | 
+`customLineItemParameters` > `parameterName` <br />Name associated to the custom parameter| <span class="string">string</span> | 
 
 
 

@@ -784,10 +784,40 @@ html, body {
 }
 
 
+.required {
+  font-style: italic;
+  font-weight: bold;
+}
 
 
-
-
+.bool {
+  font-weight: bold;
+  color: #6460aa;
+}
+.integer {
+  font-weight: bold;
+  color: #cc004c;
+}
+.string {
+  font-weight: bold;
+  color: #0089d0;
+}
+.decimal {
+  font-weight: bold;
+  color: #f37021;
+}
+.object {
+  font-weight: bold;
+  color: #0db14b;
+}
+.array {
+  font-weight: bold;
+  color: #e6a128;
+}
+.dictionary {
+  font-weight: bold;
+  color: #1baa97;
+}
 
 
 

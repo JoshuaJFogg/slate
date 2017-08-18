@@ -95,29 +95,29 @@ This endpoint allows you to create a payment instruction for a specific account.
 
 ### Request Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-`cartReference` | string | Yes | The cart which is default for the payment instruction.
-`paymentMethod` | string | Yes | The default payment method for the payment instruction.
-`addressReference` | string | Yes | The reference addrress the fulfilments will be delivered to.
-`voucherCode` | string | No | A discount code generated from eSuite
-`fulfilmentInfo` | array[objects] | Yes | Information relating to each fulfilment and associated payments
-`fulfilmentInfo` > `fulfilmentType` | string | No | The type of fulfilment being purchase. Only `physical` is available.|
-`fulfilmentInfo` > `addressReference` |string |No |An address reference that will override the top level address|
-`fulfilmentInfo` > `fulfilmentDates`|array[string]| Yes | The collection of dates the fulfilments will be shipped|
-`fulfilmentInfo` > `leadTime`|integer|No|The number of days lead time needed by a supplier |
-`fulfilmentInfo` > `associatedPayments`|object|Yes| Collection of payments associated to the fulfilment
-`associatedPayments` > `paymentDates`|array[string]|Yes| The dates at which payment should be taken for the fulfilment|
-`customPaymentParameters` | dictionary | No |This is a collection of custom attributes against the payments.
-`customPaymentParameters` > `parameterName` | string | No |Representation of all custom parameters against the payments.
-`customFulfilmentParameters` | dictionary | No |This is a collection of custom attributes against the fulfilments.
-`customFulfilmentParameters` > `parameterName` | string | No |Representation of all custom parameters against the fulfilment.
-`synchronousPaymentInfo` |object| No | An example string
-`synchronousPaymentInfo` > `paymentMethod`| string | Yes |The method by which the payment should be made|
-`synchronousPaymentInfo` > `customPaymentParameters` | dictionary | No |This is a collection of custom attributes against the payments.
-`customPaymentParameters` > `parameterName` | string | No |Representation of all custom parameters against the payments.
-`customPaymentInstructionParameters` | dictionary | No |This is a collection of custom attributes against the payment instructions.
-`customPaymentInstructionParameters` > `parameterName`  | string | No | Representation of all custom parameters against the payment instruction.
+ |  |  | 
+--------- | ------- | ------- | 
+`cartReference` <br />The cart which is default for the payment instruction.| <span class="string">string</span> | <span class="required">Required</span> | 
+`paymentMethod` <br />The default payment method for the payment instruction.| <span class="string">string</span> | <span class="required">Required</span> | 
+`addressReference` <br />The reference addrress the fulfilments will be delivered to.| <span class="string">string</span> | <span class="required">Required</span> | 
+`voucherCode` <br />A discount code generated from eSuite| <span class="string">string</span> |  | 
+`fulfilmentInfo` <br />Information relating to each fulfilment and associated payments| <span class="array">array[objects]</span> | <span class="required">Required</span> | 
+`fulfilmentInfo` > `fulfilmentType` <br />The type of fulfilment being purchase. Only `physical` is available.| <span class="string">string</span> |  | 
+`fulfilmentInfo` > `addressReference` <br />An address reference that will override the top level address| <span class="string">string</span> |  |
+`fulfilmentInfo` > `fulfilmentDates`<br />The collection of dates the fulfilments will be shipped| <span class="array">array[string]</span> | <span class="required">Required</span> | 
+`fulfilmentInfo` > `leadTime`<br />The number of days lead time needed by a supplier | <span class="integer">integer</span> |  |
+`fulfilmentInfo` > `associatedPayments`<br />Collection of payments associated to the fulfilment| <span class="object">object</span> | <span class="required">Required</span> | 
+`associatedPayments` > `paymentDates`<br />The dates at which payment should be taken for the fulfilment| <span class="array">array[string]</span> | <span class="required">Required</span> | 
+`customPaymentParameters` <br />This is a collection of custom attributes against the payments.| <span class="dictionary">dictionary</span> |  |
+`customPaymentParameters` > `parameterName` <br />Representation of all custom parameters against the payments.| <span class="string">string</span> |  |
+`customFulfilmentParameters` <br />This is a collection of custom attributes against the fulfilments.| <span class="dictionary">dictionary</span> |  |
+`customFulfilmentParameters` > `parameterName` <br />Representation of all custom parameters against the fulfilment.| <span class="string">string</span> |  |
+`synchronousPaymentInfo` <br />An example string| <span class="object">object</span> |  | 
+`synchronousPaymentInfo` > `paymentMethod`<br />The method by which the payment should be made| <span class="string">string</span> | <span class="required">Required</span> |
+`synchronousPaymentInfo` > `customPaymentParameters` <br />This is a collection of custom attributes against the payments.| <span class="dictionary">dictionary</span> |  |
+`customPaymentParameters` > `parameterName` <br />Representation of all custom parameters against the payments.| <span class="string">string</span> |  |
+`customPaymentInstructionParameters` <br />This is a collection of custom attributes against the payment instructions.| <span class="dictionary">dictionary</span> |  |
+`customPaymentInstructionParameters` > `parameterName`  <br />Representation of all custom parameters against the payment instruction.| <span class="string">string</span> |  | 
 
 
 ## Retrieve a Payment Instruction
@@ -274,37 +274,37 @@ This endpoint allows you to retrieve a specific support log, for a specific acco
 
 ### Response Parameters
 
-Parameter | Type |  Description | 
---------- | ------- |  ----------- |
-`paymentInstructionReference` | string |  The identifier for the payment instruction.
-`status` | string | The status of the payment instruction.
-`currency` | string | The currency against the payment instruction. 
-`cartReference` | string | The cart which is default for the payment instruction.
-`fulfilmentPaymentMappings` | array[objects] | An array of objects that map payments to their associated fulfilments.
-`fulfilmentPaymentMappings` > `fulfilments` | array[objects] | An array of all fulfilments for the payment instruction.
-`fulfilments` > `fulfilmentReference` | string | The reference identifier to the fulfilment
-`fulfilments` > `fulfilmentStatus` | string | The status of the fulfilment e.g. pending, processing, dispatched or cancelled.
-`fulfilments` > `fulfilmentType` | string | Indication as to whether it is a digital or physical fulfilment.
-`fulfilments` > `expectedDeliveryDate` | string | The date and time the account expects to receive their goods.
-`fulfilments` > `supplierNotificationDate` | string | The date and time at which eSuite will notify the fulfilment system.
-`fulfilments` > `addressReference` | string | The reference addrress the fulfilment will be delivered to.
-`fulfilments` > `dateCreated` | string | The date and time the fulfilment was created.
-`fulfilments` > `dateLastUpdated` | string | The date and time the fulfilment was last updated.
-`fulfilments` > `customFulfilmentParameters` | dictionary | This is a collection of custom attributes against the fulfilment.
-`customFulfilmentParameters` > `parameterName`  | string | Representation of all custom parameters against the fulfilment.
-`fulfilmentPaymentMappings` > `payments` | array[objects] | An array of all payments for the payment instruction.
-`payments` > `paymentReference` | string | The reference identifier to the fulfilment
-`payments` > `paymentDate` | string | The status of the fulfilment e.g. pending, processing, dispatched or cancelled.
-`payments` > `paymentStatus` | string | Indication as to whether it is a digital or physical fulfilment.
-`payments` > `vatAmount` | string | The amount apportioned to tax.
-`payments` > `grossAmount` | string | The amount charged and submitted to the merchant.
-`payments` > `netAmount` | string | The amount charged minus tax.
-`payments` > `dateCreated` | string | The date and time the payment was created.
-`payments` > `dateLastUpdated` | string | The date and time the payment was last updated.
-`payments` > `customPaymentParameters` | dictionary | This is a collection of custom attributes against the payments.
-`customPaymentParameters` > `parameterName`  | string | Representation of all custom parameters against the payment.
-`customPaymentInstructionParameters` | dictionary | This is a collection of custom attributes against the payment instructions.
-`customPaymentInstructionParameters` > `parameterName`  | string | Representation of all custom parameters against the payment instruction.
+ |  |  
+--------- | ------- |  
+`paymentInstructionReference` <br />The identifier for the payment instruction.| <span class="string">string</span> |  
+`status` <br />The status of the payment instruction.| <span class="string">string</span> | 
+`currency` <br />The currency against the payment instruction. | <span class="string">string</span> | 
+`cartReference` <br />The cart which is default for the payment instruction.| <span class="string">string</span> | 
+`fulfilmentPaymentMappings` <br />An array of objects that map payments to their associated fulfilments.| <span class="array">array[objects]</span> | 
+`fulfilmentPaymentMappings` > `fulfilments` <br />An array of all fulfilments for the payment instruction.| <span class="array">array[objects]</span> | 
+`fulfilments` > `fulfilmentReference` <br />The reference identifier to the fulfilment| <span class="string">string</span> | 
+`fulfilments` > `fulfilmentStatus` <br />The status of the fulfilment e.g. pending, processing, dispatched or cancelled.| <span class="string">string</span> | 
+`fulfilments` > `fulfilmentType` <br />Indication as to whether it is a digital or physical fulfilment.| <span class="string">string</span> | 
+`fulfilments` > `expectedDeliveryDate` <br />The date and time the account expects to receive their goods.| <span class="string">string</span> | 
+`fulfilments` > `supplierNotificationDate` <br />The date and time at which eSuite will notify the fulfilment system.| <span class="string">string</span> | 
+`fulfilments` > `addressReference` <br />The reference addrress the fulfilment will be delivered to.| <span class="string">string</span> | 
+`fulfilments` > `dateCreated` <br />The date and time the fulfilment was created.| <span class="string">string</span> | 
+`fulfilments` > `dateLastUpdated` <br />The date and time the fulfilment was last updated.| <span class="string">string</span> | 
+`fulfilments` > `customFulfilmentParameters` <br />This is a collection of custom attributes against the fulfilment.| <span class="dictionary">dictionary</span> | 
+`customFulfilmentParameters` > `parameterName`  <br />Representation of all custom parameters against the fulfilment.| <span class="string">string</span> | 
+`fulfilmentPaymentMappings` > `payments` <br />An array of all payments for the payment instruction.| <span class="array">array[objects]</span> | 
+`payments` > `paymentReference` <br />The reference identifier to the fulfilment| <span class="string">string</span> | 
+`payments` > `paymentDate` <br />The status of the fulfilment e.g. pending, processing, dispatched or cancelled.| <span class="string">string</span> | 
+`payments` > `paymentStatus` <br />Indication as to whether it is a digital or physical fulfilment.| <span class="string">string</span> | 
+`payments` > `vatAmount` <br />The amount apportioned to tax.| <span class="string">string</span> | 
+`payments` > `grossAmount` <br />The amount charged and submitted to the merchant.| <span class="string">string</span> | 
+`payments` > `netAmount` <br />The amount charged minus tax.| <span class="string">string</span> | 
+`payments` > `dateCreated` <br />The date and time the payment was created.| <span class="string">string</span> | 
+`payments` > `dateLastUpdated` <br />The date and time the payment was last updated.| <span class="string">string</span> | 
+`payments` > `customPaymentParameters` <br />This is a collection of custom attributes against the payments.| <span class="dictionary">dictionary</span> | 
+`customPaymentParameters` > `parameterName`  <br />Representation of all custom parameters against the payment.| <span class="string">string</span> | 
+`customPaymentInstructionParameters` <br />This is a collection of custom attributes against the payment instructions.| <span class="dictionary">dictionary</span> | 
+`customPaymentInstructionParameters` > `parameterName`  <br />Representation of all custom parameters against the payment instruction.| <span class="string">string</span> | 
 
 ## Update a Payment Instruction
 
@@ -416,12 +416,12 @@ In the event you need to update a payment instruction, this end point should be 
 
 ### PATCH Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
- `-` | array[objects] | Yes | A collection of updates that should be made to the resource
-`op` | string | Yes | The type of change that should be executed. add, replace and remove are available operations.
-`path` | string | Yes | The name of the parameter that should be updated.
-`value` | string | Yes | The new value to store against the parameter.
+ |  |  | 
+--------- | ------- | ------- | 
+A collection of updates that should be made to the resource | <span class="array">array[objects]</span> | <span class="required">Required</span> | 
+`op` <br />The type of change that should be executed. add, replace and remove are available operations.| <span class="string">string</span> | <span class="required">Required</span> | 
+`path` <br />The name of the parameter that should be updated.| <span class="string">string</span> | <span class="required">Required</span> | 
+`value` <br />The new value to store against the parameter.| <span class="string">string</span> | <span class="required">Required</span> | 
 
 ## Retrieve a summary of Payment Instructions
 
@@ -547,18 +547,18 @@ This endpoint allows you to retrieve a summary of all payment instructions again
 
 ### Response Parameters
 
-Parameter | Type |  Description | 
---------- | ------- |  ----------- |
-`paymentInstructions` | array[objects] | The collection of payment instructions.
-`paymentInstructionReference` | string | The identifier for the specific payment instruction. 
-`cartReference` | string | The identifier for the Cart for the payment instruction.
-`nextFulfilmentReference` | string | The identifier for the next fulfilment on the payment instruction.
-`nextFulfilmentDate` | string | The next date a fulfilment will be dispatched.
-`lastPaymentDate` | integer | The date the last payment was taken against the payment instruction.
-`nextPaymentDate` | string | The next scheduled date a payment will be taken.
-`description` | string | The name/description of the payment instruction
-`customPaymentInstructionParameters` | dictionary | This is a collection of custom attributes against the payment instructions.
-`customPaymentInstructionParameters` > `parameterName | string | Representation of all custom parameters against the payment instruction.
+ |  |  
+--------- | ------- |  
+`paymentInstructions` <br />The collection of payment instructions.| <span class="array">array[objects]</span> | 
+`paymentInstructionReference` <br />The identifier for the specific payment instruction. | <span class="string">string</span> | 
+`cartReference` <br />The identifier for the Cart for the payment instruction.| <span class="string">string</span> | 
+`nextFulfilmentReference` <br />The identifier for the next fulfilment on the payment instruction.| <span class="string">string</span> | 
+`nextFulfilmentDate` <br />The next date a fulfilment will be dispatched.| <span class="string">string</span> | 
+`lastPaymentDate` <br />The date the last payment was taken against the payment instruction.| <span class="integer">integer</span> | 
+`nextPaymentDate` <br />The next scheduled date a payment will be taken.| <span class="string">string</span> | 
+`description` <br />The name/description of the payment instruction| <span class="string">string</span> | 
+`customPaymentInstructionParameters` <br />This is a collection of custom attributes against the payment instructions.| <span class="dictionary">dictionary</span> | 
+`customPaymentInstructionParameters` > `parameterName <br />Representation of all custom parameters against the payment instruction.| <span class="string">string</span> | 
 
 
 

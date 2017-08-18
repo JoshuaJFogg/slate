@@ -119,11 +119,11 @@ This endpoint provides a list of all available external providers that are avail
 
 ### Response Parameters
 
-Parameter | Type | Description | 
---------- | ------- | ------- | 
-`availableProviders` | array[object] | 
-`availableProviders` > `providerName` | string | The name of the external provider
-`availableProviders` > `accountLinked` | Bool | An indication as to whether the account has been linked to this provider
+ |  |  
+--------- | ------- | 
+`availableProviders` <br />| <span class="array">array[object]</span> | 
+`availableProviders` > `providerName` <br />The name of the external provider| <span class="string">string</span> | 
+`availableProviders` > `accountLinked` <br />An indication as to whether the account has been linked to this provider| <span class="bool">bool</span> |
 
 
 ## Authenticate via Facebook
@@ -252,12 +252,12 @@ An account is able to authenticate using their Facebook account and then retriev
 
 ### POST Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-`facebookRedirectURI` | string | Yes/No | The location which should be called for validation of the code and token provided
-`authorisationCode` | string | Yes/No | Code provided by Facebook
-`accessToken` | string | Yes/No | Code provided by Facebook
-`applicationIdentifier` | string | Yes/No | The identifier for the eSuite application that the account is using
+ |  |  |  
+--------- | ------- | ------- | 
+`facebookRedirectURI` <br />The location which should be called for validation of the code and token provided| <span class="string">string</span> | <span class="required">Yes/No</span> | 
+`authorisationCode` <br />Code provided by Facebook| <span class="string">string</span> | <span class="required">Yes/No</span> | 
+`accessToken` <br />Code provided by Facebook| <span class="string">string</span> | <span class="required">Yes/No</span> | 
+`applicationIdentifier` <br />The identifier for the eSuite application that the account is using| <span class="string">string</span> | <span class="required">Yes/No</span> | 
 
 
 
@@ -352,31 +352,31 @@ If during the authentication process with Facebook, eSuite deems the Facebook ac
 
 ### Response Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-`email` | string | Yes* | The identifier used when eSuite is primary IDAM.
-`clientUserId` | string | Yes* | The identifier used when eSuite is secondary IDAM. Once set this cannot be changed.
-`password` | string | Yes | The value provided by the account to pair with the email. 
-`salutation` | string | No | Available values: Mr, Mrs, Miss and Ms.
-`firstName` | string | Yes | The first name associated to the account.
-`lastName` | string | Yes | The last name associated to the account.
-`phoneNumber` | string | Yes | The home phone number of the account.
-`mobileNumber` | string | Yes | The mobile number of the account (minus country code).
-`dateOfBirth` | dateTime | Yes | The birthday of the account.
-`gender` | string | Yes | Available values: Male, Female and Unspecified.
-`addresses` | array | Yes | A collection of addresses bound to the account.
-`address` > `addressType` | string | Yes | Available values: Home and Billing.
-`address` > `houseName` | string | Yes | The name associated to the address.
-`address` > `houseNumber` | string | Yes | The building number associated to the address.
-`address` > `street` | string | Yes | The street associated to the address.
-`address` > `townCity` | string | Yes | The town or city associated to the address
-`address` > `district` | string | No | The districtassociated to the address
-`address` > `state` | string | No | The state associated to the address
-`address` > `county` | string | No | The county associated to the address
-`address` > `postCode` | string | Yes | The post code associated to the address
-`address` > `country` | string | Yes | The country the account resides
-`customParameters` | dictionary | No | A collection of custom attributes stored against the account
-`sessionToken` | string | No | A session token linked to the account created
+ |  |  |  
+--------- | ------- | ------- | 
+`email` <br />The identifier used when eSuite is primary IDAM.| <span class="string">string</span> | <span class="required">Yes*</span> | 
+`clientUserId` <br />The identifier used when eSuite is secondary IDAM. Once set this cannot be changed.| <span class="string">string</span> | <span class="required">Yes*</span> | 
+`password` <br />The value provided by the account to pair with the email. | <span class="string">string</span> | <span class="required">Yes</span> | 
+`salutation` <br />Available values: Mr, Mrs, Miss and Ms.| <span class="string">string</span> |  | 
+`firstName` <br />The first name associated to the account.| <span class="string">string</span> | <span class="required">Yes</span> | 
+`lastName` <br />The last name associated to the account.| <span class="string">string</span> | <span class="required">Yes</span> | 
+`phoneNumber` <br />The home phone number of the account.| <span class="string">string</span> | <span class="required">Yes</span> | 
+`mobileNumber` <br />The mobile number of the account (minus country code).| <span class="string">string</span> | <span class="required">Yes</span> | 
+`dateOfBirth` <br />The birthday of the account.| dateTime | <span class="required">Yes</span> | 
+`gender` <br />Available values: Male, Female and Unspecified.| <span class="string">string</span> | <span class="required">Yes</span> | 
+`addresses` <br />A collection of addresses bound to the account.| <span class="array">array</span> | <span class="required">Yes</span> | 
+`address` > `addressType` <br />Available values: Home and Billing.| <span class="string">string</span> | <span class="required">Yes</span> | 
+`address` > `houseName` <br />The name associated to the address.| <span class="string">string</span> | <span class="required">Yes</span> | 
+`address` > `houseNumber` <br />The building number associated to the address.| <span class="string">string</span> | <span class="required">Yes</span> | 
+`address` > `street` <br />The street associated to the address.| <span class="string">string</span> | <span class="required">Yes</span> | 
+`address` > `townCity` <br />The town or city associated to the address| <span class="string">string</span> | <span class="required">Yes</span> | 
+`address` > `district` <br />The district associated to the address| <span class="string">string</span> |  | 
+`address` > `state` <br />The state associated to the address| <span class="string">string</span> |  | 
+`address` > `county` <br />The county associated to the address| <span class="string">string</span> |  | 
+`address` > `postCode` <br />The post code associated to the address| <span class="string">string</span> | <span class="required">Yes</span> | 
+`address` > `country` <br />The country the account resides| <span class="string">string</span> | <span class="required">Yes</span> | 
+`customParameters` <br />A collection of custom attributes stored against the account| <span class="dictionary">dictionary</span> |  | 
+`sessionToken` <br /> A session token linked to the account created| <span class="string">string</span> |  |
 
 
 ## Link to Facebook
@@ -442,9 +442,9 @@ This endpoint allows you to link an existing eSuite account to their Facebook pr
 
 ### POST Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-`facebookRedirectURI` | string | Yes/No | The location which should be called for validation of the code and token provided
-`authorisationCode` | string | Yes/No | Code provided by Facebook
-`accessToken` | string | Yes/No | Code provided by Facebook
-`applicationIdentifier` | string | Yes/No | The identifier for the eSuite application that the account is using
+ |  |  |  
+--------- | ------- | ------- | 
+`facebookRedirectURI` <br />The location which should be called for validation of the code and token provided| <span class="string">string</span> | <span class="required">Yes/No</span> | 
+`authorisationCode` <br />Code provided by Facebook| <span class="string">string</span> | <span class="required">Yes/No</span> | 
+`accessToken` <br />Code provided by Facebook| <span class="string">string</span> | <span class="required">Yes/No</span> | 
+`applicationIdentifier` <br />The identifier for the eSuite application that the account is using| <span class="string">string</span> | <span class="required">Yes/No</span> | 

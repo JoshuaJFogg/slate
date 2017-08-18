@@ -110,14 +110,14 @@ This endpoint allows you to pass through the Roku transactionId alongside custom
 
 ### POST Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-`rokuTransactionId` | string | No | The roku transaction ID that is to be validated
-`email` | string | No | Email address of the customer's Roku billing account
-`password` | string | No | Customer's password
-`newAccountDetails` | object | No | A sub-object of RokuValidateTransactionRequest, containing additional customer information
-`newAccountDetails` > `firstName` | string | No | The customer's first name, as forwarded from Roku's native billing
-`newAccountDetails` > `lastName` | string | No | The customer's last name, as forwarded from Roku's native billing
+ |  |  | 
+--------- | ------- | ------- | 
+`rokuTransactionId` <br />The roku transaction ID that is to be validated| <span class="string">string</span> |  | 
+`email` <br />Email address of the customer's Roku billing account| <span class="string">string</span> |  | 
+`password` <br />Customer's password| <span class="string">string</span> |  | 
+`newAccountDetails` <br />A sub-object of RokuValidateTransactionRequest, containing additional customer information| <span class="object">object</span> |  | 
+`newAccountDetails` > `firstName` <br />The customer's first name, as forwarded from Roku's native billing| <span class="string">string</span> |  | 
+`newAccountDetails` > `lastName` <br />The customer's last name, as forwarded from Roku's native billing| <span class="string">string</span> |  | 
 
 
 
@@ -235,9 +235,9 @@ This endpoint should be called when an existing account has made a purchase via 
 
 ### POST Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-`rokuTransactionId` | string | No | The roku transaction ID that is to be validated
+ |  |  | 
+--------- | ------- | ------- | 
+`rokuTransactionId` <br />The roku transaction ID that is to be validated| <span class="string">string</span> |  | 
 
 ## Validate iTunes Purchase
 
@@ -347,16 +347,16 @@ For first time sign-up and subscribers, calling this endpoint containing informa
 
 ### POST Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-`receipt` | string | Yes | The encrypted receipt returned from the iTunes stored when the app was purchased
-`price` | number | No | An indication as to the price paid within iTunes
-`currency` | string | No | The currency used to purchase the iTunes subscription
-`email` | string | No | Email address of the customer's Roku billing account
-`password` | string | No | Customer's password
-`newAccountDetails` | object | No | A sub-object of request, containing additional customer information
-`newAccountDetails` > `firstName` | string | No | The customer's first name, as forwarded from iTunes's native billing
-`newAccountDetails` > `lastName` | string | No | The customer's last name, as forwarded from iTunes's native billing
+ |  |  | 
+--------- | ------- | ------- | 
+`receipt` <br />The encrypted receipt returned from the iTunes stored when the app was purchased| <span class="string">string</span> | <span class="required">Required</span> | 
+`price` <br />An indication as to the price paid within iTunes| <span style="font-weight: bold;color: #666;">number</span> |  | 
+`currency` <br />The currency used to purchase the iTunes subscription| <span class="string">string</span> |  | 
+`email` <br />Email address of the customer's Roku billing account| <span class="string">string</span> |  | 
+`password` <br />Customer's password| <span class="string">string</span> |  | 
+`newAccountDetails` <br />A sub-object of request, containing additional customer information| <span class="object">object</span> |  | 
+`newAccountDetails` > `firstName` <br />The customer's first name, as forwarded from iTunes's native billing| <span class="string">string</span> |  | 
+`newAccountDetails` > `lastName` <br />The customer's last name, as forwarded from iTunes's native billing| <span class="string">string</span> |  | 
 
 
 
@@ -473,11 +473,11 @@ This endpoint should be called when an existing account has made a purchase via 
 
 ### POST Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-`receipt` | string | Yes | The encrypted receipt returned from the iTunes stored when the app was purchased
-`price` | number | No | An indication as to the price paid within iTunes
-`currency` | string | No | The currency used to purchase the iTunes subscription
+ |  |  | 
+--------- | ------- | ------- | 
+`receipt` <br />The encrypted receipt returned from the iTunes stored when the app was purchased| <span class="string">string</span> | <span class="required">Required</span> | 
+`price` <br />An indication as to the price paid within iTunes| <span style="font-weight: bold;color: #666;">number</span> |  | 
+`currency` <br />The currency used to purchase the iTunes subscription| <span class="string">string</span> |  | 
 
 
 

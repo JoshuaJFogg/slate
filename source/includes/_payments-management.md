@@ -105,36 +105,36 @@ This end point is present for server-side integrations to take a payment against
 
 ### POST Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-`settlementType` | string | No | An indication whether to complete immediately or at a later date. `Pending` or `NextAvailable` are the available values
-`pricing` | object | No | Pricing Information object
-`pricing` > `paymentMethod` | string | No | The payment method the account would like to pay using
-`pricing` > `currency` | string | No | The currency the payment should be taken in
-`voucherCode` | string | No | eSuite generated voucher code that has been provided during the flow |
-`cvv` | string | No |If the purchase is being made using an non-authorised card, this parameter can be passed in to enable authorisation to take place |
-`orderItems` | array[object] | No |A collection of items that the account is attempting to purchase
-`orderItems` > `description` | string | No | The description associated to the item
-`orderItems` > `orderReference` | string | No | An external reference that can be associated to each item
-`orderItems` > `comment` | string | No | Additional metadata that may have been provided
-`orderItems` > `priceBreakdown` | object | No | The details relating to the amount the account should pay for the item
-`priceBreakdown` > `grossAmount` | decimal | No | The gross amount for the item
-`priceBreakdown` > `netAmount` | decimal | No | The total amount minue the associated tax amount
-`priceBreakdown` > `taxAmount` | decimal | No |The amount of tax that must be paid on the item
-`orderItems` > `customOrderParameters` | dictionary | No | A collection of custom attributes associated to the payment |
-`customOrderParameters` > `parameterName` | string | No |The custom attribute name|
-`orderItems` > `entitlements` | array[object] | No |A collection of additional entitlements to provide the account on purchase|
-`entitlements` > `identifier` | string | No |Identifier for the entitlement being purchased|
-`entitlements` > `startDate` | string | No |The date on which the entitlement should be valid from|
-`entitlements` > `expiryDate` | string | No |The date at which the account is no longer entitled to the content|
-`orderItems` > `taxInfo` | object | Yes |Collection of tax information|
-`taxInfo` > `category` | string | No |Indication as to which tax category to apply|
-`taxInfo` > `zeroRated` | Bool | No |Indication as to whether the purchase is tax exempt|
-`taxInfo` > `country` | string | No |Country specific tax rate to use|
-`taxInfo` > `state` | string | No |State specific tax rate to use (US Specific)|
-`taxInfo` > `county` | string | No |County specific tax rate to use (US Specific)|
-`taxInfo` > `city` | string | No |City specific tax rate to use (US Specific)|
-`asynchronousProcessingParameters` | object | No | Asynchronous Processing Parameters
+ |  |  | 
+--------- | ------- | ------- | 
+`settlementType` <br />An indication whether to complete immediately or at a later date. `Pending` or `NextAvailable` are the available values| <span class="string">string</span> |  | 
+`pricing` <br />Pricing Information object| <span class="object">object</span> |  | 
+`pricing` > `paymentMethod` <br />The payment method the account would like to pay using| <span class="string">string</span> |  | 
+`pricing` > `currency` <br />The currency the payment should be taken in| <span class="string">string</span> |  | 
+`voucherCode` <br />eSuite generated voucher code that has been provided during the flow | <span class="string">string</span> |  | 
+`cvv` <br />If the purchase is being made using an non-authorised card, this parameter can be passed in to enable authorisation to take place | <span class="string">string</span> |  |
+`orderItems` <br />A collection of items that the account is attempting to purchase| <span class="array">array[object]</span> |  |
+`orderItems` > `description` <br />The description associated to the item| <span class="string">string</span> |  | 
+`orderItems` > `orderReference` <br />An external reference that can be associated to each item| <span class="string">string</span> |  | 
+`orderItems` > `comment` <br />Additional metadata that may have been provided| <span class="string">string</span> |  | 
+`orderItems` > `priceBreakdown` <br />The details relating to the amount the account should pay for the item| <span class="object">object</span> |  | 
+`priceBreakdown` > `grossAmount` <br />The gross amount for the item| <span class="decimal">decimal</span> |  | 
+`priceBreakdown` > `netAmount` <br />The total amount minue the associated tax amount| <span class="decimal">decimal</span> |  | 
+`priceBreakdown` > `taxAmount` <br />The amount of tax that must be paid on the item| <span class="decimal">decimal</span> |  |
+`orderItems` > `customOrderParameters` <br />A collection of custom attributes associated to the payment | <span class="dictionary">dictionary</span> |  | 
+`customOrderParameters` > `parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
+`orderItems` > `entitlements` <br />A collection of additional entitlements to provide the account on purchase| <span class="array">array[object]</span> |  |
+`entitlements` > `identifier` <br />Identifier for the entitlement being purchased| <span class="string">string</span> |  |
+`entitlements` > `startDate` <br />The date on which the entitlement should be valid from| <span class="string">string</span> |  |
+`entitlements` > `expiryDate` <br />The date at which the account is no longer entitled to the content| <span class="string">string</span> |  |
+`orderItems` > `taxInfo` <br />Collection of tax information| <span class="object">object</span> | <span class="required">Required</span> |
+`taxInfo` > `category` <br />Indication as to which tax category to apply| <span class="string">string</span> |  |
+`taxInfo` > `zeroRated` <br />Indication as to whether the purchase is tax exempt| <span class="bool">bool</span> |  |
+`taxInfo` > `country` <br />Country specific tax rate to use| <span class="string">string</span> |  |
+`taxInfo` > `state` <br />State specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`taxInfo` > `county` <br />County specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`taxInfo` > `city` <br />City specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`asynchronousProcessingParameters` <br />Asynchronous Processing Parameters| <span class="object">object</span> |  | 
 
 ## Retrieve Payments
 
@@ -267,34 +267,34 @@ This endpoint allows you to retrieve all payments for a given account.
 
 ### Query Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-`createDateFrom` | string | Yes |The earliest date a payment was taken that can be included in the response 
-`createDateTo` | string | Yes | The latest date a payment was taken that can be included in the response 
-`rowsPerPage` | string | Yes | An indication as to how many records to return 
-`currentPage` | string | Yes | The page that should be returned 
+ |  |  | 
+--------- | ------- | ------- | 
+`createDateFrom` <br />The earliest date a payment was taken that can be included in the response| <span class="string">string</span> | <span class="required">Required</span> | 
+`createDateTo` <br />The latest date a payment was taken that can be included in the response | <span class="string">string</span> | <span class="required">Required</span> | 
+`rowsPerPage` <br />An indication as to how many records to return | <span class="string">string</span> | <span class="required">Required</span> | 
+`currentPage` <br />The page that should be returned| <span class="string">string</span> | <span class="required">Required</span> |  
 
 ### Response Parameters
 
-Parameter | Type |  Description | 
---------- | ------- |  ----------- |
-`totalNumberOfRecords` | string | Total number of records available
-`pageNumber` | string | The page of results being displayed
-`resultsPerPage` | string | The total number of records displayed in the response
-`items` | object | Collection of payments associated to the account
-`items` > `cartReference` | string | The specific items that were purchased
-`items` > `fulfilmentReference`  | string | The specific fulfilment this payment is associated
-`items` > `status`  | string | The status of the payment
-`items` > `paymentReference`  | string | The unique identifier associated to the payment
-`items` > `currency`  | string | The date at which the subscription should become active
-`items` > `paymentDate` | string | The date at which the payment was processed
-`items` > `description`  | string | The description associated to the payment
-`items` > `priceBreakdown`  | object | Object relating to the price charged to the account
-`priceBreakdown` > `grossAmount`  | decimal | The total amount paid by the customer for the specific payment
-`priceBreakdown` > `netAmount`  | decimal | The gross amount minus the amount of tax paid
-`priceBreakdown` > `taxAmount`  | decimal | The amount of tax associated to the payment
-`items` > `customPaymentParameters`  | dictionary | A collection of custom attributes associated to the payment 
-`customPaymentParameters` > `parameterName`  | string | The name of the custom attribute
+ |  |  
+--------- | ------- |  
+`totalNumberOfRecords` <br />Total number of records available| <span class="string">string</span> | 
+`pageNumber` <br />The page of results being displayed| <span class="string">string</span> | 
+`resultsPerPage` <br />The total number of records displayed in the response| <span class="string">string</span> | 
+`items` <br />Collection of payments associated to the account| <span class="object">object</span> | 
+`items` > `cartReference` <br />The specific items that were purchased| <span class="string">string</span> | 
+`items` > `fulfilmentReference`  <br />The specific fulfilment this payment is associated| <span class="string">string</span> | 
+`items` > `status`  <br />The status of the payment| <span class="string">string</span> | 
+`items` > `paymentReference`  <br />The unique identifier associated to the payment| <span class="string">string</span> | 
+`items` > `currency`  <br />The date at which the subscription should become active| <span class="string">string</span> | 
+`items` > `paymentDate` <br />The date at which the payment was processed| <span class="string">string</span> | 
+`items` > `description`  <br />The description associated to the payment| <span class="string">string</span> | 
+`items` > `priceBreakdown`  <br />Object relating to the price charged to the account| <span class="object">object</span> | 
+`priceBreakdown` > `grossAmount`  <br />The total amount paid by the customer for the specific payment| <span class="decimal">decimal</span> | 
+`priceBreakdown` > `netAmount`  <br />The gross amount minus the amount of tax paid| <span class="decimal">decimal</span> | 
+`priceBreakdown` > `taxAmount`  <br />The amount of tax associated to the payment| <span class="decimal">decimal</span> | 
+`items` > `customPaymentParameters`  <br />A collection of custom attributes associated to the payment | <span class="dictionary">dictionary</span> | 
+`customPaymentParameters` > `parameterName`  <br />The name of the custom attribute| <span class="string">string</span> | 
 
 
 ## Update a Payment
@@ -407,12 +407,13 @@ This endpoint allows you to edit parameters of the payment that has been returne
 </div>
 
 ### PATCH Parameters
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
- - | array[objects] | Yes | A collection of updates that should be made to the resource
-`op` | string | Yes | The type of change that should be executed. add, replace and remove are available operations.
-`path` | string | Yes | The name of the parameter that should be updated.
-`value` | string | Yes | The new value to store against the parameter.
+
+ |  |  | 
+--------- | ------- | ------- |
+A collection of updates that should be made to the resource| <span class="array">array[objects]</span> | <span class="required">Required</span> | 
+`op` <br />The type of change that should be executed. add, replace and remove are available operations.| <span class="string">string</span> | <span class="required">Required</span> | 
+`path` <br />The name of the parameter that should be updated.| <span class="string">string</span> | <span class="required">Required</span> | 
+`value` <br />The new value to store against the parameter.| <span class="string">string</span> | <span class="required">Required</span> | 
 
 ## Refund a Payment
 
@@ -510,14 +511,14 @@ Calling this endpoint will allow the refund of a previously processed order. Thi
 
 ### POST Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-`amount` | number | Yes | The amount of money that should be refunded to the account.
-`triggerBackOfficeEmail` | Bool | No | An indication as to whether a backoffice system should be notified.
-`reason` | string | No | Additional information as to why the refund is being performed
-`reasonCode` | string | No | A code specific to your business for refund types
-`refundAsServiceCredits` | bool | No | Define whether you would like the refund to be executed against the originating payment method or as a credit on the account.
-`serviceCreditExpiry` | string | No | The date at which the service credits would expire.
+ |  |  |  
+--------- | ------- | ------- | 
+`amount` <br />The amount of money that should be refunded to the account.| <span style="font-weight: bold;color: #666;">number</span> | <span class="required">Required</span> | 
+`triggerBackOfficeEmail` <br />An indication as to whether a backoffice system should be notified.| <span class="bool">bool</span> |  | 
+`reason` <br />Additional information as to why the refund is being performed| <span class="string">string</span> |  | 
+`reasonCode` <br />A code specific to your business for refund types| <span class="string">string</span> |  | 
+`refundAsServiceCredits` <br />Define whether you would like the refund to be executed against the originating payment method or as a credit on the account.| <span class="bool">bool</span> |  | 
+`serviceCreditExpiry` <br />The date at which the service credits would expire.| <span class="string">string</span> |  | 
 
 
 

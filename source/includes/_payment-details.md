@@ -110,23 +110,23 @@ In order to make a purchase using a credit or debit card, a card must be added t
 
 ### POST Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-`cardNumber` | string | Yes | The 13-19 digit number on the face of a credit or debit card.
-`cardType` | string | Yes | The type of card the account is adding, Visa, Mastercard, Amex, Diners, Discover.
-`expiryDate` | string | Yes | The date at which the card will expire, mm-yy.
-`issueCode` | string | No | The number of cards the acquirer has issues for the account.
-`securityCode` | string | Yes | 3-4 digit code on the rear of a card.
-`billingHouseName` | string | No | The building name in which the card is registered.
-`billingHouseFlatNumber` | string | No | The building number at which the card is registered.
-`billingStreet` | string | No | The street in which the card is registered.
-`billingDistrict` | string | No | The district in which the card is registered.
-`billingTownCity` | string | No | The town or city in which the card is registered.
-`billingPostcode` | string | No | The post code in which the card is registered.
-`billingCountry` | string | No | The country in which the card is registered.
-`setDefault` | Bool | No | An indication as to whether this card will be the customers default card.
-`associatedName` | string | No | A friendly name to identify the payment card to the account.
-`skipPreAuth` | Bool | No | An indication as to whether the card should be authorised as part of the addition process.
+ |  |  | 
+--------- | ------- | ------- | 
+`cardNumber` <br />The 13-19 digit number on the face of a credit or debit card.| <span class="string">string</span> | <span class="required">Required</span> | 
+`cardType` <br />The type of card the account is adding, Visa, Mastercard, Amex, Diners, Discover.| <span class="string">string</span> | <span class="required">Required</span> | 
+`expiryDate` <br />The date at which the card will expire, mm-yy.| <span class="string">string</span> | <span class="required">Required</span> | 
+`issueCode` <br />The number of cards the acquirer has issues for the account.| <span class="string">string</span> |  | 
+`securityCode` <br />3-4 digit code on the rear of a card.| <span class="string">string</span> | <span class="required">Required</span> | 
+`billingHouseName` <br />The building name in which the card is registered.| <span class="string">string</span> |  | 
+`billingHouseFlatNumber` <br />The building number at which the card is registered.| <span class="string">string</span> |  | 
+`billingStreet` <br />The street in which the card is registered.| <span class="string">string</span> |  | 
+`billingDistrict` <br />The district in which the card is registered.| <span class="string">string</span> |  | 
+`billingTownCity` <br />The town or city in which the card is registered.| <span class="string">string</span> |  | 
+`billingPostcode` <br />The post code in which the card is registered.| <span class="string">string</span> |  | 
+`billingCountry` <br />The country in which the card is registered.| <span class="string">string</span> |  | 
+`setDefault` <br />An indication as to whether this card will be the customers default card.| <span class="bool">bool</span> |  | 
+`associatedName` <br />A friendly name to identify the payment card to the account.| <span class="string">string</span> |  | 
+`skipPreAuth` <br />An indication as to whether the card should be authorised as part of the addition process.| <span class="bool">bool</span> |  | 
 
 
 <aside class="error">
@@ -239,13 +239,13 @@ In order to make a purchase using BACS Direct Debit, a BACS wallet must be added
 
 ### POST Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-`accountHolderName` | string | Yes | The name associated to the bank account.
-`accountNumber` | string | Yes | The UK bank account number.
-`sortCode` | string | Yes | The bank sort code associated to the account.
-`bacsReference` | string | No | The existing mandate reference if the account is coming from another system.
-`serviceId` | integer | Yes | The eSuite ServiceId that this BACS wallet will be used for.
+ |  |  | 
+--------- | ------- | ------- | 
+`accountHolderName` <br />The name associated to the bank account.| <span class="string">string</span> | <span class="required">Required</span> | 
+`accountNumber` <br />The UK bank account number.| <span class="string">string</span> | <span class="required">Required</span> | 
+`sortCode` <br />The bank sort code associated to the account.| <span class="string">string</span> | <span class="required">Required</span> | 
+`bacsReference` <br />The existing mandate reference if the account is coming from another system.| <span class="string">string</span> |  | 
+`serviceId` <br />The eSuite ServiceId that this BACS wallet will be used for.| <span class="integer">integer</span> | <span class="required">Required</span> | 
 
 
 ## Add a SEPA Direct Debit Wallet
@@ -354,12 +354,12 @@ In order to make a purchase using SEPA Direct Debit, a SEPA wallet must be added
 
 ### POST Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-`accountHolderName` | string | Yes | The name associated to the bank account.
-`iban` | string | Yes | The bank account number.
-`bic` | string | Yes | The bank identification code associated to the account.
-`serviceId` | integer | Yes | The eSuite ServiceId that this BACS wallet will be used for.
+ |  |  | 
+--------- | ------- | ------- | 
+`accountHolderName` <br />The name associated to the bank account.| <span class="string">string</span> | <span class="required">Required</span> | 
+`iban` <br />The bank account number.| <span class="string">string</span> | <span class="required">Required</span> | 
+`bic` <br />The bank identification code associated to the account.| <span class="string">string</span> | <span class="required">Required</span> | 
+`serviceId` <br />The eSuite ServiceId that this BACS wallet will be used for.| <span class="integer">integer</span> | <span class="required">Required</span> | 
 
 
 
@@ -469,26 +469,26 @@ This endpoint retrieves the payment details stored against an eSuite account.
 
 ### Response Parameters
 
-Parameter | Type | Description | 
---------- | ------- | ------- | 
-`paymentDetails` | array[object] | The collection of payment details available for the account. |
-`cards` | array[object] | The collection of payment cards available for the account. |
-`cards` > `associatedName` | string | Associated name to identify the card. |
-`cards` > `billingHouseName` | string | The name of the house the card is associated to. |
-`cards` > `billingHouseFlatNumber` | string | The number of the house the card is associated to. |
-`cards` > `billingStreet` | string | The street associated to the card. |
-`cards` > `billingDistrict` | string | The district associated to the card. |
-`cards` > `billingTownCity`| string | The town or city associated to the card. |
-`cards` > `billingCounty` | string | The county associated to the card. |
-`cards` > `billingPostcode` | string | The postcode associated to the card. |
-`cards` > `billingCountry` | string | The country associated to the card. |
-`cards` > `cardNumber` | string | A masked representation of the card. |
-`cards` > `cardType` | string | The card brand associated to the card. |
-`cards` > `expiryDate` | string | The date at which the card is due to expire. |
-`cards` > `isDefault` | Bool | An indication as to whether this card is the default for the account. |
-`cards` > `issueCode` | string | Issue number typically found on debit and bank cards. |
-`cards` > `paymentDetailId` | string | The identifier of the card within eSuite. |
-`payPal` | object | PayPal object detailing information about the customers PayPal account. |
-`paymentDetailId` | string | The identifier of the PayPal wallet within eSuite. |
+ |  |  
+--------- | ------- | 
+`paymentDetails` <br />The collection of payment details available for the account. | <span class="array">array[object]</span> | 
+`cards` <br />The collection of payment cards available for the account. | <span class="array">array[object]</span> | 
+`cards` > `associatedName` <br />Associated name to identify the card. | <span class="string">string</span> | 
+`cards` > `billingHouseName` <br />The name of the house the card is associated to. | <span class="string">string</span> | 
+`cards` > `billingHouseFlatNumber` <br />The number of the house the card is associated to. | <span class="string">string</span> | 
+`cards` > `billingStreet` <br />The street associated to the card. | <span class="string">string</span> | 
+`cards` > `billingDistrict` <br />The district associated to the card. | <span class="string">string</span> | 
+`cards` > `billingTownCity`<br />The town or city associated to the card. | <span class="string">string</span> | 
+`cards` > `billingCounty` <br />The county associated to the card. | <span class="string">string</span> | 
+`cards` > `billingPostcode` <br />The postcode associated to the card. | <span class="string">string</span> | 
+`cards` > `billingCountry` <br />The country associated to the card. | <span class="string">string</span> | 
+`cards` > `cardNumber` <br />A masked representation of the card. | <span class="string">string</span> | 
+`cards` > `cardType` <br />The card brand associated to the card. | <span class="string">string</span> | 
+`cards` > `expiryDate` <br />The date at which the card is due to expire. | <span class="string">string</span> | 
+`cards` > `isDefault` <br />An indication as to whether this card is the default for the account. | <span class="bool">bool</span> | 
+`cards` > `issueCode` <br />Issue number typically found on debit and bank cards. | <span class="string">string</span> | 
+`cards` > `paymentDetailId` <br />The identifier of the card within eSuite. | <span class="string">string</span> | 
+`payPal` <br />PayPal object detailing information about the customers PayPal account. | <span class="object">object</span> | 
+`paymentDetailId` <br />The identifier of the PayPal wallet within eSuite. | <span class="string">string</span> | 
 
 <aside class="warning">Only credit/debit cards and repeatable PayPal tokens are returned via this endpoint.</aside>

@@ -118,10 +118,10 @@ When eSuite is being used as a primary identity platform, authentication is hand
 
 ### Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-`email` | string | Yes | The registered address of the account being logged in
-`password` | string | Yes | The password provided as part of registration
+ |  |  |  
+--------- | ------- | ------- | 
+`email` <br />The registered address of the account being logged in| <span class="string">string</span> | <span class="required">Required</span> | 
+`password` <br />The password provided as part of registration| <span class="string">string</span> | <span class="required">Required</span> | 
 
 
 ## Authenticate via ClientUserId
@@ -225,9 +225,9 @@ Authentication via a ClientUserId is required when eSuite is not the primary ide
 
 ### Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-`clientUserId` | string | Yes | Unique, irrevocable link that was added to the account at the point of registration.
+ |  |  |  
+--------- | ------- | ------- | 
+`clientUserId` <br />Unique, irrevocable link that was added to the account at the point of registration.| <span class="string">string</span> | <span class="required">Required</span> | 
 
 
 <aside class="info">

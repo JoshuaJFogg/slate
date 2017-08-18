@@ -78,41 +78,41 @@ For the completion of standard payment options, making the following `POST` requ
 
 ### Request Parameters
 
-Parameter | Type  | Mandatory| Description | 
---------- | ------- | ------- | ------- | 
-`voucherCode` | string | No | eSuite generated voucher code that has been provided during the flow |
-`cvv` | string | No |If the purchase is being made using an non-authorised card, this parameter can be passed in to enable authorisation to take place |
-`renewalDay` | integer | No | The date of the month the subscription should be renewed on, specifically for monthly or annual subscriptions|
-`renewalDayOffset` | string | No |The number of days before or after the renewal date. This can be positive or negative|
-`startDate` | string | No |The date at which the subscription should be purchased and started |
-`paymentMethod` | string | No |The type of payment method the account has selected. Standard methods are `CreditCard` `DirectDebit`, `Service Credits` or `SEPA`. Other methods are available|
-`entitlements` | array[object] | No |A collection of additional entitlements to provide the account on purchase|
-`entitlements` > `identifier` | string | No |Identifier for the entitlement being purchased|
-`entitlements` > `startDate` | string | No |The date on which the entitlement should be valid from|
-`entitlements` > `expiryDate` | string | No |The date at which the account is no longer entitled to the content|
-`customOrderParameters` | dictionary | No | A collection of custom attributes associated to the payment |
-`customOrderParameters` > `parameterName` | string | No |The custom attribute name|
-`customSubscriptionParameters` | string | No |A collection of custom attributes associated to the subscription|
-`customSubscriptionParameters` > `parameterName` | string | No |The custom attribute name|
-`taxInfo` | object | No |Collection of tax information|
-`taxInfo` > `zeroRated` | Bool | No |Indication as to whether the purchase is tax exempt|
-`taxInfo` > `country` | string | No |Country specific tax rate to use|
-`taxInfo` > `state` | string | No |State specific tax rate to use (US Specific)|
-`taxInfo` > `county` | string | No |County specific tax rate to use (US Specific)|
-`taxInfo` > `city` | string | No |City specific tax rate to use (US Specific)|
-`groupSubscriptionInfo` | string | No | Account Group information|
-`groupSubscriptionInfo` > `groupToken` | string | No |The associated group account identifier|
-`groupSubscriptionInfo` > `subscriberAccounts` | array[object] | No |A collection of accounts that should be assigned to the subscription|
-`subscriberAccounts` > `clientUserId` | string | No |The clientUserId of the account that should be assigned|
-`subscriberAccounts` > `emailAddress` | string | No |The email address of the account that should be assigned|
-`subscriberAccounts` > `taxInfo` | object | No |Collection of tax information for each account|
-`taxInfo` > `zeroRated` | string | No |Indication as to whether the purchase is tax exempt|
-`taxInfo` > `country` | string | No |Country specific tax rate to use|
-`taxInfo` > `state` | string | No |State specific tax rate to use (US Specific)|
-`taxInfo` > `county` | string | No |County specific tax rate to use (US Specific)|
-`taxInfo` > `city` | string | No |City specific tax rate to use (US Specific)|
-`asynchronousInitiationParameters` | string | No |Parameter set provided if you would like to trigger an advanced payment type|
-`asynchronousInitiationParameters` > `parameterName` | string | No |Parameter name specific to the alternative payment method provided|
+ |   | | 
+--------- | ------- | ------- |  
+`voucherCode` <br />eSuite generated voucher code that has been provided during the flow | <span class="string">string</span> |  | 
+`cvv` <br />If the purchase is being made using an non-authorised card, this parameter can be passed in to enable authorisation to take place | <span class="string">string</span> |  |
+`renewalDay` <br />The date of the month the subscription should be renewed on, specifically for monthly or annual subscriptions| <span class="integer">integer</span> |  | 
+`renewalDayOffset` <br />The number of days before or after the renewal date. This can be positive or negative| <span class="string">string</span> |  |
+`startDate` <br />The date at which the subscription should be purchased and started | <span class="string">string</span> |  |
+`paymentMethod` <br />The type of payment method the account has selected. Standard methods are `CreditCard` `DirectDebit`, `Service Credits` or `SEPA`. Other methods are available| <span class="string">string</span> |  |
+`entitlements` <br />A collection of additional entitlements to provide the account on purchase| <span class="array">array[object]</span> |  |
+`entitlements` > `identifier` <br />Identifier for the entitlement being purchased| <span class="string">string</span> |  |
+`entitlements` > `startDate` <br />The date on which the entitlement should be valid from| <span class="string">string</span> |  |
+`entitlements` > `expiryDate` <br />The date at which the account is no longer entitled to the content| <span class="string">string</span> |  |
+`customOrderParameters` <br />A collection of custom attributes associated to the payment | <span class="dictionary">dictionary*</span> |  | 
+`customOrderParameters` > `parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
+`customSubscriptionParameters` <br />A collection of custom attributes associated to the subscription| <span class="string">string</span> |  |
+`customSubscriptionParameters` > `parameterName`<br /> The custom attribute name| <span class="string">string</span> |  |
+`taxInfo` <br />Collection of tax information| <span class="object">object</span> |  |
+`taxInfo` > `zeroRated` <br />Indication as to whether the purchase is tax exempt| <span class="bool">bool</span> |  |
+`taxInfo` > `country` <br />Country specific tax rate to use| <span class="string">string</span> |  |
+`taxInfo` > `state` <br />State specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`taxInfo` > `county` <br />County specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`taxInfo` > `city` <br />City specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`groupSubscriptionInfo` <br />Account Group information| <span class="string">string</span> |  | 
+`groupSubscriptionInfo` > `groupToken` <br />The associated group account identifier| <span class="string">string</span> |  |
+`groupSubscriptionInfo` > `subscriberAccounts` <br />A collection of accounts that should be assigned to the subscription| <span class="array">array[object]</span> |  |
+`subscriberAccounts` > `clientUserId` <br />The clientUserId of the account that should be assigned| <span class="string">string</span> |  |
+`subscriberAccounts` > `emailAddress` <br />The email address of the account that should be assigned| <span class="string">string</span> |  |
+`subscriberAccounts` > `taxInfo` <br />Collection of tax information for each account| <span class="object">object</span> |  |
+`taxInfo` > `zeroRated` <br />Indication as to whether the purchase is tax exempt| <span class="string">string</span> |  |
+`taxInfo` > `country` <br />Country specific tax rate to use| <span class="string">string</span> |  |
+`taxInfo` > `state` <br />State specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`taxInfo` > `county` <br />County specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`taxInfo` > `city` <br />City specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`asynchronousInitiationParameters` <br />Parameter set provided if you would like to trigger an advanced payment type| <span class="string">string</span> |  |
+`asynchronousInitiationParameters` > `parameterName` <br />Parameter name specific to the alternative payment method provided| <span class="string">string</span> |  |
 
 ## Standard Product Purchase
 
@@ -180,30 +180,30 @@ For the completion of standard payment options, making the following `POST` requ
 
 ### Request Parameters
 
-Parameter | Type  | Mandatory| Description | 
---------- | ------- | ------- | ------- | 
-`productDetails` | object | No |A collection of additional entitlements to provide the account on purchase|
-`productDetails` > `description` | string | No |If the product description configured in eSuite should be overridden|
-`productDetails` > `referenceNumber` | string | No |Client reference for the purchase|
-`productDetails` > `comments` | string | No |Any additional comments on the purchase|
-`voucherCode` | string | No | eSuite generated voucher code that has been provided during the flow |
-`settlementType` | string | No | An indication as to whether the purchase should be completed immediately or delayed |
-`cvv` | string | No |If the purchase is being made using an non-authorised card, this parameter can be passed in to enable authorisation to take place |
-`paymentMethod` | string | No |The type of payment method the account has selected. Standard methods are `CreditCard` `DirectDebit`, `Service Credits` or `SEPA`. Other methods are available|
-`entitlementParameters` | array[object] | No |A collection of additional entitlements to provide the account on purchase|
-`entitlementParameters` > `identifier` | string | No |Identifier for the entitlement being purchased|
-`entitlementParameters` > `startDate` | string | No |The date on which the entitlement should be valid from|
-`entitlementParameters` > `expiryDate` | string | No |The date at which the account is no longer entitled to the content|
-`orderParameters` | dictionary | No | A collection of custom attributes associated to the payment |
-`orderParameters` > `parameterName` | string | No |The custom attribute name|
-`taxInfo` | object | No |Collection of tax information|
-`taxInfo` > `zeroRated` | Bool | No |Indication as to whether the purchase is tax exempt|
-`taxInfo` > `country` | string | No |Country specific tax rate to use|
-`taxInfo` > `state` | string | No |State specific tax rate to use (US Specific)|
-`taxInfo` > `county` | string | No |County specific tax rate to use (US Specific)|
-`taxInfo` > `city` | string | No |City specific tax rate to use (US Specific)|
-`asynchronousInitiationParameters` | string | No |Parameter set provided if you would like to trigger an advanced payment type|
-`asynchronousInitiationParameters` > `parameterName` | string | No |Parameter name specific to the alternative payment method provided|
+ |   | | 
+--------- | ------- | ------- | 
+`productDetails` <br />A collection of additional entitlements to provide the account on purchase| <span class="object">object</span> |  |
+`productDetails` > `description` <br />If the product description configured in eSuite should be overridden| <span class="string">string</span> |  |
+`productDetails` > `referenceNumber` <br />Client reference for the purchase| <span class="string">string</span> |  |
+`productDetails` > `comments` <br />Any additional comments on the purchase| <span class="string">string</span> |  |
+`voucherCode` <br />eSuite generated voucher code that has been provided during the flow | <span class="string">string</span> |  | 
+`settlementType` <br />An indication as to whether the purchase should be completed immediately or delayed | <span class="string">string</span> |  | 
+`cvv` <br />If the purchase is being made using an non-authorised card, this parameter can be passed in to enable authorisation to take place | <span class="string">string</span> |  |
+`paymentMethod` <br />The type of payment method the account has selected. Standard methods are `CreditCard` `DirectDebit`, `Service Credits` or `SEPA`. Other methods are available| <span class="string">string</span> |  |
+`entitlementParameters` <br />A collection of additional entitlements to provide the account on purchase| <span class="array">array[object]</span> |  |
+`entitlementParameters` > `identifier` <br />Identifier for the entitlement being purchased| <span class="string">string</span> |  |
+`entitlementParameters` > `startDate` <br />The date on which the entitlement should be valid from| <span class="string">string</span> |  |
+`entitlementParameters` > `expiryDate` <br />The date at which the account is no longer entitled to the content| <span class="string">string</span> |  |
+`orderParameters` <br />A collection of custom attributes associated to the payment | <span class="dictionary">dictionary*</span> |  | 
+`orderParameters` > `parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
+`taxInfo` <br />Collection of tax information| <span class="object">object</span> |  |
+`taxInfo` > `zeroRated` <br />Indication as to whether the purchase is tax exempt| <span class="bool">bool</span> |  |
+`taxInfo` > `country` <br />Country specific tax rate to use| <span class="string">string</span> |  |
+`taxInfo` > `state` <br />State specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`taxInfo` > `county` <br />County specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`taxInfo` > `city` <br />City specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`asynchronousInitiationParameters` <br />Parameter set provided if you would like to trigger an advanced payment type| <span class="string">string</span> |  |
+`asynchronousInitiationParameters` > `parameterName` <br />Parameter name specific to the alternative payment method provided| <span class="string">string</span> |  |
 
 
 ## Standard One-off Charge
@@ -278,32 +278,32 @@ For the completion of standard payment options, making the following `POST` requ
 
 ### Request Parameters
 
-Parameter | Type  | Mandatory| Description | 
---------- | ------- | ------- | ------- | 
-`paymentMethod` | string | No |The payment method the account has selected to pay with if it differs from the initial configuration|
-`cvv` | string | No |Security code of a card if the payment method is set to `creditDebitCard`|
-`voucherCode` | string | No |A voucher code provided by the account during the workflow|
-`orderItems` | array[object] | No |A collection of additional entitlements to provide the account on purchase|
-`orderItems` > `customOrderParameters` | dictionary | No | A collection of custom attributes associated to the payment |
-`customOrderParameters` > `parameterName` | string | No |The custom attribute name|
-`orderItems` > `description` | object | No |A collection of additional entitlements to provide the account on purchase|
-`orderItems` > `orderReference` | object | No |A collection of additional entitlements to provide the account on purchase|
-`orderItems` > `comment` | object | No |A collection of additional entitlements to provide the account on purchase|
-`orderItems` > `taxInfo` | object | Yes |Collection of tax information|
-`taxInfo` > `category` | Bool | No |Indication as to whether the purchase is tax exempt|
-`taxInfo` > `zeroRated` | Bool | No |Indication as to whether the purchase is tax exempt|
-`taxInfo` > `country` | string | No |Country specific tax rate to use|
-`taxInfo` > `state` | string | No |State specific tax rate to use (US Specific)|
-`taxInfo` > `county` | string | No |County specific tax rate to use (US Specific)|
-`taxInfo` > `city` | string | No |City specific tax rate to use (US Specific)|
-`orderItems` > `customOrderParameters` | dictionary | No | A collection of custom attributes associated to the payment |
-`customOrderParameters` > `parameterName` | string | No |The custom attribute name|
-`orderItems` > `entitlements` | array[object] | No |A collection of additional entitlements to provide the account on purchase|
-`entitlements` > `identifier` | string | No |Identifier for the entitlement being purchased|
-`entitlements` > `startDate` | string | No |The date on which the entitlement should be valid from|
-`entitlements` > `expiryDate` | string | No |The date at which the account is no longer entitled to the content|
-`asynchronousInitiationParameters` | string | No |Parameter set provided if you would like to trigger an advanced payment type|
-`asynchronousInitiationParameters` > `parameterName` | string | No |Parameter name specific to the alternative payment method provided|
+ |   |  | 
+--------- | ------- | ------- | 
+`paymentMethod` <br />The payment method the account has selected to pay with if it differs from the initial configuration| <span class="string">string</span> |  |
+`cvv` <br />Security code of a card if the payment method is set to `creditDebitCard`| <span class="string">string</span> |  |
+`voucherCode` <br />A voucher code provided by the account during the workflow| <span class="string">string</span> |  |
+`orderItems` <br />A collection of additional entitlements to provide the account on purchase| <span class="array">array[object]</span> |  |
+`orderItems` > `customOrderParameters` <br />A collection of custom attributes associated to the payment | <span class="dictionary">dictionary*</span> |  | 
+`customOrderParameters` > `parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
+`orderItems` > `description` <br />A collection of additional entitlements to provide the account on purchase| <span class="object">object</span> |  |
+`orderItems` > `orderReference` <br />A collection of additional entitlements to provide the account on purchase| <span class="object">object</span> |  |
+`orderItems` > `comment` <br />A collection of additional entitlements to provide the account on purchase| <span class="object">object</span> |  |
+`orderItems` > `taxInfo` <br />Collection of tax information| <span class="object">object</span> | <span class="required">Required</span> |
+`taxInfo` > `category` <br />Indication as to whether the purchase is tax exempt| <span class="bool">bool</span> |  |
+`taxInfo` > `zeroRated` <br />Indication as to whether the purchase is tax exempt| <span class="bool">bool</span> |  |
+`taxInfo` > `country` <br />Country specific tax rate to use| <span class="string">string</span> |  |
+`taxInfo` > `state` <br />State specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`taxInfo` > `county` <br />County specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`taxInfo` > `city` <br />City specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`orderItems` > `customOrderParameters` <br />A collection of custom attributes associated to the payment | <span class="dictionary">dictionary*</span> |  | 
+`customOrderParameters` > `parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
+`orderItems` > `entitlements` <br />A collection of additional entitlements to provide the account on purchase| <span class="array">array[object]</span> |  |
+`entitlements` > `identifier` <br />Identifier for the entitlement being purchased| <span class="string">string</span> |  |
+`entitlements` > `startDate` <br />The date on which the entitlement should be valid from| <span class="string">string</span> |  |
+`entitlements` > `expiryDate` <br />The date at which the account is no longer entitled to the content| <span class="string">string</span> |  |
+`asynchronousInitiationParameters` <br />Parameter set provided if you would like to trigger an advanced payment type| <span class="string">string</span> |  |
+`asynchronousInitiationParameters` > `parameterName` <br />Parameter name specific to the alternative payment method provided| <span class="string">string</span> |  |
 
 
 ## Standard Credits Purchase
@@ -378,14 +378,13 @@ For the completion of standard payment options, making the following `POST` requ
 
 ### Request Parameters
 
-Parameter | Type  | Mandatory| Description | 
---------- | ------- | ------- | ------- | 
-`paymentMethod` | string | No |The payment method the account has selected to pay with if it differs from the initial configuration|
-`cvv` | string | No |Security code of a card if the payment method is set to `creditDebitCard`|
-`voucherCode` | string | No |A voucher code provided by the account during the workflow|
-`asynchronousInitiationParameters` | string | No |Parameter set provided if you would like to trigger an advanced payment type|
-`asynchronousInitiationParameters` > `parameterName` | string | No |Parameter name specific to the alternative payment method provided|
-
+ |   | |  
+--------- | ------- | ------- | 
+`paymentMethod` <br />The payment method the account has selected to pay with if it differs from the initial configuration| <span class="string">string</span> |  |
+`cvv` <br />Security code of a card if the payment method is set to `creditDebitCard`| <span class="string">string</span> |  |
+`voucherCode` <br />A voucher code provided by the account during the workflow| <span class="string">string</span> |  |
+`asynchronousInitiationParameters` <br />Parameter set provided if you would like to trigger an advanced payment type| <span class="string">string</span> |  |
+`asynchronousInitiationParameters` > `parameterName` <br />Parameter name specific to the alternative payment method provided| <span class="string">string</span> |  |
 
 ## Alternative Subscription Purchase
 
@@ -463,10 +462,10 @@ For the completion of alternative subscription options, making the following `PA
 
 ### Request Parameters
 
-Parameter | Type  | Mandatory| Description | 
---------- | ------- | ------- | ------- | 
-`asynchronousProcessingParameters` | string | No |Parameter set provided if you would like to complete an advanced payment type|
-`asynchronousProcessingParameters` > `parameterName` | string | No |Parameter name specific to the alternative payment method provided|
+ |   | |  
+--------- | ------- | ------- | 
+`asynchronousProcessingParameters` <br />Parameter set provided if you would like to complete an advanced payment type| <span class="string">string</span> |  |
+`asynchronousProcessingParameters` > `parameterName` <br />Parameter name specific to the alternative payment method provided| <span class="string">string</span> |  |
 
 ## Alternative Product Purchase
 
@@ -532,10 +531,10 @@ For the completion of alternative product purchase options, making the following
 
 ### Request Parameters
 
-Parameter | Type  | Mandatory| Description | 
---------- | ------- | ------- | ------- | 
-`asynchronousProcessingParameters` | string | No |Parameter set provided if you would like to complete an advanced payment type|
-`asynchronousProcessingParameters` > `parameterName` | string | No |Parameter name specific to the alternative payment method provided|
+ |   | |  
+--------- | ------- | ------- | 
+`asynchronousProcessingParameters` <br />Parameter set provided if you would like to complete an advanced payment type| <span class="string">string</span> |  |
+`asynchronousProcessingParameters` > `parameterName` <br />Parameter name specific to the alternative payment method provided| <span class="string">string</span> |  |
 
 ## Alternative One-off Charge
 
@@ -607,10 +606,10 @@ For the completion of alternative one-off charge, making the following `PATCH` r
 
 ### Request Parameters
 
-Parameter | Type  | Mandatory| Description | 
---------- | ------- | ------- | ------- | 
-`asynchronousProcessingParameters` | string | No |Parameter set provided if you would like to complete an advanced payment type|
-`asynchronousProcessingParameters` > `parameterName` | string | No |Parameter name specific to the alternative payment method provided|
+ |   | | 
+--------- | ------- | ------- | 
+`asynchronousProcessingParameters` <br />Parameter set provided if you would like to complete an advanced payment type| <span class="string">string</span> |  |
+`asynchronousProcessingParameters` > `parameterName` <br />Parameter name specific to the alternative payment method provided| <span class="string">string</span> |  |
 
 ## Alternative Credits Purchase
 
@@ -676,10 +675,10 @@ For the completion of alternative credits purchase, making the following `PATCH`
 
 ### Request Parameters
 
-Parameter | Type  | Mandatory| Description | 
---------- | ------- | ------- | ------- | 
-`asynchronousProcessingParameters` | string | No |Parameter set provided if you would like to complete an advanced payment type|
-`asynchronousProcessingParameters` > `parameterName` | string | No |Parameter name specific to the alternative payment method provided|
+ |   | | 
+--------- | ------- | ------- | 
+`asynchronousProcessingParameters` <br />Parameter set provided if you would like to complete an advanced payment type| <span class="string">string</span> |  |
+`asynchronousProcessingParameters` > `parameterName` <br />Parameter name specific to the alternative payment method provided| <span class="string">string</span> |  |
 
 
 

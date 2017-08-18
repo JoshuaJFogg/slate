@@ -114,9 +114,9 @@ Calling this endpoint will return information about the current state of the ses
 
 ### Request Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-`sessionToken` | string | Yes | The session token that should be retrieved
+ |  |  | 
+--------- | ------- | ------- | 
+`sessionToken` <br />The session token that should be retrieved| <span class="string">string</span> | <span class="required">Required</span> | 
 
 ## Delete a Session
 
@@ -225,7 +225,7 @@ If you would like to delete a session on eSuite, calling this endpoint will expi
 
 ### Query Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-`sessionToken` | string | Yes | The session token that should be deleted
+ |  |  | 
+--------- | ------- | ------- | 
+`sessionToken` <br />The session token that should be deleted| <span class="string">string</span> | <span class="required">Required</span> | 
 

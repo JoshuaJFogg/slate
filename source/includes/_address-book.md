@@ -109,18 +109,18 @@ This endpoint allows the creation of a new address within the eSuite platform fo
 
 ### POST Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-`houseName` | string | mandatory* | The name associated to the building |
-`houseNumber` | string |mandatory* | The building number associated to the address |
-`street` | string |mandatory | The street the address is located |
-`townCity` | string |mandatory | The town or city the address is associated |
-`district` | string |No | The district associated with the address |
-`state` | string |No | The state that the address is located |
-`county` | string |No | The county the address is associated |
-`postCode` | string |mandatory | The postcode of the address that has been added |
-`country` | string |mandatory | The country the address is specific to |
-`isDefault` | Bool |No | An indication as to whether the address is the default address for the account |
+ |  |  |  
+--------- | ------- | ------- | 
+`houseName` <br />The name associated to the building | <span class="string">string</span> | <span class="required">mandatory*</span> | 
+`houseNumber` <br />The building number associated to the address | <span class="string">string</span> | <span class="required">mandatory*</span> | 
+`street` <br />The street the address is located | <span class="string">string</span> | <span class="required">mandatory</span> | 
+`townCity` <br />The town or city the address is associated | <span class="string">string</span> | <span class="required">mandatory</span> | 
+`district` <br />The district associated with the address | <span class="string">string</span> |  | 
+`state` <br />The state that the address is located | <span class="string">string</span> |  | 
+`county` <br />The county the address is associated | <span class="string">string</span> |  | 
+`postCode` <br />The postcode of the address that has been added | <span class="string">string</span> | <span class="required">mandatory</span> | 
+`country` <br />The country the address is specific to | <span class="string">string</span> | <span class="required">mandatory</span> | 
+`isDefault` <br />An indication as to whether the address is the default address for the account | <span class="bool">bool</span> |  | 
 
 *Either `houseName` or `houseNumber` is required but both are not mandatory.
 
@@ -252,20 +252,20 @@ This endpoint allows the retrieval of all addresses that are stored against a sp
 
 ### Response Parameters
 
-Parameter | Type | Description | 
---------- | ------- | ------- | 
-`addressBook` | array[object] | The list of addresses |
-`addressIdentifier `| string | The address identifier that should be used to identify which address is required in future API requests |
-`houseName `| string | The name associated to the building |
-`houseNumber` | string | The building number associated to the address |
-`street` | string | The street the address is located |
-`townCity` | string | The town or city the address is associated |
-`district` | string | The district associated with the address |
-`state` | string | The state that the address is located |
-`county` | string | The county the address is associated |
-`postCode` | string | The postcode of the address that has been added |
-`country` | string | The country the address is specific to |
-`isDefault` | Bool | An indication as to whether the address is the default address for the account |
+ |  | 
+--------- | ------- | 
+`addressBook` <br />The list of addresses | <span class="array">array[object]</span> | 
+`addressIdentifier `<br />The address identifier that should be used to identify which address is required in future API requests | <span class="string">string</span> | 
+`houseName `<br />The name associated to the building | <span class="string">string</span> | 
+`houseNumber` <br />The building number associated to the address | <span class="string">string</span> | 
+`street` <br />The street the address is located | <span class="string">string</span> | 
+`townCity` <br />The town or city the address is associated | <span class="string">string</span> | 
+`district` <br />The district associated with the address | <span class="string">string</span> | 
+`state` <br />The state that the address is located | <span class="string">string</span> | 
+`county` <br />The county the address is associated | <span class="string">string</span> | 
+`postCode` <br />The postcode of the address that has been added | <span class="string">string</span> | 
+`country` <br />The country the address is specific to | <span class="string">string</span> | 
+`isDefault` <br />An indication as to whether the address is the default address for the account | <span class="bool">bool</span> | 
 
 
 

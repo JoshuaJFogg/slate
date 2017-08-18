@@ -97,12 +97,12 @@ In addition to gaining entitlements via purchasing content, it is possible to pr
 
 ### POST Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-`name` | string | No | The name of entitlement
-`identifier` | string | Yes | The identifier of entitlement
-`startDate` | string | Yes | The create date of the entitlement
-`endDate` | string | Yes | The expiry of the entitlement
+ |  |  | 
+--------- | ------- | ------- | 
+`name` <br />The name of entitlement| <span class="string">string</span> |  | 
+`identifier` <br />The identifier of entitlement| <span class="string">string</span> | <span class="required">Required</span> | 
+`startDate` <br />The create date of the entitlement| <span class="string">string</span> | <span class="required">Required</span> | 
+`endDate` <br />The expiry of the entitlement| <span class="string">string</span> | <span class="required">Required</span> | 
 
 
 ## Retrieve Access
@@ -443,10 +443,10 @@ In order to check if an account has access to content, this API method should be
 
 ### Query Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-`incrementUsage` | Bool | No | This option will default to false if not provided. 
-`deviceIdentifier` | string | No | If device concurrency is being used, this value must be populated.
+ |  |  | 
+--------- | ------- | ------- | 
+`incrementUsage` <br />This option will default to false if not provided. | <span class="bool">bool</span> |  | 
+`deviceIdentifier` <br />If device concurrency is being used, this value must be populated.| <span class="string">string</span> |  | 
 
 ## Search Access
 
@@ -568,18 +568,18 @@ This endpoint is available for all access for a specific account, regardless of 
 
 ### Query Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-`createDateMin` | string | No | Earliest creation date to search 
-`createDateMax` | string | No | Latest creation date to search
-`startDateMin`| string | No | Earliest Entitlement start date to search
-`startDateMax` | string | No | Latest Entitlement start date to search
-`endDateMin` | string | No | Earliest Entitlement expiration date to search
-`endDateMax` | string | No | Latest Entitlement expiration date to search
-`entitlementIdentifier` | string | No | The name of entitlement
-`rowsPerPage` | integer | No | Number of items to return in the response
-`currentPage` | integer | No | Page to return
-`exactMatch` | Bool | No | Indication whether to exactly match the entitlementIdentifer (default to false)
+ |  |  | 
+--------- | ------- | ------- | 
+`createDateMin` <br />Earliest creation date to search | <span class="string">string</span> |  | 
+`createDateMax` <br />Latest creation date to search| <span class="string">string</span> |  | 
+`startDateMin`<br />Earliest Entitlement start date to search| <span class="string">string</span> |  | 
+`startDateMax` <br />Latest Entitlement start date to search| <span class="string">string</span> |  | 
+`endDateMin` <br />Earliest Entitlement expiration date to search| <span class="string">string</span> |  | 
+`endDateMax` <br />Latest Entitlement expiration date to search| <span class="string">string</span> |  | 
+`entitlementIdentifier` <br />The name of entitlement| <span class="string">string</span> |  | 
+`rowsPerPage` <br />Number of items to return in the response| <span class="integer">integer</span> |  | 
+`currentPage` <br />Page to return| <span class="integer">integer</span> |  | 
+`exactMatch` <br />Indication whether to exactly match the entitlementIdentifer (default to false)| <span class="bool">bool</span> |  | 
 
 <aside class="info">Passing no query parameters will return a 204.</aside>
 

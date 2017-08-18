@@ -109,11 +109,11 @@ For the most simple integration, calling this endpoint will generate a payment s
 
 ### Query Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-`resourceReference` | string | Yes | Reference to the subscription service being purchased.
-`returnUrl` | string | No | The URL location the account should be redirected to following a purchase attempt.
-`processUpdateURL` | string | No | The endpoint that should be notified of the successful purchase.
+ |  |  |  
+--------- | ------- | ------- | 
+`resourceReference` <br /> Reference to the subscription service being purchased.| <span class="string">string<span> | <span class="required">Required</span>
+`returnUrl` <br /> The URL location the account should be redirected to following a purchase attempt.| <span class="string">string<span> |  
+`processUpdateURL` <br /> The endpoint that should be notified of the successful purchase.| <span class="string">string<span> |  
 
 
 ## Get a Product session
@@ -225,11 +225,11 @@ For the most simple integration, calling this endpoint will generate a payment s
 
 ### Query Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-`resourceReference` | string | Yes | Reference to the subscription service being purchased.
-`returnUrl` | string | No | The URL location the account should be redirected to following a purchase attempt.
-`processUpdateURL` | string | No | The endpoint that should be notified of the successful purchase.
+ |  |  |  
+--------- | ------- | ------- | 
+`resourceReference` <br />Reference to the subscription service being purchased. | <span class="string">string</span> | <span class="required">Required</span> | 
+`returnUrl` <br />The URL location the account should be redirected to following a purchase attempt.| <span class="string">string</span> |  | 
+`processUpdateURL` <br />The endpoint that should be notified of the successful purchase.| <span class="string">string</span> |  | 
 
 
 ## Retrieve a Session Configuration
@@ -353,47 +353,47 @@ For the most simple integration, calling this endpoint will generate a payment s
 
 ### Response Parameters
 
-Parameter | Type  | Description | 
---------- | ------- | ------- | 
-`clientId` | integer | The associated ClientId to your eSuite instance.
-`clientName` | string | The name associated to your eSuite instance.
-`clientDefaultTimeZone` | string | Friendly name of your configured time zone.
-`clientDefaultUICulture` | string | ISO representation of the configured culture.
-`createSessionInfo ` | object | Overarching session information object.
-`createSessionInfo ` > `bypassConfirmationPage` | Bool | An indication as to whether the payment confirmation page should be bypassed following successful purchase.
-`createSessionInfo ` > `clientUserId` | string | The clientUserId of the account.
-`createSessionInfo ` > `currency` | string | The currency configured for the workflow.
-`createSessionInfo ` > `cancelPaymentOnProcessUpdateFailure` | string | Whether the purchase requires external approval.
-`createSessionInfo ` > `function` | string | The type of workflow configured AddSubscription, BuyProduct, etc.
-`createSessionInfo` > `orderItems`   | string | Collection of items to be purchased.
-`orderItems` > `description` | string | The description of each item.
-`orderItems` > `grossAmount` | decimal | The gross amount of each item.
-`orderItems` > `netAmount` | decimal | The net amount of each item.
-`orderItems` > `taxInfo`   | object | Collection of tax information for the item.
-`taxInfo` > `taxAmount` | decimal | The tax amount of each item.
-`taxInfo` > `category` | string | The category of tax associated to the item.
-`taxInfo` > `region` | object | Collection of tax region information.
-`region` > `zeroRated` | bool | Indication whether the item is non-taxable.
-`region` > `country` | string | The country tax rate to apply.
-`region` > `state` | string | The state tax rate to apply.
-`region` > `county` | string |The county tax rate to apply.
-`region` > `city` | string | The city tax rate to apply.
-`createSessionInfo ` > `requiresDelivery` | bool | Indication as to whether the item will require delivery.
-`createSessionInfo ` > `paymentMethod` | string | The default payment method to display.
-`createSessionInfo ` > `productId` | string | The associated ProductId of the purchase.
-`createSessionInfo ` > `returnUrl` | string | The location the consumer should be returned to following purchase.
-`createSessionInfo ` > `serviceId` | string | The associated ServiceId of the purchase.
-`createSessionInfo ` > `voucherCode` | string | Any pre-entered voucher codes.
-`newAccount` | bool | An indication as to whether the flow is for a new or existing account.
-`paymentOptions` | object | A collection of payment options and their configuration.
-`paymentOptions` > `cardTypes`  | array[object] | string.
-`cardTypes` > `name` | string | Collection of cards types available.
-`cardTypes` > `allowRepeats` | bool | An indication as to whether the card type can be used for one-click payments.
-`cardTypes` > `use3DSecureForAllTransactions` | bool | An indication as to whether the card type requires 3D Secure.
-`cardTypes` > `use3DSecureOnFirstTransaction` | bool | An indication as to whether the card type requires 3D Secure on first use only.
-`paymentOptions` > `directDebitTypes` | array[object] | Collection of available Direct Debits.
-`directDebitTypes` > `name` | string | Type fo direct debit.
-`directDebitTypes` > `allowed` | bool | An indication as to whether it is available.
+ |   |  
+--------- | ------- |  
+`clientId` <br />The associated ClientId to your eSuite instance.| <span class="integer">integer</span> | 
+`clientName` <br />The name associated to your eSuite instance.| <span class="string">string</span> | 
+`clientDefaultTimeZone` <br />Friendly name of your configured time zone.| <span class="string">string</span> | 
+`clientDefaultUICulture` <br />ISO representation of the configured culture.| <span class="string"><span class="string">string</span> | 
+`createSessionInfo ` <br />Overarching session information object.| <span class="object">object</span> | 
+`createSessionInfo ` > `bypassConfirmationPage` <br />An indication as to whether the payment confirmation page should be bypassed following successful purchase.| <span class="bool">bool</span> | 
+`createSessionInfo ` > `clientUserId` <br />The clientUserId of the account.| <span class="string">string</span> | 
+`createSessionInfo ` > `currency` <br />The currency configured for the workflow.| <span class="string">string</span> | 
+`createSessionInfo ` > `cancelPaymentOnProcessUpdateFailure` <br />Whether the purchase requires external approval.| <span class="string">string</span> | 
+`createSessionInfo ` > `function` <br />The type of workflow configured AddSubscription, BuyProduct, etc.| <span class="string">string</span> | 
+`createSessionInfo` > `orderItems`   <br />Collection of items to be purchased.| <span class="string">string</span> | 
+`orderItems` > `description` <br />The description of each item.| <span class="string">string</span> | 
+`orderItems` > `grossAmount` <br />The gross amount of each item.| <span class="decimal">decimal</span> | 
+`orderItems` > `netAmount` <br />The net amount of each item.| <span class="decimal">decimal</span> | 
+`orderItems` > `taxInfo`   <br />Collection of tax information for the item.| <span class="object">object</span> | 
+`taxInfo` > `taxAmount` <br />The tax amount of each item.| <span class="decimal">decimal</span> | 
+`taxInfo` > `category` <br />The category of tax associated to the item.| <span class="string">string</span> | 
+`taxInfo` > `region` <br />Collection of tax region information.| <span class="object">object</span> | 
+`region` > `zeroRated` <br />Indication whether the item is non-taxable.| <span class="bool">bool</span> | 
+`region` > `country` <br />The country tax rate to apply.| <span class="string">string</span> | 
+`region` > `state` <br />The state tax rate to apply.| <span class="string">string</span> | 
+`region` > `county` <br />The county tax rate to apply.| <span class="string">string</span> |
+`region` > `city` <br />The city tax rate to apply.| <span class="string">string</span> | 
+`createSessionInfo ` > `requiresDelivery` <br />Indication as to whether the item will require delivery.| <span class="bool">bool</span> | 
+`createSessionInfo ` > `paymentMethod` <br />The default payment method to display.| <span class="string">string</span> | 
+`createSessionInfo ` > `productId` <br />The associated ProductId of the purchase.| <span class="string">string</span> | 
+`createSessionInfo ` > `returnUrl` <br />The location the consumer should be returned to following purchase.| <span class="string">string</span></span> | 
+`createSessionInfo ` > `serviceId` <br />The associated ServiceId of the purchase.| <span class="string">string</span> | 
+`createSessionInfo ` > `voucherCode` <br />Any pre-entered voucher codes.| <span class="string">string</span> | 
+`newAccount` <br />An indication as to whether the flow is for a new or existing account.| <span class="bool">bool</span> | 
+`paymentOptions` <br />A collection of payment options and their configuration.| <span class="object">object</span> | 
+`paymentOptions` > `cardTypes` <br /> <span class="string">String</span>  | <span class="array">array[object]</span> | 
+`cardTypes` > `name` <br />Collection of cards types available.| <span class="string">string</span> | 
+`cardTypes` > `allowRepeats` <br />An indication as to whether the card type can be used for one-click payments.| <span class="bool">bool</span> | 
+`cardTypes` > `use3DSecureForAllTransactions` <br />An indication as to whether the card type requires 3D Secure.| <span class="bool">bool</span> | 
+`cardTypes` > `use3DSecureOnFirstTransaction` <br />An indication as to whether the card type requires 3D Secure on first use only.| <span class="bool">bool</span> | 
+`paymentOptions` > `directDebitTypes` <br />Collection of available Direct Debits.| <span class="array">array[object]</span> | 
+`directDebitTypes` > `name` <br />Type fo direct debit.| <span class="string">string</span> | 
+`directDebitTypes` > `allowed` <br />An indication as to whether it is available.| <span class="bool">bool</span> | 
 
 ## Create a Subscription Session
 
@@ -494,51 +494,51 @@ If you would like to generate a more specific session for the purpose of purchas
 
 ### Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-`workflowConfiguration` | string | Yes | 
-`workflowConfiguration` > `subscriptionId` | string | No | The configured subscription service identifier|
-`workflowConfiguration` > `pricing` | object | Yes | Pricing object for the purchase|
-`pricing` > `priceId` | integer | Yes* |The configured price identifier|
-`pricing` > `paymentMethod` | string | No |The payment method the customer should be presented by default|
-`pricing` > `currency` | string | No |ISO Currency of the purchase e.g. `EUR`|
-`pricing` > `priceItems` | array[objects] | Yes* |Collection of individual items being purchased on a dynamic subscription|
-`priceItems` > `externalReference` | string | No |Reference from a client system|
-`priceItems` > `supplierId` | string | No |Supplier identifier from a client system|
-`priceItems` > `price` | decimal | Yes |The price that will be paid for the line item|
-`priceItems` > `description` | string | Yes |The description that will be displayed to the account|
-`pricing` > `taxInfo` | object | No |Collection of tax information|
-`taxInfo` > `zeroRated` | Bool | No |Indication as to whether the purchase is tax exempt|
-`taxInfo` > `country` | string | No |Country specific tax rate to use|
-`taxInfo` > `state` | string | No |State specific tax rate to use (US Specific)|
-`taxInfo` > `county` | string | No |County specific tax rate to use (US Specific)|
-`taxInfo` > `city` | string | No |City specific tax rate to use (US Specific)|
-`workflowConfiguration` > `processUpdateUrl` | string | No | External endpoint eSuite should notiffy of purchase
-`workflowConfiguration` > `cancelOnProcessUpdateFailure` | bool | No | An indication as to whether eSuite should cancel the purchase on failure to recieve a call out response
-`workflowConfiguration` > `returnUrl` | string | No | The location to be redirected to upon leaving the purchase flow
-`workflowConfiguration` > `clientUserId` | string | No | Unique, non-irrevocable value. Used when eSuite is not primary IdAM
-`workflowConfiguration` > `email` | string | No | Accounts email address
-`workflowConfiguration` > `voucherCode` | string | No | A pre-configured eSuite voucher code
-`workflowConfiguration` > `securityToken` | string | No | Value that is passed in the `ProcessUpdate` callout to allow you to verify it is a legitimate call out
-`workflowConfiguration` > `disable3DSecure` | Bool | No | An indication that 3D Secure should be disabled. Defaults to `false`
-`workflowConfiguration` > `settlementType` | string | No | An indication whether to complete immediately or at a later date. `Pending` or `NextAvailable` are the available values
-`workflowConfiguration` > `permitUnverifiedAccoutPurchase` | bool | No | Prevent accounts who have not verified their emails from making a purchase
-`workflowConfiguration` > `workFlowCustomParameters` | dictionary | No |A collection of custom attributes associated to the configuration
-`workFlowCustomParameters` > `parameterName` | string | No |The custom attribute name|
-`customAccountParameters` | dictionary | No | A collection of custom attributes associated to the account |
-`customAccountParameters` > `parameterName` | string | No |The custom attribute name|
-`customOrderParameters` | dictionary | No | A collection of custom attributes associated to the payment |
-`customOrderParameters` > `parameterName` | string | No |The custom attribute name|
-`customSubscriptionParameters` | string | No |A collection of custom attributes associated to the subscription|
-`customSubscriptionParameters` > `parameterName` | string | No |The custom attribute name|
-`entitlements` | array[object] | No |A collection of additional entitlements to provide the account on purchase|
-`entitlements` > `identifier` | string | No |Identifier for the entitlement being purchased|
-`entitlements` > `startDate` | string | No |The date on which the entitlement should be valid from|
-`entitlements` > `expiryDate` | string | No |The date at which the account is no longer entitled to the content|
+ |  |  |
+--------- | ------- | ------- | 
+`workflowConfiguration` | <span class="string">string</span> | <span class="required">Required</span> | 
+`workflowConfiguration` > `subscriptionId` <br />The configured subscription service identifier| <span class="string">string</span> |  | 
+`workflowConfiguration` > `pricing` <br />Pricing object for the purchase| <span class="object">object</span> | <span class="required">Required</span> | 
+`pricing` > `priceId` <br />The configured price identifier| <span class="integer">integer</span> | <span class="required">Required</span> |
+`pricing` > `paymentMethod` <br />The payment method the customer should be presented by default| <span class="string">string</span> |  |
+`pricing` > `currency` <br />ISO Currency of the purchase e.g. `EUR`| <span class="string">string</span> |  |
+`pricing` > `priceItems` <br />Collection of individual items being purchased on a dynamic subscription| <span class="array">array[objects]</span> | <span class="required">Required</span> |
+`priceItems` > `externalReference` <br />Reference from a client system| <span class="string">string</span> |  |
+`priceItems` > `supplierId` <br />Supplier identifier from a client system| <span class="string">string</span> |  |
+`priceItems` > `price` <br />The price that will be paid for the line item| <span class="decimal">decimal</span> | <span class="required">Required</span> |
+`priceItems` > `description` <br />The description that will be displayed to the account| <span class="string">string</span> | <span class="required">Required</span> |
+`pricing` > `taxInfo` <br />Collection of tax information| <span class="object">object</span> |  |
+`taxInfo` > `zeroRated` <br />Indication as to whether the purchase is tax exempt| <span class="bool">bool</span> |  |
+`taxInfo` > `country` <br />Country specific tax rate to use| <span class="string">string</span> |  |
+`taxInfo` > `state` <br />State specific tax rate to use (US Specific)|<span class="string">string</span> |  |
+`taxInfo` > `county` <br />County specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`taxInfo` > `city` <br />City specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`workflowConfiguration` > `processUpdateUrl` <br />External endpoint eSuite should notiffy of purchase| <span class="string">string</span> |  | 
+`workflowConfiguration` > `cancelOnProcessUpdateFailure` <br />An indication as to whether eSuite should cancel the purchase on failure to recieve a call out response| <span class="bool">bool</span> |  | 
+`workflowConfiguration` > `returnUrl` <br />The location to be redirected to upon leaving the purchase flow| <span class="string">string</span> |  | 
+`workflowConfiguration` > `clientUserId` <br />Unique, non-irrevocable value. Used when eSuite is not primary IdAM| <span class="string">string</span> |  | 
+`workflowConfiguration` > `email` <br />Accounts email address| <span class="string">string</span> |  | 
+`workflowConfiguration` > `voucherCode` <br />A pre-configured eSuite voucher code| <span class="string">string</span> |  | 
+`workflowConfiguration` > `securityToken` <br />Value that is passed in the `ProcessUpdate` callout to allow you to verify it is a legitimate call out| <span class="string">string</span> |  | 
+`workflowConfiguration` > `disable3DSecure` <br />An indication that 3D Secure should be disabled. Defaults to `false`| <span class="bool">bool</span> |  | 
+`workflowConfiguration` > `settlementType` <br />An indication whether to complete immediately or at a later date. `Pending` or `NextAvailable` are the available values| <span class="string">string</span> |  | 
+`workflowConfiguration` > `permitUnverifiedAccoutPurchase` <br />Prevent accounts who have not verified their emails from making a purchase| <span class="bool">bool</span> |  | 
+`workflowConfiguration` > `workFlowCustomParameters` <br />A collection of custom attributes associated to the configuration| <span class="dictionary">dictionary*</span> |  |
+`workFlowCustomParameters` > `parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
+`customAccountParameters` <br />A collection of custom attributes associated to the account | <span class="dictionary">dictionary*</span> |  | 
+`customAccountParameters` > `parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
+`customOrderParameters` <br />A collection of custom attributes associated to the payment | <span class="dictionary">dictionary*</span> |  | 
+`customOrderParameters` > `parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
+`customSubscriptionParameters` <br />A collection of custom attributes associated to the subscription| <span class="string">string</span> |  |
+`customSubscriptionParameters` > `parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
+`entitlements` <br />A collection of additional entitlements to provide the account on purchase| <span class="array">array[object]</span> |  |
+`entitlements` > `identifier` <br />Identifier for the entitlement being purchased| <span class="string">string</span> |  |
+`entitlements` > `startDate` <br />The date on which the entitlement should be valid from| <span class="string">string</span> |  |
+`entitlements` > `expiryDate` <br />The date at which the account is no longer entitled to the content| <span class="string">string</span> |  |
 
 
 <aside class="info">
-This endpoint can only be called using server-side authentication due to the sensetive nature of some information contained in the `POST` request.
+This endpoint can only be called using server-side authentication due to the sensitive nature of some information contained in the `POST` request.
 </aside>
 
 ## Create a Product Session
@@ -640,42 +640,42 @@ If you would like to generate a more specific session for the purpose of purchas
 
 ### Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-`workflowConfiguration` | string | Yes | 
-`workflowConfiguration` > `pricing` | object | Yes | Pricing object for the purchase|
-`pricing` > `priceId` | integer | Yes |The configured price identifier|
-`pricing` > `paymentMethod` | string | No |The payment method the customer should be presented by default|
-`pricing` > `taxInfo` | object | No |Collection of tax information|
-`taxInfo` > `zeroRated` | Bool | No |Indication as to whether the purchase is tax exempt|
-`taxInfo` > `country` | string | No |Country specific tax rate to use|
-`taxInfo` > `state` | string | No |State specific tax rate to use (US Specific)|
-`taxInfo` > `county` | string | No |County specific tax rate to use (US Specific)|
-`taxInfo` > `city` | string | No |City specific tax rate to use (US Specific)|
-`workflowConfiguration` > `processUpdateUrl` | string | No | External endpoint eSuite should notiffy of purchase
-`workflowConfiguration` > `cancelOnProcessUpdateFailure` | bool | No | An indication as to whether eSuite should cancel the purchase on failure to recieve a call out response
-`workflowConfiguration` > `returnUrl` | string | No | The location to be redirected to upon leaving the purchase flow
-`workflowConfiguration` > `clientUserId` | string | No | Unique, non-irrevocable value. Used when eSuite is not primary IdAM
-`workflowConfiguration` > `email` | string | No | Accounts email address
-`workflowConfiguration` > `voucherCode` | string | No | A pre-configured eSuite voucher code
-`workflowConfiguration` > `securityToken` | string | No | Value that is passed in the `ProcessUpdate` callout to allow you to verify it is a legitimate call out
-`workflowConfiguration` > `disable3DSecure` | Bool | No | An indication that 3D Secure should be disabled. Defaults to `false`
-`workflowConfiguration` > `settlementType` | string | No | An indication whether to complete immediately or at a later date. `Pending` or `NextAvailable` are the available values
-`workflowConfiguration` > `permitUnverifiedAccoutPurchase` | bool | No | Prevent accounts who have not verified their emails from making a purchase
-`workflowConfiguration` > `workFlowCustomParameters` | dictionary | No |A collection of custom attributes associated to the configuration
-`workFlowCustomParameters` > `parameterName` | string | No |The custom attribute name|
-`customAccountParameters` | dictionary | No | A collection of custom attributes associated to the account |
-`customAccountParameters` > `parameterName` | string | No |The custom attribute name|
-`customOrderParameters` | dictionary | No | A collection of custom attributes associated to the payment |
-`customOrderParameters` > `parameterName` | string | No |The custom attribute name|
-`entitlements` | array[object] | No |A collection of additional entitlements to provide the account on purchase|
-`entitlements` > `identifier` | string | No |Identifier for the entitlement being purchased|
-`entitlements` > `startDate` | string | No |The date on which the entitlement should be valid from|
-`entitlements` > `expiryDate` | string | No |The date at which the account is no longer entitled to the content|
+ |  |  |  
+--------- | ------- | ------- | 
+`workflowConfiguration` | <span class="string">string</span> | <span class="required">Required</span> | 
+`workflowConfiguration` > `pricing` <br />Pricing object for the purchase| <span class="object">object</span> | <span class="required">Required</span> | 
+`pricing` > `priceId` <br />The configured price identifier| <span class="integer">integer</span> | <span class="required">Required</span> |
+`pricing` > `paymentMethod` <br />The payment method the customer should be presented by default| <span class="string">string</span> |  |
+`pricing` > `taxInfo` <br />Collection of tax information| <span class="object">object</span> |  |
+`taxInfo` > `zeroRated` <br />Indication as to whether the purchase is tax exempt| <span class="bool">bool</span> |  |
+`taxInfo` > `country` <br />Country specific tax rate to use| <span class="string">string</span> |  |
+`taxInfo` > `state` <br />State specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`taxInfo` > `county` <br />County specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`taxInfo` > `city` <br />City specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`workflowConfiguration` > `processUpdateUrl` <br />External endpoint eSuite should notiffy of purchase| <span class="string">string</span> |  | 
+`workflowConfiguration` > `cancelOnProcessUpdateFailure` <br />An indication as to whether eSuite should cancel the purchase on failure to recieve a call out response| <span class="bool">bool</span> |  | 
+`workflowConfiguration` > `returnUrl` <br />The location to be redirected to upon leaving the purchase flow| <span class="string">string</span> |  | 
+`workflowConfiguration` > `clientUserId` <br />Unique, non-irrevocable value. Used when eSuite is not primary IdAM| <span class="string">string</span> |  | 
+`workflowConfiguration` > `email` <br />Accounts email address| <span class="string">string</span> |  | 
+`workflowConfiguration` > `voucherCode` <br />A pre-configured eSuite voucher code| <span class="string">string</span> |  | 
+`workflowConfiguration` > `securityToken` <br />Value that is passed in the `ProcessUpdate` callout to allow you to verify it is a legitimate call out| <span class="string">string</span> |  | 
+`workflowConfiguration` > `disable3DSecure` <br />An indication that 3D Secure should be disabled. Defaults to `false`| <span class="bool">bool</span> |  | 
+`workflowConfiguration` > `settlementType` <br />An indication whether to complete immediately or at a later date. `Pending` or `NextAvailable` are the available values| <span class="string">string</span> |  | 
+`workflowConfiguration` > `permitUnverifiedAccoutPurchase` <br />Prevent accounts who have not verified their emails from making a purchase| <span class="bool">bool</span> |  | 
+`workflowConfiguration` > `workFlowCustomParameters` <br />A collection of custom attributes associated to the configuration| <span class="dictionary">dictionary*</span> |  |
+`workFlowCustomParameters` > `parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
+`customAccountParameters` <br />A collection of custom attributes associated to the account | <span class="dictionary">dictionary*</span> |  | 
+`customAccountParameters` > `parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
+`customOrderParameters` <br />A collection of custom attributes associated to the payment | <span class="dictionary">dictionary*</span> |  | 
+`customOrderParameters` > `parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
+`entitlements` <br />A collection of additional entitlements to provide the account on purchase| <span class="array">array[object]</span> |  |
+`entitlements` > `identifier` <br />Identifier for the entitlement being purchased| <span class="string">string</span> |  |
+`entitlements` > `startDate` <br />The date on which the entitlement should be valid from| <span class="string">string</span> |  |
+`entitlements` > `expiryDate` <br />The date at which the account is no longer entitled to the content| <span class="string">string</span> |  |
 
 
 <aside class="info">
-This endpoint can only be called using server-side authentication due to the sensetive nature of some information contained in the `POST` request.
+This endpoint can only be called using server-side authentication due to the sensitive nature of some information contained in the `POST` request.
 </aside>
 
 
@@ -779,47 +779,47 @@ If you would like to generate a more specific session for a one off charge, call
 
 ### Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-`workflowConfiguration` | string | Yes | 
-`workflowConfiguration` > `processUpdateUrl` | string | No | External endpoint eSuite should notiffy of purchase
-`workflowConfiguration` > `cancelOnProcessUpdateFailure` | bool | No | An indication as to whether eSuite should cancel the purchase on failure to recieve a call out response
-`workflowConfiguration` > `returnUrl` | string | No | The location to be redirected to upon leaving the purchase flow
-`workflowConfiguration` > `clientUserId` | string | No | Unique, non-irrevocable value. Used when eSuite is not primary IdAM
-`workflowConfiguration` > `email` | string | No | Accounts email address
-`workflowConfiguration` > `voucherCode` | string | No | A pre-configured eSuite voucher code
-`workflowConfiguration` > `securityToken` | string | No | Value that is passed in the `ProcessUpdate` callout to allow you to verify it is a legitimate call out
-`workflowConfiguration` > `disable3DSecure` | Bool | No | An indication that 3D Secure should be disabled. Defaults to `false`
-`workflowConfiguration` > `settlementType` | string | No | An indication whether to complete immediately or at a later date. `Pending` or `NextAvailable` are the available values
-`workflowConfiguration` > `permitUnverifiedAccoutPurchase` | bool | No | Prevent accounts who have not verified their emails from making a purchase
-`workflowConfiguration` > `workFlowCustomParameters` | dictionary | No |A collection of custom attributes associated to the configuration
-`workFlowCustomParameters` > `parameterName` | string | No |The custom attribute name|
-`customAccountParameters` | dictionary | No | A collection of custom attributes associated to the account |
-`customAccountParameters` > `parameterName` | string | No |The custom attribute name|
-`orderItems` | array[object] | No |A collection ofitems that will be purchased|
-`orderItems` > `customOrderParameters` | dictionary | No | A collection of custom attributes associated to the payment |
-`customOrderParameters` > `parameterName` | string | No |The custom attribute name|
-`orderItems` > `description` | string | Yes |The description of the item being purchased|
-`orderItems` > `orderReference` | string | No |External reference for the item being purchased|
-`orderItems` > `comment` | string | No |Additional comment against the item|
-`orderItems` > `priceBreakdown` | object | Yes |The payment amounts related to the purchase|
-`priceBreakdown` > grossAmount | decimal | Yes |The amount the account will be charged|
-`priceBreakdown` > netAmount | decimal | Yes |The amount that will be available after tax|
-`priceBreakdown` > taxAmount | decimal | Yes |The amount of tax associated to the item|
-`orderItems` > `taxInfo` | object | Yes |Collection of tax information|
-`taxInfo` > `category` | Bool | No |Indication as to whether the purchase is tax exempt|
-`taxInfo` > `zeroRated` | Bool | No |Indication as to whether the purchase is tax exempt|
-`taxInfo` > `country` | string | No |Country specific tax rate to use|
-`taxInfo` > `state` | string | No |State specific tax rate to use (US Specific)|
-`taxInfo` > `county` | string | No |County specific tax rate to use (US Specific)|
-`taxInfo` > `city` | string | No |City specific tax rate to use (US Specific)|
-`orderItems` > `entitlements` | array[object] | No |A collection of additional entitlements to provide the account on purchase|
-`entitlements` > `identifier` | string | No |Identifier for the entitlement being purchased|
-`entitlements` > `startDate` | string | No |The date on which the entitlement should be valid from|
-`entitlements` > `expiryDate` | string | No |The date at which the account is no longer entitled to the content|
+ |  |  |  
+--------- | ------- | ------- | 
+`workflowConfiguration` | <span class="string">string</span> | <span class="required">Required</span> | 
+`workflowConfiguration` > `processUpdateUrl` <br />External endpoint eSuite should notiffy of purchase| <span class="string">string</span> |  | 
+`workflowConfiguration` > `cancelOnProcessUpdateFailure` <br />An indication as to whether eSuite should cancel the purchase on failure to recieve a call out response| <span class="bool">bool</span> |  | 
+`workflowConfiguration` > `returnUrl` <br />The location to be redirected to upon leaving the purchase flow| <span class="string">string</span> |  | 
+`workflowConfiguration` > `clientUserId` <br />Unique, non-irrevocable value. Used when eSuite is not primary IdAM| <span class="string">string</span> |  | 
+`workflowConfiguration` > `email` <br />Accounts email address| <span class="string">string</span> |  | 
+`workflowConfiguration` > `voucherCode` <br />A pre-configured eSuite voucher code| <span class="string">string</span> |  | 
+`workflowConfiguration` > `securityToken` <br />Value that is passed in the `ProcessUpdate` callout to allow you to verify it is a legitimate call out| <span class="string">string</span> |  | 
+`workflowConfiguration` > `disable3DSecure` <br />An indication that 3D Secure should be disabled. Defaults to `false`| <span class="bool">bool</span> |  | 
+`workflowConfiguration` > `settlementType` <br />An indication whether to complete immediately or at a later date. `Pending` or `NextAvailable` are the available values| <span class="string">string</span> |  | 
+`workflowConfiguration` > `permitUnverifiedAccoutPurchase` <br />Prevent accounts who have not verified their emails from making a purchase| <span class="bool">bool</span> |  | 
+`workflowConfiguration` > `workFlowCustomParameters` <br />A collection of custom attributes associated to the configuration| <span class="dictionary">dictionary*</span> |  |
+`workFlowCustomParameters` > `parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
+`customAccountParameters` <br />A collection of custom attributes associated to the account | <span class="dictionary">dictionary*</span> |  | 
+`customAccountParameters` > `parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
+`orderItems` <br />A collection ofitems that will be purchased| <span class="array">array[object]</span> |  |
+`orderItems` > `customOrderParameters` <br />A collection of custom attributes associated to the payment | <span class="dictionary">dictionary*</span> |  | 
+`customOrderParameters` > `parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
+`orderItems` > `description` <br />The description of the item being purchased| <span class="string">string</span> | <span class="required">Required</span> |
+`orderItems` > `orderReference` <br />External reference for the item being purchased| <span class="string">string</span> |  |
+`orderItems` > `comment` <br />Additional comment against the item| <span class="string">string</span> |  |
+`orderItems` > `priceBreakdown` <br />The payment amounts related to the purchase| <span class="object">object</span> | <span class="required">Required</span> |
+`priceBreakdown` > grossAmount <br />The amount the account will be charged| <span class="decimal">decimal</span> | <span class="required">Required</span> |
+`priceBreakdown` > netAmount <br />The amount that will be available after tax| <span class="decimal">decimal</span> | <span class="required">Required</span> |
+`priceBreakdown` > taxAmount <br />The amount of tax associated to the item| <span class="decimal">decimal</span> | <span class="required">Required</span> |
+`orderItems` > `taxInfo` <br />Collection of tax information| <span class="object">object</span> | <span class="required">Required</span> |
+`taxInfo` > `category` <br />Indication as to whether the purchase is tax exempt| <span class="bool">bool</span> |  |
+`taxInfo` > `zeroRated` <br />Indication as to whether the purchase is tax exempt| <span class="bool">bool</span> |  |
+`taxInfo` > `country` <br />Country specific tax rate to use| <span class="string">string</span> |  |
+`taxInfo` > `state` <br />State specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`taxInfo` > `county` <br />County specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`taxInfo` > `city` <br />City specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`orderItems` > `entitlements` <br />A collection of additional entitlements to provide the account on purchase| <span class="array">array[object]</span> |  |
+`entitlements` > `identifier` <br />Identifier for the entitlement being purchased| <span class="string">string</span> |  |
+`entitlements` > `startDate` <br />The date on which the entitlement should be valid from| <span class="string">string</span> |  |
+`entitlements` > `expiryDate` <br />The date at which the account is no longer entitled to the content| <span class="string">string</span> |  |
 
 <aside class="info">
-This endpoint can only be called using server-side authentication due to the sensetive nature of some information contained in the `POST` request.
+This endpoint can only be called using server-side authentication due to the sensitive nature of some information contained in the `POST` request.
 </aside>
 
 
@@ -923,43 +923,43 @@ If you would like to generate a more specific session for the purpose of purchas
 
 ### Parameters
 
-Parameter | Type | Mandatory | Description | 
---------- | ------- | ------- | ----------- |
-`workflowConfiguration` | string | Yes | 
-`workflowConfiguration` > `subscriptionId` | string | No | The configured subscription service identifier|
-`workflowConfiguration` > `pricing` | object | Yes | Pricing object for the purchase|
-`pricing` > `currency` | string | No |ISO Currency of the purchase e.g. `EUR`|
-`pricing` > `taxInfo` | object | No |Collection of tax information|
-`taxInfo` > `zeroRated` | Bool | No |Indication as to whether the purchase is tax exempt|
-`taxInfo` > `country` | string | No |Country specific tax rate to use|
-`taxInfo` > `state` | string | No |State specific tax rate to use (US Specific)|
-`taxInfo` > `county` | string | No |County specific tax rate to use (US Specific)|
-`taxInfo` > `city` | string | No |City specific tax rate to use (US Specific)|
-`serviceCredits`  | object | Yes | Pricing object for the purchase|
-`serviceCredits` > `description` | string | No |A description to associate to the purchase|
-`serviceCredits` > `paidCredits` | string | No |The amount of credit which the account should pay for|
-`serviceCredits` > `freeCredits` | string | No |The amount of free credit which the account should receive|
-`workflowConfiguration` > `processUpdateUrl` | string | No | External endpoint eSuite should notiffy of purchase
-`workflowConfiguration` > `cancelOnProcessUpdateFailure` | bool | No | An indication as to whether eSuite should cancel the purchase on failure to recieve a call out response
-`workflowConfiguration` > `returnUrl` | string | No | The location to be redirected to upon leaving the purchase flow
-`workflowConfiguration` > `clientUserId` | string | No | Unique, non-irrevocable value. Used when eSuite is not primary IdAM
-`workflowConfiguration` > `email` | string | No | Accounts email address
-`workflowConfiguration` > `voucherCode` | string | No | A pre-configured eSuite voucher code
-`workflowConfiguration` > `securityToken` | string | No | Value that is passed in the `ProcessUpdate` callout to allow you to verify it is a legitimate call out
-`workflowConfiguration` > `disable3DSecure` | Bool | No | An indication that 3D Secure should be disabled. Defaults to `false`
-`workflowConfiguration` > `settlementType` | string | No | An indication whether to complete immediately or at a later date. `Pending` or `NextAvailable` are the available values
-`workflowConfiguration` > `permitUnverifiedAccoutPurchase` | bool | No | Prevent accounts who have not verified their emails from making a purchase
-`workflowConfiguration` > `workFlowCustomParameters` | dictionary | No |A collection of custom attributes associated to the configuration
-`workFlowCustomParameters` > `parameterName` | string | No |The custom attribute name|
-`customAccountParameters` | dictionary | No | A collection of custom attributes associated to the account |
-`customAccountParameters` > `parameterName` | string | No |The custom attribute name|
-`customOrderParameters` | dictionary | No | A collection of custom attributes associated to the payment |
-`customOrderParameters` > `parameterName` | string | No |The custom attribute name|
+ |  |  |  
+--------- | ------- | ------- | 
+`workflowConfiguration` | <span class="string">string</span> | <span class="required">Required</span> | 
+`workflowConfiguration` > `subscriptionId` <br />The configured subscription service identifier| <span class="string">string</span> |  | 
+`workflowConfiguration` > `pricing` <br />Pricing object for the purchase| <span class="object">object</span> | <span class="required">Required</span> | 
+`pricing` > `currency` <br />ISO Currency of the purchase e.g. `EUR`| <span class="string">string</span> |  |
+`pricing` > `taxInfo` <br />Collection of tax information| <span class="object">object</span> |  |
+`taxInfo` > `zeroRated` <br />Indication as to whether the purchase is tax exempt| <span class="bool">bool</span> |  |
+`taxInfo` > `country` <br />Country specific tax rate to use| <span class="string">string</span> |  |
+`taxInfo` > `state` <br />State specific tax rate to use (US Specific)| <br /><span class="string">string</span> |  |
+`taxInfo` > `county` <br />County specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`taxInfo` > `city` <br />City specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`serviceCredits`  <br />Pricing object for the purchase| <span class="object">object</span> | <span class="required">Required</span> | 
+`serviceCredits` > `description` <br />A description to associate to the purchase| <span class="string">string</span> |  |
+`serviceCredits` > `paidCredits` <br />The amount of credit which the account should pay for| <span class="string">string</span> |  |
+`serviceCredits` > `freeCredits` <br />The amount of free credit which the account should receive| <span class="string">string</span> |  |
+`workflowConfiguration` > `processUpdateUrl` <br />External endpoint eSuite should notiffy of purchase| <span class="string">string</span> |  | 
+`workflowConfiguration` > `cancelOnProcessUpdateFailure` <br />An indication as to whether eSuite should cancel the purchase on failure to recieve a call out response| <span class="bool">bool</span> |  | 
+`workflowConfiguration` > `returnUrl` <br />The location to be redirected to upon leaving the purchase flow| <span class="string">string</span> |  | 
+`workflowConfiguration` > `clientUserId` <br />Unique, non-irrevocable value. Used when eSuite is not primary IdAM| <span class="string">string</span> |  | 
+`workflowConfiguration` > `email` <br />Accounts email address| <span class="string">string</span> |  | 
+`workflowConfiguration` > `voucherCode` <br />A pre-configured eSuite voucher code| <span class="string">string</span> |  | 
+`workflowConfiguration` > `securityToken` <br />Value that is passed in the `ProcessUpdate` callout to allow you to verify it is a legitimate call out| <span class="string">string</span> |  | 
+`workflowConfiguration` > `disable3DSecure` <br />An indication that 3D Secure should be disabled. Defaults to `false`| <span class="bool">bool</span> |  | 
+`workflowConfiguration` > `settlementType` <br />An indication whether to complete immediately or at a later date. `Pending` or `NextAvailable` are the available values| <span class="string">string</span> |  | 
+`workflowConfiguration` > `permitUnverifiedAccoutPurchase` <br />Prevent accounts who have not verified their emails from making a purchase| <span class="bool">bool</span> |  | 
+`workflowConfiguration` > `workFlowCustomParameters` <br />A collection of custom attributes associated to the configuration| <span class="dictionary">dictionary*</span> |  |
+`workFlowCustomParameters` > `parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
+`customAccountParameters` <br />A collection of custom attributes associated to the account | <span class="dictionary">dictionary*</span> |  | 
+`customAccountParameters` > `parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
+`customOrderParameters` <br />A collection of custom attributes associated to the payment | <span class="dictionary">dictionary*</span> |  | 
+`customOrderParameters` > `parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
 
 
 
 <aside class="info">
-This endpoint can only be called using server-side authentication due to the sensetive nature of some information contained in the `POST` request.
+This endpoint can only be called using server-side authentication due to the sensitive nature of some information contained in the `POST` request.
 </aside>
 
 
