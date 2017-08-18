@@ -220,4 +220,4 @@ If you need to add an additional payment to a specific fulfilment, this end poin
 `vatAmount` <br />The amount apportioned to tax.| <span class="string">string</span> | <span class="required">Required</span> | 
 `currency` <br />ISO Currency code| <span class="string">string</span> | <span class="required">Required</span> | 
 `customPaymentParameters` <br />This is a collection of custom attributes against the payments.| <span class="dictionary">dictionary</span> |  | 
-`customPaymentParameters` > `parameterName` <br />Representation of each custom parameters against the payment.| <span class="string">string</span> |  | 
+`customPaymentParameters \ parameterName` <br />Representation of each custom parameters against the payment.| <span class="string">string</span> |  | 

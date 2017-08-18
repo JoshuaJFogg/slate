@@ -116,8 +116,8 @@ This endpoint allows you to pass through the Roku transactionId alongside custom
 `email` <br />Email address of the customer's Roku billing account| <span class="string">string</span> |  | 
 `password` <br />Customer's password| <span class="string">string</span> |  | 
 `newAccountDetails` <br />A sub-object of RokuValidateTransactionRequest, containing additional customer information| <span class="object">object</span> |  | 
-`newAccountDetails` > `firstName` <br />The customer's first name, as forwarded from Roku's native billing| <span class="string">string</span> |  | 
-`newAccountDetails` > `lastName` <br />The customer's last name, as forwarded from Roku's native billing| <span class="string">string</span> |  | 
+`newAccountDetails \ firstName` <br />The customer's first name, as forwarded from Roku's native billing| <span class="string">string</span> |  | 
+`newAccountDetails \ lastName` <br />The customer's last name, as forwarded from Roku's native billing| <span class="string">string</span> |  | 
 
 
 
@@ -355,8 +355,8 @@ For first time sign-up and subscribers, calling this endpoint containing informa
 `email` <br />Email address of the customer's Roku billing account| <span class="string">string</span> |  | 
 `password` <br />Customer's password| <span class="string">string</span> |  | 
 `newAccountDetails` <br />A sub-object of request, containing additional customer information| <span class="object">object</span> |  | 
-`newAccountDetails` > `firstName` <br />The customer's first name, as forwarded from iTunes's native billing| <span class="string">string</span> |  | 
-`newAccountDetails` > `lastName` <br />The customer's last name, as forwarded from iTunes's native billing| <span class="string">string</span> |  | 
+`newAccountDetails \ firstName` <br />The customer's first name, as forwarded from iTunes's native billing| <span class="string">string</span> |  | 
+`newAccountDetails \ lastName` <br />The customer's last name, as forwarded from iTunes's native billing| <span class="string">string</span> |  | 
 
 
 

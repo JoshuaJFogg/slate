@@ -122,8 +122,8 @@ This endpoint provides a list of all available external providers that are avail
  |  |  
 --------- | ------- | 
 `availableProviders` <br />| <span class="array">array[object]</span> | 
-`availableProviders` > `providerName` <br />The name of the external provider| <span class="string">string</span> | 
-`availableProviders` > `accountLinked` <br />An indication as to whether the account has been linked to this provider| <span class="bool">bool</span> |
+`availableProviders \ providerName` <br />The name of the external provider| <span class="string">string</span> | 
+`availableProviders \ accountLinked` <br />An indication as to whether the account has been linked to this provider| <span class="bool">bool</span> |
 
 
 ## Authenticate via Facebook
@@ -365,16 +365,16 @@ If during the authentication process with Facebook, eSuite deems the Facebook ac
 `dateOfBirth` <br />The birthday of the account.| dateTime | <span class="required">Yes</span> | 
 `gender` <br />Available values: Male, Female and Unspecified.| <span class="string">string</span> | <span class="required">Yes</span> | 
 `addresses` <br />A collection of addresses bound to the account.| <span class="array">array</span> | <span class="required">Yes</span> | 
-`address` > `addressType` <br />Available values: Home and Billing.| <span class="string">string</span> | <span class="required">Yes</span> | 
-`address` > `houseName` <br />The name associated to the address.| <span class="string">string</span> | <span class="required">Yes</span> | 
-`address` > `houseNumber` <br />The building number associated to the address.| <span class="string">string</span> | <span class="required">Yes</span> | 
-`address` > `street` <br />The street associated to the address.| <span class="string">string</span> | <span class="required">Yes</span> | 
-`address` > `townCity` <br />The town or city associated to the address| <span class="string">string</span> | <span class="required">Yes</span> | 
-`address` > `district` <br />The district associated to the address| <span class="string">string</span> |  | 
-`address` > `state` <br />The state associated to the address| <span class="string">string</span> |  | 
-`address` > `county` <br />The county associated to the address| <span class="string">string</span> |  | 
-`address` > `postCode` <br />The post code associated to the address| <span class="string">string</span> | <span class="required">Yes</span> | 
-`address` > `country` <br />The country the account resides| <span class="string">string</span> | <span class="required">Yes</span> | 
+`address \ addressType` <br />Available values: Home and Billing.| <span class="string">string</span> | <span class="required">Yes</span> | 
+`address \ houseName` <br />The name associated to the address.| <span class="string">string</span> | <span class="required">Yes</span> | 
+`address \ houseNumber` <br />The building number associated to the address.| <span class="string">string</span> | <span class="required">Yes</span> | 
+`address \ street` <br />The street associated to the address.| <span class="string">string</span> | <span class="required">Yes</span> | 
+`address \ townCity` <br />The town or city associated to the address| <span class="string">string</span> | <span class="required">Yes</span> | 
+`address \ district` <br />The district associated to the address| <span class="string">string</span> |  | 
+`address \ state` <br />The state associated to the address| <span class="string">string</span> |  | 
+`address \ county` <br />The county associated to the address| <span class="string">string</span> |  | 
+`address \ postCode` <br />The post code associated to the address| <span class="string">string</span> | <span class="required">Yes</span> | 
+`address \ country` <br />The country the account resides| <span class="string">string</span> | <span class="required">Yes</span> | 
 `customParameters` <br />A collection of custom attributes stored against the account| <span class="dictionary">dictionary</span> |  | 
 `sessionToken` <br /> A session token linked to the account created| <span class="string">string</span> |  |
 

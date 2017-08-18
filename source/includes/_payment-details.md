@@ -473,21 +473,21 @@ This endpoint retrieves the payment details stored against an eSuite account.
 --------- | ------- | 
 `paymentDetails` <br />The collection of payment details available for the account. | <span class="array">array[object]</span> | 
 `cards` <br />The collection of payment cards available for the account. | <span class="array">array[object]</span> | 
-`cards` > `associatedName` <br />Associated name to identify the card. | <span class="string">string</span> | 
-`cards` > `billingHouseName` <br />The name of the house the card is associated to. | <span class="string">string</span> | 
-`cards` > `billingHouseFlatNumber` <br />The number of the house the card is associated to. | <span class="string">string</span> | 
-`cards` > `billingStreet` <br />The street associated to the card. | <span class="string">string</span> | 
-`cards` > `billingDistrict` <br />The district associated to the card. | <span class="string">string</span> | 
-`cards` > `billingTownCity`<br />The town or city associated to the card. | <span class="string">string</span> | 
-`cards` > `billingCounty` <br />The county associated to the card. | <span class="string">string</span> | 
-`cards` > `billingPostcode` <br />The postcode associated to the card. | <span class="string">string</span> | 
-`cards` > `billingCountry` <br />The country associated to the card. | <span class="string">string</span> | 
-`cards` > `cardNumber` <br />A masked representation of the card. | <span class="string">string</span> | 
-`cards` > `cardType` <br />The card brand associated to the card. | <span class="string">string</span> | 
-`cards` > `expiryDate` <br />The date at which the card is due to expire. | <span class="string">string</span> | 
-`cards` > `isDefault` <br />An indication as to whether this card is the default for the account. | <span class="bool">bool</span> | 
-`cards` > `issueCode` <br />Issue number typically found on debit and bank cards. | <span class="string">string</span> | 
-`cards` > `paymentDetailId` <br />The identifier of the card within eSuite. | <span class="string">string</span> | 
+`cards \ associatedName` <br />Associated name to identify the card. | <span class="string">string</span> | 
+`cards \ billingHouseName` <br />The name of the house the card is associated to. | <span class="string">string</span> | 
+`cards \ billingHouseFlatNumber` <br />The number of the house the card is associated to. | <span class="string">string</span> | 
+`cards \ billingStreet` <br />The street associated to the card. | <span class="string">string</span> | 
+`cards \ billingDistrict` <br />The district associated to the card. | <span class="string">string</span> | 
+`cards \ billingTownCity`<br />The town or city associated to the card. | <span class="string">string</span> | 
+`cards \ billingCounty` <br />The county associated to the card. | <span class="string">string</span> | 
+`cards \ billingPostcode` <br />The postcode associated to the card. | <span class="string">string</span> | 
+`cards \ billingCountry` <br />The country associated to the card. | <span class="string">string</span> | 
+`cards \ cardNumber` <br />A masked representation of the card. | <span class="string">string</span> | 
+`cards \ cardType` <br />The card brand associated to the card. | <span class="string">string</span> | 
+`cards \ expiryDate` <br />The date at which the card is due to expire. | <span class="string">string</span> | 
+`cards \ isDefault` <br />An indication as to whether this card is the default for the account. | <span class="bool">bool</span> | 
+`cards \ issueCode` <br />Issue number typically found on debit and bank cards. | <span class="string">string</span> | 
+`cards \ paymentDetailId` <br />The identifier of the card within eSuite. | <span class="string">string</span> | 
 `payPal` <br />PayPal object detailing information about the customers PayPal account. | <span class="object">object</span> | 
 `paymentDetailId` <br />The identifier of the PayPal wallet within eSuite. | <span class="string">string</span> | 
 

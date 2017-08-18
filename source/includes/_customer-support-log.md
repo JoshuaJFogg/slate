@@ -616,14 +616,14 @@ recordsPerPage | integer | No | Indication as to how many results to return. Wil
 Parameter | Type |  Description | 
 --------- | ------- |  ----------- |
 `logs` | array[objects] | The collection of support log entries.
-`logs` > `logType` | string | The type of log entry. 
-`logs` > `logStatus` | string | Indication whether the log entry is open or closed.
-`logs` > `logTitle` | string | A summary of what the log entry details.
-`logs` > `logDetails` | string | Specific information about the log entry being added.
-`logs` > `systemAccountId` | integer | This parameter is provided to track the system account who created the log entry.
-`logs` > `supportLogReference` | string | This parameter is provided to track the system account who created the log entry.
-`logs` > `createdDate` | string | This parameter is provided to track the system account who created the log entry.
-`logs` > `lastUpdatedDate` | string | This parameter is provided to track the system account who created the log entry.
+`logs \ logType` | string | The type of log entry. 
+`logs \ logStatus` | string | Indication whether the log entry is open or closed.
+`logs \ logTitle` | string | A summary of what the log entry details.
+`logs \ logDetails` | string | Specific information about the log entry being added.
+`logs \ systemAccountId` | integer | This parameter is provided to track the system account who created the log entry.
+`logs \ supportLogReference` | string | This parameter is provided to track the system account who created the log entry.
+`logs \ createdDate` | string | This parameter is provided to track the system account who created the log entry.
+`logs \ lastUpdatedDate` | string | This parameter is provided to track the system account who created the log entry.
 `totalNumberOfRecords` | integer | An indication as to how many support log entries are against the account.
 `pageNumber` | integer | The current page number.
 

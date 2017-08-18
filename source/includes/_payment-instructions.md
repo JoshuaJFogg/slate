@@ -102,22 +102,22 @@ This endpoint allows you to create a payment instruction for a specific account.
 `addressReference` <br />The reference addrress the fulfilments will be delivered to.| <span class="string">string</span> | <span class="required">Required</span> | 
 `voucherCode` <br />A discount code generated from eSuite| <span class="string">string</span> |  | 
 `fulfilmentInfo` <br />Information relating to each fulfilment and associated payments| <span class="array">array[objects]</span> | <span class="required">Required</span> | 
-`fulfilmentInfo` > `fulfilmentType` <br />The type of fulfilment being purchase. Only `physical` is available.| <span class="string">string</span> |  | 
-`fulfilmentInfo` > `addressReference` <br />An address reference that will override the top level address| <span class="string">string</span> |  |
-`fulfilmentInfo` > `fulfilmentDates`<br />The collection of dates the fulfilments will be shipped| <span class="array">array[string]</span> | <span class="required">Required</span> | 
-`fulfilmentInfo` > `leadTime`<br />The number of days lead time needed by a supplier | <span class="integer">integer</span> |  |
-`fulfilmentInfo` > `associatedPayments`<br />Collection of payments associated to the fulfilment| <span class="object">object</span> | <span class="required">Required</span> | 
-`associatedPayments` > `paymentDates`<br />The dates at which payment should be taken for the fulfilment| <span class="array">array[string]</span> | <span class="required">Required</span> | 
+`fulfilmentInfo \ fulfilmentType` <br />The type of fulfilment being purchase. Only `physical` is available.| <span class="string">string</span> |  | 
+`fulfilmentInfo \ addressReference` <br />An address reference that will override the top level address| <span class="string">string</span> |  |
+`fulfilmentInfo \ fulfilmentDates`<br />The collection of dates the fulfilments will be shipped| <span class="array">array[string]</span> | <span class="required">Required</span> | 
+`fulfilmentInfo \ leadTime`<br />The number of days lead time needed by a supplier | <span class="integer">integer</span> |  |
+`fulfilmentInfo \ associatedPayments`<br />Collection of payments associated to the fulfilment| <span class="object">object</span> | <span class="required">Required</span> | 
+`associatedPayments \ paymentDates`<br />The dates at which payment should be taken for the fulfilment| <span class="array">array[string]</span> | <span class="required">Required</span> | 
 `customPaymentParameters` <br />This is a collection of custom attributes against the payments.| <span class="dictionary">dictionary</span> |  |
-`customPaymentParameters` > `parameterName` <br />Representation of all custom parameters against the payments.| <span class="string">string</span> |  |
+`customPaymentParameters \ parameterName` <br />Representation of all custom parameters against the payments.| <span class="string">string</span> |  |
 `customFulfilmentParameters` <br />This is a collection of custom attributes against the fulfilments.| <span class="dictionary">dictionary</span> |  |
-`customFulfilmentParameters` > `parameterName` <br />Representation of all custom parameters against the fulfilment.| <span class="string">string</span> |  |
+`customFulfilmentParameters \ parameterName` <br />Representation of all custom parameters against the fulfilment.| <span class="string">string</span> |  |
 `synchronousPaymentInfo` <br />An example string| <span class="object">object</span> |  | 
-`synchronousPaymentInfo` > `paymentMethod`<br />The method by which the payment should be made| <span class="string">string</span> | <span class="required">Required</span> |
-`synchronousPaymentInfo` > `customPaymentParameters` <br />This is a collection of custom attributes against the payments.| <span class="dictionary">dictionary</span> |  |
-`customPaymentParameters` > `parameterName` <br />Representation of all custom parameters against the payments.| <span class="string">string</span> |  |
+`synchronousPaymentInfo \ paymentMethod`<br />The method by which the payment should be made| <span class="string">string</span> | <span class="required">Required</span> |
+`synchronousPaymentInfo \ customPaymentParameters` <br />This is a collection of custom attributes against the payments.| <span class="dictionary">dictionary</span> |  |
+`customPaymentParameters \ parameterName` <br />Representation of all custom parameters against the payments.| <span class="string">string</span> |  |
 `customPaymentInstructionParameters` <br />This is a collection of custom attributes against the payment instructions.| <span class="dictionary">dictionary</span> |  |
-`customPaymentInstructionParameters` > `parameterName`  <br />Representation of all custom parameters against the payment instruction.| <span class="string">string</span> |  | 
+`customPaymentInstructionParameters \ parameterName`  <br />Representation of all custom parameters against the payment instruction.| <span class="string">string</span> |  | 
 
 
 ## Retrieve a Payment Instruction
@@ -281,30 +281,30 @@ This endpoint allows you to retrieve a specific support log, for a specific acco
 `currency` <br />The currency against the payment instruction. | <span class="string">string</span> | 
 `cartReference` <br />The cart which is default for the payment instruction.| <span class="string">string</span> | 
 `fulfilmentPaymentMappings` <br />An array of objects that map payments to their associated fulfilments.| <span class="array">array[objects]</span> | 
-`fulfilmentPaymentMappings` > `fulfilments` <br />An array of all fulfilments for the payment instruction.| <span class="array">array[objects]</span> | 
-`fulfilments` > `fulfilmentReference` <br />The reference identifier to the fulfilment| <span class="string">string</span> | 
-`fulfilments` > `fulfilmentStatus` <br />The status of the fulfilment e.g. pending, processing, dispatched or cancelled.| <span class="string">string</span> | 
-`fulfilments` > `fulfilmentType` <br />Indication as to whether it is a digital or physical fulfilment.| <span class="string">string</span> | 
-`fulfilments` > `expectedDeliveryDate` <br />The date and time the account expects to receive their goods.| <span class="string">string</span> | 
-`fulfilments` > `supplierNotificationDate` <br />The date and time at which eSuite will notify the fulfilment system.| <span class="string">string</span> | 
-`fulfilments` > `addressReference` <br />The reference addrress the fulfilment will be delivered to.| <span class="string">string</span> | 
-`fulfilments` > `dateCreated` <br />The date and time the fulfilment was created.| <span class="string">string</span> | 
-`fulfilments` > `dateLastUpdated` <br />The date and time the fulfilment was last updated.| <span class="string">string</span> | 
-`fulfilments` > `customFulfilmentParameters` <br />This is a collection of custom attributes against the fulfilment.| <span class="dictionary">dictionary</span> | 
-`customFulfilmentParameters` > `parameterName`  <br />Representation of all custom parameters against the fulfilment.| <span class="string">string</span> | 
-`fulfilmentPaymentMappings` > `payments` <br />An array of all payments for the payment instruction.| <span class="array">array[objects]</span> | 
-`payments` > `paymentReference` <br />The reference identifier to the fulfilment| <span class="string">string</span> | 
-`payments` > `paymentDate` <br />The status of the fulfilment e.g. pending, processing, dispatched or cancelled.| <span class="string">string</span> | 
-`payments` > `paymentStatus` <br />Indication as to whether it is a digital or physical fulfilment.| <span class="string">string</span> | 
-`payments` > `vatAmount` <br />The amount apportioned to tax.| <span class="string">string</span> | 
-`payments` > `grossAmount` <br />The amount charged and submitted to the merchant.| <span class="string">string</span> | 
-`payments` > `netAmount` <br />The amount charged minus tax.| <span class="string">string</span> | 
-`payments` > `dateCreated` <br />The date and time the payment was created.| <span class="string">string</span> | 
-`payments` > `dateLastUpdated` <br />The date and time the payment was last updated.| <span class="string">string</span> | 
-`payments` > `customPaymentParameters` <br />This is a collection of custom attributes against the payments.| <span class="dictionary">dictionary</span> | 
-`customPaymentParameters` > `parameterName`  <br />Representation of all custom parameters against the payment.| <span class="string">string</span> | 
+`fulfilmentPaymentMappings \ fulfilments` <br />An array of all fulfilments for the payment instruction.| <span class="array">array[objects]</span> | 
+`fulfilments \ fulfilmentReference` <br />The reference identifier to the fulfilment| <span class="string">string</span> | 
+`fulfilments \ fulfilmentStatus` <br />The status of the fulfilment e.g. pending, processing, dispatched or cancelled.| <span class="string">string</span> | 
+`fulfilments \ fulfilmentType` <br />Indication as to whether it is a digital or physical fulfilment.| <span class="string">string</span> | 
+`fulfilments \ expectedDeliveryDate` <br />The date and time the account expects to receive their goods.| <span class="string">string</span> | 
+`fulfilments \ supplierNotificationDate` <br />The date and time at which eSuite will notify the fulfilment system.| <span class="string">string</span> | 
+`fulfilments \ addressReference` <br />The reference addrress the fulfilment will be delivered to.| <span class="string">string</span> | 
+`fulfilments \ dateCreated` <br />The date and time the fulfilment was created.| <span class="string">string</span> | 
+`fulfilments \ dateLastUpdated` <br />The date and time the fulfilment was last updated.| <span class="string">string</span> | 
+`fulfilments \ customFulfilmentParameters` <br />This is a collection of custom attributes against the fulfilment.| <span class="dictionary">dictionary</span> | 
+`customFulfilmentParameters \ parameterName`  <br />Representation of all custom parameters against the fulfilment.| <span class="string">string</span> | 
+`fulfilmentPaymentMappings \ payments` <br />An array of all payments for the payment instruction.| <span class="array">array[objects]</span> | 
+`payments \ paymentReference` <br />The reference identifier to the fulfilment| <span class="string">string</span> | 
+`payments \ paymentDate` <br />The status of the fulfilment e.g. pending, processing, dispatched or cancelled.| <span class="string">string</span> | 
+`payments \ paymentStatus` <br />Indication as to whether it is a digital or physical fulfilment.| <span class="string">string</span> | 
+`payments \ vatAmount` <br />The amount apportioned to tax.| <span class="string">string</span> | 
+`payments \ grossAmount` <br />The amount charged and submitted to the merchant.| <span class="string">string</span> | 
+`payments \ netAmount` <br />The amount charged minus tax.| <span class="string">string</span> | 
+`payments \ dateCreated` <br />The date and time the payment was created.| <span class="string">string</span> | 
+`payments \ dateLastUpdated` <br />The date and time the payment was last updated.| <span class="string">string</span> | 
+`payments \ customPaymentParameters` <br />This is a collection of custom attributes against the payments.| <span class="dictionary">dictionary</span> | 
+`customPaymentParameters \ parameterName`  <br />Representation of all custom parameters against the payment.| <span class="string">string</span> | 
 `customPaymentInstructionParameters` <br />This is a collection of custom attributes against the payment instructions.| <span class="dictionary">dictionary</span> | 
-`customPaymentInstructionParameters` > `parameterName`  <br />Representation of all custom parameters against the payment instruction.| <span class="string">string</span> | 
+`customPaymentInstructionParameters \ parameterName`  <br />Representation of all custom parameters against the payment instruction.| <span class="string">string</span> | 
 
 ## Update a Payment Instruction
 
@@ -558,7 +558,7 @@ This endpoint allows you to retrieve a summary of all payment instructions again
 `nextPaymentDate` <br />The next scheduled date a payment will be taken.| <span class="string">string</span> | 
 `description` <br />The name/description of the payment instruction| <span class="string">string</span> | 
 `customPaymentInstructionParameters` <br />This is a collection of custom attributes against the payment instructions.| <span class="dictionary">dictionary</span> | 
-`customPaymentInstructionParameters` > `parameterName <br />Representation of all custom parameters against the payment instruction.| <span class="string">string</span> | 
+`customPaymentInstructionParameters \ parameterName <br />Representation of all custom parameters against the payment instruction.| <span class="string">string</span> | 
 
 
 

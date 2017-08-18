@@ -109,31 +109,31 @@ This end point is present for server-side integrations to take a payment against
 --------- | ------- | ------- | 
 `settlementType` <br />An indication whether to complete immediately or at a later date. `Pending` or `NextAvailable` are the available values| <span class="string">string</span> |  | 
 `pricing` <br />Pricing Information object| <span class="object">object</span> |  | 
-`pricing` > `paymentMethod` <br />The payment method the account would like to pay using| <span class="string">string</span> |  | 
-`pricing` > `currency` <br />The currency the payment should be taken in| <span class="string">string</span> |  | 
+`pricing \ paymentMethod` <br />The payment method the account would like to pay using| <span class="string">string</span> |  | 
+`pricing \ currency` <br />The currency the payment should be taken in| <span class="string">string</span> |  | 
 `voucherCode` <br />eSuite generated voucher code that has been provided during the flow | <span class="string">string</span> |  | 
 `cvv` <br />If the purchase is being made using an non-authorised card, this parameter can be passed in to enable authorisation to take place | <span class="string">string</span> |  |
 `orderItems` <br />A collection of items that the account is attempting to purchase| <span class="array">array[object]</span> |  |
-`orderItems` > `description` <br />The description associated to the item| <span class="string">string</span> |  | 
-`orderItems` > `orderReference` <br />An external reference that can be associated to each item| <span class="string">string</span> |  | 
-`orderItems` > `comment` <br />Additional metadata that may have been provided| <span class="string">string</span> |  | 
-`orderItems` > `priceBreakdown` <br />The details relating to the amount the account should pay for the item| <span class="object">object</span> |  | 
-`priceBreakdown` > `grossAmount` <br />The gross amount for the item| <span class="decimal">decimal</span> |  | 
-`priceBreakdown` > `netAmount` <br />The total amount minue the associated tax amount| <span class="decimal">decimal</span> |  | 
-`priceBreakdown` > `taxAmount` <br />The amount of tax that must be paid on the item| <span class="decimal">decimal</span> |  |
-`orderItems` > `customOrderParameters` <br />A collection of custom attributes associated to the payment | <span class="dictionary">dictionary</span> |  | 
-`customOrderParameters` > `parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
-`orderItems` > `entitlements` <br />A collection of additional entitlements to provide the account on purchase| <span class="array">array[object]</span> |  |
-`entitlements` > `identifier` <br />Identifier for the entitlement being purchased| <span class="string">string</span> |  |
-`entitlements` > `startDate` <br />The date on which the entitlement should be valid from| <span class="string">string</span> |  |
-`entitlements` > `expiryDate` <br />The date at which the account is no longer entitled to the content| <span class="string">string</span> |  |
-`orderItems` > `taxInfo` <br />Collection of tax information| <span class="object">object</span> | <span class="required">Required</span> |
-`taxInfo` > `category` <br />Indication as to which tax category to apply| <span class="string">string</span> |  |
-`taxInfo` > `zeroRated` <br />Indication as to whether the purchase is tax exempt| <span class="bool">bool</span> |  |
-`taxInfo` > `country` <br />Country specific tax rate to use| <span class="string">string</span> |  |
-`taxInfo` > `state` <br />State specific tax rate to use (US Specific)| <span class="string">string</span> |  |
-`taxInfo` > `county` <br />County specific tax rate to use (US Specific)| <span class="string">string</span> |  |
-`taxInfo` > `city` <br />City specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`orderItems \ description` <br />The description associated to the item| <span class="string">string</span> |  | 
+`orderItems \ orderReference` <br />An external reference that can be associated to each item| <span class="string">string</span> |  | 
+`orderItems \ comment` <br />Additional metadata that may have been provided| <span class="string">string</span> |  | 
+`orderItems \ priceBreakdown` <br />The details relating to the amount the account should pay for the item| <span class="object">object</span> |  | 
+`priceBreakdown \ grossAmount` <br />The gross amount for the item| <span class="decimal">decimal</span> |  | 
+`priceBreakdown \ netAmount` <br />The total amount minue the associated tax amount| <span class="decimal">decimal</span> |  | 
+`priceBreakdown \ taxAmount` <br />The amount of tax that must be paid on the item| <span class="decimal">decimal</span> |  |
+`orderItems \ customOrderParameters` <br />A collection of custom attributes associated to the payment | <span class="dictionary">dictionary</span> |  | 
+`customOrderParameters \ parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
+`orderItems \ entitlements` <br />A collection of additional entitlements to provide the account on purchase| <span class="array">array[object]</span> |  |
+`entitlements \ identifier` <br />Identifier for the entitlement being purchased| <span class="string">string</span> |  |
+`entitlements \ startDate` <br />The date on which the entitlement should be valid from| <span class="string">string</span> |  |
+`entitlements \ expiryDate` <br />The date at which the account is no longer entitled to the content| <span class="string">string</span> |  |
+`orderItems \ taxInfo` <br />Collection of tax information| <span class="object">object</span> | <span class="required">Required</span> |
+`taxInfo \ category` <br />Indication as to which tax category to apply| <span class="string">string</span> |  |
+`taxInfo \ zeroRated` <br />Indication as to whether the purchase is tax exempt| <span class="bool">bool</span> |  |
+`taxInfo \ country` <br />Country specific tax rate to use| <span class="string">string</span> |  |
+`taxInfo \ state` <br />State specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`taxInfo \ county` <br />County specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`taxInfo \ city` <br />City specific tax rate to use (US Specific)| <span class="string">string</span> |  |
 `asynchronousProcessingParameters` <br />Asynchronous Processing Parameters| <span class="object">object</span> |  | 
 
 ## Retrieve Payments
@@ -282,19 +282,19 @@ This endpoint allows you to retrieve all payments for a given account.
 `pageNumber` <br />The page of results being displayed| <span class="string">string</span> | 
 `resultsPerPage` <br />The total number of records displayed in the response| <span class="string">string</span> | 
 `items` <br />Collection of payments associated to the account| <span class="object">object</span> | 
-`items` > `cartReference` <br />The specific items that were purchased| <span class="string">string</span> | 
-`items` > `fulfilmentReference`  <br />The specific fulfilment this payment is associated| <span class="string">string</span> | 
-`items` > `status`  <br />The status of the payment| <span class="string">string</span> | 
-`items` > `paymentReference`  <br />The unique identifier associated to the payment| <span class="string">string</span> | 
-`items` > `currency`  <br />The date at which the subscription should become active| <span class="string">string</span> | 
-`items` > `paymentDate` <br />The date at which the payment was processed| <span class="string">string</span> | 
-`items` > `description`  <br />The description associated to the payment| <span class="string">string</span> | 
-`items` > `priceBreakdown`  <br />Object relating to the price charged to the account| <span class="object">object</span> | 
-`priceBreakdown` > `grossAmount`  <br />The total amount paid by the customer for the specific payment| <span class="decimal">decimal</span> | 
-`priceBreakdown` > `netAmount`  <br />The gross amount minus the amount of tax paid| <span class="decimal">decimal</span> | 
-`priceBreakdown` > `taxAmount`  <br />The amount of tax associated to the payment| <span class="decimal">decimal</span> | 
-`items` > `customPaymentParameters`  <br />A collection of custom attributes associated to the payment | <span class="dictionary">dictionary</span> | 
-`customPaymentParameters` > `parameterName`  <br />The name of the custom attribute| <span class="string">string</span> | 
+`items \ cartReference` <br />The specific items that were purchased| <span class="string">string</span> | 
+`items \ fulfilmentReference`  <br />The specific fulfilment this payment is associated| <span class="string">string</span> | 
+`items \ status`  <br />The status of the payment| <span class="string">string</span> | 
+`items \ paymentReference`  <br />The unique identifier associated to the payment| <span class="string">string</span> | 
+`items \ currency`  <br />The date at which the subscription should become active| <span class="string">string</span> | 
+`items \ paymentDate` <br />The date at which the payment was processed| <span class="string">string</span> | 
+`items \ description`  <br />The description associated to the payment| <span class="string">string</span> | 
+`items \ priceBreakdown`  <br />Object relating to the price charged to the account| <span class="object">object</span> | 
+`priceBreakdown \ grossAmount`  <br />The total amount paid by the customer for the specific payment| <span class="decimal">decimal</span> | 
+`priceBreakdown \ netAmount`  <br />The gross amount minus the amount of tax paid| <span class="decimal">decimal</span> | 
+`priceBreakdown \ taxAmount`  <br />The amount of tax associated to the payment| <span class="decimal">decimal</span> | 
+`items \ customPaymentParameters`  <br />A collection of custom attributes associated to the payment | <span class="dictionary">dictionary</span> | 
+`customPaymentParameters \ parameterName`  <br />The name of the custom attribute| <span class="string">string</span> | 
 
 
 ## Update a Payment

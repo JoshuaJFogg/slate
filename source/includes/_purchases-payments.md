@@ -125,32 +125,32 @@ For the completion of standard payment options, making the following `POST` requ
 `startDate` <br />The date at which the subscription should be purchased and started | <span class="string">string</span> |  |
 `paymentMethod` <br />The type of payment method the account has selected. Standard methods are `CreditCard` `DirectDebit`, `Service Credits` or `SEPA`. Other methods are available| <span class="string">string</span> |  |
 `entitlements` <br />A collection of additional entitlements to provide the account on purchase| <span class="array">array[object]</span> |  |
-`entitlements` > `identifier` <br />Identifier for the entitlement being purchased| <span class="string">string</span> |  |
-`entitlements` > `startDate` <br />The date on which the entitlement should be valid from| <span class="string">string</span> |  |
-`entitlements` > `expiryDate` <br />The date at which the account is no longer entitled to the content| <span class="string">string</span> |  |
+`entitlements \ identifier` <br />Identifier for the entitlement being purchased| <span class="string">string</span> |  |
+`entitlements \ startDate` <br />The date on which the entitlement should be valid from| <span class="string">string</span> |  |
+`entitlements \ expiryDate` <br />The date at which the account is no longer entitled to the content| <span class="string">string</span> |  |
 `customOrderParameters` <br />A collection of custom attributes associated to the payment | <span class="dictionary">dictionary</span> |  | 
-`customOrderParameters` > `parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
+`customOrderParameters \ parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
 `customSubscriptionParameters` <br />A collection of custom attributes associated to the subscription| <span class="string">string</span> |  |
-`customSubscriptionParameters` > `parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
+`customSubscriptionParameters \ parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
 `taxInfo` <br />Collection of tax information| <span class="object">object</span> |  |
-`taxInfo` > `zeroRated` <br />Indication as to whether the purchase is tax exempt| <span class="bool">bool</span> |  |
-`taxInfo` > `country` <br />Country specific tax rate to use| <span class="string">string</span> |  |
-`taxInfo` > `state` <br />State specific tax rate to use (US Specific)| <span class="string">string</span> |  |
-`taxInfo` > `county` <br />County specific tax rate to use (US Specific)| <span class="string">string</span> |  |
-`taxInfo` > `city` <br />City specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`taxInfo \ zeroRated` <br />Indication as to whether the purchase is tax exempt| <span class="bool">bool</span> |  |
+`taxInfo \ country` <br />Country specific tax rate to use| <span class="string">string</span> |  |
+`taxInfo \ state` <br />State specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`taxInfo \ county` <br />County specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`taxInfo \ city` <br />City specific tax rate to use (US Specific)| <span class="string">string</span> |  |
 `groupSubscriptionInfo` <br />Account Group information| <span class="string">string</span> |  | 
-`groupSubscriptionInfo` > `groupToken` <br />The associated group account identifier| <span class="string">string</span> |  |
-`groupSubscriptionInfo` > `subscriberAccounts` <br />A collection of accounts that should be assigned to the subscription| <span class="array">array[object]</span> |  |
-`subscriberAccounts` > `clientUserId` <br />The clientUserId of the account that should be assigned| <span class="string">string</span> |  |
-`subscriberAccounts` > `emailAddress` <br />The email address of the account that should be assigned| <span class="string">string</span> |  |
-`subscriberAccounts` > `taxInfo` <br />Collection of tax information for each account| <span class="object">object</span> |  |
-`taxInfo` > `zeroRated` <br />Indication as to whether the purchase is tax exempt| <span class="string">string</span> |  |
-`taxInfo` > `country` <br />Country specific tax rate to use| <span class="string">string</span> |  |
-`taxInfo` > `state` <br />State specific tax rate to use (US Specific)| <span class="string">string</span> |  |
-`taxInfo` > `county` <br />County specific tax rate to use (US Specific)| <span class="string">string</span> |  |
-`taxInfo` > `city` <br />City specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`groupSubscriptionInfo \ groupToken` <br />The associated group account identifier| <span class="string">string</span> |  |
+`groupSubscriptionInfo \ subscriberAccounts` <br />A collection of accounts that should be assigned to the subscription| <span class="array">array[object]</span> |  |
+`subscriberAccounts \ clientUserId` <br />The clientUserId of the account that should be assigned| <span class="string">string</span> |  |
+`subscriberAccounts \ emailAddress` <br />The email address of the account that should be assigned| <span class="string">string</span> |  |
+`subscriberAccounts \ taxInfo` <br />Collection of tax information for each account| <span class="object">object</span> |  |
+`taxInfo \ zeroRated` <br />Indication as to whether the purchase is tax exempt| <span class="string">string</span> |  |
+`taxInfo \ country` <br />Country specific tax rate to use| <span class="string">string</span> |  |
+`taxInfo \ state` <br />State specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`taxInfo \ county` <br />County specific tax rate to use (US Specific)| <span class="string">string</span> |  |
+`taxInfo \ city` <br />City specific tax rate to use (US Specific)| <span class="string">string</span> |  |
 `asynchronousInitiationParameters` <br />Parameter set provided if you would like to trigger an advanced payment type| <span class="string">string</span> |  |
-`asynchronousInitiationParameters` > `parameterName` <br />Parameter name specific to the alternative payment method provided| <span class="string">string</span> |  |
+`asynchronousInitiationParameters \ parameterName` <br />Parameter name specific to the alternative payment method provided| <span class="string">string</span> |  |
 
 
 ## Standard Credits Purchase
@@ -263,7 +263,7 @@ For the completion of standard payment options, making the following `POST` requ
 `paidCredits` <br />The amount of credits the account is purchasing| <span style="font-weight:bold;">number</span> |  | 
 `freeCredits` <br />The amount of credits the account will receive without charge| <span style="font-weight:bold;">number</span> |  | 
 `asynchronousInitiationParameters` <br />Parameter set provided if you would like to trigger an advanced payment type| <span class="string">string</span> |  |
-`asynchronousInitiationParameters` > `parameterName` <br />Parameter name specific to the alternative payment method provided| <span class="string">string</span> |  |
+`asynchronousInitiationParameters \ parameterName` <br />Parameter name specific to the alternative payment method provided| <span class="string">string</span> |  |
 
 
 ## Alternative Subscription Purchase
@@ -384,7 +384,7 @@ For the completion of alternative subscription options, making the following `PA
  |   | | 
 --------- | ------- | ------- | 
 `asynchronousProcessingParameters` <br />Parameter set provided if you would like to complete an advanced payment type| <span class="string">string</span> |  |
-`asynchronousProcessingParameters` > `parameterName` <br />Parameter name specific to the alternative payment method provided| <span class="string">string</span> |  |
+`asynchronousProcessingParameters \ parameterName` <br />Parameter name specific to the alternative payment method provided| <span class="string">string</span> |  |
 
 ## Alternative Credits Purchase
 
@@ -489,4 +489,4 @@ For the completion of alternative credits purchase, making the following `PATCH`
  |   | | 
 --------- | ------- | ------- | 
 `asynchronousProcessingParameters` <br />Parameter set provided if you would like to complete an advanced payment type| <span class="string">string</span> |  |
-`asynchronousProcessingParameters` > `parameterName` <br />Parameter name specific to the alternative payment method provided| <span class="string">string</span> |  |
+`asynchronousProcessingParameters \ parameterName` <br />Parameter name specific to the alternative payment method provided| <span class="string">string</span> |  |

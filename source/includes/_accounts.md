@@ -157,16 +157,16 @@ It is a requirement of the eSuite platform that an account be created in order t
 `dateOfBirth` <br />The birthday of the account.| <span style="font-weight:bold;">dateTime</span> | <span class="required">Required</span> | 
 `gender` <br />Available values: Male, Female and Unspecified.| <span class="string">string</span> | <span class="required">Required</span> | 
 `addresses` <br />A collection of addresses bound to the account.| <span class="array">array</span> | <span class="required">Required</span> | 
-`address` > `addressType` <br />Available values: Home and Billing.| <span class="string">string</span> | <span class="required">Required</span> | 
-`address` > `houseName` <br />The name associated to the address.| <span class="string">string</span> | <span class="required">Required</span> | 
-`address` > `houseNumber` <br />The building number associated to the address.| <span class="string">string</span> | <span class="required">Required</span> | 
-`address` > `street` <br />The street associated to the address.| <span class="string">string</span> | <span class="required">Required</span> | 
-`address` > `townCity` <br />The town or city associated to the address| <span class="string">string</span> | <span class="required">Required</span> | 
-`address` > `district` <br />The district associated to the address| <span class="string">string</span> |  | 
-`address` > `state` <br />The state associated to the address| <span class="string">string</span> |  | 
-`address` > `county` <br />The county associated to the address| <span class="string">string</span> |  | 
-`address` > `postCode` <br />The post code associated to the address| <span class="string">string</span> | <span class="required">Required</span> | 
-`address` > `country` <br />The country the account resides| <span class="string">string</span> | <span class="required">Required</span> | 
+`address \ addressType` <br />Available values: Home and Billing.| <span class="string">string</span> | <span class="required">Required</span> | 
+`address \ houseName` <br />The name associated to the address.| <span class="string">string</span> | <span class="required">Required</span> | 
+`address \ houseNumber` <br />The building number associated to the address.| <span class="string">string</span> | <span class="required">Required</span> | 
+`address \ street` <br />The street associated to the address.| <span class="string">string</span> | <span class="required">Required</span> | 
+`address \ townCity` <br />The town or city associated to the address| <span class="string">string</span> | <span class="required">Required</span> | 
+`address \ district` <br />The district associated to the address| <span class="string">string</span> |  | 
+`address \ state` <br />The state associated to the address| <span class="string">string</span> |  | 
+`address \ county` <br />The county associated to the address| <span class="string">string</span> |  | 
+`address \ postCode` <br />The post code associated to the address| <span class="string">string</span> | <span class="required">Required</span> | 
+`address \ country` <br />The country the account resides| <span class="string">string</span> | <span class="required">Required</span> | 
 `customParameters` <br />A collection of custom attributes stored against the account| <span class="dictionary">dictionary*</span> |  | 
 
 _* It is mandatory to pass either an email address or a clientUserId. It is possible to provide both._
@@ -321,16 +321,16 @@ Once an account has been created within the eSuite platform, it is possible to r
 `dateOfBirth` <br />The birthday of the account.| dateTime | <span class="required">Required</span> | 
 `gender` <br />Available values: Male, Female and Unspecified.| <span class="string">string</span> | <span class="required">Required</span> | 
 `addresses` <br />A collection of addresses bound to the account.| <span class="array">array</span> | <span class="required">Required</span> | 
-`address` > `addressType` <br />Available values: Home and Billing.| <span class="string">string</span> | <span class="required">Required</span> | 
-`address` > `houseName` <br />The name associated to the address.| <span class="string">string</span> | <span class="required">Required</span> | 
-`address` > `houseNumber` <br />The building number associated to the address.| <span class="string">string</span> | <span class="required">Required</span> | 
-`address` > `street` <br />The street associated to the address.| <span class="string">string</span> | <span class="required">Required</span> | 
-`address` > `townCity` <br />The town or city associated to the address| <span class="string">string</span> | <span class="required">Required</span> | 
-`address` > `district` <br />The districtassociated to the address| <span class="string">string</span> |  | 
-`address` > `state` <br />The state associated to the address| <span class="string">string</span> |  | 
-`address` > `county` <br />The county associated to the address| <span class="string">string</span> |  | 
-`address` > `postCode` <br />The post code associated to the address| <span class="string">string</span> | <span class="required">Required</span> | 
-`address` > `country` <br />The country the account resides| <span class="string">string</span> | <span class="required">Required</span> | 
+`address \ addressType` <br />Available values: Home and Billing.| <span class="string">string</span> | <span class="required">Required</span> | 
+`address \ houseName` <br />The name associated to the address.| <span class="string">string</span> | <span class="required">Required</span> | 
+`address \ houseNumber` <br />The building number associated to the address.| <span class="string">string</span> | <span class="required">Required</span> | 
+`address \ street` <br />The street associated to the address.| <span class="string">string</span> | <span class="required">Required</span> | 
+`address \ townCity` <br />The town or city associated to the address| <span class="string">string</span> | <span class="required">Required</span> | 
+`address \ district` <br />The districtassociated to the address| <span class="string">string</span> |  | 
+`address \ state` <br />The state associated to the address| <span class="string">string</span> |  | 
+`address \ county` <br />The county associated to the address| <span class="string">string</span> |  | 
+`address \ postCode` <br />The post code associated to the address| <span class="string">string</span> | <span class="required">Required</span> | 
+`address \ country` <br />The country the account resides| <span class="string">string</span> | <span class="required">Required</span> | 
 `customParameters` <br />A collection of custom attributes stored against the account| <span class="dictionary">dictionary*</span> |  | 
 
 ## Update Account
@@ -490,16 +490,16 @@ It is a requirement of the eSuite platform that an account be created in order t
 `dateOfBirth` <br />The birthday of the account.| dateTime | <span class="required">Required</span> | 
 `gender` <br />Available values: Male, Female and Unspecified.| <span class="string">string</span> | <span class="required">Required</span> | 
 `addresses` <br />A collection of addresses bound to the account.| <span class="array">array</span> | <span class="required">Required</span> | 
-`address` > `addressType` <br />Available values: Home and Billing.| <span class="string">string</span> | <span class="required">Required</span> | 
-`address` > `houseName` <br />The name associated to the address.| <span class="string">string</span> | <span class="required">Required</span> | 
-`address` > `houseNumber` <br />The building number associated to the address.| <span class="string">string</span> | <span class="required">Required</span> | 
-`address` > `street` <br />The street associated to the address.| <span class="string">string</span> | <span class="required">Required</span> | 
-`address` > `townCity` <br />The town or city associated to the address| <span class="string">string</span> | <span class="required">Required</span> | 
-`address` > `district` <br />The districtassociated to the address| <span class="string">string</span> |  | 
-`address` > `state` <br />The state associated to the address| <span class="string">string</span> |  | 
-`address` > `county` <br />The county associated to the address| <span class="string">string</span> |  | 
-`address` > `postCode` <br />The post code associated to the address| <span class="string">string</span> | <span class="required">Required</span> | 
-`address` > `country` <br />The country the account resides| <span class="string">string</span> | <span class="required">Required</span> | 
+`address \ addressType` <br />Available values: Home and Billing.| <span class="string">string</span> | <span class="required">Required</span> | 
+`address \ houseName` <br />The name associated to the address.| <span class="string">string</span> | <span class="required">Required</span> | 
+`address \ houseNumber` <br />The building number associated to the address.| <span class="string">string</span> | <span class="required">Required</span> | 
+`address \ street` <br />The street associated to the address.| <span class="string">string</span> | <span class="required">Required</span> | 
+`address \ townCity` <br />The town or city associated to the address| <span class="string">string</span> | <span class="required">Required</span> | 
+`address \ district` <br />The districtassociated to the address| <span class="string">string</span> |  | 
+`address \ state` <br />The state associated to the address| <span class="string">string</span> |  | 
+`address \ county` <br />The county associated to the address| <span class="string">string</span> |  | 
+`address \ postCode` <br />The post code associated to the address| <span class="string">string</span> | <span class="required">Required</span> | 
+`address \ country` <br />The country the account resides| <span class="string">string</span> | <span class="required">Required</span> | 
 `customParameters` <br />A collection of custom attributes stored against the account| <span class="dictionary">dictionary*</span> |  | 
 
 _* It is mandatory to pass either an email address or a clientUserId. It is possible to provide both._
@@ -1215,26 +1215,26 @@ Calling this endpoint will provide a breakdown of the accounts transaction summa
  | 
 --------- | 
 `totalCustomerValue` <br />Customer value broken down by currency | 
-`totalCustomerValue` > `totalValue` <br /> The sum of all payments minus any refunds |
-`totalCustomerValue` > `currency`<br /> The currency the value represents | 
+`totalCustomerValue \ totalValue` <br /> The sum of all payments minus any refunds |
+`totalCustomerValue \ currency`<br /> The currency the value represents | 
 `totalPaymentsToDate`<br /> Total number of payments taken, broken down by currency | 
-`totalPaymentsToDate` > `totalValue`<br /> The sum of all payments taken against the account |
-`totalPaymentsToDate` > `averageValue`<br /> The average transaction amount |
-`totalPaymentsToDate` > `currency`<br /> The currency the value represents | 
-`totalPaymentsToDate` > `quantity`<br /> The number of payments which have been taken against the account | 
+`totalPaymentsToDate \ totalValue`<br /> The sum of all payments taken against the account |
+`totalPaymentsToDate \ averageValue`<br /> The average transaction amount |
+`totalPaymentsToDate \ currency`<br /> The currency the value represents | 
+`totalPaymentsToDate \ quantity`<br /> The number of payments which have been taken against the account | 
 `totalRefundsToDate`<br /> All refunds applied, broken down by currency | 
-`totalRefundsToDate` > `totalValue`<br /> The sum of all refunds against the account |
-`totalRefundsToDate` > `averageValue`<br /> The average transaction refund amount |
-`totalRefundsToDate` > `currency`<br /> The currency the value represents | 
-`totalRefundsToDate` > `quantity`<br /> Number of refunds that have taken place | 
+`totalRefundsToDate \ totalValue`<br /> The sum of all refunds against the account |
+`totalRefundsToDate \ averageValue`<br /> The average transaction refund amount |
+`totalRefundsToDate \ currency`<br /> The currency the value represents | 
+`totalRefundsToDate \ quantity`<br /> Number of refunds that have taken place | 
 `outstandingPaymentsToDate` <br />All outstanding payments, broken down by currency | 
-`outstandingPaymentsToDate` > `totalValue`<br /> The sum of all payments yet to be taken against the account  |
-`outstandingPaymentsToDate` > `averageValue`<br /> The average transaction amount |
-`outstandingPaymentsToDate` > `currency`<br /> The currency the value represents | 
-`outstandingPaymentsToDate` > `quantity`<br /> Total number of outstanding payments | 
+`outstandingPaymentsToDate \ totalValue`<br /> The sum of all payments yet to be taken against the account  |
+`outstandingPaymentsToDate \ averageValue`<br /> The average transaction amount |
+`outstandingPaymentsToDate \ currency`<br /> The currency the value represents | 
+`outstandingPaymentsToDate \ quantity`<br /> Total number of outstanding payments | 
 `outstandingCreditBalance`<br /> All outstanding credit balances broken down by currency |
-`outstandingCreditBalance` > `totalValue`<br /> The total amount credit on the account |
-`outstandingCreditBalance` > `currency`<br /> The currency the value represents | 
+`outstandingCreditBalance \ totalValue`<br /> The total amount credit on the account |
+`outstandingCreditBalance \ currency`<br /> The currency the value represents | 
 
 
 
