@@ -111,7 +111,7 @@ For the completion of standard payment options, making the following `POST` requ
 `taxInfo \ state` <br />State specific tax rate to use (US Specific)| <span class="string">string</span> |  |
 `taxInfo \ county` <br />County specific tax rate to use (US Specific)| <span class="string">string</span> |  |
 `taxInfo \ city` <br />City specific tax rate to use (US Specific)| <span class="string">string</span> |  |
-`asynchronousInitiationParameters` <br />Parameter set provided if you would like to trigger an advanced payment type| <span class="string">string</span> |  |
+`asynchronousInitiationParameters` <br />Parameter set provided if you would like to trigger an advanced payment type| <span class="object">object</span> |  |
 `asynchronousInitiationParameters \ parameterName` <br />Parameter name specific to the alternative payment method provided| <span class="string">string</span> |  |
 
 ## Standard Product Purchase
@@ -202,7 +202,7 @@ For the completion of standard payment options, making the following `POST` requ
 `taxInfo \ state` <br />State specific tax rate to use (US Specific)| <span class="string">string</span> |  |
 `taxInfo \ county` <br />County specific tax rate to use (US Specific)| <span class="string">string</span> |  |
 `taxInfo \ city` <br />City specific tax rate to use (US Specific)| <span class="string">string</span> |  |
-`asynchronousInitiationParameters` <br />Parameter set provided if you would like to trigger an advanced payment type| <span class="string">string</span> |  |
+`asynchronousInitiationParameters` <br />Parameter set provided if you would like to trigger an advanced payment type| <span class="object">object</span> |  |
 `asynchronousInitiationParameters \ parameterName` <br />Parameter name specific to the alternative payment method provided| <span class="string">string</span> |  |
 
 
@@ -302,7 +302,7 @@ For the completion of standard payment options, making the following `POST` requ
 `entitlements \ identifier` <br />Identifier for the entitlement being purchased| <span class="string">string</span> |  |
 `entitlements \ startDate` <br />The date on which the entitlement should be valid from| <span class="string">string</span> |  |
 `entitlements \ expiryDate` <br />The date at which the account is no longer entitled to the content| <span class="string">string</span> |  |
-`asynchronousInitiationParameters` <br />Parameter set provided if you would like to trigger an advanced payment type| <span class="string">string</span> |  |
+`asynchronousInitiationParameters` <br />Parameter set provided if you would like to trigger an advanced payment type| <span class="object">object</span> |  |
 `asynchronousInitiationParameters \ parameterName` <br />Parameter name specific to the alternative payment method provided| <span class="string">string</span> |  |
 
 
@@ -383,7 +383,7 @@ For the completion of standard payment options, making the following `POST` requ
 `paymentMethod` <br />The payment method the account has selected to pay with if it differs from the initial configuration| <span class="string">string</span> |  |
 `cvv` <br />Security code of a card if the payment method is set to `creditDebitCard`| <span class="string">string</span> |  |
 `voucherCode` <br />A voucher code provided by the account during the workflow| <span class="string">string</span> |  |
-`asynchronousInitiationParameters` <br />Parameter set provided if you would like to trigger an advanced payment type| <span class="string">string</span> |  |
+`asynchronousInitiationParameters` <br />Parameter set provided if you would like to trigger an advanced payment type| <span class="object">object</span> |  |
 `asynchronousInitiationParameters \ parameterName` <br />Parameter name specific to the alternative payment method provided| <span class="string">string</span> |  |
 
 ## Alternative Subscription Purchase

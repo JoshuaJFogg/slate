@@ -149,7 +149,7 @@ For the completion of standard payment options, making the following `POST` requ
 `taxInfo \ state` <br />State specific tax rate to use (US Specific)| <span class="string">string</span> |  |
 `taxInfo \ county` <br />County specific tax rate to use (US Specific)| <span class="string">string</span> |  |
 `taxInfo \ city` <br />City specific tax rate to use (US Specific)| <span class="string">string</span> |  |
-`asynchronousInitiationParameters` <br />Parameter set provided if you would like to trigger an advanced payment type| <span class="string">string</span> |  |
+`asynchronousInitiationParameters` <br />Parameter set provided if you would like to trigger an advanced payment type| <span class="object">object</span> |  |
 `asynchronousInitiationParameters \ parameterName` <br />Parameter name specific to the alternative payment method provided| <span class="string">string</span> |  |
 
 
@@ -262,7 +262,7 @@ For the completion of standard payment options, making the following `POST` requ
 `voucherCode` <br />A voucher code provided by the account during the workflow| <span class="string">string</span> |  |
 `paidCredits` <br />The amount of credits the account is purchasing| <span style="font-weight:bold;">number</span> |  | 
 `freeCredits` <br />The amount of credits the account will receive without charge| <span style="font-weight:bold;">number</span> |  | 
-`asynchronousInitiationParameters` <br />Parameter set provided if you would like to trigger an advanced payment type| <span class="string">string</span> |  |
+`asynchronousInitiationParameters` <br />Parameter set provided if you would like to trigger an advanced payment type| <span class="object">object</span> |  |
 `asynchronousInitiationParameters \ parameterName` <br />Parameter name specific to the alternative payment method provided| <span class="string">string</span> |  |
 
 
