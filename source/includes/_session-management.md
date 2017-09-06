@@ -109,7 +109,7 @@ Calling this endpoint will return information about the current state of the ses
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-get">GET</span>
-<span class="endpoint-path">https://uat.mppglobal.com/sessions/{sessionToken}</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/sessions/{sessionToken}</span>
 </div>
 
 ### Request Parameters
@@ -117,6 +117,14 @@ Calling this endpoint will return information about the current state of the ses
  |  |  | 
 --------- | ------- | ------- | 
 `sessionToken` <br />The session token that should be retrieved| <span class="string">string</span> | <span class="required">Required</span> | 
+
+
+<aside class="info">
+If you are using a client-side integration of this endpoint, you should pass the sessionToken as per all other requests client-side by using the `x-sessionId` header rather than as a query string parameter.
+</aside>
+
+
+
 
 ## Delete a Session
 
@@ -219,8 +227,8 @@ If you would like to delete a session on eSuite, calling this endpoint will expi
 ### HTTP Request
 
 <div class="endpoint-cont">
-<span class="endpoint-verb endpoint-verb-get">GET</span>
-<span class="endpoint-path">https://uat.mppglobal.com/sessions/{sessionToken}</span>
+<span class="endpoint-verb endpoint-verb-delete">DELETE</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/sessions/{sessionToken}</span>
 </div>
 
 ### Query Parameters
@@ -229,3 +237,6 @@ If you would like to delete a session on eSuite, calling this endpoint will expi
 --------- | ------- | ------- | 
 `sessionToken` <br />The session token that should be deleted| <span class="string">string</span> | <span class="required">Required</span> | 
 
+<aside class="info">
+If you are using a client-side integration of this endpoint, you should pass the sessionToken as per all other requests client-side by using the `x-sessionId` header rather than as a query string parameter.
+</aside>

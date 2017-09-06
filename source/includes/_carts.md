@@ -357,6 +357,7 @@ $.ajax(settings).done(function (response) {
 
 An existing cart can be edited by calling the following endpoint. An example where this would be required is when associating a cart to a specific eSuite account.
 
+
 ### HTTP Request
 
 <div class="endpoint-cont">
@@ -364,7 +365,14 @@ An existing cart can be edited by calling the following endpoint. An example whe
 <span class="endpoint-path">https://uat.mppglobal.com/api/carts/{cartResourceReference}</span>
 </div>
 
+### PATCH Parameters
 
+ |  |  | 
+--------- | ------- | ------- | 
+A collection of updates that should be made to the resource| <span class="array">array[objects]</span> | <span class="required">Required</span> | 
+`op` <br />The type of change that should be executed. add, replace and remove are available operations.| <span class="string">string</span> | <span class="required">Required</span> | 
+`path` <br />The name of the parameter that should be updated.| <span class="string">string</span> | <span class="required">Required</span> | 
+`value` <br />The new value to store against the parameter.| <span class="string">string</span> | <span class="required">Required</span> | 
 
 
 ## Delete a Cart
