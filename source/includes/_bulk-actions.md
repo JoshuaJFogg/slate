@@ -64,7 +64,7 @@ payload = "{\"entitlementIdentifier\":\"specific-access\",\"startDate\":\"2017-0
 headers = { 
      'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json" }
 
 conn.request("POST", "/api/bulk/entitlements", payload, headers)

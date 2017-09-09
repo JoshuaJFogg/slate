@@ -64,7 +64,7 @@ payload = "{\"email\":\"johnsmith-api@mppglobal.com\",\"password\":\"4034510a@!\
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json"
     }
 
@@ -232,7 +232,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("GET", "/api/accounts/{accountId}", payload, headers)
@@ -397,7 +397,7 @@ payload = "{\"email\":\"johnsmith-api+1@mppglobal.com\",\"currentPassword\":\"40
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json"
     }
 
@@ -566,7 +566,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("DELETE", "/api/accounts/{accountId}", payload, headers)
@@ -673,7 +673,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("POST", "/api/accounts/{accountId}/verify", payload, headers)
@@ -780,7 +780,7 @@ payload = "{\"verificationToken\":\"BE52ADA2064C4F9A9D90F28D066D1RFT\"}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("PATCH", "/api/accounts/verify", payload, headers)
@@ -891,7 +891,7 @@ payload = "{\"emailAddress\":\"john.smith@mppglobal.com\"}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json"
     }
 
@@ -1011,7 +1011,7 @@ headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     "x-sessionid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json"
     }
 
@@ -1129,7 +1129,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("GET", "/api/accounts/{accountId}/transaction-summary", payload)

@@ -60,7 +60,7 @@ payload = "{\"cardNumber\":\"4111111111111111\",\"cardType\":\"visa\",\"expiryDa
 headers = {
     'x-clientid' : '1001',
     'x-sessionid': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json"
     }
 
@@ -194,7 +194,7 @@ payload = "{\"accountHolderName\":\"John Smith\",\"accountNumber\":\"11111111\",
 headers = {
     'x-clientpassword': "Str0ngP@ssword",
     'x-clientid': "1001",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json"
     }
 
@@ -309,7 +309,7 @@ payload = "{\"accountHolderName\":\"John Smith\",\"iban\":\"IE64BOFI905838123456
 headers = {
     'x-clientid': "1001",
     'x-clientpassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json"
     }
 
@@ -420,7 +420,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-sessionid': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("GET", "/api/accounts/{accountId}/payment-details", payload, headers)

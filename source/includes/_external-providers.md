@@ -60,7 +60,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("GET", "/api/accounts/{accountId}/external-providers", payload, headers)
@@ -192,7 +192,7 @@ payload = "{\"facebookRedirectURI\":\"https://uat.mppglobal.com\",\"authorisatio
 headers = { 
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json" }
 
 conn.request("POST", "api/accounts/authenticate/external-providers/facebook", payload, headers)

@@ -59,7 +59,7 @@ payload = "{}"
 headers = {
     'x-clientid': "1001",
     'x-clientpassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("GET", "/api/analytics/methodName?enddate=2099-05-18T00%3A00%3A00.000Z&startdate=2017-05-18T00%3A00%3A00.000Z", payload, headers)

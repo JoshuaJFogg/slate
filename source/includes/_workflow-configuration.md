@@ -60,7 +60,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("GET", "/api/workflows/configurations/subscriptions/{resourceReference}", payload, headers)
@@ -176,7 +176,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("GET", "/api/workflows/configurations/products/{resourceReference}", payload, headers)
@@ -460,7 +460,7 @@ payload = "{\"workFlowConfiguration\":{\"pricing\":{\"priceId\":18535}}}"
 headers = { 
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json" }
 
 conn.request("POST", "/api/workflows/configurations/subscriptions", payload, headers)
@@ -606,7 +606,7 @@ payload = "{\"workFlowConfiguration\":{\"pricing\":{\"priceId\":18535}}}"
 headers = { 
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json" }
 
 conn.request("POST", "/api/workflows/configurations/products", payload, headers)
@@ -745,7 +745,7 @@ payload = "{\"orderItems\":[{\"description\":\"Demonstration Request\",\"priceBr
 headers = { 
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json" }
 
 conn.request("POST", "/api/workflows/configurations/miscellaneous-charge", payload, headers)
@@ -889,7 +889,7 @@ payload = "{\"serviceCredits\":{\"description\":\"Credits to buy services\",\"pa
 headers = { 
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json" }
 
 conn.request("POST", "/api/workflows/configurations/service-credits", payload, headers)

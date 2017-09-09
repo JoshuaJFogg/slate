@@ -132,7 +132,7 @@ payload = null
 headers = {
     'x-tokenid': "1001",
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("POST", "/api/accounts/...", payload, headers)

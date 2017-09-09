@@ -66,7 +66,7 @@ payload = "{\"cartReference\":\"A12347853S\",\"paymentMethod\":\"SEPA\",\"addres
 headers = { 
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json" }
 
 conn.request("POST", "/api/accounts/{accountId}/payment-instructions", payload, headers)
@@ -180,7 +180,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("GET", "/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}", payload, headers)
@@ -370,7 +370,7 @@ payload = "[{\"op\":\"replace\",\"path\":\"/Status\",\"value\":\"Cancelled\"},{\
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json"
     }
 
@@ -483,7 +483,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("GET", "/api/accounts/{accountId}/payment-instructions/summary", payload, headers)

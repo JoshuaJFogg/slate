@@ -65,7 +65,7 @@ payload = "{\"rokuTransactionId\":\"1244567865\",\"email\":\"john.smith@mppgloba
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json"
     }
 
@@ -190,7 +190,7 @@ payload = "{\"rokuTransactionId\":\"1244567865\"}}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json"
     }
 
@@ -303,7 +303,7 @@ payload = "{\"receipt\":\"AsedRFTCDsd....TGFESSCGcxcsd484\",\"email\":\"john.smi
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json"
     }
 
@@ -429,7 +429,7 @@ payload = "{\"receipt\":\"AsedRFTCDsd....TGFESSCGcxcsd484\",\"currency\":\"GBP\"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json"
     }
 
