@@ -140,7 +140,7 @@ This end point is present for server-side integrations to take a payment against
 
 ```shell
 curl --request GET \
-  --url 'https://uat.mppglobal.com/api/accounts/{accountId}/payments?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1' \
+  --url 'https://uat.mppglobal.com/api/accounts/{accountId}/orders?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1' \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
   --header 'x-version: 9.0.0' \
@@ -148,7 +148,7 @@ curl --request GET \
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/payments?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/orders?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1");
 var request = new RestRequest(Method.GET);
 request.AddHeader("x-version", "9.0.0");
 request.AddHeader("x-clientId", "1001");
@@ -158,7 +158,7 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountId}/payments?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1")
+HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountId}/orders?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-version", "9.0.0")
@@ -170,7 +170,7 @@ HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accou
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/payments?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/orders?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -199,7 +199,7 @@ headers = {
     'x-version': '9.0.0'
     }
 
-conn.request("GET", "/api/accounts/{accountId}/payments?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1", payload, headers)
+conn.request("GET", "/api/accounts/{accountId}/orders?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -211,7 +211,7 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/payments?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/orders?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1",
   "method": "GET",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
@@ -262,7 +262,7 @@ This endpoint allows you to retrieve all payments for a given account.
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-get">GET</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/payments</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/orders</span>
 </div>
 
 ### Query Parameters

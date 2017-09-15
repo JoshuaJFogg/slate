@@ -354,29 +354,31 @@ If during the authentication process with Facebook, eSuite deems the Facebook ac
 
  |  |  |  
 --------- | ------- | ------- | 
-`email` <br />The identifier used when eSuite is primary IDAM.| <span class="string">string</span> | <span class="required">Yes*</span> | 
-`clientUserId` <br />The identifier used when eSuite is secondary IDAM. Once set this cannot be changed.| <span class="string">string</span> | <span class="required">Yes*</span> | 
-`password` <br />The value provided by the account to pair with the email. | <span class="string">string</span> | <span class="required">Yes</span> | 
+`accountId` <br />AccountId referring to the account requested| <span class="integer">integer</span> |  | 
+`resourceReferece` <br />Computational value of the accountId and the resource type| <span class="string">string</span> |  | 
+`status` <br />The current status of the account.| <span class="string">string</span> |  | 
+`email` <br />The identifier used when eSuite is primary IDAM.| <span class="string">string</span> |  | 
+`clientUserId` <br />The identifier used when eSuite is secondary IDAM. Once set this cannot be changed.| <span class="string">string</span> |  | 
+`password` <br />The value provided by the account to pair with the email. | <span class="string">string</span> |  | 
 `salutation` <br />Available values: Mr, Mrs, Miss and Ms.| <span class="string">string</span> |  | 
-`firstName` <br />The first name associated to the account.| <span class="string">string</span> | <span class="required">Yes</span> | 
-`lastName` <br />The last name associated to the account.| <span class="string">string</span> | <span class="required">Yes</span> | 
-`phoneNumber` <br />The home phone number of the account.| <span class="string">string</span> | <span class="required">Yes</span> | 
-`mobileNumber` <br />The mobile number of the account (minus country code).| <span class="string">string</span> | <span class="required">Yes</span> | 
-`dateOfBirth` <br />The birthday of the account.| dateTime | <span class="required">Yes</span> | 
-`gender` <br />Available values: Male, Female and Unspecified.| <span class="string">string</span> | <span class="required">Yes</span> | 
-`addresses` <br />A collection of addresses bound to the account.| <span class="array">array</span> | <span class="required">Yes</span> | 
-`address \ addressType` <br />Available values: Home and Billing.| <span class="string">string</span> | <span class="required">Yes</span> | 
-`address \ houseName` <br />The name associated to the address.| <span class="string">string</span> | <span class="required">Yes</span> | 
-`address \ houseNumber` <br />The building number associated to the address.| <span class="string">string</span> | <span class="required">Yes</span> | 
-`address \ street` <br />The street associated to the address.| <span class="string">string</span> | <span class="required">Yes</span> | 
-`address \ townCity` <br />The town or city associated to the address| <span class="string">string</span> | <span class="required">Yes</span> | 
+`firstName` <br />The first name associated to the account.| <span class="string">string</span> |  | 
+`lastName` <br />The last name associated to the account.| <span class="string">string</span> |  | 
+`phoneNumber` <br />The home phone number of the account.| <span class="string">string</span> |  | 
+`mobileNumber` <br />The mobile number of the account (minus country code).| <span class="string">string</span> |  | 
+`dateOfBirth` <br />The birthday of the account.| <span class="string">dateTime</span> |  | 
+`gender` <br />Available values: Male, Female and Unspecified.| <span class="string">string</span> | | 
+`addresses` <br />A collection of addresses bound to the account.| <span class="array">array</span> |  | 
+`address \ addressType` <br />Available values: Home and Billing.| <span class="string">string</span> | | 
+`address \ houseName` <br />The name associated to the address.| <span class="string">string</span> || 
+`address \ houseNumber` <br />The building number associated to the address.| <span class="string">string</span> |  | 
+`address \ street` <br />The street associated to the address.| <span class="string">string</span> |  | 
+`address \ townCity` <br />The town or city associated to the address| <span class="string">string</span> | | 
 `address \ district` <br />The district associated to the address| <span class="string">string</span> |  | 
 `address \ state` <br />The state associated to the address| <span class="string">string</span> |  | 
 `address \ county` <br />The county associated to the address| <span class="string">string</span> |  | 
-`address \ postCode` <br />The post code associated to the address| <span class="string">string</span> | <span class="required">Yes</span> | 
-`address \ country` <br />The country the account resides| <span class="string">string</span> | <span class="required">Yes</span> | 
+`address \ postCode` <br />The post code associated to the address| <span class="string">string</span> | | 
+`address \ country` <br />The country the account resides| <span class="string">string</span> |  | 
 `customParameters` <br />A collection of custom attributes stored against the account| <span class="dictionary">dictionary</span> |  | 
-`sessionToken` <br /> A session token linked to the account created| <span class="string">string</span> |  |
 
 
 ## Link to Facebook

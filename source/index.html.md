@@ -18,6 +18,7 @@ includes:
   - workflow-configuration
   - workflow-purchases
   - accounts
+  - account-groups
   - account-authentication
   - external-providers
   - address-book

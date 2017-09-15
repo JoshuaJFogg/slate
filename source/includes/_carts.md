@@ -601,12 +601,12 @@ In order to add a new item to a cart, this endpoint should be called. This endpo
 
  |  |  | 
 --------- | ------- | ------- | 
-`description` <br />Description of the line item| <span class="string">string</span> | <span class="required">Required*</span> | 
+`description` <br />Description of the line item| <span class="string">string</span> | <span class="required">Required</span> | 
 `pricing` <br />Collection of information regarding pricing| <span class="object">object</span> |  | 
 `pricing \ grossAmount` <br />The gross amount of the line item| <span style="font-weight:bold;color:#666;">number</span> | <span class="required">Required</span> | 
 `pricing \ netAmount`<br />The net amount of the line item| <span style="font-weight:bold;color:#666;">number</span> | <span class="required">Required</span> | 
 `pricing \ taxAmount` <br />The tax amount of the line item| <span style="font-weight:bold;color:#666;">number</span> | <span class="required">Required</span> | 
-`pricing \ currency` <br />Currency of the transaction| <span class="string">string</span> | <span class="required">Required*</span> | 
+`pricing \ currency` <br />Currency of the transaction| <span class="string">string</span> | <span class="required">Required</span> | 
 `pricing \ priceId` <br />The pre-configured eSuite price identifier| <span class="string">string</span> |  | 
 `productId` <br />The pre-configured eSuite product identifier| <span class="integer">integer</span> |  | 
 `quantity` <br />Number of the line item being purchased| <span class="integer">integer</span> | <span class="required">Required</span> | 

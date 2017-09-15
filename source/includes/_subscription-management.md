@@ -457,8 +457,8 @@ Calling this endpoint will allow you to enable or disable the renewal process fo
 ### HTTP Request
 
 <div class="endpoint-cont">
-<span class="endpoint-verb endpoint-verb-get">GET</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions//{subscriptionId}/status</span>
+<span class="endpoint-verb endpoint-verb-patch">PATCH</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionId}/status</span>
 </div>
 
 ### Patch Parameters

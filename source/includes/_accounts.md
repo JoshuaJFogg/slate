@@ -146,8 +146,8 @@ It is a requirement of the eSuite platform that an account be created in order t
 
  |  |  | 
 --------- | ------- | ------- | 
-`email` <br />The identifier used when eSuite is primary IDAM.| <span class="string">string</span> | <span class="required">Required*</span> | 
-`clientUserId` <br />The identifier used when eSuite is secondary IDAM. Once set this cannot be changed.| <span class="string">string</span> | <span class="required">Required*</span> | 
+`email` <br />The identifier used when eSuite is primary IDAM.| <span class="string">string</span> | <span class="required">Required</span> | 
+`clientUserId` <br />The identifier used when eSuite is secondary IDAM. Once set this cannot be changed.| <span class="string">string</span> | <span class="required">Required</span> | 
 `password` <br />The value provided by the account to pair with the email. | <span class="string">string</span> | <span class="required">Required</span> | 
 `salutation` <br />Available values: Mr, Mrs, Miss and Ms.| <span class="string">string</span> |  | 
 `firstName` <br />The first name associated to the account.| <span class="string">string</span> | <span class="required">Required</span> | 
@@ -310,28 +310,31 @@ Once an account has been created within the eSuite platform, it is possible to r
 
  |  |  |  
 --------- | ------- | ------- | 
-`email` <br />The identifier used when eSuite is primary IDAM.| <span class="string">string</span> | <span class="required">Required*</span> | 
-`clientUserId` <br />The identifier used when eSuite is secondary IDAM. Once set this cannot be changed.| <span class="string">string</span> | <span class="required">Required*</span> | 
-`password` <br />The value provided by the account to pair with the email. | <span class="string">string</span> | <span class="required">Required</span> | 
+`accountId` <br />AccountId referring to the account requested| <span class="integer">integer</span> |  | 
+`resourceReferece` <br />Computational value of the accountId and the resource type| <span class="string">string</span> |  | 
+`status` <br />The current status of the account.| <span class="string">string</span> |  | 
+`email` <br />The identifier used when eSuite is primary IDAM.| <span class="string">string</span> |  | 
+`clientUserId` <br />The identifier used when eSuite is secondary IDAM. Once set this cannot be changed.| <span class="string">string</span> |  | 
+`password` <br />The value provided by the account to pair with the email. | <span class="string">string</span> |  | 
 `salutation` <br />Available values: Mr, Mrs, Miss and Ms.| <span class="string">string</span> |  | 
-`firstName` <br />The first name associated to the account.| <span class="string">string</span> | <span class="required">Required</span> | 
-`lastName` <br />The last name associated to the account.| <span class="string">string</span> | <span class="required">Required</span> | 
-`phoneNumber` <br />The home phone number of the account.| <span class="string">string</span> | <span class="required">Required</span> | 
-`mobileNumber` <br />The mobile number of the account (minus country code).| <span class="string">string</span> | <span class="required">Required</span> | 
-`dateOfBirth` <br />The birthday of the account.| dateTime | <span class="required">Required</span> | 
-`gender` <br />Available values: Male, Female and Unspecified.| <span class="string">string</span> | <span class="required">Required</span> | 
-`addresses` <br />A collection of addresses bound to the account.| <span class="array">array</span> | <span class="required">Required</span> | 
-`address \ addressType` <br />Available values: Home and Billing.| <span class="string">string</span> | <span class="required">Required</span> | 
-`address \ houseName` <br />The name associated to the address.| <span class="string">string</span> | <span class="required">Required</span> | 
-`address \ houseNumber` <br />The building number associated to the address.| <span class="string">string</span> | <span class="required">Required</span> | 
-`address \ street` <br />The street associated to the address.| <span class="string">string</span> | <span class="required">Required</span> | 
-`address \ townCity` <br />The town or city associated to the address| <span class="string">string</span> | <span class="required">Required</span> | 
-`address \ district` <br />The districtassociated to the address| <span class="string">string</span> |  | 
+`firstName` <br />The first name associated to the account.| <span class="string">string</span> |  | 
+`lastName` <br />The last name associated to the account.| <span class="string">string</span> |  | 
+`phoneNumber` <br />The home phone number of the account.| <span class="string">string</span> |  | 
+`mobileNumber` <br />The mobile number of the account (minus country code).| <span class="string">string</span> |  | 
+`dateOfBirth` <br />The birthday of the account.| dateTime |  | 
+`gender` <br />Available values: Male, Female and Unspecified.| <span class="string">string</span> | | 
+`addresses` <br />A collection of addresses bound to the account.| <span class="array">array</span> |  | 
+`address \ addressType` <br />Available values: Home and Billing.| <span class="string">string</span> | | 
+`address \ houseName` <br />The name associated to the address.| <span class="string">string</span> || 
+`address \ houseNumber` <br />The building number associated to the address.| <span class="string">string</span> |  | 
+`address \ street` <br />The street associated to the address.| <span class="string">string</span> |  | 
+`address \ townCity` <br />The town or city associated to the address| <span class="string">string</span> | | 
+`address \ district` <br />The district associated to the address| <span class="string">string</span> |  | 
 `address \ state` <br />The state associated to the address| <span class="string">string</span> |  | 
 `address \ county` <br />The county associated to the address| <span class="string">string</span> |  | 
-`address \ postCode` <br />The post code associated to the address| <span class="string">string</span> | <span class="required">Required</span> | 
-`address \ country` <br />The country the account resides| <span class="string">string</span> | <span class="required">Required</span> | 
-`customParameters` <br />A collection of custom attributes stored against the account| <span class="dictionary">dictionary*</span> |  | 
+`address \ postCode` <br />The post code associated to the address| <span class="string">string</span> | | 
+`address \ country` <br />The country the account resides| <span class="string">string</span> |  | 
+`customParameters` <br />A collection of custom attributes stored against the account| <span class="dictionary">dictionary</span> |  | 
 
 ## Update Account
 
@@ -479,8 +482,8 @@ It is a requirement of the eSuite platform that an account be created in order t
 
  |  |  |  
 --------- | ------- | ------- | 
-`email` <br />The identifier used when eSuite is primary IDAM.| <span class="string">string</span> | <span class="required">Required*</span> | 
-`clientUserId` <br />The identifier used when eSuite is secondary IDAM. Once set this cannot be changed.| <span class="string">string</span> | <span class="required">Required*</span> | 
+`email` <br />The identifier used when eSuite is primary IDAM.| <span class="string">string</span> | <span class="required">Required</span> | 
+`clientUserId` <br />The identifier used when eSuite is secondary IDAM. Once set this cannot be changed.| <span class="string">string</span> | <span class="required">Required</span> | 
 `password` <br />The value provided by the account to pair with the email. | <span class="string">string</span> | <span class="required">Required</span> | 
 `salutation` <br />Available values: Mr, Mrs, Miss and Ms.| <span class="string">string</span> |  | 
 `firstName` <br />The first name associated to the account.| <span class="string">string</span> | <span class="required">Required</span> | 
@@ -603,7 +606,7 @@ $.ajax(settings).done(function (response) {
 
 ```
 
-It is a requirement of the eSuite platform that an account be created in order to perform future actions such as payments and subscription purchases.
+Calling this endpoint will result in the account being removed from the eSuite platform.
 
 ### URL Endpoint
 
@@ -611,6 +614,185 @@ It is a requirement of the eSuite platform that an account be created in order t
 <span class="endpoint-verb endpoint-verb-delete">DELETE</span>
 <span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}</span>
 </div>
+
+## Search Accounts
+
+```shell
+curl --request GET \
+  --url https://uat.mppglobal.com/api/accounts/ \
+  --header 'x-clientId: 1001' \
+  --header 'x-clientPassword: Str0ngP@ssword' \
+  --header 'x-version: 9.0.0' \
+  --data '{}'
+```
+
+```csharp
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/");
+var request = new RestRequest(Method.GET);
+request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-clientId", "1001");
+request.AddHeader("x-clientPassword", "Str0ngP@ssword");
+request.AddParameter("undefined", "{}", ParameterType.RequestBody);
+IRestResponse response = client.Execute(request);
+```
+
+```java
+HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/")
+  .header("x-clientId", "1001")
+  .header("x-clientPassword", "Str0ngP@ssword")
+  .header("x-version", "9.0.0")
+  .body("{}")
+  .asString();
+```
+
+```ruby
+require 'uri'
+require 'net/http'
+
+url = URI("https://uat.mppglobal.com/api/accounts/")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Get.new(url)
+request["x-clientid"] = '1001'
+request["x-clientPassword"] = 'Str0ngP@ssword'
+request["x-version"] = '9.0.0'
+request.body = "{}"
+
+response = http.request(request)
+puts response.read_body
+```
+
+```python
+import http.client
+
+conn = http.client.HTTPSConnection("uat.mppglobal.com")
+
+payload = "{}"
+
+headers = {
+    'x-clientid' : '1001',
+    'x-clientPassword': "Str0ngP@ssword",
+    'x-version': '9.0.0'
+    }
+
+conn.request("GET", "/api/accounts/", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))
+```
+
+```javascript
+
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "totalNumberOfRecords": 1,
+  "pageNumber": 1,
+  "resultsPerPage": 50,
+  "items": [
+    {
+      "account": {
+        "accountId": 500000001,
+        "resourceReference": "0010A3EL3S2MKRSGI1",
+        "status": "Active",
+        "email": "my-test@specsavers.com",
+        "clientUserId": "014785487",
+        "salutation": "Mr",
+        "firstName": "Joshua",
+        "lastName": "Fogg",
+        "phoneNumber": "PhoneNumber",
+        "mobileNumber": "",
+        "dateOfBirth": "0001-01-01T00:00:00",
+        "gender": "NotKnown",
+        "addresses": [
+          {
+            "addressType": "Home",
+            "houseName": "HouseName",
+            "houseNumber": "HouseNumber",
+            "street": "Street",
+            "townCity": "TownCity",
+            "district": "District",
+            "county": "County",
+            "postCode": "PostCode",
+            "country": "Country"
+          }
+        ],
+        "customParameters": {
+          "StoreNumber": "42"
+        }
+      }
+    }
+  ]
+}
+```
+
+This endpoint allows you to search for an account using the REST API. This is typically used when integrated into another system or managment console. It is not recommended that this endpoint be utilised using client-side authentiation.
+
+### URL Endpoint
+
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/</span>
+</div>
+
+### Query Parameters
+ |  |  |  
+--------- | ------- | ------- | 
+`emailAddress` <br />The email associated with an account| <span class="string">string</span> | | 
+`clientUserId` <br />The unique identifier associated with one or more accounts| <span class="string">string</span> | | 
+`accountName` <br />The name associated to an account. This should be first and surname concatenated.| <span class="string">string</span> | | 
+`street` <br />Street associated to one or more accounts| <span class="string">string</span> | | 
+`postCode` <br />Post code associated to one or more accounts| <span class="string">string</span> | | 
+`country` <br />Country associated to one or more accounts| <span class="string">string</span> | | 
+`state` <br />State associated to one or more accounts (US only)| <span class="string">string</span> | | 
+`phoneNumber` <br />Street associated to one or more accounts| <span class="string">string</span> | | 
+`dateOfBirth` <br />Street associated to one or more accounts| <span class="string">string</span> | | 
+`rowsPerPage` <br />The number of account results to be returned| <span class="string">string</span> | | 
+`pageNumber` <br />The result set requested| <span class="string">string</span> | | 
+
+### Response Parameters
+
+ |  |  |  
+--------- | ------- | ------- | 
+`totalNumberOfRecords` <br />Total number of accounts that have been found based on the request criteria| <span class="integer">integer</span> |  |
+`pageNumber` <br />The current page of results being show| <span class="integer">integer</span> |  |
+`resultsPerPage` <br />The number of results being shown| <span class="integer">integer</span> |  |
+`items` <br />Collection of account resources| <span class="integer">integer</span> |  | 
+`accountId` <br />AccountId referring to the account requested| <span class="integer">integer</span> |  | 
+`resourceReferece` <br />Computational value of the accountId and the resource type| <span class="string">string</span> |  | 
+`status` <br />The current status of the account.| <span class="string">string</span> |  | 
+`email` <br />The identifier used when eSuite is primary IDAM.| <span class="string">string</span> |  | 
+`clientUserId` <br />The identifier used when eSuite is secondary IDAM. Once set this cannot be changed.| <span class="string">string</span> |  | 
+`password` <br />The value provided by the account to pair with the email. | <span class="string">string</span> |  | 
+`salutation` <br />Available values: Mr, Mrs, Miss and Ms.| <span class="string">string</span> |  | 
+`firstName` <br />The first name associated to the account.| <span class="string">string</span> |  | 
+`lastName` <br />The last name associated to the account.| <span class="string">string</span> |  | 
+`phoneNumber` <br />The home phone number of the account.| <span class="string">string</span> |  | 
+`mobileNumber` <br />The mobile number of the account (minus country code).| <span class="string">string</span> |  | 
+`dateOfBirth` <br />The birthday of the account.| <span class="string">dateTime</span> |  | 
+`gender` <br />Available values: Male, Female and Unspecified.| <span class="string">string</span> | | 
+`addresses` <br />A collection of addresses bound to the account.| <span class="array">array</span> |  | 
+`address \ addressType` <br />Available values: Home and Billing.| <span class="string">string</span> | | 
+`address \ houseName` <br />The name associated to the address.| <span class="string">string</span> || 
+`address \ houseNumber` <br />The building number associated to the address.| <span class="string">string</span> |  | 
+`address \ street` <br />The street associated to the address.| <span class="string">string</span> |  | 
+`address \ townCity` <br />The town or city associated to the address| <span class="string">string</span> | | 
+`address \ district` <br />The district associated to the address| <span class="string">string</span> |  | 
+`address \ state` <br />The state associated to the address| <span class="string">string</span> |  | 
+`address \ county` <br />The county associated to the address| <span class="string">string</span> |  | 
+`address \ postCode` <br />The post code associated to the address| <span class="string">string</span> | | 
+`address \ country` <br />The country the account resides| <span class="string">string</span> |  | 
+`customParameters` <br />A collection of custom attributes stored against the account| <span class="dictionary">dictionary</span> |  | 
+
+
 
 ## Trigger Account Verification
 
