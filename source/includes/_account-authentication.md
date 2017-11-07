@@ -231,6 +231,6 @@ Authentication via a ClientUserId is required when eSuite is not the primary ide
 
 
 <aside class="info">
-Due to the sensetive nature of a ClientUserId it is not possible to call this endpoint using a client-side language.
+Due to the sensitive nature of a ClientUserId it is not possible to call this endpoint using a client-side language.
 </aside>
 

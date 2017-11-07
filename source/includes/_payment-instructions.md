@@ -558,7 +558,7 @@ This endpoint allows you to retrieve a summary of all payment instructions again
 `nextPaymentDate` <br />The next scheduled date a payment will be taken.| <span class="string">string</span> | 
 `description` <br />The name/description of the payment instruction| <span class="string">string</span> | 
 `customPaymentInstructionParameters` <br />This is a collection of custom attributes against the payment instructions.| <span class="dictionary">dictionary</span> | 
-`customPaymentInstructionParameters \ parameterName <br />Representation of all custom parameters against the payment instruction.| <span class="string">string</span> | 
+`customPaymentInstructionParameters \ parameterName` <br />Representation of all custom parameters against the payment instruction.| <span class="string">string</span> | 
 
 
 

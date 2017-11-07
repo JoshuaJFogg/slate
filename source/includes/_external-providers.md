@@ -247,17 +247,17 @@ An account is able to authenticate using their Facebook account and then retriev
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/external-providers/facebook</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/external-providers/facebook</span>
 </div>
 
 ### POST Parameters
 
  |  |  |  
 --------- | ------- | ------- | 
-`facebookRedirectURI` <br />The location which should be called for validation of the code and token provided| <span class="string">string</span> | <span class="required">Yes/No</span> | 
-`authorisationCode` <br />Code provided by Facebook| <span class="string">string</span> | <span class="required">Yes/No</span> | 
-`accessToken` <br />Code provided by Facebook| <span class="string">string</span> | <span class="required">Yes/No</span> | 
-`applicationIdentifier` <br />The identifier for the eSuite application that the account is using| <span class="string">string</span> | <span class="required">Yes/No</span> | 
+`facebookRedirectURI` <br />The location which should be called for validation of the code and token provided| <span class="string">string</span> | <span class="required">Required</span> | 
+`authorisationCode` <br />Code provided by Facebook| <span class="string">string</span> | <span class="required">Required</span> | 
+`accessToken` <br />Code provided by Facebook| <span class="string">string</span> | <span class="required">Required</span> | 
+`applicationIdentifier` <br />The identifier for the eSuite application that the account is using| <span class="string">string</span> | <span class="required">Required</span> | 
 
 
 
@@ -407,7 +407,7 @@ If during the authentication process with Facebook, eSuite deems the Facebook ac
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "/api/accounts/{accountId}/link/external-providers/facebook",
+  "url": "/api/accounts/link/external-providers/facebook",
   "method": "POST",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
@@ -439,14 +439,14 @@ This endpoint allows you to link an existing eSuite account to their Facebook pr
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/link/external-providers/facebook</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/link/external-providers/facebook</span>
 </div>
 
 ### POST Parameters
 
  |  |  |  
 --------- | ------- | ------- | 
-`facebookRedirectURI` <br />The location which should be called for validation of the code and token provided| <span class="string">string</span> | <span class="required">Yes/No</span> | 
-`authorisationCode` <br />Code provided by Facebook| <span class="string">string</span> | <span class="required">Yes/No</span> | 
-`accessToken` <br />Code provided by Facebook| <span class="string">string</span> | <span class="required">Yes/No</span> | 
-`applicationIdentifier` <br />The identifier for the eSuite application that the account is using| <span class="string">string</span> | <span class="required">Yes/No</span> | 
+`facebookRedirectURI` <br />The location which should be called for validation of the code and token provided| <span class="string">string</span> | <span class="required">Required</span> | 
+`authorisationCode` <br />Code provided by Facebook| <span class="string">string</span> | <span class="required">Required</span> | 
+`accessToken` <br />Code provided by Facebook| <span class="string">string</span> | <span class="required">Required</span> | 
+`applicationIdentifier` <br />The identifier for the eSuite application that the account is using| <span class="string">string</span> | <span class="required">Required</span> | 

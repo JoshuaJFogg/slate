@@ -579,7 +579,7 @@ Calling this endpoint will allow you to add a voucher code to an existing subscr
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/vouchers</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionid}/vouchers</span>
 </div>
 
 ### POST Parameters
@@ -1184,13 +1184,11 @@ This endpoint allows you to retrieve all configured subscription holidays for a 
 
  |  | 
 --------- | ------- |  
-  The collection of subscription holidays.| <span class="array">array[objects]</span> |
+The collection of subscription holidays.| <span class="array">array[objects]</span> |
 `subscriptionHolidayReference` <br />Reference to the holiday. | <span class="string">string</span> | 
 `subscriptionReference` <br />Reference to the subscription.| <span class="string">string</span> | 
 `startDate` <br />The date at which the holiday period should begin.| <span class="string">string</span> | 
 `endDate` <br />The date at which the subscription should become active.| <span class="string">string</span> | 
-
-
 
 
 

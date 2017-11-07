@@ -1300,8 +1300,8 @@ Execution of this API will result in the account being assigned a license to con
 
  |  |  | 
 --------- | ------- | ------- | 
-`email` <br />Email of the account that should be added to the account group.| <span class="string">string</span> |<span class="required">mandatory</span> |
-`clientUserID` <br />ClientUserID of the account that should be added to the account group.| <span class="string">string</span> |<span class="required">mandatory</span> |  
+`email` <br />Email of the account that should be added to the account group.| <span class="string">string</span> |<span class="required">Required</span> |
+`clientUserID` <br />ClientUserID of the account that should be added to the account group.| <span class="string">string</span> |<span class="required">Required</span> |  
 `useOverFlowLicense` <br />An indication as to whether to use an overflow license if all standard licenses have been allocated.| <span class="bool">boolean</span> | |  
 `taxInfo`  <br />Collection of tax information| <span class="object">object</span> | | 
 `taxInfo \ zeroRated`  <br />An indication as to whether the addition does not incurr tax| <span class="bool">boolean</span> | |

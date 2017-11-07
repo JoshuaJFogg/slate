@@ -112,9 +112,9 @@ This endpoint allows you to pass through the Roku transactionId alongside custom
 
  |  |  | 
 --------- | ------- | ------- | 
-`rokuTransactionId` <br />The roku transaction ID that is to be validated| <span class="string">string</span> |  | 
-`email` <br />Email address of the customer's Roku billing account| <span class="string">string</span> |  | 
-`password` <br />Customer's password| <span class="string">string</span> |  | 
+`rokuTransactionId` <br />The roku transaction ID that is to be validated| <span class="string">string</span> | <span class="required">Required</span> | 
+`email` <br />Email address of the customer's Roku billing account| <span class="string">string</span> | <span class="required">Required</span> | 
+`password` <br />Customer's password| <span class="string">string</span> | <span class="required">Required</span> | 
 `newAccountDetails` <br />A sub-object of RokuValidateTransactionRequest, containing additional customer information| <span class="object">object</span> |  | 
 `newAccountDetails \ firstName` <br />The customer's first name, as forwarded from Roku's native billing| <span class="string">string</span> |  | 
 `newAccountDetails \ lastName` <br />The customer's last name, as forwarded from Roku's native billing| <span class="string">string</span> |  | 
@@ -237,7 +237,7 @@ This endpoint should be called when an existing account has made a purchase via 
 
  |  |  | 
 --------- | ------- | ------- | 
-`rokuTransactionId` <br />The roku transaction ID that is to be validated| <span class="string">string</span> |  | 
+`rokuTransactionId` <br />The roku transaction ID that is to be validated| <span class="string">string</span> | <span class="required">Required</span> | 
 
 ## Validate iTunes Purchase
 
@@ -350,10 +350,10 @@ For first time sign-up and subscribers, calling this endpoint containing informa
  |  |  | 
 --------- | ------- | ------- | 
 `receipt` <br />The encrypted receipt returned from the iTunes stored when the app was purchased| <span class="string">string</span> | <span class="required">Required</span> | 
-`price` <br />An indication as to the price paid within iTunes| <span style="font-weight: bold;color: #666;">number</span> |  | 
+`price` <br />An indication as to the price paid within iTunes| <span class="decimal">decimal</span> |  | 
 `currency` <br />The currency used to purchase the iTunes subscription| <span class="string">string</span> |  | 
-`email` <br />Email address of the customer's Roku billing account| <span class="string">string</span> |  | 
-`password` <br />Customer's password| <span class="string">string</span> |  | 
+`email` <br />Email address of the customer's Roku billing account| <span class="string">string</span> | <span class="required">Required</span> | 
+`password` <br />Customer's password| <span class="string">string</span> | <span class="required">Required</span> | 
 `newAccountDetails` <br />A sub-object of request, containing additional customer information| <span class="object">object</span> |  | 
 `newAccountDetails \ firstName` <br />The customer's first name, as forwarded from iTunes's native billing| <span class="string">string</span> |  | 
 `newAccountDetails \ lastName` <br />The customer's last name, as forwarded from iTunes's native billing| <span class="string">string</span> |  | 
@@ -476,7 +476,7 @@ This endpoint should be called when an existing account has made a purchase via 
  |  |  | 
 --------- | ------- | ------- | 
 `receipt` <br />The encrypted receipt returned from the iTunes stored when the app was purchased| <span class="string">string</span> | <span class="required">Required</span> | 
-`price` <br />An indication as to the price paid within iTunes| <span style="font-weight: bold;color: #666;">number</span> |  | 
+`price` <br />An indication as to the price paid within iTunes| <span class="decimal">decimal</span> |  | 
 `currency` <br />The currency used to purchase the iTunes subscription| <span class="string">string</span> |  | 
 
 

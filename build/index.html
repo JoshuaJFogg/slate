@@ -148,6 +148,8 @@
 
 <p>You can generate your bindings against our UAT swagger <a href="https://uat.mppglobal.com:443/swagger/docs/9">here</a>.</p>
 
+<aside class="info">Please be aware the all dates and times returned via the API are presented in UTC and do not take into account your local time zone.</aside>
+
           <h1 id="api-authorization">API Authorization</h1>
 
 <h2 id="client-to-server-integrations">Client-to-Server integrations</h2>
@@ -197,7 +199,7 @@
 
 <h3 id="x-sessionid">X-SessionId</h3>
 
-<p>In the event you are performing actions relating to a customer&rsquo;s account, whether that be account creation, retrieval or addition of payment details; you must provide a session token for that customer in the request you make. This session token can be gained from two different places: the customer authenticating themself using their email address and password, or a server-to-server API request on behalf of the customer. The session provided will have both a short-life permission which allows the customer to carry out actions against their account and this lasts for 15 minutes since last use, and then a long-life permission which is used for checking access to content only.</p>
+<p>In the event you are performing actions relating to a customer&rsquo;s account, whether that be account creation, retrieval or addition of payment details; you must provide a session token for that customer in the request you make. This session token can be gained from two different places: the customer authenticating themselves using their email address and password, or a server-to-server API request on behalf of the customer. The session provided will have both a short-life permission which allows the customer to carry out actions against their account and this lasts for 15 minutes since last use, and then a long-life permission which is used for checking access to content only.</p>
 
 <p><code class="prettyprint">x-sessionId: BE52ADA2064C4F9A9D90F28D066Y6RDE</code></p>
 
@@ -275,7 +277,7 @@ You must replace the <code>x-tokenId</code> value with your personal API key.
 
 <p>The client password is the authorization mechanism used to determine whether the requester has permissions to execute the API method in question. It is possible to have multiple API payments against your client but these will differ between both UAT and the Live system due to the UAT system not being a PCI compliant environment. </p>
 
-<p>The client password should never be revealed in the public domain nor should it be written on a physical item e.g paper. When moving to the Live system, MPP Global&rsquo;s Client Onboarding team will provide a designated member of your organisation the client password over the phone.</p>
+<p>The client password should never be revealed in the public domain nor should it be written on a physical item e.g paper. When moving to the Live system, MPP Globals Client Onboarding team will provide a designated member of your organisation the client password over the phone.</p>
 
 <p><code class="prettyprint">x-clientpassword: Str0ngP@ssword</code></p>
 
@@ -284,14 +286,14 @@ The <code>x-clientId</code> should never be revealed in the public domain, nor b
 </aside>
 
 <aside class="warning">
-If you choose to integrate the eSuite API directly into your technology stack please be aware that in the event you are processing, storing or transmitting card data, your entire application will be inscope for PCI Level one compliance.
+If you choose to integrate the eSuite API directly into your technology stack please be aware that in the event you are processing, storing or transmitting card data, your entire application will be in scope for PCI Level one compliance.
 </aside>
 
-<h2 id="versioning">Versioning</h2>
+<h2 id="versions">Versions</h2>
 
-<p>The eSuite API operates a semantic versioning policy which is denoted using MAJOR.MINOR.PATCH (9.0.0). The x-version header is a mandatory parameter on <em>all</em> API requests.</p>
+<p>The eSuite API operates a semantic version policy which is denoted using MAJOR.MINOR.PATCH (9.0.0). The x-version header is a Required parameter on <em>all</em> API requests.</p>
 
-<p>If MPP Global makes a change to the eSuite API that could result in an existing intgration no longer functioning correctly, a new major version will be released, resulting in incrementing the Major version of the API. For example, a non-backwards compatible change to the API would be the change the results in responses being returned as XML rather than JSON. This would see a version 9.12.3 being the final version 9 release and a breaking change being released on version 10.0.0.</p>
+<p>If MPP Global makes a change to the eSuite API that could result in an existing integration no longer functioning correctly, a new major version will be released, resulting in incrementing the Major version of the API. For example, a non-backwards compatible change to the API would be the change the results in responses being returned as XML rather than JSON. This would see a version 9.12.3 being the final version 9 release and a breaking change being released on version 10.0.0.</p>
 
 <p>As part of the development of the eSuite platform, new features are released every two weeks. The introduction of new features that do not cause breaking changes will be added to the current major version of the API and a minor release. For example, this would be version 9.1.3 providing the ability to create a customer account on the eSuite platform. As part of the next release of the eSuite platform you are able to retrieve customer accounts via the eSuite API but this would be added to a new minor version and be available on version 9.2.0.</p>
 
@@ -620,7 +622,7 @@ If you choose to integrate the eSuite API directly into your technology stack pl
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>For the most simple integration, calling this endpoint will generate a payment session token that can be used for the client-side application (eSuite SDK) to purchase a pre-configured product.</p>
+<p>For the most simple integration, calling this endpoint will generate a payment session token that can be used for the client-side application (eSuite SDK) to purchase a pre-configured product. You are required to provide a valid <code class="prettyprint">x-sessionId</code> in order for this API request to be successful.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -762,7 +764,7 @@ If you choose to integrate the eSuite API directly into your technology stack pl
 <td><span class="object">object</span></td>
 </tr>
 <tr>
-<td><code class="prettyprint">paymentOptions \ cardTypes</code> <br /> <span class="string">String</span></td>
+<td><code class="prettyprint">paymentOptions \ cardTypes</code> <br />Object detailing the specifics of the available card types</td>
 <td><span class="array">array[object]</span></td>
 </tr>
 <tr>
@@ -915,7 +917,7 @@ If you choose to integrate the eSuite API directly into your technology stack pl
 <tr>
 <td><code class="prettyprint">pricing \ priceItems</code> <br />Collection of individual items being purchased on a dynamic subscription</td>
 <td><span class="array">array[objects]</span></td>
-<td><span class="required">Required</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">priceItems \ externalReference</code> <br />Reference from a client system</td>
@@ -1013,13 +1015,13 @@ If you choose to integrate the eSuite API directly into your technology stack pl
 <td></td>
 </tr>
 <tr>
-<td><code class="prettyprint">workflowConfiguration \ permitUnverifiedAccoutPurchase</code> <br />Prevent accounts who have not verified their emails from making a purchase</td>
+<td><code class="prettyprint">workflowConfiguration \ permitUnverifiedAccountPurchase</code> <br />Prevent accounts who have not verified their emails from making a purchase</td>
 <td><span class="bool">bool</span></td>
 <td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">workflowConfiguration \ workFlowCustomParameters</code> <br />A collection of custom attributes associated to the configuration</td>
-<td><span class="dictionary">dictionary*</span></td>
+<td><span class="dictionary">dictionary</span></td>
 <td></td>
 </tr>
 <tr>
@@ -1029,7 +1031,7 @@ If you choose to integrate the eSuite API directly into your technology stack pl
 </tr>
 <tr>
 <td><code class="prettyprint">customAccountParameters</code> <br />A collection of custom attributes associated to the account</td>
-<td><span class="dictionary">dictionary*</span></td>
+<td><span class="dictionary">dictionary</span></td>
 <td></td>
 </tr>
 <tr>
@@ -1039,7 +1041,7 @@ If you choose to integrate the eSuite API directly into your technology stack pl
 </tr>
 <tr>
 <td><code class="prettyprint">customOrderParameters</code> <br />A collection of custom attributes associated to the payment</td>
-<td><span class="dictionary">dictionary*</span></td>
+<td><span class="dictionary">dictionary</span></td>
 <td></td>
 </tr>
 <tr>
@@ -1266,13 +1268,13 @@ This endpoint can only be called using server-side authentication due to the sen
 <td></td>
 </tr>
 <tr>
-<td><code class="prettyprint">workflowConfiguration \ permitUnverifiedAccoutPurchase</code> <br />Prevent accounts who have not verified their emails from making a purchase</td>
+<td><code class="prettyprint">workflowConfiguration \ permitUnverifiedAccountPurchase</code> <br />Prevent accounts who have not verified their emails from making a purchase</td>
 <td><span class="bool">bool</span></td>
 <td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">workflowConfiguration \ workFlowCustomParameters</code> <br />A collection of custom attributes associated to the configuration</td>
-<td><span class="dictionary">dictionary*</span></td>
+<td><span class="dictionary">dictionary</span></td>
 <td></td>
 </tr>
 <tr>
@@ -1282,7 +1284,7 @@ This endpoint can only be called using server-side authentication due to the sen
 </tr>
 <tr>
 <td><code class="prettyprint">customAccountParameters</code> <br />A collection of custom attributes associated to the account</td>
-<td><span class="dictionary">dictionary*</span></td>
+<td><span class="dictionary">dictionary</span></td>
 <td></td>
 </tr>
 <tr>
@@ -1292,7 +1294,7 @@ This endpoint can only be called using server-side authentication due to the sen
 </tr>
 <tr>
 <td><code class="prettyprint">customOrderParameters</code> <br />A collection of custom attributes associated to the payment</td>
-<td><span class="dictionary">dictionary*</span></td>
+<td><span class="dictionary">dictionary</span></td>
 <td></td>
 </tr>
 <tr>
@@ -1465,13 +1467,13 @@ This endpoint can only be called using server-side authentication due to the sen
 <td></td>
 </tr>
 <tr>
-<td><code class="prettyprint">workflowConfiguration \ permitUnverifiedAccoutPurchase</code> <br />Prevent accounts who have not verified their emails from making a purchase</td>
+<td><code class="prettyprint">workflowConfiguration \ permitUnverifiedAccountPurchase</code> <br />Prevent accounts who have not verified their emails from making a purchase</td>
 <td><span class="bool">bool</span></td>
 <td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">workflowConfiguration \ workFlowCustomParameters</code> <br />A collection of custom attributes associated to the configuration</td>
-<td><span class="dictionary">dictionary*</span></td>
+<td><span class="dictionary">dictionary</span></td>
 <td></td>
 </tr>
 <tr>
@@ -1481,7 +1483,7 @@ This endpoint can only be called using server-side authentication due to the sen
 </tr>
 <tr>
 <td><code class="prettyprint">customAccountParameters</code> <br />A collection of custom attributes associated to the account</td>
-<td><span class="dictionary">dictionary*</span></td>
+<td><span class="dictionary">dictionary</span></td>
 <td></td>
 </tr>
 <tr>
@@ -1492,11 +1494,11 @@ This endpoint can only be called using server-side authentication due to the sen
 <tr>
 <td><code class="prettyprint">orderItems</code> <br />A collection ofitems that will be purchased</td>
 <td><span class="array">array[object]</span></td>
-<td></td>
+<td><span class="required">Required</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">orderItems \ customOrderParameters</code> <br />A collection of custom attributes associated to the payment</td>
-<td><span class="dictionary">dictionary*</span></td>
+<td><span class="dictionary">dictionary</span></td>
 <td></td>
 </tr>
 <tr>
@@ -1525,24 +1527,24 @@ This endpoint can only be called using server-side authentication due to the sen
 <td><span class="required">Required</span></td>
 </tr>
 <tr>
-<td><code class="prettyprint">priceBreakdown</code> &gt; grossAmount <br />The amount the account will be charged</td>
+<td><code class="prettyprint">priceBreakdown &gt; grossAmount</code> <br />The amount the account will be charged</td>
 <td><span class="decimal">decimal</span></td>
 <td><span class="required">Required</span></td>
 </tr>
 <tr>
-<td><code class="prettyprint">priceBreakdown</code> &gt; netAmount <br />The amount that will be available after tax</td>
+<td><code class="prettyprint">priceBreakdown &gt; netAmount</code> <br />The amount that will be available after tax</td>
 <td><span class="decimal">decimal</span></td>
 <td><span class="required">Required</span></td>
 </tr>
 <tr>
-<td><code class="prettyprint">priceBreakdown</code> &gt; taxAmount <br />The amount of tax associated to the item</td>
+<td><code class="prettyprint">priceBreakdown &gt; taxAmount</code> <br />The amount of tax associated to the item</td>
 <td><span class="decimal">decimal</span></td>
 <td><span class="required">Required</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">orderItems \ taxInfo</code> <br />Collection of tax information</td>
 <td><span class="object">object</span></td>
-<td><span class="required">Required</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">taxInfo \ category</code> <br />Indication as to whether the purchase is tax exempt</td>
@@ -1577,7 +1579,7 @@ This endpoint can only be called using server-side authentication due to the sen
 <tr>
 <td><code class="prettyprint">orderItems \ entitlements</code> <br />A collection of additional entitlements to provide the account on purchase</td>
 <td><span class="array">array[object]</span></td>
-<td></td>
+<td><span class="required">Required</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">entitlements \ identifier</code> <br />Identifier for the entitlement being purchased</td>
@@ -1759,12 +1761,12 @@ This endpoint can only be called using server-side authentication due to the sen
 <td></td>
 </tr>
 <tr>
-<td><code class="prettyprint">workflowConfiguration \ processUpdateUrl</code> <br />External endpoint eSuite should notiffy of purchase</td>
+<td><code class="prettyprint">workflowConfiguration \ processUpdateUrl</code> <br />External endpoint eSuite should notify of purchase</td>
 <td><span class="string">string</span></td>
 <td></td>
 </tr>
 <tr>
-<td><code class="prettyprint">workflowConfiguration \ cancelOnProcessUpdateFailure</code> <br />An indication as to whether eSuite should cancel the purchase on failure to recieve a call out response</td>
+<td><code class="prettyprint">workflowConfiguration \ cancelOnProcessUpdateFailure</code> <br />An indication as to whether eSuite should cancel the purchase on failure to receive a call out response</td>
 <td><span class="bool">bool</span></td>
 <td></td>
 </tr>
@@ -1789,7 +1791,7 @@ This endpoint can only be called using server-side authentication due to the sen
 <td></td>
 </tr>
 <tr>
-<td><code class="prettyprint">workflowConfiguration \ securityToken</code> <br />Value that is passed in the <code class="prettyprint">ProcessUpdate</code> callout to allow you to verify it is a legitimate call out</td>
+<td><code class="prettyprint">workflowConfiguration \ securityToken</code> <br />Value that is passed in the <code class="prettyprint">ProcessUpdate</code> call out to allow you to verify it is a legitimate call out</td>
 <td><span class="string">string</span></td>
 <td></td>
 </tr>
@@ -1804,13 +1806,13 @@ This endpoint can only be called using server-side authentication due to the sen
 <td></td>
 </tr>
 <tr>
-<td><code class="prettyprint">workflowConfiguration \ permitUnverifiedAccoutPurchase</code> <br />Prevent accounts who have not verified their emails from making a purchase</td>
+<td><code class="prettyprint">workflowConfiguration \ permitUnverifiedAccountPurchase</code> <br />Prevent accounts who have not verified their emails from making a purchase</td>
 <td><span class="bool">bool</span></td>
 <td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">workflowConfiguration \ workFlowCustomParameters</code> <br />A collection of custom attributes associated to the configuration</td>
-<td><span class="dictionary">dictionary*</span></td>
+<td><span class="dictionary">dictionary</span></td>
 <td></td>
 </tr>
 <tr>
@@ -1820,7 +1822,7 @@ This endpoint can only be called using server-side authentication due to the sen
 </tr>
 <tr>
 <td><code class="prettyprint">customAccountParameters</code> <br />A collection of custom attributes associated to the account</td>
-<td><span class="dictionary">dictionary*</span></td>
+<td><span class="dictionary">dictionary</span></td>
 <td></td>
 </tr>
 <tr>
@@ -1830,7 +1832,7 @@ This endpoint can only be called using server-side authentication due to the sen
 </tr>
 <tr>
 <td><code class="prettyprint">customOrderParameters</code> <br />A collection of custom attributes associated to the payment</td>
-<td><span class="dictionary">dictionary*</span></td>
+<td><span class="dictionary">dictionary</span></td>
 <td></td>
 </tr>
 <tr>
@@ -1876,7 +1878,7 @@ This endpoint can only be called using server-side authentication due to the sen
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"amountCharged"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+  </span><span class="s2">"amountCharged"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
   </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GBP"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"paymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SEPA"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"subscriptionStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Active"</span><span class="p">,</span><span class="w">
@@ -2581,12 +2583,12 @@ This endpoint can only be called using server-side authentication due to the sen
 <tr>
 <td><code class="prettyprint">asynchronousProcessingParameters</code> <br />Parameter set provided if you would like to complete an advanced payment type</td>
 <td><span class="string">string</span></td>
-<td></td>
+<td><span class="required">Required</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">asynchronousProcessingParameters \ parameterName</code> <br />Parameter name specific to the alternative payment method provided</td>
 <td><span class="string">string</span></td>
-<td></td>
+<td><span class="required">Required</span></td>
 </tr>
 </tbody></table>
 
@@ -2645,12 +2647,12 @@ This endpoint can only be called using server-side authentication due to the sen
 <tr>
 <td><code class="prettyprint">asynchronousProcessingParameters</code> <br />Parameter set provided if you would like to complete an advanced payment type</td>
 <td><span class="string">string</span></td>
-<td></td>
+<td><span class="required">Required</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">asynchronousProcessingParameters \ parameterName</code> <br />Parameter name specific to the alternative payment method provided</td>
 <td><span class="string">string</span></td>
-<td></td>
+<td><span class="required">Required</span></td>
 </tr>
 </tbody></table>
 
@@ -2715,12 +2717,12 @@ This endpoint can only be called using server-side authentication due to the sen
 <tr>
 <td><code class="prettyprint">asynchronousProcessingParameters</code> <br />Parameter set provided if you would like to complete an advanced payment type</td>
 <td><span class="string">string</span></td>
-<td></td>
+<td><span class="required">Required</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">asynchronousProcessingParameters \ parameterName</code> <br />Parameter name specific to the alternative payment method provided</td>
 <td><span class="string">string</span></td>
-<td></td>
+<td><span class="required">Required</span></td>
 </tr>
 </tbody></table>
 
@@ -2779,12 +2781,12 @@ This endpoint can only be called using server-side authentication due to the sen
 <tr>
 <td><code class="prettyprint">asynchronousProcessingParameters</code> <br />Parameter set provided if you would like to complete an advanced payment type</td>
 <td><span class="string">string</span></td>
-<td></td>
+<td><span class="required">Required</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">asynchronousProcessingParameters \ parameterName</code> <br />Parameter name specific to the alternative payment method provided</td>
 <td><span class="string">string</span></td>
-<td></td>
+<td><span class="required">Required</span></td>
 </tr>
 </tbody></table>
 
@@ -2945,62 +2947,62 @@ This endpoint can only be called using server-side authentication due to the sen
 <tr>
 <td><code class="prettyprint">firstName</code> <br />The first name associated to the account.</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Required</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">lastName</code> <br />The last name associated to the account.</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Required</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">phoneNumber</code> <br />The home phone number of the account.</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Required</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">mobileNumber</code> <br />The mobile number of the account (minus country code).</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Required</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">dateOfBirth</code> <br />The birthday of the account.</td>
-<td><span style="font-weight:bold;">dateTime</span></td>
-<td><span class="required">Required</span></td>
+<td><span class="string">string</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">gender</code> <br />Available values: Male, Female and Unspecified.</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Required</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">addresses</code> <br />A collection of addresses bound to the account.</td>
 <td><span class="array">array</span></td>
-<td><span class="required">Required</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">address \ addressType</code> <br />Available values: Home and Billing.</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Required</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">address \ houseName</code> <br />The name associated to the address.</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Required</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">address \ houseNumber</code> <br />The building number associated to the address.</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Required</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">address \ street</code> <br />The street associated to the address.</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Required</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">address \ townCity</code> <br />The town or city associated to the address</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Required</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">address \ district</code> <br />The district associated to the address</td>
@@ -3020,21 +3022,21 @@ This endpoint can only be called using server-side authentication due to the sen
 <tr>
 <td><code class="prettyprint">address \ postCode</code> <br />The post code associated to the address</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Required</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">address \ country</code> <br />The country the account resides</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Required</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">customParameters</code> <br />A collection of custom attributes stored against the account</td>
-<td><span class="dictionary">dictionary*</span></td>
+<td><span class="dictionary">dictionary</span></td>
 <td></td>
 </tr>
 </tbody></table>
 
-<p><em>* It is mandatory to pass either an email address or a clientUserId. It is possible to provide both.</em></p>
+<p><em>* It is Required to pass either a email address or a clientUserId. It is possible to provide both.</em></p>
 
 <h2 id="retrieve-account">Retrieve Account</h2>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
@@ -3217,7 +3219,7 @@ This endpoint can only be called using server-side authentication due to the sen
 </tr>
 <tr>
 <td><code class="prettyprint">dateOfBirth</code> <br />The birthday of the account.</td>
-<td>dateTime</td>
+<td><span class="string">string</span></td>
 <td></td>
 </tr>
 <tr>
@@ -3442,65 +3444,65 @@ This endpoint can only be called using server-side authentication due to the sen
 <tr>
 <td><code class="prettyprint">firstName</code> <br />The first name associated to the account.</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Required</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">lastName</code> <br />The last name associated to the account.</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Required</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">phoneNumber</code> <br />The home phone number of the account.</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Required</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">mobileNumber</code> <br />The mobile number of the account (minus country code).</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Required</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">dateOfBirth</code> <br />The birthday of the account.</td>
-<td>dateTime</td>
-<td><span class="required">Required</span></td>
+<td><span class="string">string</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">gender</code> <br />Available values: Male, Female and Unspecified.</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Required</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">addresses</code> <br />A collection of addresses bound to the account.</td>
 <td><span class="array">array</span></td>
-<td><span class="required">Required</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">address \ addressType</code> <br />Available values: Home and Billing.</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Required</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">address \ houseName</code> <br />The name associated to the address.</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Required</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">address \ houseNumber</code> <br />The building number associated to the address.</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Required</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">address \ street</code> <br />The street associated to the address.</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Required</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">address \ townCity</code> <br />The town or city associated to the address</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Required</span></td>
+<td></td>
 </tr>
 <tr>
-<td><code class="prettyprint">address \ district</code> <br />The districtassociated to the address</td>
+<td><code class="prettyprint">address \ district</code> <br />The district associated to the address</td>
 <td><span class="string">string</span></td>
 <td></td>
 </tr>
@@ -3517,21 +3519,19 @@ This endpoint can only be called using server-side authentication due to the sen
 <tr>
 <td><code class="prettyprint">address \ postCode</code> <br />The post code associated to the address</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Required</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">address \ country</code> <br />The country the account resides</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Required</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">customParameters</code> <br />A collection of custom attributes stored against the account</td>
-<td><span class="dictionary">dictionary*</span></td>
+<td><span class="dictionary">dictionary</span></td>
 <td></td>
 </tr>
 </tbody></table>
-
-<p><em>* It is mandatory to pass either an email address or a clientUserId. It is possible to provide both.</em></p>
 
 <h2 id="delete-account">Delete Account</h2>
 <pre class="highlight shell tab-shell"><code>curl --request DELETE <span class="se">\</span>
@@ -4341,6 +4341,8 @@ This endpoint can only be called using server-side authentication due to the sen
   </span><span class="s2">"sessionToken"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"b6dab2afbc4d42a385746a51b3bd2ed6"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<p>If an account has requested to reset their password, they will have recieved and email with a session token. This token should be provided into this endpoint to allow the resetting of the password. This endpoint cannot be used for general password updated. </p>
+
 <h3 id="http-request">HTTP Request</h3>
 
 <div class="endpoint-cont">
@@ -4365,7 +4367,7 @@ This endpoint can only be called using server-side authentication due to the sen
 <tr>
 <td><code class="prettyprint">login</code> <br />An indication as to whether the customer should be provided a session following password update.</td>
 <td><span class="bool">bool</span></td>
-<td><span class="required">Required</span></td>
+<td></td>
 </tr>
 </tbody></table>
 
@@ -4448,7 +4450,7 @@ This endpoint can only be called using server-side authentication due to the sen
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"totalCustomerValue"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"totalValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">56.2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"totalValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">56.20</span><span class="p">,</span><span class="w">
       </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
@@ -4456,24 +4458,24 @@ This endpoint can only be called using server-side authentication due to the sen
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"totalValue"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"averageValue"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="w">
+      </span><span class="s2">"totalValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">18.00</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"averageValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">9.00</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="s2">"totalRefundsToDate"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"totalValue"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"averageValue"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+      </span><span class="s2">"totalValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">21.00</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"averageValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">7.00</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="s2">"outstandingPaymentsToDate"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"totalValue"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"averageValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">11.5</span><span class="w">
+      </span><span class="s2">"totalValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">21.00</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"averageValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">11.50</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="s2">"outstandingCreditBalance"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -4498,70 +4500,114 @@ This endpoint can only be called using server-side authentication due to the sen
 <table><thead>
 <tr>
 <th></th>
+<th></th>
+<th></th>
 </tr>
 </thead><tbody>
 <tr>
 <td><code class="prettyprint">totalCustomerValue</code> <br />Customer value broken down by currency</td>
+<td><span class="object">object</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">totalCustomerValue \ totalValue</code> <br /> The sum of all payments minus any refunds</td>
+<td><span class="decimal">decimal</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">totalCustomerValue \ currency</code><br /> The currency the value represents</td>
+<td><span class="string">string</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">totalPaymentsToDate</code><br /> Total number of payments taken, broken down by currency</td>
+<td><span class="integer">integer</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">totalPaymentsToDate \ totalValue</code><br /> The sum of all payments taken against the account</td>
+<td><span class="decimal">decimal</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">totalPaymentsToDate \ averageValue</code><br /> The average transaction amount</td>
+<td><span class="decimal">decimal</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">totalPaymentsToDate \ currency</code><br /> The currency the value represents</td>
+<td><span class="string">string</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">totalPaymentsToDate \ quantity</code><br /> The number of payments which have been taken against the account</td>
+<td><span class="integer">integer</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">totalRefundsToDate</code><br /> All refunds applied, broken down by currency</td>
+<td><span class="object">object</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">totalRefundsToDate \ totalValue</code><br /> The sum of all refunds against the account</td>
+<td><span class="decimal">decimal</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">totalRefundsToDate \ averageValue</code><br /> The average transaction refund amount</td>
+<td><span class="decimal">decimal</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">totalRefundsToDate \ currency</code><br /> The currency the value represents</td>
+<td><span class="string">string</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">totalRefundsToDate \ quantity</code><br /> Number of refunds that have taken place</td>
+<td><span class="integer">integer</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">outstandingPaymentsToDate</code> <br />All outstanding payments, broken down by currency</td>
+<td><span class="object">object</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">outstandingPaymentsToDate \ totalValue</code><br /> The sum of all payments yet to be taken against the account</td>
+<td><span class="decimal">decimal</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">outstandingPaymentsToDate \ averageValue</code><br /> The average transaction amount</td>
+<td><span class="decimal">decimal</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">outstandingPaymentsToDate \ currency</code><br /> The currency the value represents</td>
+<td><span class="string">string</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">outstandingPaymentsToDate \ quantity</code><br /> Total number of outstanding payments</td>
+<td><span class="integer">integer</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">outstandingCreditBalance</code><br /> All outstanding credit balances broken down by currency</td>
+<td><span class="object">object</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">outstandingCreditBalance \ totalValue</code><br /> The total amount credit on the account</td>
+<td><span class="decimal">decimal</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">outstandingCreditBalance \ currency</code><br /> The currency the value represents</td>
+<td><span class="string">string</span></td>
+<td></td>
 </tr>
 </tbody></table>
 
@@ -6070,12 +6116,12 @@ This endpoint can only be called using server-side authentication due to the sen
 <tr>
 <td><code class="prettyprint">email</code> <br />Email of the account that should be added to the account group.</td>
 <td><span class="string">string</span></td>
-<td><span class="required">mandatory</span></td>
+<td><span class="required">Required</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">clientUserID</code> <br />ClientUserID of the account that should be added to the account group.</td>
 <td><span class="string">string</span></td>
-<td><span class="required">mandatory</span></td>
+<td><span class="required">Required</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">useOverFlowLicense</code> <br />An indication as to whether to use an overflow license if all standard licenses have been allocated.</td>
@@ -6516,7 +6562,7 @@ This endpoint can only be called using server-side authentication due to the sen
 </tbody></table>
 
 <aside class="info">
-Due to the sensetive nature of a ClientUserId it is not possible to call this endpoint using a client-side language.
+Due to the sensitive nature of a ClientUserId it is not possible to call this endpoint using a client-side language.
 </aside>
 
           <h1 id="external-identity-providers">External Identity Providers</h1>
@@ -6743,7 +6789,7 @@ Due to the sensetive nature of a ClientUserId it is not possible to call this en
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/external-providers/facebook</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/external-providers/facebook</span>
 </div>
 
 <h3 id="post-parameters">POST Parameters</h3>
@@ -6758,22 +6804,22 @@ Due to the sensetive nature of a ClientUserId it is not possible to call this en
 <tr>
 <td><code class="prettyprint">facebookRedirectURI</code> <br />The location which should be called for validation of the code and token provided</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Yes/No</span></td>
+<td><span class="required">Required</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">authorisationCode</code> <br />Code provided by Facebook</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Yes/No</span></td>
+<td><span class="required">Required</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">accessToken</code> <br />Code provided by Facebook</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Yes/No</span></td>
+<td><span class="required">Required</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">applicationIdentifier</code> <br />The identifier for the eSuite application that the account is using</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Yes/No</span></td>
+<td><span class="required">Required</span></td>
 </tr>
 </tbody></table>
 
@@ -6992,7 +7038,7 @@ Due to the sensetive nature of a ClientUserId it is not possible to call this en
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"/api/accounts/{accountId}/link/external-providers/facebook"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"/api/accounts/link/external-providers/facebook"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"x-tokenid"</span><span class="p">:</span> <span class="s2">"BE52ADA2064C4F9A9D90F28D066D1RFT"</span><span class="p">,</span>
@@ -7022,7 +7068,7 @@ Due to the sensetive nature of a ClientUserId it is not possible to call this en
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/link/external-providers/facebook</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/link/external-providers/facebook</span>
 </div>
 
 <h3 id="post-parameters">POST Parameters</h3>
@@ -7037,22 +7083,22 @@ Due to the sensetive nature of a ClientUserId it is not possible to call this en
 <tr>
 <td><code class="prettyprint">facebookRedirectURI</code> <br />The location which should be called for validation of the code and token provided</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Yes/No</span></td>
+<td><span class="required">Required</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">authorisationCode</code> <br />Code provided by Facebook</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Yes/No</span></td>
+<td><span class="required">Required</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">accessToken</code> <br />Code provided by Facebook</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Yes/No</span></td>
+<td><span class="required">Required</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">applicationIdentifier</code> <br />The identifier for the eSuite application that the account is using</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Yes/No</span></td>
+<td><span class="required">Required</span></td>
 </tr>
 </tbody></table>
 
@@ -7161,22 +7207,22 @@ Due to the sensetive nature of a ClientUserId it is not possible to call this en
 <tr>
 <td><code class="prettyprint">houseName</code> <br />The name associated to the building</td>
 <td><span class="string">string</span></td>
-<td><span class="required">mandatory*</span></td>
+<td><span class="required">Required</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">houseNumber</code> <br />The building number associated to the address</td>
 <td><span class="string">string</span></td>
-<td><span class="required">mandatory*</span></td>
+<td><span class="required">Required</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">street</code> <br />The street the address is located</td>
 <td><span class="string">string</span></td>
-<td><span class="required">mandatory</span></td>
+<td><span class="required">Required</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">townCity</code> <br />The town or city the address is associated</td>
 <td><span class="string">string</span></td>
-<td><span class="required">mandatory</span></td>
+<td><span class="required">Required</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">district</code> <br />The district associated with the address</td>
@@ -7196,12 +7242,12 @@ Due to the sensetive nature of a ClientUserId it is not possible to call this en
 <tr>
 <td><code class="prettyprint">postCode</code> <br />The postcode of the address that has been added</td>
 <td><span class="string">string</span></td>
-<td><span class="required">mandatory</span></td>
+<td><span class="required">Required</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">country</code> <br />The country the address is specific to</td>
 <td><span class="string">string</span></td>
-<td><span class="required">mandatory</span></td>
+<td><span class="required">Required</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">isDefault</code> <br />An indication as to whether the address is the default address for the account</td>
@@ -7210,7 +7256,7 @@ Due to the sensetive nature of a ClientUserId it is not possible to call this en
 </tr>
 </tbody></table>
 
-<p>*Either <code class="prettyprint">houseName</code> or <code class="prettyprint">houseNumber</code> is required but both are not mandatory.</p>
+<p>*Either <code class="prettyprint">houseName</code> or <code class="prettyprint">houseNumber</code> is required but both are not Required.</p>
 
 <h2 id="retrieve-address-book">Retrieve Address Book</h2>
 <pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
@@ -7461,7 +7507,7 @@ Due to the sensetive nature of a ClientUserId it is not possible to call this en
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/:accountId/payment-details/card</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/payment-details/card</span>
 </div>
 
 <h3 id="post-parameters">POST Parameters</h3>
@@ -7638,7 +7684,7 @@ Remember — you must authorise a card before it can be used
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/:accountId/payment-details/bacs</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/payment-details/bacs</span>
 </div>
 
 <h3 id="post-parameters">POST Parameters</h3>
@@ -7673,7 +7719,7 @@ Remember — you must authorise a card before it can be used
 <tr>
 <td><code class="prettyprint">serviceId</code> <br />The eSuite ServiceId that this BACS wallet will be used for.</td>
 <td><span class="integer">integer</span></td>
-<td><span class="required">Required</span></td>
+<td></td>
 </tr>
 </tbody></table>
 
@@ -7761,7 +7807,7 @@ Remember — you must authorise a card before it can be used
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/:accountId/payment-details/sepa</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/payment-details/sepa</span>
 </div>
 
 <h3 id="post-parameters">POST Parameters</h3>
@@ -7791,7 +7837,7 @@ Remember — you must authorise a card before it can be used
 <tr>
 <td><code class="prettyprint">serviceId</code> <br />The eSuite ServiceId that this BACS wallet will be used for.</td>
 <td><span class="integer">integer</span></td>
-<td><span class="required">Required</span></td>
+<td></td>
 </tr>
 </tbody></table>
 
@@ -7881,7 +7927,7 @@ Remember — you must authorise a card before it can be used
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-get">GET</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/:accountId/payment-details</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/payment-details</span>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -8838,7 +8884,7 @@ Remember — you must authorise a card before it can be used
 <td><span class="string">string</span></td>
 </tr>
 <tr>
-<td><code class="prettyprint">voucherInfo \ addCredits</code> <br />Information relating to an AddCredits offer type</td>
+<td><code class="prettyprint">voucherInfo \ addCredits</code> <br />Information relating to an Add Credits offer type</td>
 <td><span class="array">array[objects]</span></td>
 </tr>
 <tr>
@@ -8854,7 +8900,7 @@ Remember — you must authorise a card before it can be used
 <td><span class="bool">bool</span></td>
 </tr>
 <tr>
-<td><code class="prettyprint">voucherInfo \ lowStart</code> <br />Information relating to an LowStart offer type</td>
+<td><code class="prettyprint">voucherInfo \ lowStart</code> <br />Information relating to an Low Start offer type</td>
 <td><span class="array">array[objects]</span></td>
 </tr>
 <tr>
@@ -8882,7 +8928,7 @@ Remember — you must authorise a card before it can be used
 <td><span class="bool">bool</span></td>
 </tr>
 <tr>
-<td><code class="prettyprint">voucherInfo \ percentageDiscount</code> <br />Information relating to an PercentageDiscount offer type</td>
+<td><code class="prettyprint">voucherInfo \ percentageDiscount</code> <br />Information relating to an Percentage Discount offer type</td>
 <td><span class="array">array[objects]</span></td>
 </tr>
 <tr>
@@ -8894,7 +8940,7 @@ Remember — you must authorise a card before it can be used
 <td><span class="bool">bool</span></td>
 </tr>
 <tr>
-<td><code class="prettyprint">voucherInfo \ freePeriod</code> <br />Information relating to an freePeriod offer type</td>
+<td><code class="prettyprint">voucherInfo \ freePeriod</code> <br />Information relating to an free Period offer type</td>
 <td><span class="array">array[objects]</span></td>
 </tr>
 <tr>
@@ -8910,7 +8956,7 @@ Remember — you must authorise a card before it can be used
 <td><span class="bool">bool</span></td>
 </tr>
 <tr>
-<td><code class="prettyprint">voucherInfo \ groupDiscount</code> <br />Information relating to an GroupDiscount offer type</td>
+<td><code class="prettyprint">voucherInfo \ groupDiscount</code> <br />Information relating to a Group Discount offer type</td>
 <td><span class="array">array[objects]</span></td>
 </tr>
 <tr>
@@ -8938,7 +8984,7 @@ Remember — you must authorise a card before it can be used
 <td><span class="dictionary">dictionary</span></td>
 </tr>
 <tr>
-<td><code class="prettyprint">voucherInfo \ fixedPriceDiscount</code> <br />Information relating to an FixedPriceDiscount offer type</td>
+<td><code class="prettyprint">voucherInfo \ fixedPriceDiscount</code> <br />Information relating to a Fixed Price Discount offer type</td>
 <td><span class="array">array[objects]</span></td>
 </tr>
 <tr>
@@ -9705,7 +9751,7 @@ Remember — you must authorise a card before it can be used
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/vouchers</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionid}/vouchers</span>
 </div>
 
 <h3 id="post-parameters">POST Parameters</h3>
@@ -10429,12 +10475,12 @@ Remember — you must authorise a card before it can be used
 <tr>
 <td><code class="prettyprint">orderItems</code> <br />A collection of items that the account is attempting to purchase</td>
 <td><span class="array">array[object]</span></td>
-<td></td>
+<td><span class="required">Required</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">orderItems \ description</code> <br />The description associated to the item</td>
 <td><span class="string">string</span></td>
-<td></td>
+<td><span class="required">Required</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">orderItems \ orderReference</code> <br />An external reference that can be associated to each item</td>
@@ -10449,12 +10495,12 @@ Remember — you must authorise a card before it can be used
 <tr>
 <td><code class="prettyprint">orderItems \ priceBreakdown</code> <br />The details relating to the amount the account should pay for the item</td>
 <td><span class="object">object</span></td>
-<td></td>
+<td><span class="required">Required</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">priceBreakdown \ grossAmount</code> <br />The gross amount for the item</td>
 <td><span class="decimal">decimal</span></td>
-<td></td>
+<td><span class="required">Required</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">priceBreakdown \ netAmount</code> <br />The total amount minue the associated tax amount</td>
@@ -10967,11 +11013,11 @@ Remember — you must authorise a card before it can be used
 </thead><tbody>
 <tr>
 <td><code class="prettyprint">amount</code> <br />The amount of money that should be refunded to the account.</td>
-<td><span style="font-weight: bold;color: #666;">number</span></td>
+<td><span class="decimal">decimal</span></td>
 <td><span class="required">Required</span></td>
 </tr>
 <tr>
-<td><code class="prettyprint">triggerBackOfficeEmail</code> <br />An indication as to whether a backoffice system should be notified.</td>
+<td><code class="prettyprint">triggerBackOfficeEmail</code> <br />An indication as to whether a back office system should be notified.</td>
 <td><span class="bool">bool</span></td>
 <td></td>
 </tr>
@@ -12595,7 +12641,7 @@ Remember — you must authorise a card before it can be used
 <td><span class="dictionary">dictionary</span></td>
 </tr>
 <tr>
-<td>`customPaymentInstructionParameters \ parameterName <br />Representation of all custom parameters against the payment instruction.</td>
+<td><code class="prettyprint">customPaymentInstructionParameters \ parameterName</code> <br />Representation of all custom parameters against the payment instruction.</td>
 <td><span class="string">string</span></td>
 </tr>
 </tbody></table>
@@ -12851,7 +12897,7 @@ Remember — you must authorise a card before it can be used
 
 <h2 id="create-access">Create Access</h2>
 <pre class="highlight shell tab-shell"><code>curl --request POST <span class="se">\</span>
-  --url https://uat.mppglobal.com/api/accounts/%7BaccountId%7D/entitlements <span class="se">\</span>
+  --url https://uat.mppglobal.com/api/accounts/<span class="o">{</span>accountId<span class="o">}</span>/entitlements <span class="se">\</span>
   --header <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
   --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
   --header <span class="s1">'x-clientPassword: Str0ngP@ssword'</span> <span class="se">\</span>
@@ -13241,6 +13287,11 @@ Remember — you must authorise a card before it can be used
 </tr>
 </thead><tbody>
 <tr>
+<td><code class="prettyprint">entitlementIdentifier</code> <br />The specific entitlement to check.</td>
+<td><span class="string">string</span></td>
+<td><span class="required">Required</span></td>
+</tr>
+<tr>
 <td><code class="prettyprint">incrementUsage</code> <br />This option will default to false if not provided.</td>
 <td><span class="bool">bool</span></td>
 <td></td>
@@ -13341,7 +13392,7 @@ Remember — you must authorise a card before it can be used
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint is available for all access for a specific account, regardless of whether it is active.</p>
+<p>This endpoint is available for all access for a specific account, regardless of whether it is active. The results returned will be in order of latest start date.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -13397,7 +13448,7 @@ Remember — you must authorise a card before it can be used
 <tr>
 <td><code class="prettyprint">rowsPerPage</code> <br />Number of items to return in the response</td>
 <td><span class="integer">integer</span></td>
-<td></td>
+<td><span class="required">Required</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">currentPage</code> <br />Page to return</td>
@@ -13410,8 +13461,6 @@ Remember — you must authorise a card before it can be used
 <td></td>
 </tr>
 </tbody></table>
-
-<aside class="info">Passing no query parameters will return a 204.</aside>
 
           <h1 id="native-billing">Native Billing</h1>
 
@@ -13516,17 +13565,17 @@ Remember — you must authorise a card before it can be used
 <tr>
 <td><code class="prettyprint">rokuTransactionId</code> <br />The roku transaction ID that is to be validated</td>
 <td><span class="string">string</span></td>
-<td></td>
+<td><span class="required">Required</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">email</code> <br />Email address of the customer&rsquo;s Roku billing account</td>
 <td><span class="string">string</span></td>
-<td></td>
+<td><span class="required">Required</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">password</code> <br />Customer&rsquo;s password</td>
 <td><span class="string">string</span></td>
-<td></td>
+<td><span class="required">Required</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">newAccountDetails</code> <br />A sub-object of RokuValidateTransactionRequest, containing additional customer information</td>
@@ -13646,7 +13695,7 @@ Remember — you must authorise a card before it can be used
 <tr>
 <td><code class="prettyprint">rokuTransactionId</code> <br />The roku transaction ID that is to be validated</td>
 <td><span class="string">string</span></td>
-<td></td>
+<td><span class="required">Required</span></td>
 </tr>
 </tbody></table>
 
@@ -13754,7 +13803,7 @@ Remember — you must authorise a card before it can be used
 </tr>
 <tr>
 <td><code class="prettyprint">price</code> <br />An indication as to the price paid within iTunes</td>
-<td><span style="font-weight: bold;color: #666;">number</span></td>
+<td><span class="decimal">decimal</span></td>
 <td></td>
 </tr>
 <tr>
@@ -13765,12 +13814,12 @@ Remember — you must authorise a card before it can be used
 <tr>
 <td><code class="prettyprint">email</code> <br />Email address of the customer&rsquo;s Roku billing account</td>
 <td><span class="string">string</span></td>
-<td></td>
+<td><span class="required">Required</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">password</code> <br />Customer&rsquo;s password</td>
 <td><span class="string">string</span></td>
-<td></td>
+<td><span class="required">Required</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">newAccountDetails</code> <br />A sub-object of request, containing additional customer information</td>
@@ -13893,7 +13942,7 @@ Remember — you must authorise a card before it can be used
 </tr>
 <tr>
 <td><code class="prettyprint">price</code> <br />An indication as to the price paid within iTunes</td>
-<td><span style="font-weight: bold;color: #666;">number</span></td>
+<td><span class="decimal">decimal</span></td>
 <td></td>
 </tr>
 <tr>
@@ -15056,11 +15105,11 @@ If you are using a client-side integration of this endpoint, you should pass the
 <td><span class="string">string</span></td>
 </tr>
 <tr>
-<td><code class="prettyprint">products \ supplier</code> <br />Suplier details</td>
+<td><code class="prettyprint">products \ supplier</code> <br />Supplier details</td>
 <td><span class="object">object</span></td>
 </tr>
 <tr>
-<td><code class="prettyprint">supplier \ suppliedId</code> <br />Suplier identifier</td>
+<td><code class="prettyprint">supplier \ suppliedId</code> <br />Supplier identifier</td>
 <td><span class="integer">integer</span></td>
 </tr>
 <tr>
@@ -15381,12 +15430,12 @@ If you are using a client-side integration of this endpoint, you should pass the
 <td></td>
 </tr>
 <tr>
-<td><code class="prettyprint">products \ supplier</code> <br />Suplier details</td>
+<td><code class="prettyprint">products \ supplier</code> <br />Supplier details</td>
 <td><span class="object">object</span></td>
 <td></td>
 </tr>
 <tr>
-<td><code class="prettyprint">suppliedId</code> <br />Suplier identifier</td>
+<td><code class="prettyprint">suppliedId</code> <br />Supplier identifier</td>
 <td><span class="integer">integer</span></td>
 <td></td>
 </tr>
@@ -16372,7 +16421,7 @@ If you are using a client-side integration of this endpoint, you should pass the
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>This endpoint can be used to extract predefined datasets from eSuite for use in external dashboarding.</p>
+<p>This endpoint can be used to extract predefined datasets from eSuite for use in external dashboards.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -16474,7 +16523,7 @@ If you are using a client-side integration of this endpoint, you should pass the
 <td><code class="prettyprint">Dynamic_Subscriptions_ActiveByServiceId</code> <br />Active Subscription (by Subscription Service)</td>
 </tr>
 <tr>
-<td>Dynamic_Subscriptions_Added` <br />Subscriptions added</td>
+<td><code class="prettyprint">Dynamic_Subscriptions_Added</code> <br />Subscriptions added</td>
 </tr>
 <tr>
 <td><code class="prettyprint">Dynamic_Subscriptions_ChurnbyMonth</code> <br />Subscription Churn (by month)</td>
@@ -16483,7 +16532,7 @@ If you are using a client-side integration of this endpoint, you should pass the
 <td><code class="prettyprint">Dynamic_Subscriptions_ChurnByReason</code> <br />ubscription Churn (by reason)</td>
 </tr>
 <tr>
-<td><code class="prettyprint">Dynamic_Subscriptions_ChurnByService</code> <br />Subscription Churn (by Subscription Sevice)</td>
+<td><code class="prettyprint">Dynamic_Subscriptions_ChurnByService</code> <br />Subscription Churn (by Subscription Service)</td>
 </tr>
 <tr>
 <td><code class="prettyprint">Dynamic_Subscriptions_ChurnPredictionPrecisionV5LastMonth</code> <br />Churn Prediction Precision (previous month)</td>
@@ -16611,12 +16660,12 @@ If you are using a client-side integration of this endpoint, you should pass the
 <tr>
 <td><code class="prettyprint">accountIds</code> <br />A collection of all accounts that should have access given, based upon accountId.</td>
 <td><span class="array">array[integer]</span></td>
-<td><span class="required">No*</span></td>
+<td></td>
 </tr>
 <tr>
 <td><code class="prettyprint">clientUserIds</code> <br />A collection of all accounts that should have access given, based upon ClientUserId</td>
 <td><span class="array">array[string]</span></td>
-<td><span class="required">No*</span></td>
+<td></td>
 </tr>
 </tbody></table>
 
@@ -16634,7 +16683,7 @@ If you are using a client-side integration of this endpoint, you should pass the
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<aside class="notice">This error section is a summary of the possible error codes you could recieve from the eSuite API. The API will return a specific error message alongside one of these codes to detail the specific error that has occurred.</aside>
+<aside class="notice">This error section is a summary of the possible error codes you could receive from the eSuite API. The API will return a specific error message alongside one of these codes to detail the specific error that has occurred.</aside>
 
 <table><thead>
 <tr>
@@ -16642,31 +16691,31 @@ If you are using a client-side integration of this endpoint, you should pass the
 </tr>
 </thead><tbody>
 <tr>
-<td>400 <code class="prettyprint">Bad Request</code><br /> Your request is malformed in some way</td>
+<td><em>400</em> <code class="prettyprint">Bad Request</code><br /> Your request is malformed in some way</td>
 </tr>
 <tr>
-<td>401 <code class="prettyprint">Unauthorized</code> <br /> The API key provided is not valid</td>
+<td><em>401</em> <code class="prettyprint">Unauthorized</code> <br /> The API key provided is not valid</td>
 </tr>
 <tr>
-<td>403 <code class="prettyprint">Forbidden</code> <br /> The resource is not accessible using the provided API key</td>
+<td><em>403</em> <code class="prettyprint">Forbidden</code> <br /> The resource is not accessible using the provided API key</td>
 </tr>
 <tr>
-<td>404 <code class="prettyprint">Not Found</code> <br /> The specified resource could not be found</td>
+<td><em>404</em> <code class="prettyprint">Not Found</code> <br /> The specified resource could not be found</td>
 </tr>
 <tr>
-<td>405 <code class="prettyprint">Method Not Allowed</code> <br /> You tried to access a resource with an invalid method</td>
+<td><em>405</em> <code class="prettyprint">Method Not Allowed</code> <br /> You tried to access a resource with an invalid method</td>
 </tr>
 <tr>
-<td>406 <code class="prettyprint">Not Acceptable</code> <br /> You requested a format that isn&rsquo;t json</td>
+<td><em>406</em> <code class="prettyprint">Not Acceptable</code> <br /> You requested a format that isn&rsquo;t JSON</td>
 </tr>
 <tr>
-<td>412 <code class="prettyprint">Pre-Condition Failed</code><br /> The request has failed basic validation</td>
+<td><em>412</em> <code class="prettyprint">Pre-Condition Failed</code><br /> The request has failed basic validation</td>
 </tr>
 <tr>
-<td>500 <code class="prettyprint">Internal Server Error</code> <br /> We had a problem with our server. Try again later.</td>
+<td><em>500</em> <code class="prettyprint">Internal Server Error</code> <br /> We had a problem with our server. Try again later.</td>
 </tr>
 <tr>
-<td>503 <code class="prettyprint">Service Unavailable</code> <br /> We&rsquo;re temporarily offline for maintenance. Please try again later.</td>
+<td><em>503</em> <code class="prettyprint">Service Unavailable</code> <br /> a service required to complete the requested operation is unavailable at present. Please try again later.</td>
 </tr>
 </tbody></table>
 

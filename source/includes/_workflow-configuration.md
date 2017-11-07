@@ -342,7 +342,7 @@ $.ajax(settings).done(function (response) {
 }
 ```
 
-For the most simple integration, calling this endpoint will generate a payment session token that can be used for the client-side application (eSuite SDK) to purchase a pre-configured product.
+For the most simple integration, calling this endpoint will generate a payment session token that can be used for the client-side application (eSuite SDK) to purchase a pre-configured product. You are required to provide a valid `x-sessionId` in order for this API request to be successful.
 
 ### HTTP Request
 
@@ -386,7 +386,7 @@ For the most simple integration, calling this endpoint will generate a payment s
 `createSessionInfo  \ voucherCode` <br />Any pre-entered voucher codes.| <span class="string">string</span> | 
 `newAccount` <br />An indication as to whether the flow is for a new or existing account.| <span class="bool">bool</span> | 
 `paymentOptions` <br />A collection of payment options and their configuration.| <span class="object">object</span> | 
-`paymentOptions \ cardTypes` <br /> <span class="string">String</span>  | <span class="array">array[object]</span> | 
+`paymentOptions \ cardTypes` <br />Object detailing the specifics of the available card types  | <span class="array">array[object]</span> | 
 `cardTypes \ name` <br />Collection of cards types available.| <span class="string">string</span> | 
 `cardTypes \ allowRepeats` <br />An indication as to whether the card type can be used for one-click payments.| <span class="bool">bool</span> | 
 `cardTypes \ use3DSecureForAllTransactions` <br />An indication as to whether the card type requires 3D Secure.| <span class="bool">bool</span> | 
@@ -502,7 +502,7 @@ If you would like to generate a more specific session for the purpose of purchas
 `pricing \ priceId` <br />The configured price identifier| <span class="integer">integer</span> | <span class="required">Required</span> |
 `pricing \ paymentMethod` <br />The payment method the customer should be presented by default| <span class="string">string</span> |  |
 `pricing \ currency` <br />ISO Currency of the purchase e.g. `EUR`| <span class="string">string</span> |  |
-`pricing \ priceItems` <br />Collection of individual items being purchased on a dynamic subscription| <span class="array">array[objects]</span> | <span class="required">Required</span> |
+`pricing \ priceItems` <br />Collection of individual items being purchased on a dynamic subscription| <span class="array">array[objects]</span> |  |
 `priceItems \ externalReference` <br />Reference from a client system| <span class="string">string</span> |  |
 `priceItems \ supplierId` <br />Supplier identifier from a client system| <span class="string">string</span> |  |
 `priceItems \ price` <br />The price that will be paid for the line item| <span class="decimal">decimal</span> | <span class="required">Required</span> |
@@ -522,12 +522,12 @@ If you would like to generate a more specific session for the purpose of purchas
 `workflowConfiguration \ securityToken` <br />Value that is passed in the `ProcessUpdate` callout to allow you to verify it is a legitimate call out| <span class="string">string</span> |  | 
 `workflowConfiguration \ disable3DSecure` <br />An indication that 3D Secure should be disabled. Defaults to `false`| <span class="bool">bool</span> |  | 
 `workflowConfiguration \ settlementType` <br />An indication whether to complete immediately or at a later date. `Pending` or `NextAvailable` are the available values| <span class="string">string</span> |  | 
-`workflowConfiguration \ permitUnverifiedAccoutPurchase` <br />Prevent accounts who have not verified their emails from making a purchase| <span class="bool">bool</span> |  | 
-`workflowConfiguration \ workFlowCustomParameters` <br />A collection of custom attributes associated to the configuration| <span class="dictionary">dictionary*</span> |  |
+`workflowConfiguration \ permitUnverifiedAccountPurchase` <br />Prevent accounts who have not verified their emails from making a purchase| <span class="bool">bool</span> |  | 
+`workflowConfiguration \ workFlowCustomParameters` <br />A collection of custom attributes associated to the configuration| <span class="dictionary">dictionary</span> |  |
 `workFlowCustomParameters \ parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
-`customAccountParameters` <br />A collection of custom attributes associated to the account | <span class="dictionary">dictionary*</span> |  | 
+`customAccountParameters` <br />A collection of custom attributes associated to the account | <span class="dictionary">dictionary</span> |  | 
 `customAccountParameters \ parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
-`customOrderParameters` <br />A collection of custom attributes associated to the payment | <span class="dictionary">dictionary*</span> |  | 
+`customOrderParameters` <br />A collection of custom attributes associated to the payment | <span class="dictionary">dictionary</span> |  | 
 `customOrderParameters \ parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
 `customSubscriptionParameters` <br />A collection of custom attributes associated to the subscription| <span class="string">string</span> |  |
 `customSubscriptionParameters \ parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
@@ -661,12 +661,12 @@ If you would like to generate a more specific session for the purpose of purchas
 `workflowConfiguration \ securityToken` <br />Value that is passed in the `ProcessUpdate` callout to allow you to verify it is a legitimate call out| <span class="string">string</span> |  | 
 `workflowConfiguration \ disable3DSecure` <br />An indication that 3D Secure should be disabled. Defaults to `false`| <span class="bool">bool</span> |  | 
 `workflowConfiguration \ settlementType` <br />An indication whether to complete immediately or at a later date. `Pending` or `NextAvailable` are the available values| <span class="string">string</span> |  | 
-`workflowConfiguration \ permitUnverifiedAccoutPurchase` <br />Prevent accounts who have not verified their emails from making a purchase| <span class="bool">bool</span> |  | 
-`workflowConfiguration \ workFlowCustomParameters` <br />A collection of custom attributes associated to the configuration| <span class="dictionary">dictionary*</span> |  |
+`workflowConfiguration \ permitUnverifiedAccountPurchase` <br />Prevent accounts who have not verified their emails from making a purchase| <span class="bool">bool</span> |  | 
+`workflowConfiguration \ workFlowCustomParameters` <br />A collection of custom attributes associated to the configuration| <span class="dictionary">dictionary</span> |  |
 `workFlowCustomParameters \ parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
-`customAccountParameters` <br />A collection of custom attributes associated to the account | <span class="dictionary">dictionary*</span> |  | 
+`customAccountParameters` <br />A collection of custom attributes associated to the account | <span class="dictionary">dictionary</span> |  | 
 `customAccountParameters \ parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
-`customOrderParameters` <br />A collection of custom attributes associated to the payment | <span class="dictionary">dictionary*</span> |  | 
+`customOrderParameters` <br />A collection of custom attributes associated to the payment | <span class="dictionary">dictionary</span> |  | 
 `customOrderParameters \ parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
 `entitlements` <br />A collection of additional entitlements to provide the account on purchase| <span class="array">array[object]</span> |  |
 `entitlements \ identifier` <br />Identifier for the entitlement being purchased| <span class="string">string</span> |  |
@@ -791,29 +791,29 @@ If you would like to generate a more specific session for a one off charge, call
 `workflowConfiguration \ securityToken` <br />Value that is passed in the `ProcessUpdate` callout to allow you to verify it is a legitimate call out| <span class="string">string</span> |  | 
 `workflowConfiguration \ disable3DSecure` <br />An indication that 3D Secure should be disabled. Defaults to `false`| <span class="bool">bool</span> |  | 
 `workflowConfiguration \ settlementType` <br />An indication whether to complete immediately or at a later date. `Pending` or `NextAvailable` are the available values| <span class="string">string</span> |  | 
-`workflowConfiguration \ permitUnverifiedAccoutPurchase` <br />Prevent accounts who have not verified their emails from making a purchase| <span class="bool">bool</span> |  | 
-`workflowConfiguration \ workFlowCustomParameters` <br />A collection of custom attributes associated to the configuration| <span class="dictionary">dictionary*</span> |  |
+`workflowConfiguration \ permitUnverifiedAccountPurchase` <br />Prevent accounts who have not verified their emails from making a purchase| <span class="bool">bool</span> |  | 
+`workflowConfiguration \ workFlowCustomParameters` <br />A collection of custom attributes associated to the configuration| <span class="dictionary">dictionary</span> |  |
 `workFlowCustomParameters \ parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
-`customAccountParameters` <br />A collection of custom attributes associated to the account | <span class="dictionary">dictionary*</span> |  | 
+`customAccountParameters` <br />A collection of custom attributes associated to the account | <span class="dictionary">dictionary</span> |  | 
 `customAccountParameters \ parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
-`orderItems` <br />A collection ofitems that will be purchased| <span class="array">array[object]</span> |  |
-`orderItems \ customOrderParameters` <br />A collection of custom attributes associated to the payment | <span class="dictionary">dictionary*</span> |  | 
+`orderItems` <br />A collection ofitems that will be purchased| <span class="array">array[object]</span> | <span class="required">Required</span> |
+`orderItems \ customOrderParameters` <br />A collection of custom attributes associated to the payment | <span class="dictionary">dictionary</span> |  | 
 `customOrderParameters \ parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
 `orderItems \ description` <br />The description of the item being purchased| <span class="string">string</span> | <span class="required">Required</span> |
 `orderItems \ orderReference` <br />External reference for the item being purchased| <span class="string">string</span> |  |
 `orderItems \ comment` <br />Additional comment against the item| <span class="string">string</span> |  |
 `orderItems \ priceBreakdown` <br />The payment amounts related to the purchase| <span class="object">object</span> | <span class="required">Required</span> |
-`priceBreakdown` > grossAmount <br />The amount the account will be charged| <span class="decimal">decimal</span> | <span class="required">Required</span> |
-`priceBreakdown` > netAmount <br />The amount that will be available after tax| <span class="decimal">decimal</span> | <span class="required">Required</span> |
-`priceBreakdown` > taxAmount <br />The amount of tax associated to the item| <span class="decimal">decimal</span> | <span class="required">Required</span> |
-`orderItems \ taxInfo` <br />Collection of tax information| <span class="object">object</span> | <span class="required">Required</span> |
+`priceBreakdown > grossAmount` <br />The amount the account will be charged| <span class="decimal">decimal</span> | <span class="required">Required</span> |
+`priceBreakdown > netAmount` <br />The amount that will be available after tax| <span class="decimal">decimal</span> | <span class="required">Required</span> |
+`priceBreakdown > taxAmount` <br />The amount of tax associated to the item| <span class="decimal">decimal</span> | <span class="required">Required</span> |
+`orderItems \ taxInfo` <br />Collection of tax information| <span class="object">object</span> |  |
 `taxInfo \ category` <br />Indication as to whether the purchase is tax exempt| <span class="bool">bool</span> |  |
 `taxInfo \ zeroRated` <br />Indication as to whether the purchase is tax exempt| <span class="bool">bool</span> |  |
 `taxInfo \ country` <br />Country specific tax rate to use| <span class="string">string</span> |  |
 `taxInfo \ state` <br />State specific tax rate to use (US Specific)| <span class="string">string</span> |  |
 `taxInfo \ county` <br />County specific tax rate to use (US Specific)| <span class="string">string</span> |  |
 `taxInfo \ city` <br />City specific tax rate to use (US Specific)| <span class="string">string</span> |  |
-`orderItems \ entitlements` <br />A collection of additional entitlements to provide the account on purchase| <span class="array">array[object]</span> |  |
+`orderItems \ entitlements` <br />A collection of additional entitlements to provide the account on purchase| <span class="array">array[object]</span> | <span class="required">Required</span> |
 `entitlements \ identifier` <br />Identifier for the entitlement being purchased| <span class="string">string</span> |  |
 `entitlements \ startDate` <br />The date on which the entitlement should be valid from| <span class="string">string</span> |  |
 `entitlements \ expiryDate` <br />The date at which the account is no longer entitled to the content| <span class="string">string</span> |  |
@@ -939,21 +939,21 @@ If you would like to generate a more specific session for the purpose of purchas
 `serviceCredits \ description` <br />A description to associate to the purchase| <span class="string">string</span> |  |
 `serviceCredits \ paidCredits` <br />The amount of credit which the account should pay for| <span class="string">string</span> |  |
 `serviceCredits \ freeCredits` <br />The amount of free credit which the account should receive| <span class="string">string</span> |  |
-`workflowConfiguration \ processUpdateUrl` <br />External endpoint eSuite should notiffy of purchase| <span class="string">string</span> |  | 
-`workflowConfiguration \ cancelOnProcessUpdateFailure` <br />An indication as to whether eSuite should cancel the purchase on failure to recieve a call out response| <span class="bool">bool</span> |  | 
+`workflowConfiguration \ processUpdateUrl` <br />External endpoint eSuite should notify of purchase| <span class="string">string</span> |  | 
+`workflowConfiguration \ cancelOnProcessUpdateFailure` <br />An indication as to whether eSuite should cancel the purchase on failure to receive a call out response| <span class="bool">bool</span> |  | 
 `workflowConfiguration \ returnUrl` <br />The location to be redirected to upon leaving the purchase flow| <span class="string">string</span> |  | 
 `workflowConfiguration \ clientUserId` <br />Unique, non-irrevocable value. Used when eSuite is not primary IdAM| <span class="string">string</span> |  | 
 `workflowConfiguration \ email` <br />Accounts email address| <span class="string">string</span> |  | 
 `workflowConfiguration \ voucherCode` <br />A pre-configured eSuite voucher code| <span class="string">string</span> |  | 
-`workflowConfiguration \ securityToken` <br />Value that is passed in the `ProcessUpdate` callout to allow you to verify it is a legitimate call out| <span class="string">string</span> |  | 
+`workflowConfiguration \ securityToken` <br />Value that is passed in the `ProcessUpdate` call out to allow you to verify it is a legitimate call out| <span class="string">string</span> |  | 
 `workflowConfiguration \ disable3DSecure` <br />An indication that 3D Secure should be disabled. Defaults to `false`| <span class="bool">bool</span> |  | 
 `workflowConfiguration \ settlementType` <br />An indication whether to complete immediately or at a later date. `Pending` or `NextAvailable` are the available values| <span class="string">string</span> |  | 
-`workflowConfiguration \ permitUnverifiedAccoutPurchase` <br />Prevent accounts who have not verified their emails from making a purchase| <span class="bool">bool</span> |  | 
-`workflowConfiguration \ workFlowCustomParameters` <br />A collection of custom attributes associated to the configuration| <span class="dictionary">dictionary*</span> |  |
+`workflowConfiguration \ permitUnverifiedAccountPurchase` <br />Prevent accounts who have not verified their emails from making a purchase| <span class="bool">bool</span> |  | 
+`workflowConfiguration \ workFlowCustomParameters` <br />A collection of custom attributes associated to the configuration| <span class="dictionary">dictionary</span> |  |
 `workFlowCustomParameters \ parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
-`customAccountParameters` <br />A collection of custom attributes associated to the account | <span class="dictionary">dictionary*</span> |  | 
+`customAccountParameters` <br />A collection of custom attributes associated to the account | <span class="dictionary">dictionary</span> |  | 
 `customAccountParameters \ parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
-`customOrderParameters` <br />A collection of custom attributes associated to the payment | <span class="dictionary">dictionary*</span> |  | 
+`customOrderParameters` <br />A collection of custom attributes associated to the payment | <span class="dictionary">dictionary</span> |  | 
 `customOrderParameters \ parameterName` <br />The custom attribute name| <span class="string">string</span> |  |
 
 

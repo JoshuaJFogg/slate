@@ -105,7 +105,7 @@ In order to make a purchase using a credit or debit card, a card must be added t
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/:accountId/payment-details/card</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/payment-details/card</span>
 </div>
 
 ### POST Parameters
@@ -234,7 +234,7 @@ In order to make a purchase using BACS Direct Debit, a BACS wallet must be added
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/:accountId/payment-details/bacs</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/payment-details/bacs</span>
 </div>
 
 ### POST Parameters
@@ -245,7 +245,7 @@ In order to make a purchase using BACS Direct Debit, a BACS wallet must be added
 `accountNumber` <br />The UK bank account number.| <span class="string">string</span> | <span class="required">Required</span> | 
 `sortCode` <br />The bank sort code associated to the account.| <span class="string">string</span> | <span class="required">Required</span> | 
 `bacsReference` <br />The existing mandate reference if the account is coming from another system.| <span class="string">string</span> |  | 
-`serviceId` <br />The eSuite ServiceId that this BACS wallet will be used for.| <span class="integer">integer</span> | <span class="required">Required</span> | 
+`serviceId` <br />The eSuite ServiceId that this BACS wallet will be used for.| <span class="integer">integer</span> |  | 
 
 
 ## Add a SEPA Direct Debit Wallet
@@ -349,7 +349,7 @@ In order to make a purchase using SEPA Direct Debit, a SEPA wallet must be added
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/:accountId/payment-details/sepa</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/payment-details/sepa</span>
 </div>
 
 ### POST Parameters
@@ -359,7 +359,7 @@ In order to make a purchase using SEPA Direct Debit, a SEPA wallet must be added
 `accountHolderName` <br />The name associated to the bank account.| <span class="string">string</span> | <span class="required">Required</span> | 
 `iban` <br />The bank account number.| <span class="string">string</span> | <span class="required">Required</span> | 
 `bic` <br />The bank identification code associated to the account.| <span class="string">string</span> | <span class="required">Required</span> | 
-`serviceId` <br />The eSuite ServiceId that this BACS wallet will be used for.| <span class="integer">integer</span> | <span class="required">Required</span> | 
+`serviceId` <br />The eSuite ServiceId that this BACS wallet will be used for.| <span class="integer">integer</span> |  | 
 
 
 
@@ -464,7 +464,7 @@ This endpoint retrieves the payment details stored against an eSuite account.
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-get">GET</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/:accountId/payment-details</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/payment-details</span>
 </div>
 
 ### Response Parameters

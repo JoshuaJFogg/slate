@@ -9,3 +9,5 @@ In order ensure the eSuite REST API is secure, certain features are not availabl
 The API has also been built using the OpenAPI Specification (formally the Swagger Specification) which will allow you to automatically generate code. Please be aware that although Swagger is provided to speed up the rate of development, it may contain documentation issues that will be resolved in a later release of the API.
 
 You can generate your bindings against our UAT swagger [here](https://uat.mppglobal.com:443/swagger/docs/9).
+
+<aside class="info">Please be aware the all dates and times returned via the API are presented in UTC and do not take into account your local time zone.</aside>

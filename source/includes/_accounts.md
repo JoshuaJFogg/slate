@@ -150,26 +150,26 @@ It is a requirement of the eSuite platform that an account be created in order t
 `clientUserId` <br />The identifier used when eSuite is secondary IDAM. Once set this cannot be changed.| <span class="string">string</span> | <span class="required">Required</span> | 
 `password` <br />The value provided by the account to pair with the email. | <span class="string">string</span> | <span class="required">Required</span> | 
 `salutation` <br />Available values: Mr, Mrs, Miss and Ms.| <span class="string">string</span> |  | 
-`firstName` <br />The first name associated to the account.| <span class="string">string</span> | <span class="required">Required</span> | 
-`lastName` <br />The last name associated to the account.| <span class="string">string</span> | <span class="required">Required</span> | 
-`phoneNumber` <br />The home phone number of the account.| <span class="string">string</span> | <span class="required">Required</span> | 
-`mobileNumber` <br />The mobile number of the account (minus country code).| <span class="string">string</span> | <span class="required">Required</span> | 
-`dateOfBirth` <br />The birthday of the account.| <span style="font-weight:bold;">dateTime</span> | <span class="required">Required</span> | 
-`gender` <br />Available values: Male, Female and Unspecified.| <span class="string">string</span> | <span class="required">Required</span> | 
-`addresses` <br />A collection of addresses bound to the account.| <span class="array">array</span> | <span class="required">Required</span> | 
-`address \ addressType` <br />Available values: Home and Billing.| <span class="string">string</span> | <span class="required">Required</span> | 
-`address \ houseName` <br />The name associated to the address.| <span class="string">string</span> | <span class="required">Required</span> | 
-`address \ houseNumber` <br />The building number associated to the address.| <span class="string">string</span> | <span class="required">Required</span> | 
-`address \ street` <br />The street associated to the address.| <span class="string">string</span> | <span class="required">Required</span> | 
-`address \ townCity` <br />The town or city associated to the address| <span class="string">string</span> | <span class="required">Required</span> | 
+`firstName` <br />The first name associated to the account.| <span class="string">string</span> |  | 
+`lastName` <br />The last name associated to the account.| <span class="string">string</span> |  | 
+`phoneNumber` <br />The home phone number of the account.| <span class="string">string</span> |  | 
+`mobileNumber` <br />The mobile number of the account (minus country code).| <span class="string">string</span> |  | 
+`dateOfBirth` <br />The birthday of the account.| <span class="string">string</span> |  | 
+`gender` <br />Available values: Male, Female and Unspecified.| <span class="string">string</span> |  | 
+`addresses` <br />A collection of addresses bound to the account.| <span class="array">array</span> |  | 
+`address \ addressType` <br />Available values: Home and Billing.| <span class="string">string</span> |  | 
+`address \ houseName` <br />The name associated to the address.| <span class="string">string</span> |  | 
+`address \ houseNumber` <br />The building number associated to the address.| <span class="string">string</span> |  | 
+`address \ street` <br />The street associated to the address.| <span class="string">string</span> |  | 
+`address \ townCity` <br />The town or city associated to the address| <span class="string">string</span> |  | 
 `address \ district` <br />The district associated to the address| <span class="string">string</span> |  | 
 `address \ state` <br />The state associated to the address| <span class="string">string</span> |  | 
 `address \ county` <br />The county associated to the address| <span class="string">string</span> |  | 
-`address \ postCode` <br />The post code associated to the address| <span class="string">string</span> | <span class="required">Required</span> | 
-`address \ country` <br />The country the account resides| <span class="string">string</span> | <span class="required">Required</span> | 
-`customParameters` <br />A collection of custom attributes stored against the account| <span class="dictionary">dictionary*</span> |  | 
+`address \ postCode` <br />The post code associated to the address| <span class="string">string</span> |  | 
+`address \ country` <br />The country the account resides| <span class="string">string</span> |  | 
+`customParameters` <br />A collection of custom attributes stored against the account| <span class="dictionary">dictionary</span> |  | 
 
-_* It is mandatory to pass either an email address or a clientUserId. It is possible to provide both._
+_* It is Required to pass either a email address or a clientUserId. It is possible to provide both._
 
 
 ## Retrieve Account
@@ -321,7 +321,7 @@ Once an account has been created within the eSuite platform, it is possible to r
 `lastName` <br />The last name associated to the account.| <span class="string">string</span> |  | 
 `phoneNumber` <br />The home phone number of the account.| <span class="string">string</span> |  | 
 `mobileNumber` <br />The mobile number of the account (minus country code).| <span class="string">string</span> |  | 
-`dateOfBirth` <br />The birthday of the account.| dateTime |  | 
+`dateOfBirth` <br />The birthday of the account.| <span class="string">string</span> |  | 
 `gender` <br />Available values: Male, Female and Unspecified.| <span class="string">string</span> | | 
 `addresses` <br />A collection of addresses bound to the account.| <span class="array">array</span> |  | 
 `address \ addressType` <br />Available values: Home and Billing.| <span class="string">string</span> | | 
@@ -480,32 +480,32 @@ It is a requirement of the eSuite platform that an account be created in order t
 
 ### PUT Parameters
 
- |  |  |  
+ |  |  | 
 --------- | ------- | ------- | 
 `email` <br />The identifier used when eSuite is primary IDAM.| <span class="string">string</span> | <span class="required">Required</span> | 
 `clientUserId` <br />The identifier used when eSuite is secondary IDAM. Once set this cannot be changed.| <span class="string">string</span> | <span class="required">Required</span> | 
 `password` <br />The value provided by the account to pair with the email. | <span class="string">string</span> | <span class="required">Required</span> | 
 `salutation` <br />Available values: Mr, Mrs, Miss and Ms.| <span class="string">string</span> |  | 
-`firstName` <br />The first name associated to the account.| <span class="string">string</span> | <span class="required">Required</span> | 
-`lastName` <br />The last name associated to the account.| <span class="string">string</span> | <span class="required">Required</span> | 
-`phoneNumber` <br />The home phone number of the account.| <span class="string">string</span> | <span class="required">Required</span> | 
-`mobileNumber` <br />The mobile number of the account (minus country code).| <span class="string">string</span> | <span class="required">Required</span> | 
-`dateOfBirth` <br />The birthday of the account.| dateTime | <span class="required">Required</span> | 
-`gender` <br />Available values: Male, Female and Unspecified.| <span class="string">string</span> | <span class="required">Required</span> | 
-`addresses` <br />A collection of addresses bound to the account.| <span class="array">array</span> | <span class="required">Required</span> | 
-`address \ addressType` <br />Available values: Home and Billing.| <span class="string">string</span> | <span class="required">Required</span> | 
-`address \ houseName` <br />The name associated to the address.| <span class="string">string</span> | <span class="required">Required</span> | 
-`address \ houseNumber` <br />The building number associated to the address.| <span class="string">string</span> | <span class="required">Required</span> | 
-`address \ street` <br />The street associated to the address.| <span class="string">string</span> | <span class="required">Required</span> | 
-`address \ townCity` <br />The town or city associated to the address| <span class="string">string</span> | <span class="required">Required</span> | 
-`address \ district` <br />The districtassociated to the address| <span class="string">string</span> |  | 
+`firstName` <br />The first name associated to the account.| <span class="string">string</span> |  | 
+`lastName` <br />The last name associated to the account.| <span class="string">string</span> |  | 
+`phoneNumber` <br />The home phone number of the account.| <span class="string">string</span> |  | 
+`mobileNumber` <br />The mobile number of the account (minus country code).| <span class="string">string</span> |  | 
+`dateOfBirth` <br />The birthday of the account.| <span class="string">string</span> |  | 
+`gender` <br />Available values: Male, Female and Unspecified.| <span class="string">string</span> |  | 
+`addresses` <br />A collection of addresses bound to the account.| <span class="array">array</span> |  | 
+`address \ addressType` <br />Available values: Home and Billing.| <span class="string">string</span> |  | 
+`address \ houseName` <br />The name associated to the address.| <span class="string">string</span> |  | 
+`address \ houseNumber` <br />The building number associated to the address.| <span class="string">string</span> |  | 
+`address \ street` <br />The street associated to the address.| <span class="string">string</span> |  | 
+`address \ townCity` <br />The town or city associated to the address| <span class="string">string</span> |  | 
+`address \ district` <br />The district associated to the address| <span class="string">string</span> |  | 
 `address \ state` <br />The state associated to the address| <span class="string">string</span> |  | 
 `address \ county` <br />The county associated to the address| <span class="string">string</span> |  | 
-`address \ postCode` <br />The post code associated to the address| <span class="string">string</span> | <span class="required">Required</span> | 
-`address \ country` <br />The country the account resides| <span class="string">string</span> | <span class="required">Required</span> | 
-`customParameters` <br />A collection of custom attributes stored against the account| <span class="dictionary">dictionary*</span> |  | 
+`address \ postCode` <br />The post code associated to the address| <span class="string">string</span> |  | 
+`address \ country` <br />The country the account resides| <span class="string">string</span> |  | 
+`customParameters` <br />A collection of custom attributes stored against the account| <span class="dictionary">dictionary</span> |  | 
 
-_* It is mandatory to pass either an email address or a clientUserId. It is possible to provide both._
+
 
 
 ## Delete Account
@@ -1234,6 +1234,7 @@ $.ajax(settings).done(function (response) {
   "sessionToken" : "b6dab2afbc4d42a385746a51b3bd2ed6"
 }
 ```
+If an account has requested to reset their password, they will have recieved and email with a session token. This token should be provided into this endpoint to allow the resetting of the password. This endpoint cannot be used for general password updated. 
 
 ### HTTP Request
 
@@ -1247,7 +1248,7 @@ $.ajax(settings).done(function (response) {
  |  |  |  
 --------- | ------- | ------- | 
 `password` <br />The new password for the account.| <span class="string">string</span> | <span class="required">Required</span> | 
-`login` <br />An indication as to whether the customer should be provided a session following password update.| <span class="bool">bool</span> | <span class="required">Required</span> | 
+`login` <br />An indication as to whether the customer should be provided a session following password update.| <span class="bool">bool</span> |  | 
 
 ## Retrieve Transaction Summary
 
@@ -1346,7 +1347,7 @@ $.ajax(settings).done(function (response) {
 {
   "totalCustomerValue": [
     {
-      "totalValue": 56.2,
+      "totalValue": 56.20,
       "currency": "USD"
     }
   ],
@@ -1354,24 +1355,24 @@ $.ajax(settings).done(function (response) {
     {
       "currency": "USD",
       "quantity": 2,
-      "totalValue": 18,
-      "averageValue": 9
+      "totalValue": 18.00,
+      "averageValue": 9.00
     }
   ],
   "totalRefundsToDate": [
     {
       "currency": "USD",
       "quantity": 3,
-      "totalValue": 21,
-      "averageValue": 7
+      "totalValue": 21.00,
+      "averageValue": 7.00
     }
   ],
   "outstandingPaymentsToDate": [
     {
       "currency": "USD",
       "quantity": 2,
-      "totalValue": 21,
-      "averageValue": 11.5
+      "totalValue": 21.00,
+      "averageValue": 11.50
     }
   ],
   "outstandingCreditBalance": [
@@ -1393,30 +1394,29 @@ Calling this endpoint will provide a breakdown of the accounts transaction summa
 </div>
 
 ### Response Parameters
-
- | 
---------- | 
-`totalCustomerValue` <br />Customer value broken down by currency | 
-`totalCustomerValue \ totalValue` <br /> The sum of all payments minus any refunds |
-`totalCustomerValue \ currency`<br /> The currency the value represents | 
-`totalPaymentsToDate`<br /> Total number of payments taken, broken down by currency | 
-`totalPaymentsToDate \ totalValue`<br /> The sum of all payments taken against the account |
-`totalPaymentsToDate \ averageValue`<br /> The average transaction amount |
-`totalPaymentsToDate \ currency`<br /> The currency the value represents | 
-`totalPaymentsToDate \ quantity`<br /> The number of payments which have been taken against the account | 
-`totalRefundsToDate`<br /> All refunds applied, broken down by currency | 
-`totalRefundsToDate \ totalValue`<br /> The sum of all refunds against the account |
-`totalRefundsToDate \ averageValue`<br /> The average transaction refund amount |
-`totalRefundsToDate \ currency`<br /> The currency the value represents | 
-`totalRefundsToDate \ quantity`<br /> Number of refunds that have taken place | 
-`outstandingPaymentsToDate` <br />All outstanding payments, broken down by currency | 
-`outstandingPaymentsToDate \ totalValue`<br /> The sum of all payments yet to be taken against the account  |
-`outstandingPaymentsToDate \ averageValue`<br /> The average transaction amount |
-`outstandingPaymentsToDate \ currency`<br /> The currency the value represents | 
-`outstandingPaymentsToDate \ quantity`<br /> Total number of outstanding payments | 
-`outstandingCreditBalance`<br /> All outstanding credit balances broken down by currency |
-`outstandingCreditBalance \ totalValue`<br /> The total amount credit on the account |
-`outstandingCreditBalance \ currency`<br /> The currency the value represents | 
+ |  |  |  
+--------- | ------- | ------- | 
+`totalCustomerValue` <br />Customer value broken down by currency | <span class="object">object</span> |
+`totalCustomerValue \ totalValue` <br /> The sum of all payments minus any refunds | <span class="decimal">decimal</span> |
+`totalCustomerValue \ currency`<br /> The currency the value represents | <span class="string">string</span> |
+`totalPaymentsToDate`<br /> Total number of payments taken, broken down by currency | <span class="integer">integer</span>|
+`totalPaymentsToDate \ totalValue`<br /> The sum of all payments taken against the account |<span class="decimal">decimal</span>|
+`totalPaymentsToDate \ averageValue`<br /> The average transaction amount |<span class="decimal">decimal</span>|
+`totalPaymentsToDate \ currency`<br /> The currency the value represents | <span class="string">string</span> |
+`totalPaymentsToDate \ quantity`<br /> The number of payments which have been taken against the account | <span class="integer">integer</span>|
+`totalRefundsToDate`<br /> All refunds applied, broken down by currency | <span class="object">object</span> |
+`totalRefundsToDate \ totalValue`<br /> The sum of all refunds against the account |<span class="decimal">decimal</span>|
+`totalRefundsToDate \ averageValue`<br /> The average transaction refund amount |<span class="decimal">decimal</span>|
+`totalRefundsToDate \ currency`<br /> The currency the value represents | <span class="string">string</span> |
+`totalRefundsToDate \ quantity`<br /> Number of refunds that have taken place | <span class="integer">integer</span>|
+`outstandingPaymentsToDate` <br />All outstanding payments, broken down by currency | <span class="object">object</span> |
+`outstandingPaymentsToDate \ totalValue`<br /> The sum of all payments yet to be taken against the account  |<span class="decimal">decimal</span>|
+`outstandingPaymentsToDate \ averageValue`<br /> The average transaction amount |<span class="decimal">decimal</span>|
+`outstandingPaymentsToDate \ currency`<br /> The currency the value represents | <span class="string">string</span> |
+`outstandingPaymentsToDate \ quantity`<br /> Total number of outstanding payments | <span class="integer">integer</span>|
+`outstandingCreditBalance`<br /> All outstanding credit balances broken down by currency |<span class="object">object</span> |
+`outstandingCreditBalance \ totalValue`<br /> The total amount credit on the account |<span class="decimal">decimal</span>|
+`outstandingCreditBalance \ currency`<br /> The currency the value represents | <span class="string">string</span> |
 
 
 

@@ -111,18 +111,18 @@ This endpoint allows the creation of a new address within the eSuite platform fo
 
  |  |  |  
 --------- | ------- | ------- | 
-`houseName` <br />The name associated to the building | <span class="string">string</span> | <span class="required">mandatory*</span> | 
-`houseNumber` <br />The building number associated to the address | <span class="string">string</span> | <span class="required">mandatory*</span> | 
-`street` <br />The street the address is located | <span class="string">string</span> | <span class="required">mandatory</span> | 
-`townCity` <br />The town or city the address is associated | <span class="string">string</span> | <span class="required">mandatory</span> | 
+`houseName` <br />The name associated to the building | <span class="string">string</span> | <span class="required">Required</span> | 
+`houseNumber` <br />The building number associated to the address | <span class="string">string</span> | <span class="required">Required</span> | 
+`street` <br />The street the address is located | <span class="string">string</span> | <span class="required">Required</span> | 
+`townCity` <br />The town or city the address is associated | <span class="string">string</span> | <span class="required">Required</span> | 
 `district` <br />The district associated with the address | <span class="string">string</span> |  | 
 `state` <br />The state that the address is located | <span class="string">string</span> |  | 
 `county` <br />The county the address is associated | <span class="string">string</span> |  | 
-`postCode` <br />The postcode of the address that has been added | <span class="string">string</span> | <span class="required">mandatory</span> | 
-`country` <br />The country the address is specific to | <span class="string">string</span> | <span class="required">mandatory</span> | 
+`postCode` <br />The postcode of the address that has been added | <span class="string">string</span> | <span class="required">Required</span> | 
+`country` <br />The country the address is specific to | <span class="string">string</span> | <span class="required">Required</span> | 
 `isDefault` <br />An indication as to whether the address is the default address for the account | <span class="bool">bool</span> |  | 
 
-*Either `houseName` or `houseNumber` is required but both are not mandatory.
+*Either `houseName` or `houseNumber` is required but both are not Required.
 
 
 

@@ -84,7 +84,7 @@ Unavailable
 ]
 ```
 
-This endpoint can be used to extract predefined datasets from eSuite for use in external dashboarding.
+This endpoint can be used to extract predefined datasets from eSuite for use in external dashboards.
 
 ### HTTP Request
 
@@ -124,10 +124,10 @@ This endpoint can be used to extract predefined datasets from eSuite for use in 
 `Dynamic_RPM_GetTop50Minutes` <br />Top RPM Count | 
 `Dynamic_Subscriptions_ActiveByDay` <br />Active Subscription (by day) | 
 `Dynamic_Subscriptions_ActiveByServiceId` <br />Active Subscription (by Subscription Service) | 
- Dynamic_Subscriptions_Added` <br />Subscriptions added |
+`Dynamic_Subscriptions_Added` <br />Subscriptions added |
 `Dynamic_Subscriptions_ChurnbyMonth` <br />Subscription Churn (by month) | 
 `Dynamic_Subscriptions_ChurnByReason` <br />ubscription Churn (by reason) | 
-`Dynamic_Subscriptions_ChurnByService` <br />Subscription Churn (by Subscription Sevice) | 
+`Dynamic_Subscriptions_ChurnByService` <br />Subscription Churn (by Subscription Service) | 
 `Dynamic_Subscriptions_ChurnPredictionPrecisionV5LastMonth` <br />Churn Prediction Precision (previous month)  | 
 `Dynamic_Subscriptions_ChurnPredictionPrecisionV5ThisMonth` <br />Churn Prediction Precision (current month) | 
 `Dynamic_Subscriptions_RevenueByDay` <br />Subscription revenue (by day) | 

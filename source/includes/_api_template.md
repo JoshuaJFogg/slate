@@ -1,6 +1,6 @@
 # Controller Name
 
-## Specfic name of the endpoint e.g. Create Account
+## Specific name of the endpoint e.g. Create Account
 
 ```shell
 

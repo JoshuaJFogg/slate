@@ -113,12 +113,12 @@ This end point is present for server-side integrations to take a payment against
 `pricing \ currency` <br />The currency the payment should be taken in| <span class="string">string</span> |  | 
 `voucherCode` <br />eSuite generated voucher code that has been provided during the flow | <span class="string">string</span> |  | 
 `cvv` <br />If the purchase is being made using an non-authorised card, this parameter can be passed in to enable authorisation to take place | <span class="string">string</span> |  |
-`orderItems` <br />A collection of items that the account is attempting to purchase| <span class="array">array[object]</span> |  |
-`orderItems \ description` <br />The description associated to the item| <span class="string">string</span> |  | 
+`orderItems` <br />A collection of items that the account is attempting to purchase| <span class="array">array[object]</span> | <span class="required">Required</span> |
+`orderItems \ description` <br />The description associated to the item| <span class="string">string</span> | <span class="required">Required</span> | 
 `orderItems \ orderReference` <br />An external reference that can be associated to each item| <span class="string">string</span> |  | 
 `orderItems \ comment` <br />Additional metadata that may have been provided| <span class="string">string</span> |  | 
-`orderItems \ priceBreakdown` <br />The details relating to the amount the account should pay for the item| <span class="object">object</span> |  | 
-`priceBreakdown \ grossAmount` <br />The gross amount for the item| <span class="decimal">decimal</span> |  | 
+`orderItems \ priceBreakdown` <br />The details relating to the amount the account should pay for the item| <span class="object">object</span> | <span class="required">Required</span> | 
+`priceBreakdown \ grossAmount` <br />The gross amount for the item| <span class="decimal">decimal</span> | <span class="required">Required</span> | 
 `priceBreakdown \ netAmount` <br />The total amount minue the associated tax amount| <span class="decimal">decimal</span> |  | 
 `priceBreakdown \ taxAmount` <br />The amount of tax that must be paid on the item| <span class="decimal">decimal</span> |  |
 `orderItems \ customOrderParameters` <br />A collection of custom attributes associated to the payment | <span class="dictionary">dictionary</span> |  | 
@@ -513,8 +513,8 @@ Calling this endpoint will allow the refund of a previously processed order. Thi
 
  |  |  |  
 --------- | ------- | ------- | 
-`amount` <br />The amount of money that should be refunded to the account.| <span style="font-weight: bold;color: #666;">number</span> | <span class="required">Required</span> | 
-`triggerBackOfficeEmail` <br />An indication as to whether a backoffice system should be notified.| <span class="bool">bool</span> |  | 
+`amount` <br />The amount of money that should be refunded to the account.| <span class="decimal">decimal</span> | <span class="required">Required</span> | 
+`triggerBackOfficeEmail` <br />An indication as to whether a back office system should be notified.| <span class="bool">bool</span> |  | 
 `reason` <br />Additional information as to why the refund is being performed| <span class="string">string</span> |  | 
 `reasonCode` <br />A code specific to your business for refund types| <span class="string">string</span> |  | 
 `refundAsServiceCredits` <br />Define whether you would like the refund to be executed against the originating payment method or as a credit on the account.| <span class="bool">bool</span> |  | 
