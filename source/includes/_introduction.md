@@ -1,6 +1,6 @@
 # Introduction
 
-The eSuite API is built around the architectural principle of REST (Representational State Transfer).
+The eSuite API is built around the architectural principle of REST (Representational State Transfer)..
 
 The API allows you to interact with eSuite from both a client-side web application and a traditional server-side application. The API also uses standard HTTP features and can be used via standard HTTP clients in order to perform actions prior to integrating the functionality. All responses are returned in JSON, including error messages. 
 
