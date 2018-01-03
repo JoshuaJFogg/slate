@@ -61,7 +61,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("GET", "/api/subscriptions/", payload)
@@ -278,7 +278,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("GET", "/api/subscriptions/search", payload)
@@ -507,7 +507,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("GET", "/api/products/", payload)
@@ -633,8 +633,8 @@ To return all configured products within your instance of eSuite, this endpoint 
 `images \ fileName` <br />File name| <span class="string">string</span> | 
 `images \ default` <br />Specify if image is default| <span class="bool">bool</span> | 
 `images \ location` <br />Path to the image| <span class="string">string</span> | 
-`products \ supplier` <br />Suplier details| <span class="object">object</span> | 
-`supplier \ suppliedId` <br />Suplier identifier| <span class="integer">integer</span> | 
+`products \ supplier` <br />Supplier details| <span class="object">object</span> | 
+`supplier \ suppliedId` <br />Supplier identifier| <span class="integer">integer</span> | 
 `supplier \ name` <br />Name| <span class="string">string</span> | 
 `products \ type` <br />Product type| <span class="object">object</span> | 
 `type \ typeId` <br />Type id| <span class="integer">integer</span> | 
@@ -710,7 +710,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("GET", "/api/products/search", payload)
@@ -842,8 +842,8 @@ To return only a subset of your product catalogoue, this endpoint should be call
 `images \ fileName` <br />File name| <span class="string">string</span> | 
 `images \ default` <br />Specify if image is default| <span class="bool">bool</span> | 
 `images \ location` <br />Path to the image| <span class="string">string</span> | 
-`products \ supplier` <br />Suplier details| <span class="object">object</span> | 
-`suppliedId` <br />Suplier identifier| <span class="integer">integer</span> | 
+`products \ supplier` <br />Supplier details| <span class="object">object</span> | 
+`suppliedId` <br />Supplier identifier| <span class="integer">integer</span> | 
 `supplier \ name` <br />Name| <span class="string">string</span> | 
 `products \ type` <br />Product type| <span class="object">object</span> | 
 `type \ typeId` <br />Type id| <span class="integer">integer</span> | 

@@ -66,7 +66,7 @@ payload = "{\"logType\":\"SupportNote\",\"logStatus\":\"Open\",\"logTitle\":\"Un
 headers = { 
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json" }
 
 conn.request("POST", "/api/accounts/{accountId}/support-logs", payload, headers)
@@ -113,7 +113,7 @@ This endpoint allows you to create a support log against a specific account.
 
 ### Request Parameters
 
-Parameter | Type | Mandatory | Description | 
+Parameter | Type | Required | Description | 
 --------- | ------- | ------- | ----------- |
 `logType` | string | Yes | The type of log entry. Only SupportNote is accepted on the POST.
 `logStatus` | string | Yes | Indication whether the log entry is open or closed.
@@ -181,7 +181,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("GET", "/api/accounts/{accountId}/support-logs/{supportLogReference}", payload, headers)
@@ -313,7 +313,7 @@ payload = "[{\"op\":\"replace\",\"path\":\"/LogTitle\",\"value\":\"A new log tit
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json"
     }
 
@@ -362,7 +362,7 @@ In the event you need to update a support log entry, this end point should be ca
 
 ### PATCH Parameters
 
-Parameter | Type | Mandatory | Description | 
+Parameter | Type | Required | Description | 
 --------- | ------- | ------- | ----------- |
 | array[objects] | Yes | A collection of updates that should be made to the resource
 `op` | string | Yes | The type of change that should be executed. add, replace and remove are available operations.
@@ -430,7 +430,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("DELETE", "/api/accounts/{accountId}/support-logs/{supportLogReference}", payload, headers)
@@ -533,7 +533,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("GET", "/api/accounts/{accountId}/support-logs", payload, headers)
@@ -606,7 +606,7 @@ This endpoint allows you to retrieve all support logs for a specific account. Th
 
 ### Query String Parameters
 
-Parameter | Type | Mandatory | Description | 
+Parameter | Type | Required | Description | 
 --------- | ------- | ------- | ----------- |
 pageNumber | integer | No | Indication as to which page of results to return. Will default to 1.
 recordsPerPage | integer | No | Indication as to how many results to return. Will default to 50.

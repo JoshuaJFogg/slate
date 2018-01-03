@@ -66,7 +66,7 @@ payload = "{}"
 headers = { 
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json" }
 
 conn.request("POST", "/api/carts", payload, headers)
@@ -174,7 +174,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("GET", "/api/carts/{cartReference}", payload, headers)
@@ -315,7 +315,7 @@ payload = "[{\"op\":\"add\",\"path\":\"/accountReference\",\"value\":\"0010X2Y7G
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json"
     }
 
@@ -357,6 +357,7 @@ $.ajax(settings).done(function (response) {
 
 An existing cart can be edited by calling the following endpoint. An example where this would be required is when associating a cart to a specific eSuite account.
 
+
 ### HTTP Request
 
 <div class="endpoint-cont">
@@ -364,7 +365,14 @@ An existing cart can be edited by calling the following endpoint. An example whe
 <span class="endpoint-path">https://uat.mppglobal.com/api/carts/{cartResourceReference}</span>
 </div>
 
+### PATCH Parameters
 
+ |  |  | 
+--------- | ------- | ------- | 
+A collection of updates that should be made to the resource| <span class="array">array[objects]</span> | <span class="required">Required</span> | 
+`op` <br />The type of change that should be executed. add, replace and remove are available operations.| <span class="string">string</span> | <span class="required">Required</span> | 
+`path` <br />The name of the parameter that should be updated.| <span class="string">string</span> | <span class="required">Required</span> | 
+`value` <br />The new value to store against the parameter.| <span class="string">string</span> | <span class="required">Required</span> | 
 
 
 ## Delete a Cart
@@ -428,7 +436,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("DELETE", "/api/carts/{cartReference}", payload, headers)
@@ -541,7 +549,7 @@ payload = "{\"description\":\"Example line item\",\"pricing\":{\"grossAmount\":1
 headers = { 
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json" }
 
 conn.request("POST", "/api/carts/{cartReference/line-items", payload, headers)
@@ -593,12 +601,12 @@ In order to add a new item to a cart, this endpoint should be called. This endpo
 
  |  |  | 
 --------- | ------- | ------- | 
-`description` <br />Description of the line item| <span class="string">string</span> | <span class="required">Required*</span> | 
+`description` <br />Description of the line item| <span class="string">string</span> | <span class="required">Required</span> | 
 `pricing` <br />Collection of information regarding pricing| <span class="object">object</span> |  | 
 `pricing \ grossAmount` <br />The gross amount of the line item| <span style="font-weight:bold;color:#666;">number</span> | <span class="required">Required</span> | 
 `pricing \ netAmount`<br />The net amount of the line item| <span style="font-weight:bold;color:#666;">number</span> | <span class="required">Required</span> | 
 `pricing \ taxAmount` <br />The tax amount of the line item| <span style="font-weight:bold;color:#666;">number</span> | <span class="required">Required</span> | 
-`pricing \ currency` <br />Currency of the transaction| <span class="string">string</span> | <span class="required">Required*</span> | 
+`pricing \ currency` <br />Currency of the transaction| <span class="string">string</span> | <span class="required">Required</span> | 
 `pricing \ priceId` <br />The pre-configured eSuite price identifier| <span class="string">string</span> |  | 
 `productId` <br />The pre-configured eSuite product identifier| <span class="integer">integer</span> |  | 
 `quantity` <br />Number of the line item being purchased| <span class="integer">integer</span> | <span class="required">Required</span> | 
@@ -666,7 +674,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("DELETE", "/api/carts/{cartResourceReference}/line-items/{lineItemResourceReference}", payload, headers)
@@ -770,7 +778,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("GET", "/api/accounts/{accountId}/carts/{cartReference}", payload, headers)

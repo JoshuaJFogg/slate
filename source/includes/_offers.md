@@ -60,7 +60,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("GET", "/api/offers", payload, headers)
@@ -305,7 +305,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("GET", "/api/offers/{offerReference}", payload, headers)
@@ -530,7 +530,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("GET", "/api/offers/{offerReference}/vouchers", payload, headers)

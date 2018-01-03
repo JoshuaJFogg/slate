@@ -48,7 +48,7 @@ $.ajax(settings).done(function (response) {
 
 ```json
 {
-  "amountCharged": 10
+  "amountCharged": 10,
   "currency": "GBP",
   "paymentType": "SEPA",
   "subscriptionStatus": "Active",
@@ -464,8 +464,8 @@ For the completion of alternative subscription options, making the following `PA
 
  |   | |  
 --------- | ------- | ------- | 
-`asynchronousProcessingParameters` <br />Parameter set provided if you would like to complete an advanced payment type| <span class="string">string</span> |  |
-`asynchronousProcessingParameters \ parameterName` <br />Parameter name specific to the alternative payment method provided| <span class="string">string</span> |  |
+`asynchronousProcessingParameters` <br />Parameter set provided if you would like to complete an advanced payment type| <span class="string">string</span> | <span class="required">Required</span> |
+`asynchronousProcessingParameters \ parameterName` <br />Parameter name specific to the alternative payment method provided| <span class="string">string</span> | <span class="required">Required</span> |
 
 ## Alternative Product Purchase
 
@@ -533,9 +533,8 @@ For the completion of alternative product purchase options, making the following
 
  |   | |  
 --------- | ------- | ------- | 
-`asynchronousProcessingParameters` <br />Parameter set provided if you would like to complete an advanced payment type| <span class="string">string</span> |  |
-`asynchronousProcessingParameters \ parameterName` <br />Parameter name specific to the alternative payment method provided| <span class="string">string</span> |  |
-
+`asynchronousProcessingParameters` <br />Parameter set provided if you would like to complete an advanced payment type| <span class="string">string</span> | <span class="required">Required</span> |
+`asynchronousProcessingParameters \ parameterName` <br />Parameter name specific to the alternative payment method provided| <span class="string">string</span> | <span class="required">Required</span> |
 ## Alternative One-off Charge
 
 ```shell
@@ -606,11 +605,10 @@ For the completion of alternative one-off charge, making the following `PATCH` r
 
 ### Request Parameters
 
- |   | | 
+ |   | |  
 --------- | ------- | ------- | 
-`asynchronousProcessingParameters` <br />Parameter set provided if you would like to complete an advanced payment type| <span class="string">string</span> |  |
-`asynchronousProcessingParameters \ parameterName` <br />Parameter name specific to the alternative payment method provided| <span class="string">string</span> |  |
-
+`asynchronousProcessingParameters` <br />Parameter set provided if you would like to complete an advanced payment type| <span class="string">string</span> | <span class="required">Required</span> |
+`asynchronousProcessingParameters \ parameterName` <br />Parameter name specific to the alternative payment method provided| <span class="string">string</span> | <span class="required">Required</span> |
 ## Alternative Credits Purchase
 
 ```shell
@@ -675,12 +673,10 @@ For the completion of alternative credits purchase, making the following `PATCH`
 
 ### Request Parameters
 
- |   | | 
+ |   | |  
 --------- | ------- | ------- | 
-`asynchronousProcessingParameters` <br />Parameter set provided if you would like to complete an advanced payment type| <span class="string">string</span> |  |
-`asynchronousProcessingParameters \ parameterName` <br />Parameter name specific to the alternative payment method provided| <span class="string">string</span> |  |
-
-
+`asynchronousProcessingParameters` <br />Parameter set provided if you would like to complete an advanced payment type| <span class="string">string</span> | <span class="required">Required</span> |
+`asynchronousProcessingParameters \ parameterName` <br />Parameter name specific to the alternative payment method provided| <span class="string">string</span> | <span class="required">Required</span> |
 
 
 

@@ -18,6 +18,7 @@ includes:
   - workflow-configuration
   - workflow-purchases
   - accounts
+  - account-groups
   - account-authentication
   - external-providers
   - address-book
@@ -36,6 +37,7 @@ includes:
   - analytics
   - bulk-actions
   - errors
+ 
 
 search: true
 ---

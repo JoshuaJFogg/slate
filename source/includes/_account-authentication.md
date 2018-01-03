@@ -4,7 +4,7 @@
 
 ```shell
 curl --request POST \
-  --url https://uat.mppglobal.com/api/authenticate/ \
+  --url https://uat.mppglobal.com/api/accounts/authenticate/ \
   --header 'content-type: application/json' \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
@@ -13,7 +13,7 @@ curl --request POST \
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/authenticate/");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/authenticate/");
 var request = new RestRequest(Method.POST);
 request.AddHeader("content-type", "application/json");
 request.AddHeader("x-version", "9.0.0");
@@ -24,7 +24,7 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/authenticate/")
+HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/authenticate/")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-version", "9.0.0")
@@ -37,7 +37,7 @@ HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/auth
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/authenticate/")
+url = URI("https://uat.mppglobal.com/api/accounts/authenticate/")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -64,11 +64,11 @@ payload = "{\"email\":\"john.smith@mppglobal.com\",\"password\":\"pWzjWktsWN8M\"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json"
     }
 
-conn.request("POST", "/api/authenticate/", payload, headers)
+conn.request("POST", "/api/accounts/authenticate/", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -80,7 +80,7 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/authenticate/",
+  "url": "https://uat.mppglobal.com/api/accounts/authenticate/",
   "method": "POST",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
@@ -113,7 +113,7 @@ When eSuite is being used as a primary identity platform, authentication is hand
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/authenticate/</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/authenticate/</span>
 </div>
 
 ### Parameters
@@ -128,7 +128,7 @@ When eSuite is being used as a primary identity platform, authentication is hand
 
 ```shell
 curl --request POST \
-  --url https://uat.mppglobal.com/api/authenticate/{clientUserId} \
+  --url https://uat.mppglobal.com/api/accounts/authenticate/{clientUserId} \
   --header 'content-type: application/json' \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
@@ -137,7 +137,7 @@ curl --request POST \
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/authenticate/{clientUserId}");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/authenticate/{clientUserId}");
 var request = new RestRequest(Method.POST);
 request.AddHeader("content-type", "application/json");
 request.AddHeader("x-version", "9.0.0");
@@ -148,7 +148,7 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/authenticate/{clientUserId}")
+HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/authenticate/{clientUserId}")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-version", "9.0.0")
@@ -161,7 +161,7 @@ HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/auth
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/authenticate/{clientUserId}")
+url = URI("https://uat.mppglobal.com/api/accounts/authenticate/{clientUserId}")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -188,11 +188,11 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json"
     }
 
-conn.request("POST", "/api/authenticate/{clientUserId}", payload, headers)
+conn.request("POST", "/api/accounts/authenticate/{clientUserId}", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -220,7 +220,7 @@ Authentication via a ClientUserId is required when eSuite is not the primary ide
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/authenticate/{clientUserId}</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/authenticate/{clientUserId}</span>
 </div>
 
 ### Parameters
@@ -231,6 +231,6 @@ Authentication via a ClientUserId is required when eSuite is not the primary ide
 
 
 <aside class="info">
-Due to the sensetive nature of a ClientUserId it is not possible to call this endpoint using a client-side language.
+Due to the sensitive nature of a ClientUserId it is not possible to call this endpoint using a client-side language.
 </aside>
 

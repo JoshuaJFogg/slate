@@ -66,7 +66,7 @@ payload = "{\"logType\":\"SupportNote\",\"logStatus\":\"Open\",\"logTitle\":\"Un
 headers = { 
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json" }
 
 conn.request("POST", "/api/accounts/{accountId}/orders", payload, headers)
@@ -113,12 +113,12 @@ This end point is present for server-side integrations to take a payment against
 `pricing \ currency` <br />The currency the payment should be taken in| <span class="string">string</span> |  | 
 `voucherCode` <br />eSuite generated voucher code that has been provided during the flow | <span class="string">string</span> |  | 
 `cvv` <br />If the purchase is being made using an non-authorised card, this parameter can be passed in to enable authorisation to take place | <span class="string">string</span> |  |
-`orderItems` <br />A collection of items that the account is attempting to purchase| <span class="array">array[object]</span> |  |
-`orderItems \ description` <br />The description associated to the item| <span class="string">string</span> |  | 
+`orderItems` <br />A collection of items that the account is attempting to purchase| <span class="array">array[object]</span> | <span class="required">Required</span> |
+`orderItems \ description` <br />The description associated to the item| <span class="string">string</span> | <span class="required">Required</span> | 
 `orderItems \ orderReference` <br />An external reference that can be associated to each item| <span class="string">string</span> |  | 
 `orderItems \ comment` <br />Additional metadata that may have been provided| <span class="string">string</span> |  | 
-`orderItems \ priceBreakdown` <br />The details relating to the amount the account should pay for the item| <span class="object">object</span> |  | 
-`priceBreakdown \ grossAmount` <br />The gross amount for the item| <span class="decimal">decimal</span> |  | 
+`orderItems \ priceBreakdown` <br />The details relating to the amount the account should pay for the item| <span class="object">object</span> | <span class="required">Required</span> | 
+`priceBreakdown \ grossAmount` <br />The gross amount for the item| <span class="decimal">decimal</span> | <span class="required">Required</span> | 
 `priceBreakdown \ netAmount` <br />The total amount minue the associated tax amount| <span class="decimal">decimal</span> |  | 
 `priceBreakdown \ taxAmount` <br />The amount of tax that must be paid on the item| <span class="decimal">decimal</span> |  |
 `orderItems \ customOrderParameters` <br />A collection of custom attributes associated to the payment | <span class="dictionary">dictionary</span> |  | 
@@ -140,7 +140,7 @@ This end point is present for server-side integrations to take a payment against
 
 ```shell
 curl --request GET \
-  --url 'https://uat.mppglobal.com/api/accounts/{accountId}/payments?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1' \
+  --url 'https://uat.mppglobal.com/api/accounts/{accountId}/orders?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1' \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
   --header 'x-version: 9.0.0' \
@@ -148,7 +148,7 @@ curl --request GET \
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/payments?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/orders?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1");
 var request = new RestRequest(Method.GET);
 request.AddHeader("x-version", "9.0.0");
 request.AddHeader("x-clientId", "1001");
@@ -158,7 +158,7 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountId}/payments?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1")
+HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountId}/orders?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-version", "9.0.0")
@@ -170,7 +170,7 @@ HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accou
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/payments?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/orders?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -196,10 +196,10 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
-conn.request("GET", "/api/accounts/{accountId}/payments?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1", payload, headers)
+conn.request("GET", "/api/accounts/{accountId}/orders?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -211,7 +211,7 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/payments?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/orders?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1",
   "method": "GET",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
@@ -262,7 +262,7 @@ This endpoint allows you to retrieve all payments for a given account.
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-get">GET</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/payments</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/orders</span>
 </div>
 
 ### Query Parameters
@@ -361,7 +361,7 @@ payload = "[{\"op\":\"replace\",\"path\":\"/status\",\"value\":\"pending\"}]"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json"
     }
 
@@ -481,7 +481,7 @@ payload = "{\"amount\":20,\"triggerBackOfficeEmail\":true,\"reason\":\"Customer 
 headers = { 
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json" }
 
 conn.request("POST", "/api/payments/{paymentReference}/refund", payload, headers)
@@ -513,8 +513,8 @@ Calling this endpoint will allow the refund of a previously processed order. Thi
 
  |  |  |  
 --------- | ------- | ------- | 
-`amount` <br />The amount of money that should be refunded to the account.| <span style="font-weight: bold;color: #666;">number</span> | <span class="required">Required</span> | 
-`triggerBackOfficeEmail` <br />An indication as to whether a backoffice system should be notified.| <span class="bool">bool</span> |  | 
+`amount` <br />The amount of money that should be refunded to the account.| <span class="decimal">decimal</span> | <span class="required">Required</span> | 
+`triggerBackOfficeEmail` <br />An indication as to whether a back office system should be notified.| <span class="bool">bool</span> |  | 
 `reason` <br />Additional information as to why the refund is being performed| <span class="string">string</span> |  | 
 `reasonCode` <br />A code specific to your business for refund types| <span class="string">string</span> |  | 
 `refundAsServiceCredits` <br />Define whether you would like the refund to be executed against the originating payment method or as a credit on the account.| <span class="bool">bool</span> |  | 

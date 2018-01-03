@@ -60,7 +60,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("GET", "/api/accounts/{accountId}/subscriptions", payload, headers)
@@ -297,7 +297,7 @@ payload = "{\"status\":\"cancel\"}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json"
     }
 
@@ -416,7 +416,7 @@ payload = "{\"renewals\":\"enable\"}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json"
     }
 
@@ -457,8 +457,8 @@ Calling this endpoint will allow you to enable or disable the renewal process fo
 ### HTTP Request
 
 <div class="endpoint-cont">
-<span class="endpoint-verb endpoint-verb-get">GET</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions//{subscriptionId}/status</span>
+<span class="endpoint-verb endpoint-verb-patch">PATCH</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionId}/status</span>
 </div>
 
 ### Patch Parameters
@@ -534,7 +534,7 @@ payload = "{\"voucherCode\":\"ABC45FDR\"}"
 headers = { 
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json" }
 
 conn.request("POST", "/api/accounts/{accountId}/subscriptions/{subscriptionId}/vouchers", payload, headers)
@@ -579,7 +579,7 @@ Calling this endpoint will allow you to add a voucher code to an existing subscr
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/vouchers</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionid}/vouchers</span>
 </div>
 
 ### POST Parameters
@@ -657,7 +657,7 @@ payload = "{\"startDate\":\"2017-07-04T00:00:00\",\"endDate\":\"2017-07-14T23:59
 headers = { 
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json" }
 
 conn.request("POST", "/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays", payload, headers)
@@ -779,7 +779,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("GET", "/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}", payload, headers)
@@ -903,7 +903,7 @@ payload = "[{\"op\":\"replace\",\"path\":\"/StartDate/\",\"value\":\"2017-08-04 
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json"
     }
 
@@ -1026,7 +1026,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("DELETE", "/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}", payload, headers)
@@ -1129,7 +1129,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("GET", "/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays", payload, headers)
@@ -1184,13 +1184,11 @@ This endpoint allows you to retrieve all configured subscription holidays for a 
 
  |  | 
 --------- | ------- |  
-  The collection of subscription holidays.| <span class="array">array[objects]</span> |
+The collection of subscription holidays.| <span class="array">array[objects]</span> |
 `subscriptionHolidayReference` <br />Reference to the holiday. | <span class="string">string</span> | 
 `subscriptionReference` <br />Reference to the subscription.| <span class="string">string</span> | 
 `startDate` <br />The date at which the holiday period should begin.| <span class="string">string</span> | 
 `endDate` <br />The date at which the subscription should become active.| <span class="string">string</span> | 
-
-
 
 
 

@@ -64,7 +64,7 @@ payload = "{\"entitlementIdentifier\":\"specific-access\",\"startDate\":\"2017-0
 headers = { 
      'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json" }
 
 conn.request("POST", "/api/bulk/entitlements", payload, headers)
@@ -100,8 +100,8 @@ This endpoint is available to allow you to bulk create access for multiple accou
 `entitlementIdentifier` <br />The access the account should given| <span class="string">string</span> | <span class="required">Required</span> | 
 `startDate` <br />The date at which the access should become active| <span style="font-weight:bold;color:#666;">dateTime</span> | <span class="required">Required</span> | 
 `endDate` <br />The date at which access to the content should be deactivated.| <span style="font-weight:bold;color:#666;">dateTime</span> | <span class="required">Required</span> | 
-`accountIds` <br />A collection of all accounts that should have access given, based upon accountId.| <span class="array">array[integer]</span> | <span class="required">No*</span> | 
-`clientUserIds` <br />A collection of all accounts that should have access given, based upon ClientUserId| <span class="array">array[string]</span> | <span class="required">No*</span> | 
+`accountIds` <br />A collection of all accounts that should have access given, based upon accountId.| <span class="array">array[integer]</span> |   | 
+`clientUserIds` <br />A collection of all accounts that should have access given, based upon ClientUserId| <span class="array">array[string]</span> |   | 
 
 
 <aside class="info">It is required that either an array of accountIds or clientUserIds must be passed but it is not required to pass both.</aside>

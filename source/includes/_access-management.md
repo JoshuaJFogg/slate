@@ -4,7 +4,7 @@
 
 ```shell
 curl --request POST \
-  --url https://uat.mppglobal.com/api/accounts/%7BaccountId%7D/entitlements \
+  --url https://uat.mppglobal.com/api/accounts/{accountId}/entitlements \
   --header 'content-type: application/json' \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
@@ -64,7 +64,7 @@ payload = "{\"name\":\"Open Access to the Tribune\",\"identifier\":\"TheTribuneO
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': '9.0.0',
     'content-type': "application/json"
     }
 
@@ -165,7 +165,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("GET", "/api/accounts/{accountId}/entitlements", payload, headers)
@@ -281,7 +281,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("DELETE", "/api/accounts/{accountId}/entitlements/{entitlementIdentifier}", payload, headers)
@@ -392,7 +392,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("GET", "/api/accounts/{accountId}/entitlements/{entitlementIdentifier}?incrementUsage=true&deviceIdentifier=iPad", payload, headers)
@@ -445,6 +445,7 @@ In order to check if an account has access to content, this API method should be
 
  |  |  | 
 --------- | ------- | ------- | 
+`entitlementIdentifier` <br />The specific entitlement to check. | <span class="string">string</span> | <span class="required">Required</span> | 
 `incrementUsage` <br />This option will default to false if not provided. | <span class="bool">bool</span> |  | 
 `deviceIdentifier` <br />If device concurrency is being used, this value must be populated.| <span class="string">string</span> |  | 
 
@@ -508,7 +509,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0"
+    'x-version': '9.0.0'
     }
 
 conn.request("GET", "/api/accounts/{accountId}/entitlements/search?rowsPerPage=10&currentPage=1&exactMatch=false", payload, headers)
@@ -557,7 +558,7 @@ $.ajax(settings).done(function (response) {
 }
 ```
 
-This endpoint is available for all access for a specific account, regardless of whether it is active.
+This endpoint is available for all access for a specific account, regardless of whether it is active. The results returned will be in order of latest start date.
 
 ### HTTP Request
 
@@ -577,11 +578,9 @@ This endpoint is available for all access for a specific account, regardless of 
 `endDateMin` <br />Earliest Entitlement expiration date to search| <span class="string">string</span> |  | 
 `endDateMax` <br />Latest Entitlement expiration date to search| <span class="string">string</span> |  | 
 `entitlementIdentifier` <br />The name of entitlement| <span class="string">string</span> |  | 
-`rowsPerPage` <br />Number of items to return in the response| <span class="integer">integer</span> |  | 
+`rowsPerPage` <br />Number of items to return in the response| <span class="integer">integer</span> | <span class="required">Required</span> | 
 `currentPage` <br />Page to return| <span class="integer">integer</span> |  | 
 `exactMatch` <br />Indication whether to exactly match the entitlementIdentifer (default to false)| <span class="bool">bool</span> |  | 
-
-<aside class="info">Passing no query parameters will return a 204.</aside>
 
 
 
