@@ -806,7 +806,7 @@ If you would like to generate a more specific session for a one off charge, call
 `priceBreakdown > grossAmount` <br />The amount the account will be charged| <span class="decimal">decimal</span> | <span class="required">Required</span> |
 `priceBreakdown > netAmount` <br />The amount that will be available after tax| <span class="decimal">decimal</span> | <span class="required">Required</span> |
 `priceBreakdown > taxAmount` <br />The amount of tax associated to the item| <span class="decimal">decimal</span> | <span class="required">Required</span> |
-`orderItems \ taxInfo` <br />Collection of tax information| <span class="object">object</span> |  |
+`orderItems \ taxInfo` <br />Collection of tax information| <span class="object">object</span> | <span class="required">Required</span> |
 `taxInfo \ category` <br />Indication as to whether the purchase is tax exempt| <span class="bool">bool</span> |  |
 `taxInfo \ zeroRated` <br />Indication as to whether the purchase is tax exempt| <span class="bool">bool</span> |  |
 `taxInfo \ country` <br />Country specific tax rate to use| <span class="string">string</span> |  |

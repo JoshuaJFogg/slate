@@ -69,6 +69,8 @@ $.ajax(settings).done(function (response) {
 
 For the completion of standard payment options, making the following `POST` request will purchase the subscription service configured within the initial configuration request. A simple payment type is `CreditCard` `DirectDebit`, `Service Credits` or `SEPA`.
 
+In order to make this request, a workflow configuration call __must__ have been made in order to generate a valid `x-sessionId` that can then be passed to this endpoint.
+
 ### HTTP Request
 
 <div class="endpoint-cont">
@@ -171,6 +173,8 @@ $.ajax(settings).done(function (response) {
 
 For the completion of standard payment options, making the following `POST` request will purchase the product configured within the initial configuration request. A simple payment type is `CreditCard` `DirectDebit`, `Service Credits` or `SEPA`.
 
+In order to make this request, a workflow configuration call __must__ have been made in order to generate a valid `x-sessionId` that can then be passed to this endpoint.
+
 ### HTTP Request
 
 <div class="endpoint-cont">
@@ -268,6 +272,8 @@ $.ajax(settings).done(function (response) {
 ```
 
 For the completion of standard payment options, making the following `POST` request will purchase the product configured within the initial configuration request. A simple payment type is `CreditCard` `DirectDebit`, `Service Credits` or `SEPA`.
+
+In order to make this request, a workflow configuration call __must__ have been made in order to generate a valid `x-sessionId` that can then be passed to this endpoint.
 
 ### HTTP Request
 
@@ -368,6 +374,8 @@ $.ajax(settings).done(function (response) {
 ```
 
 For the completion of standard payment options, making the following `POST` request will purchase the product configured within the initial configuration request. A simple payment type is `CreditCard` `DirectDebit`, `Service Credits` or `SEPA`.
+
+In order to make this request, a workflow configuration call __must__ have been made in order to generate a valid `x-sessionId` that can then be passed to this endpoint.
 
 ### HTTP Request
 
