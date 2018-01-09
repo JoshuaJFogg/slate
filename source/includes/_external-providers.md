@@ -659,10 +659,10 @@ This endpoint allows you to link an existing eSuite account to their Yahoo Japan
 
  |  |  |  
 --------- | ------- | ------- | 
-`yahooJapanRedirectURL` <br />The location which should be called for validation of the code and token provided| <span class="string">string</span> | <span class="required">Yes/No</span> | 
-`authorisationCode` <br />Code provided by Yahoo Japan| <span class="string">string</span> | <span class="required">Yes/No</span> | 
-`accessToken` <br />Code provided by Yahoo Japan| <span class="string">string</span> | <span class="required">Yes/No</span> | 
-`applicationIdentifier` <br />The identifier for the eSuite application that the account is using| <span class="string">string</span> | <span class="required">Yes/No</span> | 
+`yahooJapanRedirectURL` <br />The location which should be called for validation of the code and token provided| <span class="string">string</span> | <span class="required">Required</span> | 
+`authorisationCode` <br />Code provided by Yahoo Japan| <span class="string">string</span> | <span class="required">Required</span> | 
+`accessToken` <br />Code provided by Yahoo Japan| <span class="string">string</span> | <span class="required">Required</span> | 
+`applicationIdentifier` <br />The identifier for the eSuite application that the account is using| <span class="string">string</span> | <span class="required">Required</span> | 
 
 
 
