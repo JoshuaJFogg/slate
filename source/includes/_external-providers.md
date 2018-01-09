@@ -588,8 +588,8 @@ An account is able to authenticate using their Yahoo Japan account and then retr
  |  |  |  
 --------- | ------- | ------- | 
 `yahooJapanRedirectURL` <br />The location which should be called for validation of the code and token provided| <span class="string">string</span> | <span class="required">Yes/No</span> | 
-`authorisationCode` <br />Code provided by Yahoo Japan| <span class="string">string</span> | <span class="required">Yes/No</span> | 
-`accessToken` <br />Token provided by Yahoo Japan | <span class="string">string</span> | <span class="required">Yes/No</span> | 
+`authorisationCode` <br />If authorization is obtained by the user, it redirects the user to the previously registered return URL, and passes the authorization code and the specified state to the client| <span class="string">string</span> | <span class="required">Yes/No</span> | 
+`accessToken` <br />The Token endpoint authenticates the client and returns an access token | <span class="string">string</span> | <span class="required">Yes/No</span> | 
 `applicationIdentifier` <br />The identifier for the eSuite application that the account is using| <span class="string">string</span> | <span class="required">Yes/No</span> | 
 
 
