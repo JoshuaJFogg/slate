@@ -138,7 +138,7 @@
         
           <h1 id="introduction">Introduction</h1>
 
-<p>The eSuite API is built around the architectural principle of REST (Representational State Transfer).</p>
+<p>The eSuite API is built around the architectural principle of REST (Representational State Transfer)..</p>
 
 <p>The API allows you to interact with eSuite from both a client-side web application and a traditional server-side application. The API also uses standard HTTP features and can be used via standard HTTP clients in order to perform actions prior to integrating the functionality. All responses are returned in JSON, including error messages. </p>
 
@@ -1544,7 +1544,7 @@ This endpoint can only be called using server-side authentication due to the sen
 <tr>
 <td><code class="prettyprint">orderItems \ taxInfo</code> <br />Collection of tax information</td>
 <td><span class="object">object</span></td>
-<td></td>
+<td><span class="required">Required</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">taxInfo \ category</code> <br />Indication as to whether the purchase is tax exempt</td>
@@ -1898,6 +1898,8 @@ This endpoint can only be called using server-side authentication due to the sen
 </span></code></pre>
 <p>For the completion of standard payment options, making the following <code class="prettyprint">POST</code> request will purchase the subscription service configured within the initial configuration request. A simple payment type is <code class="prettyprint">CreditCard</code> <code class="prettyprint">DirectDebit</code>, <code class="prettyprint">Service Credits</code> or <code class="prettyprint">SEPA</code>.</p>
 
+<p>In order to make this request, a workflow configuration call <strong>must</strong> have been made in order to generate a valid <code class="prettyprint">x-sessionId</code> that can then be passed to this endpoint.</p>
+
 <h3 id="http-request">HTTP Request</h3>
 
 <div class="endpoint-cont">
@@ -2119,6 +2121,8 @@ This endpoint can only be called using server-side authentication due to the sen
 </span></code></pre>
 <p>For the completion of standard payment options, making the following <code class="prettyprint">POST</code> request will purchase the product configured within the initial configuration request. A simple payment type is <code class="prettyprint">CreditCard</code> <code class="prettyprint">DirectDebit</code>, <code class="prettyprint">Service Credits</code> or <code class="prettyprint">SEPA</code>.</p>
 
+<p>In order to make this request, a workflow configuration call <strong>must</strong> have been made in order to generate a valid <code class="prettyprint">x-sessionId</code> that can then be passed to this endpoint.</p>
+
 <h3 id="http-request">HTTP Request</h3>
 
 <div class="endpoint-cont">
@@ -2290,6 +2294,8 @@ This endpoint can only be called using server-side authentication due to the sen
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>For the completion of standard payment options, making the following <code class="prettyprint">POST</code> request will purchase the product configured within the initial configuration request. A simple payment type is <code class="prettyprint">CreditCard</code> <code class="prettyprint">DirectDebit</code>, <code class="prettyprint">Service Credits</code> or <code class="prettyprint">SEPA</code>.</p>
+
+<p>In order to make this request, a workflow configuration call <strong>must</strong> have been made in order to generate a valid <code class="prettyprint">x-sessionId</code> that can then be passed to this endpoint.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -2472,6 +2478,8 @@ This endpoint can only be called using server-side authentication due to the sen
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>For the completion of standard payment options, making the following <code class="prettyprint">POST</code> request will purchase the product configured within the initial configuration request. A simple payment type is <code class="prettyprint">CreditCard</code> <code class="prettyprint">DirectDebit</code>, <code class="prettyprint">Service Credits</code> or <code class="prettyprint">SEPA</code>.</p>
+
+<p>In order to make this request, a workflow configuration call <strong>must</strong> have been made in order to generate a valid <code class="prettyprint">x-sessionId</code> that can then be passed to this endpoint.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -6687,6 +6695,202 @@ Due to the sensitive nature of a ClientUserId it is not possible to call this en
 </tr>
 </tbody></table>
 
+<h2 id="create-account-via-sso">Create Account via SSO</h2>
+<pre class="highlight shell tab-shell"><code>
+</code></pre><pre class="highlight csharp tab-csharp"><code>
+</code></pre><pre class="highlight java tab-java"><code>
+</code></pre><pre class="highlight ruby tab-ruby"><code>
+</code></pre><pre class="highlight python tab-python"><code>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"/api/accounts/external-providers"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"x-tokenid"</span><span class="p">:</span> <span class="s2">"BE52ADA2064C4F9A9D90F28D066D1RFT"</span><span class="p">,</span>
+    <span class="s2">"x-sessionid"</span><span class="p">:</span> <span class="s2">"a0c595bd26004ff4bb7d4cb1b1c81a6d"</span><span class="p">,</span>
+    <span class="s2">"x-version"</span><span class="p">:</span> <span class="s2">"9.0.0"</span><span class="p">,</span>
+    <span class="s2">"origin"</span><span class="p">:</span> <span class="s2">"https://www.mppglobal.com"</span><span class="p">,</span>
+    <span class="s2">"content-type"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+  <span class="p">},</span>
+  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{}"</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2032774</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"resourceReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0010AL6OI8WQFGYUT0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Active"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.smith@mppglobal.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"clientUserId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mpp-123456"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"salutation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"phoneNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01513287445"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"dateOfBirth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1991-04-12T00:00:01"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Male"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"addresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"addressType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Home"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"houseName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blosson Cottage"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"houseNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12a"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Flower Street"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"townCity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Garden"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"district"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allotment"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"county"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"postCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NE21ZZ"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United Kingdom"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"customParameters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"colour"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blue"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"referrer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Facebook"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"sessionToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"702f5c37e2394db785ae1306ecce9750"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>If during the authentication process with Facebook, eSuite deems the Facebook account is not currently registered in eSuite the account is required to be created within eSuite.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/external-providers</span>
+</div>
+
+<h3 id="response-parameters">Response Parameters</h3>
+
+<table><thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">email</code> <br />The identifier used when eSuite is primary IDAM.</td>
+<td><span class="string">string</span></td>
+<td><span class="required">Yes*</span></td>
+</tr>
+<tr>
+<td><code class="prettyprint">clientUserId</code> <br />The identifier used when eSuite is secondary IDAM. Once set this cannot be changed.</td>
+<td><span class="string">string</span></td>
+<td><span class="required">Yes*</span></td>
+</tr>
+<tr>
+<td><code class="prettyprint">password</code> <br />The value provided by the account to pair with the email.</td>
+<td><span class="string">string</span></td>
+<td><span class="required">Yes</span></td>
+</tr>
+<tr>
+<td><code class="prettyprint">salutation</code> <br />Available values: Mr, Mrs, Miss and Ms.</td>
+<td><span class="string">string</span></td>
+<td></td>
+</tr>
+<tr>
+<td><code class="prettyprint">firstName</code> <br />The first name associated to the account.</td>
+<td><span class="string">string</span></td>
+<td><span class="required">Yes</span></td>
+</tr>
+<tr>
+<td><code class="prettyprint">lastName</code> <br />The last name associated to the account.</td>
+<td><span class="string">string</span></td>
+<td><span class="required">Yes</span></td>
+</tr>
+<tr>
+<td><code class="prettyprint">phoneNumber</code> <br />The home phone number of the account.</td>
+<td><span class="string">string</span></td>
+<td><span class="required">Yes</span></td>
+</tr>
+<tr>
+<td><code class="prettyprint">mobileNumber</code> <br />The mobile number of the account (minus country code).</td>
+<td><span class="string">string</span></td>
+<td><span class="required">Yes</span></td>
+</tr>
+<tr>
+<td><code class="prettyprint">dateOfBirth</code> <br />The birthday of the account.</td>
+<td>dateTime</td>
+<td><span class="required">Yes</span></td>
+</tr>
+<tr>
+<td><code class="prettyprint">gender</code> <br />Available values: Male, Female and Unspecified.</td>
+<td><span class="string">string</span></td>
+<td><span class="required">Yes</span></td>
+</tr>
+<tr>
+<td><code class="prettyprint">addresses</code> <br />A collection of addresses bound to the account.</td>
+<td><span class="array">array</span></td>
+<td><span class="required">Yes</span></td>
+</tr>
+<tr>
+<td><code class="prettyprint">address \ addressType</code> <br />Available values: Home and Billing.</td>
+<td><span class="string">string</span></td>
+<td><span class="required">Yes</span></td>
+</tr>
+<tr>
+<td><code class="prettyprint">address \ houseName</code> <br />The name associated to the address.</td>
+<td><span class="string">string</span></td>
+<td><span class="required">Yes</span></td>
+</tr>
+<tr>
+<td><code class="prettyprint">address \ houseNumber</code> <br />The building number associated to the address.</td>
+<td><span class="string">string</span></td>
+<td><span class="required">Yes</span></td>
+</tr>
+<tr>
+<td><code class="prettyprint">address \ street</code> <br />The street associated to the address.</td>
+<td><span class="string">string</span></td>
+<td><span class="required">Yes</span></td>
+</tr>
+<tr>
+<td><code class="prettyprint">address \ townCity</code> <br />The town or city associated to the address</td>
+<td><span class="string">string</span></td>
+<td><span class="required">Yes</span></td>
+</tr>
+<tr>
+<td><code class="prettyprint">address \ district</code> <br />The district associated to the address</td>
+<td><span class="string">string</span></td>
+<td></td>
+</tr>
+<tr>
+<td><code class="prettyprint">address \ state</code> <br />The state associated to the address</td>
+<td><span class="string">string</span></td>
+<td></td>
+</tr>
+<tr>
+<td><code class="prettyprint">address \ county</code> <br />The county associated to the address</td>
+<td><span class="string">string</span></td>
+<td></td>
+</tr>
+<tr>
+<td><code class="prettyprint">address \ postCode</code> <br />The post code associated to the address</td>
+<td><span class="string">string</span></td>
+<td><span class="required">Yes</span></td>
+</tr>
+<tr>
+<td><code class="prettyprint">address \ country</code> <br />The country the account resides</td>
+<td><span class="string">string</span></td>
+<td><span class="required">Yes</span></td>
+</tr>
+<tr>
+<td><code class="prettyprint">customParameters</code> <br />A collection of custom attributes stored against the account</td>
+<td><span class="dictionary">dictionary</span></td>
+<td></td>
+</tr>
+<tr>
+<td><code class="prettyprint">sessionToken</code> <br /> A session token linked to the account created</td>
+<td><span class="string">string</span></td>
+<td></td>
+</tr>
+</tbody></table>
+
 <h2 id="authenticate-via-facebook">Authenticate via Facebook</h2>
 <pre class="highlight shell tab-shell"><code>curl --request POST <span class="se">\</span>
   --url https://uat.mppglobal.com/api/accounts/authenticate/external-providers/facebook <span class="se">\</span>
@@ -6823,212 +7027,6 @@ Due to the sensitive nature of a ClientUserId it is not possible to call this en
 </tr>
 </tbody></table>
 
-<h2 id="create-account-via-sso">Create Account via SSO</h2>
-<pre class="highlight shell tab-shell"><code>
-</code></pre><pre class="highlight csharp tab-csharp"><code>
-</code></pre><pre class="highlight java tab-java"><code>
-</code></pre><pre class="highlight ruby tab-ruby"><code>
-</code></pre><pre class="highlight python tab-python"><code>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"/api/accounts/external-providers"</span><span class="p">,</span>
-  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
-  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"x-tokenid"</span><span class="p">:</span> <span class="s2">"BE52ADA2064C4F9A9D90F28D066D1RFT"</span><span class="p">,</span>
-    <span class="s2">"x-sessionid"</span><span class="p">:</span> <span class="s2">"a0c595bd26004ff4bb7d4cb1b1c81a6d"</span><span class="p">,</span>
-    <span class="s2">"x-version"</span><span class="p">:</span> <span class="s2">"9.0.0"</span><span class="p">,</span>
-    <span class="s2">"origin"</span><span class="p">:</span> <span class="s2">"https://www.mppglobal.com"</span><span class="p">,</span>
-    <span class="s2">"content-type"</span><span class="p">:</span> <span class="s2">"application/json"</span>
-  <span class="p">},</span>
-  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{}"</span>
-<span class="p">}</span>
-
-<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2032774</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"resourceReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0010AL6OI8WQFGYUT0"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Active"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.smith@mppglobal.com"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"clientUserId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mpp-123456"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"salutation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mr"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"phoneNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01513287445"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"dateOfBirth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1991-04-12T00:00:01"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Male"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"addresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"addressType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Home"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"houseName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blosson Cottage"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"houseNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12a"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Flower Street"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"townCity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Garden"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"district"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allotment"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"county"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"postCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NE21ZZ"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United Kingdom"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"customParameters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"colour"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blue"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"referrer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Facebook"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"sessionToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"702f5c37e2394db785ae1306ecce9750"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>If during the authentication process with Facebook, eSuite deems the Facebook account is not currently registered in eSuite the account is required to be created within eSuite.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<div class="endpoint-cont">
-<span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/external-providers</span>
-</div>
-
-<h3 id="response-parameters">Response Parameters</h3>
-
-<table><thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead><tbody>
-<tr>
-<td><code class="prettyprint">accountId</code> <br />AccountId referring to the account requested</td>
-<td><span class="integer">integer</span></td>
-<td></td>
-</tr>
-<tr>
-<td><code class="prettyprint">resourceReferece</code> <br />Computational value of the accountId and the resource type</td>
-<td><span class="string">string</span></td>
-<td></td>
-</tr>
-<tr>
-<td><code class="prettyprint">status</code> <br />The current status of the account.</td>
-<td><span class="string">string</span></td>
-<td></td>
-</tr>
-<tr>
-<td><code class="prettyprint">email</code> <br />The identifier used when eSuite is primary IDAM.</td>
-<td><span class="string">string</span></td>
-<td></td>
-</tr>
-<tr>
-<td><code class="prettyprint">clientUserId</code> <br />The identifier used when eSuite is secondary IDAM. Once set this cannot be changed.</td>
-<td><span class="string">string</span></td>
-<td></td>
-</tr>
-<tr>
-<td><code class="prettyprint">password</code> <br />The value provided by the account to pair with the email.</td>
-<td><span class="string">string</span></td>
-<td></td>
-</tr>
-<tr>
-<td><code class="prettyprint">salutation</code> <br />Available values: Mr, Mrs, Miss and Ms.</td>
-<td><span class="string">string</span></td>
-<td></td>
-</tr>
-<tr>
-<td><code class="prettyprint">firstName</code> <br />The first name associated to the account.</td>
-<td><span class="string">string</span></td>
-<td></td>
-</tr>
-<tr>
-<td><code class="prettyprint">lastName</code> <br />The last name associated to the account.</td>
-<td><span class="string">string</span></td>
-<td></td>
-</tr>
-<tr>
-<td><code class="prettyprint">phoneNumber</code> <br />The home phone number of the account.</td>
-<td><span class="string">string</span></td>
-<td></td>
-</tr>
-<tr>
-<td><code class="prettyprint">mobileNumber</code> <br />The mobile number of the account (minus country code).</td>
-<td><span class="string">string</span></td>
-<td></td>
-</tr>
-<tr>
-<td><code class="prettyprint">dateOfBirth</code> <br />The birthday of the account.</td>
-<td><span class="string">dateTime</span></td>
-<td></td>
-</tr>
-<tr>
-<td><code class="prettyprint">gender</code> <br />Available values: Male, Female and Unspecified.</td>
-<td><span class="string">string</span></td>
-<td></td>
-</tr>
-<tr>
-<td><code class="prettyprint">addresses</code> <br />A collection of addresses bound to the account.</td>
-<td><span class="array">array</span></td>
-<td></td>
-</tr>
-<tr>
-<td><code class="prettyprint">address \ addressType</code> <br />Available values: Home and Billing.</td>
-<td><span class="string">string</span></td>
-<td></td>
-</tr>
-<tr>
-<td><code class="prettyprint">address \ houseName</code> <br />The name associated to the address.</td>
-<td><span class="string">string</span></td>
-<td></td>
-</tr>
-<tr>
-<td><code class="prettyprint">address \ houseNumber</code> <br />The building number associated to the address.</td>
-<td><span class="string">string</span></td>
-<td></td>
-</tr>
-<tr>
-<td><code class="prettyprint">address \ street</code> <br />The street associated to the address.</td>
-<td><span class="string">string</span></td>
-<td></td>
-</tr>
-<tr>
-<td><code class="prettyprint">address \ townCity</code> <br />The town or city associated to the address</td>
-<td><span class="string">string</span></td>
-<td></td>
-</tr>
-<tr>
-<td><code class="prettyprint">address \ district</code> <br />The district associated to the address</td>
-<td><span class="string">string</span></td>
-<td></td>
-</tr>
-<tr>
-<td><code class="prettyprint">address \ state</code> <br />The state associated to the address</td>
-<td><span class="string">string</span></td>
-<td></td>
-</tr>
-<tr>
-<td><code class="prettyprint">address \ county</code> <br />The county associated to the address</td>
-<td><span class="string">string</span></td>
-<td></td>
-</tr>
-<tr>
-<td><code class="prettyprint">address \ postCode</code> <br />The post code associated to the address</td>
-<td><span class="string">string</span></td>
-<td></td>
-</tr>
-<tr>
-<td><code class="prettyprint">address \ country</code> <br />The country the account resides</td>
-<td><span class="string">string</span></td>
-<td></td>
-</tr>
-<tr>
-<td><code class="prettyprint">customParameters</code> <br />A collection of custom attributes stored against the account</td>
-<td><span class="dictionary">dictionary</span></td>
-<td></td>
-</tr>
-</tbody></table>
-
 <h2 id="link-to-facebook">Link to Facebook</h2>
 <pre class="highlight shell tab-shell"><code>
 </code></pre><pre class="highlight csharp tab-csharp"><code>
@@ -7038,7 +7036,7 @@ Due to the sensitive nature of a ClientUserId it is not possible to call this en
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"/api/accounts/link/external-providers/facebook"</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"/api/accounts/{accountId}/link/external-providers/facebook"</span><span class="p">,</span>
   <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
   <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"x-tokenid"</span><span class="p">:</span> <span class="s2">"BE52ADA2064C4F9A9D90F28D066D1RFT"</span><span class="p">,</span>
@@ -7068,7 +7066,7 @@ Due to the sensitive nature of a ClientUserId it is not possible to call this en
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/link/external-providers/facebook</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/link/external-providers/facebook</span>
 </div>
 
 <h3 id="post-parameters">POST Parameters</h3>
@@ -7083,24 +7081,487 @@ Due to the sensitive nature of a ClientUserId it is not possible to call this en
 <tr>
 <td><code class="prettyprint">facebookRedirectURI</code> <br />The location which should be called for validation of the code and token provided</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Required</span></td>
+<td><span class="required">Yes/No</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">authorisationCode</code> <br />Code provided by Facebook</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Required</span></td>
+<td><span class="required">Yes/No</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">accessToken</code> <br />Code provided by Facebook</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Required</span></td>
+<td><span class="required">Yes/No</span></td>
 </tr>
 <tr>
 <td><code class="prettyprint">applicationIdentifier</code> <br />The identifier for the eSuite application that the account is using</td>
 <td><span class="string">string</span></td>
-<td><span class="required">Required</span></td>
+<td><span class="required">Yes/No</span></td>
 </tr>
 </tbody></table>
+
+<h2 id="authenticate-via-yahoo-japan">Authenticate via Yahoo Japan</h2>
+<pre class="highlight shell tab-shell"><code>curl --request POST <span class="se">\</span>
+  --url https://uat.mppglobal.com/api/accounts/authenticate/external-providers/yahoo-jp <span class="se">\</span>
+  --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
+  --header <span class="s1">'x-clientPassword: Str0ngP@ssword'</span> <span class="se">\</span>
+  --header <span class="s1">'x-version: 9.0.0'</span> <span class="se">\</span>
+  --header <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
+  --header <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
+  --data <span class="s1">'{"yahooJapanRedirectURL":"https://uat.mppglobal.com","authorisationCode":"123FRDV56G","accessToken":"EAARUdAzQ9UABAOPiYCyZB","applicationIdentifier":"fc7cc423-dd26-4d38-bd18-52e5dae8a45b"}'</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/authenticate/external-providers/yahoo-japan"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="n">Method</span><span class="p">.</span><span class="n">POST</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-version"</span><span class="p">,</span> <span class="s">"9.0.0"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientId"</span><span class="p">,</span> <span class="s">"1001"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientPassword"</span><span class="p">,</span> <span class="s">"Str0ngP@ssword"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"content-type"</span><span class="p">,</span> <span class="s">"application/json"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddParameter</span><span class="p">(</span><span class="s">"application/json"</span><span class="p">,</span> <span class="s">"{\"yahooJapanRedirectURL\":\"https://uat.mppglobal.com\",\"authorisationCode\":\"123FRDV56G\",\"accessToken\":\"EAARUdAzQ9UABAOPiYCyZB\",\"applicationIdentifier\":\"fc7cc423-dd26-4d38-bd18-52e5dae8a45b\"}"</span><span class="p">,</span> <span class="n">ParameterType</span><span class="p">.</span><span class="n">RequestBody</span><span class="p">);</span>
+<span class="n">IRestResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Unirest</span><span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/authenticate/external-providers/yahoo-jp"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientId"</span><span class="o">,</span> <span class="s">"1001"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientPassword"</span><span class="o">,</span> <span class="s">"Str0ngP@ssword"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-sessionid"</span><span class="o">,</span> <span class="s">"BE52ADA2064C4F9A9D90F28D066D1RFT"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-version"</span><span class="o">,</span> <span class="s">"9.0.0"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"content-type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"{\"yahooJapanRedirectURL\":\"https://uat.mppglobal.com\",\"authorisationCode\":\"123FRDV56G\",\"accessToken\":\"EAARUdAzQ9UABAOPiYCyZB\",\"applicationIdentifier\":\"fc7cc423-dd26-4d38-bd18-52e5dae8a45b\"}"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://uat.mppglobal.com/api/accounts/authenticate/external-providers/yahoo-jp"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">verify_mode</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">SSL</span><span class="o">::</span><span class="no">VERIFY_NONE</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Post</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"content-type"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientid"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1001'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientPassword"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Str0ngP@ssword'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-version"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'9.0.0'</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"{</span><span class="se">\"</span><span class="s2">yahooJapanRedirectURL</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">https://uat.mppglobal.com</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">authorisationCode</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">123FRDV56G</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">accessToken</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">EAARUdAzQ9UABAOPiYCyZB</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">applicationIdentifier</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">fc7cc423-dd26-4d38-bd18-52e5dae8a45b</span><span class="se">\"</span><span class="s2">}"</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">(</span><span class="s">"uat.mppglobal.com"</span><span class="p">)</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="s">"{</span><span class="se">\"</span><span class="s">yahooJapanRedirectURL</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">https://uat.mppglobal.com</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">authorisationCode</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">123FRDV56G</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">accessToken</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">EAARUdAzQ9UABAOPiYCyZB</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">applicationIdentifier</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">fc7cc423-dd26-4d38-bd18-52e5dae8a45b</span><span class="se">\"</span><span class="s">}"</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> 
+    <span class="s">'x-clientid'</span> <span class="p">:</span> <span class="s">'1001'</span><span class="p">,</span>
+    <span class="s">'x-clientPassword'</span><span class="p">:</span> <span class="s">"Str0ngP@ssword"</span><span class="p">,</span>
+    <span class="s">'x-version'</span><span class="p">:</span> <span class="s">"9.0.0"</span><span class="p">,</span>
+    <span class="s">'content-type'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
+
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="s">"api/accounts/authenticate/external-providers/yahoo-jp"</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"/api/accounts/authenticate/external-providers/yahoo-jp"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"x-tokenid"</span><span class="p">:</span> <span class="s2">"BE52ADA2064C4F9A9D90F28D066D1RFT"</span><span class="p">,</span>
+    <span class="s2">"x-sessionid"</span><span class="p">:</span> <span class="s2">"a0c595bd26004ff4bb7d4cb1b1c81a6d"</span><span class="p">,</span>
+    <span class="s2">"x-version"</span><span class="p">:</span> <span class="s2">"9.0.0"</span><span class="p">,</span>
+    <span class="s2">"origin"</span><span class="p">:</span> <span class="s2">"https://www.mppglobal.com"</span><span class="p">,</span>
+    <span class="s2">"content-type"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+  <span class="p">},</span>
+  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{\"yahooJapanRedirectURL\":\"https://uat.mppglobal.com\",\"authorisationCode\":\"123FRDV56G\",\"accessToken\":\"EAARUdAzQ9UABAOPiYCyZB\",\"applicationIdentifier\":\"fc7cc423-dd26-4d38-bd18-52e5dae8a45b\"}"</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NoAccountMatch"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sessionToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6640ffaf3z954fdf8ba4342b51265e05"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"providerProfileDetails"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">123456</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resourceReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ResourceReference"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joe"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"emailAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"developers@eSuite.com"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>An account is able to authenticate using their Yahoo Japan account and then retrieve information that will allow eSuite to create an account off those details stored with Yahoo Japan.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/external-providers/yahoo-jp</span>
+</div>
+
+<h3 id="post-parameters">POST Parameters</h3>
+
+<table><thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody>
+</tbody></table>
+
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+<code class="prettyprint">yahooJapanRedirectURL</code> <br />The location which should be called for validation of the code and token provided| <span class="string">string</span> | <span class="required">Yes/No</span> | 
+<code class="prettyprint">authorisationCode</code> <br />Code provided by Yahoo Japan| <span class="string">string</span> | <span class="required">Yes/No</span> | 
+<code class="prettyprint">accessToken</code> <br />Code provided by Yahoo Japan <span class="string">string</span> | <span class="required">Yes/No</span> | </p>
+
+<h1 id="applicationidentifier-the-identifier-for-the-esuite-application-that-the-account-is-using-string-yes-no"><code class="prettyprint">applicationIdentifier</code> <br />The identifier for the eSuite application that the account is using| <span class="string">string</span> | <span class="required">Yes/No</span> | </h1>
+
+<p><code class="prettyprint">accountId</code> <br />AccountId referring to the account requested| <span class="integer">integer</span> |  | 
+<code class="prettyprint">resourceReferece</code> <br />Computational value of the accountId and the resource type| <span class="string">string</span> |  | 
+<code class="prettyprint">status</code> <br />The current status of the account.| <span class="string">string</span> |  | 
+<code class="prettyprint">email</code> <br />The identifier used when eSuite is primary IDAM.| <span class="string">string</span> |  | 
+<code class="prettyprint">clientUserId</code> <br />The identifier used when eSuite is secondary IDAM. Once set this cannot be changed.| <span class="string">string</span> |  | 
+<code class="prettyprint">password</code> <br />The value provided by the account to pair with the email. | <span class="string">string</span> |  | 
+<code class="prettyprint">salutation</code> <br />Available values: Mr, Mrs, Miss and Ms.| <span class="string">string</span> |  | 
+<code class="prettyprint">firstName</code> <br />The first name associated to the account.| <span class="string">string</span> |  | 
+<code class="prettyprint">lastName</code> <br />The last name associated to the account.| <span class="string">string</span> |  | 
+<code class="prettyprint">phoneNumber</code> <br />The home phone number of the account.| <span class="string">string</span> |  | 
+<code class="prettyprint">mobileNumber</code> <br />The mobile number of the account (minus country code).| <span class="string">string</span> |  | 
+<code class="prettyprint">dateOfBirth</code> <br />The birthday of the account.| <span class="string">dateTime</span> |  | 
+<code class="prettyprint">gender</code> <br />Available values: Male, Female and Unspecified.| <span class="string">string</span> | | 
+<code class="prettyprint">addresses</code> <br />A collection of addresses bound to the account.| <span class="array">array</span> |  | 
+<code class="prettyprint">address \ addressType</code> <br />Available values: Home and Billing.| <span class="string">string</span> | | 
+<code class="prettyprint">address \ houseName</code> <br />The name associated to the address.| <span class="string">string</span> || 
+<code class="prettyprint">address \ houseNumber</code> <br />The building number associated to the address.| <span class="string">string</span> |  | 
+<code class="prettyprint">address \ street</code> <br />The street associated to the address.| <span class="string">string</span> |  | 
+<code class="prettyprint">address \ townCity</code> <br />The town or city associated to the address| <span class="string">string</span> | | 
+<code class="prettyprint">address \ district</code> <br />The district associated to the address| <span class="string">string</span> |  | 
+<code class="prettyprint">address \ state</code> <br />The state associated to the address| <span class="string">string</span> |  | 
+<code class="prettyprint">address \ county</code> <br />The county associated to the address| <span class="string">string</span> |  | 
+<code class="prettyprint">address \ postCode</code> <br />The post code associated to the address| <span class="string">string</span> | | 
+<code class="prettyprint">address \ country</code> <br />The country the account resides| <span class="string">string</span> |  | 
+<code class="prettyprint">customParameters</code> <br />A collection of custom attributes stored against the account| <span class="dictionary">dictionary</span> |  | </p>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>origin/master</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+
+<h2 id="link-to-yahoo-japan">Link to Yahoo Japan</h2>
+<pre class="highlight shell tab-shell"><code>
+</code></pre><pre class="highlight csharp tab-csharp"><code>
+</code></pre><pre class="highlight java tab-java"><code>
+</code></pre><pre class="highlight ruby tab-ruby"><code>
+</code></pre><pre class="highlight python tab-python"><code>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="o">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> <span class="nx">HEAD</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"/api/accounts/{accountId}/link/external-providers/yahoo-jp"</span><span class="p">,</span>
+<span class="o">=======</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"/api/accounts/link/external-providers/facebook"</span><span class="p">,</span>
+<span class="o">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="nx">origin</span><span class="o">/</span><span class="nx">master</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"x-tokenid"</span><span class="p">:</span> <span class="s2">"BE52ADA2064C4F9A9D90F28D066D1RFT"</span><span class="p">,</span>
+    <span class="s2">"x-sessionid"</span><span class="p">:</span> <span class="s2">"a0c595bd26004ff4bb7d4cb1b1c81a6d"</span><span class="p">,</span>
+    <span class="s2">"x-version"</span><span class="p">:</span> <span class="s2">"9.0.0"</span><span class="p">,</span>
+    <span class="s2">"origin"</span><span class="p">:</span> <span class="s2">"https://www.mppglobal.com"</span><span class="p">,</span>
+    <span class="s2">"content-type"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+  <span class="p">},</span>
+  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{\"yahooJapanRedirectURL\":\"https://uat.mppglobal.com\",\"authorisationCode\":\"123FRDV56G\",\"accessToken\":\"EAARUdAzQ9UABAOPiYCyZB\",\"applicationIdentifier\":\"fc7cc423-dd26-4d38-bd18-52e5dae8a45b\"}"</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"NewLink"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows you to link an existing eSuite account to their Yahoo Japan profile.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<<<<<<< HEAD
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/link/external-providers/yahoo-jp</span>
+=======
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/link/external-providers/facebook</span>
+>>>>>>> origin/master
+</div>
+
+<h3 id="post-parameters">POST Parameters</h3>
+
+<table><thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody>
+</tbody></table>
+
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+<code class="prettyprint">yahooJapanRedirectURL</code> <br />The location which should be called for validation of the code and token provided| <span class="string">string</span> | <span class="required">Yes/No</span> | 
+<code class="prettyprint">authorisationCode</code> <br />Code provided by Yahoo Japan| <span class="string">string</span> | <span class="required">Yes/No</span> | 
+<code class="prettyprint">accessToken</code> <br />Code provided by Yahoo Japan| <span class="string">string</span> | <span class="required">Yes/No</span> | 
+<code class="prettyprint">applicationIdentifier</code> <br />The identifier for the eSuite application that the account is using| <span class="string">string</span> | <span class="required">Yes/No</span> | </p>
+
+<h2 id="authenticate-via-google">Authenticate via Google</h2>
+<pre class="highlight shell tab-shell"><code>curl --request POST <span class="se">\</span>
+  --url https://uat.mppglobal.com/api/accounts/authenticate/external-providers/google <span class="se">\</span>
+  --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
+  --header <span class="s1">'x-clientPassword: Str0ngP@ssword'</span> <span class="se">\</span>
+  --header <span class="s1">'x-version: 9.0.0'</span> <span class="se">\</span>
+  --header <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
+  --header <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
+  --data <span class="s1">'{"googleRedirectURI":"https://uat.mppglobal.com","authorisationCode":"123FRDV56G","accessToken":"EAARUdAzQ9UABAOPiYCyZB","applicationIdentifier":"fc7cc423-dd26-4d38-bd18-52e5dae8a45b"}'</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/authenticate/external-providers/google"</span><span class="p">);</span>
+<span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="n">Method</span><span class="p">.</span><span class="n">POST</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-version"</span><span class="p">,</span> <span class="s">"9.0.0"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientId"</span><span class="p">,</span> <span class="s">"1001"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientPassword"</span><span class="p">,</span> <span class="s">"Str0ngP@ssword"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"content-type"</span><span class="p">,</span> <span class="s">"application/json"</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddParameter</span><span class="p">(</span><span class="s">"application/json"</span><span class="p">,</span> <span class="s">"{\"googleRedirectURI\":\"https://uat.mppglobal.com\",\"authorisationCode\":\"123FRDV56G\",\"accessToken\":\"EAARUdAzQ9UABAOPiYCyZB\",\"applicationIdentifier\":\"fc7cc423-dd26-4d38-bd18-52e5dae8a45b\"}"</span><span class="p">,</span> <span class="n">ParameterType</span><span class="p">.</span><span class="n">RequestBody</span><span class="p">);</span>
+<span class="n">IRestResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Unirest</span><span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/authenticate/external-providers/google"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientId"</span><span class="o">,</span> <span class="s">"1001"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientPassword"</span><span class="o">,</span> <span class="s">"Str0ngP@ssword"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-sessionid"</span><span class="o">,</span> <span class="s">"BE52ADA2064C4F9A9D90F28D066D1RFT"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-version"</span><span class="o">,</span> <span class="s">"9.0.0"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"content-type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"{\"googleRedirectURI\":\"https://uat.mppglobal.com\",\"authorisationCode\":\"123FRDV56G\",\"accessToken\":\"EAARUdAzQ9UABAOPiYCyZB\",\"applicationIdentifier\":\"fc7cc423-dd26-4d38-bd18-52e5dae8a45b\"}"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
+</code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'net/http'</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="no">URI</span><span class="p">(</span><span class="s2">"https://uat.mppglobal.com/api/accounts/authenticate/external-providers/google"</span><span class="p">)</span>
+
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">url</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">use_ssl</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="n">http</span><span class="p">.</span><span class="nf">verify_mode</span> <span class="o">=</span> <span class="no">OpenSSL</span><span class="o">::</span><span class="no">SSL</span><span class="o">::</span><span class="no">VERIFY_NONE</span>
+
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Post</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"content-type"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientid"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'1001'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-clientPassword"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Str0ngP@ssword'</span>
+<span class="n">request</span><span class="p">[</span><span class="s2">"x-version"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'9.0.0'</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"{</span><span class="se">\"</span><span class="s2">googleRedirectURI</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">https://uat.mppglobal.com</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">authorisationCode</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">123FRDV56G</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">accessToken</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">EAARUdAzQ9UABAOPiYCyZB</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">applicationIdentifier</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">fc7cc423-dd26-4d38-bd18-52e5dae8a45b</span><span class="se">\"</span><span class="s2">}"</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">http.client</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">(</span><span class="s">"uat.mppglobal.com"</span><span class="p">)</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="s">"{</span><span class="se">\"</span><span class="s">googleRedirectURI</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">https://uat.mppglobal.com</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">authorisationCode</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">123FRDV56G</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">accessToken</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">EAARUdAzQ9UABAOPiYCyZB</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">applicationIdentifier</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">fc7cc423-dd26-4d38-bd18-52e5dae8a45b</span><span class="se">\"</span><span class="s">}"</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span> 
+    <span class="s">'x-clientid'</span> <span class="p">:</span> <span class="s">'1001'</span><span class="p">,</span>
+    <span class="s">'x-clientPassword'</span><span class="p">:</span> <span class="s">"Str0ngP@ssword"</span><span class="p">,</span>
+    <span class="s">'x-version'</span><span class="p">:</span> <span class="s">"9.0.0"</span><span class="p">,</span>
+    <span class="s">'content-type'</span><span class="p">:</span> <span class="s">"application/json"</span> <span class="p">}</span>
+
+<span class="n">conn</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="s">"api/accounts/authenticate/external-providers/google"</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="p">)</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">"utf-8"</span><span class="p">))</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"/api/accounts/authenticate/external-providers/google"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"x-tokenid"</span><span class="p">:</span> <span class="s2">"BE52ADA2064C4F9A9D90F28D066D1RFT"</span><span class="p">,</span>
+    <span class="s2">"x-sessionid"</span><span class="p">:</span> <span class="s2">"a0c595bd26004ff4bb7d4cb1b1c81a6d"</span><span class="p">,</span>
+    <span class="s2">"x-version"</span><span class="p">:</span> <span class="s2">"9.0.0"</span><span class="p">,</span>
+    <span class="s2">"origin"</span><span class="p">:</span> <span class="s2">"https://www.mppglobal.com"</span><span class="p">,</span>
+    <span class="s2">"content-type"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+  <span class="p">},</span>
+  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{\"googleRedirectURI\":\"https://uat.mppglobal.com\",\"authorisationCode\":\"123FRDV56G\",\"accessToken\":\"EAARUdAzQ9UABAOPiYCyZB\",\"applicationIdentifier\":\"fc7cc423-dd26-4d38-bd18-52e5dae8a45b\"}"</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NoAccountMatch"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sessionToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6640ffaf3z954fdf8ba4342b51265e05"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"providerProfileDetails"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">123456</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"resourceReference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ResourceReference"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joe"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"surname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smith"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"emailAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"developers@eSuite.com"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>An account is able to authenticate using their Google account and then retrieve information that will allow eSuite to create an account off those details stored with Google.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/external-providers/google</span>
+</div>
+
+<h3 id="post-parameters">POST Parameters</h3>
+
+<table><thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">googleRedirectURI</code> <br />The location which should be called for validation of the code and token provided</td>
+<td><span class="string">string</span></td>
+<td><span class="required">Yes/No</span></td>
+</tr>
+<tr>
+<td><code class="prettyprint">authorisationCode</code> <br />Code provided by Google</td>
+<td><span class="string">string</span></td>
+<td><span class="required">Yes/No</span></td>
+</tr>
+<tr>
+<td><code class="prettyprint">accessToken</code> <br />Code provided by Google</td>
+<td><span class="string">string</span></td>
+<td><span class="required">Yes/No</span></td>
+</tr>
+<tr>
+<td><code class="prettyprint">applicationIdentifier</code> <br />The identifier for the eSuite application that the account is using</td>
+<td><span class="string">string</span></td>
+<td><span class="required">Yes/No</span></td>
+</tr>
+</tbody></table>
+
+<h2 id="link-to-google">Link to Google</h2>
+<pre class="highlight shell tab-shell"><code>
+</code></pre><pre class="highlight csharp tab-csharp"><code>
+</code></pre><pre class="highlight java tab-java"><code>
+</code></pre><pre class="highlight ruby tab-ruby"><code>
+</code></pre><pre class="highlight python tab-python"><code>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"async"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"crossDomain"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"/api/accounts/{accountId}/link/external-providers/google"</span><span class="p">,</span>
+  <span class="s2">"method"</span><span class="p">:</span> <span class="s2">"POST"</span><span class="p">,</span>
+  <span class="s2">"headers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"x-tokenid"</span><span class="p">:</span> <span class="s2">"BE52ADA2064C4F9A9D90F28D066D1RFT"</span><span class="p">,</span>
+    <span class="s2">"x-sessionid"</span><span class="p">:</span> <span class="s2">"a0c595bd26004ff4bb7d4cb1b1c81a6d"</span><span class="p">,</span>
+    <span class="s2">"x-version"</span><span class="p">:</span> <span class="s2">"9.0.0"</span><span class="p">,</span>
+    <span class="s2">"origin"</span><span class="p">:</span> <span class="s2">"https://www.mppglobal.com"</span><span class="p">,</span>
+    <span class="s2">"content-type"</span><span class="p">:</span> <span class="s2">"application/json"</span>
+  <span class="p">},</span>
+  <span class="s2">"processData"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="s2">"data"</span><span class="p">:</span> <span class="s2">"{\"googleRedirectURI\":\"https://uat.mppglobal.com\",\"authorisationCode\":\"123FRDV56G\",\"accessToken\":\"EAARUdAzQ9UABAOPiYCyZB\",\"applicationIdentifier\":\"fc7cc423-dd26-4d38-bd18-52e5dae8a45b\"}"</span>
+<span class="p">}</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">(</span><span class="nx">settings</span><span class="p">).</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"NewLink"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint allows you to link an existing eSuite account to their Google profile.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/link/external-providers/google</span>
+</div>
+
+<h3 id="post-parameters">POST Parameters</h3>
+
+<table><thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code class="prettyprint">googleRedirectURI</code> <br />The location which should be called for validation of the code and token provided</td>
+<td><span class="string">string</span></td>
+<td><span class="required">Yes/No</span></td>
+</tr>
+<tr>
+<td><code class="prettyprint">authorisationCode</code> <br />Code provided by Google</td>
+<td><span class="string">string</span></td>
+<td><span class="required">Yes/No</span></td>
+</tr>
+<tr>
+<td><code class="prettyprint">accessToken</code> <br />Code provided by Google</td>
+<td><span class="string">string</span></td>
+<td><span class="required">Yes/No</span></td>
+</tr>
+<tr>
+<td><code class="prettyprint">applicationIdentifier</code> <br />The identifier for the eSuite application that the account is using</td>
+<td><span class="string">string</span></td>
+<td><span class="required">Yes/No</span></td>
+</tr>
+</tbody></table>
+
+<p>=======
+<code class="prettyprint">facebookRedirectURI</code> <br />The location which should be called for validation of the code and token provided| <span class="string">string</span> | <span class="required">Required</span> | 
+<code class="prettyprint">authorisationCode</code> <br />Code provided by Facebook| <span class="string">string</span> | <span class="required">Required</span> | 
+<code class="prettyprint">accessToken</code> <br />Code provided by Facebook| <span class="string">string</span> | <span class="required">Required</span> | 
+<code class="prettyprint">applicationIdentifier</code> <br />The identifier for the eSuite application that the account is using| <span class="string">string</span> | <span class="required">Required</span> | </p>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>origin/master</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 
           <h1 id="address-book">Address Book</h1>
 

@@ -256,7 +256,8 @@ curl --request POST \
   --header 'x-version: 9.0.0' \
   --header 'content-type: application/json' \
   --header 'content-type: application/json' \
-  --data '{"facebookRedirectURI":"https://uat.mppglobal.com","authorisationCode":"123FRDV56G","accessToken":"EAARUdAzQ9UABAOPiYCyZB","applicationIdentifier":"fc7cc423-dd26-4d38-bd18-52e5dae8a45b"}'
+  --data '{"facebookRedirectURI":"https://uat.mppglobal.com","authorisationCode":"123FRDV56G",
+  "accessToken":"EAARUdAzQ9UABAOPiYCyZB","applicationIdentifier":"fc7cc423-dd26-4d38-bd18-52e5dae8a45b"}'
 ```
 
 ```csharp
@@ -266,7 +267,8 @@ request.AddHeader("x-version", "9.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddHeader("content-type", "application/json");
-request.AddParameter("application/json", "{\"facebookRedirectURI\":\"https://uat.mppglobal.com\",\"authorisationCode\":\"123FRDV56G\",\"accessToken\":\"EAARUdAzQ9UABAOPiYCyZB\",\"applicationIdentifier\":\"fc7cc423-dd26-4d38-bd18-52e5dae8a45b\"}", ParameterType.RequestBody);
+request.AddParameter("application/json", "{\"facebookRedirectURI\":\"https://uat.mppglobal.com\"
+,\"authorisationCode\":\"123FRDV56G\",\"accessToken\":\"EAARUdAzQ9UABAOPiYCyZB\",\"applicationIdentifier\":\"fc7cc423-dd26-4d38-bd18-52e5dae8a45b\"}", ParameterType.RequestBody);
 IRestResponse response = client.Execute(request);
 ```
 
@@ -296,7 +298,8 @@ request["content-type"] = 'application/json'
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
 request["x-version"] = '9.0.0'
-request.body = "{\"facebookRedirectURI\":\"https://uat.mppglobal.com\",\"authorisationCode\":\"123FRDV56G\",\"accessToken\":\"EAARUdAzQ9UABAOPiYCyZB\",\"applicationIdentifier\":\"fc7cc423-dd26-4d38-bd18-52e5dae8a45b\"}"
+request.body = "{\"facebookRedirectURI\":\"https://uat.mppglobal.com\",\"authorisationCode\":\"123FRDV56G\"
+,\"accessToken\":\"EAARUdAzQ9UABAOPiYCyZB\",\"applicationIdentifier\":\"fc7cc423-dd26-4d38-bd18-52e5dae8a45b\"}"
 
 response = http.request(request)
 puts response.read_body
@@ -417,7 +420,8 @@ var settings = {
     "content-type": "application/json"
   },
   "processData": false,
-  "data": "{\"facebookRedirectURI\":\"https://uat.mppglobal.com\",\"authorisationCode\":\"123FRDV56G\",\"accessToken\":\"EAARUdAzQ9UABAOPiYCyZB\",\"applicationIdentifier\":\"fc7cc423-dd26-4d38-bd18-52e5dae8a45b\"}"
+  "data": "{\"facebookRedirectURI\":\"https://uat.mppglobal.com\",\"authorisationCode\":\"123FRDV56G\"
+  ,\"accessToken\":\"EAARUdAzQ9UABAOPiYCyZB\",\"applicationIdentifier\":\"fc7cc423-dd26-4d38-bd18-52e5dae8a45b\"}"
 }
 
 $.ajax(settings).done(function (response) {
@@ -473,7 +477,8 @@ request.AddHeader("x-version", "9.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddHeader("content-type", "application/json");
-request.AddParameter("application/json", "{\"yahooJapanRedirectURL\":\"https://uat.mppglobal.com\",\"authorisationCode\":\"123FRDV56G\",\"accessToken\":\"EAARUdAzQ9UABAOPiYCyZB\",\"applicationIdentifier\":\"fc7cc423-dd26-4d38-bd18-52e5dae8a45b\"}", ParameterType.RequestBody);
+request.AddParameter("application/json", "{\"yahooJapanRedirectURL\":\"https://uat.mppglobal.com\"
+,\"authorisationCode\":\"123FRDV56G\",\"accessToken\":\"EAARUdAzQ9UABAOPiYCyZB\",\"applicationIdentifier\":\"fc7cc423-dd26-4d38-bd18-52e5dae8a45b\"}", ParameterType.RequestBody);
 IRestResponse response = client.Execute(request);
 ```
 
@@ -503,7 +508,8 @@ request["content-type"] = 'application/json'
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
 request["x-version"] = '9.0.0'
-request.body = "{\"yahooJapanRedirectURL\":\"https://uat.mppglobal.com\",\"authorisationCode\":\"123FRDV56G\",\"accessToken\":\"EAARUdAzQ9UABAOPiYCyZB\",\"applicationIdentifier\":\"fc7cc423-dd26-4d38-bd18-52e5dae8a45b\"}"
+request.body = "{\"yahooJapanRedirectURL\":\"https://uat.mppglobal.com\",\"authorisationCode\":\"123FRDV56G\"
+,\"accessToken\":\"EAARUdAzQ9UABAOPiYCyZB\",\"applicationIdentifier\":\"fc7cc423-dd26-4d38-bd18-52e5dae8a45b\"}"
 
 response = http.request(request)
 puts response.read_body
@@ -581,38 +587,10 @@ An account is able to authenticate using their Yahoo Japan account and then retr
 
  |  |  |  
 --------- | ------- | ------- | 
-<<<<<<< HEAD
 `yahooJapanRedirectURL` <br />The location which should be called for validation of the code and token provided| <span class="string">string</span> | <span class="required">Yes/No</span> | 
 `authorisationCode` <br />Code provided by Yahoo Japan| <span class="string">string</span> | <span class="required">Yes/No</span> | 
-`accessToken` <br />Code provided by Yahoo Japan <span class="string">string</span> | <span class="required">Yes/No</span> | 
+`accessToken` <br />Token provided by Yahoo Japan | <span class="string">string</span> | <span class="required">Yes/No</span> | 
 `applicationIdentifier` <br />The identifier for the eSuite application that the account is using| <span class="string">string</span> | <span class="required">Yes/No</span> | 
-=======
-`accountId` <br />AccountId referring to the account requested| <span class="integer">integer</span> |  | 
-`resourceReferece` <br />Computational value of the accountId and the resource type| <span class="string">string</span> |  | 
-`status` <br />The current status of the account.| <span class="string">string</span> |  | 
-`email` <br />The identifier used when eSuite is primary IDAM.| <span class="string">string</span> |  | 
-`clientUserId` <br />The identifier used when eSuite is secondary IDAM. Once set this cannot be changed.| <span class="string">string</span> |  | 
-`password` <br />The value provided by the account to pair with the email. | <span class="string">string</span> |  | 
-`salutation` <br />Available values: Mr, Mrs, Miss and Ms.| <span class="string">string</span> |  | 
-`firstName` <br />The first name associated to the account.| <span class="string">string</span> |  | 
-`lastName` <br />The last name associated to the account.| <span class="string">string</span> |  | 
-`phoneNumber` <br />The home phone number of the account.| <span class="string">string</span> |  | 
-`mobileNumber` <br />The mobile number of the account (minus country code).| <span class="string">string</span> |  | 
-`dateOfBirth` <br />The birthday of the account.| <span class="string">dateTime</span> |  | 
-`gender` <br />Available values: Male, Female and Unspecified.| <span class="string">string</span> | | 
-`addresses` <br />A collection of addresses bound to the account.| <span class="array">array</span> |  | 
-`address \ addressType` <br />Available values: Home and Billing.| <span class="string">string</span> | | 
-`address \ houseName` <br />The name associated to the address.| <span class="string">string</span> || 
-`address \ houseNumber` <br />The building number associated to the address.| <span class="string">string</span> |  | 
-`address \ street` <br />The street associated to the address.| <span class="string">string</span> |  | 
-`address \ townCity` <br />The town or city associated to the address| <span class="string">string</span> | | 
-`address \ district` <br />The district associated to the address| <span class="string">string</span> |  | 
-`address \ state` <br />The state associated to the address| <span class="string">string</span> |  | 
-`address \ county` <br />The county associated to the address| <span class="string">string</span> |  | 
-`address \ postCode` <br />The post code associated to the address| <span class="string">string</span> | | 
-`address \ country` <br />The country the account resides| <span class="string">string</span> |  | 
-`customParameters` <br />A collection of custom attributes stored against the account| <span class="dictionary">dictionary</span> |  | 
->>>>>>> origin/master
 
 
 
@@ -642,11 +620,7 @@ An account is able to authenticate using their Yahoo Japan account and then retr
 var settings = {
   "async": true,
   "crossDomain": true,
-<<<<<<< HEAD
-  "url": "/api/accounts/{accountId}/link/external-providers/yahoo-jp",
-=======
   "url": "/api/accounts/link/external-providers/facebook",
->>>>>>> origin/master
   "method": "POST",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
@@ -678,18 +652,13 @@ This endpoint allows you to link an existing eSuite account to their Yahoo Japan
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<<<<<<< HEAD
 <span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/link/external-providers/yahoo-jp</span>
-=======
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/link/external-providers/facebook</span>
->>>>>>> origin/master
 </div>
 
 ### POST Parameters
 
  |  |  |  
 --------- | ------- | ------- | 
-<<<<<<< HEAD
 `yahooJapanRedirectURL` <br />The location which should be called for validation of the code and token provided| <span class="string">string</span> | <span class="required">Yes/No</span> | 
 `authorisationCode` <br />Code provided by Yahoo Japan| <span class="string">string</span> | <span class="required">Yes/No</span> | 
 `accessToken` <br />Code provided by Yahoo Japan| <span class="string">string</span> | <span class="required">Yes/No</span> | 
@@ -707,7 +676,8 @@ curl --request POST \
   --header 'x-version: 9.0.0' \
   --header 'content-type: application/json' \
   --header 'content-type: application/json' \
-  --data '{"googleRedirectURI":"https://uat.mppglobal.com","authorisationCode":"123FRDV56G","accessToken":"EAARUdAzQ9UABAOPiYCyZB","applicationIdentifier":"fc7cc423-dd26-4d38-bd18-52e5dae8a45b"}'
+  --data '{"googleRedirectURI":"https://uat.mppglobal.com","authorisationCode":"123FRDV56G",
+  "accessToken":"EAARUdAzQ9UABAOPiYCyZB","applicationIdentifier":"fc7cc423-dd26-4d38-bd18-52e5dae8a45b"}'
 ```
 
 ```csharp
@@ -717,7 +687,8 @@ request.AddHeader("x-version", "9.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddHeader("content-type", "application/json");
-request.AddParameter("application/json", "{\"googleRedirectURI\":\"https://uat.mppglobal.com\",\"authorisationCode\":\"123FRDV56G\",\"accessToken\":\"EAARUdAzQ9UABAOPiYCyZB\",\"applicationIdentifier\":\"fc7cc423-dd26-4d38-bd18-52e5dae8a45b\"}", ParameterType.RequestBody);
+request.AddParameter("application/json", "{\"googleRedirectURI\":\"https://uat.mppglobal.com\"
+,\"authorisationCode\":\"123FRDV56G\",\"accessToken\":\"EAARUdAzQ9UABAOPiYCyZB\",\"applicationIdentifier\":\"fc7cc423-dd26-4d38-bd18-52e5dae8a45b\"}", ParameterType.RequestBody);
 IRestResponse response = client.Execute(request);
 ```
 
@@ -788,7 +759,8 @@ var settings = {
     "content-type": "application/json"
   },
   "processData": false,
-  "data": "{\"googleRedirectURI\":\"https://uat.mppglobal.com\",\"authorisationCode\":\"123FRDV56G\",\"accessToken\":\"EAARUdAzQ9UABAOPiYCyZB\",\"applicationIdentifier\":\"fc7cc423-dd26-4d38-bd18-52e5dae8a45b\"}"
+  "data": "{\"googleRedirectURI\":\"https://uat.mppglobal.com\",\"authorisationCode\":\"123FRDV56G\"
+  ,\"accessToken\":\"EAARUdAzQ9UABAOPiYCyZB\",\"applicationIdentifier\":\"fc7cc423-dd26-4d38-bd18-52e5dae8a45b\"}"
 }
 
 $.ajax(settings).done(function (response) {
@@ -868,7 +840,8 @@ var settings = {
     "content-type": "application/json"
   },
   "processData": false,
-  "data": "{\"googleRedirectURI\":\"https://uat.mppglobal.com\",\"authorisationCode\":\"123FRDV56G\",\"accessToken\":\"EAARUdAzQ9UABAOPiYCyZB\",\"applicationIdentifier\":\"fc7cc423-dd26-4d38-bd18-52e5dae8a45b\"}"
+  "data": "{\"googleRedirectURI\":\"https://uat.mppglobal.com\",\"authorisationCode\":\"123FRDV56G\"
+  ,\"accessToken\":\"EAARUdAzQ9UABAOPiYCyZB\",\"applicationIdentifier\":\"fc7cc423-dd26-4d38-bd18-52e5dae8a45b\"}"
 }
 
 $.ajax(settings).done(function (response) {
@@ -904,9 +877,3 @@ This endpoint allows you to link an existing eSuite account to their Google prof
 
 
 
-=======
-`facebookRedirectURI` <br />The location which should be called for validation of the code and token provided| <span class="string">string</span> | <span class="required">Required</span> | 
-`authorisationCode` <br />Code provided by Facebook| <span class="string">string</span> | <span class="required">Required</span> | 
-`accessToken` <br />Code provided by Facebook| <span class="string">string</span> | <span class="required">Required</span> | 
-`applicationIdentifier` <br />The identifier for the eSuite application that the account is using| <span class="string">string</span> | <span class="required">Required</span> | 
->>>>>>> origin/master
