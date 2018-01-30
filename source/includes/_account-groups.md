@@ -649,7 +649,7 @@ Execution of this action on the API will allow the creation of a new group accou
 
 ```shell
 curl --request GET \
-  --url https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken} \
+  --url https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
   --header 'x-version: 9.0.0' \
@@ -657,7 +657,7 @@ curl --request GET \
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members");
 var request = new RestRequest(Method.GET);
 request.AddHeader("x-version", "9.0.0");
 request.AddHeader("x-clientId", "1001");
@@ -667,7 +667,7 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}")
+HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-version", "9.0.0")
@@ -679,7 +679,7 @@ HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accou
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}")
+url = URI("https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -708,7 +708,7 @@ headers = {
     'x-version': '9.0.0'
     }
 
-conn.request("GET", "/api/accounts/groups/{accountGroupToken}", payload, headers)
+conn.request("GET", "/api/accounts/groups/{accountGroupToken}/members", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -745,7 +745,7 @@ This endpoint will return all accounts that are a member of the specific account
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-get">GET</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members</span>
 </div>
 
 ### Response Parameters
