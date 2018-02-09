@@ -242,7 +242,6 @@ $.ajax(settings).done(function (response) {
       "orders": [
         {
           "orderId": 15487,
-          "orderStatus": "Complete",
           "orderDate": "2018-02-09T12:17:30.149Z",
           "description": "string",
           "priceBreakDown": {
@@ -300,7 +299,6 @@ This endpoint allows you to retrieve all orders for a given account.
 `items \ currency`  <br />The ISO code for the currency used to make the purchase| <span class="string">string</span> | 
 `items \ orders`  <br />The collection of attributes associated to each transaction| <span class="object">object</span> | 
 `orders \ orderId`  <br />The unique value associated to the order for identification| <span class="string">string</span> | 
-`orders \ orderStatus`  <br />The status the order is currently in| <span class="string">string</span> | 
 `orders \ orderDate`  <br />The date at which the order was placed| <span class="string">string</span> | 
 `orders \ description`  <br />A summary of what the order was placed for| <span class="string">string</span> | 
 `orders \ paymentMethod`  <br />The method of payment that has been used to process the order| <span class="string">string</span> | 

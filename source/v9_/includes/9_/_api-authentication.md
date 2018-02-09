@@ -2,6 +2,48 @@
 
 ## Client-to-Server integrations
 
+> To authorize, use this code:
+
+```shell
+Not Supported
+```
+
+```csharp
+Not Supported
+```
+
+```java
+Not Supported
+```
+
+```ruby
+Not Supported
+```
+
+```python
+Not Supported
+```
+
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://uat.mppglobal.com/api/...",
+  "method": "POST",
+  "headers": {
+    "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
+    "x-version": "9.0.0",
+    "origin": "https://www.mppglobal.com",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": null;
+  }
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
 
 Client-to-server integrations are often the quickest to complete and allow you to get live in a matter of hours. To help this process, MPP Global has developed the eSuite SDK which is an AngularJS application that contains UI elements covering the standard flows experienced by our existing clients. If you decide you would prefer to build the eSuite API into your existing technology stack directly, this is possible. Client-to-server API requests are restricted as to what features are available and the data that can be passed. For example, configuring a price from the client-side application is not possible as it should never be accessible to the end-user to change how much they pay for an item.
 
@@ -31,7 +73,74 @@ You must replace the <code>x-tokenId</code> value with your personal API key.
 </aside>
 
 
+
+
 ## Server-to-server Integrations
+
+> To authorize, use this code:
+
+```shell
+curl --request POST \
+  --url https://uat.mppglobal.com/api/ \
+  --header 'content-type: application/json' \
+  --header 'x-clientId: 1001' \
+  --header 'x-clientPassword: Str0ngP@ssword' \
+  --header 'x-version: 9.0.0' \
+```
+
+```csharp
+var client = new RestClient("https://uat.mppglobal.com/api/");
+var request = new RestRequest(Method.POST);
+request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-clientId", "1001");
+request.AddHeader("x-clientPassword", "Str0ngP@ssword");
+```
+
+```java
+HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/")
+  .header("x-clientId", "1001")
+  .header("x-clientPassword", "Str0ngP@ssword")
+  .header("x-version", "9.0.0")
+  .asString();
+```
+
+```ruby
+require 'uri'
+require 'net/http'
+
+url = URI("https://uat.mppglobal.com/api/accounts/...")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Post.new(url)
+request["x-clientid"] = '1001'
+request["x-clientPassword"] = 'Str0ngP@ssword'
+request["x-version"] = '9.0.0'
+
+response = http.request(request)
+```
+
+```python
+import http.client
+
+conn = http.client.HTTPSConnection("uat.mppglobal.com")
+
+payload = null
+
+headers = {
+    'x-tokenid': "1001",
+    'x-clientPassword': "Str0ngP@ssword",
+    'x-version': '9.0.0'
+    }
+
+conn.request("POST", "/api/accounts/...", payload, headers)
+
+res = conn.getresponse()
+```
+
+> Make sure to replace `BE52ADA2064C4F9A9D90F28D066D1CEE` with your API key.
 
 eSuite uses API keys to allow access to the API. You can register a new eSuite API key by logging into eSuite HQ.
 
