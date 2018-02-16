@@ -87,7 +87,7 @@ In order to make this request, a workflow configuration call __must__ have been 
 `renewalDay` <br />The date of the month the subscription should be renewed on, specifically for monthly or annual subscriptions| <span class="integer">integer</span> |  | 
 `renewalDayOffset` <br />The number of days before or after the renewal date. This can be positive or negative| <span class="string">string</span> |  |
 `startDate` <br />The date at which the subscription should be purchased and started | <span class="string">string</span> |  |
-`paymentMethod` <br />The type of payment method the account has selected. Standard methods are `CreditCard` `DirectDebit`, `Service Credits` or `SEPA`. Other methods are available| <span class="string">string</span> |  |
+`paymentMethod` <br />The type of payment method the account has selected. The available methods for this endpoint are: `CreditCard`, `DirectDebit`, `PayPal`, `ServiceCredits`, `Alipay`, `SPCarrierBilling`, `Offline`, `BankTransfer`, `SmartLink` and `Momo`.| <span class="string">string</span> |  |
 `entitlements` <br />A collection of additional entitlements to provide the account on purchase| <span class="array">array[object]</span> |  |
 `entitlements \ identifier` <br />Identifier for the entitlement being purchased| <span class="string">string</span> |  |
 `entitlements \ startDate` <br />The date on which the entitlement should be valid from| <span class="string">string</span> |  |
@@ -193,7 +193,7 @@ In order to make this request, a workflow configuration call __must__ have been 
 `voucherCode` <br />eSuite generated voucher code that has been provided during the flow | <span class="string">string</span> |  | 
 `settlementType` <br />An indication as to whether the purchase should be completed immediately or delayed | <span class="string">string</span> |  | 
 `cvv` <br />If the purchase is being made using an non-authorised card, this parameter can be passed in to enable authorisation to take place | <span class="string">string</span> |  |
-`paymentMethod` <br />The type of payment method the account has selected. Standard methods are `CreditCard` `DirectDebit`, `Service Credits` or `SEPA`. Other methods are available| <span class="string">string</span> |  |
+`paymentMethod` <br />The type of payment method the account has selected. The available methods for this endpoint are: `CreditCard`, `PayPal`, `ServiceCredits`, `Alipay`, `SPCarrierBilling`, `Offline`, `BankTransfer`, `SmartLink` and `Momo`.| <span class="string">string</span> |  |
 `entitlementParameters` <br />A collection of additional entitlements to provide the account on purchase| <span class="array">array[object]</span> |  |
 `entitlementParameters \ identifier` <br />Identifier for the entitlement being purchased| <span class="string">string</span> |  |
 `entitlementParameters \ startDate` <br />The date on which the entitlement should be valid from| <span class="string">string</span> |  |

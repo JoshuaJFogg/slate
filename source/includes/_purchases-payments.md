@@ -123,7 +123,7 @@ For the completion of standard payment options, making the following `POST` requ
 `renewalDay` <br />The date of the month the subscription should be renewed on, specifically for monthly or annual subscriptions| <span class="integer">integer</span> |  | 
 `renewalDayOffset` <br />The number of days before or after the renewal date. This can be positive or negative| <span class="string">string</span> |  |
 `startDate` <br />The date at which the subscription should be purchased and started | <span class="string">string</span> |  |
-`paymentMethod` <br />The type of payment method the account has selected. Standard methods are `CreditCard` `DirectDebit`, `Service Credits` or `SEPA`. Other methods are available| <span class="string">string</span> |  |
+`paymentMethod` <br />The type of payment method the account has selected. The available methods for this endpoint are: `CreditCard`, `DirectDebit`, `PayPal`, `ServiceCredits`, `Alipay`, `SPCarrierBilling`, `Offline`, `BankTransfer`, `SmartLink` and `Momo`.| <span class="string">string</span> |  |
 `entitlements` <br />A collection of additional entitlements to provide the account on purchase| <span class="array">array[object]</span> |  |
 `entitlements \ identifier` <br />Identifier for the entitlement being purchased| <span class="string">string</span> |  |
 `entitlements \ startDate` <br />The date on which the entitlement should be valid from| <span class="string">string</span> |  |
