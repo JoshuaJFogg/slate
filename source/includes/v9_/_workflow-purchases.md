@@ -286,7 +286,7 @@ In order to make this request, a workflow configuration call __must__ have been 
 
  |   |  | 
 --------- | ------- | ------- | 
-`paymentMethod` <br />The payment method the account has selected to pay with if it differs from the initial configuration| <span class="string">string</span> |  |
+`paymentMethod` <br />The payment method the account has selected to pay with if it differs from the initial configuration. The supported payment methods on this endpoint are: `CreditCard`, `PayPal`, `SPCarrierBilling`, `ServiceCredits`, `Alipay` and `Offline`. | <span class="string">string</span> |  |
 `cvv` <br />Security code of a card if the payment method is set to `creditDebitCard`| <span class="string">string</span> |  |
 `voucherCode` <br />A voucher code provided by the account during the workflow| <span class="string">string</span> |  |
 `orderItems` <br />A collection of additional entitlements to provide the account on purchase| <span class="array">array[object]</span> |  |
@@ -388,7 +388,7 @@ In order to make this request, a workflow configuration call __must__ have been 
 
  |   | |  
 --------- | ------- | ------- | 
-`paymentMethod` <br />The payment method the account has selected to pay with if it differs from the initial configuration| <span class="string">string</span> |  |
+`paymentMethod` <br />The payment method the account has selected to pay with if it differs from the initial configuration. The available payment methods for this action are: `CreditCard` and `Offline`. | <span class="string">string</span> |  |
 `cvv` <br />Security code of a card if the payment method is set to `creditDebitCard`| <span class="string">string</span> |  |
 `voucherCode` <br />A voucher code provided by the account during the workflow| <span class="string">string</span> |  |
 `asynchronousInitiationParameters` <br />Parameter set provided if you would like to trigger an advanced payment type| <span class="object">object</span> |  |

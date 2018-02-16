@@ -127,7 +127,7 @@ curl --request POST \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
   --header 'x-version: 9.0.0' \
-  --data '{"paymentDate":"2017-07-07T08:14:59.126Z","paymentMethod":"string","vatAmount":2,"grossAmount":10,"netAmount":8,"currency":"GBP","customPaymentParameters":{"parameterName":"parameterValue"}}'
+  --data '{"paymentDate":"2017-07-07T08:14:59.126Z","paymentMethod":"Offline","vatAmount":2,"grossAmount":10,"netAmount":8,"currency":"GBP","customPaymentParameters":{"parameterName":"parameterValue"}}'
   ```
 
 ```csharp
@@ -137,7 +137,7 @@ request.AddHeader("content-type", "application/json");
 request.AddHeader("x-version", "9.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
-request.AddParameter("application/json", "{\"paymentDate\":\"2017-07-07T08:14:59.126Z\",\"paymentMethod\":\"string\",\"vatAmount\":2,\"grossAmount\":10,\"netAmount\":8,\"currency\":\"GBP\",\"customPaymentParameters\":{\"parameterName\":\"parameterValue\"}}", ParameterType.RequestBody);
+request.AddParameter("application/json", "{\"paymentDate\":\"2017-07-07T08:14:59.126Z\",\"paymentMethod\":\"Offline\",\"vatAmount\":2,\"grossAmount\":10,\"netAmount\":8,\"currency\":\"GBP\",\"customPaymentParameters\":{\"parameterName\":\"parameterValue\"}}", ParameterType.RequestBody);
 IRestResponse response = client.Execute(request);
 ```
 
@@ -147,7 +147,7 @@ HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/acco
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-version", "9.0.0")
   .header("content-type", "application/json")
-  .body("{\"paymentDate\":\"2017-07-07T08:14:59.126Z\",\"paymentMethod\":\"string\",\"vatAmount\":2,\"grossAmount\":10,\"netAmount\":8,\"currency\":\"GBP\",\"customPaymentParameters\":{\"parameterName\":\"parameterValue\"}}")
+  .body("{\"paymentDate\":\"2017-07-07T08:14:59.126Z\",\"paymentMethod\":\"Offline\",\"vatAmount\":2,\"grossAmount\":10,\"netAmount\":8,\"currency\":\"GBP\",\"customPaymentParameters\":{\"parameterName\":\"parameterValue\"}}")
   .asString();
 ```
 
@@ -166,7 +166,7 @@ request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
 request["x-version"] = '9.0.0'
 request["content-type"] = 'application/json'
-request.body = "{\"paymentDate\":\"2017-07-07T08:14:59.126Z\",\"paymentMethod\":\"string\",\"vatAmount\":2,\"grossAmount\":10,\"netAmount\":8,\"currency\":\"GBP\",\"customPaymentParameters\":{\"parameterName\":\"parameterValue\"}}"
+request.body = "{\"paymentDate\":\"2017-07-07T08:14:59.126Z\",\"paymentMethod\":\"Offline\",\"vatAmount\":2,\"grossAmount\":10,\"netAmount\":8,\"currency\":\"GBP\",\"customPaymentParameters\":{\"parameterName\":\"parameterValue\"}}"
 
 response = http.request(request)
 puts response.read_body
@@ -177,7 +177,7 @@ import http.client
 
 conn = http.client.HTTPSConnection("uat.mppglobal.com")
 
-payload = "{\"paymentDate\":\"2017-07-07T08:14:59.126Z\",\"paymentMethod\":\"string\",\"vatAmount\":2,\"grossAmount\":10,\"netAmount\":8,\"currency\":\"GBP\",\"customPaymentParameters\":{\"parameterName\":\"parameterValue\"}}"
+payload = "{\"paymentDate\":\"2017-07-07T08:14:59.126Z\",\"paymentMethod\":\"Offline\",\"vatAmount\":2,\"grossAmount\":10,\"netAmount\":8,\"currency\":\"GBP\",\"customPaymentParameters\":{\"parameterName\":\"parameterValue\"}}"
 
 headers = {
     'x-clientid' : '1001',
@@ -214,7 +214,7 @@ If you need to add an additional payment to a specific fulfilment, this end poin
  |  |  | 
 --------- | ------- | ------- | 
 `paymentDate` <br />The date the payment should be submitted.| <span class="string">string</span> | <span class="required">Required</span> | 
-`paymentMethod` <br />The payment method the payment should be taken| <span class="string">string</span> | <span class="required">Required</span> | 
+`paymentMethod` <br />The payment method the payment should be taken in. The available payment methods are: `CreditCard`, `BACS`, `SEPA` and `Offline`| <span class="string">string</span> | <span class="required">Required</span> | 
 `grossAmount` <br />The amount to submit to the merchant.| <span class="string">string</span> | <span class="required">Required</span> | 
 `netAmount` <br />The amount to charge minus tax.| <span class="string">string</span> | <span class="required">Required</span> | 
 `vatAmount` <br />The amount apportioned to tax.| <span class="string">string</span> | <span class="required">Required</span> | 

@@ -379,7 +379,7 @@ For the most simple integration, calling this endpoint will generate a payment s
 `region \ county` <br />The county tax rate to apply.| <span class="string">string</span> |
 `region \ city` <br />The city tax rate to apply.| <span class="string">string</span> | 
 `createSessionInfo  \ requiresDelivery` <br />Indication as to whether the item will require delivery.| <span class="bool">bool</span> | 
-`createSessionInfo  \ paymentMethod` <br />The default payment method to display.| <span class="string">string</span> | 
+`createSessionInfo  \ paymentMethod` <br />The default payment method to display. This method could be one of the following: `CreditCard`, `DirectDebit`, `PayPal`, `ServiceCredits`, `Alipay`, `Offline`, `SmartLink`, `Momo` and `SPCarrierBilling`| <span class="string">string</span> | 
 `createSessionInfo  \ productId` <br />The associated ProductId of the purchase.| <span class="string">string</span> | 
 `createSessionInfo  \ returnUrl` <br />The location the consumer should be returned to following purchase.| <span class="string">string</span></span> | 
 `createSessionInfo  \ serviceId` <br />The associated ServiceId of the purchase.| <span class="string">string</span> | 
@@ -500,7 +500,7 @@ If you would like to generate a more specific session for the purpose of purchas
 `workflowConfiguration \ subscriptionId` <br />The configured subscription service identifier| <span class="string">string</span> |  | 
 `workflowConfiguration \ pricing` <br />Pricing object for the purchase| <span class="object">object</span> | <span class="required">Required</span> | 
 `pricing \ priceId` <br />The configured price identifier| <span class="integer">integer</span> | <span class="required">Required</span> |
-`pricing \ paymentMethod` <br />The payment method the customer should be presented by default| <span class="string">string</span> |  |
+`pricing \ paymentMethod` <br />The payment method the customer should be presented by default. This could be: `CreditCard`, `DirectDebit`, `ServiceCredits`, `Offline`, `SPCarrierBilling`, `Momo`, `SmartLink`, `PayPal` or `Alipay`.| <span class="string">string</span> |  |
 `pricing \ currency` <br />ISO Currency of the purchase e.g. `EUR`| <span class="string">string</span> |  |
 `pricing \ priceItems` <br />Collection of individual items being purchased on a dynamic subscription| <span class="array">array[objects]</span> |  |
 `priceItems \ externalReference` <br />Reference from a client system| <span class="string">string</span> |  |
@@ -645,7 +645,7 @@ If you would like to generate a more specific session for the purpose of purchas
 `workflowConfiguration` | <span class="string">string</span> | <span class="required">Required</span> | 
 `workflowConfiguration \ pricing` <br />Pricing object for the purchase| <span class="object">object</span> | <span class="required">Required</span> | 
 `pricing \ priceId` <br />The configured price identifier| <span class="integer">integer</span> | <span class="required">Required</span> |
-`pricing \ paymentMethod` <br />The payment method the customer should be presented by default| <span class="string">string</span> |  |
+`pricing \ paymentMethod` <br />The payment method the customer should be presented by default. This could be: `CreditCard`,`ServiceCredits`, `Offline`, `SPCarrierBilling`, `PayPal` or `Alipay`.| <span class="string">string</span> |  |
 `pricing \ taxInfo` <br />Collection of tax information| <span class="object">object</span> |  |
 `taxInfo \ zeroRated` <br />Indication as to whether the purchase is tax exempt| <span class="bool">bool</span> |  |
 `taxInfo \ country` <br />Country specific tax rate to use| <span class="string">string</span> |  |

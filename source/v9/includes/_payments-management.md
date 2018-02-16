@@ -10,7 +10,7 @@ curl --request POST \
   --header 'x-version: 9.0.0' \
   --header 'content-type: application/json' \
   --header 'content-type: application/json' \
-  --data '{"logType":"SupportNote","logStatus":"Open","logTitle":"Unable to access content.","logDetails":"Due to the use of cellular data.","systemAccountId":12548695}'
+  --data '{"pricing":{"paymentMethod":"CreditCard","currency":"GBP"},"orderItems":[{"priceBreakDown":{"grossAmount":10,"netAmount":9,"taxAmount":1},"description":"An example description"}]}'
 ```
 
 ```csharp
@@ -20,7 +20,7 @@ request.AddHeader("x-version", "9.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddHeader("content-type", "application/json");
-request.AddParameter("application/json", "{\"logType\":\"SupportNote\",\"logStatus\":\"Open\",\"logTitle\":\"Unable to access content.\",\"logDetails\":\"Due to the use of cellular data.\",\"systemAccountId\":12548695}", ParameterType.RequestBody);
+request.AddParameter("application/json", "{\"pricing\":{\"paymentMethod\":\"CreditCard\",\"currency\":\"GBP\"},\"orderItems\":[{\"priceBreakDown\":{\"grossAmount\":10,\"netAmount\":9,\"taxAmount\":1},\"description\":\"An example description\"}]}", ParameterType.RequestBody);
 IRestResponse response = client.Execute(request);
 ```
 
@@ -31,7 +31,7 @@ HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/acco
   .header("x-sessionid", "BE52ADA2064C4F9A9D90F28D066D1RFT")
   .header("x-version", "9.0.0")
   .header("content-type", "application/json")
-  .body("{\"logType\":\"SupportNote\",\"logStatus\":\"Open\",\"logTitle\":\"Unable to access content.\",\"logDetails\":\"Due to the use of cellular data.\",\"systemAccountId\":12548695}")
+  .body("{\"pricing\":{\"paymentMethod\":\"CreditCard\",\"currency\":\"GBP\"},\"orderItems\":[{\"priceBreakDown\":{\"grossAmount\":10,\"netAmount\":9,\"taxAmount\":1},\"description\":\"An example description\"}]}")
   .asString();
 ```
 
@@ -50,7 +50,7 @@ request["content-type"] = 'application/json'
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
 request["x-version"] = '9.0.0'
-request.body = "{\"logType\":\"SupportNote\",\"logStatus\":\"Open\",\"logTitle\":\"Unable to access content.\",\"logDetails\":\"Due to the use of cellular data.\",\"systemAccountId\":12548695}"
+request.body = "{\"pricing\":{\"paymentMethod\":\"CreditCard\",\"currency\":\"GBP\"},\"orderItems\":[{\"priceBreakDown\":{\"grossAmount\":10,\"netAmount\":9,\"taxAmount\":1},\"description\":\"An example description\"}]}"
 
 response = http.request(request)
 puts response.read_body
@@ -61,7 +61,7 @@ import http.client
 
 conn = http.client.HTTPSConnection("uat.mppglobal.com")
 
-payload = "{\"logType\":\"SupportNote\",\"logStatus\":\"Open\",\"logTitle\":\"Unable to access content.\",\"logDetails\":\"Due to the use of cellular data.\",\"systemAccountId\":12548695}"
+payload = "{\"pricing\":{\"paymentMethod\":\"CreditCard\",\"currency\":\"GBP\"},\"orderItems\":[{\"priceBreakDown\":{\"grossAmount\":10,\"netAmount\":9,\"taxAmount\":1},\"description\":\"An example description\"}]}"
 
 headers = { 
     'x-clientid' : '1001',
@@ -109,7 +109,7 @@ This end point is present for server-side integrations to take a payment against
 --------- | ------- | ------- | 
 `settlementType` <br />An indication whether to complete immediately or at a later date. `Pending` or `NextAvailable` are the available values| <span class="string">string</span> |  | 
 `pricing` <br />Pricing Information object| <span class="object">object</span> |  | 
-`pricing \ paymentMethod` <br />The payment method the account would like to pay using| <span class="string">string</span> |  | 
+`pricing \ paymentMethod` <br />The payment method the account would like to pay using. The available payment methods for this endpoint are: `CreditCard`, `PayPal`, `ServiceCredits`, `Alipay` and `Offline`.| <span class="string">string</span> |  | 
 `pricing \ currency` <br />The currency the payment should be taken in| <span class="string">string</span> |  | 
 `voucherCode` <br />eSuite generated voucher code that has been provided during the flow | <span class="string">string</span> |  | 
 `cvv` <br />If the purchase is being made using an non-authorised card, this parameter can be passed in to enable authorisation to take place | <span class="string">string</span> |  |
@@ -236,27 +236,39 @@ $.ajax(settings).done(function (response) {
   "resultsPerPage": 10,
   "items": [
     {
-      "cartReference": "0010OOFT3RWEJPHMK1",
-      "fulfilmentReference": "0010OOZT3RWEJPHMK1",
-      "status": "Complete",
+      "basketId": "433M154875",
+      "subscriptionId": 154874,
       "currency": "GBP",
-      "paymentReference": "0010OOPP3RWEJPHMK1",
-      "paymentDate": "2017-07-06T09:06:28.640Z",
-      "description": "A example payment description",
-      "priceBreakdown": {
-        "grossAmount": 10.00,
-        "netAmount": 8.00,
-        "taxAmount": 2.00
-      },
-      "customPaymentParameters": {
-        "externalPaymentRefernece" : "AB45frdSEGDF"
-      }
-    }
+      "orders": [
+        {
+          "orderId": 15487,
+          "orderDate": "2018-02-09T12:17:30.149Z",
+          "description": "string",
+          "priceBreakDown": {
+            "grossAmount": 10,
+            "netAmount": 8,
+            "taxAmount": 2,
+            "taxBreakDown": [
+              {
+                "displayName": "Standard UK",
+                "regionName": "Standard",
+                "regionType": "Country",
+                "category": "Standard",
+                "rate": 20,
+                "amount": 2.00
+              }
+            ]
+          },
+          "paymentMethod": "CreditCard",
+          "customParameters": {
+              "colour" : "red"
+          }
+        }
+      ]}
   ]
-}
 ```
 
-This endpoint allows you to retrieve all payments for a given account.
+This endpoint allows you to retrieve all orders for a given account.
 
 ### URL Endpoint
 
@@ -281,18 +293,26 @@ This endpoint allows you to retrieve all payments for a given account.
 `totalNumberOfRecords` <br />Total number of records available| <span class="string">string</span> | 
 `pageNumber` <br />The page of results being displayed| <span class="string">string</span> | 
 `resultsPerPage` <br />The total number of records displayed in the response| <span class="string">string</span> | 
-`items` <br />Collection of payments associated to the account| <span class="object">object</span> | 
-`items \ cartReference` <br />The specific items that were purchased| <span class="string">string</span> | 
-`items \ fulfilmentReference`  <br />The specific fulfilment this payment is associated| <span class="string">string</span> | 
-`items \ status`  <br />The status of the payment| <span class="string">string</span> | 
-`items \ paymentReference`  <br />The unique identifier associated to the payment| <span class="string">string</span> | 
-`items \ currency`  <br />The date at which the subscription should become active| <span class="string">string</span> | 
-`items \ paymentDate` <br />The date at which the payment was processed| <span class="string">string</span> | 
-`items \ description`  <br />The description associated to the payment| <span class="string">string</span> | 
-`items \ priceBreakdown`  <br />Object relating to the price charged to the account| <span class="object">object</span> | 
+`items` <br />Collection of orders associated to the account| <span class="object">object</span> | 
+`items \ basketId` <br />The basket reference that groups the transactions together| <span class="string">string</span> | 
+`items \ subscriptionId`  <br />The identifier of the subscription, if the transaction is associated| <span class="string">string</span> | 
+`items \ currency`  <br />The ISO code for the currency used to make the purchase| <span class="string">string</span> | 
+`items \ orders`  <br />The collection of attributes associated to each transaction| <span class="object">object</span> | 
+`orders \ orderId`  <br />The unique value associated to the order for identification| <span class="string">string</span> | 
+`orders \ orderDate`  <br />The date at which the order was placed| <span class="string">string</span> | 
+`orders \ description`  <br />A summary of what the order was placed for| <span class="string">string</span> | 
+`orders \ paymentMethod`  <br />The method of payment that has been used to process the order| <span class="string">string</span> | 
+`orders \ priceBreakdown`  <br />Object relating to the amounts charged to the account| <span class="object">object</span> | 
 `priceBreakdown \ grossAmount`  <br />The total amount paid by the customer for the specific payment| <span class="decimal">decimal</span> | 
 `priceBreakdown \ netAmount`  <br />The gross amount minus the amount of tax paid| <span class="decimal">decimal</span> | 
 `priceBreakdown \ taxAmount`  <br />The amount of tax associated to the payment| <span class="decimal">decimal</span> | 
+`priceBreakdown \ taxBreakdown` <br />The detailed breakdown of the tax associated to the transaction |  <span class="array">array[object]</span> |
+`taxBreakdown \ displayName` <br /> The friendly name of the tax region| <span class="string">string</span> |
+`taxBreakdown \ regionName` <br />  The name associated to the tax region | <span class="string">string</span> |
+`taxBreakdown \ regionType` <br /> The region type of the tax amount. Available options are `country`, `county`, `state` and `city` |  <span class="string">string</span> |
+`taxBreakdown \ category` <br />  The cateory of tax that the transaction is associated | <span class="string">string</span> |
+`taxBreakdown \ rate` <br />  The rate of tax that has been applied to the order |<span class="decimal">decimal</span> |
+`taxBreakdown \ amount` <br />  The amount of money that is applicable as tax |<span class="decimal">string</span> |
 `items \ customPaymentParameters`  <br />A collection of custom attributes associated to the payment | <span class="dictionary">dictionary</span> | 
 `customPaymentParameters \ parameterName`  <br />The name of the custom attribute| <span class="string">string</span> | 
 

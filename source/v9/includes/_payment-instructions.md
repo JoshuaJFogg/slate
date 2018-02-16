@@ -98,7 +98,7 @@ This endpoint allows you to create a payment instruction for a specific account.
  |  |  | 
 --------- | ------- | ------- | 
 `cartReference` <br />The cart which is default for the payment instruction.| <span class="string">string</span> | <span class="required">Required</span> | 
-`paymentMethod` <br />The default payment method for the payment instruction.| <span class="string">string</span> | <span class="required">Required</span> | 
+`paymentMethod` <br />The default payment method for the payment instruction. The available payment methods for this endpoint are: `CreditCard`, `BACS`, `SEPA` and `Offline`.| <span class="string">string</span> | <span class="required">Required</span> | 
 `addressReference` <br />The reference addrress the fulfilments will be delivered to.| <span class="string">string</span> | <span class="required">Required</span> | 
 `voucherCode` <br />A discount code generated from eSuite| <span class="string">string</span> |  | 
 `fulfilmentInfo` <br />Information relating to each fulfilment and associated payments| <span class="array">array[objects]</span> | <span class="required">Required</span> | 
@@ -113,7 +113,7 @@ This endpoint allows you to create a payment instruction for a specific account.
 `customFulfilmentParameters` <br />This is a collection of custom attributes against the fulfilments.| <span class="dictionary">dictionary</span> |  |
 `customFulfilmentParameters \ parameterName` <br />Representation of all custom parameters against the fulfilment.| <span class="string">string</span> |  |
 `synchronousPaymentInfo` <br />An example string| <span class="object">object</span> |  | 
-`synchronousPaymentInfo \ paymentMethod`<br />The method by which the payment should be made| <span class="string">string</span> | <span class="required">Required</span> |
+`synchronousPaymentInfo \ paymentMethod`<br />The method by which the payment should be made. The available payment methods for synchronous payments are `CreditCard` and `Offline`.| <span class="string">string</span> | <span class="required">Required</span> |
 `synchronousPaymentInfo \ customPaymentParameters` <br />This is a collection of custom attributes against the payments.| <span class="dictionary">dictionary</span> |  |
 `customPaymentParameters \ parameterName` <br />Representation of all custom parameters against the payments.| <span class="string">string</span> |  |
 `customPaymentInstructionParameters` <br />This is a collection of custom attributes against the payment instructions.| <span class="dictionary">dictionary</span> |  |

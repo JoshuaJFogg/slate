@@ -105,15 +105,16 @@
 </script>
   </head>
 
-  <body class="v9_ v9__index" data-languages="[&quot;shell&quot;,&quot;csharp&quot;,&quot;java&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="v9 v9_index" data-languages="[&quot;shell&quot;,&quot;csharp&quot;,&quot;java&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
         <img src="../images/navbar.png" alt="Navbar" />
       </span>
     </a>
-    <div class="tocify-wrapper">
-      <img src="../images/logo.png" alt="Logo" />
+          <div class="tocify-wrapper">
+            <img src="../images/logo.png" alt="Logo" />
+    
         <div class="lang-selector">
               <a href="#" data-language-name="shell">cURL</a>
               <a href="#" data-language-name="csharp">C#</a>
@@ -655,7 +656,7 @@ If you choose to integrate the eSuite API directly into your technology stack pl
 <td><span class="bool">bool</span></td>
 </tr>
 <tr>
-<td><code class="prettyprint">createSessionInfo  \ paymentMethod</code> <br />The default payment method to display.</td>
+<td><code class="prettyprint">createSessionInfo  \ paymentMethod</code> <br />The default payment method to display. This method could be one of the following: <code class="prettyprint">CreditCard</code>, <code class="prettyprint">DirectDebit</code>, <code class="prettyprint">PayPal</code>, <code class="prettyprint">ServiceCredits</code>, <code class="prettyprint">Alipay</code>, <code class="prettyprint">Offline</code>, <code class="prettyprint">SmartLink</code>, <code class="prettyprint">Momo</code> and <code class="prettyprint">SPCarrierBilling</code></td>
 <td><span class="string">string</span></td>
 </tr>
 <tr>
@@ -2233,7 +2234,7 @@ This endpoint can only be called using server-side authentication due to the sen
 </tr>
 </thead><tbody>
 <tr>
-<td><code class="prettyprint">paymentMethod</code> <br />The payment method the account has selected to pay with if it differs from the initial configuration</td>
+<td><code class="prettyprint">paymentMethod</code> <br />The payment method the account has selected to pay with if it differs from the initial configuration. The supported payment methods on this endpoint are: <code class="prettyprint">CreditCard</code>, <code class="prettyprint">PayPal</code>, <code class="prettyprint">SPCarrierBilling</code>, <code class="prettyprint">ServiceCredits</code>, <code class="prettyprint">Alipay</code> and <code class="prettyprint">Offline</code>.</td>
 <td><span class="string">string</span></td>
 <td></td>
 </tr>
@@ -2417,7 +2418,7 @@ This endpoint can only be called using server-side authentication due to the sen
 </tr>
 </thead><tbody>
 <tr>
-<td><code class="prettyprint">paymentMethod</code> <br />The payment method the account has selected to pay with if it differs from the initial configuration</td>
+<td><code class="prettyprint">paymentMethod</code> <br />The payment method the account has selected to pay with if it differs from the initial configuration. The available payment methods for this action are: <code class="prettyprint">CreditCard</code> and <code class="prettyprint">Offline</code>.</td>
 <td><span class="string">string</span></td>
 <td></td>
 </tr>
@@ -8724,7 +8725,7 @@ Remember — you must authorise a card before it can be used
 </tr>
 </thead><tbody>
 <tr>
-<td><code class="prettyprint">paymentMethod</code> <br />The payment method the account has selected to pay with if it differs from the initial configuration</td>
+<td><code class="prettyprint">paymentMethod</code> <br />The payment method the account has selected to pay with if it differs from the initial configuration. The supported payment method for this endpoint is <code class="prettyprint">CreditCard</code> only.</td>
 <td><span class="string">string</span></td>
 <td></td>
 </tr>
@@ -10798,7 +10799,7 @@ Remember — you must authorise a card before it can be used
 <td></td>
 </tr>
 <tr>
-<td><code class="prettyprint">pricing \ paymentMethod</code> <br />The payment method the account would like to pay using</td>
+<td><code class="prettyprint">pricing \ paymentMethod</code> <br />The payment method the account would like to pay using. The available payment methods for this endpoint are: <code class="prettyprint">CreditCard</code>, <code class="prettyprint">PayPal</code>, <code class="prettyprint">ServiceCredits</code>, <code class="prettyprint">Alipay</code> and <code class="prettyprint">Offline</code>.</td>
 <td><span class="string">string</span></td>
 <td></td>
 </tr>
@@ -12399,7 +12400,7 @@ Remember — you must authorise a card before it can be used
 <td><span class="required">Required</span></td>
 </tr>
 <tr>
-<td><code class="prettyprint">paymentMethod</code> <br />The default payment method for the payment instruction.</td>
+<td><code class="prettyprint">paymentMethod</code> <br />The default payment method for the payment instruction. The available payment methods for this endpoint are: <code class="prettyprint">CreditCard</code>, <code class="prettyprint">BACS</code>, <code class="prettyprint">SEPA</code> and <code class="prettyprint">Offline</code>.</td>
 <td><span class="string">string</span></td>
 <td><span class="required">Required</span></td>
 </tr>
@@ -12474,7 +12475,7 @@ Remember — you must authorise a card before it can be used
 <td></td>
 </tr>
 <tr>
-<td><code class="prettyprint">synchronousPaymentInfo \ paymentMethod</code><br />The method by which the payment should be made</td>
+<td><code class="prettyprint">synchronousPaymentInfo \ paymentMethod</code><br />The method by which the payment should be made. The available payment methods for synchronous payments are <code class="prettyprint">CreditCard</code> and <code class="prettyprint">Offline</code>.</td>
 <td><span class="string">string</span></td>
 <td><span class="required">Required</span></td>
 </tr>
@@ -13167,21 +13168,21 @@ Remember — you must authorise a card before it can be used
   --header <span class="s1">'x-clientId: 1001'</span> <span class="se">\</span>
   --header <span class="s1">'x-clientPassword: Str0ngP@ssword'</span> <span class="se">\</span>
   --header <span class="s1">'x-version: 9.0.0'</span> <span class="se">\</span>
-  --data <span class="s1">'{"paymentDate":"2017-07-07T08:14:59.126Z","paymentMethod":"string","vatAmount":2,"grossAmount":10,"netAmount":8,"currency":"GBP","customPaymentParameters":{"parameterName":"parameterValue"}}'</span>
+  --data <span class="s1">'{"paymentDate":"2017-07-07T08:14:59.126Z","paymentMethod":"Offline","vatAmount":2,"grossAmount":10,"netAmount":8,"currency":"GBP","customPaymentParameters":{"parameterName":"parameterValue"}}'</span>
 </code></pre><pre class="highlight csharp tab-csharp"><code><span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestClient</span><span class="p">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/fulfilments/{fulfilmentReference}/payments/"</span><span class="p">);</span>
 <span class="kt">var</span> <span class="n">request</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">RestRequest</span><span class="p">(</span><span class="n">Method</span><span class="p">.</span><span class="n">POST</span><span class="p">);</span>
 <span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"content-type"</span><span class="p">,</span> <span class="s">"application/json"</span><span class="p">);</span>
 <span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-version"</span><span class="p">,</span> <span class="s">"9.0.0"</span><span class="p">);</span>
 <span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientId"</span><span class="p">,</span> <span class="s">"1001"</span><span class="p">);</span>
 <span class="n">request</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"x-clientPassword"</span><span class="p">,</span> <span class="s">"Str0ngP@ssword"</span><span class="p">);</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">AddParameter</span><span class="p">(</span><span class="s">"application/json"</span><span class="p">,</span> <span class="s">"{\"paymentDate\":\"2017-07-07T08:14:59.126Z\",\"paymentMethod\":\"string\",\"vatAmount\":2,\"grossAmount\":10,\"netAmount\":8,\"currency\":\"GBP\",\"customPaymentParameters\":{\"parameterName\":\"parameterValue\"}}"</span><span class="p">,</span> <span class="n">ParameterType</span><span class="p">.</span><span class="n">RequestBody</span><span class="p">);</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">AddParameter</span><span class="p">(</span><span class="s">"application/json"</span><span class="p">,</span> <span class="s">"{\"paymentDate\":\"2017-07-07T08:14:59.126Z\",\"paymentMethod\":\"Offline\",\"vatAmount\":2,\"grossAmount\":10,\"netAmount\":8,\"currency\":\"GBP\",\"customPaymentParameters\":{\"parameterName\":\"parameterValue\"}}"</span><span class="p">,</span> <span class="n">ParameterType</span><span class="p">.</span><span class="n">RequestBody</span><span class="p">);</span>
 <span class="n">IRestResponse</span> <span class="n">response</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Execute</span><span class="p">(</span><span class="n">request</span><span class="p">);</span>
 </code></pre><pre class="highlight java tab-java"><code><span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">Unirest</span><span class="o">.</span><span class="na">post</span><span class="o">(</span><span class="s">"https://uat.mppglobal.com/api/accounts/{accountId}/fulfilments/{fulfilmentReference}/payments/"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientId"</span><span class="o">,</span> <span class="s">"1001"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-clientPassword"</span><span class="o">,</span> <span class="s">"Str0ngP@ssword"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"x-version"</span><span class="o">,</span> <span class="s">"9.0.0"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">header</span><span class="o">(</span><span class="s">"content-type"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">)</span>
-  <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"{\"paymentDate\":\"2017-07-07T08:14:59.126Z\",\"paymentMethod\":\"string\",\"vatAmount\":2,\"grossAmount\":10,\"netAmount\":8,\"currency\":\"GBP\",\"customPaymentParameters\":{\"parameterName\":\"parameterValue\"}}"</span><span class="o">)</span>
+  <span class="o">.</span><span class="na">body</span><span class="o">(</span><span class="s">"{\"paymentDate\":\"2017-07-07T08:14:59.126Z\",\"paymentMethod\":\"Offline\",\"vatAmount\":2,\"grossAmount\":10,\"netAmount\":8,\"currency\":\"GBP\",\"customPaymentParameters\":{\"parameterName\":\"parameterValue\"}}"</span><span class="o">)</span>
   <span class="o">.</span><span class="na">asString</span><span class="o">();</span>
 </code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'net/http'</span>
@@ -13197,7 +13198,7 @@ Remember — you must authorise a card before it can be used
 <span class="n">request</span><span class="p">[</span><span class="s2">"x-clientPassword"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Str0ngP@ssword'</span>
 <span class="n">request</span><span class="p">[</span><span class="s2">"x-version"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'9.0.0'</span>
 <span class="n">request</span><span class="p">[</span><span class="s2">"content-type"</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'application/json'</span>
-<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"{</span><span class="se">\"</span><span class="s2">paymentDate</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">2017-07-07T08:14:59.126Z</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">paymentMethod</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">string</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">vatAmount</span><span class="se">\"</span><span class="s2">:2,</span><span class="se">\"</span><span class="s2">grossAmount</span><span class="se">\"</span><span class="s2">:10,</span><span class="se">\"</span><span class="s2">netAmount</span><span class="se">\"</span><span class="s2">:8,</span><span class="se">\"</span><span class="s2">currency</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">GBP</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">customPaymentParameters</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">parameterName</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">parameterValue</span><span class="se">\"</span><span class="s2">}}"</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="s2">"{</span><span class="se">\"</span><span class="s2">paymentDate</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">2017-07-07T08:14:59.126Z</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">paymentMethod</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">Offline</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">vatAmount</span><span class="se">\"</span><span class="s2">:2,</span><span class="se">\"</span><span class="s2">grossAmount</span><span class="se">\"</span><span class="s2">:10,</span><span class="se">\"</span><span class="s2">netAmount</span><span class="se">\"</span><span class="s2">:8,</span><span class="se">\"</span><span class="s2">currency</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">GBP</span><span class="se">\"</span><span class="s2">,</span><span class="se">\"</span><span class="s2">customPaymentParameters</span><span class="se">\"</span><span class="s2">:{</span><span class="se">\"</span><span class="s2">parameterName</span><span class="se">\"</span><span class="s2">:</span><span class="se">\"</span><span class="s2">parameterValue</span><span class="se">\"</span><span class="s2">}}"</span>
 
 <span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
 <span class="nb">puts</span> <span class="n">response</span><span class="p">.</span><span class="nf">read_body</span>
@@ -13205,7 +13206,7 @@ Remember — you must authorise a card before it can be used
 
 <span class="n">conn</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">(</span><span class="s">"uat.mppglobal.com"</span><span class="p">)</span>
 
-<span class="n">payload</span> <span class="o">=</span> <span class="s">"{</span><span class="se">\"</span><span class="s">paymentDate</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">2017-07-07T08:14:59.126Z</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">paymentMethod</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">string</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">vatAmount</span><span class="se">\"</span><span class="s">:2,</span><span class="se">\"</span><span class="s">grossAmount</span><span class="se">\"</span><span class="s">:10,</span><span class="se">\"</span><span class="s">netAmount</span><span class="se">\"</span><span class="s">:8,</span><span class="se">\"</span><span class="s">currency</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">GBP</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">customPaymentParameters</span><span class="se">\"</span><span class="s">:{</span><span class="se">\"</span><span class="s">parameterName</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">parameterValue</span><span class="se">\"</span><span class="s">}}"</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="s">"{</span><span class="se">\"</span><span class="s">paymentDate</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">2017-07-07T08:14:59.126Z</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">paymentMethod</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">Offline</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">vatAmount</span><span class="se">\"</span><span class="s">:2,</span><span class="se">\"</span><span class="s">grossAmount</span><span class="se">\"</span><span class="s">:10,</span><span class="se">\"</span><span class="s">netAmount</span><span class="se">\"</span><span class="s">:8,</span><span class="se">\"</span><span class="s">currency</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">GBP</span><span class="se">\"</span><span class="s">,</span><span class="se">\"</span><span class="s">customPaymentParameters</span><span class="se">\"</span><span class="s">:{</span><span class="se">\"</span><span class="s">parameterName</span><span class="se">\"</span><span class="s">:</span><span class="se">\"</span><span class="s">parameterValue</span><span class="se">\"</span><span class="s">}}"</span>
 
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s">'x-clientid'</span> <span class="p">:</span> <span class="s">'1001'</span><span class="p">,</span>
@@ -13246,7 +13247,7 @@ Remember — you must authorise a card before it can be used
 <td><span class="required">Required</span></td>
 </tr>
 <tr>
-<td><code class="prettyprint">paymentMethod</code> <br />The payment method the payment should be taken</td>
+<td><code class="prettyprint">paymentMethod</code> <br />The payment method the payment should be taken in. The available payment methods are: <code class="prettyprint">CreditCard</code>, <code class="prettyprint">BACS</code>, <code class="prettyprint">SEPA</code> and <code class="prettyprint">Offline</code></td>
 <td><span class="string">string</span></td>
 <td><span class="required">Required</span></td>
 </tr>

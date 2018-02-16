@@ -257,7 +257,7 @@ For the completion of standard payment options, making the following `POST` requ
 
  |   | |  
 --------- | ------- | ------- | 
-`paymentMethod` <br />The payment method the account has selected to pay with if it differs from the initial configuration| <span class="string">string</span> |  |
+`paymentMethod` <br />The payment method the account has selected to pay with if it differs from the initial configuration. The supported payment method for this endpoint is `CreditCard` only.| <span class="string">string</span> |  |
 `cvv` <br />Security code of a card if the payment method is set to `creditDebitCard`| <span class="string">string</span> |  |
 `voucherCode` <br />A voucher code provided by the account during the workflow| <span class="string">string</span> |  |
 `paidCredits` <br />The amount of credits the account is purchasing| <span style="font-weight:bold;">number</span> |  | 

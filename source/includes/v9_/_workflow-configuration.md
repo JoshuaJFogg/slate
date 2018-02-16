@@ -379,7 +379,7 @@ For the most simple integration, calling this endpoint will generate a payment s
 `region \ county` <br />The county tax rate to apply.| <span class="string">string</span> |
 `region \ city` <br />The city tax rate to apply.| <span class="string">string</span> | 
 `createSessionInfo  \ requiresDelivery` <br />Indication as to whether the item will require delivery.| <span class="bool">bool</span> | 
-`createSessionInfo  \ paymentMethod` <br />The default payment method to display.| <span class="string">string</span> | 
+`createSessionInfo  \ paymentMethod` <br />The default payment method to display. This method could be one of the following: `CreditCard`, `DirectDebit`, `PayPal`, `ServiceCredits`, `Alipay`, `Offline`, `SmartLink`, `Momo` and `SPCarrierBilling`| <span class="string">string</span> | 
 `createSessionInfo  \ productId` <br />The associated ProductId of the purchase.| <span class="string">string</span> | 
 `createSessionInfo  \ returnUrl` <br />The location the consumer should be returned to following purchase.| <span class="string">string</span></span> | 
 `createSessionInfo  \ serviceId` <br />The associated ServiceId of the purchase.| <span class="string">string</span> | 

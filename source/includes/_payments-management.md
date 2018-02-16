@@ -109,7 +109,7 @@ This end point is present for server-side integrations to take a payment against
 --------- | ------- | ------- | 
 `settlementType` <br />An indication whether to complete immediately or at a later date. `Pending` or `NextAvailable` are the available values| <span class="string">string</span> |  | 
 `pricing` <br />Pricing Information object| <span class="object">object</span> |  | 
-`pricing \ paymentMethod` <br />The payment method the account would like to pay using| <span class="string">string</span> |  | 
+`pricing \ paymentMethod` <br />The payment method the account would like to pay using. The available payment methods for this endpoint are: `CreditCard`, `PayPal`, `ServiceCredits`, `Alipay` and `Offline`.| <span class="string">string</span> |  | 
 `pricing \ currency` <br />The currency the payment should be taken in| <span class="string">string</span> |  | 
 `voucherCode` <br />eSuite generated voucher code that has been provided during the flow | <span class="string">string</span> |  | 
 `cvv` <br />If the purchase is being made using an non-authorised card, this parameter can be passed in to enable authorisation to take place | <span class="string">string</span> |  |
