@@ -1,4 +1,4 @@
-# Workflow Configurations
+# Configuration 
 
 ## Get a Subscription session
 

@@ -1,4 +1,4 @@
-# Subscription Management
+# Subscriber Management
 
 ## Retrieve all Subscriptions
 

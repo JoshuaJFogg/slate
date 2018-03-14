@@ -15,29 +15,44 @@ toc_footers:
 includes:
   - introduction
   - api-authentication
-  - workflow-configuration
-  - workflow-purchases
+  - errors
+
+  - sdk
+  - configuration
+
   - accounts
-  - account-groups
-  - account-authentication
-  - external-providers
+  - accounts-detail
   - address-book
   - payment-details
+  
+  - groups
+  - account-groups
+
+  - authentication
+  - account-authentication
+  - external-providers
+
+  - purchasing
+  - workflow-purchases
+  - subscriber-management
   - purchases-payments
-  - subscription-management
   - payments-management
   - carts
   - payment-instructions
   - fulfilment-management
-  - access-management
   - native-billing
-  - session-management
+
+  - access
+  - access-management
+
   - catalogues
+  - products
+  - subscriptions
+
+  - misc
   - offers
   - analytics
   - bulk-actions
-  - errors
- 
 
 search: true
 ---

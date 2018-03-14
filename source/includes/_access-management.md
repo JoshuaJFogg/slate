@@ -1,4 +1,4 @@
-# Access Management
+# Entitlements
 
 ## Create Access
 

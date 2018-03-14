@@ -1,4 +1,4 @@
-# Account Authentication
+# Authentication
 
 ## Authenticate via email and password
 
