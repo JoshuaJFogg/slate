@@ -36,6 +36,7 @@ includes:
   - workflow-purchases
   - subscriber-management
   - purchases-payments
+  - offers
   - payments-management
   - carts
   - payment-instructions
@@ -49,8 +50,7 @@ includes:
   - products
   - subscriptions
 
-  - misc
-  - offers
+  - other
   - analytics
   - bulk-actions
 
