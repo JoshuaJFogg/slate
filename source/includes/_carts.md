@@ -9,7 +9,6 @@ curl --request POST \
 --header 'x-clientPassword: Str0ngP@ssword' \
 --header 'x-version: 10.0.0' \
 --header 'content-type: application/json' \
---header 'content-type: application/json' \
 --data '{}'
 ```
 
@@ -495,7 +494,6 @@ curl --request POST \
 --header 'x-clientPassword: Str0ngP@ssword' \
 --header 'x-version: 10.0.0' \
 --header 'content-type: application/json' \
---header 'content-type: application/json' \
 --data '{"description":"Example line item","pricing":{"grossAmount":10,"netAmount":8,"taxAmount":2,"currency":"GBP"},"quantity":1}'
 ```
 
@@ -864,27 +862,92 @@ Calling this endpoint will allow for the retrieval of all carts associated to an
 ## Validate Voucher
 
 ```shell
-
+curl --request GET \
+  --url https://uat.mppglobal.com/api/carts/{cartReference}/vouchers/{voucherCode} \
+  --header 'x-clientId: 1001' \
+  --header 'x-clientPassword: Str0ngP@ssword' \
+  --header 'x-version: 10.0.0' \
+  --data '{}'
 ```
 
 ```csharp
-
+var client = new RestClient("https://uat.mppglobal.com/api/carts/{cartReference}/vouchers/{voucherCode}");
+var request = new RestRequest(Method.GET);
+request.AddHeader("x-version", "10.0.0");
+request.AddHeader("x-clientId", "1001");
+request.AddHeader("x-clientPassword", "Str0ngP@ssword");
+request.AddParameter("undefined", "{}", ParameterType.RequestBody);
+IRestResponse response = client.Execute(request);
 ```
 
 ```java
-
+HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/carts/{cartReference}/vouchers/{voucherCode}")
+  .header("x-clientId", "1001")
+  .header("x-clientPassword", "Str0ngP@ssword")
+  .header("x-version", "10.0.0")
+  .body("{}")
+  .asString();
 ```
 
 ```ruby
+require 'uri'
+require 'net/http'
 
+url = URI("https://uat.mppglobal.com/api/carts/{cartReference}/vouchers/{voucherCode}")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Get.new(url)
+request["x-clientid"] = '1001'
+request["x-clientPassword"] = 'Str0ngP@ssword'
+request["x-version"] = '10.0.0'
+request.body = "{}"
+
+response = http.request(request)
+puts response.read_body
 ```
 
 ```python
+import http.client
 
+conn = http.client.HTTPSConnection("uat.mppglobal.com")
+
+payload = "{}"
+
+headers = {
+    'x-clientid' : '1001',
+    'x-clientPassword': "Str0ngP@ssword",
+    'x-version': '10.0.0'
+    }
+
+conn.request("GET", "/api/carts/{cartReference}/vouchers/{voucherCode}", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))
 ```
 
 ```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://uat.mppglobal.com/api/carts/{cartReference}/vouchers/{voucherCode}",
+  "method": "GET",
+  "headers": {
+    "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
+    "x-sessionId" : "",
+    "x-version": "10.0.0",
+    "origin": "https://www.mppglobal.com"
+  },
+  "data": "{}"
+}
 
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 ```
 
 > The above command returns JSON structured like this:
@@ -934,39 +997,112 @@ Executing this endpoint will validate the voucher code being used is valid and a
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-get">GET</span>
-<span class="endpoint-path">https://uat.mppglobal.com/</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/carts/{cartReference}/vouchers/{voucherCode}</span>
 </div>
 
-### Parameters
+### Request Parameters
  |  |  | 
 --------- | ------- | ------- | 
+`voucherCode` <br />The voucher code that the customer is looking to validate against their cart| <span class="string">string</span> | 
 
 
 
 ## Apply Voucher
 
 ```shell
-
+curl --request POST \
+--url https://uat.mppglobal.com/api/carts/{cartReference}/vouchers/{voucherCode} \
+--header 'x-clientId: 1001' \
+--header 'x-clientPassword: Str0ngP@ssword' \
+--header 'x-version: 10.0.0' \
+--header 'content-type: application/json' \
+--data '{}'
 ```
 
 ```csharp
-
+var client = new RestClient("https://uat.mppglobal.com/api/carts/{cartReference}/vouchers/{voucherCode}");
+var request = new RestRequest(Method.POST);
+request.AddHeader("x-version", "10.0.0");
+request.AddHeader("x-clientId", "1001");
+request.AddHeader("x-clientPassword", "Str0ngP@ssword");
+request.AddHeader("content-type", "application/json");
+request.AddParameter("application/json", "{}", ParameterType.RequestBody);
+IRestResponse response = client.Execute(request);
 ```
 
 ```java
-
+HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/carts/{cartReference}/vouchers/{voucherCode}")
+  .header("x-clientId", "1001")
+  .header("x-clientPassword", "Str0ngP@ssword")
+  .header("x-sessionid", "BE52ADA2064C4F9A9D90F28D066D1RFT")
+  .header("x-version", "10.0.0")
+  .header("content-type", "application/json")
+  .body("{}")
+  .asString();
 ```
 
 ```ruby
+require 'uri'
+require 'net/http'
 
+url = URI("https://uat.mppglobal.com/api/carts/{cartReference}/vouchers/{voucherCode}")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Post.new(url)
+request["content-type"] = 'application/json'
+request["x-clientid"] = '1001'
+request["x-clientPassword"] = 'Str0ngP@ssword'
+request["x-version"] = '10.0.0'
+request.body = "{}"
+
+response = http.request(request)
+puts response.read_body
 ```
 
 ```python
+import http.client
 
+conn = http.client.HTTPSConnection("uat.mppglobal.com")
+
+payload = "{}"
+
+headers = { 
+    'x-clientid' : '1001',
+    'x-clientPassword': "Str0ngP@ssword",
+    'x-version': '10.0.0',
+    'content-type': "application/json" }
+
+conn.request("POST", "/api/carts/{cartReference}/vouchers/{voucherCode}", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))
 ```
 
 ```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://uat.mppglobal.com/api/carts/{cartReference}/vouchers/{voucherCode}",
+  "method": "POST",
+  "headers": {
+    "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
+    "x-sessionid": "a0c595bd26004ff4bb7d4cb1b1c81a6d",
+    "x-version": "10.0.0",
+    "origin": "https://www.mppglobal.com",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{}"
+}
 
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
 ```
 
 > The above command returns JSON structured like this:
@@ -1008,18 +1144,19 @@ Executing this endpoint will validate the voucher code being used is valid and a
 ]
 ```
 
-Description of what the endpoint does.
+Calling this endpoint will allow you to apply a voucher code to the cart. Applying the voucher will discount items within the cart and display this discount as a negative line item. If the voucher is for a fixed priced discount that is associated to multiple products, the discount amount will be split across the applicable items within the cart.
 
 ### HTTP Request
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/carts/{cartReference}/vouchers/{voucherCode}</span>
 </div>
 
-### Parameters
+### Request Parameters
  |  |  | 
 --------- | ------- | ------- | 
+`voucherCode` <br />The voucher code that the customer is looking to apply to their cart| <span class="string">string</span> | 
 
 
 

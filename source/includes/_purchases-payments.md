@@ -96,8 +96,9 @@ print(data.decode("utf-8"))
   "orderReference": 12548,
   "subscriptionId": 4555888,
   "subscriptionPriceId": 568845,
-  "subscriptionReference": "458845",
-  "resourceReference": "ResourceReference",
+  "subscriptionReference": "0010O23KDWBV5EN4G2",
+  "shippingAddressReference " : "0010O89GTFQBV5EN4G2",
+  "invoiceAddressReference" : "0010251HHWBV5EN4G2",
   "asynchronousProcessingParameters": null
 }
 ```
@@ -123,6 +124,8 @@ For the completion of standard payment options, making the following `POST` requ
 `renewalDay` <br />The date of the month the subscription should be renewed on, specifically for monthly or annual subscriptions| <span class="integer">integer</span> |  | 
 `renewalDayOffset` <br />The number of days before or after the renewal date. This can be positive or negative| <span class="string">string</span> |  |
 `startDate` <br />The date at which the subscription should be purchased and started | <span class="string">string</span> |  |
+`shippingAddress` <br />The address reference that the subscription should be sent following a purchase | <span class="string">string</span> |  |
+`invoiceAddress` <br />Following the creation of a subscription, this is the address that the invoice should be sent | <span class="string">string</span> |  |
 `paymentMethod` <br />The type of payment method the account has selected. The available methods for this endpoint are: `CreditCard`, `DirectDebit`, `PayPal`, `ServiceCredits`, `Alipay`, `SPCarrierBilling`, `Offline`, `BankTransfer`, `SmartLink` and `Momo`.| <span class="string">string</span> |  |
 `entitlements` <br />A collection of additional entitlements to provide the account on purchase| <span class="array">array[object]</span> |  |
 `entitlements \ identifier` <br />Identifier for the entitlement being purchased| <span class="string">string</span> |  |
@@ -755,3 +758,132 @@ This endpoint will allow the validation of a voucher against a specific purchase
 `productSettings \ productIds` <br />Collection of products that can benefit from the offer| <span class="array">array[integer]</span> | 
 `fixedPriceDiscount \ miscellaneousChargeSettings` <br />Details specific to one-off charge| <span class="object">object</span> | 
 `miscellaneousChargeSettings \ enabled` <br />Indication as to whether the offer can be used on a one-off charge| <span class="bool">bool</span> | 
+
+
+## Configure a Gift
+
+```shell
+curl --request POST \
+--url https://uat.mppglobal.com/api/gifts \
+--header 'x-clientId: 1001' \
+--header 'x-clientPassword: Str0ngP@ssword' \
+--header 'x-version: 10.0.0' \
+--header 'content-type: application/json' \
+ --data '{"recipientNickName":"Tommo","senderNickName":"Jonesy","message":"Hope you have a great birthday.","emailAddress":"john.thompson@myemail.com","title":"Mr","firstName":"John","surname":"Thompson"}'
+```
+
+```csharp
+var client = new RestClient("https://uat.mppglobal.com/api/gifts");
+var request = new RestRequest(Method.POST);
+request.AddHeader("x-version", "10.0.0");
+request.AddHeader("x-clientId", "1001");
+request.AddHeader("x-clientPassword", "Str0ngP@ssword");
+request.AddHeader("content-type", "application/json");
+request.AddParameter("application/json", "{\"recipientNickName\":\"Tommo\",\"senderNickName\":\"Jonesy\",\"message\":\"Hope you have a great birthday.\",\"emailAddress\":\"john.thompson@myemail.com\",\"title\":\"Mr\",\"firstName\":\"John\",\"surname\":\"Thompson\"}", ParameterType.RequestBody);
+IRestResponse response = client.Execute(request);
+```
+
+```java
+HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/gifts")
+  .header("x-clientId", "1001")
+  .header("x-clientPassword", "Str0ngP@ssword")
+  .header("x-sessionid", "BE52ADA2064C4F9A9D90F28D066D1RFT")
+  .header("x-version", "10.0.0")
+  .header("content-type", "application/json")
+  .body("{\"recipientNickName\":\"Tommo\",\"senderNickName\":\"Jonesy\",\"message\":\"Hope you have a great birthday.\",\"emailAddress\":\"john.thompson@myemail.com\",\"title\":\"Mr\",\"firstName\":\"John\",\"surname\":\"Thompson\"}")
+  .asString();
+```
+
+```ruby
+require 'uri'
+require 'net/http'
+
+url = URI("https://uat.mppglobal.com/api/gifts")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Post.new(url)
+request["content-type"] = 'application/json'
+request["x-clientid"] = '1001'
+request["x-clientPassword"] = 'Str0ngP@ssword'
+request["x-version"] = '10.0.0'
+request.body = "{\"recipientNickName\":\"Tommo\",\"senderNickName\":\"Jonesy\",\"message\":\"Hope you have a great birthday.\",\"emailAddress\":\"john.thompson@myemail.com\",\"title\":\"Mr\",\"firstName\":\"John\",\"surname\":\"Thompson\"}"
+
+response = http.request(request)
+puts response.read_body
+```
+
+```python
+import http.client
+
+conn = http.client.HTTPSConnection("uat.mppglobal.com")
+
+payload = "{\"recipientNickName\":\"Tommo\",\"senderNickName\":\"Jonesy\",\"message\":\"Hope you have a great birthday.\",\"emailAddress\":\"john.thompson@myemail.com\",\"title\":\"Mr\",\"firstName\":\"John\",\"surname\":\"Thompson\"}"
+
+headers = { 
+    'x-clientid' : '1001',
+    'x-clientPassword': "Str0ngP@ssword",
+    'x-version': '10.0.0',
+    'content-type': "application/json" }
+
+conn.request("POST", "/api/gifts", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))
+```
+
+```javascript
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://uat.mppglobal.com/api/gifts",
+  "method": "POST",
+  "headers": {
+    "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
+    "x-sessionid": "a0c595bd26004ff4bb7d4cb1b1c81a6d",
+    "x-version": "10.0.0",
+    "origin": "https://www.mppglobal.com",
+    "content-type": "application/json"
+  },
+  "processData": false,
+  "data": "{\"recipientNickName\":\"Tommo\",\"senderNickName\":\"Jonesy\",\"message\":\"Hope you have a great birthday.\",\"emailAddress\":\"john.thompson@myemail.com\",\"title\":\"Mr\",\"firstName\":\"John\",\"surname\":\"Thompson\"}"
+
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "giftId" : 48454121
+}
+```
+
+During a purchase flow for a gift product, the gift must be configured prior to completing the purchase. This configuration provides eSuite all of the information required in order to send the gift to the giftee on the correct time with appropriate messaging.
+
+### HTTP Request
+
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/gifts</span>
+</div>
+
+### Parameters
+ |  |  | 
+--------- | ------- | ------- | 
+`recipientNickname` <br />The type of change that should be executed. add, replace and remove are available operations.| <span class="string">string</span> | <span class="required">Required</span> | 
+`sendNickname` <br />The type of change that should be executed. add, replace and remove are available operations.| <span class="string">string</span> | <span class="required">Required</span> | 
+`message` <br />The type of change that should be executed. add, replace and remove are available operations.| <span class="string">string</span> | <span class="required">Required</span> | 
+`startDate` <br />The date at which the giftee should be notified the gift has been bought for them. If this parameter is not passed in, the giftee will be notified immediately| <span style="font-weight:bold;color:#666;">dateTime</span> |  | 
+`emailAddress` <br />The type of change that should be executed. add, replace and remove are available operations.| <span class="string">string</span> | <span class="required">Required</span> | 
+`title` <br />The type of change that should be executed. add, replace and remove are available operations.| <span class="string">string</span> |  | 
+`firstName` <br />The type of change that should be executed. add, replace and remove are available operations.| <span class="string">string</span> |  | 
+`surname` <br />The type of change that should be executed. add, replace and remove are available operations.| <span class="string">string</span> |  | 

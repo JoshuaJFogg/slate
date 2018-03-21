@@ -1,4 +1,4 @@
-# Subscription Management
+# Subscriber Management
 
 ## Retrieve all Subscriptions
 
@@ -345,7 +345,7 @@ Calling this endpoint will allow you to hard cancel a subscription. The successf
 <span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionId}</span>
 </div>
 
-### Patch Parameters
+### PATCH Parameters
 
  |  |  
 --------- | ------- | 
@@ -461,7 +461,7 @@ Calling this endpoint will allow you to enable or disable the renewal process fo
 <span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionId}/status</span>
 </div>
 
-### Patch Parameters
+### PATCH Parameters
 
  |  |  
 --------- | ------- | 

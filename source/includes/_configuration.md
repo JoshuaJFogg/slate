@@ -404,7 +404,6 @@ curl --request POST \
   --header 'x-clientPassword: Str0ngP@ssword' \
   --header 'x-version: 10.0.0' \
   --header 'content-type: application/json' \
-  --header 'content-type: application/json' \
   --data '{"workFlowConfiguration":{"pricing":{"priceId":18535}}}'
 ```
 
@@ -550,7 +549,6 @@ curl --request POST \
   --header 'x-clientPassword: Str0ngP@ssword' \
   --header 'x-version: 10.0.0' \
   --header 'content-type: application/json' \
-  --header 'content-type: application/json' \
   --data '{"workFlowConfiguration":{"pricing":{"priceId":18535}}}'
 ```
 
@@ -687,7 +685,6 @@ curl --request POST \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
   --header 'x-version: 10.0.0' \
-  --header 'content-type: application/json' \
   --header 'content-type: application/json' \
   --data '{"orderItems":[{"description":"Demonstration Request","priceBreakDown":{"grossAmount":10},"taxInfo":{"category":"Standard"}}],"workFlowConfiguration":{}}'
 ```
@@ -832,7 +829,6 @@ curl --request POST \
   --header 'x-clientPassword: Str0ngP@ssword' \
   --header 'x-version: 10.0.0' \
   --header 'content-type: application/json' \
-  --header 'content-type: application/json' \
   --data '{"serviceCredits":{"description":"Credits to buy services","paidCredits":10,"freeCredits":0},"workFlowConfiguration":{}}'
 ```
 
@@ -961,6 +957,111 @@ If you would like to generate a more specific session for the purpose of purchas
 <aside class="info">
 This endpoint can only be called using server-side authentication due to the sensitive nature of some information contained in the `POST` request.
 </aside>
+
+## Create a Gift Session
+
+```shell
+curl --request POST \
+  --url https://uat.mppglobal.com/api/workflows/configurations/gifts \
+  --header 'x-clientId: 1001' \
+  --header 'x-clientPassword: Str0ngP@ssword' \
+  --header 'x-version: 10.0.0' \
+  --header 'content-type: application/json' \
+  --data '{"voucherCode":"string (optional)","returnUrl":"http://mppglobal.com"}'
+```
+
+```csharp
+var client = new RestClient("https://uat.mppglobal.com/api/workflows/configurations/gifts");
+var request = new RestRequest(Method.POST);
+request.AddHeader("x-version", "10.0.0");
+request.AddHeader("x-clientId", "1001");
+request.AddHeader("x-clientPassword", "Str0ngP@ssword");
+request.AddHeader("content-type", "application/json");
+request.AddParameter("application/json", "{\"voucherCode\":\"string (optional)\",\"returnUrl\":\"http://mppglobal.com\"}", ParameterType.RequestBody);
+IRestResponse response = client.Execute(request);
+```
+
+```java
+HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/workflows/configurations/gifts")
+  .header("x-clientId", "1001")
+  .header("x-clientPassword", "Str0ngP@ssword")
+  .header("x-sessionid", "BE52ADA2064C4F9A9D90F28D066D1RFT")
+  .header("x-version", "10.0.0")
+  .header("content-type", "application/json")
+  .body("{\"voucherCode\":\"string (optional)\",\"returnUrl\":\"http://mppglobal.com\"}")
+  .asString();
+```
+
+```ruby
+require 'uri'
+require 'net/http'
+
+url = URI("https://uat.mppglobal.com/api/workflows/configurations/gifts")
+
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Post.new(url)
+request["content-type"] = 'application/json'
+request["x-clientid"] = '1001'
+request["x-clientPassword"] = 'Str0ngP@ssword'
+request["x-version"] = '10.0.0'
+request.body = "{\"voucherCode\":\"string (optional)\",\"returnUrl\":\"http://mppglobal.com\"}"
+
+response = http.request(request)
+puts response.read_body
+```
+
+```python
+import http.client
+
+conn = http.client.HTTPSConnection("uat.mppglobal.com")
+
+payload = "{\"voucherCode\":\"string (optional)\",\"returnUrl\":\"http://mppglobal.com\"}"
+
+headers = { 
+    'x-clientid' : '1001',
+    'x-clientPassword': "Str0ngP@ssword",
+    'x-version': '10.0.0',
+    'content-type': "application/json" }
+
+conn.request("POST", "/api/workflows/configurations/gifts", payload, headers)
+
+res = conn.getresponse()
+data = res.read()
+
+print(data.decode("utf-8"))
+```
+
+```javascript
+
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "sessionToken": "7a305eb1d254488f8c0f12f2c086d534"
+}
+```
+
+This endpoint should be called to initiate a gift redemption flow. A gift redemption is required when a giftee has received a voucher code, via email, telling them that a gift has been purchased. The giftee will have their voucher code available to pass into this API request. If you would like to redirect the giftee to a specific location following redemption, you must pass the returnUrl in.
+
+### HTTP Request
+
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/workflow/configuration/gifts</span>
+</div>
+
+### Request Parameters
+ |  |  | 
+--------- | ------- | ------- | 
+`voucherCode` <br />The code that the giftee recieved as a result of someone buying them a gift| <span class="string">string</span> | <span class="required">Required</span> | 
+`returnUrl` <br />Following the completion of the redemption flow, this is the location the giftee should be redirected| <span class="string">string</span> |  | 
+
+
 
 
 

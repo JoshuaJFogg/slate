@@ -233,11 +233,11 @@ Calling this endpoint will return the history of all subscriptions an account ha
 `defaultSubscriptionInfo \ subscriptionGroup` <br />The group the subscription service belongs| <span class="string">string</span> | 
 
 
-## Cancel a Subscription
+## Edit
 
 ```shell
 curl --request PATCH \
-  --url https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionId} \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference} \
   --header 'content-type: application/json' \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
@@ -246,7 +246,7 @@ curl --request PATCH \
   ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionId}");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}");
 var request = new RestRequest(Method.patch);
 request.AddHeader("content-type", "application/json");
 request.AddHeader("x-version", "10.0.0");
@@ -257,7 +257,7 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionId}")
+HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-version", "10.0.0")
@@ -270,7 +270,7 @@ HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/acc
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionId}")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -301,7 +301,7 @@ headers = {
     'content-type': "application/json"
     }
 
-conn.request("PATCH", "/api/accounts/{accountReference}/subscriptions/{subscriptionId}", payload, headers)
+conn.request("PATCH", "/api/accounts/{accountReference}/subscriptions/{subscriptionReference}", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -313,7 +313,7 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionId}",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}",
   "method": "PATCH",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
@@ -333,24 +333,103 @@ $.ajax(settings).done(function (response) {
 > The above command returns a HTTP 204
 
 ```json
-
+{
+  "subscriptions": [
+    {
+      "accountSubscriptionInfo": {
+        "expiryDate": "2017-08-23T14:19:10.817",
+        "firstNonDiscountedBillingPointUtc": "0001-01-01T00:00:00",
+        "lastDiscountedBillingPointUtc": "0001-01-01T00:00:00",
+        "paymentMethod": "CreditDebitCard",
+        "recurringPaymentInfo": {
+          "subscriptionReference": 317337,
+          "resourceReference": "0010SRA891LP0HW231",
+          "configuredSubscriptionPrice": 18665,
+          "subscribedPrice": 200,
+          "currency": "EUR",
+          "recurringPaymentEnable": true,
+          "subscriptionLockedIn": false,
+          "nextPaymentDate": "2017-08-23T14:19:10.817",
+          "previousBillingInfo": {
+            "subscriptionPriceId": 18665,
+            "totalAmount": 180,
+            "totalTaxAmount": 150,
+            "totalNetAmount": 150,
+            "billingDate": "2017-07-23T14:19:15.27",
+            "paymentDate": "2017-08-23T14:19:10.817",
+            "taxInfo": [
+              {
+                "regionName": "GBR",
+                "regionType": "Country",
+                "displayName": "United Kingdom",
+                "category": "Standard",
+                "rate": 20,
+                "amount": 30
+              }
+            ]
+          },
+          "groupSubscriptionInfo": {
+            "licenseLevel": 10,
+            "overflowLevel": 0,
+            "overFlowCount": 0,
+            "fullSubscriptionsCount": 2,
+            "currentUserInOverFlow": false,
+            "accountGroupToken": "40271c08-0f7cf1b37d28"
+          },
+          "voucherCodes": {
+            "discountPrice": 0
+          },
+          "statusInfo": {
+            "statusId": 2,
+            "statusDescription": "Active"
+          },
+          "customParameters": {}
+        }
+      },
+      "defaultSubscriptionInfo": {
+        "customParameters": {},
+        "subscriptionId": 15991,
+        "subscriptionStatus": "active",
+        "subscriptionTitle": "Account Group Sub",
+        "subscriptionGroup": "AGT",
+        "licenseLevel": 10
+      }
+    }
+  ]
+}
 ```
 
-Calling this endpoint will allow you to hard cancel a subscription. The successful execution of this call will remove all associated entitlements. 
+Calling this endpoint will allow you to edit certain attributes of a subscription.
+
+It is possible to change the status of a subscription, most often this will be as a result of the customer wishing to cancel their subscription. The available options for this action are `CancelledByUser` and `CancelledByCustomerSupport`.
+
+This endpoint also allows customers to change the address that is associated to the shipping and/or invoice of the subscription. The parameters accept an addressReference which can be gained from creating a new address or retrieving existing addresses.
+
 
 ### HTTP Request
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-patch">PATCH</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionId}</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}</span>
 </div>
 
-### Patch Parameters
+### PATCH Parameters
+
+ |  |  | 
+--------- | ------- | ------- | 
+A collection of updates that should be made to the resource| <span class="array">array[objects]</span> | <span class="required">Required</span> | 
+`op` <br />The type of change that should be executed. add, replace and remove are available operations.| <span class="string">string</span> | <span class="required">Required</span> | 
+`path` <br />The name of the parameter that should be updated.| <span class="string">string</span> | <span class="required">Required</span> | 
+`value` <br />The new value to store against the parameter.| <span class="string">string</span> | <span class="required">Required</span> | 
+
+
+### Available Parameter Values
 
  |  |  
 --------- | ------- | 
-`status` <br />Passing `cancel` will cancel the subscription and remove entitlements| <span class="string">string</span> | 
-
+`status` <br />Passing `CancelledByUser` or `CancelledByCustomerSupport` will cancel the subscription and remove entitlements| <span class="string">string</span> | 
+`invoiceAddress` <br />This is the addressReference where the subscription should be invoiced t| <span class="string">string</span> | 
+`shippingAddress` <br />This is the addressReference where the subscription should be shipped| <span class="string">string</span> | 
 
 ## Manage Subscription renewals
 
@@ -461,7 +540,7 @@ Calling this endpoint will allow you to enable or disable the renewal process fo
 <span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionId}/status</span>
 </div>
 
-### Patch Parameters
+### PATCH Parameters
 
  |  |  
 --------- | ------- | 

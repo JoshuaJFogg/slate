@@ -140,7 +140,7 @@ This end point is present for server-side integrations to take a payment against
 
 ```shell
 curl --request GET \
-  --url 'https://uat.mppglobal.com/api/accounts/{accountReference}/orders?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1' \
+  --url 'https://uat.mppglobal.com/api/accounts/{accountReference}/payments?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1' \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
   --header 'x-version: 10.0.0' \
@@ -148,7 +148,7 @@ curl --request GET \
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/orders?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/payments?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1");
 var request = new RestRequest(Method.GET);
 request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
@@ -158,7 +158,7 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountReference}/orders?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1")
+HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountReference}/payments?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-version", "10.0.0")
@@ -170,7 +170,7 @@ HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accou
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/orders?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/payments?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -199,7 +199,7 @@ headers = {
     'x-version': '10.0.0'
     }
 
-conn.request("GET", "/api/accounts/{accountReference}/orders?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1", payload, headers)
+conn.request("GET", "/api/accounts/{accountReference}/payments?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -211,7 +211,7 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/orders?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/payments?createDateFrom=2010-07-06T09:06:28.640Z&createDateTo=2017-07-06T09:06:28.640Z&rowsPerPage=10&currentPage=1",
   "method": "GET",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
@@ -233,59 +233,46 @@ $.ajax(settings).done(function (response) {
 {
   "totalNumberOfRecords": 1,
   "pageNumber": 1,
-  "resultsPerPage": 10,
+  "resultsPerPage": 50,
   "items": [
     {
-      "basketId": "433M154875",
-      "subscriptionId": 154874,
-      "currency": "GBP",
-      "orders": [
-        {
-          "orderId": 15487,
-          "orderStatus": "Complete",
-          "orderDate": "2018-02-09T12:17:30.149Z",
-          "description": "string",
-          "priceBreakDown": {
-            "grossAmount": 10,
-            "netAmount": 8,
-            "taxAmount": 2,
-            "taxBreakDown": [
-              {
-                "displayName": "Standard UK",
-                "regionName": "Standard",
-                "regionType": "Country",
-                "category": "Standard",
-                "rate": 20,
-                "amount": 2.00
-              }
-            ]
-          },
-          "paymentMethod": "CreditCard",
-          "customParameters": {
-              "colour" : "red"
-          }
-        }
-      ]}
+      "cartReference": "0010O17IDWBV5EN4G2",
+      "fulfilmentReference": "0010O17IDWBV5EN4G2",
+      "status": "Completed",
+      "paymentReference": "0010O17IDWBV5EN4G2",
+      "paymentDate": "2018-03-21T11:01:21.0311249+00:00",
+      "description": "Subscription Purchase",
+      "paymentMethod": "CreditCard",
+      "subscriptionReference": "",
+      "pricing": {
+        "grossAmount": 9.99,
+        "netAmount": 9.99,
+        "taxAmount": 0,
+        "currency": "GBP"
+      },
+      "customPaymentParameters": {}
+    }
   ]
+}
 ```
 
-This endpoint allows you to retrieve all orders for a given account.
+This endpoint allows you to retrieve all payments for a given account.
 
 ### URL Endpoint
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-get">GET</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/orders</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/payments</span>
 </div>
 
 ### Query Parameters
 
  |  |  | 
 --------- | ------- | ------- | 
-`createDateFrom` <br />The earliest date a payment was taken that can be included in the response| <span class="string">string</span> | <span class="required">Required</span> | 
-`createDateTo` <br />The latest date a payment was taken that can be included in the response | <span class="string">string</span> | <span class="required">Required</span> | 
-`rowsPerPage` <br />An indication as to how many records to return | <span class="string">string</span> | <span class="required">Required</span> | 
-`currentPage` <br />The page that should be returned| <span class="string">string</span> | <span class="required">Required</span> |  
+`createDateFrom` <br />The earliest date a payment was taken that can be included in the response| <span class="string">string</span> |  | 
+`createDateTo` <br />The latest date a payment was taken that can be included in the response | <span class="string">string</span> |  | 
+`rowsPerPage` <br />An indication as to how many records to return | <span class="string">string</span> |  | 
+`currentPage` <br />The page that should be returned| <span class="string">string</span> | |  
 
 ### Response Parameters
 
@@ -295,28 +282,29 @@ This endpoint allows you to retrieve all orders for a given account.
 `pageNumber` <br />The page of results being displayed| <span class="string">string</span> | 
 `resultsPerPage` <br />The total number of records displayed in the response| <span class="string">string</span> | 
 `items` <br />Collection of orders associated to the account| <span class="object">object</span> | 
-`items \ basketId` <br />The basket reference that groups the transactions together| <span class="string">string</span> | 
-`items \ subscriptionId`  <br />The identifier of the subscription, if the transaction is associated| <span class="string">string</span> | 
-`items \ currency`  <br />The ISO code for the currency used to make the purchase| <span class="string">string</span> | 
-`items \ orders`  <br />The collection of attributes associated to each transaction| <span class="object">object</span> | 
-`orders \ orderId`  <br />The unique value associated to the order for identification| <span class="string">string</span> | 
-`orders \ orderStatus`  <br />The status the order is currently in| <span class="string">string</span> | 
-`orders \ orderDate`  <br />The date at which the order was placed| <span class="string">string</span> | 
-`orders \ description`  <br />A summary of what the order was placed for| <span class="string">string</span> | 
-`orders \ paymentMethod`  <br />The method of payment that has been used to process the order| <span class="string">string</span> | 
-`orders \ priceBreakdown`  <br />Object relating to the amounts charged to the account| <span class="object">object</span> | 
+`items \ cartReference` <br />The cart reference payment is associated to| <span class="string">string</span> | 
+`items \ fulfilmentReference` <br />The reference of a fulfilment that may have been generated by the payment| <span class="string">string</span> | 
+`items \ subscriptionReference`  <br />The identifier of the subscription, if the transaction is associated| <span class="string">string</span> |
+`items \ paymentMethod`  <br />The method of payment that has been used to process the payment| <span class="string">string</span> |
+`items \ status`  <br />The status the payment is currently in| <span class="string">string</span> | 
+`items \ paymentDate`  <br />The date at which the payment was placed| <span class="string">string</span> |  
+`items \ paymentReference`  <br />The unique value associated to the payment for identification| <span class="string">string</span> | 
+`items \ customPaymentParameters`  <br />A collection of custom attributes associated to the payment | <span class="dictionary">dictionary</span> | 
+`customPaymentParameters \ parameterName`  <br />The name of the custom attribute| <span class="string">string</span> | 
+`items \ priceBreakdown`  <br />Object relating to the amounts charged to the account| <span class="object">object</span> | 
 `priceBreakdown \ grossAmount`  <br />The total amount paid by the customer for the specific payment| <span class="decimal">decimal</span> | 
 `priceBreakdown \ netAmount`  <br />The gross amount minus the amount of tax paid| <span class="decimal">decimal</span> | 
 `priceBreakdown \ taxAmount`  <br />The amount of tax associated to the payment| <span class="decimal">decimal</span> | 
 `priceBreakdown \ taxBreakdown` <br />The detailed breakdown of the tax associated to the transaction |  <span class="array">array[object]</span> |
-`taxBreakdown \ displayName` <br /> The friendly name of the tax region| <span class="string">string</span> |
-`taxBreakdown \ regionName` <br />  The name associated to the tax region | <span class="string">string</span> |
-`taxBreakdown \ regionType` <br /> The region type of the tax amount. Available options are `country`, `county`, `state` and `city` |  <span class="string">string</span> |
-`taxBreakdown \ category` <br />  The cateory of tax that the transaction is associated | <span class="string">string</span> |
-`taxBreakdown \ rate` <br />  The rate of tax that has been applied to the order |<span class="decimal">decimal</span> |
-`taxBreakdown \ amount` <br />  The amount of money that is applicable as tax |<span class="decimal">string</span> |
-`items \ customPaymentParameters`  <br />A collection of custom attributes associated to the payment | <span class="dictionary">dictionary</span> | 
-`customPaymentParameters \ parameterName`  <br />The name of the custom attribute| <span class="string">string</span> | 
+`priceBreakdown \ currency`  <br />The ISO code for the currency used to make the purchase| <span class="string">string</span> |
+
+
+
+
+
+
+
+
 
 
 ## Update a Payment
@@ -522,13 +510,13 @@ Not available from a client-side application
 
 
 
-Calling this endpoint will allow the refund of a previously processed order. This endpoint cannot be called for orders that have been imported and processed via a different provider.
+Calling this endpoint will allow the refund of a previously processed payment. This endpoint cannot be called for payments that have been imported and processed via a different provider.
 
 ### HTTP Request
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/orders/{orderId}/refund</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/payments/{paymentReference}/refund</span>
 </div>
 
 ### POST Parameters
