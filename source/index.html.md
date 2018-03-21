@@ -25,8 +25,7 @@ includes:
   - address-book
   - payment-details
   
-  - groups
-  - account-groups
+
 
   - authentication
   - account-authentication

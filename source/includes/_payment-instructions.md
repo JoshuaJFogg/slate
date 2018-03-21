@@ -4,19 +4,19 @@
 
 ```shell
 curl --request POST \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/payment-instructions \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --header 'content-type: application/json' \
   --header 'content-type: application/json' \
   --data '{"cartReference":"A12347853S","paymentMethod":"SEPA","addressReference":"B123678542","voucherCode":"5OFFABCD","fulfilmentInfo":[{"fulfilmentType":"Digital","addressReference":"B123678542GV","fulfilmentDates":["2018-03-01T00:00:00"],"leadTime":4,"associatedPayments":{"paymentDates":["2018-03-01T00:00:00","2018-05-01T00:00:00","2018-05-01T00:00:00"],"customPaymentParameters":{"originator":"DirectSale"}},"customFulfilmentParameters":{"instructions":"Leave in garage."}}],"synchronousPaymentInfo":{"paymentMethod":"CreditCard","customPaymentParameters":null},"customPaymentInstructionParameters":{"paymentType":"pre-paid"}}'
  ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/payment-instructions");
 var request = new RestRequest(Method.POST);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddHeader("content-type", "application/json");
@@ -25,11 +25,11 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions")
+HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/{accountReference}/payment-instructions")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-sessionid", "BE52ADA2064C4F9A9D90F28D066D1RFT")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
   .body("{\"cartReference\":\"A12347853S\",\"paymentMethod\":\"SEPA\",\"addressReference\":\"B123678542\",\"voucherCode\":\"5OFFABCD\",\"fulfilmentInfo\":[{\"fulfilmentType\":\"Digital\",\"addressReference\":\"B123678542GV\",\"fulfilmentDates\":[\"2018-03-01T00:00:00\"],\"leadTime\":4,\"associatedPayments\":{\"paymentDates\":[\"2018-03-01T00:00:00\",\"2018-05-01T00:00:00\",\"2018-05-01T00:00:00\"],\"customPaymentParameters\":{\"originator\":\"DirectSale\"}},\"customFulfilmentParameters\":{\"instructions\":\"Leave in garage.\"}}],\"synchronousPaymentInfo\":{\"paymentMethod\":\"CreditCard\",\"customPaymentParameters\":null},\"customPaymentInstructionParameters\":{\"paymentType\":\"pre-paid\"}}")
   .asString();
@@ -39,7 +39,7 @@ HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/acco
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/payment-instructions")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -49,7 +49,7 @@ request = Net::HTTP::Post.new(url)
 request["content-type"] = 'application/json'
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{\"cartReference\":\"A12347853S\",\"paymentMethod\":\"SEPA\",\"addressReference\":\"B123678542\",\"voucherCode\":\"5OFFABCD\",\"fulfilmentInfo\":[{\"fulfilmentType\":\"Digital\",\"addressReference\":\"B123678542GV\",\"fulfilmentDates\":[\"2018-03-01T00:00:00\"],\"leadTime\":4,\"associatedPayments\":{\"paymentDates\":[\"2018-03-01T00:00:00\",\"2018-05-01T00:00:00\",\"2018-05-01T00:00:00\"],\"customPaymentParameters\":{\"originator\":\"DirectSale\"}},\"customFulfilmentParameters\":{\"instructions\":\"Leave in garage.\"}}],\"synchronousPaymentInfo\":{\"paymentMethod\":\"CreditCard\",\"customPaymentParameters\":null},\"customPaymentInstructionParameters\":{\"paymentType\":\"pre-paid\"}}"
 
 response = http.request(request)
@@ -66,10 +66,10 @@ payload = "{\"cartReference\":\"A12347853S\",\"paymentMethod\":\"SEPA\",\"addres
 headers = { 
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0',
+    'x-version': '10.0.0',
     'content-type': "application/json" }
 
-conn.request("POST", "/api/accounts/{accountId}/payment-instructions", payload, headers)
+conn.request("POST", "/api/accounts/{accountReference}/payment-instructions", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -90,7 +90,7 @@ This endpoint allows you to create a payment instruction for a specific account.
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/payment-instructions</span>
 </div>
 
 ### Request Parameters
@@ -124,17 +124,17 @@ This endpoint allows you to create a payment instruction for a specific account.
 
 ```shell
 curl --request GET \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference} \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/payment-instructions/{paymentInstructionReference} \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{}'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/payment-instructions/{paymentInstructionReference}");
 var request = new RestRequest(Method.GET);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
@@ -142,10 +142,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}")
+HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountReference}/payment-instructions/{paymentInstructionReference}")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{}")
   .asString();
 ```
@@ -154,7 +154,7 @@ HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accou
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/payment-instructions/{paymentInstructionReference}")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -163,7 +163,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Get.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{}"
 
 response = http.request(request)
@@ -180,10 +180,10 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
-conn.request("GET", "/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}", payload, headers)
+conn.request("GET", "/api/accounts/{accountReference}/payment-instructions/{paymentInstructionReference}", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -195,12 +195,12 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/payment-instructions/{paymentInstructionReference}",
   "method": "GET",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
     "x-sessionid": "a0c595bd26004ff4bb7d4cb1b1c81a6d",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com"
   },
   "data": "{}"
@@ -269,7 +269,7 @@ This endpoint allows you to retrieve a specific support log, for a specific acco
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-get">GET</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}/</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/payment-instructions/{paymentInstructionReference}/</span>
 </div>
 
 ### Response Parameters
@@ -310,19 +310,19 @@ This endpoint allows you to retrieve a specific support log, for a specific acco
 
 ```shell
 curl --request PATCH \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference} \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/payment-instructions/{paymentInstructionReference} \
   --header 'content-type: application/json' \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
  --data '[{"op":"replace","path":"/Status","value":"Cancelled"},{"op":"add","path":"/CancellationCode","value":"0.14"},{"op":"add","path":"/CancellationReason","value":"this is a value"}]'
  ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/payment-instructions/{paymentInstructionReference}");
 var request = new RestRequest(Method.patch);
 request.AddHeader("content-type", "application/json");
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("application/json", "[{\"op\":\"replace\",\"path\":\"/Status\",\"value\":\"Cancelled\"},{\"op\":\"add\",\"path\":\"/CancellationCode\",\"value\":\"0.14\"},{\"op\":\"add\",\"path\":\"/CancellationReason\",\"value\":\"this is a value\"}]", ParameterType.RequestBody);
@@ -330,10 +330,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}")
+HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/accounts/{accountReference}/payment-instructions/{paymentInstructionReference}")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
   .body("[{\"op\":\"replace\",\"path\":\"/Status\",\"value\":\"Cancelled\"},{\"op\":\"add\",\"path\":\"/CancellationCode\",\"value\":\"0.14\"},{\"op\":\"add\",\"path\":\"/CancellationReason\",\"value\":\"this is a value\"}]")
   .asString();
@@ -343,7 +343,7 @@ HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/acc
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/payment-instructions/{paymentInstructionReference}")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -352,7 +352,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Patch.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request["content-type"] = 'application/json'
 request.body = "[{\"op\":\"replace\",\"path\":\"/Status\",\"value\":\"Cancelled\"},{\"op\":\"add\",\"path\":\"/CancellationCode\",\"value\":\"0.14\"},{\"op\":\"add\",\"path\":\"/CancellationReason\",\"value\":\"this is a value\"}]"
 
@@ -370,11 +370,11 @@ payload = "[{\"op\":\"replace\",\"path\":\"/Status\",\"value\":\"Cancelled\"},{\
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0',
+    'x-version': '10.0.0',
     'content-type': "application/json"
     }
 
-conn.request("PATCH", "/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}", payload, headers)
+conn.request("PATCH", "/api/accounts/{accountReference}/payment-instructions/{paymentInstructionReference}", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -386,11 +386,11 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/payment-instructions/{paymentInstructionReference}",
   "method": "PATCH",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com",
     "content-type": "application/json"
   },
@@ -411,7 +411,7 @@ In the event you need to update a payment instruction, this end point should be 
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-patch">PATCH</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/{paymentInstructionReference}</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/payment-instructions/{paymentInstructionReference}</span>
 </div>
 
 ### PATCH Parameters
@@ -427,17 +427,17 @@ A collection of updates that should be made to the resource | <span class="array
 
 ```shell
 curl --request GET \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/summary \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/payment-instructions/summary \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{}'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/summary");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/payment-instructions/summary");
 var request = new RestRequest(Method.GET);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
@@ -445,10 +445,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/summary")
+HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountReference}/payment-instructions/summary")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{}")
   .asString();
 ```
@@ -457,7 +457,7 @@ HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accou
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/summary")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/payment-instructions/summary")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -466,7 +466,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Get.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{}"
 
 response = http.request(request)
@@ -483,10 +483,10 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
-conn.request("GET", "/api/accounts/{accountId}/payment-instructions/summary", payload, headers)
+conn.request("GET", "/api/accounts/{accountReference}/payment-instructions/summary", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -498,12 +498,12 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/summary",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/payment-instructions/summary",
   "method": "GET",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
     "x-sessionid": "a0c595bd26004ff4bb7d4cb1b1c81a6d",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com"
   },
   "data": "{}"
@@ -542,7 +542,7 @@ This endpoint allows you to retrieve a summary of all payment instructions again
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-get">GET</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/payment-instructions/summary/</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/payment-instructions/summary/</span>
 </div>
 
 ### Response Parameters

@@ -4,19 +4,19 @@
 
 ```shell
 curl --request POST \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/entitlements \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/entitlements \
   --header 'content-type: application/json' \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{"name":"Open Access to the Tribune","identifier":"TheTribuneOpen","startDate":"2015-01-01T00:00:00","endDate":"2019-01-01T00:00:00"}'```
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/entitlements");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/entitlements");
 var request = new RestRequest(Method.POST);
 request.AddHeader("content-type", "application/json");
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("application/json", "{\"name\":\"Open Access to the Tribune\",\"identifier\":\"TheTribuneOpen\",\"startDate\":\"2015-01-01T00:00:00\",\"endDate\":\"2019-01-01T00:00:00\"}", ParameterType.RequestBody);
@@ -24,10 +24,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/{accountId}/entitlements")
+HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/{accountReference}/entitlements")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
   .body("{\"name\":\"Open Access to the Tribune\",\"identifier\":\"TheTribuneOpen\",\"startDate\":\"2015-01-01T00:00:00\",\"endDate\":\"2019-01-01T00:00:00\"}")
   .asString();
@@ -37,7 +37,7 @@ HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/acco
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/entitlements")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/entitlements")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -46,7 +46,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Post.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request["content-type"] = 'application/json'
 request.body = "{\"name\":\"Open Access to the Tribune\",\"identifier\":\"TheTribuneOpen\",\"startDate\":\"2015-01-01T00:00:00\",\"endDate\":\"2019-01-01T00:00:00\"}"
 
@@ -64,11 +64,11 @@ payload = "{\"name\":\"Open Access to the Tribune\",\"identifier\":\"TheTribuneO
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0',
+    'x-version': '10.0.0',
     'content-type': "application/json"
     }
 
-conn.request("POST", "/api/accounts/{accountId}/entitlements", payload, headers)
+conn.request("POST", "/api/accounts/{accountReference}/entitlements", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -92,7 +92,7 @@ In addition to gaining entitlements via purchasing content, it is possible to pr
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/entitlements</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/entitlements</span>
 </div>
 
 ### POST Parameters
@@ -109,17 +109,17 @@ In addition to gaining entitlements via purchasing content, it is possible to pr
 
 ```shell
 curl --request GET \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/entitlements \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/entitlements \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{}'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/entitlements");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/entitlements");
 var request = new RestRequest(Method.GET);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
@@ -127,10 +127,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountId}/entitlements")
+HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountReference}/entitlements")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{}")
   .asString();
 ```
@@ -139,7 +139,7 @@ HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accou
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/entitlements")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/entitlements")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -148,7 +148,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Get.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{}"
 
 response = http.request(request)
@@ -165,10 +165,10 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
-conn.request("GET", "/api/accounts/{accountId}/entitlements", payload, headers)
+conn.request("GET", "/api/accounts/{accountReference}/entitlements", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -180,11 +180,11 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/entitlements",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/entitlements",
   "method": "GET",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com"
   },
   "data": "{}"
@@ -217,24 +217,24 @@ This endpoint is available for retrieving all active access for a specific accou
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-get">GET</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/entitlements</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/entitlements</span>
 </div>
 
 ## Delete Access
 
 ```shell
 curl --request DELETE \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier} \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/entitlements/{entitlementIdentifier} \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{}'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/entitlements/{entitlementIdentifier}");
 var request = new RestRequest(Method.DELETE);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
@@ -242,10 +242,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.put("https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}")
+HttpResponse<String> response = Unirest.put("https://uat.mppglobal.com/api/accounts/{accountReference}/entitlements/{entitlementIdentifier}")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{}")
   .asString();
 ```
@@ -254,7 +254,7 @@ HttpResponse<String> response = Unirest.put("https://uat.mppglobal.com/api/accou
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/entitlements/{entitlementIdentifier}")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -263,7 +263,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Delete.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 
 request.body = "{}"
 
@@ -281,10 +281,10 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
-conn.request("DELETE", "/api/accounts/{accountId}/entitlements/{entitlementIdentifier}", payload, headers)
+conn.request("DELETE", "/api/accounts/{accountReference}/entitlements/{entitlementIdentifier}", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -296,11 +296,11 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/entitlements/{entitlementIdentifier}",
   "method": "DELETE",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com"
   },
   "processData": false,
@@ -324,7 +324,7 @@ In the event access should be removed from an account, this API method should be
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-delete">DELETE</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/entitlements/{entitlementIdentifier}</span>
 </div>
 
 <aside class="warning">Executing this API will not remove access from the account until the access rights of the account are checked again.</aside>
@@ -336,17 +336,17 @@ In the event access should be removed from an account, this API method should be
 
 ```shell
 curl --request GET \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}?incrementUsage=true&deviceIdentifier=iPad \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/entitlements/{entitlementIdentifier}?incrementUsage=true&deviceIdentifier=iPad \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{}'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}?incrementUsage=true&deviceIdentifier=iPad");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/entitlements/{entitlementIdentifier}?incrementUsage=true&deviceIdentifier=iPad");
 var request = new RestRequest(Method.GET);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
@@ -354,10 +354,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}?incrementUsage=true&deviceIdentifier=iPad")
+HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountReference}/entitlements/{entitlementIdentifier}?incrementUsage=true&deviceIdentifier=iPad")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{}")
   .asString();
 ```
@@ -366,7 +366,7 @@ HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accou
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}?incrementUsage=true&deviceIdentifier=iPad")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/entitlements/{entitlementIdentifier}?incrementUsage=true&deviceIdentifier=iPad")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -375,7 +375,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Get.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{}"
 
 response = http.request(request)
@@ -392,10 +392,10 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
-conn.request("GET", "/api/accounts/{accountId}/entitlements/{entitlementIdentifier}?incrementUsage=true&deviceIdentifier=iPad", payload, headers)
+conn.request("GET", "/api/accounts/{accountReference}/entitlements/{entitlementIdentifier}?incrementUsage=true&deviceIdentifier=iPad", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -407,11 +407,11 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}?incrementUsage=true&deviceIdentifier=iPad",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/entitlements/{entitlementIdentifier}?incrementUsage=true&deviceIdentifier=iPad",
   "method": "GET",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com"
   },
   "data": "{}"
@@ -438,7 +438,7 @@ In order to check if an account has access to content, this API method should be
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-get">GET</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/{entitlementIdentifier}</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/entitlements/{entitlementIdentifier}</span>
 </div>
 
 ### Query Parameters
@@ -453,17 +453,17 @@ In order to check if an account has access to content, this API method should be
 
 ```shell
 curl --request GET \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/search?rowsPerPage=10&currentPage=1&exactMatch=false \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/entitlements/search?rowsPerPage=10&currentPage=1&exactMatch=false \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{}'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/search?rowsPerPage=10&currentPage=1&exactMatch=false");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/entitlements/search?rowsPerPage=10&currentPage=1&exactMatch=false");
 var request = new RestRequest(Method.GET);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
@@ -471,10 +471,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/search?rowsPerPage=10&currentPage=1&exactMatch=false")
+HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountReference}/entitlements/search?rowsPerPage=10&currentPage=1&exactMatch=false")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{}")
   .asString();
 ```
@@ -483,7 +483,7 @@ HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accou
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/search?rowsPerPage=10&currentPage=1&exactMatch=false")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/entitlements/search?rowsPerPage=10&currentPage=1&exactMatch=false")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -492,7 +492,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Get.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{}"
 
 response = http.request(request)
@@ -509,10 +509,10 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
-conn.request("GET", "/api/accounts/{accountId}/entitlements/search?rowsPerPage=10&currentPage=1&exactMatch=false", payload, headers)
+conn.request("GET", "/api/accounts/{accountReference}/entitlements/search?rowsPerPage=10&currentPage=1&exactMatch=false", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -524,11 +524,11 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/search?rowsPerPage=10&currentPage=1&exactMatch=false",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/entitlements/search?rowsPerPage=10&currentPage=1&exactMatch=false",
   "method": "GET",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com"
   },
   "data": "{}"
@@ -564,7 +564,7 @@ This endpoint is available for all access for a specific account, regardless of 
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-get">GET</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/entitlements/search</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/entitlements/search</span>
 </div>
 
 ### Query Parameters

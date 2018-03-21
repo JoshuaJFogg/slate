@@ -7,14 +7,14 @@ curl --request GET \
   --url https://uat.mppglobal.com/api/sessions/{sessionToken} \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{}'
 ```
 
 ```csharp
 var client = new RestClient("https://uat.mppglobal.com/api/sessions/{sessionToken}");
 var request = new RestRequest(Method.GET);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
@@ -26,7 +26,7 @@ HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/sessi
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-sessionid", "BE52ADA2064C4F9A9D90F28D066D1RFT")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{}")
   .asString();
 ```
@@ -45,7 +45,7 @@ request = Net::HTTP::Get.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword',
 request["x-sessionid"] = 'BE52ADA2064C4F9A9D90F28D066D1RFT',
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{}"
 
 response = http.request(request)
@@ -62,7 +62,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
 conn.request("GET", "/api/sessions/{sessionToken}", payload)
@@ -80,7 +80,7 @@ var settings = {
   "headers": {
     "x-sessionid": "{sessionToken}",
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com"
   },
   "data": "{}"
@@ -133,14 +133,14 @@ curl --request DELETE \
   --url https://uat.mppglobal.com/api/sessions/{sessionToken} \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{}'
 ```
 
 ```csharp
 var client = new RestClient("https://uat.mppglobal.com/api/sessions/{sessionToken}");
 var request = new RestRequest(Method.DELETE);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
@@ -151,7 +151,7 @@ IRestResponse response = client.Execute(request);
 HttpResponse<String> response = Unirest.put("https://uat.mppglobal.com/api/sessions/{sessionToken}")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{}")
   .asString();
 ```
@@ -169,7 +169,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Delete.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 
 request.body = "{}"
 
@@ -187,7 +187,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
 conn.request("DELETE", "/api/sessions/{sessionToken}", payload, headers)
@@ -207,7 +207,7 @@ var settings = {
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
 	  "x-sessionid": "{sessionToken}",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com"
   },
   "processData": false,

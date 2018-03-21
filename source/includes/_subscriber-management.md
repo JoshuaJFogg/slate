@@ -4,17 +4,17 @@
 
 ```shell
 curl --request GET \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{}'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions");
 var request = new RestRequest(Method.GET);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
@@ -22,10 +22,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions")
+HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{}")
   .asString();
 ```
@@ -34,7 +34,7 @@ HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accou
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -43,7 +43,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Get.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{}"
 
 response = http.request(request)
@@ -60,10 +60,10 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
-conn.request("GET", "/api/accounts/{accountId}/subscriptions", payload, headers)
+conn.request("GET", "/api/accounts/{accountReference}/subscriptions", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -75,11 +75,11 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions",
   "method": "GET",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com"
   },
   "data": "{}"
@@ -165,7 +165,7 @@ Calling this endpoint will return the history of all subscriptions an account ha
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-get">GET</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions</span>
 </div>
 
 ### Response Parameters
@@ -237,19 +237,19 @@ Calling this endpoint will return the history of all subscriptions an account ha
 
 ```shell
 curl --request PATCH \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionId} \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionId} \
   --header 'content-type: application/json' \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{"status":"cancel"}'
   ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionId}");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionId}");
 var request = new RestRequest(Method.patch);
 request.AddHeader("content-type", "application/json");
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("application/json", "{\"status\":\"replace\"}", ParameterType.RequestBody);
@@ -257,10 +257,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionId}")
+HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionId}")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
   .body("[{\"status\":\"cancel\"}")
   .asString();
@@ -270,7 +270,7 @@ HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/acc
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionId}")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionId}")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -279,7 +279,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Patch.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request["content-type"] = 'application/json'
 request.body = "[{\"status\":\"cancel\"}"
 
@@ -297,11 +297,11 @@ payload = "{\"status\":\"cancel\"}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0',
+    'x-version': '10.0.0',
     'content-type': "application/json"
     }
 
-conn.request("PATCH", "/api/accounts/{accountId}/subscriptions/{subscriptionId}", payload, headers)
+conn.request("PATCH", "/api/accounts/{accountReference}/subscriptions/{subscriptionId}", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -313,11 +313,11 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionId}",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionId}",
   "method": "PATCH",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com",
     "content-type": "application/json"
   },
@@ -342,7 +342,7 @@ Calling this endpoint will allow you to hard cancel a subscription. The successf
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-patch">PATCH</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionId}</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionId}</span>
 </div>
 
 ### Patch Parameters
@@ -356,19 +356,19 @@ Calling this endpoint will allow you to hard cancel a subscription. The successf
 
 ```shell
 curl --request PATCH \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionId}/status \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionId}/status \
   --header 'content-type: application/json' \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{"renewals":"enable"}'
   ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionId}/status");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionId}/status");
 var request = new RestRequest(Method.patch);
 request.AddHeader("content-type", "application/json");
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("application/json", "{\"renewals\":\"enable\"}", ParameterType.RequestBody);
@@ -376,10 +376,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionId}/status")
+HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionId}/status")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
   .body("[{\"renewals\":\"enable\"}")
   .asString();
@@ -389,7 +389,7 @@ HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/acc
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionId}/status")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionId}/status")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -398,7 +398,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Patch.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request["content-type"] = 'application/json'
 request.body = "[{\"renewals\":\"enable\"}"
 
@@ -416,11 +416,11 @@ payload = "{\"renewals\":\"enable\"}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0',
+    'x-version': '10.0.0',
     'content-type': "application/json"
     }
 
-conn.request("PATCH", "/api/accounts/{accountId}/subscriptions/{subscriptionId}/status", payload, headers)
+conn.request("PATCH", "/api/accounts/{accountReference}/subscriptions/{subscriptionId}/status", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -432,11 +432,11 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionId}/status",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionId}/status",
   "method": "PATCH",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com",
     "content-type": "application/json"
   },
@@ -458,7 +458,7 @@ Calling this endpoint will allow you to enable or disable the renewal process fo
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-patch">PATCH</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionId}/status</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionId}/status</span>
 </div>
 
 ### Patch Parameters
@@ -472,19 +472,19 @@ Calling this endpoint will allow you to enable or disable the renewal process fo
 
 ```shell
 curl --request POST \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionId}/vouchers \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionId}/vouchers \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --header 'content-type: application/json' \
   --header 'content-type: application/json' \
   --data '{"voucherCode":"ABC45FDR"}'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionId}/vouchers");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionId}/vouchers");
 var request = new RestRequest(Method.POST);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddHeader("content-type", "application/json");
@@ -493,11 +493,11 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionId}/vouchers")
+HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionId}/vouchers")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-sessionid", "BE52ADA2064C4F9A9D90F28D066D1RFT")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
   .body("{\"voucherCode\":\"ABC45FDR\"}")
   .asString();
@@ -507,7 +507,7 @@ HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/acco
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionId}/vouchers")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionId}/vouchers")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -517,7 +517,7 @@ request = Net::HTTP::Post.new(url)
 request["content-type"] = 'application/json'
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{\"voucherCode\":\"ABC45FDR\"}"
 
 response = http.request(request)
@@ -534,10 +534,10 @@ payload = "{\"voucherCode\":\"ABC45FDR\"}"
 headers = { 
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0',
+    'x-version': '10.0.0',
     'content-type': "application/json" }
 
-conn.request("POST", "/api/accounts/{accountId}/subscriptions/{subscriptionId}/vouchers", payload, headers)
+conn.request("POST", "/api/accounts/{accountReference}/subscriptions/{subscriptionId}/vouchers", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -549,12 +549,12 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionId}/vouchers",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionId}/vouchers",
   "method": "POST",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
     "x-sessionid": "a0c595bd26004ff4bb7d4cb1b1c81a6d",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com",
     "content-type": "application/json"
   },
@@ -579,7 +579,7 @@ Calling this endpoint will allow you to add a voucher code to an existing subscr
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionid}/vouchers</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionid}/vouchers</span>
 </div>
 
 ### POST Parameters
@@ -595,19 +595,19 @@ Calling this endpoint will allow you to add a voucher code to an existing subscr
 
 ```shell
 curl --request POST \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --header 'content-type: application/json' \
   --header 'content-type: application/json' \
   --data '{"startDate":"2017-07-04T00:00:00","endDate":"2017-07-14T23:59:59"}'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays");
 var request = new RestRequest(Method.POST);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddHeader("content-type", "application/json");
@@ -616,11 +616,11 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays")
+HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-sessionid", "BE52ADA2064C4F9A9D90F28D066D1RFT")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
   .body("{\"startDate\":\"2017-07-04T00:00:00\",\"endDate\":\"2017-07-14T23:59:59\"}")
   .asString();
@@ -630,7 +630,7 @@ HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/acco
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -640,7 +640,7 @@ request = Net::HTTP::Post.new(url)
 request["content-type"] = 'application/json'
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{\"startDate\":\"2017-07-04T00:00:00\",\"endDate\":\"2017-07-14T23:59:59\"}"
 
 response = http.request(request)
@@ -657,10 +657,10 @@ payload = "{\"startDate\":\"2017-07-04T00:00:00\",\"endDate\":\"2017-07-14T23:59
 headers = { 
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0',
+    'x-version': '10.0.0',
     'content-type': "application/json" }
 
-conn.request("POST", "/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays", payload, headers)
+conn.request("POST", "/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -672,12 +672,12 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays",
   "method": "POST",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
     "x-sessionid": "a0c595bd26004ff4bb7d4cb1b1c81a6d",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com",
     "content-type": "application/json"
   },
@@ -707,7 +707,7 @@ This endpoint allows you to create a holiday period for a specific subscription.
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays</span>
 </div>
 
 ### Request Parameters
@@ -723,17 +723,17 @@ This endpoint allows you to create a holiday period for a specific subscription.
 
 ```shell
 curl --request GET \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference} \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference} \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{}'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}");
 var request = new RestRequest(Method.GET);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
@@ -741,10 +741,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}")
+HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{}")
   .asString();
 ```
@@ -753,7 +753,7 @@ HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accou
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -762,7 +762,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Get.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{}"
 
 response = http.request(request)
@@ -779,10 +779,10 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
-conn.request("GET", "/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}", payload, headers)
+conn.request("GET", "/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -794,12 +794,12 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}",
   "method": "GET",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
     "x-sessionid": "a0c595bd26004ff4bb7d4cb1b1c81a6d",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com"
   },
   "data": "{}"
@@ -827,7 +827,7 @@ This endpoint allows you to retrieve all configured subscription holidays for a 
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-get">GET</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays/</span>
 </div>
 
 ### Response Parameters
@@ -843,19 +843,19 @@ This endpoint allows you to retrieve all configured subscription holidays for a 
 
 ```shell
 curl --request PATCH \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference} \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference} \
   --header 'content-type: application/json' \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
  --data '[{"op":"replace","path":"/StartDate/","value":"2017-08-04 00:00:00Z"},{"op":"replace","path":"/EndDate/","value":"2017-09-04 00:00:00Z"}]'
  ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}");
 var request = new RestRequest(Method.PATCH);
 request.AddHeader("content-type", "application/json");
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("application/json", "[{\"op\":\"replace\",\"path\":\"/StartDate/\",\"value\":\"2017-08-04 00:00:00Z\"},{\"op\":\"replace\",\"path\":\"/EndDate/\",\"value\":\"2017-09-04 00:00:00Z\"}]", ParameterType.RequestBody);
@@ -863,10 +863,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}")
+HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
   .body("[{\"op\":\"replace\",\"path\":\"/StartDate/\",\"value\":\"2017-08-04 00:00:00Z\"},{\"op\":\"replace\",\"path\":\"/EndDate/\",\"value\":\"2017-09-04 00:00:00Z\"}]")
   .asString();
@@ -876,7 +876,7 @@ HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/acc
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -885,7 +885,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::patch.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request["content-type"] = 'application/json'
 request.body = "[{\"op\":\"replace\",\"path\":\"/StartDate/\",\"value\":\"2017-08-04 00:00:00Z\"},{\"op\":\"replace\",\"path\":\"/EndDate/\",\"value\":\"2017-09-04 00:00:00Z\"}]"
 
@@ -903,11 +903,11 @@ payload = "[{\"op\":\"replace\",\"path\":\"/StartDate/\",\"value\":\"2017-08-04 
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0',
+    'x-version': '10.0.0',
     'content-type': "application/json"
     }
 
-conn.request("PATCH", "/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}", payload, headers)
+conn.request("PATCH", "/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -919,11 +919,11 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}",
   "method": "PATCH",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com",
     "content-type": "application/json"
   },
@@ -953,7 +953,7 @@ In the event you need to update a subscription holiday, this end point should be
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-patch">PATCH</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}</span>
 </div>
 
 ### PATCH Parameters
@@ -969,17 +969,17 @@ A collection of updates that should be made to the resource| <span class="array"
 
 ```shell
 curl --request DELETE \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference} \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference} \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{}'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}");
 var request = new RestRequest(Method.DELETE);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
@@ -987,10 +987,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.delete("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}")
+HttpResponse<String> response = Unirest.delete("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{}")
   .asString();
 ```
@@ -999,7 +999,7 @@ HttpResponse<String> response = Unirest.delete("https://uat.mppglobal.com/api/ac
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -1008,7 +1008,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Delete.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 
 request.body = "{}"
 
@@ -1026,10 +1026,10 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
-conn.request("DELETE", "/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}", payload, headers)
+conn.request("DELETE", "/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -1041,11 +1041,11 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}",
   "method": "DELETE",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com"
   },
   "processData": false,
@@ -1066,24 +1066,24 @@ If an account would like to cancel their subscription holiday, this endpoint sho
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-delete">DELETE</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays/{subscriptionHolidayReference}</span>
 </div>
 
 ## Retrieve all subscription holidays
 
 ```shell
 curl --request GET \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{}'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays");
 var request = new RestRequest(Method.GET);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
@@ -1091,10 +1091,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays")
+HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{}")
   .asString();
 ```
@@ -1103,7 +1103,7 @@ HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accou
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -1112,7 +1112,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Get.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{}"
 
 response = http.request(request)
@@ -1129,10 +1129,10 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
-conn.request("GET", "/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays", payload, headers)
+conn.request("GET", "/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -1144,12 +1144,12 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays",
   "method": "GET",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
     "x-sessionid": "a0c595bd26004ff4bb7d4cb1b1c81a6d",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com"
   },
   "data": "{}"
@@ -1177,7 +1177,7 @@ This endpoint allows you to retrieve all configured subscription holidays for a 
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-get">GET</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions/{subscriptionReference}/holidays/</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions/{subscriptionReference}/holidays/</span>
 </div>
 
 ### Response Parameters

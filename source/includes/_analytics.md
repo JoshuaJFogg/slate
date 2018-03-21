@@ -7,14 +7,14 @@ curl --request GET \
   --url 'https://uat.mppglobal.com/api/analytics/methodName?enddate=2099-05-18T00%3A00%3A00.000Z&startdate=2017-05-18T00%3A00%3A00.000Z' \
   --header 'x-clientid: 1001' \
   --header 'x-clientpassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{}'
 ```
 
 ```csharp
 var client = new RestClient("https://uat.mppglobal.com/api/analytics/methodName?enddate=2099-05-18T00%3A00%3A00.000Z&startdate=2017-05-18T00%3A00%3A00.000Z");
 var request = new RestRequest(Method.GET);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientpassword", "Str0ngP@ssword");
 request.AddHeader("x-clientid", "1001");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
@@ -25,7 +25,7 @@ IRestResponse response = client.Execute(request);
 HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/analytics/methodName?enddate=2099-05-18T00%3A00%3A00.000Z&startdate=2017-05-18T00%3A00%3A00.000Z")
   .header("x-clientid", "1001")
   .header("x-clientpassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{}")
   .asString();
 ```
@@ -42,7 +42,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Get.new(url)
 request["x-clientid"] = '1001'
 request["x-clientpassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{}"
 
 response = http.request(request)
@@ -59,7 +59,7 @@ payload = "{}"
 headers = {
     'x-clientid': "1001",
     'x-clientpassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
 conn.request("GET", "/api/analytics/methodName?enddate=2099-05-18T00%3A00%3A00.000Z&startdate=2017-05-18T00%3A00%3A00.000Z", payload, headers)

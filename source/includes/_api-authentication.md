@@ -60,7 +60,7 @@ If you choose to integrate the eSuite API directly into your technology stack pl
 </aside>
 
 ## Versions
-The eSuite API operates a semantic version policy which is denoted using MAJOR.MINOR.PATCH (9.0.0). The x-version header is a Required parameter on *all* API requests.
+The eSuite API operates a semantic version policy which is denoted using MAJOR.MINOR.PATCH (10.0.0). The x-version header is a Required parameter on *all* API requests.
 
 If MPP Global makes a change to the eSuite API that could result in an existing integration no longer functioning correctly, a new major version will be released, resulting in incrementing the Major version of the API. For example, a non-backwards compatible change to the API would be the change the results in responses being returned as XML rather than JSON. This would see a version 9.12.3 being the final version 9 release and a breaking change being released on version 10.0.0.
 

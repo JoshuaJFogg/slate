@@ -8,7 +8,7 @@ curl --request POST \
   --header 'content-type: application/json' \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{"email":"john.smith@mppglobal.com","password":"pWzjWktsWN8M"}'
 ```
 
@@ -16,7 +16,7 @@ curl --request POST \
 var client = new RestClient("https://uat.mppglobal.com/api/accounts/authenticate/");
 var request = new RestRequest(Method.POST);
 request.AddHeader("content-type", "application/json");
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("application/json", "{\"email\":\"john.smith@mppglobal.com\",\"password\":\"pWzjWktsWN8M\"}", ParameterType.RequestBody);
@@ -27,7 +27,7 @@ IRestResponse response = client.Execute(request);
 HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/authenticate/")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
   .body("{\"email\":\"john.smith@mppglobal.com\",\"password\":\"pWzjWktsWN8M\"}")
   .asString();
@@ -46,7 +46,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Post.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request["content-type"] = 'application/json'
 request.body = "{\"email\":\"john.smith@mppglobal.com\",\"password\":\"pWzjWktsWN8M\"}"
 
@@ -64,7 +64,7 @@ payload = "{\"email\":\"john.smith@mppglobal.com\",\"password\":\"pWzjWktsWN8M\"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0',
+    'x-version': '10.0.0',
     'content-type': "application/json"
     }
 
@@ -84,7 +84,7 @@ var settings = {
   "method": "POST",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com",
     "content-type": "application/json"
   },
@@ -101,7 +101,6 @@ $.ajax(settings).done(function (response) {
 
 ```json
 {
-  "accountId": 19874854,
   "resourceReference": "14BB19DD3A5509",
   "sessionToken": "E79D7A1FC0314BB19DD3A5509B77584C"
 }
@@ -132,7 +131,7 @@ curl --request POST \
   --header 'content-type: application/json' \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{}'
 ```
 
@@ -140,7 +139,7 @@ curl --request POST \
 var client = new RestClient("https://uat.mppglobal.com/api/accounts/authenticate/{clientUserId}");
 var request = new RestRequest(Method.POST);
 request.AddHeader("content-type", "application/json");
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("application/json", "{\"email\":\"john.smith@mppglobal.com\",\"password\":\"pWzjWktsWN8M\"}", ParameterType.RequestBody);
@@ -151,7 +150,7 @@ IRestResponse response = client.Execute(request);
 HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/authenticate/{clientUserId}")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
   .body("{}")
   .asString();
@@ -170,7 +169,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Post.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request["content-type"] = 'application/json'
 request.body = "{}"
 
@@ -188,7 +187,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0',
+    'x-version': '10.0.0',
     'content-type': "application/json"
     }
 
@@ -208,7 +207,6 @@ print(data.decode("utf-8"))
 
 ```json
 {
-  "accountId": 19874854,
   "resourceReference": "14BB19DD3A5509",
   "sessionToken": "E79D7A1FC0314BB19DD3A5509B77584C"
 }

@@ -4,17 +4,17 @@
 
 ```shell
 curl --request GET \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/external-providers \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/external-providers \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{}'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/external-providers");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/external-providers");
 var request = new RestRequest(Method.GET);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
@@ -22,10 +22,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountId}/external-providers")
+HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountReference}/external-providers")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{}")
   .asString();
 ```
@@ -34,7 +34,7 @@ HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accou
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/external-providers")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/external-providers")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -43,7 +43,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Get.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{}"
 
 response = http.request(request)
@@ -60,10 +60,10 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
-conn.request("GET", "/api/accounts/{accountId}/external-providers", payload, headers)
+conn.request("GET", "/api/accounts/{accountReference}/external-providers", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -75,12 +75,12 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/external-providers",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/external-providers",
   "method": "GET",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
     "x-sessionid": "a0c595bd26004ff4bb7d4cb1b1c81a6d",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com"
   },
   "data": "{}"
@@ -114,7 +114,7 @@ This endpoint provides a list of all available external providers that are avail
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-get">GET</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/external-providers</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/external-providers</span>
 </div>
 
 ### Response Parameters
@@ -159,7 +159,7 @@ var settings = {
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
     "x-sessionid": "a0c595bd26004ff4bb7d4cb1b1c81a6d",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com",
     "content-type": "application/json"
   },
@@ -253,7 +253,7 @@ curl --request POST \
   --url https://uat.mppglobal.com/api/accounts/authenticate/external-providers/facebook \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --header 'content-type: application/json' \
   --header 'content-type: application/json' \
   --data '{"facebookRedirectURI":"https://uat.mppglobal.com","authorisationCode":"123FRDV56G",
@@ -263,7 +263,7 @@ curl --request POST \
 ```csharp
 var client = new RestClient("https://uat.mppglobal.com/api/accounts/authenticate/external-providers/facebook");
 var request = new RestRequest(Method.POST);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddHeader("content-type", "application/json");
@@ -277,7 +277,7 @@ HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/acco
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-sessionid", "BE52ADA2064C4F9A9D90F28D066D1RFT")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
   .body("{\"facebookRedirectURI\":\"https://uat.mppglobal.com\",\"authorisationCode\":\"123FRDV56G\",\"accessToken\":\"EAARUdAzQ9UABAOPiYCyZB\",\"applicationIdentifier\":\"fc7cc423-dd26-4d38-bd18-52e5dae8a45b\"}")
   .asString();
@@ -297,7 +297,7 @@ request = Net::HTTP::Post.new(url)
 request["content-type"] = 'application/json'
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{\"facebookRedirectURI\":\"https://uat.mppglobal.com\",\"authorisationCode\":\"123FRDV56G\"
 ,\"accessToken\":\"EAARUdAzQ9UABAOPiYCyZB\",\"applicationIdentifier\":\"fc7cc423-dd26-4d38-bd18-52e5dae8a45b\"}"
 
@@ -315,7 +315,7 @@ payload = "{\"facebookRedirectURI\":\"https://uat.mppglobal.com\",\"authorisatio
 headers = { 
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0',
+    'x-version': '10.0.0',
     'content-type': "application/json" }
 
 conn.request("POST", "api/accounts/authenticate/external-providers/facebook", payload, headers)
@@ -335,7 +335,7 @@ var settings = {
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
     "x-sessionid": "a0c595bd26004ff4bb7d4cb1b1c81a6d",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com",
     "content-type": "application/json"
   },
@@ -355,7 +355,6 @@ $.ajax(settings).done(function (response) {
   "status": "NoAccountMatch",
   "sessionToken": "6640ffaf3z954fdf8ba4342b51265e05",
   "providerProfileDetails": {
-    "accountId": 123456,
     "resourceReference": "ResourceReference",
     "firstName": "Joe",
     "surname": "Smith",
@@ -410,12 +409,12 @@ An account is able to authenticate using their Facebook account and then retriev
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "/api/accounts/{accountId}/link/external-providers/facebook",
+  "url": "/api/accounts/{accountReference}/link/external-providers/facebook",
   "method": "POST",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
     "x-sessionid": "a0c595bd26004ff4bb7d4cb1b1c81a6d",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com",
     "content-type": "application/json"
   },
@@ -443,7 +442,7 @@ This endpoint allows you to link an existing eSuite account to their Facebook pr
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/link/external-providers/facebook</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/link/external-providers/facebook</span>
 </div>
 
 ### POST Parameters
@@ -464,7 +463,7 @@ curl --request POST \
   --url https://uat.mppglobal.com/api/accounts/authenticate/external-providers/yahoo-jp \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --header 'content-type: application/json' \
   --header 'content-type: application/json' \
   --data '{"yahooJapanRedirectURL":"https://uat.mppglobal.com","authorisationCode":"123FRDV56G","accessToken":"EAARUdAzQ9UABAOPiYCyZB","applicationIdentifier":"fc7cc423-dd26-4d38-bd18-52e5dae8a45b"}'
@@ -473,7 +472,7 @@ curl --request POST \
 ```csharp
 var client = new RestClient("https://uat.mppglobal.com/api/accounts/authenticate/external-providers/yahoo-japan");
 var request = new RestRequest(Method.POST);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddHeader("content-type", "application/json");
@@ -487,7 +486,7 @@ HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/acco
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-sessionid", "BE52ADA2064C4F9A9D90F28D066D1RFT")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
   .body("{\"yahooJapanRedirectURL\":\"https://uat.mppglobal.com\",\"authorisationCode\":\"123FRDV56G\",\"accessToken\":\"EAARUdAzQ9UABAOPiYCyZB\",\"applicationIdentifier\":\"fc7cc423-dd26-4d38-bd18-52e5dae8a45b\"}")
   .asString();
@@ -507,7 +506,7 @@ request = Net::HTTP::Post.new(url)
 request["content-type"] = 'application/json'
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{\"yahooJapanRedirectURL\":\"https://uat.mppglobal.com\",\"authorisationCode\":\"123FRDV56G\"
 ,\"accessToken\":\"EAARUdAzQ9UABAOPiYCyZB\",\"applicationIdentifier\":\"fc7cc423-dd26-4d38-bd18-52e5dae8a45b\"}"
 
@@ -525,7 +524,7 @@ payload = "{\"yahooJapanRedirectURL\":\"https://uat.mppglobal.com\",\"authorisat
 headers = { 
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': "10.0.0",
     'content-type': "application/json" }
 
 conn.request("POST", "api/accounts/authenticate/external-providers/yahoo-jp", payload, headers)
@@ -545,7 +544,7 @@ var settings = {
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
     "x-sessionid": "a0c595bd26004ff4bb7d4cb1b1c81a6d",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com",
     "content-type": "application/json"
   },
@@ -565,7 +564,6 @@ $.ajax(settings).done(function (response) {
   "status": "NoAccountMatch",
   "sessionToken": "6640ffaf3z954fdf8ba4342b51265e05",
   "providerProfileDetails": {
-    "accountId": 123456,
     "resourceReference": "ResourceReference",
     "firstName": "Joe",
     "surname": "Smith",
@@ -580,7 +578,7 @@ An account is able to authenticate using their Yahoo Japan account and then retr
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/external-providers/yahoo-jp</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/external-providers/yahoo-jp</span>
 </div>
 
 ### POST Parameters
@@ -625,7 +623,7 @@ var settings = {
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
     "x-sessionid": "a0c595bd26004ff4bb7d4cb1b1c81a6d",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com",
     "content-type": "application/json"
   },
@@ -652,7 +650,7 @@ This endpoint allows you to link an existing eSuite account to their Yahoo Japan
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/link/external-providers/yahoo-jp</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/link/external-providers/yahoo-jp</span>
 </div>
 
 ### POST Parameters
@@ -673,7 +671,7 @@ curl --request POST \
   --url https://uat.mppglobal.com/api/accounts/authenticate/external-providers/google \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --header 'content-type: application/json' \
   --header 'content-type: application/json' \
   --data '{"googleRedirectURI":"https://uat.mppglobal.com","authorisationCode":"123FRDV56G",
@@ -683,7 +681,7 @@ curl --request POST \
 ```csharp
 var client = new RestClient("https://uat.mppglobal.com/api/accounts/authenticate/external-providers/google");
 var request = new RestRequest(Method.POST);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddHeader("content-type", "application/json");
@@ -697,7 +695,7 @@ HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/acco
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-sessionid", "BE52ADA2064C4F9A9D90F28D066D1RFT")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
   .body("{\"googleRedirectURI\":\"https://uat.mppglobal.com\",\"authorisationCode\":\"123FRDV56G\",\"accessToken\":\"EAARUdAzQ9UABAOPiYCyZB\",\"applicationIdentifier\":\"fc7cc423-dd26-4d38-bd18-52e5dae8a45b\"}")
   .asString();
@@ -717,7 +715,7 @@ request = Net::HTTP::Post.new(url)
 request["content-type"] = 'application/json'
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{\"googleRedirectURI\":\"https://uat.mppglobal.com\",\"authorisationCode\":\"123FRDV56G\",\"accessToken\":\"EAARUdAzQ9UABAOPiYCyZB\",\"applicationIdentifier\":\"fc7cc423-dd26-4d38-bd18-52e5dae8a45b\"}"
 
 response = http.request(request)
@@ -734,7 +732,7 @@ payload = "{\"googleRedirectURI\":\"https://uat.mppglobal.com\",\"authorisationC
 headers = { 
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': "9.0.0",
+    'x-version': "10.0.0",
     'content-type': "application/json" }
 
 conn.request("POST", "api/accounts/authenticate/external-providers/google", payload, headers)
@@ -754,7 +752,7 @@ var settings = {
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
     "x-sessionid": "a0c595bd26004ff4bb7d4cb1b1c81a6d",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com",
     "content-type": "application/json"
   },
@@ -775,7 +773,6 @@ $.ajax(settings).done(function (response) {
   "status": "NoAccountMatch",
   "sessionToken": "6640ffaf3z954fdf8ba4342b51265e05",
   "providerProfileDetails": {
-    "accountId": 123456,
     "resourceReference": "ResourceReference",
     "firstName": "Joe",
     "surname": "Smith",
@@ -790,7 +787,7 @@ An account is able to authenticate using their Google account and then retrieve 
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/external-providers/google</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/external-providers/google</span>
 </div>
 
 ### POST Parameters
@@ -830,12 +827,12 @@ An account is able to authenticate using their Google account and then retrieve 
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "/api/accounts/{accountId}/link/external-providers/google",
+  "url": "/api/accounts/{accountReference}/link/external-providers/google",
   "method": "POST",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
     "x-sessionid": "a0c595bd26004ff4bb7d4cb1b1c81a6d",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com",
     "content-type": "application/json"
   },
@@ -863,7 +860,7 @@ This endpoint allows you to link an existing eSuite account to their Google prof
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/link/external-providers/google</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/link/external-providers/google</span>
 </div>
 
 ### POST Parameters

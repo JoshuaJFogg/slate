@@ -4,19 +4,19 @@
 
 ```shell
 curl --request POST \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/support-logs \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/support-logs \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --header 'content-type: application/json' \
   --header 'content-type: application/json' \
   --data '{"logType":"SupportNote","logStatus":"Open","logTitle":"Unable to access content.","logDetails":"Due to the use of cellular data.","systemAccountId":12548695}'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/support-logs");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/support-logs");
 var request = new RestRequest(Method.POST);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddHeader("content-type", "application/json");
@@ -25,11 +25,11 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/{accountId}/support-logs")
+HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/{accountReference}/support-logs")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-sessionid", "BE52ADA2064C4F9A9D90F28D066D1RFT")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
   .body("{\"logType\":\"SupportNote\",\"logStatus\":\"Open\",\"logTitle\":\"Unable to access content.\",\"logDetails\":\"Due to the use of cellular data.\",\"systemAccountId\":12548695}")
   .asString();
@@ -39,7 +39,7 @@ HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/acco
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/support-logs")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/support-logs")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -49,7 +49,7 @@ request = Net::HTTP::Post.new(url)
 request["content-type"] = 'application/json'
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{\"logType\":\"SupportNote\",\"logStatus\":\"Open\",\"logTitle\":\"Unable to access content.\",\"logDetails\":\"Due to the use of cellular data.\",\"systemAccountId\":12548695}"
 
 response = http.request(request)
@@ -66,10 +66,10 @@ payload = "{\"logType\":\"SupportNote\",\"logStatus\":\"Open\",\"logTitle\":\"Un
 headers = { 
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0',
+    'x-version': '10.0.0',
     'content-type': "application/json" }
 
-conn.request("POST", "/api/accounts/{accountId}/support-logs", payload, headers)
+conn.request("POST", "/api/accounts/{accountReference}/support-logs", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -81,12 +81,12 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/support-logs",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/support-logs",
   "method": "POST",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
     "x-sessionid": "a0c595bd26004ff4bb7d4cb1b1c81a6d",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com",
     "content-type": "application/json"
   },
@@ -108,7 +108,7 @@ This endpoint allows you to create a support log against a specific account.
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/support-logs</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/support-logs</span>
 </div>
 
 ### Request Parameters
@@ -125,17 +125,17 @@ Parameter | Type | Required | Description |
 
 ```shell
 curl --request GET \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference} \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/support-logs/{supportLogReference} \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{}'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/support-logs/{supportLogReference}");
 var request = new RestRequest(Method.GET);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
@@ -143,10 +143,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}")
+HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountReference}/support-logs/{supportLogReference}")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{}")
   .asString();
 ```
@@ -155,7 +155,7 @@ HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accou
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/support-logs/{supportLogReference}")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -164,7 +164,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Get.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{}"
 
 response = http.request(request)
@@ -181,10 +181,10 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
-conn.request("GET", "/api/accounts/{accountId}/support-logs/{supportLogReference}", payload, headers)
+conn.request("GET", "/api/accounts/{accountReference}/support-logs/{supportLogReference}", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -196,12 +196,12 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/support-logs/{supportLogReference}",
   "method": "GET",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
     "x-sessionid": "a0c595bd26004ff4bb7d4cb1b1c81a6d",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com"
   },
   "data": "{}"
@@ -233,7 +233,7 @@ This endpoint allows you to retrieve a specific support log, for a specific acco
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-get">GET</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}/</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/support-logs/{supportLogReference}/</span>
 </div>
 
 ### Response Parameters
@@ -253,19 +253,19 @@ Parameter | Type |  Description |
 
 ```shell
 curl --request PATCH \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference} \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/support-logs/{supportLogReference} \
   --header 'content-type: application/json' \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '[{"op":"replace","path":"/LogTitle","value":"A new log title"},{"op":"replace","path":"/LogDetails","value":"Re-write of the details"},{"op":"replace","path":"/LogStatus","value":"Closed"}]'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/support-logs/{supportLogReference}");
 var request = new RestRequest(Method.PATCH);
 request.AddHeader("content-type", "application/json");
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("application/json", "[{\"op\":\"replace\",\"path\":\"/LogTitle\",\"value\":\"A new log title\"},{\"op\":\"replace\",\"path\":\"/LogDetails\",\"value\":\"Re-write of the details\"},{\"op\":\"replace\",\"path\":\"/LogStatus\",\"value\":\"Closed\"}]", ParameterType.RequestBody);
@@ -273,10 +273,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}")
+HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/accounts/{accountReference}/support-logs/{supportLogReference}")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
   .body("[{\"op\":\"replace\",\"path\":\"/LogTitle\",\"value\":\"A new log title\"},{\"op\":\"replace\",\"path\":\"/LogDetails\",\"value\":\"Re-write of the details\"},{\"op\":\"replace\",\"path\":\"/LogStatus\",\"value\":\"Closed\"}]")
   .asString();
@@ -286,7 +286,7 @@ HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/acc
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/support-logs/{supportLogReference}")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -295,7 +295,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Patch.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request["content-type"] = 'application/json'
 request.body = "[{\"op\":\"replace\",\"path\":\"/LogTitle\",\"value\":\"A new log title\"},{\"op\":\"replace\",\"path\":\"/LogDetails\",\"value\":\"Re-write of the details\"},{\"op\":\"replace\",\"path\":\"/LogStatus\",\"value\":\"Closed\"}]"
 
@@ -313,11 +313,11 @@ payload = "[{\"op\":\"replace\",\"path\":\"/LogTitle\",\"value\":\"A new log tit
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0',
+    'x-version': '10.0.0',
     'content-type': "application/json"
     }
 
-conn.request("PATCH", "/api/accounts/{accountId}/support-logs/{supportLogReference}", payload, headers)
+conn.request("PATCH", "/api/accounts/{accountReference}/support-logs/{supportLogReference}", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -329,11 +329,11 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/support-logs/{supportLogReference}",
   "method": "PATCH",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com",
     "content-type": "application/json"
   },
@@ -357,7 +357,7 @@ In the event you need to update a support log entry, this end point should be ca
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-patch">PATCH</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/support-logs/{supportLogReference}</span>
 </div>
 
 ### PATCH Parameters
@@ -373,17 +373,17 @@ Parameter | Type | Required | Description |
 
 ```shell
 curl --request DELETE \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference} \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/support-logs/{supportLogReference} \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{}'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/support-logs/{supportLogReference}");
 var request = new RestRequest(Method.DELETE);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
@@ -391,10 +391,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.delete("https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}")
+HttpResponse<String> response = Unirest.delete("https://uat.mppglobal.com/api/accounts/{accountReference}/support-logs/{supportLogReference}")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{}")
   .asString();
 ```
@@ -403,7 +403,7 @@ HttpResponse<String> response = Unirest.delete("https://uat.mppglobal.com/api/ac
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/support-logs/{supportLogReference}")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -412,7 +412,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Delete.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 
 request.body = "{}"
 
@@ -430,10 +430,10 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
-conn.request("DELETE", "/api/accounts/{accountId}/support-logs/{supportLogReference}", payload, headers)
+conn.request("DELETE", "/api/accounts/{accountReference}/support-logs/{supportLogReference}", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -445,11 +445,11 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/support-logs/{supportLogReference}",
   "method": "DELETE",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com"
   },
   "processData": false,
@@ -470,24 +470,24 @@ In the event a support log entry has been added in error, this endpoint will all
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-delete">DELETE</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/{supportLogReference}</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/support-logs/{supportLogReference}</span>
 </div>
 
 ## Retrieve All Support Logs
 
 ```shell
 curl --request GET \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/support-logs \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/support-logs \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{}'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/support-logs");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/support-logs");
 var request = new RestRequest(Method.GET);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
@@ -495,10 +495,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountId}/support-logs")
+HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountReference}/support-logs")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{}")
   .asString();
 ```
@@ -507,7 +507,7 @@ HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accou
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/support-logs")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/support-logs")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -516,7 +516,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Get.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{}"
 
 response = http.request(request)
@@ -533,10 +533,10 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
-conn.request("GET", "/api/accounts/{accountId}/support-logs", payload, headers)
+conn.request("GET", "/api/accounts/{accountReference}/support-logs", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -548,12 +548,12 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/support-logs",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/support-logs",
   "method": "GET",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
     "x-sessionid": "a0c595bd26004ff4bb7d4cb1b1c81a6d",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com"
   },
   "data": "{}"
@@ -601,7 +601,7 @@ This endpoint allows you to retrieve all support logs for a specific account. Th
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-get">GET</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/support-logs/</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/support-logs/</span>
 </div>
 
 ### Query String Parameters

@@ -1,25 +1,25 @@
 # Bulk Actions
 
-## Create Access
+## Create Bulk Access 
 
 ```shell
 curl --request POST \
   --url https://uat.mppglobal.com/api/bulk/entitlements \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --header 'content-type: application/json' \
-  --data '{"entitlementIdentifier":"specific-access","startDate":"2017-07-03T11:31:41.0353603Z","endDate":"2017-07-13T11:31:41.0353603Z","accountIds":[123456,123457,123458],"clientUserIds":["A123456","A123457","A123458"]}'
+  --data '{"entitlementIdentifier":"specific-access","startDate":"2017-07-03T11:31:41.0353603Z","endDate":"2017-07-13T11:31:41.0353603Z","accountReferences":["0010A2PR8NMP9B3MA1","0010A0JOCET9LZ63M2", "0010API3BLG69XZX92"],"clientUserIds":["A123456","A123457","A123458"]}'
 ```
 
 ```csharp
 var client = new RestClient("https://uat.mppglobal.com/api/bulk/entitlements");
 var request = new RestRequest(Method.POST);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddHeader("content-type", "application/json");
-request.AddParameter("application/json", "{\"entitlementIdentifier\":\"specific-access\",\"startDate\":\"2017-07-03T11:31:41.0353603Z\",\"endDate\":\"2017-07-13T11:31:41.0353603Z\",\"accountIds\":[123456,123457,123458],\"clientUserIds\":[\"A123456\",\"A123457\",\"A123458\"]}", ParameterType.RequestBody);
+request.AddParameter("application/json", "{\"entitlementIdentifier\":\"specific-access\",\"startDate\":\"2017-07-03T11:31:41.0353603Z\",\"endDate\":\"2017-07-13T11:31:41.0353603Z\",\"accountReferences\":["0010A2PR8NMP9B3MA1","0010A0JOCET9LZ63M2", "0010API3BLG69XZX92"],\"clientUserIds\":[\"A123456\",\"A123457\",\"A123458\"]}", ParameterType.RequestBody);
 IRestResponse response = client.Execute(request);
 ```
 
@@ -27,9 +27,9 @@ IRestResponse response = client.Execute(request);
 HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/bulk/entitlements")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
-  .body("{\"entitlementIdentifier\":\"specific-access\",\"startDate\":\"2017-07-03T11:31:41.0353603Z\",\"endDate\":\"2017-07-13T11:31:41.0353603Z\",\"accountIds\":[123456,123457,123458],\"clientUserIds\":[\"A123456\",\"A123457\",\"A123458\"]}")
+  .body("{\"entitlementIdentifier\":\"specific-access\",\"startDate\":\"2017-07-03T11:31:41.0353603Z\",\"endDate\":\"2017-07-13T11:31:41.0353603Z\",\"accountReferences\":["0010A2PR8NMP9B3MA1","0010A0JOCET9LZ63M2", "0010API3BLG69XZX92"],\"clientUserIds\":[\"A123456\",\"A123457\",\"A123458\"]}")
   .asString();
 ```
 
@@ -47,8 +47,8 @@ request = Net::HTTP::Post.new(url)
 request["content-type"] = 'application/json'
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
-request.body = "{\"entitlementIdentifier\":\"specific-access\",\"startDate\":\"2017-07-03T11:31:41.0353603Z\",\"endDate\":\"2017-07-13T11:31:41.0353603Z\",\"accountIds\":[123456,123457,123458],\"clientUserIds\":[\"A123456\",\"A123457\",\"A123458\"]}"
+request["x-version"] = '10.0.0'
+request.body = "{\"entitlementIdentifier\":\"specific-access\",\"startDate\":\"2017-07-03T11:31:41.0353603Z\",\"endDate\":\"2017-07-13T11:31:41.0353603Z\",\"accountReferences\":["0010A2PR8NMP9B3MA1","0010A0JOCET9LZ63M2", "0010API3BLG69XZX92"],\"clientUserIds\":[\"A123456\",\"A123457\",\"A123458\"]}"
 
 response = http.request(request)
 puts response.read_body
@@ -59,12 +59,12 @@ import http.client
 
 conn = http.client.HTTPSConnection("uat.mppglobal.com")
 
-payload = "{\"entitlementIdentifier\":\"specific-access\",\"startDate\":\"2017-07-03T11:31:41.0353603Z\",\"endDate\":\"2017-07-13T11:31:41.0353603Z\",\"accountIds\":[123456,123457,123458],\"clientUserIds\":[\"A123456\",\"A123457\",\"A123458\"]}"
+payload = "{\"entitlementIdentifier\":\"specific-access\",\"startDate\":\"2017-07-03T11:31:41.0353603Z\",\"endDate\":\"2017-07-13T11:31:41.0353603Z\",\"accountReferences\":["0010A2PR8NMP9B3MA1","0010A0JOCET9LZ63M2", "0010API3BLG69XZX92"],\"clientUserIds\":[\"A123456\",\"A123457\",\"A123458\"]}"
 
 headers = { 
      'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0',
+    'x-version': '10.0.0',
     'content-type': "application/json" }
 
 conn.request("POST", "/api/bulk/entitlements", payload, headers)
@@ -75,7 +75,7 @@ data = res.read()
 ```
 
 ```javascript
-Not available
+
 ```
 
 > The above command returns a HTTP 204 upon success:
@@ -100,7 +100,7 @@ This endpoint is available to allow you to bulk create access for multiple accou
 `entitlementIdentifier` <br />The access the account should given| <span class="string">string</span> | <span class="required">Required</span> | 
 `startDate` <br />The date at which the access should become active| <span style="font-weight:bold;color:#666;">dateTime</span> | <span class="required">Required</span> | 
 `endDate` <br />The date at which access to the content should be deactivated.| <span style="font-weight:bold;color:#666;">dateTime</span> | <span class="required">Required</span> | 
-`accountIds` <br />A collection of all accounts that should have access given, based upon accountId.| <span class="array">array[integer]</span> |   | 
+`accountReferences` <br />A collection of all accounts that should have access given, based upon their account reference.| <span class="array">array[strings]</span> |   | 
 `clientUserIds` <br />A collection of all accounts that should have access given, based upon ClientUserId| <span class="array">array[string]</span> |   | 
 
 

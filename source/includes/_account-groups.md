@@ -4,19 +4,19 @@
 
 ```shell
 curl --request POST \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/groups \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/groups \
   --header 'content-type: application/json' \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{"groupName":"Example Account Group"}'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/groups");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/groups");
 var request = new RestRequest(Method.POST);
 request.AddHeader("content-type", "application/json");
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("application/json", "{\"groupName\":\"Example Account Group\"}", ParameterType.RequestBody);
@@ -24,10 +24,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/{accountId}/groups")
+HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/{accountReference}/groups")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
   .body("{\"groupName\":\"Example Account Group\",\"password\":\"pWzjWktsWN8M\"}")
   .asString();
@@ -37,7 +37,7 @@ HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/acco
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/groups")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/groups")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -46,7 +46,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Post.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request["content-type"] = 'application/json'
 request.body = "{\"groupName\":\"Example Account Group\"}"
 
@@ -64,11 +64,11 @@ payload = "{\"groupName\":\"Example Account Group\"}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0',
+    'x-version': '10.0.0',
     'content-type': "application/json"
     }
 
-conn.request("POST", "/api/accounts/{accountId}/groups", payload, headers)
+conn.request("POST", "/api/accounts/{accountReference}/groups", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -80,12 +80,12 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/groups",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/groups",
   "method": "POST",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
     "x-sessionid": "65e2d8d8c22e49b7b922ef48f9683f13",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com",
     "content-type": "application/json"
   },
@@ -112,7 +112,7 @@ Execution of this action on the API will allow the creation of a new group accou
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/groups</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/groups</span>
 </div>
 
 ### Request Parameters
@@ -133,17 +133,17 @@ Execution of this action on the API will allow the creation of a new group accou
 
 ```shell
 curl --request GET \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/groups \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/groups \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{}'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/groups");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/groups");
 var request = new RestRequest(Method.GET);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
@@ -151,10 +151,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountId}/groups")
+HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountReference}/groups")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{}")
   .asString();
 ```
@@ -163,7 +163,7 @@ HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accou
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/groups")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/groups")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -172,7 +172,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Get.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{}"
 
 response = http.request(request)
@@ -189,10 +189,10 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
-conn.request("GET", "/api/accounts/{accountId}/groups", payload, headers)
+conn.request("GET", "/api/accounts/{accountReference}/groups", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -204,12 +204,12 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/groups",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/groups",
   "method": "GET",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
     "x-sessionid" : "65e2d8d8c22e49b7b922ef48f9683f13",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com"
   },
   "data": "{}"
@@ -265,7 +265,7 @@ This endpoint will return all groups the specific account group is associated to
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-get">GET</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/groups</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/groups</span>
 </div>
 
 ### Response Parameters
@@ -294,19 +294,19 @@ This endpoint will return all groups the specific account group is associated to
 
 ```shell
 curl --request PATCH \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/groups/{accountGroupToken} \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/groups/{accountGroupToken} \
   --header 'content-type: application/json' \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '[{"op":"replace","path":"/GroupInfo/permitUserPayments/","value":true},{"op":"replace","path":"/GroupInfo/matchEmailOnlyAfterIpMatch/","value":true}]'
   ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/groups/{accountGroupToken}");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/groups/{accountGroupToken}");
 var request = new RestRequest(Method.patch);
 request.AddHeader("content-type", "application/json");
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("application/json", "[{\"op\":\"replace\",\"path\":\"/GroupInfo/permitUserPayments/\",\"value\":true},{\"op\":\"replace\",\"path\":\"/GroupInfo/matchEmailOnlyAfterIpMatch/\",\"value\":true}]", ParameterType.RequestBody);
@@ -314,10 +314,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/accounts/{accountId}/groups/{accountGroupToken}")
+HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/accounts/{accountReference}/groups/{accountGroupToken}")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
   .body("[{\"op\":\"replace\",\"path\":\"/GroupInfo/permitUserPayments/\",\"value\":true},{\"op\":\"replace\",\"path\":\"/GroupInfo/matchEmailOnlyAfterIpMatch/\",\"value\":true}]")
   .asString();
@@ -327,7 +327,7 @@ HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/acc
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/groups/{accountGroupToken}")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/groups/{accountGroupToken}")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -336,7 +336,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Patch.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request["content-type"] = 'application/json'
 request.body = "[{\"op\":\"replace\",\"path\":\"/GroupInfo/permitUserPayments/\",\"value\":true},{\"op\":\"replace\",\"path\":\"/GroupInfo/matchEmailOnlyAfterIpMatch/\",\"value\":true}]"
 
@@ -355,11 +355,11 @@ payload = "[{\"op\":\"replace\",\"path\":\"/GroupInfo/permitUserPayments/\",\"va
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0',
+    'x-version': '10.0.0',
     'content-type': "application/json"
     }
 
-conn.request("PATCH", "/api/accounts/{accountId}/groups/{accountGroupToken}", payload, headers)
+conn.request("PATCH", "/api/accounts/{accountReference}/groups/{accountGroupToken}", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -371,12 +371,12 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/groups/{accountGroupToken}",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/groups/{accountGroupToken}",
   "method": "PATCH",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
     "x-sessionid" : "65e2d8d8c22e49b7b922ef48f9683f13"
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com",
     "content-type": "application/json"
   },
@@ -401,7 +401,7 @@ Calling this endpoint on the API will allow you to edit the following attributes
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-patch">PATCH</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/groups/{accountGroupToken}</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/groups/{accountGroupToken}</span>
 </div>
 
 ### PATCH Parameters
@@ -416,17 +416,17 @@ A collection of updates that should be made to the resource| <span class="array"
 
 ```shell
 curl --request GET \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/groups/candidates \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/groups/candidates \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{}'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/groups/candidates");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/groups/candidates");
 var request = new RestRequest(Method.GET);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
@@ -434,10 +434,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountId}/groups/candidates")
+HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountReference}/groups/candidates")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{}")
   .asString();
 ```
@@ -446,7 +446,7 @@ HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accou
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/groups/candidates")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/groups/candidates")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -455,7 +455,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Get.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{}"
 
 response = http.request(request)
@@ -472,10 +472,10 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
-conn.request("GET", "/api/accounts/{accountId}/groups/candidates", payload, headers)
+conn.request("GET", "/api/accounts/{accountReference}/groups/candidates", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -487,12 +487,12 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/groups/candidates",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/groups/candidates",
   "method": "GET",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
     "x-sessionid" : "65e2d8d8c22e49b7b922ef48f9683f13",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com"
   },
   "data": "{}"
@@ -528,7 +528,7 @@ Executing this API request will return all groups the account is applicable to j
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-get">GET</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/groups</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/groups</span>
 </div>
 
 ### Response Parameters
@@ -549,7 +549,7 @@ curl --request POST \
   --header 'content-type: application/json' \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{"email":"my-example@mppglobal.com","clientUserId":"GTFGTV456TF5G"}'
 ```
 
@@ -557,7 +557,7 @@ curl --request POST \
 var client = new RestClient("https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members");
 var request = new RestRequest(Method.POST);
 request.AddHeader("content-type", "application/json");
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("application/json", "{\"email\":\"my-example@mppglobal.com\",\"clientUserId\":\"GTFGTV456TF5G\"}", ParameterType.RequestBody);
@@ -568,7 +568,7 @@ IRestResponse response = client.Execute(request);
 HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
   .body("{\"email\":\"my-example@mppglobal.com\",\"clientUserId\":\"GTFGTV456TF5G\"}")
   .asString();
@@ -587,7 +587,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Post.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request["content-type"] = 'application/json'
 request.body = "{\"email\":\"my-example@mppglobal.com\",\"clientUserId\":\"GTFGTV456TF5G\"}"
 
@@ -605,7 +605,7 @@ payload = "{\"email\":\"my-example@mppglobal.com\",\"clientUserId\":\"GTFGTV456T
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0',
+    'x-version': '10.0.0',
     'content-type': "application/json"
     }
 
@@ -652,14 +652,14 @@ curl --request GET \
   --url https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{}'
 ```
 
 ```csharp
 var client = new RestClient("https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members");
 var request = new RestRequest(Method.GET);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
@@ -670,7 +670,7 @@ IRestResponse response = client.Execute(request);
 HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{}")
   .asString();
 ```
@@ -688,7 +688,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Get.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{}"
 
 response = http.request(request)
@@ -705,7 +705,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
 conn.request("GET", "/api/accounts/groups/{accountGroupToken}/members", payload, headers)
@@ -765,19 +765,19 @@ This endpoint will return all accounts that are a member of the specific account
 
 ```shell
 curl --request PATCH \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/groups/{accountGroupToken} \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/groups/{accountGroupToken} \
   --header 'content-type: application/json' \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '[{"op":"replace","path":"/GroupRole","value":"Admin"}]'
   ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members/{accountId}");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members/{accountReference}");
 var request = new RestRequest(Method.patch);
 request.AddHeader("content-type", "application/json");
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("application/json", "[{\"op\":\"replace\",\"path\":\"/GroupRole\",\"value\":\"Admin\"}]", ParameterType.RequestBody);
@@ -785,10 +785,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members/{accountId}")
+HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members/{accountReference}")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
   .body("[{\"op\":\"replace\",\"path\":\"/GroupRole\",\"value\":\"Admin\"}]")
   .asString();
@@ -798,7 +798,7 @@ HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/acc
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members/{accountId}")
+url = URI("https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members/{accountReference}")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -807,7 +807,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Patch.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request["content-type"] = 'application/json'
 request.body = "[{\"op\":\"replace\",\"path\":\"/GroupRole\",\"value\":\"Admin\"}]"
 
@@ -826,11 +826,11 @@ payload = "[{\"op\":\"replace\",\"path\":\"/GroupRole\",\"value\":\"Admin\"}]"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0',
+    'x-version': '10.0.0',
     'content-type': "application/json"
     }
 
-conn.request("PATCH", "/api/accounts/groups/{accountGroupToken}/members/{accountId}", payload, headers)
+conn.request("PATCH", "/api/accounts/groups/{accountGroupToken}/members/{accountReference}", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -854,7 +854,7 @@ Calling this endpoint on the API will allow you to edit the role the user has on
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-patch">PATCH</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members/{accountId}</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members/{accountReference}</span>
 </div>
 
 ### PATCH Parameters
@@ -869,17 +869,17 @@ A collection of updates that should be made to the resource| <span class="array"
 
 ```shell
 curl --request DELETE \
-  --url https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members/{accountId} \
+  --url https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members/{accountReference} \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{}'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members/{accountId}");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members/{accountReference}");
 var request = new RestRequest(Method.DELETE);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
@@ -887,10 +887,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.put("https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members/{accountId}")
+HttpResponse<String> response = Unirest.put("https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members/{accountReference}")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{}")
   .asString();
 ```
@@ -899,7 +899,7 @@ HttpResponse<String> response = Unirest.put("https://uat.mppglobal.com/api/accou
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members/{accountId}")
+url = URI("https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members/{accountReference}")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -908,7 +908,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Delete.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 
 request.body = "{}"
 
@@ -926,10 +926,10 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
-conn.request("DELETE", "/api/accounts/groups/{accountGroupToken}/members/{accountId}", payload, headers)
+conn.request("DELETE", "/api/accounts/groups/{accountGroupToken}/members/{accountReference}", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -941,11 +941,11 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members/{accountId}",
+  "url": "https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members/{accountReference}",
   "method": "DELETE",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com"
   },
   "processData": false,
@@ -969,7 +969,7 @@ Calling this endpoint will remove the account from the associated group. It is n
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-delete">DELETE</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members/{accountId}</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/members/{accountReference}</span>
 </div>
 
 
@@ -986,14 +986,14 @@ curl --request GET \
   --url https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/subscriptions \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{}'
 ```
 
 ```csharp
 var client = new RestClient("https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/subscriptions");
 var request = new RestRequest(Method.GET);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
@@ -1004,7 +1004,7 @@ IRestResponse response = client.Execute(request);
 HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/subscriptions")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{}")
   .asString();
 ```
@@ -1022,7 +1022,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Get.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{}"
 
 response = http.request(request)
@@ -1039,7 +1039,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
 conn.request("GET", "/api/accounts/groups/{accountGroupToken}/subscriptions", payload, headers)
@@ -1209,7 +1209,7 @@ curl --request POST \
   --header 'content-type: application/json' \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{"clientUserId":"my-example@mppglobal.com","emailAddress":"GTFGTV456TF5G"}'
 ```
 
@@ -1217,7 +1217,7 @@ curl --request POST \
 var client = new RestClient("https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/subscriptions/{subscriptionId}/members");
 var request = new RestRequest(Method.POST);
 request.AddHeader("content-type", "application/json");
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("application/json", "{\"clientUserId\":\"my-example@mppglobal.com\",\"emailAddress\":\"GTFGTV456TF5G\"}", ParameterType.RequestBody);
@@ -1228,7 +1228,7 @@ IRestResponse response = client.Execute(request);
 HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/subscriptions/{subscriptionId}/members")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
   .body("{\"clientUserId\":\"my-example@mppglobal.com\",\"emailAddress\":\"GTFGTV456TF5G\"}")
   .asString();
@@ -1247,7 +1247,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Post.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request["content-type"] = 'application/json'
 request.body = "{\"clientUserId\":\"my-example@mppglobal.com\",\"emailAddress\":\"GTFGTV456TF5G\"}"
 
@@ -1265,7 +1265,7 @@ payload = "{\"clientUserId\":\"my-example@mppglobal.com\",\"emailAddress\":\"GTF
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0',
+    'x-version': '10.0.0',
     'content-type': "application/json"
     }
 
@@ -1315,17 +1315,17 @@ Execution of this API will result in the account being assigned a license to con
 
 ```shell
 curl --request DELETE \
-  --url https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/subscriptions/{subscriptionId}/members/{accountId} \
+  --url https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/subscriptions/{subscriptionId}/members/{accountReference} \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{}'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/subscriptions/{subscriptionId}/members/{accountId}");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/subscriptions/{subscriptionId}/members/{accountReference}");
 var request = new RestRequest(Method.DELETE);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
@@ -1333,10 +1333,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.put("https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/subscriptions/{subscriptionId}/members/{accountId}")
+HttpResponse<String> response = Unirest.put("https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/subscriptions/{subscriptionId}/members/{accountReference}")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{}")
   .asString();
 ```
@@ -1345,7 +1345,7 @@ HttpResponse<String> response = Unirest.put("https://uat.mppglobal.com/api/accou
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/subscriptions/{subscriptionId}/members/{accountId}")
+url = URI("https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/subscriptions/{subscriptionId}/members/{accountReference}")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -1354,7 +1354,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Delete.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 
 request.body = "{}"
 
@@ -1372,10 +1372,10 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
-conn.request("DELETE", "/api/accounts/groups/{accountGroupToken}/subscriptions/{subscriptionId}/members/{accountId}", payload, headers)
+conn.request("DELETE", "/api/accounts/groups/{accountGroupToken}/subscriptions/{subscriptionId}/members/{accountReference}", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -1387,11 +1387,11 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/subscriptions/{subscriptionId}/members/{accountId}",
+  "url": "https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/subscriptions/{subscriptionId}/members/{accountReference}",
   "method": "DELETE",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com"
   },
   "processData": false,
@@ -1415,7 +1415,7 @@ Calling this endpoint will remove the account from the associated group subscrip
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-delete">DELETE</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/subscriptions/{subscriptionId}/members/{accountId}</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/groups/{accountGroupToken}/subscriptions/{subscriptionId}/members/{accountReference}</span>
 </div>
 
 
@@ -1423,19 +1423,19 @@ Calling this endpoint will remove the account from the associated group subscrip
 
 ```shell
 curl --request PATCH \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/groups/{accountGroupToken}/subscriptions/{subscriptionId}/licenses \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/groups/{accountGroupToken}/subscriptions/{subscriptionId}/licenses \
   --header 'content-type: application/json' \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{"standard":10,"overflow":2}'
   ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/groups/{accountGroupToken}/subscriptions/{subscriptionId}/licenses");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/groups/{accountGroupToken}/subscriptions/{subscriptionId}/licenses");
 var request = new RestRequest(Method.patch);
 request.AddHeader("content-type", "application/json");
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("application/json", "{\"standard\":10,\"overflow\":2}", ParameterType.RequestBody);
@@ -1443,10 +1443,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/accounts/{accountId}/groups/{accountGroupToken}/subscriptions/{subscriptionId}/licenses")
+HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/accounts/{accountReference}/groups/{accountGroupToken}/subscriptions/{subscriptionId}/licenses")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
   .body("{\"standard\":10,\"overflow\":2}")
   .asString();
@@ -1456,7 +1456,7 @@ HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/acc
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/groups/{accountGroupToken}/subscriptions/{subscriptionId}/licenses")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/groups/{accountGroupToken}/subscriptions/{subscriptionId}/licenses")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -1465,7 +1465,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Patch.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request["content-type"] = 'application/json'
 request.body = "{\"standard\":10,\"overflow\":2}"
 
@@ -1483,11 +1483,11 @@ payload = "{\"standard\":10,\"overflow\":2}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0',
+    'x-version': '10.0.0',
     'content-type': "application/json"
     }
 
-conn.request("PATCH", "/api/accounts/{accountId}/groups/{accountGroupToken}/subscriptions/{subscriptionId}/licenses", payload, headers)
+conn.request("PATCH", "/api/accounts/{accountReference}/groups/{accountGroupToken}/subscriptions/{subscriptionId}/licenses", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -1511,7 +1511,7 @@ Calling this endpoint on the API will update the number of licenses assigned to 
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-patch">PATCH</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/groups/{accountGroupToken}/subscriptions/{subscriptionId}/licenses</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/groups/{accountGroupToken}/subscriptions/{subscriptionId}/licenses</span>
 </div>
 
 ### PATCH Parameters

@@ -7,7 +7,7 @@ curl --request POST \
 --url https://uat.mppglobal.com/api/carts \
 --header 'x-clientId: 1001' \
 --header 'x-clientPassword: Str0ngP@ssword' \
---header 'x-version: 9.0.0' \
+--header 'x-version: 10.0.0' \
 --header 'content-type: application/json' \
 --header 'content-type: application/json' \
 --data '{}'
@@ -16,7 +16,7 @@ curl --request POST \
 ```csharp
 var client = new RestClient("https://uat.mppglobal.com/api/carts");
 var request = new RestRequest(Method.POST);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddHeader("content-type", "application/json");
@@ -29,7 +29,7 @@ HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/cart
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-sessionid", "BE52ADA2064C4F9A9D90F28D066D1RFT")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
   .body("{}")
   .asString();
@@ -49,7 +49,7 @@ request = Net::HTTP::Post.new(url)
 request["content-type"] = 'application/json'
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{}"
 
 response = http.request(request)
@@ -66,7 +66,7 @@ payload = "{}"
 headers = { 
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0',
+    'x-version': '10.0.0',
     'content-type': "application/json" }
 
 conn.request("POST", "/api/carts", payload, headers)
@@ -86,7 +86,7 @@ var settings = {
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
     "x-sessionid": "a0c595bd26004ff4bb7d4cb1b1c81a6d",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com",
     "content-type": "application/json"
   },
@@ -121,14 +121,14 @@ curl --request GET \
 --url https://uat.mppglobal.com/api/carts/{cartReference} \
 --header 'x-clientId: 1001' \
 --header 'x-clientPassword: Str0ngP@ssword' \
---header 'x-version: 9.0.0' \
+--header 'x-version: 10.0.0' \
 --data '{}'
 ```
 
 ```csharp
 var client = new RestClient("https://uat.mppglobal.com/api/carts/{cartReference}");
 var request = new RestRequest(Method.GET);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
@@ -139,7 +139,7 @@ IRestResponse response = client.Execute(request);
 HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/carts/{cartReference}")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{}")
   .asString();
 ```
@@ -157,7 +157,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Get.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{}"
 
 response = http.request(request)
@@ -174,7 +174,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
 conn.request("GET", "/api/carts/{cartReference}", payload, headers)
@@ -194,7 +194,7 @@ var settings = {
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
     "x-sessionid": "a0c595bd26004ff4bb7d4cb1b1c81a6d",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com"
   },
   "data": "{}"
@@ -219,8 +219,12 @@ $.ajax(settings).done(function (response) {
             "currency": "EUR"
         },
         "quantity": 1,
-        "productInfo": {},
-        "customLineItemParameters": {}
+        "productInfo": {
+          "productId": 221822
+         },
+        "customLineItemParameters": {
+          "size": "10"
+        } 
     }
 ]
 ```
@@ -259,7 +263,7 @@ curl --request PATCH \
 --header 'content-type: application/json' \
 --header 'x-clientId: 1001' \
 --header 'x-clientPassword: Str0ngP@ssword' \
---header 'x-version: 9.0.0' \
+--header 'x-version: 10.0.0' \
 --data '[{"op":"add","path":"/accountReference","value":"0010X2Y7GLHZ0Y1JH2"}]'
 ```
 
@@ -267,7 +271,7 @@ curl --request PATCH \
 var client = new RestClient("https://uat.mppglobal.com/api/carts/{cartReference}");
 var request = new RestRequest(Method.PATCH);
 request.AddHeader("content-type", "application/json");
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("application/json", "[{\"op\":\"add\",\"path\":\"/accountReference\",\"value\":\"0010X2Y7GLHZ0Y1JH2\"}]", ParameterType.RequestBody);
@@ -278,7 +282,7 @@ IRestResponse response = client.Execute(request);
 HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/carts/{cartReference}")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
   .body("[{\"op\":\"add\",\"path\":\"/accountReference\",\"value\":\"0010X2Y7GLHZ0Y1JH2\"}]")
   .asString();
@@ -297,7 +301,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Patch.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request["content-type"] = 'application/json'
 request.body = "[{\"op\":\"add\",\"path\":\"/accountReference\",\"value\":\"0010X2Y7GLHZ0Y1JH2\"}]"
 
@@ -315,7 +319,7 @@ payload = "[{\"op\":\"add\",\"path\":\"/accountReference\",\"value\":\"0010X2Y7G
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0',
+    'x-version': '10.0.0',
     'content-type': "application/json"
     }
 
@@ -335,7 +339,7 @@ var settings = {
   "method": "PATCH",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com",
     "content-type": "application/json"
   },
@@ -382,14 +386,14 @@ curl --request DELETE \
 --url https://uat.mppglobal.com/api/carts/{cartReference} \
 --header 'x-clientId: 1001' \
 --header 'x-clientPassword: Str0ngP@ssword' \
---header 'x-version: 9.0.0' \
+--header 'x-version: 10.0.0' \
 --data '{}'
 ```
 
 ```csharp
 var client = new RestClient("https://uat.mppglobal.com/api/carts/{cartReference}");
 var request = new RestRequest(Method.DELETE);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
@@ -400,7 +404,7 @@ IRestResponse response = client.Execute(request);
 HttpResponse<String> response = Unirest.delete("https://uat.mppglobal.com/api/carts/{cartReference}")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{}")
   .asString();
 ```
@@ -418,7 +422,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Delete.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 
 request.body = "{}"
 
@@ -436,7 +440,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
 conn.request("DELETE", "/api/carts/{cartReference}", payload, headers)
@@ -455,7 +459,7 @@ var settings = {
   "method": "DELETE",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com"
   },
   "processData": false,
@@ -489,7 +493,7 @@ curl --request POST \
 --url https://uat.mppglobal.com/api/carts/{cartReference/line-items \
 --header 'x-clientId: 1001' \
 --header 'x-clientPassword: Str0ngP@ssword' \
---header 'x-version: 9.0.0' \
+--header 'x-version: 10.0.0' \
 --header 'content-type: application/json' \
 --header 'content-type: application/json' \
 --data '{"description":"Example line item","pricing":{"grossAmount":10,"netAmount":8,"taxAmount":2,"currency":"GBP"},"quantity":1}'
@@ -498,7 +502,7 @@ curl --request POST \
 ```csharp
 var client = new RestClient("https://uat.mppglobal.com/api/carts/{cartReference/line-items");
 var request = new RestRequest(Method.POST);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddHeader("content-type", "application/json");
@@ -511,7 +515,7 @@ HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/cart
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-sessionid", "BE52ADA2064C4F9A9D90F28D066D1RFT")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
   .body("{\"description\":\"Example line item\",\"pricing\":{\"grossAmount\":10,\"netAmount\":8,\"taxAmount\":2,\"currency\":\"GBP\"},\"quantity\":1}")
   .asString();
@@ -531,7 +535,7 @@ request = Net::HTTP::Post.new(url)
 request["content-type"] = 'application/json'
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{\"description\":\"Example line item\",\"pricing\":{\"grossAmount\":10,\"netAmount\":8,\"taxAmount\":2,\"currency\":\"GBP\"},\"quantity\":1}"
 
 
@@ -549,7 +553,7 @@ payload = "{\"description\":\"Example line item\",\"pricing\":{\"grossAmount\":1
 headers = { 
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0',
+    'x-version': '10.0.0',
     'content-type': "application/json" }
 
 conn.request("POST", "/api/carts/{cartReference/line-items", payload, headers)
@@ -568,7 +572,7 @@ var settings = {
   "method": "POST",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",,
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com",
     "content-type": "application/json"
   },
@@ -620,14 +624,14 @@ curl --request DELETE \
 --url https://uat.mppglobal.com/api/carts/{cartResourceReference}/line-items/{lineItemResourceReference} \
 --header 'x-clientId: 1001' \
 --header 'x-clientPassword: Str0ngP@ssword' \
---header 'x-version: 9.0.0' \
+--header 'x-version: 10.0.0' \
 --data '{}'
 ```
 
 ```csharp
 var client = new RestClient("https://uat.mppglobal.com/api/carts/{cartResourceReference}/line-items/{lineItemResourceReference}");
 var request = new RestRequest(Method.DELETE);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
@@ -638,7 +642,7 @@ IRestResponse response = client.Execute(request);
 HttpResponse<String> response = Unirest.delete("https://uat.mppglobal.com/api/carts/{cartResourceReference}/line-items/{lineItemResourceReference}")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{}")
   .asString();
 ```
@@ -656,7 +660,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Delete.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 
 request.body = "{}"
 
@@ -674,7 +678,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
 conn.request("DELETE", "/api/carts/{cartResourceReference}/line-items/{lineItemResourceReference}", payload, headers)
@@ -693,7 +697,7 @@ var settings = {
   "method": "DELETE",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com"
   },
   "processData": false,
@@ -722,17 +726,17 @@ Calling this endpoint will allow you to remove an item from a cart. It will not 
 
 ```shell
 curl --request GET \
---url https://uat.mppglobal.com/api/accounts/{accountId}/carts/{cartReference} \
+--url https://uat.mppglobal.com/api/accounts/{accountReference}/carts/{cartReference} \
 --header 'x-clientId: 1001' \
 --header 'x-clientPassword: Str0ngP@ssword' \
---header 'x-version: 9.0.0' \
+--header 'x-version: 10.0.0' \
 --data '{}'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/carts/{cartReference}");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/carts/{cartReference}");
 var request = new RestRequest(Method.GET);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
@@ -740,10 +744,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountId}/carts/{cartReference}")
+HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountReference}/carts/{cartReference}")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{}")
   .asString();
 ```
@@ -752,7 +756,7 @@ HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accou
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/carts/{cartReference}")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/carts/{cartReference}")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -761,7 +765,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Get.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{}"
 
 response = http.request(request)
@@ -778,10 +782,10 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
-conn.request("GET", "/api/accounts/{accountId}/carts/{cartReference}", payload, headers)
+conn.request("GET", "/api/accounts/{accountReference}/carts/{cartReference}", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -793,12 +797,12 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/carts/{cartReference}",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/carts/{cartReference}",
   "method": "GET",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
     "x-sessionid": "a0c595bd26004ff4bb7d4cb1b1c81a6d",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com"
   },
   "data": "{}"
@@ -835,7 +839,7 @@ Calling this endpoint will allow for the retrieval of all carts associated to an
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-get">GET</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/carts/{cartIdentifier}</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/carts/{cartIdentifier}</span>
 </div>
 
 ### Response Parameters
@@ -857,10 +861,165 @@ Calling this endpoint will allow for the retrieval of all carts associated to an
 
 
 
+## Validate Voucher
+
+```shell
+
+```
+
+```csharp
+
+```
+
+```java
+
+```
+
+```ruby
+
+```
+
+```python
+
+```
+
+```javascript
+
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "description": "Brown Shirt",
+    "pricing": {
+      "grossAmount": 12,
+      "netAmount": 10,
+      "taxAmount": 2,
+      "currency": "GBP"
+    },
+    "quantity": 1,
+    "productInfo": {
+      "productId": 221822
+    },
+    "customLineItemParameters": {
+      "size": "10"
+    }
+  },
+  {
+    "description": "Brown Shirt",
+    "pricing": {
+      "grossAmount": -2,
+      "netAmount": -1.7,
+      "taxAmount": -0.3,
+      "currency": "GBP"
+    },
+    "quantity": 1,
+    "productInfo": {
+      "productId": 221822
+    },
+    "customLineItemParameters": {
+      "size": "10"
+    }
+  }
+]
+```
 
 
 
+Executing this endpoint will validate the voucher code being used is valid and also provide an indication as to how the voucher code will impact the contents of the cart. If the voucher relates to a product that has been configured to be used against multiple items, each of the items will be discounted accordingly and result in a negative line item for each item.
 
+### HTTP Request
+
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-get">GET</span>
+<span class="endpoint-path">https://uat.mppglobal.com/</span>
+</div>
+
+### Parameters
+ |  |  | 
+--------- | ------- | ------- | 
+
+
+
+## Apply Voucher
+
+```shell
+
+```
+
+```csharp
+
+```
+
+```java
+
+```
+
+```ruby
+
+```
+
+```python
+
+```
+
+```javascript
+
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "description": "Brown Shirt",
+    "pricing": {
+      "grossAmount": 12,
+      "netAmount": 10,
+      "taxAmount": 2,
+      "currency": "GBP"
+    },
+    "quantity": 1,
+    "productInfo": {
+      "productId": 221822
+    },
+    "customLineItemParameters": {
+      "size": "10"
+    }
+  },
+  {
+    "description": "Brown Shirt",
+    "pricing": {
+      "grossAmount": -2,
+      "netAmount": -1.7,
+      "taxAmount": -0.3,
+      "currency": "GBP"
+    },
+    "quantity": 1,
+    "productInfo": {
+      "productId": 221822
+    },
+    "customLineItemParameters": {
+      "size": "10"
+    }
+  }
+]
+```
+
+Description of what the endpoint does.
+
+### HTTP Request
+
+<div class="endpoint-cont">
+<span class="endpoint-verb endpoint-verb-post">POST</span>
+<span class="endpoint-path">https://uat.mppglobal.com/</span>
+</div>
+
+### Parameters
+ |  |  | 
+--------- | ------- | ------- | 
 
 
 

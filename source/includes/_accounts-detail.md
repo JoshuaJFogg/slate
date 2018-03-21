@@ -7,7 +7,7 @@ curl --request POST \
   --header 'content-type: application/json' \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{"email":"johnsmith-api@mppglobal.com","password":"4034510a@!","clientUserId":"84AF2AAC-C1BD-4A93-AB08-57D2D7A54274"}"
 ```
 
@@ -15,7 +15,7 @@ curl --request POST \
 var client = new RestClient("https://uat.mppglobal.com/api/accounts");
 var request = new RestRequest(Method.POST);
 request.AddHeader("content-type", "application/json");
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("application/json", "{\"email\":\"johnsmith-api@mppglobal.com\",\"password\":\"4034510a@!\",\"clientUserId\":\"84AF2AAC-C1BD-4A93-AB08-57D2D7A54274\"}", ParameterType.RequestBody);
@@ -26,7 +26,7 @@ IRestResponse response = client.Execute(request);
 HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
   .body("{\"email\":\"johnsmith-api@mppglobal.com\",\"password\":\"4034510a@!\",\"clientUserId\":\"84AF2AAC-C1BD-4A93-AB08-57D2D7A54274\"}")
   .asString();
@@ -45,7 +45,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Post.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request["content-type"] = 'application/json'
 request.body = "{\"email\":\"johnsmith-api@mppglobal.com\",\"password\":\"4034510a@!\",\"clientUserId\":\"84AF2AAC-C1BD-4A93-AB08-57D2D7A54274\"}"
 
@@ -63,7 +63,7 @@ payload = "{\"email\":\"johnsmith-api@mppglobal.com\",\"password\":\"4034510a@!\
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0',
+    'x-version': '10.0.0',
     'content-type': "application/json"
     }
 
@@ -83,7 +83,7 @@ var settings = {
   "method": "POST",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com",
     "content-type": "application/json"
   },
@@ -128,6 +128,7 @@ $.ajax(settings).done(function (response) {
     "colour": "Blue",
     "referrer": "Facebook"
   },
+  "marketingAllowed": false,
   "sessionToken": "702f5c37e2394db785ae1306ecce9750"
 }
 ```
@@ -167,7 +168,7 @@ It is a requirement of the eSuite platform that an account be created in order t
 `address \ postCode` <br />The post code associated to the address| <span class="string">string</span> |  | 
 `address \ country` <br />The country the account resides| <span class="string">string</span> |  | 
 `customParameters` <br />A collection of custom attributes stored against the account| <span class="dictionary">dictionary</span> |  | 
-
+`marketingAllowed` <br />An indication as to whether the account has give permission to have marketing to be sent to them| <span class"string">string</span>
 _* It is Required to pass either a email address or a clientUserId. It is possible to provide both._
 
 
@@ -175,17 +176,17 @@ _* It is Required to pass either a email address or a clientUserId. It is possib
 
 ```shell
 curl --request GET \
-  --url https://uat.mppglobal.com/api/accounts/{accountId} \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference} \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{}'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}");
 var request = new RestRequest(Method.GET);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
@@ -193,10 +194,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountId}")
+HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountReference}")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{}")
   .asString();
 ```
@@ -205,7 +206,7 @@ HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accou
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -214,7 +215,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Get.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{}"
 
 response = http.request(request)
@@ -231,10 +232,10 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
-conn.request("GET", "/api/accounts/{accountId}", payload, headers)
+conn.request("GET", "/api/accounts/{accountReference}", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -246,11 +247,11 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}",
   "method": "GET",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com"
   },
   "data": "{}"
@@ -292,7 +293,8 @@ $.ajax(settings).done(function (response) {
     "customParameters": {
       "colour": "Blue",
       "referrer": "Facebook"
-    }
+    },
+    "marketingAllowed" : true
  }
 ```
 
@@ -301,7 +303,7 @@ Once an account has been created within the eSuite platform, it is possible to r
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-get">GET</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}</span>
 </div>
 
 
@@ -334,37 +336,38 @@ Once an account has been created within the eSuite platform, it is possible to r
 `address \ postCode` <br />The post code associated to the address| <span class="string">string</span> | | 
 `address \ country` <br />The country the account resides| <span class="string">string</span> |  | 
 `customParameters` <br />A collection of custom attributes stored against the account| <span class="dictionary">dictionary</span> |  | 
+`marketingAllowed` <br />An indication as to whether the account has give permission to have marketing to be sent to them| <span class"string">string</span>
 
 ## Update
 
 ```shell
-curl --request PUT \
-  --url https://uat.mppglobal.com/api/accounts/{accountId} \
+curl --request PATCH \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference} \
   --header 'content-type: application/json' \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
-  --data '{"email":"johnsmith-api+1@mppglobal.com","currentPassword":"4034510a@!","newPassword":"4034510aRFT453","firstName":"John","surname":"Smith"}'
-```
+  --header 'x-version: 10.0.0' \
+  --data '[{"op":"replace","path":"/status","value":"Active"},{"op":"replace","path":"/marketingallowed","value":"true"},{"op":"replace","path":"/verified","value":"true"}]'
+  ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}");
-var request = new RestRequest(Method.PUT);
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}");
+var request = new RestRequest(Method.patch);
 request.AddHeader("content-type", "application/json");
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
-request.AddParameter("application/json", "{\"email\":\"johnsmith-api+1@mppglobal.com\",\"currentPassword\":\"4034510a@!\",\"newPassword\":\"4034510aRFT453\",\"firstName\":\"John\",\"surname\":\"Smith\"}", ParameterType.RequestBody);
+request.AddParameter("application/json", "[{\"op\":\"replace\",\"path\":\"/status\",\"value\":\"Active\"},{\"op\":\"replace\",\"path\":\"/marketingallowed\",\"value\":\"true\"},{\"op\":\"replace\",\"path\":\"/verified\",\"value\":\"true\"}]", ParameterType.RequestBody);
 IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.put("https://uat.mppglobal.com/api/accounts/{accountId}")
+HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/accounts/{accountReference}")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
-  .body("{\"email\":\"johnsmith-api+1@mppglobal.com\",\"currentPassword\":\"4034510a@!\",\"newPassword\":\"4034510aRFT453\",\"firstName\":\"John\",\"surname\":\"Smith\"}")
+  .body("[{\"op\":\"replace\",\"path\":\"/status\",\"value\":\"Active\"},{\"op\":\"replace\",\"path\":\"/marketingallowed\",\"value\":\"true\"},{\"op\":\"replace\",\"path\":\"/verified\",\"value\":\"true\"}]")
   .asString();
 ```
 
@@ -372,18 +375,18 @@ HttpResponse<String> response = Unirest.put("https://uat.mppglobal.com/api/accou
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
 http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-request = Net::HTTP::Post.new(url)
+request = Net::HTTP::Patch.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request["content-type"] = 'application/json'
-request.body = "{\"email\":\"johnsmith-api+1@mppglobal.com\",\"currentPassword\":\"4034510a@!\",\"newPassword\":\"4034510aRFT453\",\"firstName\":\"John\",\"surname\":\"Smith\"}"
+request.body = "[{\"op\":\"replace\",\"path\":\"/status\",\"value\":\"Active\"},{\"op\":\"replace\",\"path\":\"/marketingallowed\",\"value\":\"true\"},{\"op\":\"replace\",\"path\":\"/verified\",\"value\":\"true\"}]"
 
 response = http.request(request)
 puts response.read_body
@@ -394,16 +397,16 @@ import http.client
 
 conn = http.client.HTTPSConnection("uat.mppglobal.com")
 
-payload = "{\"email\":\"johnsmith-api+1@mppglobal.com\",\"currentPassword\":\"4034510a@!\",\"newPassword\":\"4034510aRFT453\",\"firstName\":\"John\",\"surname\":\"Smith\"}"
+payload = "[{\"op\":\"replace\",\"path\":\"/status\",\"value\":\"Active\"},{\"op\":\"replace\",\"path\":\"/marketingallowed\",\"value\":\"true\"},{\"op\":\"replace\",\"path\":\"/verified\",\"value\":\"true\"}]"
 
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0',
+    'x-version': '10.0.0',
     'content-type': "application/json"
     }
 
-conn.request("PUT", "/api/accounts/{accountId}", payload, headers)
+conn.request("PATCH", "/api/accounts/{accountReference}", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -415,16 +418,16 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}",
-  "method": "PUT",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}",
+  "method": "PATCH",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com",
     "content-type": "application/json"
   },
   "processData": false,
-  "data": "{\"email\":\"johnsmith-api+1@mppglobal.com\",\"currentPassword\":\"4034510a@!\",\"newPassword\":\"4034510aRFT453\",\"firstName\":\"John\",\"surname\":\"Smith\"}"
+ "data": "[{\"op\":\"replace\",\"path\":\"/status\",\"value\":\"Active\"},{\"op\":\"replace\",\"path\":\"/marketingallowed\",\"value\":\"true\"},{\"op\":\"replace\",\"path\":\"/verified\",\"value\":\"true\"}]"
 }
 
 $.ajax(settings).done(function (response) {
@@ -464,64 +467,45 @@ $.ajax(settings).done(function (response) {
     "colour": "Blue",
     "referrer": "Facebook"
   },
+  "marketingAllowed" : true,
   "sessionToken": "702f5c37e2394db785ae1306ecce9750"
 }
 ```
 
-It is a requirement of the eSuite platform that an account be created in order to perform future actions such as payments and subscription purchases.
+Calling this endpoint allows you to update information against the account record in the eSuite platform on a per attribute basis. The API request uses the standard JSON PATCH model used throughout the eSuite API.
 
 ### URL Endpoint
 <div class="endpoint-cont">
-<span class="endpoint-verb endpoint-verb-put">PUT</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}</span>
+<span class="endpoint-verb endpoint-verb-put">PATCH</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}</span>
 </div>
 
 
-### PUT Parameters
+### PATCH Request Parameters
 
  |  |  | 
 --------- | ------- | ------- | 
-`email` <br />The identifier used when eSuite is primary IDAM.| <span class="string">string</span> | <span class="required">Required</span> | 
-`clientUserId` <br />The identifier used when eSuite is secondary IDAM. Once set this cannot be changed.| <span class="string">string</span> | <span class="required">Required</span> | 
-`password` <br />The value provided by the account to pair with the email. | <span class="string">string</span> | <span class="required">Required</span> | 
-`salutation` <br />Available values: Mr, Mrs, Miss and Ms.| <span class="string">string</span> |  | 
-`firstName` <br />The first name associated to the account.| <span class="string">string</span> |  | 
-`lastName` <br />The last name associated to the account.| <span class="string">string</span> |  | 
-`phoneNumber` <br />The home phone number of the account.| <span class="string">string</span> |  | 
-`mobileNumber` <br />The mobile number of the account (minus country code).| <span class="string">string</span> |  | 
-`dateOfBirth` <br />The birthday of the account.| <span class="string">string</span> |  | 
-`gender` <br />Available values: Male, Female and Unspecified.| <span class="string">string</span> |  | 
-`addresses` <br />A collection of addresses bound to the account.| <span class="array">array</span> |  | 
-`address \ addressType` <br />Available values: Home and Billing.| <span class="string">string</span> |  | 
-`address \ houseName` <br />The name associated to the address.| <span class="string">string</span> |  | 
-`address \ houseNumber` <br />The building number associated to the address.| <span class="string">string</span> |  | 
-`address \ street` <br />The street associated to the address.| <span class="string">string</span> |  | 
-`address \ townCity` <br />The town or city associated to the address| <span class="string">string</span> |  | 
-`address \ district` <br />The district associated to the address| <span class="string">string</span> |  | 
-`address \ state` <br />The state associated to the address| <span class="string">string</span> |  | 
-`address \ county` <br />The county associated to the address| <span class="string">string</span> |  | 
-`address \ postCode` <br />The post code associated to the address| <span class="string">string</span> |  | 
-`address \ country` <br />The country the account resides| <span class="string">string</span> |  | 
-`customParameters` <br />A collection of custom attributes stored against the account| <span class="dictionary">dictionary</span> |  | 
-
-
+A collection of updates that should be made to the resource| <span class="array">array[objects]</span> | <span class="required">Required</span> | 
+`op` <br />The type of change that should be executed. add, replace and remove are available operations.| <span class="string">string</span> | <span class="required">Required</span> | 
+`path` <br />The name of the parameter that should be updated.| <span class="string">string</span> | <span class="required">Required</span> | 
+`value` <br />The new value to store against the parameter.| <span class="string">string</span> | <span class="required">Required</span> | 
 
 
 ## Delete
 
 ```shell
 curl --request DELETE \
-  --url https://uat.mppglobal.com/api/accounts/{accountId} \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference} \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{}'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}");
 var request = new RestRequest(Method.DELETE);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
@@ -529,10 +513,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.put("https://uat.mppglobal.com/api/accounts/{accountId}")
+HttpResponse<String> response = Unirest.put("https://uat.mppglobal.com/api/accounts/{accountReference}")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{}")
   .asString();
 ```
@@ -541,7 +525,7 @@ HttpResponse<String> response = Unirest.put("https://uat.mppglobal.com/api/accou
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -550,7 +534,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Delete.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 
 request.body = "{}"
 
@@ -568,10 +552,10 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
-conn.request("DELETE", "/api/accounts/{accountId}", payload, headers)
+conn.request("DELETE", "/api/accounts/{accountReference}", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -583,11 +567,11 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}",
   "method": "DELETE",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com"
   },
   "processData": false,
@@ -611,7 +595,7 @@ Calling this endpoint will result in the account being removed from the eSuite p
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-delete">DELETE</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}</span>
 </div>
 
 ## Search
@@ -621,14 +605,14 @@ curl --request GET \
   --url https://uat.mppglobal.com/api/accounts/ \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{}'
 ```
 
 ```csharp
 var client = new RestClient("https://uat.mppglobal.com/api/accounts/");
 var request = new RestRequest(Method.GET);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
@@ -639,7 +623,7 @@ IRestResponse response = client.Execute(request);
 HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{}")
   .asString();
 ```
@@ -657,7 +641,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Get.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{}"
 
 response = http.request(request)
@@ -674,7 +658,7 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
 conn.request("GET", "/api/accounts/", payload, headers)
@@ -726,7 +710,8 @@ print(data.decode("utf-8"))
         ],
         "customParameters": {
           "StoreNumber": "42"
-        }
+        },
+        "marketingAllowed" : true
       }
     }
   ]
@@ -790,24 +775,24 @@ This endpoint allows you to search for an account using the REST API. This is ty
 `address \ postCode` <br />The post code associated to the address| <span class="string">string</span> | | 
 `address \ country` <br />The country the account resides| <span class="string">string</span> |  | 
 `customParameters` <br />A collection of custom attributes stored against the account| <span class="dictionary">dictionary</span> |  | 
-
+`marketingAllowed` <br />An indication as to whether the account has give permission to have marketing to be sent to them| <span class"string">string</span>
 
 
 ## Trigger Verification
 
 ```shell
 curl --request POST \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/verify \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/verify \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{}'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/verify");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/verify");
 var request = new RestRequest(Method.POST);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
@@ -815,10 +800,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/{accountId}/verify")
+HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/{accountReference}/verify")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{}")
   .asString();
 ```
@@ -827,7 +812,7 @@ HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/acco
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/verify")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/verify")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -836,7 +821,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Post.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 
 request.body = "{}"
 
@@ -854,10 +839,10 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
-conn.request("POST", "/api/accounts/{accountId}/verify", payload, headers)
+conn.request("POST", "/api/accounts/{accountReference}/verify", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -869,11 +854,11 @@ print(data.decode("utf-8"))
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/verify",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/verify",
   "method": "POST",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com"
   },
   "processData": false,
@@ -897,7 +882,7 @@ It is a requirement of the eSuite platform that an account be created in order t
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/verify</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/verify</span>
 </div>
 
 ## Complete Verification
@@ -907,14 +892,14 @@ curl --request POST \
   --url https://uat.mppglobal.com/api/accounts/verify \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{"verificationToken":"BE52ADA2064C4F9A9D90F28D066D1RFT"}'
 ```
 
 ```csharp
 var client = new RestClient("https://uat.mppglobal.com/api/accounts/verify");
 var request = new RestRequest(Method.POST);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("application/json", "{\"verificationToken\":\"BE52ADA2064C4F9A9D90F28D066D1RFT\"}", ParameterType.RequestBody);
@@ -925,7 +910,7 @@ IRestResponse response = client.Execute(request);
 HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/verify")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{\"verificationToken\":\"BE52ADA2064C4F9A9D90F28D066D1RFT\"}")
   .asString();
 ```
@@ -943,7 +928,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Patch.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{\"verificationToken\":\"BE52ADA2064C4F9A9D90F28D066D1RFT\"}"
 
 response = http.request(request)
@@ -961,7 +946,7 @@ payload = "{\"verificationToken\":\"BE52ADA2064C4F9A9D90F28D066D1RFT\"}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
 conn.request("PATCH", "/api/accounts/verify", payload, headers)
@@ -980,7 +965,7 @@ var settings = {
   "method": "PATCH",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com"
   },
    "data": "{\"verificationToken\":\"BE52ADA2064C4F9A9D90F28D066D1RFT\"}"
@@ -1017,14 +1002,14 @@ curl --request POST \
   --url https://uat.mppglobal.com/api/accounts/forgotten-password \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{"emailAddress":"john.smith@mppglobal.com"}'
 ```
 
 ```csharp
 var client = new RestClient("https://uat.mppglobal.com/api/accounts/forgotten-password");
 var request = new RestRequest(Method.POST);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("application/json","{\"emailAddress\":\"john.smith@mppglobal.com\"}", ParameterType.RequestBody);
@@ -1035,7 +1020,7 @@ IRestResponse response = client.Execute(request);
 HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/forgotten-password")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
   .body("{\"emailAddress\":\"john.smith@mppglobal.com\"}")
   .asString();
@@ -1055,7 +1040,7 @@ request = Net::HTTP::Post.new(url)
 request["content-type"] = 'application/json'
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{\"emailAddress\":\"john.smith@mppglobal.com\"}"
 
 response = http.request(request)
@@ -1072,7 +1057,7 @@ payload = "{\"emailAddress\":\"john.smith@mppglobal.com\"}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0',
+    'x-version': '10.0.0',
     'content-type': "application/json"
     }
 
@@ -1092,7 +1077,7 @@ var settings = {
   "method": "POST",
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com",
     "content-type": "application/json"
   },
@@ -1130,7 +1115,7 @@ curl --request PATCH \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
   --header 'x-sessionid: BE52ADA2064C4F9A9D90F28D066D1RFT' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --header 'content-type: application/json' \
   --data '{"password":"ReallyStr0ngP@ss0rd","login":true}'
 ```
@@ -1138,7 +1123,7 @@ curl --request PATCH \
 ```csharp
 var client = new RestClient("https://uat.mppglobal.com/api/accounts/update-password");
 var request = new RestRequest(Method.PATCH);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddHeader("x-sessionid", "BE52ADA2064C4F9A9D90F28D066D1RFT");
@@ -1151,7 +1136,7 @@ HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/acc
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-sessionid", "BE52ADA2064C4F9A9D90F28D066D1RFT")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
   .body("{\"password\":\"ReallyStr0ngP@ss0rd\",\"login\":true}")
   .asString();
@@ -1171,7 +1156,7 @@ request = Net::HTTP::Patch.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword',
 request["x-sessionid"] = 'BE52ADA2064C4F9A9D90F28D066D1RFT',
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request["content-type"] = 'application/json'
 request.body = "{\"password\":\"ReallyStr0ngP@ss0rd\",\"login\":true}"
 
@@ -1192,7 +1177,7 @@ headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
     "x-sessionid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
-    'x-version': '9.0.0',
+    'x-version': '10.0.0',
     'content-type': "application/json"
     }
 
@@ -1213,7 +1198,7 @@ var settings = {
   "headers": {
     "x-sessionid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com",
     "content-type": "application/json"
   },
@@ -1253,17 +1238,17 @@ If an account has requested to reset their password, they will have recieved and
 
 ```shell
 curl --request GET \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/transaction-summary \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/transaction-summary \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{}'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/transaction-summary");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/transaction-summary");
 var request = new RestRequest(Method.GET);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("undefined", "{}", ParameterType.RequestBody);
@@ -1271,11 +1256,11 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountId}/transaction-summary")
+HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accounts/{accountReference}/transaction-summary")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-sessionid", "BE52ADA2064C4F9A9D90F28D066D1RFT")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .body("{}")
   .asString();
 ```
@@ -1284,7 +1269,7 @@ HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/accou
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/transaction-summary")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/transaction-summary")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -1294,7 +1279,7 @@ request = Net::HTTP::Get.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword',
 request["x-sessionid"] = 'BE52ADA2064C4F9A9D90F28D066D1RFT',
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{}"
 
 response = http.request(request)
@@ -1311,10 +1296,10 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0'
+    'x-version': '10.0.0'
     }
 
-conn.request("GET", "/api/accounts/{accountId}/transaction-summary", payload)
+conn.request("GET", "/api/accounts/{accountReference}/transaction-summary", payload)
 
 res = conn.getresponse()
 data = res.read()
@@ -1324,12 +1309,12 @@ data = res.read()
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://uat.mppglobal.com/api/accounts/{accountId}/transaction-summary",
+  "url": "https://uat.mppglobal.com/api/accounts/{accountReference}/transaction-summary",
   "method": "GET",
   "headers": {
     "x-sessionid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com"
   },
   "data": "{}"
@@ -1389,7 +1374,7 @@ Calling this endpoint will provide a breakdown of the accounts transaction summa
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-get">GET</span>
-<span class="endpoint-path">https://uat.mppglobal.com/accounts/{accountId}/transaction-summary</span>
+<span class="endpoint-path">https://uat.mppglobal.com/accounts/{accountReference}/transaction-summary</span>
 </div>
 
 ### Response Parameters

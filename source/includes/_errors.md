@@ -4,10 +4,8 @@
 
 ```json
 {
-  "result" : {
-      "status" : "FAILED",
-      "reason" : "Example String"
-  }
+    "status" : "FAILED",
+    "reason" : "Example String"
 }
 ```
 
@@ -22,6 +20,7 @@
 *404* `Not Found` <br /> The specified resource could not be found |
 *405* `Method Not Allowed` <br /> You tried to access a resource with an invalid method |
 *406* `Not Acceptable` <br /> You requested a format that isn't JSON |
+*409* `Conflict` <br /> You are attempting to create something that already exists|
 *412* `Pre-Condition Failed`<br /> The request has failed basic validation |
 *500* `Internal Server Error` <br /> We had a problem with our server. Try again later. |
 *503* `Service Unavailable` <br /> a service required to complete the requested operation is unavailable at present. Please try again later. |

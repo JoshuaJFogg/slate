@@ -4,19 +4,19 @@
 
 ```shell
 curl --request POST \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --header 'content-type: application/json' \
   --header 'content-type: application/json' \
   --data '{"pricing":{"priceId":18763,"paymentMethod":"CreditCard"}}'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions");
 var request = new RestRequest(Method.POST);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddHeader("content-type", "application/json");
@@ -25,11 +25,11 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions")
+HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-sessionid", "BE52ADA2064C4F9A9D90F28D066D1RFT")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
   .body("{\"pricing\":{\"priceId\":18763,\"paymentMethod\":\"CreditCard\"}}")
   .asString();
@@ -39,7 +39,7 @@ HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/acco
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -49,7 +49,7 @@ request = Net::HTTP::Post.new(url)
 request["content-type"] = 'application/json'
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{\"pricing\":{\"priceId\":18763,\"paymentMethod\":\"CreditCard\"}}"
 
 response = http.request(request)
@@ -66,10 +66,10 @@ payload = "{\"pricing\":{\"priceId\":18763,\"paymentMethod\":\"CreditCard\"}}"
 headers = { 
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0',
+    'x-version': '10.0.0',
     'content-type': "application/json" }
 
-conn.request("POST", "/api/accounts/{accountId}/subscriptions", payload, headers)
+conn.request("POST", "/api/accounts/{accountReference}/subscriptions", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -109,7 +109,7 @@ For the completion of standard payment options, making the following `POST` requ
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions</span>
 </div>
 
 
@@ -157,19 +157,19 @@ For the completion of standard payment options, making the following `POST` requ
 
 ```shell
 curl --request POST \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/service-credits \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/service-credits \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --header 'content-type: application/json' \
   --header 'content-type: application/json' \
   --data '{"paymentMethod":"CreditDebitCard","currency":"GBP","paidCredits":10.12,"freeCredits":10.99}'
 ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/service-credits");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/service-credits");
 var request = new RestRequest(Method.POST);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddHeader("content-type", "application/json");
@@ -178,11 +178,11 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/{accountId}/service-credits")
+HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/accounts/{accountReference}/service-credits")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
   .header("x-sessionid", "BE52ADA2064C4F9A9D90F28D066D1RFT")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
   .body("{\"paymentMethod\":\"CreditDebitCard\",\"currency\":\"GBP\",\"paidCredits\":10.12,\"freeCredits\":10.99}")
   .asString();
@@ -192,7 +192,7 @@ HttpResponse<String> response = Unirest.post("https://uat.mppglobal.com/api/acco
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/service-credits")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/service-credits")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -202,7 +202,7 @@ request = Net::HTTP::Post.new(url)
 request["content-type"] = 'application/json'
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request.body = "{\"paymentMethod\":\"CreditDebitCard\",\"currency\":\"GBP\",\"paidCredits\":10.12,\"freeCredits\":10.99}"
 
 response = http.request(request)
@@ -219,10 +219,10 @@ payload = "{\"paymentMethod\":\"CreditDebitCard\",\"currency\":\"GBP\",\"paidCre
 headers = { 
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0',
+    'x-version': '10.0.0',
     'content-type': "application/json" }
 
-conn.request("POST", "/api/accounts/{accountId}/service-credits", payload, headers)
+conn.request("POST", "/api/accounts/{accountReference}/service-credits", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -250,7 +250,7 @@ For the completion of standard payment options, making the following `POST` requ
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-post">POST</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/service-credits</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/service-credits</span>
 </div>
 
 ### POST Parameters
@@ -270,19 +270,19 @@ For the completion of standard payment options, making the following `POST` requ
 
 ```shell
 curl --request PATCH \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/subscription \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/subscription \
   --header 'content-type: application/json' \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{"asynchronousProcessingParameters":{"paymentToken":"ASWDE345YGT"}}'
   ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/subscription");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/subscription");
 var request = new RestRequest(Method.PATCH);
 request.AddHeader("content-type", "application/json");
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("application/json", "{\"asynchronousProcessingParameters\":{\"paymentToken\":\"ASWDE345YGT\"}}", ParameterType.RequestBody);
@@ -290,10 +290,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/accounts/{accountId}/subscription")
+HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/accounts/{accountReference}/subscription")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
   .body("{\"asynchronousProcessingParameters\":{\"paymentToken\":\"ASWDE345YGT\"}}")
   .asString();
@@ -303,7 +303,7 @@ HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/acc
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/subscription")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/subscription")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -312,7 +312,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Patch.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request["content-type"] = 'application/json'
 request.body = "{\"asynchronousProcessingParameters\":{\"paymentToken\":\"ASWDE345YGT\"}}"
 
@@ -330,11 +330,11 @@ payload = "{\"asynchronousProcessingParameters\":{\"paymentToken\":\"ASWDE345YGT
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0',
+    'x-version': '10.0.0',
     'content-type': "application/json"
     }
 
-conn.request("PATCH", "/api/accounts/{accountId}/subscription", payload, headers)
+conn.request("PATCH", "/api/accounts/{accountReference}/subscription", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -376,7 +376,7 @@ For the completion of alternative subscription options, making the following `PA
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-patch">PATCH</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/subscriptions</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/subscriptions</span>
 </div>
 
 ### Request Parameters
@@ -390,19 +390,19 @@ For the completion of alternative subscription options, making the following `PA
 
 ```shell
 curl --request PATCH \
-  --url https://uat.mppglobal.com/api/accounts/{accountId}/service-credits \
+  --url https://uat.mppglobal.com/api/accounts/{accountReference}/service-credits \
   --header 'content-type: application/json' \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --data '{"asynchronousProcessingParameters":{"paymentToken":"ASWDE345YGT"}}'
   ```
 
 ```csharp
-var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountId}/service-credits");
+var client = new RestClient("https://uat.mppglobal.com/api/accounts/{accountReference}/service-credits");
 var request = new RestRequest(Method.PATCH);
 request.AddHeader("content-type", "application/json");
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddParameter("application/json", "{\"asynchronousProcessingParameters\":{\"paymentToken\":\"ASWDE345YGT\"}}", ParameterType.RequestBody);
@@ -410,10 +410,10 @@ IRestResponse response = client.Execute(request);
 ```
 
 ```java
-HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/accounts/{accountId}/service-credits")
+HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/accounts/{accountReference}/service-credits")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("content-type", "application/json")
   .body("{\"asynchronousProcessingParameters\":{\"paymentToken\":\"ASWDE345YGT\"}}")
   .asString();
@@ -423,7 +423,7 @@ HttpResponse<String> response = Unirest.patch("https://uat.mppglobal.com/api/acc
 require 'uri'
 require 'net/http'
 
-url = URI("https://uat.mppglobal.com/api/accounts/{accountId}/service-credits")
+url = URI("https://uat.mppglobal.com/api/accounts/{accountReference}/service-credits")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
@@ -432,7 +432,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Patch.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request["content-type"] = 'application/json'
 request.body = "{\"asynchronousProcessingParameters\":{\"paymentToken\":\"ASWDE345YGT\"}}"
 
@@ -450,11 +450,11 @@ payload = "{\"asynchronousProcessingParameters\":{\"paymentToken\":\"ASWDE345YGT
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': "Str0ngP@ssword",
-    'x-version': '9.0.0',
+    'x-version': '10.0.0',
     'content-type': "application/json"
     }
 
-conn.request("PATCH", "/api/accounts/{accountId}/service-credits", payload, headers)
+conn.request("PATCH", "/api/accounts/{accountReference}/service-credits", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -481,7 +481,7 @@ For the completion of alternative credits purchase, making the following `PATCH`
 
 <div class="endpoint-cont">
 <span class="endpoint-verb endpoint-verb-patch">PATCH</span>
-<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountId}/service-credits</span>
+<span class="endpoint-path">https://uat.mppglobal.com/api/accounts/{accountReference}/service-credits</span>
 </div>
 
 ### Request Parameters
@@ -498,7 +498,7 @@ curl --request GET \
   --url https://uat.mppglobal.com/api/vouchers/{voucherCode}/validate \
   --header 'x-clientId: 1001' \
   --header 'x-clientPassword: Str0ngP@ssword' \
-  --header 'x-version: 9.0.0' \
+  --header 'x-version: 10.0.0' \
   --header 'x-sessionId: a0c595bd26004ff4bb7d4cb1b1c81a6d' \
   --data '{}'
 ```
@@ -506,7 +506,7 @@ curl --request GET \
 ```csharp
 var client = new RestClient("https://uat.mppglobal.com/api/vouchers/{voucherCode}/validate");
 var request = new RestRequest(Method.GET);
-request.AddHeader("x-version", "9.0.0");
+request.AddHeader("x-version", "10.0.0");
 request.AddHeader("x-clientId", "1001");
 request.AddHeader("x-clientPassword", "Str0ngP@ssword");
 request.AddHeader("x-sessionId", "a0c595bd26004ff4bb7d4cb1b1c81a6d")
@@ -518,7 +518,7 @@ IRestResponse response = client.Execute(request);
 HttpResponse<String> response = Unirest.get("https://uat.mppglobal.com/api/vouchers/{voucherCode}/validate")
   .header("x-clientId", "1001")
   .header("x-clientPassword", "Str0ngP@ssword")
-  .header("x-version", "9.0.0")
+  .header("x-version", "10.0.0")
   .header("x-sessionId", "a0c595bd26004ff4bb7d4cb1b1c81a6d")
   .body("{}")
   .asString();
@@ -537,7 +537,7 @@ http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 request = Net::HTTP::Get.new(url)
 request["x-clientid"] = '1001'
 request["x-clientPassword"] = 'Str0ngP@ssword'
-request["x-version"] = '9.0.0'
+request["x-version"] = '10.0.0'
 request["x-sessionid"] = 'a0c595bd26004ff4bb7d4cb1b1c81a6d'
 request.body = "{}"
 
@@ -555,11 +555,11 @@ payload = "{}"
 headers = {
     'x-clientid' : '1001',
     'x-clientPassword': 'Str0ngP@ssword',
-    'x-version': '9.0.0',
+    'x-version': '10.0.0',
     'x-sessionid' : 'a0c595bd26004ff4bb7d4cb1b1c81a6d'
     }
 
-conn.request("GET", "/api/accounts/{accountId}/support-logs/{supportLogReference}", payload, headers)
+conn.request("GET", "/api/accounts/{accountReference}/support-logs/{supportLogReference}", payload, headers)
 
 res = conn.getresponse()
 data = res.read()
@@ -576,7 +576,7 @@ var settings = {
   "headers": {
     "x-tokenid": "BE52ADA2064C4F9A9D90F28D066D1RFT",
     "x-sessionid": "a0c595bd26004ff4bb7d4cb1b1c81a6d",
-    "x-version": "9.0.0",
+    "x-version": "10.0.0",
     "origin": "https://www.mppglobal.com"
   },
   "data": "{}"
