@@ -794,10 +794,10 @@ An account is able to authenticate using their Google account and then retrieve 
 
  |  |  |  
 --------- | ------- | ------- | 
-`googleRedirectURI` <br />The location which should be called for validation of the code and token provided| <span class="string">string</span> | <span class="required">Yes/No</span> | 
-`authorisationCode` <br />Code provided by Google| <span class="string">string</span> | <span class="required">Yes/No</span> | 
-`accessToken` <br />Code provided by Google| <span class="string">string</span> | <span class="required">Yes/No</span> | 
-`applicationIdentifier` <br />The identifier for the eSuite application that the account is using| <span class="string">string</span> | <span class="required">Yes/No</span> | 
+`googleRedirectURI` <br />The location which should be called for validation of the code and token provided| <span class="string">string</span> | <span class="required">Required</span> | 
+`clientId` <br />Code provided by Google| <span class="string">string</span> | <span class="required">Required</span> | 
+`clientSecret` <br />Code provided by Google| <span class="string">string</span> | <span class="required">Required</span> | 
+`applicationIdentifier` <br />The identifier for the eSuite application that the account is using| <span class="string">string</span> | <span class="required">Required</span> | 
 
 
 
@@ -867,10 +867,10 @@ This endpoint allows you to link an existing eSuite account to their Google prof
 
  |  |  |  
 --------- | ------- | ------- | 
-`googleRedirectURI` <br />The location which should be called for validation of the code and token provided| <span class="string">string</span> | <span class="required">Yes/No</span> | 
-`authorisationCode` <br />Code provided by Google| <span class="string">string</span> | <span class="required">Yes/No</span> | 
-`accessToken` <br />Code provided by Google| <span class="string">string</span> | <span class="required">Yes/No</span> | 
-`applicationIdentifier` <br />The identifier for the eSuite application that the account is using| <span class="string">string</span> | <span class="required">Yes/No</span> | 
+`googleRedirectURI` <br />The location which should be called for validation of the code and token provided| <span class="string">string</span> | <span class="required">Required</span> | 
+`clientId` <br />Code provided by Google| <span class="string">string</span> | <span class="required">Required</span> | 
+`clientSecret` <br />Code provided by Google| <span class="string">string</span> | <span class="required">Required</span> | 
+`applicationIdentifier` <br />The identifier for the eSuite application that the account is using| <span class="string">string</span> | <span class="required">Required</span> | 
 
 
 
